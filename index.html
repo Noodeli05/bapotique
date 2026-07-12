@@ -45,9 +45,21 @@ p{line-height:1.55;margin-bottom:6px;}
 
 /* TABS */
 .tab-bar{display:flex;gap:0;margin:14px 0 0;border-bottom:2px solid #1a2a4a;flex-wrap:wrap;}
-.tab-btn{background:#e8e4da;border:1px solid #c8c4ba;border-bottom:none;padding:8px 16px;font-family:Arial,sans-serif;font-size:9.5pt;cursor:pointer;color:#555;border-radius:4px 4px 0 0;margin-right:3px;margin-bottom:-2px;}
-.tab-btn.active{background:#1a2a4a;color:#fff;font-weight:700;}
-.tab-content{display:none;padding:14px 0 0;}
+.tab-nav{display:flex;gap:0;margin:10px 0 0;border-bottom:2px solid #1a2a4a;}
+.tab-nav button{background:#e8e4da;border:1px solid #c8c4ba;border-bottom:none;padding:8px 16px;font-family:Arial,sans-serif;font-size:9.5pt;cursor:pointer;color:#555;border-radius:4px 4px 0 0;margin-right:3px;margin-bottom:-2px;}
+.tab-nav button:hover{background:#d4cfbf;}
+.tab-nav button.active{background:#1a2a4a;color:#fff;font-weight:700;}
+.tab{display:none;padding:14px 0 4px;}
+.tab.active{display:block;}
+.fc-grid{display:flex;flex-wrap:wrap;gap:10px;padding:8px 0;}
+.fc-card{width:calc(50% - 5px);min-height:110px;perspective:700px;cursor:pointer;}
+@media(max-width:500px){.fc-card{width:100%;}}
+.fc-inner{width:100%;height:100%;min-height:110px;position:relative;transform-style:preserve-3d;transition:transform .4s;}
+.fc-inner.flipped{transform:rotateY(180deg);}
+.fc-front,.fc-back{position:absolute;width:100%;min-height:110px;backface-visibility:hidden;border-radius:6px;display:flex;align-items:center;justify-content:center;padding:12px;text-align:center;font-size:9pt;line-height:1.4;}
+.fc-front{background:#1a2a4a;color:#f8f6f0;font-weight:700;border:2px solid #2e4a8a;}
+.fc-back{background:#f0ede4;color:#2c2c2c;transform:rotateY(180deg);border:2px solid #c8b890;}
+.fc-hint{font-size:7.5pt;opacity:.6;display:block;margin-top:4px;}
 
 /* ACCORDION */
 .accordion{margin-bottom:6px;border:1px solid #d8d3c8;border-radius:4px;overflow:hidden;}
@@ -57,9 +69,9 @@ p{line-height:1.55;margin-bottom:6px;}
 .acc-body.open{display:block;}
 
 /* BOXES */
-.def-box{background:#eef0f7;border-left:3px solid #2e4a8a;padding:8px 12px;margin:8px 0;border-radius:3px;font-size:9.5pt;}
-.ex-box{background:#f0ede4;border-left:3px solid #a08060;padding:8px 12px;margin:8px 0;border-radius:3px;font-size:9.5pt;font-style:italic;}
-.warn-box{background:#fef5e4;border-left:3px solid #c07820;padding:8px 12px;margin:8px 0;border-radius:3px;font-size:9.5pt;}
+.def-box,.def{background:#eef0f7;border-left:3px solid #2e4a8a;padding:8px 12px;margin:8px 0;border-radius:3px;font-size:9.5pt;}
+.ex-box,.example{background:#f0ede4;border-left:3px solid #a08060;padding:8px 12px;margin:8px 0;border-radius:3px;font-size:9.5pt;font-style:italic;}
+.warn-box,.warning{background:#fef5e4;border-left:3px solid #c07820;padding:8px 12px;margin:8px 0;border-radius:3px;font-size:9.5pt;}
 
 /* FLASHCARDS */
 .fc-grid{display:flex;flex-wrap:wrap;gap:12px;padding:8px 0;}
@@ -107,26 +119,66 @@ li{margin-bottom:3px;}
 
 <div class="layout">
   <nav class="sidebar">
-    <div class="sidebar-label">S&#233;ances</div>
+    <div class="sidebar-label">Accueil</div>
+    <button class="nav-btn" onclick="showPage('accueil', this)">🏠 Accueil</button>
+    <div class="sidebar-label" style="margin-top:8px">Séances</div>
     <button class="nav-btn nav-active" onclick="showPage('s01', this)">01 — Introduction</button>
-<button class="nav-btn" onclick="showPage('s02', this)">02 — Phonétique & graphémique</button>
-<button class="nav-btn" onclick="showPage('s03', this)">03 — Morphologie</button>
-<button class="nav-btn" onclick="showPage('s04', this)">04 — Syntaxe canonique</button>
-<button class="nav-btn" onclick="showPage('s05', this)">05 — TH/RH & clivées</button>
-<button class="nav-btn" onclick="showPage('s06', this)">06 — Passif, impersonnel, pronominal</button>
-<button class="nav-btn" onclick="showPage('s07', this)">07 — Clauses atypiques</button>
-<button class="nav-btn" onclick="showPage('s08', this)">08 — Extensions du GN</button>
-<button class="nav-btn" onclick="showPage('s09', this)">09 — Phrase complexe</button>
-<button class="nav-btn" onclick="showPage('s10', this)">10 — ⭐ Révision générale</button>
-
+    <button class="nav-btn" onclick="showPage('s02', this)">02 — Phonologie & graphémique</button>
+    <button class="nav-btn" onclick="showPage('s03', this)">03 — Morphologie</button>
+    <button class="nav-btn" onclick="showPage('s04', this)">04 — Syntaxe & valence</button>
+    <button class="nav-btn" onclick="showPage('s05', this)">05 — Dynamique informationnelle</button>
+    <button class="nav-btn" onclick="showPage('s06', this)">06 — Constructions verbales</button>
+    <button class="nav-btn" onclick="showPage('s07', this)">07 — Clauses atypiques</button>
+    <button class="nav-btn" onclick="showPage('s08', this)">08 — Extensions du GN</button>
+    <button class="nav-btn" onclick="showPage('s09', this)">09 — Phrase complexe</button>
+    <button class="nav-btn" onclick="showPage('s10', this)">10 — ⭐ Révision générale</button>
+    <div class="sidebar-label" style="margin-top:8px">Outils</div>
+    <button class="nav-btn" onclick="showPage('fiche', this)">📋 Fiche récap</button>
+    <button class="nav-btn" onclick="showPage('tests', this)">📝 Tests corrigés</button>
   </nav>
   <div class="content-area">
+    <div id="page-accueil" class="page-section" style="display:none;">
+<h2>Linguistique française — Fiches de révision</h2>
+<div class="def-box" style="margin-bottom:12px">
+<strong>Examen de rattrapage</strong> — Automne 2025 — R. Mahrer, UNIL 1ère année<br>
+Cet outil couvre les 10 séances du cours, du phonème à la dislocation.
+</div>
+
+<h3>Comment utiliser ce site</h3>
+<ul>
+  <li>Utilise l'onglet <strong>Cours</strong> pour réviser les notions théoriques (clique sur chaque accordéon pour l'ouvrir).</li>
+  <li>Utilise l'onglet <strong>Flashcards</strong> pour tester ta mémoire (clique sur chaque carte pour retourner).</li>
+  <li>Utilise l'onglet <strong>Quiz</strong> pour t'entraîner à des questions à choix multiple avec correction immédiate.</li>
+  <li>Consulte la <strong>Fiche récap</strong> pour une vue d'ensemble de toutes les constructions.</li>
+  <li>Entraîne-toi sur les <strong>Tests corrigés</strong> pour te préparer au format réel de l'examen.</li>
+</ul>
+
+<h3 style="margin-top:14px">Plan du cours</h3>
+<table>
+<tr><th>Séance</th><th>Contenu</th><th>Dossier</th></tr>
+<tr><td><strong>S01</strong></td><td>Introduction : signe, arbitraire, double articulation, 4 niveaux</td><td>Introduction</td></tr>
+<tr><td><strong>S02</strong></td><td>Phonologie et graphémique : phonème, API, e caduc, graphèmes</td><td>Dossier 1</td></tr>
+<tr><td><strong>S03</strong></td><td>Morphologie : morphème, allomorphie, dérivation, composition</td><td>Dossier 2</td></tr>
+<tr><td><strong>S04</strong></td><td>Syntaxe canonique, syntagmes, valence, rôles actanciels</td><td>Dossier 3</td></tr>
+<tr><td><strong>S05</strong></td><td>Dynamique informationnelle : TH/RH, clause inversée, clivée, pseudo-clivée</td><td>Dossier 4–5</td></tr>
+<tr><td><strong>S06</strong></td><td>Constructions verbales : passif, impersonnel, pronominal</td><td>Dossier 6</td></tr>
+<tr><td><strong>S07</strong></td><td>Clauses atypiques : averbale, infinitive, à présentatif</td><td>Dossier 7</td></tr>
+<tr><td><strong>S08</strong></td><td>Extensions du GN : épithètes, constructions détachées, relatives</td><td>Dossier 8</td></tr>
+<tr><td><strong>S09</strong></td><td>Phrase complexe : dislocation, tour équatif, subordination</td><td>Dossier 9</td></tr>
+<tr><td><strong>S10</strong></td><td>Révision générale : méthode d'analyse, pièges classiques</td><td>Tous dossiers</td></tr>
+</table>
+
+<div class="warn-box" style="margin-top:14px">
+<strong>Rappel méthode examen :</strong> Toujours analyser une clause sur <strong>3 plans</strong> : (1) syntaxique (fonctions), (2) sémantique (rôles actanciels), (3) informationnel (TH/RH). Justifier chaque étiquette.
+</div>
+</div>
+
     <div id="page-s01" class="page-section" style="display:block;">
-<nav>
+<div class="tab-nav">
   <button class="active" onclick="showTab('s01-cours',this)">📖 Cours</button>
   <button onclick="showTab('s01-flashcards',this)">🃏 Flashcards</button>
   <button onclick="showTab('s01-quiz',this)">✅ Quiz</button>
-</nav>
+</div>
 
 <!-- ===== COURS ===== -->
 <div id="s01-cours" class="tab active">
@@ -256,34 +308,21 @@ li{margin-bottom:3px;}
 
 <!-- ===== FLASHCARDS ===== -->
 <div id="s01-flashcards" class="tab">
-  <div class="fc-container">
-    <div class="fc-instruction">Cliquez sur la carte pour révéler la réponse</div>
-    <div class="fc-progress"><div class="fc-progress-bar" id="s01-fcProgress" style="width:0%"></div></div>
-    <div class="fc-card" onclick="flipCard()">
-      <div class="fc-inner" id="s01-fcInner">
-        <div class="fc-face fc-front" id="s01-fcFront"></div>
-        <div class="fc-face fc-back" id="s01-fcBack"></div>
-      </div>
-    </div>
-    <div class="fc-controls">
-      <button class="fc-btn" onclick="prevCard()" id="s01-fcPrev" disabled>← Précédent</button>
-      <div class="fc-counter" id="s01-fcCounter">1 / 17</div>
-      <button class="fc-btn" onclick="nextCard()" id="s01-fcNext">Suivant →</button>
-    </div>
-  </div>
+  <div id="s01-fc"></div>
 </div>
+
 
 <!-- ===== QUIZ ===== -->
 <div id="s01-quiz" class="tab">
-  <div id="s01-quizContent"></div>
+  <div id="s01-qz"></div>
 </div>
 </div>
 <div id="page-s02" class="page-section" style="display:none;">
-<nav>
+<div class="tab-nav">
   <button class="active" onclick="showTab('s02-cours',this)">📖 Cours</button>
   <button onclick="showTab('s02-flashcards',this)">🃏 Flashcards</button>
   <button onclick="showTab('s02-quiz',this)">✅ Quiz</button>
-</nav>
+</div>
 
 <div id="s02-cours" class="tab active">
 
@@ -448,33 +487,20 @@ li{margin-bottom:3px;}
 </div>
 
 <div id="s02-flashcards" class="tab">
-  <div class="fc-container">
-    <div class="fc-instruction">Cliquez sur la carte pour révéler la réponse</div>
-    <div class="fc-progress"><div class="fc-progress-bar" id="s02-fcProgress" style="width:0%"></div></div>
-    <div class="fc-card" onclick="flipCard()">
-      <div class="fc-inner" id="s02-fcInner">
-        <div class="fc-face fc-front" id="s02-fcFront"></div>
-        <div class="fc-face fc-back" id="s02-fcBack"></div>
-      </div>
-    </div>
-    <div class="fc-controls">
-      <button class="fc-btn" onclick="prevCard()" id="s02-fcPrev" disabled>← Précédent</button>
-      <div class="fc-counter" id="s02-fcCounter">1 / 18</div>
-      <button class="fc-btn" onclick="nextCard()" id="s02-fcNext">Suivant →</button>
-    </div>
-  </div>
+  <div id="s02-fc"></div>
 </div>
 
+
 <div id="s02-quiz" class="tab">
-  <div id="s02-quizContent"></div>
+  <div id="s02-qz"></div>
 </div>
 </div>
 <div id="page-s03" class="page-section" style="display:none;">
-<nav>
+<div class="tab-nav">
   <button class="active" onclick="showTab('s03-cours',this)">📖 Cours</button>
   <button onclick="showTab('s03-flashcards',this)">🃏 Flashcards</button>
   <button onclick="showTab('s03-quiz',this)">✅ Quiz</button>
-</nav>
+</div>
 
 <div id="s03-cours" class="tab active">
   <div class="accordion">
@@ -612,33 +638,20 @@ li{margin-bottom:3px;}
 </div>
 
 <div id="s03-flashcards" class="tab">
-  <div class="fc-container">
-    <div class="fc-instruction">Cliquez sur la carte pour révéler la réponse</div>
-    <div class="fc-progress"><div class="fc-progress-bar" id="s03-fcProgress" style="width:0%"></div></div>
-    <div class="fc-card" onclick="flipCard()">
-      <div class="fc-inner" id="s03-fcInner">
-        <div class="fc-face fc-front" id="s03-fcFront"></div>
-        <div class="fc-face fc-back" id="s03-fcBack"></div>
-      </div>
-    </div>
-    <div class="fc-controls">
-      <button class="fc-btn" onclick="prevCard()" id="s03-fcPrev" disabled>← Précédent</button>
-      <div class="fc-counter" id="s03-fcCounter">1 / 18</div>
-      <button class="fc-btn" onclick="nextCard()" id="s03-fcNext">Suivant →</button>
-    </div>
-  </div>
+  <div id="s03-fc"></div>
 </div>
 
+
 <div id="s03-quiz" class="tab">
-  <div id="s03-quizContent"></div>
+  <div id="s03-qz"></div>
 </div>
 </div>
 <div id="page-s04" class="page-section" style="display:none;">
-<nav>
+<div class="tab-nav">
   <button class="active" onclick="showTab('s04-cours',this)">&#128214; Cours</button>
   <button onclick="showTab('s04-flashcards',this)">&#127183; Flashcards</button>
   <button onclick="showTab('s04-quiz',this)">&#10003; Quiz</button>
-</nav>
+</div>
 <div id="s04-cours" class="tab active">
   <div class="accordion">
     <div class="acc-header" onclick="toggleAcc(this)">Phrase vs clause : une distinction fondamentale <span class="arrow">&#9660;</span></div>
@@ -666,32 +679,19 @@ li{margin-bottom:3px;}
   </div>
 </div>
 <div id="s04-flashcards" class="tab">
-  <div class="fc-container">
-    <div class="fc-instruction">Cliquez sur la carte pour r&#233;v&#233;ler la r&#233;ponse</div>
-    <div class="fc-progress"><div class="fc-progress-bar" id="s04-fcProgress" style="width:0%"></div></div>
-    <div class="fc-card" onclick="flipCard()">
-      <div class="fc-inner" id="s04-fcInner">
-        <div class="fc-face fc-front" id="s04-fcFront"></div>
-        <div class="fc-face fc-back" id="s04-fcBack"></div>
-      </div>
-    </div>
-    <div class="fc-controls">
-      <button class="fc-btn" onclick="prevCard()" id="s04-fcPrev" disabled>&#8592; Pr&#233;c&#233;dent</button>
-      <div class="fc-counter" id="s04-fcCounter">1 / 15</div>
-      <button class="fc-btn" onclick="nextCard()" id="s04-fcNext">Suivant &#8594;</button>
-    </div>
-  </div>
+  <div id="s04-fc"></div>
 </div>
+
 <div id="s04-quiz" class="tab">
-  <div id="s04-quizContent"></div>
+  <div id="s04-qz"></div>
 </div>
 </div>
 <div id="page-s05" class="page-section" style="display:none;">
-<nav>
+<div class="tab-nav">
   <button class="active" onclick="showTab('s05-cours',this)">Cours</button>
   <button onclick="showTab('s05-flashcards',this)">Flashcards</button>
   <button onclick="showTab('s05-quiz',this)">Quiz</button>
-</nav>
+</div>
 <div id="s05-cours" class="tab active">
   <div class="accordion">
     <div class="acc-header" onclick="toggleAcc(this)">Rappel : Th&egrave;me / Rh&egrave;me <span class="arrow">&#9660;</span></div>
@@ -715,30 +715,17 @@ li{margin-bottom:3px;}
   </div>
 </div>
 <div id="s05-flashcards" class="tab">
-  <div class="fc-container">
-    <div class="fc-instruction">Cliquez sur la carte pour reveler la reponse</div>
-    <div class="fc-progress"><div class="fc-progress-bar" id="s05-fcProgress" style="width:0%"></div></div>
-    <div class="fc-card" onclick="flipCard()">
-      <div class="fc-inner" id="s05-fcInner">
-        <div class="fc-face fc-front" id="s05-fcFront"></div>
-        <div class="fc-face fc-back" id="s05-fcBack"></div>
-      </div>
-    </div>
-    <div class="fc-controls">
-      <button class="fc-btn" onclick="prevCard()" id="s05-fcPrev" disabled>&larr; Precedent</button>
-      <div class="fc-counter" id="s05-fcCounter">1 / 15</div>
-      <button class="fc-btn" onclick="nextCard()" id="s05-fcNext">Suivant &rarr;</button>
-    </div>
-  </div>
+  <div id="s05-fc"></div>
 </div>
-<div id="s05-quiz" class="tab"><div id="s05-quizContent"></div></div>
+
+<div id="s05-quiz" class="tab"><div id="s05-qz"></div></div>
 </div>
 <div id="page-s06" class="page-section" style="display:none;">
-<nav>
+<div class="tab-nav">
   <button class="active" onclick="showTab('s06-cours',this)">&#128214; Cours</button>
   <button onclick="showTab('s06-flashcards',this)">&#127183; Flashcards</button>
   <button onclick="showTab('s06-quiz',this)">&#9989; Quiz</button>
-</nav>
+</div>
 
 <div id="s06-cours" class="tab active">
 
@@ -864,36 +851,21 @@ li{margin-bottom:3px;}
 </div>
 
 <div id="s06-flashcards" class="tab">
-  <div class="fc-container">
-    <div class="fc-instruction">Cliquez sur la carte pour la retourner</div>
-    <div class="fc-progress"><div class="fc-progress-bar" id="s06-fcBar"></div></div>
-    <div class="fc-card" onclick="flipCard()">
-      <div class="fc-inner" id="s06-fcInner">
-        <div class="fc-face fc-front"><span id="s06-fcQ"></span><span class="fc-hint">Cliquez pour voir la réponse</span></div>
-        <div class="fc-face fc-back"><div class="answer" id="s06-fcA"></div><div id="s06-fcEx"></div></div>
-      </div>
-    </div>
-    <div class="fc-controls">
-      <button class="fc-btn" id="s06-fcPrev" onclick="prevCard()">&#8592; Précédent</button>
-      <span class="fc-counter" id="s06-fcCount"></span>
-      <button class="fc-btn" id="s06-fcNext" onclick="nextCard()">Suivant &#8594;</button>
-    </div>
-  </div>
+  <div id="s06-fc"></div>
 </div>
+    </div>
 
 <div id="s06-quiz" class="tab">
-  <div id="s06-quizContainer"></div>
-  <button class="quiz-btn" id="s06-submitBtn" onclick="submitQuiz()" style="margin:0 auto">Soumettre mes réponses</button>
-  <div id="s06-quizScore" style="display:none"></div>
-  <button class="quiz-btn" id="s06-restartBtn" onclick="restartQuiz()" style="display:none;margin:0 auto">Recommencer</button>
+  <div id="s06-qz"></div>
+
 </div>
 </div>
 <div id="page-s07" class="page-section" style="display:none;">
-<nav>
+<div class="tab-nav">
   <button class="active" onclick="showTab('s07-cours',this)">&#128214; Cours</button>
   <button onclick="showTab('s07-flashcards',this)">&#127183; Flashcards</button>
   <button onclick="showTab('s07-quiz',this)">&#9989; Quiz</button>
-</nav>
+</div>
 
 <div id="s07-cours" class="tab active">
 
@@ -1026,36 +998,21 @@ li{margin-bottom:3px;}
 </div>
 
 <div id="s07-flashcards" class="tab">
-  <div class="fc-container">
-    <div class="fc-instruction">Cliquez sur la carte pour la retourner</div>
-    <div class="fc-progress"><div class="fc-progress-bar" id="s07-fcBar"></div></div>
-    <div class="fc-card" onclick="flipCard()">
-      <div class="fc-inner" id="s07-fcInner">
-        <div class="fc-face fc-front"><span id="s07-fcQ"></span><span class="fc-hint">Cliquez pour voir la réponse</span></div>
-        <div class="fc-face fc-back"><div class="answer" id="s07-fcA"></div><div id="s07-fcEx"></div></div>
-      </div>
-    </div>
-    <div class="fc-controls">
-      <button class="fc-btn" id="s07-fcPrev" onclick="prevCard()">&#8592; Précédent</button>
-      <span class="fc-counter" id="s07-fcCount"></span>
-      <button class="fc-btn" id="s07-fcNext" onclick="nextCard()">Suivant &#8594;</button>
-    </div>
-  </div>
+  <div id="s07-fc"></div>
 </div>
+    </div>
 
 <div id="s07-quiz" class="tab">
-  <div id="s07-quizContainer"></div>
-  <button class="quiz-btn" id="s07-submitBtn" onclick="submitQuiz()" style="margin:0 auto">Soumettre mes réponses</button>
-  <div id="s07-quizScore" style="display:none"></div>
-  <button class="quiz-btn" id="s07-restartBtn" onclick="restartQuiz()" style="display:none;margin:0 auto">Recommencer</button>
+  <div id="s07-qz"></div>
+
 </div>
 </div>
 <div id="page-s08" class="page-section" style="display:none;">
-<nav>
+<div class="tab-nav">
   <button class="active" onclick="showTab('s08-cours',this)">&#128214; Cours</button>
   <button onclick="showTab('s08-flashcards',this)">&#127183; Flashcards</button>
   <button onclick="showTab('s08-quiz',this)">&#9989; Quiz</button>
-</nav>
+</div>
 
 <div id="s08-cours" class="tab active">
 
@@ -1164,36 +1121,21 @@ li{margin-bottom:3px;}
 </div>
 
 <div id="s08-flashcards" class="tab">
-  <div class="fc-container">
-    <div class="fc-instruction">Cliquez sur la carte pour la retourner</div>
-    <div class="fc-progress"><div class="fc-progress-bar" id="s08-fcBar"></div></div>
-    <div class="fc-card" onclick="flipCard()">
-      <div class="fc-inner" id="s08-fcInner">
-        <div class="fc-face fc-front"><span id="s08-fcQ"></span><span class="fc-hint">Cliquez pour voir la réponse</span></div>
-        <div class="fc-face fc-back"><div class="answer" id="s08-fcA"></div><div id="s08-fcEx"></div></div>
-      </div>
-    </div>
-    <div class="fc-controls">
-      <button class="fc-btn" id="s08-fcPrev" onclick="prevCard()">&#8592; Précédent</button>
-      <span class="fc-counter" id="s08-fcCount"></span>
-      <button class="fc-btn" id="s08-fcNext" onclick="nextCard()">Suivant &#8594;</button>
-    </div>
-  </div>
+  <div id="s08-fc"></div>
 </div>
+    </div>
 
 <div id="s08-quiz" class="tab">
-  <div id="s08-quizContainer"></div>
-  <button class="quiz-btn" id="s08-submitBtn" onclick="submitQuiz()" style="margin:0 auto">Soumettre mes réponses</button>
-  <div id="s08-quizScore" style="display:none"></div>
-  <button class="quiz-btn" id="s08-restartBtn" onclick="restartQuiz()" style="display:none;margin:0 auto">Recommencer</button>
+  <div id="s08-qz"></div>
+
 </div>
 </div>
 <div id="page-s09" class="page-section" style="display:none;">
-<nav>
+<div class="tab-nav">
   <button class="active" onclick="showTab('s09-cours',this)">&#128214; Cours</button>
   <button onclick="showTab('s09-flashcards',this)">&#127183; Flashcards</button>
   <button onclick="showTab('s09-quiz',this)">&#9989; Quiz</button>
-</nav>
+</div>
 
 <div id="s09-cours" class="tab active">
 
@@ -1312,36 +1254,21 @@ li{margin-bottom:3px;}
 </div>
 
 <div id="s09-flashcards" class="tab">
-  <div class="fc-container">
-    <div class="fc-instruction">Cliquez sur la carte pour la retourner</div>
-    <div class="fc-progress"><div class="fc-progress-bar" id="s09-fcBar"></div></div>
-    <div class="fc-card" onclick="flipCard()">
-      <div class="fc-inner" id="s09-fcInner">
-        <div class="fc-face fc-front"><span id="s09-fcQ"></span><span class="fc-hint">Cliquez pour voir la réponse</span></div>
-        <div class="fc-face fc-back"><div class="answer" id="s09-fcA"></div><div id="s09-fcEx"></div></div>
-      </div>
-    </div>
-    <div class="fc-controls">
-      <button class="fc-btn" id="s09-fcPrev" onclick="prevCard()">&#8592; Précédent</button>
-      <span class="fc-counter" id="s09-fcCount"></span>
-      <button class="fc-btn" id="s09-fcNext" onclick="nextCard()">Suivant &#8594;</button>
-    </div>
-  </div>
+  <div id="s09-fc"></div>
 </div>
+    </div>
 
 <div id="s09-quiz" class="tab">
-  <div id="s09-quizContainer"></div>
-  <button class="quiz-btn" id="s09-submitBtn" onclick="submitQuiz()" style="margin:0 auto">Soumettre mes réponses</button>
-  <div id="s09-quizScore" style="display:none"></div>
-  <button class="quiz-btn" id="s09-restartBtn" onclick="restartQuiz()" style="display:none;margin:0 auto">Recommencer</button>
+  <div id="s09-qz"></div>
+
 </div>
 </div>
 <div id="page-s10" class="page-section" style="display:none;">
-<nav>
+<div class="tab-nav">
   <button class="active" onclick="showTab('s10-cours',this)">&#128214; Synthèse</button>
   <button onclick="showTab('s10-flashcards',this)">&#127183; Flashcards</button>
   <button onclick="showTab('s10-quiz',this)">&#9989; Quiz examen</button>
-</nav>
+</div>
 
 <div id="s10-cours" class="tab active">
 
@@ -1452,63 +1379,307 @@ li{margin-bottom:3px;}
 </div>
 
 <div id="s10-flashcards" class="tab">
-  <div class="fc-container">
-    <div class="fc-instruction">Cliquez sur la carte pour la retourner</div>
-    <div class="fc-progress"><div class="fc-progress-bar" id="s10-fcBar"></div></div>
-    <div class="fc-card" onclick="flipCard()">
-      <div class="fc-inner" id="s10-fcInner">
-        <div class="fc-face fc-front"><span id="s10-fcQ"></span><span class="fc-hint">Cliquez pour voir la réponse</span></div>
-        <div class="fc-face fc-back"><div class="answer" id="s10-fcA"></div><div id="s10-fcEx"></div></div>
-      </div>
+  <div id="s10-fc"></div>
+</div>
     </div>
-    <div class="fc-controls">
-      <button class="fc-btn" id="s10-fcPrev" onclick="prevCard()">&#8592; Précédent</button>
-      <span class="fc-counter" id="s10-fcCount"></span>
-      <button class="fc-btn" id="s10-fcNext" onclick="nextCard()">Suivant &#8594;</button>
-    </div>
+
+<div id="s10-quiz" class="tab">
+  <div id="s10-qz"></div>
+
+</div>
+</div>
+
+
+<!-- ===== FICHE RÉCAP ===== -->
+<div id="page-fiche" class="page-section" style="display:none;">
+<h2>📋 Fiche récapitulative — Toutes les constructions</h2>
+<p style="margin-bottom:12px;font-size:9pt;color:#555">Tableau de référence à consulter avant l'examen. Reproduit la structure du <em>DocuNouille</em> du cours.</p>
+
+<h3>Constructions de la clause</h3>
+<div style="overflow-x:auto">
+<table>
+<tr><th>Construction</th><th>Morphologie</th><th>Sujet sémantique</th><th>DI</th><th>Effet</th></tr>
+<tr><td><strong>Canonique active</strong></td><td>GN + GV</td><td>Agent</td><td>GN=TH / GV=RH</td><td>Ordre non marqué</td></tr>
+<tr><td><strong>Passive</strong></td><td>être + PP (+ par X)</td><td>Agi/patient</td><td>Agi/patient=TH</td><td>Taire agent, thématiser agi</td></tr>
+<tr><td><strong>Passive incomplète</strong></td><td>être + PP (sans agent)</td><td>Agi/patient</td><td>Agi/patient=TH</td><td>Désubjectivation, objectivité</td></tr>
+<tr><td><strong>Impersonnelle</strong></td><td>il (réf. vide) + V</td><td>Néant</td><td>Tout=RH</td><td>Objectivité, vérité universelle</td></tr>
+<tr><td><strong>Pronominale réflexive</strong></td><td>pronom réfléchi + V</td><td>Agent et patient</td><td>Variable</td><td>"lui-même"</td></tr>
+<tr><td><strong>Pronominale réciproque</strong></td><td>pronom réfléchi + V (sujet plur.)</td><td>Mutuellement agent/patient</td><td>Variable</td><td>"réciproquement"</td></tr>
+<tr><td><strong>Pronominale passive</strong></td><td>pronom réfléchi + V</td><td>Patient (agent effacé)</td><td>Sujet=TH</td><td>Agent totalement effacé</td></tr>
+<tr><td><strong>Pronominale neutre</strong></td><td>pronom réfléchi + V</td><td>Siège</td><td>Variable</td><td>Ni agent ni patient clairement</td></tr>
+<tr><td><strong>Inversée</strong></td><td>X + V + GN sujet</td><td>Agent (verbe monovalent)</td><td>GN sujet=RH</td><td>Rhématiser le sujet</td></tr>
+<tr><td><strong>Clivée</strong></td><td>C'est [RH] qui/que [TH]</td><td>—</td><td>Extraction du RH</td><td>Focalisation contrastive</td></tr>
+<tr><td><strong>Pseudo-clivée</strong></td><td>Ce qui/que [TH], c'est [RH]</td><td>—</td><td>Relative=TH / c'est=RH</td><td>Thématisation + focalisation</td></tr>
+</table>
+</div>
+
+<h3 style="margin-top:16px">Clauses atypiques</h3>
+<div style="overflow-x:auto">
+<table>
+<tr><th>Type</th><th>Morphologie</th><th>DI</th><th>Sémantique</th><th>Effets</th></tr>
+<tr><td><strong>CA attributive (2 termes)</strong></td><td>SN sans être</td><td>RH+TH ou TH+RH</td><td>Support←propriété</td><td>Titre, proverbe, généralité, expressivité</td></tr>
+<tr><td><strong>CA attributive (1 terme)</strong></td><td>Propriété seule</td><td>RH (TH en cotexte)</td><td>Propriété activée</td><td>Endophasie, exclamation</td></tr>
+<tr><td><strong>CA existentielle</strong></td><td>SN seul (1 terme)</td><td>RH</td><td>Existence comme événement</td><td>Surgissement, présence</td></tr>
+<tr><td><strong>CA thétique</strong></td><td>SN seul (1 terme)</td><td>TH</td><td>Pose un objet de discours</td><td>Base de dislocation, émotion</td></tr>
+<tr><td><strong>Clause infinitive exclamative</strong></td><td>Vinf seul</td><td>RH</td><td>Procès virtuel, étonnement</td><td>"Faire rire avec les idées innées!"</td></tr>
+<tr><td><strong>Clause infinitive délibérative</strong></td><td>Vinf seul / Interrog.</td><td>RH</td><td>Question à soi-même</td><td>"Où fuir? Qui voir?"</td></tr>
+<tr><td><strong>Clause infinitive instructionnelle</strong></td><td>Vinf seul</td><td>RH</td><td>Consigne, mode d'emploi</td><td>"Ne pas se pencher."</td></tr>
+<tr><td><strong>Clause à présentatif</strong></td><td>c'est/voici/voilà/il y a + GN</td><td>RH</td><td>Référence déictique</td><td>Point de vue, entrée en scène</td></tr>
+</table>
+</div>
+
+<h3 style="margin-top:16px">Extensions du GN et constructions détachées</h3>
+<div style="overflow-x:auto">
+<table>
+<tr><th>Type</th><th>Gradable</th><th>Position</th><th>Nature sémantique</th></tr>
+<tr><td><strong>Adj. qualificatif</strong></td><td>Oui (très/peu)</td><td>Avant ou après</td><td>Propriété gradable (ante=subjective, post=objective)</td></tr>
+<tr><td><strong>Adj. relationnel</strong></td><td>Non</td><td>Toujours après</td><td>Relation à une catégorie (dérivé d'un N)</td></tr>
+<tr><td><strong>Adj. modal (3e type)</strong></td><td>Non</td><td>Toujours avant</td><td>Modalise le rapport à la classe</td></tr>
+<tr><td><strong>Épithète liée</strong></td><td>Variable</td><td>Variable</td><td>Intégrée au GN, restrictive ou descriptive</td></tr>
+<tr><td><strong>Construction détachée (CD)</strong></td><td>Variable</td><td>Mobile (3 positions)</td><td>Externe, prédicative, à l'arrière-plan</td></tr>
+<tr><td><strong>Relative déterminative</strong></td><td>—</td><td>Post-N, sans virgule</td><td>Restrictive: restreint la référence du N</td></tr>
+<tr><td><strong>Relative explicative</strong></td><td>—</td><td>Post-N, avec virgules</td><td>Descriptive: info sur référent identifié</td></tr>
+</table>
+</div>
+
+<h3 style="margin-top:16px">Constructions pluriclausales</h3>
+<div style="overflow-x:auto">
+<table>
+<tr><th>Structure</th><th>Type</th><th>DI</th><th>Effets</th></tr>
+<tr><td><strong>Dislocation gauche</strong></td><td>CA thétique → clause prédicative (pronom)</td><td>TH → RH</td><td>Thématisation, anticipation, ergonomie</td></tr>
+<tr><td><strong>Dislocation droite</strong></td><td>Clause prédicative (pronom) → CA thétique</td><td>RH → TH (rappel)</td><td>Emphase, rappel du référent</td></tr>
+<tr><td><strong>Tour équatif</strong></td><td>CA thétique + c'est Z</td><td>TH → RH fort</td><td>Attente, spécification, publicité</td></tr>
+<tr><td><strong>Subordination</strong></td><td>Clause enchâssée (rectionnelle)</td><td>Variable</td><td>Hiérarchie, complexité</td></tr>
+<tr><td><strong>Insertion parenthétique</strong></td><td>Structure intercalée (tirets/virgules)</td><td>Variable</td><td>Digression, précision secondaire</td></tr>
+</table>
+</div>
+
+<h3 style="margin-top:16px">Rôles actanciels</h3>
+<div style="overflow-x:auto">
+<table>
+<tr><th>Rôle</th><th>Définition</th><th>Exemple</th></tr>
+<tr><td><strong>Agent</strong></td><td>Animé instigateur du procès</td><td>"Gustave a publié son livre."</td></tr>
+<tr><td><strong>Patient / Objet</strong></td><td>Entité sur laquelle s'exerce le procès</td><td>"Il rature son roman."</td></tr>
+<tr><td><strong>Résultatif</strong></td><td>Entité produite par le procès</td><td>"a écrit des chefs-d'œuvre"</td></tr>
+<tr><td><strong>Bénéficiaire</strong></td><td>Animé affecté positivement/négativement</td><td>"donne un sou au mendiant"</td></tr>
+<tr><td><strong>Siège</strong></td><td>Entité où se manifeste un état</td><td>"Gustave jubile."</td></tr>
+<tr><td><strong>Instrument</strong></td><td>Moyen du procès</td><td>"écrire à la plume"</td></tr>
+<tr><td><strong>Lieu</strong></td><td>Repère spatial du procès</td><td>"la malle renfermait ses manuscrits"</td></tr>
+<tr><td><strong>Source</strong></td><td>Origine du procès ou du mouvement</td><td>"il sort de la maison"</td></tr>
+<tr><td><strong>Expérienceur</strong></td><td>Animé qui ressent un état psychologique</td><td>"Cette musique me plaît."</td></tr>
+</table>
+</div>
+</div>
+
+<!-- ===== TESTS CORRIGÉS ===== -->
+<div id="page-tests" class="page-section" style="display:none;">
+<h2>📝 Tests corrigés</h2>
+<p style="font-size:9pt;color:#555;margin-bottom:14px">Extraits des vrais tests de l'enseignement avec corrections complètes. Entraîne-toi à répondre avant de lire la correction.</p>
+
+<div class="tab-nav">
+  <button class="active" onclick="showTab('test-pleur',this)">Test blanc — Pleur (Phonologie/Morphologie)</button>
+  <button onclick="showTab('test-dec22',this)">Décembre 2022 (Syntaxe)</button>
+</div>
+
+<div id="test-pleur" class="tab active">
+<h3>Test blanc — Jehan Rictus, <em>Le Revenant</em>, 1903</h3>
+<div class="def-box" style="margin-bottom:14px">
+<strong>Texte :</strong><br>
+<em>– Pleur' ! Pleure encor, pleur' tout's tes r'ssources<br>
+(comm' pleur' le glas qui n' peut payer<br>
+Son enterr'ment ou son loyer).<br>
+Qu' tes trous à voir d'vienn'nt deux gross's sources<br>
+Et qu' l'Univers en soy' noyé !</em>
+</div>
+
+<div class="accordion">
+  <div class="acc-header" onclick="toggleAcc(this)">(a.) Rétablissez la version orthographique des trois premières lignes <span class="arrow">▼</span></div>
+  <div class="acc-body">
+    <p><strong>Version standard :</strong><br>
+    <em>Pleure ! Pleure encore, pleure toutes tes ressources<br>
+    (comme pleure le glas qui ne peut payer<br>
+    Son enterrement ou son loyer).</em></p>
+    <p><strong>Méthode :</strong> Les apostrophes remplacent les /e/ caducs tombés. On restitue simplement chaque /e/ là où l'apostrophe indique sa chute.</p>
   </div>
 </div>
 
-<div id="s10-quiz" class="tab">
-  <div id="s10-quizContainer"></div>
-  <button class="quiz-btn" id="s10-submitBtn" onclick="submitQuiz()" style="margin:0 auto">Soumettre mes réponses</button>
-  <div id="s10-quizScore" style="display:none"></div>
-  <button class="quiz-btn" id="s10-restartBtn" onclick="restartQuiz()" style="display:none;margin:0 auto">Recommencer</button>
+<div class="accordion">
+  <div class="acc-header" onclick="toggleAcc(this)">(b.) Transcription API — version standard vs version originale <span class="arrow">▼</span></div>
+  <div class="acc-body">
+    <p><strong>Version orthographique (français standard) :</strong></p>
+    <p style="font-family:monospace;font-size:9.5pt">[plœʁ | plœʁ ɑ̃kɔʁ | plœʁ tut tɛ ʁəsuʁs | kɔm plœʁ lə ɡlɑ ki nə pø pɛje | sɔ̃ ɑ̃tɛʁəmɑ̃ u sɔ̃ lwaje]</p>
+    <p><strong>Version originale du poème (avec chutes de /e/) :</strong></p>
+    <p style="font-family:monospace;font-size:9.5pt">[plœʁ | plœʁ ɑ̃kɔʁ | plœʁ tut tɛ ʁ(ə)suʁs | kɔm plœʁ lə ɡlɑ ki n(ə) pø pɛje | sɔ̃ ɑ̃tɛʁ(ə)mɑ̃ u sɔ̃ lwaje]</p>
+    <div class="ex-box">Les parenthèses signalent les /e/ caducs qui tombent dans la version originale.</div>
+  </div>
+</div>
+
+<div class="accordion">
+  <div class="acc-header" onclick="toggleAcc(this)">(c.) Ce qui caractérise la graphie du poème <span class="arrow">▼</span></div>
+  <div class="acc-body">
+    <p>La plupart des /e/ (e caduc) sont <strong>remplacés par une apostrophe</strong> qui indique leur chute à l'oral.</p>
+    <p><strong>Trois exceptions</strong> — le /e/ est <em>maintenu</em> (orthographique) quand :</p>
+    <ol>
+      <li>Il se trouve en <strong>fin de vers</strong> (non réalisable phonétiquement — le /e/ étant instable, il ne peut pas recevoir l'accent de fin de vers).</li>
+      <li>Il précède une voyelle : <em>Pleure encor</em> (le /e/ de "Pleure" est suivi du /ɑ̃/ de "encor" — liaison/élision).</li>
+      <li>Sa chute entraînerait un groupe consonantique impossible : <em>le glas</em> (*/ʁlgl/ = 4 consonnes — imprononçable).</li>
+    </ol>
+    <div class="def-box"><strong>En résumé :</strong> le graphème /e/ est maintenu là où sa réalisation est <em>impossible</em>; il est remplacé par une apostrophe là où sa chute est <em>facultative</em>.</div>
+  </div>
+</div>
+
+<div class="accordion">
+  <div class="acc-header" onclick="toggleAcc(this)">(d.) Effets du procédé graphique <span class="arrow">▼</span></div>
+  <div class="acc-body">
+    <p>Les apostrophes imposent une <strong>diction particulière</strong> : en remplaçant les e caducs facultatifs, Rictus utilise le procédé ordinaire de l'élision pour établir des vers de <strong>8 syllabes</strong> là où la diction ordinaire produirait des vers irréguliers.</p>
+    <p>Cette graphie <strong>non-standard</strong> et la prononciation qui en découle proposent une <strong>poésie populaire</strong> : la chute systématique des e caducs passe, au début du XX<sup>e</sup> siècle, pour caractéristique de l'oralité des classes populaires parisiennes.</p>
+    <div class="def-box"><strong>Double effet :</strong> (1) Régularité métrique (8 syllabes). (2) Représentation d'un sociolecte populaire — graphie comme marqueur socioculturel.</div>
+  </div>
+</div>
+
+<hr style="margin:20px 0;border:none;border-top:1px solid #d8d3c8">
+
+<h3>Question 2 — Lexèmes : démocratique, démocrature, invalidation</h3>
+<div class="ex-box" style="margin-bottom:12px">« À la différence des totalitarismes ou des tyrannies classiques, la démocrature n'attaque pas de front l'idéal démocratique. Formellement, ce type de régime se légitime par la tenue d'élections ; mais celles-ci sont contrôlées à chaque étape de leur déroulement. En amont, par l'<strong>invalidation</strong>, voire par l'emprisonnement, des candidats hostiles au régime qui risqueraient d'être élus. »</div>
+
+<div class="accordion">
+  <div class="acc-header" onclick="toggleAcc(this)">Analyse de « démocratique » <span class="arrow">▼</span></div>
+  <div class="acc-body">
+    <p><strong>Construction</strong> : dérivation + composition.</p>
+    <ul>
+      <li><strong>Dérivation</strong> : base <em>démocrat-</em> + suffixe <em>-ique</em> (forme un adjectif à partir d'un nom, sens "relatif à"). Commutation : sociolog<em>ique</em>, géograph<em>ique</em> — même sens.</li>
+      <li><strong>Composition savante</strong> : <em>démo-</em> (peuple, cf. démographe) + <em>-crat-</em> (pouvoir, cf. aristocratie). Bases liées issues du grec → composition savante.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="accordion">
+  <div class="acc-header" onclick="toggleAcc(this)">Analyse de « démocrature » <span class="arrow">▼</span></div>
+  <div class="acc-body">
+    <p><strong>Construction</strong> : mot-valise.</p>
+    <ul>
+      <li>Formé par l'association de <em>démocratie</em> et <em>dictature</em>.</li>
+      <li><strong>Apocope</strong> de <em>démocratie</em> + <strong>aphérèse</strong> de <em>dictature</em>.</li>
+      <li>Tronçon commun : /d/ initial et séquence /at/.</li>
+      <li><strong>Sens</strong> : combinaison des deux signifiés — régime hybride entre démocratie (élections) et dictature (contrôle, totalitarisme).</li>
+    </ul>
+    <div class="def-box">Le mot-valise joue sur la <em>superposition</em> : les deux lexèmes sont tronqués et partagent un segment commun. L'effet est l'oxymore grammaticalisé : une démocratie qui est aussi une dictature.</div>
+  </div>
+</div>
+
+<div class="accordion">
+  <div class="acc-header" onclick="toggleAcc(this)">Analyse de « invalidation » <span class="arrow">▼</span></div>
+  <div class="acc-body">
+    <p><strong>Construction</strong> : dérivation triple (radical + suffixe + préfixe).</p>
+    <ul>
+      <li>Radical <em>valid-</em> (valable, cf. validation/invalidation = paire minimale morphologique).</li>
+      <li>Suffixe <em>-ation</em> : forme un nom de processus à partir d'une base verbale (valid-ation, programm-ation).</li>
+      <li>Préfixe <em>in-</em> : inversion de ce qui est dénoté par la base (in- de <em>invisibilisation</em> = même sens).</li>
+    </ul>
+    <p><strong>Sens</strong> : processus d'inversion de la validation = le processus par lequel on déclare non valide.</p>
+  </div>
+</div>
+
+<div class="accordion">
+  <div class="acc-header" onclick="toggleAcc(this)">Champ sémantique dominant + intérêt de « démocrature » <span class="arrow">▼</span></div>
+  <div class="acc-body">
+    <p><strong>Champ sémantique dominant :</strong> le <strong>politique</strong>.</p>
+    <p>Lexèmes du texte : <em>totalitarisme, tyrannie, démocrature, démocratique, régime, élections, candidats, élire, vote, voix, dépouillement, parti-État, urnes, électoral, juges, pouvoir...</em></p>
+    <hr style="margin:10px 0;border:none;border-top:1px dashed #ccc">
+    <p><strong>Intérêt de « démocrature » dans ce contexte :</strong></p>
+    <p>Néologisme désignant un système politique <em>nouveau</em>, dont le caractère <strong>monstrueux sur le plan conceptuel</strong> (une démocratie d'apparence n'en est pas une) est mis en évidence par la formation du mot à partir de deux termes <strong>quasi-antonymiques</strong>. L'oxymore lexicalisé crée un effet de paradoxe immédiatement lisible.</p>
+  </div>
 </div>
 </div>
+
+<div id="test-dec22" class="tab">
+<h3>Test décembre 2022 — Extraits analysés</h3>
+<div class="ex-box" style="margin-bottom:14px">Texte 1 : <em>« Je suis tranquille sur le sort de la littérature française. Cent millions d'hommes parlent notre langue avec nous. Des mauvaises feuilles, ça s'en va. »</em> (d'après Flaubert, Correspondance)<br><br>
+Texte 2 : <em>« Les mauvaises gens sont comme les mauvaises herbes, qui ne se lassent pas de croître. »</em><br><br>
+Texte 3 : <em>« C'était une de ces belles nuits d'été, transparente et douce. »</em></div>
+
+<div class="accordion">
+  <div class="acc-header" onclick="toggleAcc(this)">Analyse de « Ça s'en va » — construction pronominale <span class="arrow">▼</span></div>
+  <div class="acc-body">
+    <p><strong>Construction :</strong> pronominale (passif pronominal).</p>
+    <ul>
+      <li><strong>Morphologie :</strong> pronom réfléchi <em>s'</em> (= se) + verbe <em>aller</em>. Le pronom est coréférent au sujet (<em>Des mauvaises feuilles</em>).</li>
+      <li><strong>Sémantique :</strong> sujet = patient/agi. L'agent (qui fait partir les feuilles ?) est totalement effacé. Sens : on les fait partir.</li>
+      <li><strong>DI :</strong> <em>Des mauvaises feuilles</em> = TH (sujet rhématisé par la construction). <em>S'en va</em> = RH.</li>
+      <li><strong>Effet :</strong> désubjectivation totale — aucun responsable nommé. Impression de processus naturel et inévitable.</li>
+    </ul>
+    <div class="warn-box"><strong>Distinguer</strong> de <em>s'en aller</em> verbe essentiellement pronominal? Non — <em>aller</em> existe sans pronom. C'est une construction pronominale à sens passif.</div>
+  </div>
+</div>
+
+<div class="accordion">
+  <div class="acc-header" onclick="toggleAcc(this)">Analyse de « mauvaises » — position et effet <span class="arrow">▼</span></div>
+  <div class="acc-body">
+    <p><strong>« mauvaises feuilles »</strong> (Texte 1) vs <strong>« mauvaises herbes »</strong> (Texte 2) :</p>
+    <p>L'adjectif <em>mauvais</em> est <strong>antéposé</strong> (avant le nom) dans les deux cas.</p>
+    <ul>
+      <li><strong>Type :</strong> adjectif qualificatif (gradable : très mauvais).</li>
+      <li><strong>Position antéposée :</strong> saisie synthétique — la propriété est présentée comme <em>inhérente</em>, évaluative, subjective. N + adj = sous-catégorie.</li>
+      <li><strong>Effet :</strong> "mauvaises herbes" = sous-classe d'herbes, mauvaises par nature (pas seulement des herbes qui seraient mauvaises par accident). La qualification est axiologique (jugement de valeur).</li>
+    </ul>
+    <div class="def-box"><strong>Contraste :</strong> <em>une herbe mauvaise</em> (postposée) = propriété contingente, descriptive. <em>une mauvaise herbe</em> (antéposée) = propriété inhérente, catégorielle.</div>
+  </div>
+</div>
+
+<div class="accordion">
+  <div class="acc-header" onclick="toggleAcc(this)">Analyse de « C'était une de ces belles nuits d'été, transparente et douce » — clause et CD <span class="arrow">▼</span></div>
+  <div class="acc-body">
+    <p><strong>Clause principale :</strong> <em>C'était une de ces belles nuits d'été</em></p>
+    <ul>
+      <li><strong>Type :</strong> clause à présentatif (<em>c'était</em> = c'est au passé).</li>
+      <li><strong>Sujet :</strong> <em>c'</em> = pronom déictique. <em>une de ces belles nuits d'été</em> = GN rhème (information nouvelle).</li>
+      <li><strong>DI :</strong> tout = RH (présentation de scène, point de vue narrateur).</li>
+    </ul>
+    <p><strong>Construction détachée :</strong> <em>transparente et douce</em></p>
+    <ul>
+      <li><strong>Type :</strong> CD adjectivale (adjectifs qualificatifs coordonnés).</li>
+      <li><strong>Contrôleur :</strong> <em>de ces belles nuits d'été</em> (accord féminin pluriel).</li>
+      <li><strong>Position :</strong> postposée (après la clause principale) → effet de <em>conséquence</em> ou ajout descriptif secondaire.</li>
+      <li><strong>Effet :</strong> à l'arrière-plan informationnel (présupposée, non assertée). Crée une atmosphère en ajout.</li>
+    </ul>
+    <div class="ex-box">La CD est prédicativement séparée de la clause principale par une virgule et s'accorde avec son contrôleur nominal.</div>
+  </div>
+</div>
+</div>
+</div>
+<!-- END TESTS -->
 
   </div>
 </div>
 
 <nav class="mob-nav">
+  <button class="mob-nav-btn" onclick="showPage('accueil', null, this)">🏠</button>
   <button class="mob-nav-btn mob-active" onclick="showPage('s01', null, this)">01</button>
-<button class="mob-nav-btn" onclick="showPage('s02', null, this)">02</button>
-<button class="mob-nav-btn" onclick="showPage('s03', null, this)">03</button>
-<button class="mob-nav-btn" onclick="showPage('s04', null, this)">04</button>
-<button class="mob-nav-btn" onclick="showPage('s05', null, this)">05</button>
-<button class="mob-nav-btn" onclick="showPage('s06', null, this)">06</button>
-<button class="mob-nav-btn" onclick="showPage('s07', null, this)">07</button>
-<button class="mob-nav-btn" onclick="showPage('s08', null, this)">08</button>
-<button class="mob-nav-btn" onclick="showPage('s09', null, this)">09</button>
-<button class="mob-nav-btn" onclick="showPage('s10', null, this)">10</button>
-
+  <button class="mob-nav-btn" onclick="showPage('s02', null, this)">02</button>
+  <button class="mob-nav-btn" onclick="showPage('s03', null, this)">03</button>
+  <button class="mob-nav-btn" onclick="showPage('s04', null, this)">04</button>
+  <button class="mob-nav-btn" onclick="showPage('s05', null, this)">05</button>
+  <button class="mob-nav-btn" onclick="showPage('s06', null, this)">06</button>
+  <button class="mob-nav-btn" onclick="showPage('s07', null, this)">07</button>
+  <button class="mob-nav-btn" onclick="showPage('s08', null, this)">08</button>
+  <button class="mob-nav-btn" onclick="showPage('s09', null, this)">09</button>
+  <button class="mob-nav-btn" onclick="showPage('s10', null, this)">10</button>
+  <button class="mob-nav-btn" onclick="showPage('fiche', null, this)">📋</button>
+  <button class="mob-nav-btn" onclick="showPage('tests', null, this)">📝</button>
 </nav>
+
+</div>
 
 <script>
 
 function showPage(id, btn, mobBtn) {
   document.querySelectorAll('.page-section').forEach(function(s){ s.style.display='none'; });
   var el = document.getElementById('page-'+id);
-  if(el){ el.style.display='block'; }
+  if(el) el.style.display='block';
   document.querySelectorAll('.nav-btn').forEach(function(b){ b.classList.remove('nav-active'); });
   if(btn) btn.classList.add('nav-active');
-  var idx = parseInt(id.replace('s',''))-1;
-  var sidebtns = document.querySelectorAll('.nav-btn');
-  if(sidebtns[idx]) sidebtns[idx].classList.add('nav-active');
   document.querySelectorAll('.mob-nav-btn').forEach(function(b){ b.classList.remove('mob-active'); });
   if(mobBtn) mobBtn.classList.add('mob-active');
-  var mobbtns = document.querySelectorAll('.mob-nav-btn');
-  if(mobbtns[idx]) mobbtns[idx].classList.add('mob-active');
   var ca = document.querySelector('.content-area');
   if(ca) ca.scrollTo(0,0);
   window.scrollTo(0,0);
@@ -1517,58 +1688,252 @@ function showPage(id, btn, mobBtn) {
 function showTab(id, btn) {
   var page = btn.closest('.page-section');
   if(!page) return;
-  page.querySelectorAll('.tab-content').forEach(function(t){ t.style.display='none'; });
+  page.querySelectorAll('.tab').forEach(function(t){ t.classList.remove('active'); });
   var el = document.getElementById(id);
-  if(el) el.style.display='block';
-  page.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  if(el) el.classList.add('active');
+  btn.closest('.tab-nav').querySelectorAll('button').forEach(function(b){ b.classList.remove('active'); });
   btn.classList.add('active');
 }
 
 function toggleAcc(h) {
   var body = h.nextElementSibling;
   body.classList.toggle('open');
-  var arrow = h.querySelector('.acc-arrow');
+  var arrow = h.querySelector('.arrow');
   if(arrow) arrow.textContent = body.classList.contains('open') ? '\u25b2' : '\u25bc';
 }
 
-function flipCard(el) {
-  el.querySelector('.fc-inner').classList.toggle('flipped');
-}
-
 function checkQuiz(btn) {
-  var quizBlock = btn.previousElementSibling;
-  var opts = quizBlock.querySelectorAll('.quiz-option');
+  var q = btn.closest('.quiz-question');
+  var opts = q.querySelectorAll('.quiz-option');
   var answered = false;
-  opts.forEach(function(opt){
-    var inp = opt.querySelector('input');
-    if(inp && inp.checked){ answered = true; }
-  });
+  opts.forEach(function(opt){ if(opt.querySelector('input').checked) answered=true; });
   if(!answered){ alert('Choisissez une r\u00e9ponse.'); return; }
   opts.forEach(function(opt){
     var inp = opt.querySelector('input');
-    if(!inp) return;
-    if(opt.dataset.correct==='1'){ opt.classList.add('reveal-correct'); }
-    if(inp.checked && opt.dataset.correct!=='1'){ opt.classList.add('incorrect'); }
+    if(opt.dataset.correct==='1') opt.classList.add('reveal-correct');
+    if(inp.checked && opt.dataset.correct!=='1') opt.classList.add('incorrect');
   });
-  var fb = btn.nextElementSibling;
+  var fb = q.querySelector('.quiz-feedback');
   if(fb) fb.style.display='block';
   btn.disabled=true;
 }
 
-function scoreQuiz(btn) {
-  var section = btn.closest('.tab-content');
-  var questions = section.querySelectorAll('.quiz-question');
-  var score = 0;
-  questions.forEach(function(q){
-    var opts = q.querySelectorAll('.quiz-option');
-    opts.forEach(function(opt){
-      var inp = opt.querySelector('input');
-      if(inp && inp.checked && opt.dataset.correct==='1'){ score++; }
-    });
+function buildFC(sid, cards) {
+  var c=document.getElementById(sid+'-fc');
+  if(!c) return;
+  var html='<div class="fc-grid">';
+  cards.forEach(function(card){
+    html+='<div class="fc-card" onclick="this.querySelector(\'.fc-inner\').classList.toggle(\'flipped\')">'
+      +'<div class="fc-inner">'
+      +'<div class="fc-front">'+card[0]+'<span class="fc-hint">Cliquer pour retourner</span></div>'
+      +'<div class="fc-back">'+card[1]+'</div>'
+      +'</div></div>';
   });
-  var el = btn.nextElementSibling;
-  if(el){ el.textContent='Score\u00a0: '+score+'\u00a0/\u00a0'+questions.length; el.style.display='block'; }
+  c.innerHTML=html+'</div>';
 }
+
+function buildQuiz(sid, questions) {
+  var c=document.getElementById(sid+'-qz');
+  if(!c) return;
+  var gid=0;
+  var html='';
+  questions.forEach(function(q){
+    gid++;
+    html+='<div class="quiz-question"><div class="quiz-q-text">'+q.q+'</div>';
+    q.opts.forEach(function(opt,i){
+      html+='<label class="quiz-option" data-correct="'+(i===q.c?'1':'0')+'">'
+        +'<input type="radio" name="'+sid+'_q'+gid+'"> '+opt+'</label>';
+    });
+    html+='<button class="quiz-check-btn" onclick="checkQuiz(this)">V\u00e9rifier</button>'
+      +'<div class="quiz-feedback">'+q.f+'</div></div>';
+  });
+  c.innerHTML=html;
+}
+
+var FC={
+s01:[
+['Signifiant vs Signifi\u00e9','Signifiant = face perceptible (sons). Signifi\u00e9 = face conceptuelle (sens). Ensemble = signe.'],
+['Arbitraire du signe','Aucune ressemblance naturelle entre forme et sens. "Arbre" ne ressemble pas \u00e0 un arbre.'],
+['Double articulation','1\u00e8re articulation: morph\u00e8mes (unit\u00e9s de sens). 2\u00e8me: phon\u00e8mes (unit\u00e9s distinctives sans sens).'],
+['4 niveaux d\'analyse','(1) Phonologique \u2192 phon\u00e8me. (2) Morphologique \u2192 morph\u00e8me. (3) Syntaxique \u2192 syntagme. (4) Clausal \u2192 clause.'],
+['Test de commutation','Substituer un \u00e9l\u00e9ment: si la diff\u00e9rence est significative, ce sont deux unit\u00e9s distinctes.'],
+['Clause vs phrase','Clause = unit\u00e9 maximale de la syntaxe. Phrase = unit\u00e9 textuelle graphique (majuscule \u2192 point).'],
+['Descriptif vs prescriptif','Le linguiste d\u00e9crit la langue telle qu\'elle est, sans dicter ce qui est "correct".'],
+['Langue vs parole','Langue = institution collective (le syst\u00e8me partag\u00e9). Parole = r\u00e9alisation individuelle.']
+],
+s02:[
+['Phon\u00e8me','Unit\u00e9 sonore distinctive sans sens propre. /p/ vs /b/ \u2192 peau \u2260 beau.'],
+['Paire minimale','Deux mots ne diff\u00e9rant que d\'un seul phon\u00e8me. Ex: chat/mat, p\u00e8re/m\u00e8re.'],
+['[ ] vs / /','[ ] = transcription phon\u00e9tique (sons r\u00e9els produits). / / = transcription phonologique (phon\u00e8mes abstraits).'],
+['e caduc /\u0259/','Voyelle instable qui peut tomber en d\u00e9bit rapide. "je te le donne" \u2192 /\u0292t\u0259ldon/.'],
+['Graph\u00e8me','Unit\u00e9 minimale du syst\u00e8me d\'\u00e9criture. Peut correspondre \u00e0 1 ou plusieurs lettres (ch = /\u0283/).'],
+['Phonographie vs s\u00e9miographie','Phonographique = repr\u00e9sente des sons. S\u00e9miographique = repr\u00e9sente du sens directement (& = et).'],
+['Voyelles orales ferm\u00e9es','Ant\u00e9rieures: /i/ (vie), /y/ (lune), /e/ (f\u00e9e), /\u00f8/ (feu). Post\u00e9rieure: /u/ (loup), /o/ (beau).'],
+['Consonnes occlusives','/p, b/ (bilabiales), /t, d/ (dentales), /k, g/ (v\u00e9laires). Arr\u00eat complet puis explosion.']
+],
+s03:[
+['Morph\u00e8me','Unit\u00e9 minimale de sens. Identifi\u00e9 par commutation. "d\u00e9composable" \u2192 d\u00e9- + compos- + -able.'],
+['Allomorphie','Variantes d\'expression d\'un m\u00eame morph\u00e8me: in-/il-/im-. (incomplet, ill\u00e9gal, immotiv\u00e9).'],
+['Morph\u00e8me lexical libre','Peut fonctionner seul comme mot: arbre, chat, rouge, vite.'],
+['Morph\u00e8me lexical li\u00e9','Toujours attach\u00e9 \u00e0 autre chose: d\u00e9-, re-, -tion, -able, -it\u00e9.'],
+['Morph\u00e8me grammatical libre','Mot grammatical ind\u00e9pendant: le, de, et, si, qui, par.'],
+['Morph\u00e8me grammatical li\u00e9','Marques flexionnelles: -s (pluriel), -ait (imparfait), -\u00e9 (participe pass\u00e9).'],
+['D\u00e9rivation','Formation par ajout d\'affixes: -it\u00e9, -ique, -ation, d\u00e9-, re-. Ex: valid-ation, in-valid-ation.'],
+['Composition savante','Bases li\u00e9es gr\u00e9co-latines: d\u00e9mo-+crat-ie, photo-+graph-ie. Mot-valise: d\u00e9mocrature = d\u00e9mocratie + dictature.']
+],
+s04:[
+['Syntagme','S\u00e9quence de lex\u00e8mes formant une unit\u00e9, identifi\u00e9e par son mot-t\u00eate, dans la hi\u00e9rarchie de la clause.'],
+['5 types de syntagmes','GN (nom), GV (verbe), GAdj (adjectif), GAdv (adverbe), GPr\u00e9p (pr\u00e9position).'],
+['Valence verbale','Nombre d\'actants requis par un verbe. Avalent (0), monovalent (1), divalent (2), trivalent (3).'],
+['Actants vs circonstants','Actants = requis par la valence. Circonstants = optionnels, d\u00e9pla\u00e7ables, port\u00e9e sur toute la clause.'],
+['R\u00f4le: Agent','Anim\u00e9 instigateur du proc\u00e8s. "Gustave a publi\u00e9 son livre."'],
+['R\u00f4le: Patient/Objet','Entit\u00e9 sur laquelle s\'exerce le proc\u00e8s. "Il rature son roman."'],
+['R\u00f4le: Si\u00e8ge','Entit\u00e9 o\u00f9 se manifeste un \u00e9tat. "Gustave jubile." "La malle renfermait..."'],
+['R\u00f4le: B\u00e9n\u00e9ficiaire','Anim\u00e9 affect\u00e9 par le proc\u00e8s. "donne un sou au mendiant." R\u00f4le: R\u00e9sultatif = entit\u00e9 cr\u00e9\u00e9e par le proc\u00e8s.']
+],
+s05:[
+['Th\u00e8me (TH)','Information donn\u00e9e, point de d\u00e9part, ce dont on parle. Souvent d\u00e9j\u00e0 activ\u00e9 en m\u00e9moire.'],
+['Rh\u00e8me (RH)','Apport d\'information nouvelle, but du mouvement informationnel. Souvent en fin de clause.'],
+['Test de la n\u00e9gation','Ce qui \u00e9chappe \u00e0 la n\u00e9gation = TH. "Gustave ne rapporte PAS les livres" \u2192 Gustave = TH.'],
+['Clause invers\u00e9e','Sujet post-verbal. Verbe monovalent requis. Sujet = RH. "Sur l\'horizon brillait une \u00e9toile."'],
+['Clause cliv\u00e9e','C\'est [RH] qui/que [TH]. "C\'est Gustave qui apporte les livres." (RH = Gustave)'],
+['Clause pseudo-cliv\u00e9e','Ce qui/que [TH], c\'est [RH]. "Ce que Gustave apporte, c\'est les livres."'],
+['Cliv\u00e9e vs pr\u00e9sentatif+rel.','Cliv\u00e9e: extrait un RH (r\u00e9ponse \u00e0 une question). Pr\u00e9sentatif: "C\'\u00e9taient des lanternes que portaient des paysans" \u2014 pointe une entit\u00e9 nouvelle.'],
+['DI en canonique','GN sujet = TH, GV pr\u00e9dicat = RH. L\'information cro\u00eet vers la droite dans le rh\u00e8me.']
+],
+s06:[
+['Passif','\u00eatre + PP. Sujet syntaxique = agi/patient. Agent optionnel (par X). Agi/patient devient TH.'],
+['Passif incomplet','Passif sans compl\u00e9ment d\'agent. Effet: d\u00e9subjectivation, objectivit\u00e9, neutralit\u00e9.'],
+['Test de gradation','Tr\u00e8s + PP \u2192 adjectif (\u00e9tat statique). Sans "tr\u00e8s" possible \u2192 passif (proc\u00e8s). "Les carottes sont tr\u00e8s cuites" (adj) vs "La fuite est permise" (passif).'],
+['Construction impersonnelle','il (r\u00e9f. vide) + V. Pas de th\u00e8me. Toute la clause = RH. Effet: objectivit\u00e9, v\u00e9rit\u00e9 universelle.'],
+['Pronominal r\u00e9flexif','S = agent ET patient. "Il s\'encourage lui-m\u00eame." Test: ajouter "lui-m\u00eame".'],
+['Pronominal r\u00e9ciproque','Sujet pluriel, mutuellement agent et patient. "Ils se ha\u00efssent r\u00e9ciproquement."'],
+['Pronominal passif','Agent totalement effac\u00e9. "Les fraises se mangent au printemps." \u2248 On mange des fraises.'],
+['Essentiellement pronominal','N\'existe pas sans pronom r\u00e9fl\u00e9chi: s\'\u00e9vanouir, se souvenir, s\'abstenir. PAS une construction modifi\u00e9e.']
+],
+s07:[
+['Clause averbale (CA)','Clause sans verbe. S\u00e9mantique limit\u00e9e \u00e0 ce que peut signifier \u00eatre (attributif, existentiel).'],
+['CA attributive binaire','2 termes: support + propri\u00e9t\u00e9. "Super bonne, ta citronnade!" / "Stationnement interdit."'],
+['CA attributive unaire','1 seul terme (propri\u00e9t\u00e9). TH dans cotexte/situation. "D\u00e9licieux!" "Quel g\u00e2chis!"'],
+['CA existentielle','1 terme = RH. Pr\u00e9die l\'existence comme \u00e9v\u00e9nement. "Tiens, un revenant!" "Ciel, mon mari!"'],
+['CA th\u00e9tique','1 terme = TH. Pose un objet de discours sans rien en dire. "\u00d4 ma cassette!"'],
+['Clause infinitive','Verbe \u00e0 l\'infinitif. Proc\u00e8s non actualis\u00e9 (virtuel). Types: exclamative, d\u00e9lib\u00e9rative, instructionnelle.'],
+['Clause \u00e0 pr\u00e9sentatif','c\'est / voici / voil\u00e0 / il y a + GN. R\u00e9f\u00e9rence d\u00e9ictique. Le GN = RH.'],
+['Ellipse \u2260 CA','Ellipse: verbe r\u00e9cup\u00e9rable dans cotexte. "Pierre mange une pomme, Paul [mange] une poire." CA: pas de verbe r\u00e9cup\u00e9rable.']
+],
+s08:[
+['Adj. qualificatif','D\u00e9crit propri\u00e9t\u00e9 gradable (tr\u00e8s/peu). Avant ou apr\u00e8s N. "Un comportement professionnel."'],
+['Adj. relationnel','D\u00e9riv\u00e9 d\'un nom. Non gradable. Toujours postpos\u00e9. "La campagne pr\u00e9sidentielle."'],
+['Adj. modal (3e type)','Modalise rapport \u00e0 la classe. Toujours ant\u00e9pos\u00e9. "Un pur jeans, un vrai homme, une simple feuille."'],
+['Ant\u00e9position (synth\u00e9tique)','Propri\u00e9t\u00e9 inh\u00e9rente, subjective. N+Adj = sous-cat\u00e9gorie. "Un pauvre type" (\u2260 quelqu\'un de d\u00e9muni).'],
+['Postposition (analytique)','Propri\u00e9t\u00e9 contingente, objective. 2 temps: r\u00e9f\u00e9rent puis qualit\u00e9. "Un type pauvre" (objectivement d\u00e9muni).'],
+['Construction d\u00e9tach\u00e9e','Externe au GN, virgules, mobile. Relation pr\u00e9dicative avec contr\u00f4leur. "Victorieux, Napol\u00e9on..."'],
+['CD \u2260 \u00e9pith\u00e8te li\u00e9e','Li\u00e9e: dans le GN, pas de virgule, restrictive. D\u00e9tach\u00e9e: virgules, mobile, descriptive, \u00e0 l\'arri\u00e8re-plan.'],
+['Rel. d\u00e9terminative vs explicative','D\u00e9terminative: sans virgules, restreint r\u00e9f\u00e9rence. Explicative: avec virgules = CD, ajoute info sur r\u00e9f\u00e9rent identifi\u00e9.']
+],
+s09:[
+['Dislocation','CA th\u00e9tique (TH) + clause pr\u00e9dicative (RH) avec reprise pronominale. "Ce pauvre Pradier, je le regrette!"'],
+['Dislocation gauche','CA th\u00e9tique AVANT clause pr\u00e9dicative. Pose l\'objet avant le programme syntaxique.'],
+['Dislocation droite','Clause pr\u00e9dicative AVANT CA th\u00e9tique. Rappelle ou pr\u00e9cise le r\u00e9f\u00e9rent apr\u00e8s coup. "Il a les pattes sales, B\u00e9ranger!"'],
+['Tour \u00e9quatif','CA th\u00e9tique + c\'est Z. "Ma passion, c\'est les maths." Proche pseudo-cliv\u00e9e.'],
+['Subordination','Clause ench\u00e2ss\u00e9e dans une autre (d\u00e9pendance rectionnelle). Types: relative, compl\u00e9tive, circonstancielle.'],
+['Relative d\u00e9terminative','Int\u00e9gr\u00e9e au GN, sans virgule, restrictive. "L\'homme juste est libre dans ses fers."'],
+['Insertion parenth\u00e9tique','Structure autonome intercal\u00e9e entre tirets/virgules. "Tous deux arriv\u00e8rent \u2014 la b\u00eate grognait \u2014 devant le ch\u00e2teau."'],
+['Compl\u00e9ment apr\u00e8s point','Syntagme isol\u00e9 graphiquement pour l\'insistance. "Il me fallut revenir. Pour six mois."']
+],
+s10:[
+['3 plans d\'analyse','Syntaxique (fonctions), s\u00e9mantique (r\u00f4les actanciels), informationnel (TH/RH). Toujours les 3 en examen.'],
+['\u00c9tapes d\'analyse','(1) Identifier le verbe. (2) Type de clause. (3) Constructions modifi\u00e9es. (4) Analyser sur 3 plans. (5) Effets de sens.'],
+['Pi\u00e8ge: cliv\u00e9e vs pr\u00e9sentatif','Cliv\u00e9e: extrait RH (r\u00e9ponse \u00e0 "qui? quoi?"). Pr\u00e9sentatif+rel: pointe entit\u00e9 dans la situation.'],
+['Pi\u00e8ge: passif vs adjectif','Gradation: "tr\u00e8s" + PP \u2192 adjectif. Paraphrase active possible \u2192 passif.'],
+['Pi\u00e8ge: il impersonnel vs personnel','"Il est parti" \u2192 personnel. "Il est indispensable de..." \u2192 impersonnel. "Il pleut" \u2192 avalent (pas une construction).'],
+['Pi\u00e8ge: CA th\u00e9tique vs existentielle','Th\u00e9tique = TH (pose objet de discours). Existentielle = RH (pr\u00e9die l\'existence comme \u00e9v\u00e9nement).'],
+['Pi\u00e8ge: dislocation vs extraposition','Dislocation: CA th\u00e9tique syntaxiquement autonome. Extraposition: constituant en d\u00e9pendance rectionnelle.'],
+['R\u00f4les actanciels complets','Agent, Patient/Objet, R\u00e9sultatif (cr\u00e9\u00e9), B\u00e9n\u00e9ficiaire, Si\u00e8ge (\u00e9tat), Instrument, Lieu, Source, Exp\u00e9rienceur.']
+]
+};
+
+var QZ={
+s01:[
+{q:'La linguistique est une science\u2026',opts:['prescriptive (elle impose des r\u00e8gles)','descriptive (elle observe la langue telle qu\'elle est)','normative (elle fixe le bon usage)','\u00e9valuative (elle juge la qualit\u00e9 du discours)'],c:1,f:'Le linguiste observe et d\u00e9crit. Il ne prescrit ni ne proscrit.'},
+{q:'L\'arbitraire du signe signifie que\u2026',opts:['la forme ressemble au sens (iconicit\u00e9)','il n\'y a aucune raison naturelle liant forme et sens','le sens est universel pour tous les humains','le signe est motiv\u00e9 par l\'imitation sonore'],c:1,f:'Il n\'y a pas de ressemblance entre "arbre" et la r\u00e9alit\u00e9 qu\'il d\u00e9signe. L\'association est conventionnelle.'},
+{q:'La premi\u00e8re articulation du langage concerne\u2026',opts:['les phon\u00e8mes (unit\u00e9s distinctives sans sens)','les morph\u00e8mes (unit\u00e9s minimales de sens)','les syntagmes (groupes de mots)','les clauses (unit\u00e9s maximales de la syntaxe)'],c:1,f:'La 1\u00e8re articulation d\u00e9compose le discours en morph\u00e8mes (sens). La 2\u00e8me d\u00e9compose en phon\u00e8mes (distinctifs, sans sens).'},
+{q:'La clause est\u2026',opts:['une unit\u00e9 textuelle d\u00e9limit\u00e9e par une majuscule et un point','l\'unit\u00e9 maximale de la syntaxe (\u00eelot de d\u00e9pendance morphosyntaxique)','synonyme de phrase dans ce cours','une unit\u00e9 propre \u00e0 l\'oral seulement'],c:1,f:'La clause \u2260 phrase. La phrase est une unit\u00e9 textuelle graphique. La clause est l\'unit\u00e9 syntaxique maximale.'},
+{q:'Le test de commutation sert \u00e0\u2026',opts:['mesurer la longueur des \u00e9nonc\u00e9s','identifier des unit\u00e9s en les substituant l\'une \u00e0 l\'autre','d\u00e9crire la prosodie','analyser la dynamique informationnelle'],c:1,f:'La commutation (substitution) est la m\u00e9thode universelle de la linguistique pour identifier les unit\u00e9s \u00e0 tous les niveaux.'}
+],
+s02:[
+{q:'Une paire minimale, c\'est\u2026',opts:['deux mots de sens similaire','deux mots ne diff\u00e9rant que d\'un seul phon\u00e8me','deux mots ayant le m\u00eame signifiant','deux mots de m\u00eame longueur'],c:1,f:'Ex: chat/mat, p\u00e8re/m\u00e8re. La paire minimale prouve que deux sons sont des phon\u00e8mes distincts.'},
+{q:'La transcription entre crochets [ ] correspond \u00e0\u2026',opts:['la transcription phonologique (abstraite)','la transcription phon\u00e9tique (sons r\u00e9ellement produits)','l\'orthographe simplifi\u00e9e','la transcription morphologique'],c:1,f:'[ ] = phon\u00e9tique (r\u00e9alisation concr\u00e8te). / / = phonologique (phon\u00e8mes abstraits du syst\u00e8me).'},
+{q:'Le e caduc (/\u0259/) est\u2026',opts:['un phon\u00e8me stable, toujours prononc\u00e9','une voyelle instable qui peut tomber selon le contexte','un phon\u00e8me absent du fran\u00e7ais standard','une consonne fricative'],c:1,f:'Le /\u0259/ est instable: il peut tomber en d\u00e9bit rapide. "Je te le donne" \u2192 /\u0292t\u0259ldon/.'},
+{q:'Un graph\u00e8me phonographique repr\u00e9sente\u2026',opts:['du sens directement (comme &)','des sons de la langue','une pause dans le discours','un morph\u00e8me grammatical'],c:1,f:'Phonographique = repr\u00e9sente des sons. S\u00e9miographique = repr\u00e9sente du sens directement (&, %, 3...).'},
+{q:'Combien de phon\u00e8mes comporte le mot "chat" /\u0283a/ ?',opts:['1 phon\u00e8me','2 phon\u00e8mes','3 phon\u00e8mes','4 phon\u00e8mes'],c:1,f:'/\u0283/ et /a/ = 2 phon\u00e8mes. La lettre "ch" = 1 graph\u00e8me = 1 phon\u00e8me /\u0283/. "t" final muet.'}
+],
+s03:[
+{q:'L\'allomorphie, c\'est\u2026',opts:['la variation de sens d\'un morph\u00e8me selon le contexte','des variantes d\'expression d\'un m\u00eame morph\u00e8me','deux morph\u00e8mes de sens oppos\u00e9s','la fusion de deux morph\u00e8mes en un seul'],c:1,f:'in-/il-/im- sont des allomorphes du m\u00eame morph\u00e8me n\u00e9gatif: incomplet, ill\u00e9gal, immotiv\u00e9.'},
+{q:'Un morph\u00e8me grammatical li\u00e9 est\u2026',opts:['un mot grammatical ind\u00e9pendant comme "le"','une marque flexionnelle attach\u00e9e \u00e0 une base (-s, -ait, -\u00e9)','un pr\u00e9fixe comme d\u00e9-','un suffixe lexical comme -tion'],c:1,f:'Grammatical li\u00e9 = marque de flexion: -s (pluriel), -ait (imparfait), -\u00e9 (participe pass\u00e9).'},
+{q:'La composition savante utilise\u2026',opts:['deux mots fran\u00e7ais courants','des bases libres du grec ou du latin','des mots-valises (troncatures)','uniquement des suffixes'],c:1,f:'Bases li\u00e9es gr\u00e9co-latines: d\u00e9mo- + -crat-ie, photo- + graph-ie. \u2260 composition populaire (porte-monnaie).'},
+{q:'"D\u00e9mocrature" est\u2026',opts:['un mot d\u00e9riv\u00e9 par suffixation','un mot compos\u00e9 savant','un mot-valise (d\u00e9mocratie + dictature tronqu\u00e9s)','un emprunt \u00e0 l\'anglais'],c:2,f:'Mot-valise = apocope de d\u00e9mocratie + aph\u00e9r\u00e8se de dictature. Tron\u00e7on commun /d/ et /at/.'},
+{q:'Le test de commutation en morphologie sert \u00e0\u2026',opts:['v\u00e9rifier l\'accord du verbe','prouver qu\'une s\u00e9quence est un morph\u00e8me distinct','classer les parties du discours','mesurer la longueur des mots'],c:1,f:'Si on peut substituer une s\u00e9quence \u00e0 une autre avec le m\u00eame sens grammatical, c\'est un morph\u00e8me.'}
+],
+s04:[
+{q:'Un verbe trivalent requiert\u2026',opts:['0 actant','1 actant (sujet seul)','2 actants (sujet + COD)','3 actants (sujet + COD + COI)'],c:3,f:'Ex: donner, offrir. "Il donne un livre \u00e0 son fr\u00e8re" = 3 actants: sujet + COD + COI.'},
+{q:'La diff\u00e9rence entre actant et circonstant est\u2026',opts:['les circonstants sont requis par la valence du verbe','les actants sont optionnels et d\u00e9pla\u00e7ables','les actants sont requis par le verbe; les circonstants sont optionnels et d\u00e9pla\u00e7ables','il n\'y a aucune diff\u00e9rence'],c:2,f:'Actants: impos\u00e9s par la valence. Circonstants: non requis, d\u00e9pla\u00e7ables en phrase, port\u00e9e sur toute la clause.'},
+{q:'Le r\u00f4le actanciel d\'Agent concerne\u2026',opts:['l\'entit\u00e9 sur laquelle s\'exerce le proc\u00e8s','l\'entit\u00e9 produite par le proc\u00e8s','l\'anim\u00e9 instigateur du proc\u00e8s','l\'entit\u00e9 o\u00f9 se manifeste un \u00e9tat'],c:2,f:'Agent = anim\u00e9 qui d\u00e9clenche le proc\u00e8s. Ex: "Gustave a publi\u00e9 son livre" \u2192 Gustave = Agent.'},
+{q:'Quel type de syntagme a un ADVERBE comme mot-t\u00eate ?',opts:['GN','GV','GAdj','GAdv'],c:3,f:'GAdv = Groupe Adverbial. Mot-t\u00eate = adverbe. Ex: "tr\u00e8s poliment", "assez vite".'},
+{q:'"Il pleut" est un verbe\u2026',opts:['monovalent','divalent','trivalent','avalent (0 actant r\u00e9el)'],c:3,f:'Verbe avalent = 0 actant r\u00e9el. Il = pronom vide, pas de r\u00e9f\u00e9rent. \u2260 construction impersonnelle modifi\u00e9e.'}
+],
+s05:[
+{q:'Dans une clause canonique, le Th\u00e8me est g\u00e9n\u00e9ralement\u2026',opts:['le GV (pr\u00e9dicat)','le GN sujet','le compl\u00e9ment d\'objet direct','le circonstant en t\u00eate'],c:1,f:'GN sujet = TH (information donn\u00e9e). GV pr\u00e9dicat = RH (information nouvelle).'},
+{q:'La clause cliv\u00e9e "C\'est Marie qui chante" permet de\u2026',opts:['th\u00e9matiser Marie','rh\u00e9matiser Marie (focaliser l\'information nouvelle)','pr\u00e9senter Marie dans la situation','effacer l\'agent'],c:1,f:'C\'est [RH] qui [TH]. Marie = RH (l\'information nouvelle, r\u00e9ponse \u00e0 "Qui chante?").'},
+{q:'Pour qu\'une clause invers\u00e9e soit possible, le verbe doit \u00eatre\u2026',opts:['transitif direct (divalent)','monovalent','trivalent','essentiellement pronominal'],c:1,f:'Verbe monovalent requis (n\'a que le sujet comme actant). Ex: "Sur l\'horizon brillait une \u00e9toile."'},
+{q:'La pseudo-cliv\u00e9e a la structure\u2026',opts:['C\'est [RH] qui/que [TH]','Ce qui/que [TH], c\'est [RH]','[TH] c\'est [RH] (sans relative)','[RH] c\'est [TH]'],c:1,f:'"Ce que Gustave apporte, c\'est les livres." TH = relative (ce que...), RH = apr\u00e8s c\'est.'},
+{q:'Le test de la n\u00e9gation sert \u00e0\u2026',opts:['identifier le sujet grammatical','distinguer le th\u00e8me (ce qui \u00e9chappe \u00e0 la n\u00e9gation) du rh\u00e8me','v\u00e9rifier l\'accord du verbe','identifier les circonstants'],c:1,f:'"Gustave ne rapporte PAS les livres." \u2192 Gustave \u00e9chappe \u00e0 la n\u00e9gation = TH. "les livres" est dans le RH ni\u00e9.'}
+],
+s06:[
+{q:'Dans la construction passive, le sujet syntaxique est s\u00e9mantiquement\u2026',opts:['l\'agent du proc\u00e8s','l\'agi/patient du proc\u00e8s','le b\u00e9n\u00e9ficiaire du proc\u00e8s','le si\u00e8ge du proc\u00e8s'],c:1,f:'Le sujet passif correspond au COD de l\'active. Il subit le proc\u00e8s sans l\'instiguer.'},
+{q:'Le test de gradation ("tr\u00e8s + PP") permet de distinguer\u2026',opts:['passif et impersonnel','passif et attribut adjectival','pronominal et r\u00e9flexif','actif et passif'],c:1,f:'"Tr\u00e8s + PP" possible \u2192 adjectif (\u00e9tat). Non possible \u2192 passif (proc\u00e8s). "Les carottes sont tr\u00e8s cuites" (adj).'},
+{q:'La construction impersonnelle se caract\u00e9rise par\u2026',opts:['un pronom "il" r\u00e9f\u00e9rentiel + verbe \u00eatre','un pronom "il" \u00e0 r\u00e9f\u00e9rence vide, suivi du verbe','un sujet effac\u00e9 et un agent exprim\u00e9 par "par"','un pronom r\u00e9fl\u00e9chi cor\u00e9f\u00e9rent au sujet'],c:1,f:'"Il" impersonnel n\'a pas de r\u00e9f\u00e9rent. Ex: "Il est indispensable de...", "Il arrive des trains."'},
+{q:'S\'\u00e9vanouir, se souvenir, s\'abstenir sont des verbes\u2026',opts:['constructions pronominales r\u00e9flexives','constructions pronominales passives','verbes essentiellement pronominaux (pas des constructions)','verbes accidentellement pronominaux'],c:2,f:'Verbes essentiellement pronominaux: n\'existent pas sans pronom r\u00e9fl\u00e9chi. PAS des constructions modifi\u00e9es.'},
+{q:'La construction pronominale passive (ex: "les fraises se mangent") efface\u2026',opts:['le patient','l\'agent totalement','le b\u00e9n\u00e9ficiaire','le lieu'],c:1,f:'"Les fraises se mangent au printemps" \u2248 On mange des fraises. L\'agent est enti\u00e8rement effac\u00e9.'}
+],
+s07:[
+{q:'Une clause averbale est\u2026',opts:['une clause avec un verbe \u00e0 l\'infinitif','une clause sans verbe conjugu\u00e9 ni infinitif','une clause dont le sujet est effac\u00e9','une clause avec pr\u00e9sentatif'],c:1,f:'La CA n\'a pas de verbe. Sa s\u00e9mantique correspond aux valeurs possibles du verbe \u00eatre.'},
+{q:'La clause averbale th\u00e9tique a pour dynamique informationnelle\u2026',opts:['RH seul (information nouvelle)','TH seul (pose un objet de discours)','TH + RH (2 termes)','ni TH ni RH'],c:1,f:'Th\u00e9tique = pose un objet de discours = TH. "\u00d4 ma cassette!" (avant d\'en dire quoi que ce soit).'},
+{q:'"Ne pas se pencher au-dehors" est une clause\u2026',opts:['averbale existentielle','infinitive instructionnelle','infinitive d\u00e9lib\u00e9rative','\u00e0 pr\u00e9sentatif'],c:1,f:'Clause infinitive instructionnelle: verbe \u00e0 l\'infinitif, mode d\'emploi/consigne.'},
+{q:'La clause \u00e0 pr\u00e9sentatif (c\'est, voici, il y a) se caract\u00e9rise par\u2026',opts:['une dynamique TH + RH','un RH seul (pas de th\u00e8me)','un TH seul','une r\u00e9f\u00e9rence anaphorique'],c:1,f:'Le pr\u00e9sentatif pointe une entit\u00e9 dans la situation. Le GN point\u00e9 = enti\u00e8rement RH (information nouvelle).'},
+{q:'Quelle est la diff\u00e9rence entre clause averbale existentielle et clause \u00e0 pr\u00e9sentatif ?',opts:['Il n\'y a aucune diff\u00e9rence','La CA existentielle n\'a pas de pr\u00e9sentatif grammaticalis\u00e9','La CA existentielle est toujours attributive','Le pr\u00e9sentatif est toujours effac\u00e9 dans la CA existentielle'],c:1,f:'CA existentielle: "Tiens, un revenant!" (pas de pr\u00e9sentatif grammaticalis\u00e9 comme c\'est/voici/il y a).'}
+],
+s08:[
+{q:'L\'adjectif relationnel est toujours\u2026',opts:['ant\u00e9pos\u00e9 et gradable','postpos\u00e9 et non gradable','ant\u00e9pos\u00e9 et non gradable','postpos\u00e9 et gradable'],c:1,f:'Adj. relationnel: d\u00e9riv\u00e9 d\'un nom, non gradable (??tr\u00e8s pr\u00e9sidentielle), toujours postpos\u00e9. "La campagne pr\u00e9sidentielle."'},
+{q:'L\'adjectif modal (3e type) est toujours\u2026',opts:['ant\u00e9pos\u00e9','postpos\u00e9','avant ou apr\u00e8s selon le sens','gradable'],c:0,f:'"Un pur jeans, un vrai homme, une simple feuille." Toujours ant\u00e9pos\u00e9. Modalise le rapport \u00e0 la classe.'},
+{q:'La position postpos\u00e9e d\'un adjectif qualificatif exprime\u2026',opts:['une propri\u00e9t\u00e9 inh\u00e9rente et subjective','une propri\u00e9t\u00e9 contingente, objective, aff\u00e9rente','une propri\u00e9t\u00e9 modale','une relation \u00e0 une cat\u00e9gorie'],c:1,f:'Postposition = saisie analytique: 2 temps (r\u00e9f\u00e9rent puis qualit\u00e9). Propri\u00e9t\u00e9 objective, contingente.'},
+{q:'Une construction d\u00e9tach\u00e9e (CD) est\u2026',opts:['un adjectif int\u00e9gr\u00e9 au GN sans virgule','un constituant externe au GN, d\u00e9tach\u00e9 par virgules, avec relation pr\u00e9dicative avec un contr\u00f4leur','un compl\u00e9ment circonstanciel du verbe','une relative d\u00e9terminative'],c:1,f:'CD = externe, virgules, mobile, relation pr\u00e9dicative implicite. \u2260 \u00e9pith\u00e8te li\u00e9e (int\u00e9gr\u00e9e au GN).'},
+{q:'La relative explicative (appositive) se distingue de la d\u00e9terminative par\u2026',opts:['elle est int\u00e9gr\u00e9e au GN et restrictive','elle est d\u00e9tach\u00e9e par virgules et non restrictive (descriptive)','elle est toujours postpos\u00e9e','elle modifie le verbe principal'],c:1,f:'Explicative = virgules = CD. Ajoute info sur r\u00e9f\u00e9rent identifi\u00e9. Supprimable sans changer le sens fondamental.'}
+],
+s09:[
+{q:'La dislocation consiste \u00e0\u2026',opts:['placer le sujet apr\u00e8s le verbe','stratifier le TH et le RH en deux unit\u00e9s syntaxiques dissoci\u00e9es, avec reprise pronominale','effacer le sujet grammatical','placer un circonstant en t\u00eate de clause'],c:1,f:'CA th\u00e9tique (TH) + clause pr\u00e9dicative (RH) + pronom cor\u00e9f\u00e9rent. "Ce pauvre Pradier, je le regrette!"'},
+{q:'Dans la dislocation \u00e0 droite, la CA th\u00e9tique vient\u2026',opts:['avant la clause pr\u00e9dicative','apr\u00e8s la clause pr\u00e9dicative','avant et apr\u00e8s (dislocation double)','en position de sujet grammatical'],c:1,f:'"Il a les pattes sales, B\u00e9ranger!" La CA th\u00e9tique rappelle le r\u00e9f\u00e9rent apr\u00e8s la clause pr\u00e9dicative.'},
+{q:'Le tour \u00e9quatif a la structure\u2026',opts:['C\'est [RH] qui/que [TH]','CA th\u00e9tique + c\'est Z','Ce qui/que [TH], c\'est [RH]','[TH] + verbe + [RH]'],c:1,f:'"Ma passion, c\'est les maths." CA th\u00e9tique (ma passion) + clause \u00e0 pr\u00e9sentatif (c\'est les maths).'},
+{q:'La diff\u00e9rence entre dislocation et extraposition est\u2026',opts:['il n\'y a aucune diff\u00e9rence','dans la dislocation, la CA th\u00e9tique est syntaxiquement autonome; dans l\'extraposition, le constituant est en d\u00e9pendance','la dislocation n\'utilise pas de pronom de reprise','l\'extraposition est toujours \u00e0 gauche'],c:1,f:'Dislocation: CA th\u00e9tique autonome. Extraposition: constituant ant\u00e9pos\u00e9 avec subordonnant (en d\u00e9pendance).'},
+{q:'Une insertion parenth\u00e9tique est\u2026',opts:['une clause subordonn\u00e9e circonstancielle','une structure syntaxique autonome intercal\u00e9e, interrompant le programme syntaxique en cours','un compl\u00e9ment circonstanciel d\u00e9plac\u00e9','une dislocation \u00e0 droite'],c:1,f:'"Tous deux arriv\u00e8rent \u2014 la b\u00eate grognait \u2014 devant le ch\u00e2teau." Autonome, intercal\u00e9e entre tirets/virgules.'}
+],
+s10:[
+{q:'Lors de l\'analyse d\'une clause, combien de plans doit-on toujours couvrir ?',opts:['1 (syntaxique)','2 (syntaxique + s\u00e9mantique)','3 (syntaxique + s\u00e9mantique + informationnel)','4 (+ pragmatique)'],c:2,f:'Toujours analyser sur 3 plans: syntaxique (fonctions), s\u00e9mantique (r\u00f4les actanciels), informationnel (TH/RH).'},
+{q:'Quelle est la premi\u00e8re \u00e9tape de l\'analyse syntaxique ?',opts:['Identifier le sujet','Identifier le verbe et sa valence','Identifier le type de clause (canonique/atypique)','Identifier le th\u00e8me'],c:1,f:'Le verbe est le centre organisateur. Sa valence d\u00e9termine le nombre d\'actants et leurs r\u00f4les.'},
+{q:'Le r\u00f4le de R\u00e9sultatif d\u00e9signe\u2026',opts:['l\'entit\u00e9 qui subit le proc\u00e8s','l\'entit\u00e9 produite par le proc\u00e8s','l\'anim\u00e9 qui instigule le proc\u00e8s','l\'entit\u00e9 o\u00f9 se manifeste un \u00e9tat'],c:1,f:'"Il a \u00e9crit des chefs-d\'\u0153uvre." Les chefs-d\'\u0153uvre = produits par le proc\u00e8s d\'\u00e9criture = R\u00e9sultatif.'},
+{q:'Comment distinguer une clause cliv\u00e9e d\'une clause \u00e0 pr\u00e9sentatif + relative ?',opts:['On ne peut pas les distinguer','La cliv\u00e9e extrait un RH (r\u00e9ponse \u00e0 une question); le pr\u00e9sentatif pointe une entit\u00e9 dans la situation','La cliv\u00e9e n\'a pas de pronom relatif','Le pr\u00e9sentatif utilise toujours "voici"'],c:1,f:'Cliv\u00e9e: r\u00e9ponse \u00e0 "qui/quoi?". Pr\u00e9sentatif+rel: "C\'\u00e9taient des lanternes que portaient des paysans" \u2014 entit\u00e9 nouvelle.'},
+{q:'L\'effet principal de la construction impersonnelle sur la DI est\u2026',opts:['de th\u00e9matiser le sujet grammatical','de n\'avoir aucun th\u00e8me (toute la clause = RH)','de rh\u00e9matiser l\'agent','de supprimer le pr\u00e9dicat'],c:1,f:'"Il" n\'a pas de r\u00e9f\u00e9rent \u2192 pas de TH. Toute l\'information est nouvelle = RH. Effet d\'objectivit\u00e9.'}
+]
+};
+
+window.addEventListener('DOMContentLoaded',function(){
+  Object.keys(FC).forEach(function(k){ buildFC(k,FC[k]); });
+  Object.keys(QZ).forEach(function(k){ buildQuiz(k,QZ[k]); });
+  // open first accordion in each section by default
+  document.querySelectorAll('.acc-header').forEach(function(h,i){
+    if(i===0){ h.nextElementSibling.classList.add('open'); }
+  });
+});
 
 </script>
 </body>
