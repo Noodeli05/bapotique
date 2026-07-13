@@ -1,0 +1,556 @@
+Linguistique françaisePremière année
+
+T. Bornoz, M. Burger, F. Demont,
+M. Hoffmann, R. Mahrer, L. Möschler
+
+Travaux pratiques
+
+INTRODUCTION
+À L’ANALYSE LINGUISTIQUE
+
+Dossiers 1–9
+
+Automne 2025
+
+Sommaire
+Les phonèmes2
+Les morphèmes5
+Les syntagmes8
+Valence verbale et rôles actantiels12
+Dynamique informationnelle16
+Passif, constructions impersonnelles et pronominales19
+Les clauses atypiques23
+Adjectifs épithètes et constructions détachées27
+De la clause à la phrase31
+
+Les phonèmes
+(polycopié : chapitre 1)
+
+À partir de la suite phonologique /lɑ̃ɡ/ (« langue »), procédez à des opérations de commutation. Il vous faut substituer à l’un des trois phonèmes de /lɑ̃ɡ/ un autre phonème de façon à former un autre mot de la langue française. Procédez selon le modèle suivant :
+
+/lɑ̃ɡ/
+/tɑ̃ɡ/
+...
+/lɑ̃ɡ/
+/liɡ/
+...
+/lɑ̃ɡ/
+/lɑ̃d/
+...
+
+Transcrivez en alphabet phonétique international (API) les énoncés suivants.
+Le jardinier a fauché les tulipes.
+
+Je donnerai un xylophone au jeune musicien.
+
+Tous leurs œufs sont vendus dès le matin.
+
+Sous l’ardeur du soleil et de la nuit obscure, Avoir l’herbe pour lit, le ciel pour couverture ?
+(Lamartine, Toussaint Louverture, 1850)
+
+Dans l’exemple ci-après, quels sont les principes de substitution phonétiques mis en jeu pour représenter l’accent germanique ? Ces principes sont-ils appliqués de façon systématique ? Décrivez l’ensemble de l’extrait en le comparant à l’énoncé correspondant en français standard.
+Chai gru foir dud à l’heire le chénie de ma baufre Allemagne que che n’aurais chamais tû guidder.
+
+(Schmucke, le musicien allemand, dans Honoré de Balzac, Le Cousin Pons, 1847)
+
+En vous basant sur le tableau des consonnes du français (polycopié de cours, p. 17), expliquez la difficulté de cet exercice de diction.
+
+Un chasseur sachant chasser sans son chien est un bon chasseur.
+
+Transcrivez en API cette première strophe de « Chanson d’automne » (en prenant garde à la métrique et sans oublier le titre). Identifiez les phonèmes vocaliques récurrents et regroupez-les en fonction des trois propriétés utilisées pour caractériser les voyelles du français (voir trapèze vocalique p. 16 du polycopié de cours). Les voyelles de ce poème contribuent-elles au sens de ce dernier ? Associez vos observations à vos impressions de lecture.
+
+CHANSON D’AUTOMNE
+
+Les sanglots longs Des violons
+De l’automne Blessent mon cœur
+D’une langueur Monotone.
+(Verlaine, in Poèmes saturniens, 1866)
+
+Les morphèmes
+(polycopié : chapitre 2)
+
+Morphologie grammaticale
+
+Exercice collectif en TP
+
+En comparant les formes les plus proches, déduisez le sens des morphèmes grammaticaux ci-dessous.
+
+parlerions : parlerons :
+parlions :
+parl parl
+parl
+-er
+
+-er
+-i
+
+-i
+-ons
+
+-ons
+
+-ons
+parlons :
+
+parlez :
+parl
+
+parl
+
+-ons
+
+-ez
+
+-i-= ……………………………............
+-er-= ……………………………............
+-ons= ……………………………............
+-ez= ……………………………............
+
+Transcrivez l’énoncé ci-dessous en API. Sur la base de cette transcription, quelles observations peut-on faire sur ce qui distingue l’écrit de l’oral du point de vue de la distribution des marques du pluriel ?
+
+Les enfants mangeaient des pains au chocolat.
+
+Morphologie lexicale
+1.
+Dans la publicité ci-dessous, analysez la formation des mots suivants :
+bronchiolite, hyperréactivité, technologie, dépollution
+
+Procédez à l’aide d’opérations de commutation, sur le modèle de l’analyse du mot
+transplantation (en gras, le morphème testé) :
+
+-port
+trans -plantation
+-gression
+
+-age
+plant-ation
+-ø
+
+plant
+opér-ation explic
+
+10801364106028
+2.
+Dégagez les principaux champs sémantiques* du texte de cette publicité et rapportez vos observations à la finalité du genre publicitaire.
+* Les lexèmes apparentés sur le plan du contenu.
+
+816863-686534Nouvelle Audi Q7 TDI clean diesel.
+La technologie qui réduit de 90% les émissions de NOx.
+La nouvelle Audi Q7 est équipée, en plus de son catalyseur de série et de son filtre à particules, de la récupération d’énergie au freinage et du système AdBlue. Ce nouveau système de traitement des gaz d’échappement permet d’éliminer les oxides d’azotes (NOx), extrêmement nocifs pour l’organisme. Révolution dans le domaine de la dépollution, la technologie AdBlue, combinée au Common Rail, réduit de 90% les émissions de NOx, permettant ainsi à la nouvelle Audi Q7 d’entrer dans les normes européennes pour 2014.
+Vorsprung durch Technik : l’avance par la technologie.
+
+En vous appuyant sur la distinction entre morphèmes lexicaux et morphèmes grammaticaux, décrivez précisément le principe de fonctionnement du langage schtroumpf.
+Qu’est-ce qui assure la lisibilité de ce texte ?
+
+3618232253329
+
+(Peyo, Le Schtroumpfissime, 1977)
+
+Les syntagmes
+(polycopié : chapitre 3, -&gt; 2.1)
+
+Définissez la nature des groupes syntaxiques soulignés (GN, GV, GAdj, GAdv, GPrép).
+
+Les derniers habitants sont partis.
+On la regardait avec admiration.
+C’est un ouvrage fort intéressant.
+Le vent agite les branches.
+Des cris s’élèvent de tous côtés.
+Il a fait de grands progrès.
+Il répondit très bien.
+Il joue admirablement.
+
+Identifiez la nature grammaticale des expressions soulignées et comparez leur emploi standard (par exemple dans le dictionnaire) avec la valeur qu’elles adoptent ici. Tenez compte du syntagme qu’elles intègrent. Dans tous ces exemples, à quel mode de construction lexicale a-t-on affaire ?
+1.
+Dans huit jours le même mâle qui tremble devant elle, qui patiente et perd le boire et le manger, la tiendra solidement par la nuque...
+(Colette, La Maison de Claudine, 1922)
+
+2.
+Mais, du moment qu’il s’agit de la France et quelle que soit temporairement sa situation, c’est la sagesse et la raison de voir grand et de viser haut.
+(De Gaulle, Mémoires de guerre, III, 1959)
+
+3.
+Le vierge, le vivace et le bel aujourd’hui Va-t-il nous déchirer [...] !
+(Mallarmé, in Poésies, 1887)
+
+4.
+[...] le jeune homme est si Céladon, que si nous ne l’aidons pas, il lui faudra tant de temps pour vaincre les plus légers obstacles, qu’il ne nous laissera pas celui d’effectuer notre projet.
+(Laclos, Les Liaisons dangereuses, 1782)
+
+5.
+Le moindre buisson fraîchement coupé, ils se rencardaient pour savoir le quoi du pour et du qu’est-ce.
+(Boudard, Mourir d’enfance, 1995)
+
+6.
+Dans les champs, dans la forêt, on le voyait étendu, étalé, aplati tout de son long […]. Il
+« vachait », – comme il disait avec l’expression crapuleuse qui peint ces félicités retournant à la brute.
+(Goncourt, Manette Salomon, 1867)
+
+Analysez le rapport entre la métrique et la syntaxe dans les deux textes suivants. Y a-t-il concordance ou discordance entre les frontières du vers et celles du syntagme et de la clause ? À cet égard, qu’est-ce qui distingue les écritures de Racine et de Cendrars ?
+Exemple : le vers 5 du premier extrait offre un cas de concordance parfaite entre la syntaxe et la métrique : l’alexandrin coïncide avec une clause. Ce n’est pas toujours le cas.
+
+1.
+Qu’avez-vous fait, Seigneur ? l’aimable Bérénice Va peut-être expirer dans les bras de Phénice.
+Elle n’entend ni pleurs, ni conseil, ni raison ; Elle implore à grands cris le fer et le poison.
+5Vous seul vous lui pouvez arracher cette envie. On vous nomme, et ce nom la rappelle à la vie.
+Ses yeux, toujours tournés vers votre appartement, Semblent vous demander de moment en moment.
+Je n’y puis résister : ce spectacle me tue.
+10Que tardez-vous ? Allez vous montrer à sa vue. Sauvez tant de vertus, de grâces, de beauté, Ou renoncez, Seigneur, à toute humanité.
+(Racine, Bérénice, 1670, acte IV, scène 7)
+
+2.
+En ce temps-là j’étais en mon adolescence
+J’avais à peine seize ans et je ne me souvenais déjà plus de mon enfance
+
+3J’étais à seize mille lieues du lieu de ma naissance
+J’étais à Moscou, dans la ville des mille et trois clochers et des sept gares Et je n’avais pas assez des sept gares et des mille et trois tours
+6Car mon adolescence était alors si ardente et si folle
+Que mon cœur, tour à tour, brûlait comme le temple d’Ephèse ou
+[comme la place Rouge de Moscou
+Quand le soleil se couche.
+9Et mes yeux éclairaient des voies anciennes. Et j’étais déjà si mauvais poète
+Que je ne savais pas aller jusqu’au bout.
+(Cendrars, Prose du transsibérien, 1913)
+
+Dans ces extraits de poèmes de Stéphane Mallarmé, examinez les coupes de vers soulignées en gras et classez les cas dans le tableau ci-dessous.
+
+Ta paille azur de lavandes, Ne crois pas avec ce cil Osé que tu me la vendes
+
+*
+
+Rien au réveil que vous n’ayez Envisagé de quelque moue
+*
+O si chère de loin et proche et blanche, si Délicieusement toi, Mary, que je songe
+*
+A toutes jambes, Facteur, chez l’ Editeur de la Décadence,
+Léon Vannier, Quai Saint-Michel
+
+Tableau des segmentations
+Ex :Donne une robe dont la mousseline est un Hasard…
+
+Type de coupe : dans le syntagme
+Description syntaxique : dét./N (= coupe entre le déterminant et le nom)
+Dans la syllabe ? non
+
+Type de coupe
+Vers
+Description syntaxique de la
+segmentation
+Dans la syllabe ?
+Dans le syntagme
+
+Dans le lexème
+
+Valence verbale et rôles actantiels
+(polycopié : chap. 3, 2.2)
+
+Analysez la valence des constructions verbales soulignées et identifiez les cas irréguliers. Aidez-vous d’un dictionnaire de langue qui indique les constructions prévues pour les verbes en question. Interprétez les effets de sens produits par les valences imprévues.
+
+1.
+En voyant le groupe approcher, le cheval hennit. Ses narines se gonflèrent. Ses sabots battaient rageusement le sol, et il secouait sa crinière.
+(Ophélie et le cheval sauvage, conte pour enfants)
+
+Et ces nuages cabrés se prennent à hennir tout un univers de villes auriculaires
+(Apollinaire, « Il pleut », in Calligrammes, 1918)
+
+2.
+La porte du seize était ouverte ; sur une table, une bougie allumée éclairait la chambre et jetait un peu de clarté dans le corridor où, devant la porte du quinze, autour d’un seau de toilette en métal, luisait sur le dallage une flaque, que Fleurissoire enjamba. Une odeur âcre en émanait.
+(Gide, Les Caves du Vatican, 1914)
+
+Avant de quitter la boutique on m’avait prévenu que si j’émanais des odeurs, je serais viré séance tenante.
+(Céline, Mort à crédit, 1936)
+
+3.
+Jusqu’ici, les romanciers se sont contentés de parodier le monde. Il s’agit maintenant de l&apos;inventer.
+(Aragon, Blanche ou l’Oubli, 1967)
+
+– Quoi ! l’auteur des Lettres provinciales a inventé, s’écria Raphaël.
+(Balzac, La Peau de chagrin, 1830)
+
+Décrivez la valence du verbe trembler dans l’extrait suivant. Quelle est la fonction syntaxique et le rôle actantiel de « vous » ? Commentez l’effet de ce pronom dans le contexte du récit.
+Ils cherchent à allumer leurs lampes à pétrole : l’allumette qu’on approche de la mèche vous tremble entre les doigts, laissant tomber les gouttelettes de soufre enflammé sur votre pantalon. Ils essayaient de s’asseoir à des tables ; ils ne pouvaient pas, ni rester debout. Jamais encore la peur, et puis la revoilà ou quoi ?
+(Ramuz, Terre du ciel, 1921)
+
+Exercice collectif en TP
+
+Examinez les compléments des verbes dans les deux exemples suivants. Quelles constructions retiennent votre attention, et pourquoi ? Qu’est-ce que cela signifie quant à l’art de conter de Jean de La Fontaine ?
+1.
+Le renard sort du puits, laisse son compagnon
+Et vous lui fait un beau sermon.
+(« Le renard et le bouc », Fables, livre III (1668), 5)
+
+2.
+Maint estafier accourt : on vous happe notre homme, On vous l’échine, on vous l’assomme.
+(« Un fou et un sage », livre XII (1693), 22)
+
+Montrez comment l’analyse des rôles actantiels permet de donner sens à cet extrait de poème. Quelle est la particularité flagrante de ce poème ? Qu’est-ce qui assure l’intelligibilité de ce texte ?
+
+Il l’emparouille et l’endosque contre terre ; Il le rague et le roupète jusqu’à son drâle ;
+Il le pratèle et le libucque et lui barufle les ouillais ; Il le tocarde et le marmine,
+Le manage rape à ri et ripe à ra. Enfin il l’écorcobalisse.
+L’autre hésite, s’esprudrine, se défaisse, se torse et se ruine. […]
+(Michaux, « Le Grand Combat »,
+in Qui je fus, 1927)
+
+Observez, dans l’extrait suivant, le rapport entre la nature sémantique des verbes et celle de leurs arguments. Quel est l’effet produit ?
+[Au tout début du roman, Frédéric Moreau, « nouvellement reçu bachelier », quitte Paris en bateau pour rejoindre sa ville natale de Nogent-sur-Seine.]
+
+Enfin le navire partit ; et les deux berges peuplées de magasins, de chantiers et d’usines filèrent comme deux larges rubans que l’on déroule. [...] La colline qui suivait à droite le cours de la Seine peu à peu s’abaissa, et il en surgit une autre, plus proche, sur la rive opposée.
+(Flaubert, L’Éducation sentimentale, 1869)
+
+Dynamique informationnelle
+(Clauses inversées, clivées et pseudo-clivées)
+(polycopié : chapitre 3, 2.4 -&gt; chap. 4, 2.2.2)
+
+En termes de dynamique informationnelle, expliquez en quoi les énoncés suivants sont différents.
+
+Gustave Flaubert est l’auteur de Salammbô.
+1’. L’auteur de Salammbô est Gustave Flaubert.
+
+La tempête a déraciné le sapin.
+2’. Le sapin a été déraciné par la tempête.
+
+Décrivez les particularités de la structure syntaxique de chacun de ces énoncés. Commentez les effets de cette structure en termes de dynamique informationnelle.
+
+C’est alors l’amour, et au fond l’amour divin, qui résout les contradictions de l’âme infinie et finie.
+(Alain, Idées, « Hegel », 1939)
+
+L’idée n’existe pas. Ce qui existe, c’est l’individu.
+(Alain, Idées, « Note sur Aristote », 1939)
+
+Repérez, dans les textes suivants, les clauses inversées, clivées ou pseudo-clivées, et appréciez l’effet de la dynamique informationnelle qu’elles instaurent. Pour cela, vous pouvez procéder par comparaison avec la clause canonique correspondante.
+
+Voilà comment qu’ils m’ont traité les copains. Ils m’horripilaient tous à la fin ces ratés, ces enculés, ces sous-hommes. « Foutez-moi le camp tous ! que je leur ai répondu ; c’est la jalousie qui vous fait baver et voilà tout ! S’ils me font crever les Américains, on le verra bien ! Mais ce qu’il y a de certain, c’est que tous autant que vous êtes, c’est rien qu’un petit four que vous avez entre les jambes et encore un bien mou ! »
+(Céline, Voyage au bout de la nuit, 1932)
+
+[Armande, une lorette très en vue à Marseille, connaît une subite déchéance. Elle croit trouver son salut d’abord chez une usurière, dame Mercier, puis chez Sauvaire, un vaniteux portefaix (fidèle ami du héros de ce roman feuilleton).]
+Puis, sans cause apparente, tout d’un coup son crédit baissa. La gêne vint et fit des trous dans son luxe. Sans doute sa mode était passée, les amants généreux manquaient. Elle tomba dans les transes de cette demi-misère qui porte de la soie et marche sur des tapis. Sentant qu’elle allait rouler dans le ruisseau, si elle ne faisait pas des efforts pour garder son appartement de grande dame, elle lutta avec désespoir contre la mauvaise chance. […] Aussi déploya-t-elle une énergie fébrile pour trouver des amants, pour se procurer de l’argent à tout prix.
+C’est à cette époque qu’elle fit la connaissance d’une dame Mercier, qui lui avança quelques fonds à un taux exorbitant.
+[…]
+Puis, vint un moment où Armande ne put décidément pas rembourser les billets faux. Elle se jetait en vain dans le ruisseau. Elle allait au Château-des-Fleurs, comme une fille ; elle ne parvenait plus à gagner la somme qu’il lui fallait pour entretenir sa maison.
+C’est à ce moment-là qu’elle fit la connaissance de Sauvaire. Elle lâcha pour lui un comte qu’elle avait ruiné.
+(Zola, Les Mystères de Marseille, 1867)
+
+Le soleil approchait de son couchant. Sur le premier plan paraissaient des sassafras, des tulipiers, des catalpas et des chênes dont les rameaux étalaient des écheveaux de mousse blanche. Derrière ce premier plan s’élevait le plus charmant des arbres, le papayer qu’on eût pris pour un style d’argent ciselé, surmonté d’une urne corinthienne. Au troisième plan dominaient les baumiers, les magnolias et les liquidambars.
+(Chateaubriand, Mémoires d’outre-tombe, 1809-1841)
+
+1259852-194772Exercice facultatif
+Le cœur tendre dans le lit de Miss Clark Prisonnière du Sultan de Jarawak
+En pleine terreur à Manicouagan Isolé dans la jungle birmane Emprisonnant les flibustiers L’ennemi est démasqué
+On a volé le collier de Civa Le Maharadja en répondra
+Et soudain surgit face au vent Le vrai héros de tous les temps Bob Morane contre tout chacal
+L&apos;aventurier contre tout guerrier Bob Morane contre tout chacal L&apos;aventurier contre tout guerrier
+(Indochine, « L’Aventurier », 1982)
+
+Passif, constructions impersonnelles et pronominales
+(polycopié : chapitre 4, 2.3)
+
+Repérez les formes passives, puis décrivez-les dans leur dimension syntaxique, sémantique et informationnelle. Commentez l’intérêt de ces structures pour la narration dans ce passage.
+[Chacun ignorant l’identité de l’autre en raison de la nuit, les mousquetaires entreprennent un duel entre eux.]
+
+Deux ou trois coups furent portés de part et d’autre sans résultat, les étincelles jaillissaient par gerbes des épées.
+Enfin, d’Artagnan pensa que c’était le moment d’utiliser sa feinte favorite ; il l’amena fort habilement, l’exécuta avec la rapidité de l’éclair, et porta le coup avec une vigueur qu’il croyait irrésistible.
+Le coup fut paré.
+(Dumas, Vingt ans après, 1845)
+
+Interprétez l’absence de complément d’agent dans l’extrait suivant.
+
+[Hippolyte et Aricie, amoureux en dépit des conflits qui opposent leur famille, réfléchissent à l’éventualité d’une fuite. Ils sont en effet menacés non seulement par leur amour interdit, mais surtout par les soupçons que Phèdre, épouse de Thésée et belle-mère d’Hippolyte, laisse planer sur ce dernier.]
+ARICIE : [...] Et la fuite est permise à qui fuit ses tyrans.
+(Racine, Phèdre, 1677, acte V, scène 1)
+
+Montrez l’enjeu de l’effacement de l’agent dans les deux vers finaux.
+[Thésée vient d’apprendre de la bouche de son épouse Phèdre qu’on a tenté de la séduire. Il s’adresse à son fils Hippolyte en lui demandant des explications.]
+
+Que vois-je ? Quelle horreur dans ces lieux répandue Fait fuir devant mes yeux ma famille éperdue ?
+[…]
+Je n’ai pour tout accueil que des frémissements :
+Tout fuit, tout se refuse à mes embrassements. Et moi-même, éprouvant la terreur que j’inspire, Je voudrais être encor dans les prisons d’Epire. Parlez. Phèdre se plaint que je suis outragé.
+Qui m’a trahi ? Pourquoi ne suis-je pas vengé ?
+(Racine, Phèdre, acte III, scène 5)
+
+Décrivez l’effet de sens des tournures impersonnelles dans les deux exemples suivants.
+
+1.
+Il est indispensable de distinguer soigneusement entre, d’une part, les faits linguistiques de tous ordres tels qu’ils apparaissent dans les énoncés, d’autre part, les faits linguistiques conçus comme appartenant à un répertoire dont dispose la personne qui cherche à communiquer.
+(Martinet, Éléments de linguistique générale, 1960)
+
+2.
+Il pleure dans mon cœur Comme il pleut sur la ville ; Quelle est cette langueur Qui pénètre mon cœur ? [...]
+Il pleure sans raison
+Dans ce cœur qui s’écœure. Quoi ! nulle trahison ?...
+Ce deuil est sans raison. [...]
+(Verlaine, in Romances sans paroles, 1874)
+
+Quelle est la visée du titre de cet article de presse ?
+Un sénateur démocrate se tue
+Paul Wellstone, sénateur démocrate du Minnesota, est mort hier dans un accident d’avion non loin de la frontière canadienne [...].
+(24 Heures, 26 octobre 2002)
+
+Identifiez le type de constructions pronominales.
+
+Les feuilles mortes se ramassent à la pelle,
+Les souvenirs et les regrets aussi [...]
+Et la vie sépare ceux qui s&apos;aiment, Tout doucement, sans faire de bruit.
+(Prévert, in Paroles, 1946)
+
+1259852-194036Exercice facultatif
+
+Longtemps, je me suis couché de bonne heure. Parfois, à peine ma bougie éteinte, mes yeux se fermaient si vite que je n&apos;avais pas le temps de me dire : « Je m’endors. »
+(Proust, Du côté de chez Swann, 1913)
+
+Les clauses atypiques
+(averbales, infinitives et présentatives)
+(polycopié : chapitre 5)
+
+Repérez et identifiez le type des clauses averbales dans ces cases de bande dessinée.
+
+109894325171016611612358700
+
+(Hergé, Tintin en Amérique, 1932)
+
+Repérez les clauses averbales. Commentez leur effet dans le récit.
+
+Après une courte visite de la cuisine où [Mme Deume] ne manqua pas de gratifier la bonne d’une remarque condescendante (« On voit bien, ma pauvre fille, que vous sortez d’un miyeu populaire ») aussitôt suivie de l’habituel sourire inexorablement décidé à pratiquer l’amour du prochain, elle alla inspecter le salon où tout lui parut parfait. Elle déplaça néanmoins trois fauteuils et les rapprocha du canapé pour faire coin intime. Donc elle et Hippolyte sur le canapé, l’invité sur le fauteuil du milieu, le plus confortable, Didi et sa femme sur les deux autres fauteuils. Entre le canapé et les fauteuils, le joli guéridon marocain avec les liqueurs, les cigarettes et les cigares de luxe. Oui, tout était en règle.
+(Albert Cohen, Belle du Seigneur, 1968)
+
+Comment les clauses infinitives participent-elles essentiellement au sens de ce poème ? (Pour en rendre compte, partez de la description de ce type de clauses et des différentes valeurs qu’on lui accorde.)
+AVARE
+
+M’alléger
+me dépouiller
+réduire mon bagage à l’essentiel
+
+Abandonnant ma longue traîne de plumes de plumages
+de plumetis et de plumets
+devenir oiseau avare
+ivre du seul vol de ses ailes
+(Leiris, in Autres lancers, 1943)
+
+Repérez les clauses atypiques dans l’extrait suivant. Peut-on expliquer leur emploi ?
+
+La pensée incessante et qui n’a pas le droit d’interrompre le métier des gestes réglés, positionner sur la machine la pièce, serrer les écrous […]. Reculer la table, régler sur le vernier la profondeur de passe on y voit mal […] sous la lampe jaune, toute la journée, dont le bras vert articulé ne tient pas place, enclencher l’automatisme. Puis ce temps où la machine fait seule, sauf d’un coup de pinceau lever les copeaux s’enroulant en grappe autour de l’outil. Mais on a le temps d’un regard alentour, se redresser, étirer le dos, parfois s’appuyer sur l’armoire derrière, tirer une taffe à la gauloise posée sur le rebord du casier.
+(François Bon, Sortie d’usine, 1982)
+
+À l’occasion d’une réédition des Signes parmi nous en 1941, Ramuz réécrit la phrase mise en gras dans les extraits ci-dessous. Comparez les deux versions de la phrase en question et décrivez leurs différences sémantiques (à partir de la valence des verbes) et informationnelles. Expliquez comment le présentatif opère un changement manifeste de point de vue.
+[Un chemineau regarde le paysage au loin et s’amuse à en faire apparaître et disparaître des parties derrière son pied.]
+Version de 1931 :
+Jusqu’au ciel du bon Dieu, contre quoi j’agis, si je veux ; pas besoin de lever le pied beaucoup plus pour que j’y entre, et j’y dérange des choses ; – il bâilla, alors se fit entendre ce pas derrière lui.
+Il se retourna et vit Caille qui venait.
+Version de 1941 :
+Jusqu’au ciel du bon Dieu, contre quoi j’agis, si je veux ; pas besoin de lever le pied beaucoup plus pour que j’y entre, et j’y dérange des choses ; – il bâilla, alors se fit entendre ce pas derrière lui.
+Il se retourna ; c’était Caille qui venait.
+(Ramuz, Les Signes parmi nous, 1919-1941)
+
+Exercice collectif en TP
+Examinez, en tenant compte du contexte, la dynamique informationnelle de l’énoncé souligné. De quel type de clause s’agit-il ? Précisez et justifiez votre réponse.
+
+[Chloé] avait les deux pieds par terre et tentait de se lever. – Ça ne va pas du tout, dit-elle... je suis toute flasque.
+Colin s’approcha d’elle et la souleva. Elle s’accrocha à ses épaules.
+Tiens-moi, Colin. Je vais tomber !
+ ​C’est le lit qui t’a fatiguée... dit Colin.
+Non, dit Chloé. C’est les pilules de ton vieux marchand.
+(Vian, L’Écume des jours, 1947)
+
+Adjectifs épithètes
+et constructions détachées
+(polycopié : chapitre 6)
+
+Comparez le placement des adjectifs épithètes dans les deux textes suivants. Quelles sont les tendances ? Peut-on les expliquer ?
+1.
+Le nombre de séquences différentes d’acides aminés, et donc la diversité potentielle des molécules protéiques est énorme — presque aussi énorme que le nombre de mots différents que l’on peut écrire avec notre alphabet de 26 lettres. Les organismes ne synthétisent cependant qu’une très faible partie des protéines théoriquement possibles. Une seule cellule de la bactérie Escherichia coli, par exemple, contient de 600 à 800 types différents de protéines à un moment donné, et une cellule animale et végétale en a plusieurs fois autant.
+(Raven et al., Biologie végétale, 2000)
+
+2.
+Nous éprouvâmes l’engourdissante influence de cette double poésie. Les paroles, montées au diapason de la nature, déployèrent une grâce mystérieuse, et les regards eurent de plus éclatants rayons en participant à la lumière si largement versée par le soleil dans la prairie flamboyante. […] La joie tumultueuse d’une petite fille en liberté, si gracieuse dans ses gestes, si agaçante dans ses propos, n’était-elle pas aussi la vivante expression de deux âmes libres qui se plaisaient à former idéalement cette merveilleuse créature rêvée par Platon, connue de tous ceux dont la jeunesse fut remplie par un heureux amour.
+(Balzac, Le Lys dans la vallée, 1835)
+
+Étudiez le syntagme « l’immobile portier » à la fin de cet extrait. Peut-on justifier l’antéposition de l’épithète ?
+
+Le geôlier riait dans les trois dents qui lui restaient. Ce vieux coquin était accroupi dans un grand fauteuil noir, de ceux qu’on nomme à crémaillère, parce qu’ils ont de chaque côté des crans de fer qui soutiennent le dossier et mesurent sa courbe lorsqu’il se renverse pour servir de lit. Là dormait et veillait, sans se déranger jamais, l’immobile portier.
+(De Vigny, Stello, 1832)
+
+Décrivez la particularité des adjectifs dans les extraits suivants et commentez les effets produits.
+1.
+Mais, sauvage, honteuse de son abandon comme d’une faute, l’enfant se recula.
+(Zola, Le Rêve, 1888)
+
+2.
+La jeune fille écoutait, ébahie. (Idem)
+
+Examinez les appositions et montrez en quoi elles contribuent à l’argumentation.
+1.
+Carnet noir. Milan Kundera, l&apos;une des plus grandes voix de la littérature mondiale, s&apos;est éteint mardi 11 juillet, à Paris, à l&apos;âge de 94 ans. L&apos;écrivain franco-tchèque, auteur de romans incontournables tels que La Plaisanterie (en 1965) et L&apos;Insoutenable Légèreté de l&apos;être (1984), laisse un grand vide. Si le monde de la littérature est particulièrement ébranlé par sa disparition, les personnalités politiques françaises se sont également montrées très affectées après la triste annonce.
+
+« Milan Kundera nous a quittés. Esprit libre, il trouva refuge en France et embrassa dans ses écrits des horizons universels. Son ironie et son génie ont fait de ses œuvres des classiques de notre temps » a ainsi écrit le président de la République, Emmanuel Macron, sur son compte Twitter. (Le Point, 12 juillet 2023)
+
+2.
+[Jacques Chirac, alors président de la République, lors d’un discours tenu le 16 juillet 1995, portant notamment sur le rôle des autorités françaises lors de la rafle du Vélodrome d’Hiver (16-17 juillet 1942), durant laquelle des milliers de juifs parisiens furent arrêtés et déportés vers les camps d’extermination.]
+
+La France, patrie des Lumières et des Droits de l’Homme, terre d’accueil et d’asile, la France, ce jour-là, accomplissait l’irréparable.
+
+1256944-193706Exercice facultatif
+
+Dans l&apos;extrait suivant, repérez les constructions absolues. Expliquez leur intérêt pour la gestion de la narration
+
+La loge était éclairée par la clarté blafarde d’un jour d’hiver et par une lampe. À la lueur de ces deux lumières douteuses, M. Pipelet, au moment où sa femme prononça le nom de Cabrion, crut voir apparaître dans l’ombre de l’alcôve la figure immobile et narquoise du peintre.
+C’était lui, son chapeau pointu, ses longs cheveux, son visage maigre, son rire satanique, sa barbe en pointe et son regard fascinateur…
+Un moment M. Pipelet crut rêver ; il passa sa main sur ses yeux… se croyant le jouet d’une illusion…
+Ce n’était pas une illusion.
+Rien de plus réel que cette apparition…
+(Sue, Les Mystères de Paris, 1842-1843)
+
+De la clause à la phrase
+Les dislocations
+(polycopié : chapitres 8-9)
+
+Dans les deux textes suivants, identifiez les contours des phrases, des clauses et des propositions. Cette segmentation servira à alimenter une interprétation réalisée collectivement durant le TP.
+
+1.
+Il me connaît bien Gustin. Quand il est à jeun il est d’un excellent conseil. Il est expert en joli style. On peut se fier à ses avis. Il est pas jaloux pour un sou. Il demande plus grand-chose au monde. Il a un vieux chagrin d’amour. Il a pas envie de le quitter. Il en parle tout à fait rarement. C’était une femme pas sérieuse. Gustin c’est un cœur d’élite. Il changera pas avant de mourir.
+(Céline, Mort à crédit, 1936)
+
+2.
+Alors que tous les flots sont transformés en marbres, Lorsque les Aquilons vont déchirer les arbres,
+Et que l’eau n’ayant plus humidité ni poids, Fait pendre le cristal des roches et des bois,
+Que l’onde aplanissant ses orgueilleuses bosses Souffre sans murmurer le fardeau des carrosses, Que la neige durcie a pavé les marais,
+Confondu les chemins avecque les guérets, Que l’Hiver renfrogné d’un orgueilleux empire Empêche les Amours de Flore et de Zéphyre, Qu’Endymion vaincu du froid et du sommeil Ne peut tenir parole à la sœur du Soleil,
+Qui cependant toujours va visiter sa place Sur le haut d’un rocher tout hérissé de glace,
+Moi qui d’un sort plus humble, ou bien plus glorieux, Sur les beautés du Ciel n’ai point jeté mes yeux,
+Qui n’ai jamais cherché cette bonne fortune Qu’Endymion trouvait aux beautés de la Lune, Durant cette saison où leur ardent désir
+Ne trouve à son dessein, ni place, ni loisir, Je verrai ma Caliste après ce long voyage,
+Qui plus que cent Hivers m’a fait souffrir d’orage, Qui m’a plus ruiné que de faire abîmer
+Un vaisseau chargé d’or que j’aurais sur la Mer.
+(De Viau, « Élégie », Œuvres, 1623)
+
+Que fait ici le narrateur ? Analysez la complexité syntaxique de l’extrait. La syntaxe permet-elle de distinguer différents moments dans l’activité narrative ?
+
+Quand il apprit le mariage, il était chez le président du Ronceret où sa mère faisait un boston. Mme Granson regarda son fils dans une glace, elle le trouva pâle ; mais il l’était depuis le matin, car il avait entendu parler vaguement de ce mariage. Mlle Cormon était une carte sur laquelle Athanase jouait sa vie, et le froid pressentiment d’une catastrophe l’enveloppait déjà. Lorsque l’âme et l’imagination ont agrandi le malheur, en ont fait un fardeau trop lourd pour les épaules et pour le front ; quand une espérance longtemps caressée, dont les réalisations apaiseraient le vautour ardent qui ronge le cœur, vient à manquer, et que l’homme n’a foi ni en lui malgré ses forces, ni en l’avenir malgré la puissance divine, alors il se brise. Athanase était un fruit de l’éducation impériale. [...]
+(Balzac, La Vieille Fille, 1844)
+
+Décrivez la composition des phrases polyclausales suivantes. Commentez leur organisation en termes de dynamique informationnelle et expliquez leur intérêt dans le texte ou l’extrait.
+
+1.
+Les animaux, réfléchissez avant de les manger.
+(Texte d’un tract contre la consommation de viande)
+
+2.
+Il a pris l’habitude de la rencontrer dans la salle d’attente, la vieille mère Henrouille, Robinson.
+(Céline, Voyage au bout de la nuit, 1932)
+
+3.
+La mer, c’est le ciel même qui la colore.
+(Billy, Introïbo, 1939)
+
+4.
+La veille, on avait voulu noyer dans le bassin des Tuileries un misérable qui consultait un plan de la ville ouvert sur un banc.
+Cette maladie du soupçon, Maurice, autrefois d’esprit dégagé, venait de la contracter lui aussi [...].
+(Zola, La Débâcle, 1892)
+
+5.
+Vingt fois des paquets de mer emplirent l’embarcation. Et le livre des Saints Évangiles, que l’apôtre gardait précieusement sous une couverture pourpre, marquée d’une croix d’or, l’océan l’engloutit.
+(France, L’Île des pingouins, 1908)
+
+6.
+
+(Campagne promotionnelle HEP Vaud, 2017)

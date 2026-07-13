@@ -1,0 +1,131 @@
+Clause
+Morphologie
+Syntaxe
+Sens
+Modalité
+DI
+Remarque
+
+Clause canonique
+GN + GV
+S + Prédicat (V+C)
+Prédication (procès de verbe assigné rôles actantiels à S et C)
+Cf. Sens du verbe (mvt, parole…)
+Assertion
+TH + RH
+-
+
+Clause atypique
+Clause averbale
+-Attributive
+-Thétique
+-Existentielle
+SN (v. « Être » absent)
+-1-2 termes (type de SN)
+-1 terme (type de SN)
+-1 terme (type de SN)
+-attribution (support / propriété) à catégoriser
+-poser un objet de discours ingrédient (mentionner pour en dire qqch palus tard)
+-signifier l’existence comme faisant événement dans la
+situation faire exister
+Assertion (dire qqch) Exclamation (emphase) Interrgoation Injonction (ordre)
+-(TH+)
+RH ou RH (+TH)
+-TH
+-RH
+Endophasie Expressivité
+Absence d’ancrage temporel
+
+Clause infinitive
+Verbe à l’infinitif
+S + Prédicat (Vinf+C)
+Prédication mais
+procès non actualisé et pas d’expression modale
+Cf. Remarques
+RH (si contrôle ur : TH)
+CI (auto-) exclamative CI (auto-) délibérative CI (auto-)
+instructionnelle
+
+Clause à présentatif
+Présentatif c’est / voici / il y a + SN
+-
+Référence déictique : présenter un objet dans la situation
+d’énonciation
+-
+RH
+Indice d’un point de vue ! Pas confondre c’est + GN + rel avec
+la clause clivée
+
+Construction verbale
+Passif
+(Être) + (pp) (+(compl d’agent))
+S de la P passive = COD de P active
+correspondante Ev. C. circ
+= les de la P active (par ou de )
+Mêmes rôles
+actantiels que dans la clause active
+correspondante
+Assertion Exclamation Interrogation Injonction
+Agi/patie nt = TH
+Constructions passives dites
+« incomplètes » si absence de complément d’agent
+-&gt; effet de sens ! Ne pas confondre
+adjectif / usage adjectival d’un pp (signifiant une qualité, une propriété) et le pp
+(signifiant un procès)
+
+Construction pronominale
+Pronom réfléchi + V
+S + COD + V + C
+S et COD = coréférents
+Assertion Exclamation Interrogation Injonction
+-
+4 sens possibles :
+-réflexif (agent et patient)
+-réciproque
+(réciproquement agent et patient)
+-passif (patient / agi)
+-neutre (siège) Ne pas confondre avec les verbes
+essentiellement pronominaux ou les verbes
+accidentellement pronominaux
+
+Construction impersonnelle
+Il (réf vide) + V + séquence de l’impersonnel
+-
+-
+Assertion Exclamation Interrogation
+Injonction
+RH (si corcionst ant : TH)
+-
+Dispositif d’extraction
+Clause clivée
+C’est SN qui / que / dont Y.
+-
+-
+Assertion Exclamation Interrogation
+Injonction
+C’est RH qui / que
+/ dont TH
+Ne pas confondre avec la clause à présentatif avec
+relative
+
+Clause pseudo-clivée
+Ce qui / que / dont Y, c’est SN.
+-
+-
+Assertion Exclamation Interrogation
+Injonction
+Ce qui / que / dont TH,
+c’est RH
+-
+-
+Clause inversée
+X + V + SN
+X + V + S
+-
+Assertion Exclamation Interrogation Injonction
+TH
+(verbe) + RH (S)
+V. Monovalent (cond. nécessaire)
+Zone pré verbale occupée (cond. favorable)
+V.signifiant le surgissant / l’existence (cond.
+favorable)
