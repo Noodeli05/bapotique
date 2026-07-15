@@ -4,50 +4,51 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ressources Linguistique UNIL 2025</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
 <style>
 
 *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
 
 :root {
-  --bg: #f8fafc;
-  --card-bg: #ffffff;
-  --sidebar-bg: #f1f5f9;
-  --nav-bg: #1e1b4b;
-  --nav-active: rgba(255,255,255,.18);
-  --border: #e2e8f0;
-  --text: #1e293b;
-  --muted: #64748b;
-  --primary: #4f46e5;
-  --primary-lt: #e0e7ff;
-  --primary-dk: #3730a3;
+  --bg: #0F0F1A;
+  --card-bg: #1A1A2E;
+  --sidebar-bg: #13131F;
+  --nav-bg: #0A0A16;
+  --nav-active: rgba(108,99,255,.22);
+  --border: rgba(108,99,255,.2);
+  --text: #E8E8F0;
+  --muted: #9898B8;
+  --primary: #6C63FF;
+  --primary-lt: rgba(108,99,255,.12);
+  --primary-dk: #4438ca;
+  --cyan: #00D4FF;
 
-  --def-bg:#eef2ff;  --def-bd:#4f46e5;  --def-lbl:#3730a3;
-  --ex-bg:#ecfdf5;   --ex-bd:#059669;   --ex-lbl:#065f46;
-  --ret-bg:#fffbeb;  --ret-bd:#d97706;  --ret-lbl:#92400e;
-  --att-bg:#fff1f2;  --att-bd:#e11d48;  --att-lbl:#9f1239;
-  --ans-bg:#f0fdf4;  --ans-bd:#16a34a;  --ans-lbl:#14532d;
-  --note-bg:#f8fafc; --note-bd:#94a3b8; --note-lbl:#475569;
+  --def-bg:rgba(108,99,255,.1);   --def-bd:#6C63FF;  --def-lbl:#a5b4fc;
+  --ex-bg:rgba(0,212,255,.08);    --ex-bd:#00D4FF;   --ex-lbl:#67e8f9;
+  --ret-bg:rgba(251,191,36,.08);  --ret-bd:#fbbf24;  --ret-lbl:#fde68a;
+  --att-bg:rgba(248,113,113,.08); --att-bd:#f87171;  --att-lbl:#fca5a5;
+  --ans-bg:rgba(52,211,153,.08);  --ans-bd:#34d399;  --ans-lbl:#6ee7b7;
+  --note-bg:#1A1A2E;              --note-bd:rgba(108,99,255,.3); --note-lbl:#9898B8;
 
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   font-size: 15px;
   color: var(--text);
   background: var(--bg);
 }
 
-@media (prefers-color-scheme:dark) {
-  :root {
-    --bg:#0f172a; --card-bg:#1e293b; --sidebar-bg:#1e293b;
-    --nav-bg:#0a0826; --border:#334155;
-    --text:#e2e8f0; --muted:#94a3b8;
-    --primary:#818cf8; --primary-lt:#1e1b4b; --primary-dk:#a5b4fc;
-
-    --def-bg:#1e1b4b44;  --def-bd:#818cf8;  --def-lbl:#a5b4fc;
-    --ex-bg:#064e3b33;   --ex-bd:#34d399;   --ex-lbl:#6ee7b7;
-    --ret-bg:#451a0333;  --ret-bd:#fbbf24;  --ret-lbl:#fde68a;
-    --att-bg:#4c051944;  --att-bd:#fb7185;  --att-lbl:#fda4af;
-    --ans-bg:#14532d33;  --ans-bd:#4ade80;  --ans-lbl:#86efac;
-    --note-bg:#1e293b;   --note-bd:#475569; --note-lbl:#94a3b8;
-  }
+[data-theme="light"] {
+  --bg:#F0F0FF; --card-bg:#FFFFFF; --sidebar-bg:#F5F5FF;
+  --nav-bg:#1e1b4b; --border:rgba(108,99,255,.25);
+  --text:#1e1b4b; --muted:#6b7280;
+  --primary:#6C63FF; --primary-lt:rgba(108,99,255,.1); --primary-dk:#4438ca;
+  --def-bg:#eef2ff; --def-bd:#6C63FF; --def-lbl:#3730a3;
+  --ex-bg:#ecfdf5;  --ex-bd:#059669;  --ex-lbl:#065f46;
+  --ret-bg:#fffbeb; --ret-bd:#d97706; --ret-lbl:#92400e;
+  --att-bg:#fff1f2; --att-bd:#e11d48; --att-lbl:#9f1239;
+  --ans-bg:#f0fdf4; --ans-bd:#16a34a; --ans-lbl:#14532d;
+  --note-bg:#f8fafc; --note-bd:#94a3b8; --note-lbl:#475569;
 }
 
 body { height:100vh; display:flex; flex-direction:column; overflow:hidden; }
@@ -413,7 +414,7 @@ body { height:100vh; display:flex; flex-direction:column; overflow:hidden; }
 </head>
 <body>
 <div id="topnav">
-  <div id="topnav-title"><a href="revision_complet.html">← Retour au site</a></div>
+  <div id="topnav-title"><a href="revision_complet.html">← Retour</a> &nbsp;|&nbsp; <a href="flashcards.html">🃏 Flashcards</a></div>
   <button class="tnav-btn" data-tab="guide" onclick="showTab('guide')">📚 Guide UNIL</button><button class="tnav-btn" data-tab="resume" onclick="showTab('resume')">📖 Résumé Cours</button><button class="tnav-btn" data-tab="seances-g" onclick="showTab('seances-g')">🎓 Séances Cours</button><button class="tnav-btn" data-tab="seances-tp" onclick="showTab('seances-tp')">📅 Séances TP</button><button class="tnav-btn" data-tab="revision" onclick="showTab('revision')">💪 Révision TP</button><button class="tnav-btn" data-tab="corriges" onclick="showTab('corriges')">✅ Corrigés TP</button><button class="tnav-btn" data-tab="questions" onclick="showTab('questions')">❓ Questions</button><button class="tnav-btn" data-tab="tableau" onclick="showTab('tableau')">📊 Tableau</button><button class="tnav-btn" data-tab="examens" onclick="showTab('examens')">📝 Examens</button>
 </div>
 <div id="main">
