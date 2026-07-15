@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Révision Linguistique Française — UNIL 2025</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet"><style>
 :root{--pr:#6C63FF;--pr-lt:rgba(108,99,255,.12);--pr-dk:#4438ca;--bg:#0F0F1A;--card:#1A1A2E;--sb:#0A0A16;--sb-txt:#9898B8;--bdr:rgba(108,99,255,.2);--tx:#E8E8F0;--mu:#9898B8;--gri:#13131F;--bei:rgba(108,99,255,.08);--tau:#6C63FF;--acc:#6C63FF;--cyan:#00D4FF;--sw:250px}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{font-size:16px;scroll-behavior:smooth}
+html{font-size:16px;scroll-behavior:smooth;overflow-x:hidden}body{overflow-x:hidden}table,img,video,iframe{max-width:100%}
 body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--tx);display:flex;min-height:100vh}
 #sidebar{width:var(--sw);min-width:var(--sw);background:var(--sb);color:var(--sb-txt);height:100vh;position:sticky;top:0;overflow-y:auto;padding:1.2rem .8rem;flex-shrink:0;transition:transform .3s;z-index:100;box-shadow:2px 0 20px rgba(108,99,255,.15)}
 #sidebar h1{font-size:1rem;font-weight:800;letter-spacing:.03em;margin-bottom:.2rem;color:#fff;font-family:'Poppins',sans-serif}
@@ -16,7 +16,7 @@ body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg)
 .dos-hd{background:linear-gradient(135deg,#1A1A2E,#6C63FF);color:#fff;border-radius:14px;padding:1.4rem 1.8rem;margin-bottom:1.5rem;box-shadow:0 4px 24px rgba(108,99,255,.3);backdrop-filter:blur(12px)}
 .dos-hd h2{font-size:1.35rem;font-weight:800;margin-bottom:.35rem;letter-spacing:-.01em;font-family:'Poppins',sans-serif}
 .dos-hd .desc{font-size:.82rem;opacity:.75;line-height:1.55}
-.tabs{display:flex;gap:.3rem;flex-wrap:wrap;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);padding-bottom:.6rem}
+.tabs{display:flex;gap:.3rem;flex-wrap:wrap;margin-bottom:1.2rem;border-bottom:2px solid var(--bdr);padding-bottom:.6rem;overflow-x:auto;-webkit-overflow-scrolling:touch}
 .tab-btn{background:none;border:none;padding:.45rem .85rem;border-radius:6px 6px 0 0;cursor:pointer;font-size:.8rem;color:var(--mu);font-weight:500;transition:all .15s}
 .tab-btn:hover{background:rgba(108,99,255,.12);color:#fff}
 .tab-btn.active{background:linear-gradient(90deg,#6C63FF,#00D4FF);color:#fff;font-weight:700;box-shadow:0 2px 12px rgba(108,99,255,.4)}
