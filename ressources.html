@@ -166,7 +166,7 @@ backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);}
 .rtoc-l3 > a:hover { color:var(--primary); }
 
 /* ─── CONTENT AREA ─── */
-.r-content { flex:1; overflow-y:auto; overflow-x:hidden; padding:1.4rem 1.8rem; }
+.r-content { flex:1; overflow-y:auto; overflow-x:auto; -webkit-overflow-scrolling:touch; padding:1.4rem 1.8rem; }
 .r-sec { margin-bottom:1.1rem; }
 
 .r-h1 {
@@ -233,6 +233,18 @@ backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);}
 .r-highlight { background:#fef08a; border-radius:2px; padding:0 2px; }
 
 /* ─── REVEAL BUTTON ─── */
+.exo-draft{
+  display:block;width:100%;min-height:72px;resize:vertical;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:.45rem;
+  color:var(--text);font-family:inherit;font-size:.86rem;
+  padding:.5rem .8rem;margin:.5rem 0 .35rem;
+  outline:none;line-height:1.6;
+  transition:border-color .15s;-webkit-appearance:none;
+}
+.exo-draft:focus{border-color:var(--primary);background:rgba(var(--primary-rgb,108,99,255),0.04)}
+.exo-draft::placeholder{color:var(--muted);font-style:italic}
 .btn-rev {
   display:inline-flex; align-items:center; gap:.3rem;
   margin:.45rem 0; padding:.3rem .75rem;
@@ -430,7 +442,7 @@ backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);}
 .exam-ans p { font-size:.84rem; margin:.2rem 0; line-height:1.55; }
 
 /* ─── INLINE TABLES ─── */
-.rb-tbl-wrap { overflow-x:auto; margin:.6rem 0; border-radius:.45rem; box-shadow:0 1px 4px rgba(0,0,0,.08); }
+.rb-tbl-wrap { overflow:hidden; margin:.6rem 0; border-radius:.45rem; box-shadow:0 1px 4px rgba(0,0,0,.08); }
 .rb-tbl { border-collapse:collapse; font-size:.8rem; width:100%; min-width:400px; }
 .rb-tbl th {
   background:var(--primary); color:#fff;
@@ -1113,6 +1125,19 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape') {
     try { window.history.back(); } catch(ex){}
   }
+});
+
+// Inject draft textarea before every answer-reveal button
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('.btn-rev').forEach(function(btn){
+    var prev=btn.previousElementSibling;
+    if(!prev||!prev.classList.contains('exo-draft')){
+      var ta=document.createElement('textarea');
+      ta.className='exo-draft';
+      ta.placeholder='Votre réponse…';
+      btn.parentNode.insertBefore(ta,btn);
+    }
+  });
 });
 
 </script>
