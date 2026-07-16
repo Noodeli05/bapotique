@@ -473,6 +473,9 @@ backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);}
 ::-webkit-scrollbar-thumb { background:var(--border); border-radius:3px; }
 ::-webkit-scrollbar-thumb:hover { background:var(--muted); }
 
+
+/* iOS auto-zoom prevention: keep all inputs >= 16px */
+input, textarea, select { font-size: max(16px, 1em) !important; }
 </style>
 </head>
 <body>

@@ -107,6 +107,9 @@ body::before{
 .sec-badge{color:var(--teal);opacity:.75}
 .empty{grid-column:1/-1;text-align:center;padding:4rem 2rem;color:var(--mu)}
 @media(max-width:600px){.grid{grid-template-columns:1fr;padding:.8rem 1rem 2rem}.card{height:180px}.controls{padding:.8rem 1rem}}
+
+/* iOS auto-zoom prevention: keep all inputs >= 16px */
+input, textarea, select { font-size: max(16px, 1em) !important; }
 </style>
 </head>
 <body>
