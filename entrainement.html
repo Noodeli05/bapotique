@@ -120,7 +120,8 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
   <button class="btn-icon" id="btn-theme" title="Thème">🌙</button>
   <button class="btn-icon" id="btn-sc" title="Raccourcis">⌨️</button>
 </header>
-<div class="deck-picker"><button class="deck-tab active" data-deck="0" onclick="switchDeck(0)">📝 <span class="dtl">Révision</span><span class="dtc" id="tc0"></span></button>
+<div class="deck-picker"><button class="deck-tab" data-deck="all" onclick="switchAll()" id="tab-all">🗂️ <span class="dtl">Toutes</span><span class="dtc" id="tc-all"></span></button>
+<button class="deck-tab active" data-deck="0" onclick="switchDeck(0)">📝 <span class="dtl">Révision</span><span class="dtc" id="tc0"></span></button>
 <button class="deck-tab" data-deck="1" onclick="switchDeck(1)">✅ <span class="dtl">Corrigés TP</span><span class="dtc" id="tc1"></span></button>
 <button class="deck-tab" data-deck="2" onclick="switchDeck(2)">📖 <span class="dtl">Guide</span><span class="dtc" id="tc2"></span></button>
 <button class="deck-tab" data-deck="3" onclick="switchDeck(3)">🎓 <span class="dtl">Cours</span><span class="dtc" id="tc3"></span></button>
@@ -244,7 +245,7 @@ function switchDeck(i){
   if(S&&S.flashOn){ clearInterval(S.flashTimer); }
   if(S&&S.testOn){ S.testOn=false; document.getElementById('test-area').style.display='none'; document.getElementById('card-wrap').style.display=''; document.getElementById('fc-controls').style.display=''; }
   ADI=i; deck=DECKS[i];
-  document.querySelectorAll('.deck-tab').forEach((t,j)=>t.classList.toggle('active',j===i));
+  document.querySelectorAll('.deck-tab').forEach(t=>t.classList.toggle('active',t.dataset.deck===String(i)));
   document.getElementById('dk-title').textContent = deck.icon+' '+deck.label;
   document.getElementById('dk-sub').textContent = deck.cards.length+' cartes · '+deck.sections.length+' sections';
   initS();
@@ -551,11 +552,42 @@ document.addEventListener('keydown',e=>{
 function shuf(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]; } return a; }
 function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
+// ── All-decks mode ────────────────────────────────────────────────────────────
+function switchAll(){
+  if(S&&S.flashOn){ clearInterval(S.flashTimer); }
+  if(S&&S.testOn){ S.testOn=false; document.getElementById('test-area').style.display='none'; document.getElementById('card-wrap').style.display=''; document.getElementById('fc-controls').style.display=''; }
+  ADI='all';
+  // Build virtual all-deck
+  const allCards=[], allSections=[];
+  DECKS.forEach(d=>{
+    d.cards.forEach(c=>{
+      const sec=d.icon+' '+d.short+' — '+c.section;
+      if(!allSections.includes(sec)) allSections.push(sec);
+      allCards.push({...c, section: sec, id:'all_'+c.id});
+    });
+  });
+  deck={id:'all',label:'Toutes les cartes',short:'Toutes',icon:'🗂️',cards:allCards,sections:allSections};
+  document.querySelectorAll('.deck-tab').forEach(t=>t.classList.toggle('active',t.dataset.deck==='all'));
+  document.getElementById('dk-title').textContent='🗂️ Toutes les cartes';
+  document.getElementById('dk-sub').textContent=allCards.length+' cartes · '+allSections.length+' sections';
+  initS();
+  buildPool();
+  renderSecs();
+  renderCard();
+  updateCounts();
+  updateDash();
+  localStorage.setItem('fcE_last','all');
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active',b.dataset.f==='all'));
+}
+
 // ── Init ──────────────────────────────────────────────────────────────────────
 (function(){
+  const total=DECKS.reduce((s,d)=>s+d.cards.length,0);
+  document.getElementById('tc-all').textContent=total;
   DECKS.forEach((d,i)=>{ const el=document.getElementById('tc'+i); if(el) el.textContent=d.cards.length; });
-  const last=parseInt(localStorage.getItem('fcE_last')||'0');
-  switchDeck(Math.min(last,DECKS.length-1));
+  const last=localStorage.getItem('fcE_last');
+  if(last==='all') switchAll();
+  else switchDeck(Math.min(parseInt(last||'0'),DECKS.length-1));
 })();
 
 </script>
