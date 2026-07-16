@@ -169,6 +169,10 @@ body::before{
 
 /* iOS auto-zoom prevention: keep all inputs >= 16px */
 input, textarea, select { font-size: max(16px, 1em) !important; }
+/* TTS */
+.tts-btn{background:none;border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:.18rem .48rem;font-size:.78rem;cursor:pointer;color:rgba(232,228,240,.55);transition:all .15s;line-height:1.2;flex-shrink:0;user-select:none;vertical-align:middle;font-family:inherit}
+.tts-btn:hover,.tts-btn[data-s="1"]{background:var(--lav-bg);color:var(--lav);border-color:var(--lav)}
+.tts-card-btn{position:absolute;bottom:.55rem;left:.7rem;z-index:2}
 </style>
 </head>
 <body>
@@ -254,10 +258,12 @@ input, textarea, select { font-size: max(16px, 1em) !important; }
         <div class="clabel">Question</div>
         <div class="ctext" id="cf-text">Chargement…</div>
         <span class="card-fav" id="card-fav" onclick="event.stopPropagation();toggleFav()">☆</span>
+        <button class="tts-btn tts-card-btn" onclick="event.stopPropagation();_ttsId(this,'cf-text')" title="Écouter">🔊</button>
       </div>
       <div class="card-face card-back">
         <div class="clabel">Réponse</div>
         <div class="ctext" id="cb-text"></div>
+        <button class="tts-btn tts-card-btn" onclick="event.stopPropagation();_ttsId(this,'cb-text')" title="Écouter">🔊</button>
       </div>
     </div>
   </div>
@@ -656,6 +662,22 @@ function switchAll(){
   else switchDeck(Math.min(parseInt(last||'0'),DECKS.length-1));
 })();
 
+// ─── TTS ─────────────────────────────────────────────────────────────────────
+var _ttsCur=null;
+function _ttsStop(){if(_ttsCur){speechSynthesis.cancel();_ttsCur.removeAttribute('data-s');_ttsCur=null;}}
+function _ttsId(btn,id){
+  var el=document.getElementById(id);
+  if(!el)return;
+  if(_ttsCur===btn){_ttsStop();return;}
+  _ttsStop();
+  var txt=(el.innerText||el.textContent||'').trim();
+  if(!txt)return;
+  var u=new SpeechSynthesisUtterance(txt);
+  u.lang='fr-FR';u.rate=.95;
+  btn.setAttribute('data-s','1');_ttsCur=btn;
+  u.onend=u.onerror=function(){btn.removeAttribute('data-s');if(_ttsCur===btn)_ttsCur=null;};
+  speechSynthesis.speak(u);
+}
 </script>
 </body>
 </html>
