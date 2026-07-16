@@ -206,9 +206,11 @@ blockquote{
 
 /* ── TABLES ─────────────────────────────────────────────────────────────── */
 table{
-  width:100%;border-collapse:collapse;margin:1rem 0;
-  font-size:.84rem;overflow-x:auto;display:block;
-  border-radius:var(--r-md);box-shadow:0 2px 12px rgba(0,0,0,.3);
+  display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;
+  border-collapse:collapse;margin:1rem 0;
+  font-size:.84rem;
+  clip-path:inset(0 round var(--r-md));
+  box-shadow:0 2px 12px rgba(0,0,0,.3);
 }
 th{
   background:rgba(200,184,240,0.13);color:var(--lav);
