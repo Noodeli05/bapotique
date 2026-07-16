@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260716');}());</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Recherche — Linguistique UNIL 2025</title>
+<link rel="manifest" href="manifest.json"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js");</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#13111a;--bg2:#1c1820;
+  --glass:rgba(255,255,255,0.06);--glass-h:rgba(255,255,255,0.10);
+  --bdr:rgba(255,255,255,0.10);--bdr2:rgba(255,255,255,0.18);
+  --lav:#c8b8f0;--lav-bg:rgba(200,184,240,0.10);
+  --mint:#a8d8c4;--mint-bg:rgba(168,216,196,0.10);
+  --peach:#f0c8a0;--sky:#a8c8f0;--rose:#f0b8c4;--butter:#f0e0a0;--sage:#b8d8b8;
+  --tx:#e8e4f0;--mu:rgba(232,228,240,.55);--faint:rgba(232,228,240,.30);
+  --r:12px;--r-lg:20px;
+}
+[data-theme="light"]{
+  --bg:#f4f2fa;--bg2:#ebe8f4;
+  --glass:rgba(255,255,255,0.7);--glass-h:rgba(255,255,255,0.85);
+  --bdr:rgba(0,0,0,0.08);--bdr2:rgba(0,0,0,0.15);
+  --tx:#1a1730;--mu:rgba(26,23,48,0.55);--faint:rgba(26,23,48,0.30);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--tx);min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;z-index:0;background:radial-gradient(ellipse 80% 60% at 20% 10%,rgba(200,184,240,.13) 0%,transparent 60%),radial-gradient(ellipse 60% 40% at 80% 80%,rgba(168,216,196,.08) 0%,transparent 55%);pointer-events:none}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:.6rem;padding:.65rem 1rem;background:rgba(19,17,26,.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--bdr);flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.site-header h1{font-size:.95rem;font-weight:700;white-space:nowrap;flex-shrink:0;color:var(--tx)}
+.nav-links{display:flex;gap:.35rem;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.nav-links a{color:var(--mu);text-decoration:none;font-size:.78rem;padding:.28rem .6rem;border-radius:7px;transition:background .15s,color .15s;font-weight:500;white-space:nowrap}
+.nav-links a:hover,.nav-links a.active{background:var(--lav-bg);color:var(--tx)}
+.btn-icon{background:none;border:1px solid var(--bdr);border-radius:8px;padding:.3rem .5rem;cursor:pointer;font-size:.85rem;color:var(--mu);transition:all .15s;flex-shrink:0;margin-left:auto}
+.btn-icon:hover{background:var(--glass);color:var(--tx)}
+
+/* Main */
+main{position:relative;z-index:1;max-width:800px;margin:0 auto;padding:1.5rem 1rem 3rem}
+
+h2{font-family:'DM Serif Display',serif;font-size:1.5rem;margin-bottom:1rem;color:var(--tx)}
+
+/* Search box */
+.search-wrap{position:relative;margin-bottom:1.2rem}
+.search-input{width:100%;padding:.85rem 1rem .85rem 2.8rem;border-radius:var(--r-lg);border:1.5px solid var(--bdr2);background:var(--glass);color:var(--tx);font-size:1rem;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .2s,background .2s;backdrop-filter:blur(12px)}
+.search-input:focus{border-color:var(--lav);background:var(--glass-h)}
+.search-icon{position:absolute;left:.85rem;top:50%;transform:translateY(-50%);font-size:1.1rem;pointer-events:none;opacity:.5}
+.search-clear{position:absolute;right:.7rem;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;font-size:.9rem;color:var(--mu);padding:.2rem .4rem;border-radius:6px;display:none}
+.search-clear.show{display:block}
+.search-clear:hover{color:var(--tx)}
+
+/* Filters */
+.filter-row{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:1.2rem}
+.f-btn{background:var(--glass);border:1px solid var(--bdr);border-radius:20px;padding:.28rem .75rem;font-size:.75rem;cursor:pointer;color:var(--mu);transition:all .15s;font-family:'DM Sans',sans-serif}
+.f-btn:hover,.f-btn.active{background:var(--lav-bg);color:var(--lav);border-color:var(--lav)}
+
+/* Results */
+.results-header{font-size:.78rem;color:var(--mu);margin-bottom:.8rem}
+.results-header strong{color:var(--lav)}
+
+.result-card{background:var(--glass);border:1px solid var(--bdr);border-radius:var(--r);padding:.85rem 1rem;margin-bottom:.6rem;cursor:pointer;transition:background .15s,border-color .15s,transform .15s;display:block;text-decoration:none;color:var(--tx)}
+.result-card:hover{background:var(--glass-h);border-color:var(--bdr2);transform:translateX(3px)}
+.result-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);border-radius:var(--r) var(--r) 0 0;pointer-events:none}
+.result-card{position:relative}
+.rc-chapter{font-size:.67rem;color:var(--lav);font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.35rem}
+.rc-front{font-size:.95rem;font-weight:600;line-height:1.4;margin-bottom:.4rem}
+.rc-back{font-size:.82rem;color:var(--mu);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.rc-source{display:inline-block;font-size:.65rem;margin-top:.45rem;background:var(--lav-bg);color:var(--lav);padding:.12rem .45rem;border-radius:10px}
+
+mark{background:rgba(200,184,240,0.28);color:var(--lav);border-radius:3px;padding:0 .1rem}
+
+.empty{text-align:center;padding:3rem 1rem;color:var(--mu)}
+.empty-icon{font-size:2.5rem;margin-bottom:.8rem}
+.empty p{font-size:.9rem;line-height:1.6}
+.empty a{color:var(--lav)}
+
+/* Loading state */
+.no-cache{text-align:center;padding:3rem 1rem;background:var(--glass);border:1px solid var(--bdr);border-radius:var(--r-lg);margin-top:1rem}
+.no-cache-icon{font-size:3rem;margin-bottom:.8rem}
+.no-cache p{color:var(--mu);font-size:.9rem;line-height:1.7;margin-bottom:1rem}
+.btn-go{display:inline-block;background:var(--lav-bg);color:var(--lav);border:1px solid var(--lav);border-radius:10px;padding:.55rem 1.2rem;font-size:.88rem;font-weight:600;text-decoration:none;transition:background .15s}
+.btn-go:hover{background:rgba(200,184,240,.2)}
+
+@media(max-width:600px){
+  .search-input{font-size:1rem}
+  .result-card{padding:.7rem .85rem}
+  .rc-front{font-size:.88rem}
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>🔍 Recherche</h1>
+  <nav class="nav-links">
+    <a href="index.html">Accueil</a>
+    <a href="revision_complet.html">Révision</a>
+    <a href="ressources.html">Ressources</a>
+    <a href="flashcards.html">Flashcards</a>
+    <a href="entrainement.html">Entraînement</a>
+    <a href="examen.html">Examen</a>
+    <a href="stats.html">Progression</a>
+    <a href="search.html" class="active">Recherche</a>
+  </nav>
+  <button class="btn-icon" id="theme-toggle" title="Changer le thème">🌙</button>
+</header>
+
+<main>
+  <h2>Recherche globale</h2>
+
+  <div id="no-cache" class="no-cache" style="display:none">
+    <div class="no-cache-icon">📚</div>
+    <p>Les données des flashcards ne sont pas encore disponibles.<br>Visitez d'abord la page Flashcards pour les charger.</p>
+    <a href="flashcards.html" class="btn-go">Aller aux Flashcards →</a>
+  </div>
+
+  <div id="search-area" style="display:none">
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input class="search-input" id="q" type="search" placeholder="Rechercher un terme, une définition, un chapitre…" autocomplete="off" autocorrect="off" spellcheck="false">
+      <button class="search-clear" id="clear-btn" onclick="clearSearch()" title="Effacer">✕</button>
+    </div>
+    <div class="filter-row" id="filter-row"></div>
+    <div class="results-header" id="res-header"></div>
+    <div id="results"></div>
+  </div>
+</main>
+
+<script>
+// ── Theme ──────────────────────────────────────────────────────────────────
+(function(){
+  const t=localStorage.getItem('fc_theme')||'dark';
+  document.documentElement.setAttribute('data-theme',t);
+  document.getElementById('theme-toggle').textContent=t==='dark'?'🌙':'☀️';
+})();
+document.getElementById('theme-toggle').onclick=function(){
+  const t=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';
+  document.documentElement.setAttribute('data-theme',t);
+  this.textContent=t==='dark'?'🌙':'☀️';
+  localStorage.setItem('fc_theme',t);
+};
+
+// ── Data ───────────────────────────────────────────────────────────────────
+let CARDS = [];
+let activeSource = '';
+let debounce = null;
+
+function init() {
+  const raw = localStorage.getItem('bap_cards_cache');
+  if (!raw) {
+    document.getElementById('no-cache').style.display = '';
+    return;
+  }
+  try { CARDS = JSON.parse(raw); } catch(e) { document.getElementById('no-cache').style.display = ''; return; }
+  if (!CARDS.length) { document.getElementById('no-cache').style.display = ''; return; }
+  document.getElementById('search-area').style.display = '';
+  buildFilters();
+  document.getElementById('q').focus();
+
+  // Check URL param
+  const p = new URLSearchParams(location.search);
+  if (p.get('q')) {
+    document.getElementById('q').value = p.get('q');
+    doSearch();
+  }
+}
+
+function buildFilters() {
+  const sources = [...new Set(CARDS.map(c=>c.source))].filter(Boolean);
+  const row = document.getElementById('filter-row');
+  const all = document.createElement('button');
+  all.className = 'f-btn active'; all.textContent = 'Tout';
+  all.onclick = () => { activeSource = ''; setActive(all); doSearch(); };
+  row.appendChild(all);
+  sources.forEach(s => {
+    const btn = document.createElement('button');
+    btn.className = 'f-btn';
+    btn.textContent = s;
+    btn.onclick = () => { activeSource = s; setActive(btn); doSearch(); };
+    row.appendChild(btn);
+  });
+}
+
+function setActive(el) {
+  document.querySelectorAll('.f-btn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+}
+
+// ── Search ─────────────────────────────────────────────────────────────────
+function highlight(text, q) {
+  if (!q) return esc(text);
+  const re = new RegExp('(' + q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')', 'gi');
+  return esc(text).replace(re, '<mark>$1</mark>');
+}
+
+function esc(s) {
+  return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function doSearch() {
+  const q = (document.getElementById('q').value || '').trim();
+  document.getElementById('clear-btn').classList.toggle('show', q.length > 0);
+
+  // Update URL without reload
+  const url = new URL(location.href);
+  if (q) url.searchParams.set('q', q); else url.searchParams.delete('q');
+  history.replaceState(null, '', url);
+
+  const hdr = document.getElementById('res-header');
+  const res = document.getElementById('results');
+
+  if (!q) { hdr.textContent = ''; res.innerHTML = ''; return; }
+
+  let pool = CARDS;
+  if (activeSource) pool = pool.filter(c => c.source === activeSource);
+
+  const ql = q.toLowerCase();
+  const hits = pool.filter(c =>
+    (c.front||'').toLowerCase().includes(ql) ||
+    (c.back||'').toLowerCase().includes(ql) ||
+    (c.chapter||'').toLowerCase().includes(ql)
+  ).slice(0, 60);
+
+  hdr.innerHTML = hits.length
+    ? `<strong>${hits.length}</strong> résultat${hits.length>1?'s':''} pour « ${esc(q)} »${activeSource?' · '+esc(activeSource):''}`
+    : '';
+
+  if (!hits.length) {
+    res.innerHTML = `<div class="empty"><div class="empty-icon">🔍</div><p>Aucun résultat pour « ${esc(q)} ».<br>Essayez un autre terme.</p></div>`;
+    return;
+  }
+
+  res.innerHTML = hits.map(c => `
+    <a class="result-card" href="flashcards.html#card-${c.id}" title="Étudier cette carte">
+      <div class="rc-chapter">${highlight(c.chapter||'', q)}</div>
+      <div class="rc-front">${highlight(c.front||'', q)}</div>
+      <div class="rc-back">${highlight(c.back||'', q)}</div>
+      <span class="rc-source">${esc(c.source||'')}</span>
+    </a>
+  `).join('');
+}
+
+function clearSearch() {
+  document.getElementById('q').value = '';
+  document.getElementById('clear-btn').classList.remove('show');
+  document.getElementById('res-header').textContent = '';
+  document.getElementById('results').innerHTML = '';
+  document.getElementById('q').focus();
+  history.replaceState(null, '', location.pathname + '?v=20260716');
+}
+
+document.getElementById('q').addEventListener('input', function() {
+  clearTimeout(debounce);
+  debounce = setTimeout(doSearch, 180);
+});
+
+document.getElementById('q').addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') clearSearch();
+});
+
+init();
+</script>
+</body>
+</html>
