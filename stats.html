@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260716');}());</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Progression — Linguistique UNIL 2025</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* ── Variables ── */
+:root {
+  --bg:#13111a; --bg-warm:#1c1820;
+  --glass:rgba(255,255,255,0.06); --glass-hover:rgba(255,255,255,0.10);
+  --border:rgba(255,255,255,0.10); --border-strong:rgba(255,255,255,0.18);
+
+  --lav:#c8b8f0;    --lav-bg:rgba(200,184,240,0.10);
+  --mint:#a8d8c4;   --mint-bg:rgba(168,216,196,0.10);
+  --peach:#f0c8a0;  --peach-bg:rgba(240,200,160,0.10);
+  --sky:#a8c8f0;    --sky-bg:rgba(168,200,240,0.10);
+  --rose:#f0b8c4;   --rose-bg:rgba(240,184,196,0.10);
+  --butter:#f0e0a0; --butter-bg:rgba(240,224,160,0.10);
+  --sage:#b8d8b8;   --sage-bg:rgba(184,216,184,0.10);
+
+  --tx:#e8e4f0; --tx-muted:rgba(232,228,240,0.55); --tx-faint:rgba(232,228,240,0.30);
+  --r-card:16px; --r-sm:10px; --r-lg:22px;
+
+  --pr:#c8b8f0; --pr2:#a898d8; --teal:#a8d8c4; --cyan:#a8c8f0; --amber:#f0c8a0;
+  --card:rgba(255,255,255,0.06); --card2:rgba(255,255,255,0.04);
+  --sb:rgba(22,18,30,0.88);
+  --bdr:rgba(255,255,255,0.10); --mu:rgba(232,228,240,0.55);
+  --nav:rgba(19,17,26,0.92); --radius:16px;
+}
+[data-theme="light"] {
+  --bg:#f5f3f8; --bg-warm:#ede9f4;
+  --glass:rgba(255,255,255,0.70);
+  --border:rgba(120,100,180,0.18);
+  --tx:#1a1525; --tx-muted:rgba(26,21,37,0.55); --tx-faint:rgba(26,21,37,0.30);
+  --card:rgba(255,255,255,0.70); --card2:rgba(255,255,255,0.55);
+  --sb:rgba(240,236,250,0.95);
+  --bdr:rgba(120,100,180,0.18); --mu:rgba(26,21,37,0.55);
+  --nav:rgba(245,243,248,0.95);
+  --pr:#7c6cc0; --pr2:#5a4b9a;
+  --lav:#7c6cc0; --mint:#3a8a6a; --peach:#b07030; --sky:#3a6aa8; --butter:#907010; --sage:#4a7a4a;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth;overflow-x:hidden}
+body{
+  font-family:'DM Sans',system-ui,sans-serif;
+  background:var(--bg);color:var(--tx);
+  min-height:100vh;display:flex;flex-direction:column;
+  transition:background .3s,color .3s;overflow-x:hidden;
+}
+body::before{
+  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 60% 50% at 15% 20%,rgba(200,184,240,0.10) 0%,transparent 65%),
+    radial-gradient(ellipse 50% 45% at 85% 75%,rgba(168,216,196,0.08) 0%,transparent 65%),
+    radial-gradient(ellipse 40% 35% at 50% 50%,rgba(168,200,240,0.06) 0%,transparent 65%);
+}
+
+/* ── Header ── */
+.site-header{
+  position:sticky;top:0;z-index:100;
+  background:var(--sb);padding:.8rem 1.5rem;
+  display:flex;align-items:center;gap:.6rem;
+  box-shadow:0 2px 16px rgba(0,0,0,.5);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--bdr);
+  overflow-x:auto;-webkit-overflow-scrolling:touch;
+}
+.site-brand{
+  font-family:'DM Serif Display',serif;font-size:1.05rem;
+  white-space:nowrap;flex-shrink:0;text-decoration:none;
+  background:linear-gradient(90deg,#c8b8f0,#a8c8f0);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.nav-links{display:flex;gap:.4rem;flex:1;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.nav-links a{
+  color:rgba(232,228,240,0.80);text-decoration:none;font-size:.8rem;
+  padding:.3rem .6rem;border-radius:6px;white-space:nowrap;
+  transition:background .15s,color .15s;
+}
+.nav-links a:hover,.nav-links a.active{background:rgba(200,184,240,0.18);color:#fff}
+[data-theme="light"] .nav-links a{color:rgba(26,21,37,0.65)}
+[data-theme="light"] .nav-links a:hover,[data-theme="light"] .nav-links a.active{color:var(--tx);background:rgba(120,100,180,0.14)}
+.btn-icon{
+  background:none;border:none;cursor:pointer;font-size:1.05rem;
+  color:var(--mu);padding:.3rem .4rem;border-radius:6px;
+  transition:background .15s;flex-shrink:0;line-height:1;
+}
+.btn-icon:hover{background:rgba(255,255,255,.1)}
+
+/* ── Main layout ── */
+.page-main{
+  flex:1;position:relative;z-index:1;
+  padding:2rem 1.5rem 4rem;
+  max-width:980px;margin:0 auto;width:100%;
+}
+
+/* ── Page title row ── */
+.page-title-row{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  gap:1rem;margin-bottom:1.75rem;flex-wrap:wrap;
+}
+.page-title{
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(1.5rem,4vw,2.1rem);
+  line-height:1.1;font-weight:400;font-style:italic;
+}
+.page-title em{
+  font-style:normal;
+  background:linear-gradient(135deg,#c8b8f0,#a8c8f0);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.page-subtitle{font-size:.78rem;color:var(--mu);margin-top:.3rem}
+.refresh-btn{
+  display:flex;align-items:center;gap:.4rem;
+  background:var(--card);border:1px solid var(--bdr);
+  color:var(--mu);padding:.42rem .85rem;border-radius:8px;
+  font-size:.78rem;font-weight:600;cursor:pointer;
+  transition:all .18s;white-space:nowrap;font-family:'DM Sans',sans-serif;
+}
+.refresh-btn:hover{background:rgba(200,184,240,0.12);color:var(--tx);border-color:rgba(200,184,240,0.30)}
+.refresh-btn svg{transition:transform .4s}
+.refresh-btn:hover svg{transform:rotate(180deg)}
+
+/* ── Stat tiles ── */
+.stat-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:.85rem;
+  margin-bottom:1.5rem;
+}
+.stat-tile{
+  background:var(--card);border:1px solid var(--bdr);
+  border-radius:var(--r-card);padding:1.1rem 1rem;
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden;
+}
+.stat-tile::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  border-radius:var(--r-card) var(--r-card) 0 0;
+}
+.stat-tile:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.18)}
+.st-fire::after  {background:linear-gradient(90deg,var(--peach),var(--rose))}
+.st-study::after {background:linear-gradient(90deg,var(--lav),var(--sky))}
+.st-master::after{background:linear-gradient(90deg,var(--mint),var(--sage))}
+.st-due::after   {background:linear-gradient(90deg,var(--butter),var(--peach))}
+.stat-icon{font-size:1.3rem;line-height:1;margin-bottom:.5rem}
+.stat-num{
+  font-family:'DM Serif Display',serif;font-size:1.9rem;
+  line-height:1;font-weight:400;font-variant-numeric:tabular-nums;
+  margin-bottom:.2rem;
+}
+.st-fire  .stat-num{color:#f0c8a0}
+.st-study .stat-num{color:#c8b8f0}
+.st-master.stat-num{color:#a8d8c4}
+.st-master .stat-num{color:#a8d8c4}
+.st-due   .stat-num{color:#f0e0a0}
+.stat-label{font-size:.7rem;color:var(--mu);font-weight:600;letter-spacing:.02em;line-height:1.35}
+.stat-sub{font-size:.64rem;color:var(--tx-faint);margin-top:.2rem;line-height:1.4}
+
+/* ── Section card ── */
+.section{
+  background:var(--card);border:1px solid var(--bdr);border-radius:var(--r-lg);
+  padding:1.4rem 1.5rem;margin-bottom:1.25rem;
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  position:relative;
+}
+.section::before{
+  content:'';position:absolute;top:0;left:10%;right:10%;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.10),transparent);
+}
+.sec-head{
+  display:flex;align-items:baseline;justify-content:space-between;
+  gap:.6rem;margin-bottom:1.1rem;flex-wrap:wrap;
+}
+.sec-title{
+  font-family:'DM Serif Display',serif;
+  font-size:1rem;font-style:italic;color:var(--tx);
+}
+.sec-meta{font-size:.7rem;color:var(--mu);letter-spacing:.02em}
+
+/* ── Heatmap ── */
+.heatmap-outer{display:flex;gap:.5rem;align-items:flex-start}
+.heatmap-day-col{
+  display:grid;grid-template-rows:repeat(7,11px);gap:2px;
+  margin-top:1.4rem;flex-shrink:0;
+}
+.heatmap-day-lbl{font-size:.58rem;color:var(--tx-faint);line-height:11px;width:9px;text-align:right}
+.heatmap-scroll{flex-shrink:0;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.heatmap-months{
+  display:grid;gap:2px;height:1.35rem;align-items:end;margin-bottom:2px;
+}
+.heatmap-month-lbl{font-size:.6rem;color:var(--mu);white-space:nowrap;overflow:visible;line-height:1}
+.heatmap-grid{
+  display:grid;grid-template-rows:repeat(7,11px);
+  grid-auto-flow:column;grid-auto-columns:11px;gap:2px;
+}
+.hcell{
+  width:11px;height:11px;border-radius:2px;
+  background:rgba(255,255,255,0.05);cursor:default;
+}
+.hcell.d1{background:rgba(200,184,240,0.20)}
+.hcell.d2{background:rgba(200,184,240,0.42)}
+.hcell.d3{background:rgba(200,184,240,0.68)}
+.hcell.d4{background:#c8b8f0}
+.hcell:hover{opacity:.7}
+.hmap-legend{display:flex;align-items:center;gap:.4rem;margin-top:.7rem;font-size:.63rem;color:var(--mu)}
+.hmap-legend-sq{width:11px;height:11px;border-radius:2px;flex-shrink:0}
+
+/* ── Tooltip ── */
+#tooltip{
+  position:fixed;background:rgba(19,17,26,0.95);color:var(--tx);
+  border:1px solid rgba(255,255,255,0.14);border-radius:7px;
+  padding:.3rem .55rem;font-size:.7rem;pointer-events:none;
+  z-index:500;opacity:0;transition:opacity .1s;white-space:nowrap;
+  backdrop-filter:blur(8px);
+}
+#tooltip.vis{opacity:1}
+[data-theme="light"] #tooltip{background:rgba(240,236,250,0.96);border-color:rgba(120,100,180,0.25)}
+
+/* ── Line chart ── */
+#activity-chart{width:100%;display:block;border-radius:6px}
+.chart-legend{display:flex;gap:1.1rem;margin-top:.7rem;justify-content:flex-end}
+.leg-item{display:flex;align-items:center;gap:.38rem;font-size:.7rem;color:var(--mu)}
+.leg-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+
+/* ── Chapter progress ── */
+.chapter-list{display:flex;flex-direction:column;gap:.7rem}
+.ch-row{display:flex;flex-direction:column;gap:.28rem}
+.ch-top{display:flex;align-items:baseline;justify-content:space-between;gap:.5rem}
+.ch-name{font-size:.8rem;color:var(--tx);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;flex:1}
+.ch-count{font-size:.68rem;color:var(--mu);white-space:nowrap;flex-shrink:0;font-variant-numeric:tabular-nums}
+.ch-bar-bg{height:5px;background:rgba(255,255,255,0.06);border-radius:5px;overflow:hidden}
+[data-theme="light"] .ch-bar-bg{background:rgba(0,0,0,0.07)}
+.ch-bar{height:100%;border-radius:5px;background:linear-gradient(90deg,#c8b8f0,#a8c8f0);transition:width .65s cubic-bezier(.4,0,.2,1)}
+
+/* ── Maturity bar ── */
+.mat-stack{height:20px;border-radius:8px;overflow:hidden;display:flex;margin-bottom:1rem}
+.mat-seg{height:100%;transition:width .65s cubic-bezier(.4,0,.2,1);min-width:0}
+.mat-new      {background:#f0c8a0}
+.mat-learning {background:#a8c8f0}
+.mat-young    {background:#c8b8f0}
+.mat-mature   {background:#a8d8c4}
+.mat-legend{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem}
+.mat-item{
+  background:rgba(255,255,255,0.04);border:1px solid var(--bdr);
+  border-radius:10px;padding:.65rem .75rem;
+}
+[data-theme="light"] .mat-item{background:rgba(255,255,255,0.6)}
+.mat-dot{width:8px;height:8px;border-radius:50%;margin-bottom:.38rem}
+.mat-lbl{font-size:.64rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--mu);margin-bottom:.1rem}
+.mat-n{font-family:'DM Serif Display',serif;font-size:1.3rem;line-height:1;color:var(--tx);font-variant-numeric:tabular-nums}
+.mat-pct{font-size:.62rem;color:var(--tx-faint);margin-top:.1rem}
+
+/* ── Empty state ── */
+.empty{text-align:center;padding:2.5rem 1rem;color:var(--mu)}
+.empty-icon{font-size:2rem;margin-bottom:.75rem}
+.empty-title{font-family:'DM Serif Display',serif;font-size:1.05rem;color:var(--tx);margin-bottom:.4rem}
+.empty-body{font-size:.82rem;line-height:1.65;max-width:340px;margin:0 auto}
+.empty-body a{color:#c8b8f0;text-decoration:none}
+.empty-body a:hover{text-decoration:underline}
+
+/* ── Footer ── */
+footer{
+  text-align:center;padding:1.4rem;border-top:1px solid var(--bdr);
+  color:var(--mu);font-size:.76rem;line-height:1.7;
+  position:relative;z-index:1;
+}
+footer strong{color:#c8b8f0}
+
+/* ── Responsive ── */
+@media(max-width:680px){
+  .stat-grid{grid-template-columns:repeat(2,1fr)}
+  .mat-legend{grid-template-columns:repeat(2,1fr)}
+  .page-main{padding:1.25rem 1rem 3rem}
+  .section{padding:1.1rem 1rem}
+}
+@media(max-width:380px){
+  .stat-num{font-size:1.55rem}
+}
+</style>
+</head>
+<body>
+
+<div id="tooltip"></div>
+
+<header class="site-header">
+  <a class="site-brand" href="index.html">Linguistique Fr.</a>
+  <nav class="nav-links">
+    <a href="index.html">Accueil</a>
+    <a href="revision_complet.html">Révision</a>
+    <a href="ressources.html">Ressources</a>
+    <a href="flashcards.html">Flashcards</a>
+    <a href="entrainement.html">Entraînement</a>
+    <a href="stats.html" class="active">Progression</a>
+    <a href="examen.html">Examen</a>
+  </nav>
+  <button class="btn-icon" id="btn-theme" onclick="toggleTheme()" title="Changer le thème">🌙</button>
+</header>
+
+<main class="page-main">
+
+  <div class="page-title-row">
+    <div>
+      <h1 class="page-title">Ma <em>Progression</em></h1>
+      <p class="page-subtitle" id="last-updated">Chargement…</p>
+    </div>
+    <button class="refresh-btn" onclick="renderAll()">
+      <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 4s1.5-3 7-3a7 7 0 1 1-7 7"/><polyline points="1 1 1 4 4 4"/></svg>
+      Actualiser
+    </button>
+  </div>
+
+  <!-- ── Stat tiles ── -->
+  <div class="stat-grid">
+    <div class="stat-tile st-fire">
+      <div class="stat-icon">🔥</div>
+      <div class="stat-num" id="st-streak">—</div>
+      <div class="stat-label">Série actuelle</div>
+      <div class="stat-sub" id="st-streak-sub"></div>
+    </div>
+    <div class="stat-tile st-study">
+      <div class="stat-icon">📚</div>
+      <div class="stat-num" id="st-studied">—</div>
+      <div class="stat-label">Révisées</div>
+      <div class="stat-sub" id="st-studied-sub"></div>
+    </div>
+    <div class="stat-tile st-master">
+      <div class="stat-icon">✅</div>
+      <div class="stat-num" id="st-mastered">—</div>
+      <div class="stat-label">Maîtrisées</div>
+      <div class="stat-sub" id="st-mastered-sub"></div>
+    </div>
+    <div class="stat-tile st-due">
+      <div class="stat-icon">📅</div>
+      <div class="stat-num" id="st-due">—</div>
+      <div class="stat-label">À réviser</div>
+      <div class="stat-sub" id="st-due-sub"></div>
+    </div>
+  </div>
+
+  <!-- ── Heatmap ── -->
+  <div class="section">
+    <div class="sec-head">
+      <h2 class="sec-title">Calendrier d'activité</h2>
+      <span class="sec-meta">90 derniers jours</span>
+    </div>
+    <div id="heatmap-area"></div>
+  </div>
+
+  <!-- ── Line chart ── -->
+  <div class="section">
+    <div class="sec-head">
+      <h2 class="sec-title">Cartes révisées par jour</h2>
+      <span class="sec-meta">30 derniers jours</span>
+    </div>
+    <div id="chart-area">
+      <canvas id="activity-chart" height="160"></canvas>
+      <div class="chart-legend">
+        <div class="leg-item"><div class="leg-dot" style="background:#c8b8f0"></div>Total révisées</div>
+        <div class="leg-item"><div class="leg-dot" style="background:#a8d8c4"></div>Correctes</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Chapter progress ── -->
+  <div class="section">
+    <div class="sec-head">
+      <h2 class="sec-title">Progression par chapitre</h2>
+      <span class="sec-meta" id="ch-meta"></span>
+    </div>
+    <div id="chapter-area"></div>
+  </div>
+
+  <!-- ── Maturity ── -->
+  <div class="section">
+    <div class="sec-head">
+      <h2 class="sec-title">Maturité des cartes</h2>
+      <span class="sec-meta">Distribution SM-2</span>
+    </div>
+    <div id="maturity-area"></div>
+  </div>
+
+</main>
+
+<footer>
+  Linguistique Française — UNIL 2025 · <strong>448 cartes</strong>
+</footer>
+
+<script>
+'use strict';
+
+/* ── Constants ── */
+const TOTAL = 448;
+const LS_SM2    = 'bap_sm2';
+const LS_LOG    = 'bap_log';
+const LS_STREAK = 'bap_streak';
+const LS_CARDS  = 'bap_cards_cache';
+const LS_THEME  = 'stats_theme';
+
+/* ── Theme ── */
+(function(){
+  const s = localStorage.getItem(LS_THEME);
+  if (s) {
+    document.documentElement.setAttribute('data-theme', s);
+    document.getElementById('btn-theme').textContent = s === 'light' ? '🌙' : '☀️';
+  }
+})();
+
+function toggleTheme(){
+  const cur = document.documentElement.getAttribute('data-theme') || 'dark';
+  const next = cur === 'light' ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem(LS_THEME, next);
+  document.getElementById('btn-theme').textContent = next === 'light' ? '🌙' : '☀️';
+  if (window._chartDays) drawChart(window._chartDays);
+}
+
+/* ── Data ── */
+function load(){
+  function j(k, fallback){ try { return JSON.parse(localStorage.getItem(k) || null) ?? fallback; } catch(e){ return fallback; } }
+  return {
+    sm2:    j(LS_SM2, {}),
+    log:    j(LS_LOG, []),
+    streak: j(LS_STREAK, {last:null, count:0}),
+    cards:  j(LS_CARDS, null)
+  };
+}
+
+/* ── Date utils ── */
+function ymd(d){ return d.toISOString().slice(0,10); }
+function fromYmd(s){ const [y,m,d]=s.split('-').map(Number); return new Date(y,m-1,d); }
+
+/* ── Stat computation ── */
+function computeStats(sm2, streak){
+  const now = Date.now();
+  let studied=0, mastered=0, due=0;
+  for (const id in sm2){
+    const c = sm2[id];
+    if (c.reps > 0) studied++;
+    if (c.reps >= 3 && c.ef >= 2.2) mastered++;
+    if (c.nextReview != null && c.nextReview <= now) due++;
+  }
+  return { count: streak.count||0, last: streak.last, studied, mastered, due };
+}
+
+/* ── Render stat tiles ── */
+function renderStats(s){
+  const pct = n => Math.round(n/TOTAL*100);
+  document.getElementById('st-streak').textContent   = s.count;
+  document.getElementById('st-streak-sub').textContent = s.last ? `Dernière séance : ${s.last}` : 'Aucune séance';
+  document.getElementById('st-studied').textContent   = s.studied;
+  document.getElementById('st-studied-sub').textContent = `${pct(s.studied)} % des ${TOTAL} cartes`;
+  document.getElementById('st-mastered').textContent  = s.mastered;
+  document.getElementById('st-mastered-sub').textContent = s.studied > 0
+    ? `${Math.round(s.mastered/s.studied*100)} % des révisées`
+    : '—';
+  document.getElementById('st-due').textContent = s.due;
+  document.getElementById('st-due-sub').textContent = s.due === 0
+    ? 'Tout est à jour ✓'
+    : s.due === 1 ? '1 carte attend' : `${s.due} cartes attendent`;
+}
+
+/* ── Log map ── */
+function logMap(log){
+  const m = {};
+  for (const e of log){ m[e.date] = (m[e.date]||0) + (e.n||0); }
+  return m;
+}
+function logMapOk(log){
+  const m = {};
+  for (const e of log){ m[e.date] = (m[e.date]||0) + (e.ok||0); }
+  return m;
+}
+
+/* ── Heatmap ── */
+function renderHeatmap(log){
+  const area = document.getElementById('heatmap-area');
+  if (!log.length){
+    area.innerHTML = emptyHTML('Commencez à réviser pour voir votre activité ici.');
+    return;
+  }
+
+  const counts = logMap(log);
+  const todayD = new Date(); todayD.setHours(0,0,0,0);
+
+  // Start 89 days ago, aligned to Monday
+  const start = new Date(todayD);
+  start.setDate(start.getDate() - 89);
+  const dow = (start.getDay() + 6) % 7; // 0=Mon
+  start.setDate(start.getDate() - dow);
+
+  // All days from start to today
+  const days = [];
+  const cur = new Date(start);
+  while (cur <= todayD){ days.push(new Date(cur)); cur.setDate(cur.getDate()+1); }
+
+  const totalCols = Math.ceil(days.length / 7);
+
+  // Month labels per column
+  const colLabel = Array(totalCols).fill('');
+  let lastM = -1, lastLabelC = -4;
+  for (let c=0; c<totalCols; c++){
+    const d = days[c*7];
+    if (!d) continue;
+    const m = d.getMonth();
+    if (m !== lastM && c - lastLabelC >= 3){
+      colLabel[c] = d.toLocaleDateString('fr-FR',{month:'short'});
+      lastM = m; lastLabelC = c;
+    }
+  }
+
+  const dayNames = ['L','M','M','J','V','S','D'];
+
+  // Build HTML
+  let html = '<div class="heatmap-outer">';
+
+  // Day labels
+  html += '<div class="heatmap-day-col">';
+  for (const n of dayNames) html += `<div class="heatmap-day-lbl">${n}</div>`;
+  html += '</div>';
+
+  // Scrollable area
+  html += '<div class="heatmap-scroll">';
+
+  // Month row — same grid as data grid
+  html += `<div class="heatmap-months" style="grid-template-columns:repeat(${totalCols},11px)">`;
+  for (let c=0; c<totalCols; c++){
+    html += `<div class="heatmap-month-lbl"${colLabel[c] ? '' : ' style="visibility:hidden"'}>${colLabel[c]||'.'}</div>`;
+  }
+  html += '</div>';
+
+  // Data grid
+  html += '<div class="heatmap-grid">';
+  for (let i=0; i<totalCols*7; i++){
+    const d = days[i];
+    if (!d || d > todayD){
+      html += '<div style="width:11px;height:11px;border-radius:2px;visibility:hidden"></div>';
+      continue;
+    }
+    const s = ymd(d);
+    const n = counts[s] || 0;
+    let cls = 'hcell';
+    if      (n >= 16) cls += ' d4';
+    else if (n >= 6)  cls += ' d3';
+    else if (n >= 1)  cls += ' d2';
+    // else d1 only on cells that exist but are 0 — keep default bg for now
+    const dl = d.toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long'});
+    const cl = n === 0 ? 'Aucune révision' : n === 1 ? '1 carte révisée' : `${n} cartes révisées`;
+    html += `<div class="${cls}" data-d="${dl}" data-c="${cl}"></div>`;
+  }
+  html += '</div>'; // heatmap-grid
+
+  // Legend
+  html += `<div class="hmap-legend">
+    <span>Moins</span>
+    <div class="hmap-legend-sq" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12)"></div>
+    <div class="hmap-legend-sq hcell d2"></div>
+    <div class="hmap-legend-sq hcell d3"></div>
+    <div class="hmap-legend-sq hcell d4"></div>
+    <span>Plus</span>
+  </div>`;
+
+  html += '</div></div>'; // heatmap-scroll + heatmap-outer
+
+  area.innerHTML = html;
+
+  // Tooltip wiring
+  const tip = document.getElementById('tooltip');
+  area.querySelectorAll('.hcell[data-d]').forEach(cell => {
+    cell.addEventListener('mouseenter', () => {
+      tip.textContent = `${cell.dataset.d} — ${cell.dataset.c}`;
+      tip.classList.add('vis');
+    });
+    cell.addEventListener('mousemove', e => {
+      tip.style.left = (e.clientX + 14) + 'px';
+      tip.style.top  = (e.clientY - 36) + 'px';
+    });
+    cell.addEventListener('mouseleave', () => tip.classList.remove('vis'));
+  });
+}
+
+/* ── Line chart ── */
+function chartColors(){
+  const dark = document.documentElement.getAttribute('data-theme') !== 'light';
+  return {
+    grid:     dark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.07)',
+    axis:     dark ? 'rgba(232,228,240,0.40)' : 'rgba(26,21,37,0.40)',
+    lavStroke:'#c8b8f0',
+    lavFill:  dark ? 'rgba(200,184,240,0.13)' : 'rgba(200,184,240,0.20)',
+    mntStroke:'#a8d8c4',
+    mntFill:  dark ? 'rgba(168,216,196,0.09)' : 'rgba(168,216,196,0.16)',
+  };
+}
+
+function buildChartDays(log){
+  const mn = logMap(log);
+  const mo = logMapOk(log);
+  const today = new Date();
+  const days = [];
+  for (let i=29; i>=0; i--){
+    const d = new Date(today); d.setDate(d.getDate()-i);
+    const s = ymd(d);
+    days.push({ date:s, n: mn[s]||0, ok: mo[s]||0, d });
+  }
+  return days;
+}
+
+function drawChart(days){
+  const canvas = document.getElementById('activity-chart');
+  if (!canvas) return;
+  window._chartDays = days;
+
+  const dpr = window.devicePixelRatio || 1;
+  const W = canvas.parentElement ? canvas.parentElement.offsetWidth || 760 : 760;
+  const H = 160;
+  canvas.width  = W * dpr;
+  canvas.height = H * dpr;
+  canvas.style.width  = W  + 'px';
+  canvas.style.height = H + 'px';
+
+  const ctx = canvas.getContext('2d');
+  ctx.scale(dpr, dpr);
+  ctx.clearRect(0,0,W,H);
+
+  const C = chartColors();
+  const PAD = { t:14, r:14, b:34, l:38 };
+  const cW = W - PAD.l - PAD.r;
+  const cH = H - PAD.t - PAD.b;
+
+  const maxN = Math.max(...days.map(d=>d.n), 1);
+  const yMax = Math.ceil(maxN / 5) * 5 || 10;
+  const N = days.length;
+
+  ctx.font = `11px "DM Sans", system-ui, sans-serif`;
+
+  // Y gridlines + labels
+  const yTicks = 4;
+  for (let i=0; i<=yTicks; i++){
+    const v = Math.round(yMax * i / yTicks);
+    const y = PAD.t + cH - (v/yMax)*cH;
+    ctx.strokeStyle = C.grid; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(PAD.l, y); ctx.lineTo(PAD.l+cW, y); ctx.stroke();
+    ctx.fillStyle = C.axis; ctx.textAlign = 'right';
+    ctx.fillText(v, PAD.l-5, y+4);
+  }
+
+  // X labels
+  ctx.fillStyle = C.axis; ctx.textAlign = 'center';
+  for (let i=0; i<N; i++){
+    if (i % 5 !== 0 && i !== N-1) continue;
+    const x = PAD.l + (i/(N-1))*cW;
+    const lbl = days[i].d.toLocaleDateString('fr-FR',{day:'numeric',month:'short'});
+    ctx.fillText(lbl, x, H - PAD.b + 14);
+  }
+
+  // Draw area + line
+  function drawSeries(key, stroke, fill){
+    const pts = days.map((d,i) => ({
+      x: PAD.l + (i/(N-1))*cW,
+      y: PAD.t + cH - (d[key]/yMax)*cH
+    }));
+    ctx.save();
+    // Area fill
+    ctx.beginPath();
+    ctx.moveTo(pts[0].x, pts[0].y);
+    for (let i=1; i<pts.length; i++){
+      const mx = (pts[i-1].x + pts[i].x)/2;
+      ctx.bezierCurveTo(mx, pts[i-1].y, mx, pts[i].y, pts[i].x, pts[i].y);
+    }
+    ctx.lineTo(pts[N-1].x, PAD.t+cH);
+    ctx.lineTo(pts[0].x,   PAD.t+cH);
+    ctx.closePath();
+    ctx.fillStyle = fill; ctx.fill();
+    // Line
+    ctx.beginPath();
+    ctx.moveTo(pts[0].x, pts[0].y);
+    for (let i=1; i<pts.length; i++){
+      const mx = (pts[i-1].x + pts[i].x)/2;
+      ctx.bezierCurveTo(mx, pts[i-1].y, mx, pts[i].y, pts[i].x, pts[i].y);
+    }
+    ctx.strokeStyle = stroke; ctx.lineWidth = 2; ctx.lineJoin = 'round'; ctx.stroke();
+    // Endpoint dot
+    const lp = pts[N-1];
+    ctx.beginPath(); ctx.arc(lp.x, lp.y, 3.5, 0, Math.PI*2);
+    ctx.fillStyle = stroke; ctx.fill();
+    ctx.restore();
+  }
+
+  drawSeries('n',  C.lavStroke, C.lavFill);
+  drawSeries('ok', C.mntStroke, C.mntFill);
+}
+
+/* ── Chapter progress ── */
+function renderChapters(cards, sm2){
+  const area = document.getElementById('chapter-area');
+  if (!cards){
+    area.innerHTML = emptyHTML('Visitez <a href="flashcards.html">Flashcards</a> pour activer les statistiques par chapitre.');
+    return;
+  }
+
+  // Group by chapter
+  const groups = {};
+  for (const card of cards){
+    const ch = card.chapter || '(divers)';
+    if (!groups[ch]) groups[ch] = { total:0, studied:0 };
+    groups[ch].total++;
+    const s = sm2[card.id];
+    if (s && s.reps > 0) groups[ch].studied++;
+  }
+
+  const sorted = Object.entries(groups).sort((a,b) => b[1].total - a[1].total);
+  document.getElementById('ch-meta').textContent = `${sorted.length} chapitres · ${cards.length} cartes`;
+
+  let html = '<div class="chapter-list">';
+  for (const [name, {total, studied}] of sorted){
+    const pct = total ? Math.round(studied/total*100) : 0;
+    html += `<div class="ch-row">
+      <div class="ch-top">
+        <div class="ch-name" title="${name}">${name}</div>
+        <div class="ch-count">${studied}&thinsp;/&thinsp;${total} <span style="opacity:.5">(${pct}%)</span></div>
+      </div>
+      <div class="ch-bar-bg"><div class="ch-bar" style="width:${pct}%"></div></div>
+    </div>`;
+  }
+  html += '</div>';
+  area.innerHTML = html;
+}
+
+/* ── Maturity ── */
+function renderMaturity(sm2){
+  const area = document.getElementById('maturity-area');
+  const seen = new Set();
+  let nNew=0, nLearn=0, nYoung=0, nMature=0;
+  for (const id in sm2){
+    seen.add(id);
+    const c = sm2[id];
+    if      (!c.reps || c.reps === 0) nNew++;
+    else if (c.reps <= 2)             nLearn++;
+    else if (c.reps <= 5)             nYoung++;
+    else                              nMature++;
+  }
+  nNew += Math.max(0, TOTAL - seen.size);
+  const T = TOTAL;
+  const pct = n => T ? (n/T*100).toFixed(1) : '0.0';
+  const w   = n => T ? (n/T*100)+'%' : '0%';
+
+  area.innerHTML = `
+    <div class="mat-stack">
+      <div class="mat-seg mat-new"     style="width:${w(nNew)}"></div>
+      <div class="mat-seg mat-learning" style="width:${w(nLearn)}"></div>
+      <div class="mat-seg mat-young"   style="width:${w(nYoung)}"></div>
+      <div class="mat-seg mat-mature"  style="width:${w(nMature)}"></div>
+    </div>
+    <div class="mat-legend">
+      <div class="mat-item"><div class="mat-dot" style="background:#f0c8a0"></div><div class="mat-lbl">Nouvelles</div><div class="mat-n">${nNew}</div><div class="mat-pct">${pct(nNew)} %</div></div>
+      <div class="mat-item"><div class="mat-dot" style="background:#a8c8f0"></div><div class="mat-lbl">Apprentissage</div><div class="mat-n">${nLearn}</div><div class="mat-pct">${pct(nLearn)} %</div></div>
+      <div class="mat-item"><div class="mat-dot" style="background:#c8b8f0"></div><div class="mat-lbl">Jeunes</div><div class="mat-n">${nYoung}</div><div class="mat-pct">${pct(nYoung)} %</div></div>
+      <div class="mat-item"><div class="mat-dot" style="background:#a8d8c4"></div><div class="mat-lbl">Matures</div><div class="mat-n">${nMature}</div><div class="mat-pct">${pct(nMature)} %</div></div>
+    </div>`;
+}
+
+/* ── Empty state ── */
+function emptyHTML(msg){
+  return `<div class="empty">
+    <div class="empty-icon">📊</div>
+    <div class="empty-title">Pas encore de données</div>
+    <p class="empty-body">${msg}</p>
+  </div>`;
+}
+
+/* ── Main render ── */
+function renderAll(){
+  const data = load();
+  const stats = computeStats(data.sm2, data.streak);
+
+  renderStats(stats);
+
+  const now = new Date();
+  document.getElementById('last-updated').textContent =
+    `Mis à jour ${now.toLocaleDateString('fr-FR',{day:'numeric',month:'long'})} à ${now.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'})}`;
+
+  // Heatmap
+  renderHeatmap(data.log);
+
+  // Chart
+  const chartDays = buildChartDays(data.log);
+  const hasData = chartDays.some(d => d.n > 0);
+  const chartArea = document.getElementById('chart-area');
+  if (!hasData){
+    chartArea.innerHTML = emptyHTML('Commencez à réviser pour voir votre graphique d\'activité.');
+  } else {
+    chartArea.innerHTML = `
+      <canvas id="activity-chart" height="160"></canvas>
+      <div class="chart-legend">
+        <div class="leg-item"><div class="leg-dot" style="background:#c8b8f0"></div>Total révisées</div>
+        <div class="leg-item"><div class="leg-dot" style="background:#a8d8c4"></div>Correctes</div>
+      </div>`;
+    requestAnimationFrame(() => drawChart(chartDays));
+  }
+
+  // Chapters
+  renderChapters(data.cards, data.sm2);
+
+  // Maturity
+  renderMaturity(data.sm2);
+}
+
+// Redraw chart on resize
+let _rTimer;
+window.addEventListener('resize', () => {
+  clearTimeout(_rTimer);
+  _rTimer = setTimeout(() => { if (window._chartDays) drawChart(window._chartDays); }, 140);
+});
+
+// Init
+renderAll();
+</script>
+</body>
+</html>
