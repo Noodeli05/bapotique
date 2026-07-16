@@ -205,11 +205,11 @@ blockquote{
 }
 
 /* ── TABLES ─────────────────────────────────────────────────────────────── */
+.tab-content{overflow-x:auto;-webkit-overflow-scrolling:touch}
 table{
-  display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;
-  border-collapse:collapse;margin:1rem 0;
-  font-size:.84rem;
-  clip-path:inset(0 round var(--r-md));
+  border-collapse:collapse;margin:1rem 0;width:100%;
+  font-size:.84rem;min-width:320px;
+  border-radius:var(--r-md);overflow:hidden;
   box-shadow:0 2px 12px rgba(0,0,0,.3);
 }
 th{
@@ -1461,11 +1461,14 @@ function revAns(btn){var b=btn.nextElementSibling;if(b){b.classList.toggle('show
 function revAllQ(sec){sec.querySelectorAll('.ablk,.exo-ans').forEach(b=>b.classList.add('show'));sec.querySelectorAll('.btn-rev').forEach(b=>b.textContent='Masquer');}
 document.getElementById('menu-tog').addEventListener('click',function(){document.getElementById('sidebar').classList.toggle('open');});
 showDos(0);
-// Inject draft textarea before every answer-reveal button inside exercise blocks
-document.querySelectorAll('.exo-block .btn-rev').forEach(function(btn){
-  var ta=document.createElement('textarea');
-  ta.className='exo-draft';
-  ta.placeholder='Votre réponse…';
-  btn.parentNode.insertBefore(ta,btn);
+// Inject draft textarea before every answer-reveal button (exercises + tests blancs)
+document.querySelectorAll('.btn-rev').forEach(function(btn){
+  var prev=btn.previousElementSibling;
+  if(!prev||!prev.classList.contains('exo-draft')){
+    var ta=document.createElement('textarea');
+    ta.className='exo-draft';
+    ta.placeholder='Votre réponse…';
+    btn.parentNode.insertBefore(ta,btn);
+  }
 });
 </script></main></div></body></html>
