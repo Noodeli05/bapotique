@@ -2,57 +2,83 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260716');}());</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ressources Linguistique UNIL 2025</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
 
 *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
 
 :root {
-  --bg: #0F0F1A;
-  --card-bg: #1A1A2E;
-  --sidebar-bg: #13131F;
-  --nav-bg: #0A0A16;
-  --nav-active: rgba(108,99,255,.22);
-  --border: rgba(108,99,255,.2);
-  --text: #E8E8F0;
-  --muted: #9898B8;
-  --primary: #6C63FF;
-  --primary-lt: rgba(108,99,255,.12);
-  --primary-dk: #4438ca;
-  --cyan: #00D4FF;
+  --bg:#13111a; --bg-warm:#1c1820;
+  --glass:rgba(255,255,255,0.06); --glass-hover:rgba(255,255,255,0.10);
+  --border:rgba(255,255,255,0.10); --border-strong:rgba(255,255,255,0.18);
 
-  --def-bg:rgba(108,99,255,.1);   --def-bd:#6C63FF;  --def-lbl:#a5b4fc;
-  --ex-bg:rgba(0,212,255,.08);    --ex-bd:#00D4FF;   --ex-lbl:#67e8f9;
-  --ret-bg:rgba(251,191,36,.08);  --ret-bd:#fbbf24;  --ret-lbl:#fde68a;
-  --att-bg:rgba(248,113,113,.08); --att-bd:#f87171;  --att-lbl:#fca5a5;
-  --ans-bg:rgba(52,211,153,.08);  --ans-bd:#34d399;  --ans-lbl:#6ee7b7;
-  --note-bg:#1A1A2E;              --note-bd:rgba(108,99,255,.3); --note-lbl:#9898B8;
+  --lav:#c8b8f0;    --lav-bg:rgba(200,184,240,0.10);
+  --mint:#a8d8c4;   --mint-bg:rgba(168,216,196,0.10);
+  --peach:#f0c8a0;  --peach-bg:rgba(240,200,160,0.10);
+  --sky:#a8c8f0;    --sky-bg:rgba(168,200,240,0.10);
+  --rose:#f0b8c4;   --rose-bg:rgba(240,184,196,0.10);
+  --butter:#f0e0a0; --butter-bg:rgba(240,224,160,0.10);
+  --sage:#b8d8b8;   --sage-bg:rgba(184,216,184,0.10);
 
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  font-size: 15px;
-  color: var(--text);
-  background: var(--bg);
+  --tx:#e8e4f0; --tx-muted:rgba(232,228,240,0.55); --tx-faint:rgba(232,228,240,0.30);
+  --sidebar-bg:rgba(22,18,30,0.88);
+  --r-card:16px; --r-sm:10px; --r-lg:22px;
+
+  /* aliases pour compatibilité */
+  --pr:#c8b8f0; --pr2:#a898d8; --teal:#a8d8c4; --cyan:#a8c8f0; --amber:#f0c8a0;
+  --card:rgba(255,255,255,0.06); --card2:rgba(255,255,255,0.04);
+  --sb:rgba(22,18,30,0.88); --sb-txt:rgba(232,228,240,0.55);
+  --bdr:rgba(255,255,255,0.10); --mu:rgba(232,228,240,0.55);
+  --nav:rgba(19,17,26,0.92); --radius:16px;
+  /* ressources.html aliases */
+  --card-bg:rgba(255,255,255,0.06); --nav-bg:rgba(19,17,26,0.92);
+  --nav-active:rgba(200,184,240,0.15);
+  --text:#e8e4f0; --muted:rgba(232,228,240,0.55);
+  --primary:#c8b8f0; --primary-lt:rgba(200,184,240,0.10); --primary-dk:#a898d8;
+  --def-bg:rgba(200,184,240,0.10); --def-bd:#c8b8f0; --def-lbl:#c8b8f0;
+  --ex-bg:rgba(168,216,196,0.10); --ex-bd:#a8d8c4; --ex-lbl:#a8d8c4;
+  --ret-bg:rgba(240,224,160,0.10); --ret-bd:#f0e0a0; --ret-lbl:#f0e0a0;
+  --att-bg:rgba(240,184,196,0.10); --att-bd:#f0b8c4; --att-lbl:#f0b8c4;
+  --ans-bg:rgba(168,216,196,0.10); --ans-bd:#a8d8c4; --ans-lbl:#a8d8c4;
+  --note-bg:rgba(255,255,255,0.04); --note-bd:rgba(255,255,255,0.10); --note-lbl:rgba(232,228,240,0.55);
 }
 
 [data-theme="light"] {
-  --bg:#F0F0FF; --card-bg:#FFFFFF; --sidebar-bg:#F5F5FF;
-  --nav-bg:#1e1b4b; --border:rgba(108,99,255,.25);
-  --text:#1e1b4b; --muted:#6b7280;
-  --primary:#6C63FF; --primary-lt:rgba(108,99,255,.1); --primary-dk:#4438ca;
-  --def-bg:#eef2ff; --def-bd:#6C63FF; --def-lbl:#3730a3;
-  --ex-bg:#ecfdf5;  --ex-bd:#059669;  --ex-lbl:#065f46;
-  --ret-bg:#fffbeb; --ret-bd:#d97706; --ret-lbl:#92400e;
-  --att-bg:#fff1f2; --att-bd:#e11d48; --att-lbl:#9f1239;
-  --ans-bg:#f0fdf4; --ans-bd:#16a34a; --ans-lbl:#14532d;
-  --note-bg:#f8fafc; --note-bd:#94a3b8; --note-lbl:#475569;
+  --bg:#f5f3f8; --bg-warm:#ede9f4;
+  --glass:rgba(255,255,255,0.70); --glass-hover:rgba(255,255,255,0.85);
+  --border:rgba(120,100,180,0.18); --border-strong:rgba(120,100,180,0.32);
+  --tx:#1a1525; --tx-muted:rgba(26,21,37,0.55); --tx-faint:rgba(26,21,37,0.30);
+  --sidebar-bg:rgba(240,236,250,0.95);
+  --card:rgba(255,255,255,0.70); --card2:rgba(255,255,255,0.55);
+  --sb:rgba(240,236,250,0.95); --sb-txt:rgba(26,21,37,0.55);
+  --bdr:rgba(120,100,180,0.18); --mu:rgba(26,21,37,0.55);
+  --nav:rgba(245,243,248,0.95); --nav-bg:rgba(245,243,248,0.95);
+  --nav-active:rgba(120,100,180,0.12);
+  --card-bg:rgba(255,255,255,0.70); --sidebar-bg:rgba(240,236,250,0.95);
+  --text:#1a1525; --muted:rgba(26,21,37,0.55);
+  --primary:#7c6cc0; --primary-lt:rgba(120,100,180,0.10); --primary-dk:#5a4b9a;
+  --def-bg:rgba(200,184,240,0.15); --def-bd:#9880d8; --def-lbl:#5c3f9a;
+  --ex-bg:rgba(168,216,196,0.15); --ex-bd:#5aaa88; --ex-lbl:#246048;
+  --ret-bg:rgba(240,224,160,0.15); --ret-bd:#c8a840; --ret-lbl:#7a5c00;
+  --att-bg:rgba(240,184,196,0.15); --att-bd:#c85870; --att-lbl:#7a1030;
+  --ans-bg:rgba(168,216,196,0.15); --ans-bd:#5aaa88; --ans-lbl:#246048;
+  --note-bg:rgba(240,236,250,0.80); --note-bd:rgba(120,100,180,0.30); --note-lbl:rgba(26,21,37,0.55);
 }
 
 html { overflow-x:hidden; }
 body { height:100vh; display:flex; flex-direction:column; overflow:hidden; max-width:100vw; }
+body::before{
+  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 60% 50% at 15% 20%, rgba(200,184,240,0.10) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 45% at 85% 75%, rgba(168,216,196,0.08) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 35% at 50% 50%, rgba(168,200,240,0.06) 0%, transparent 65%);
+}
 
 /* ─── TOP NAV ─── */
 #topnav {
@@ -60,7 +86,7 @@ body { height:100vh; display:flex; flex-direction:column; overflow:hidden; max-w
   background:var(--nav-bg);
   flex-shrink:0; overflow-x:auto; gap:0;
   box-shadow:0 2px 12px rgba(0,0,0,.4);
-}
+backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);}
 #topnav-title {
   padding:.55rem 1rem;
   font-weight:700; font-size:.88rem;
@@ -80,7 +106,7 @@ body { height:100vh; display:flex; flex-direction:column; overflow:hidden; max-w
 }
 .tnav-btn:hover { color:#fff; background:rgba(255,255,255,.08); }
 .tnav-btn.active {
-  color:#fff; border-color:#a5b4fc;
+  color:#fff; border-color:#c8b8f0;
   background:var(--nav-active); font-weight:600;
 }
 
@@ -96,7 +122,7 @@ body { height:100vh; display:flex; flex-direction:column; overflow:hidden; max-w
   background:var(--sidebar-bg);
   border-right:1px solid var(--border);
   padding:.3rem 0;
-}
+backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);}
 @media(max-width:680px){
   .r-toc{ display:none; }
   .r-content{ padding:.9rem 1rem; }
