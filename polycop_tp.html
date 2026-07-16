@@ -46,10 +46,10 @@ html{font-size:16px;scroll-behavior:smooth;overflow-x:hidden}
 body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--tx);min-height:100vh;transition:background .3s,color .3s;overflow-x:hidden}
 body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 55% 45% at 10% 15%,rgba(200,184,240,0.14) 0%,transparent 65%),radial-gradient(ellipse 45% 40% at 88% 75%,rgba(240,200,160,0.11) 0%,transparent 65%),radial-gradient(ellipse 38% 35% at 55% 95%,rgba(168,216,196,0.09) 0%,transparent 65%)}
 /* NAV */
-.topnav{position:sticky;top:0;z-index:100;background:rgba(19,17,26,0.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--bdr);padding:.7rem 1.5rem;display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
+.topnav{position:sticky;top:0;z-index:100;background:rgba(19,17,26,0.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--bdr);padding:.7rem 1.2rem;display:flex;align-items:center;gap:.4rem;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch}
 [data-theme="light"] .topnav{background:rgba(245,243,248,0.95)}
-.topnav-brand{font-family:'DM Serif Display',serif;font-size:1rem;font-weight:800;background:linear-gradient(90deg,var(--butter),var(--peach));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none;white-space:nowrap;margin-right:.4rem}
-.nav-links{display:flex;gap:.25rem;flex-wrap:wrap;flex:1}
+.topnav-brand{font-family:'DM Serif Display',serif;font-size:1rem;font-weight:800;background:linear-gradient(90deg,var(--butter),var(--peach));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none;white-space:nowrap;margin-right:.2rem;flex-shrink:0}
+.nav-links{display:flex;gap:.25rem;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch}
 .nav-links a{color:var(--mu);text-decoration:none;font-size:.8rem;padding:.3rem .65rem;border-radius:7px;transition:background .15s,color .15s;font-weight:500;white-space:nowrap}
 .nav-links a:hover{background:var(--butter-bg);color:var(--tx)}
 .theme-btn{background:none;border:none;cursor:pointer;font-size:1.1rem;padding:.3rem .45rem;border-radius:7px;color:var(--mu);transition:background .15s;line-height:1;margin-left:auto}
@@ -61,8 +61,9 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;bac
 .sb-title{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--mu);padding:.5rem .9rem .25rem;margin-top:.4rem}
 .sb-link{display:block;padding:.32rem .9rem;font-size:.79rem;color:var(--mu);text-decoration:none;border-left:3px solid transparent;transition:.15s;cursor:pointer}
 .sb-link:hover,.sb-link.active{background:var(--butter-bg);border-color:var(--butter);color:var(--butter)}
-.content{flex:1;padding:2rem 2.5rem;max-width:880px}
-@media(max-width:720px){.content{padding:1.2rem 1rem}}
+.content{flex:1;padding:2rem 2.5rem;max-width:880px;min-width:0;overflow-x:hidden;word-break:break-word;overflow-wrap:break-word}
+@media(max-width:720px){.content{padding:1rem .9rem}}
+@media(max-width:720px){.dos-title{font-size:1.25rem}.dos-sub{font-size:.8rem}.topnav{padding:.5rem .8rem}}
 /* DOSSIER */
 .dossier{margin-bottom:4rem;scroll-margin-top:70px}
 .dos-badge{display:inline-block;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:.25rem .8rem;border-radius:50px;margin-bottom:.8rem;background:var(--butter-bg);color:var(--butter);border:1px solid rgba(240,224,160,0.2)}
@@ -114,7 +115,18 @@ textarea.ans-input:focus{outline:none;border-color:rgba(240,224,160,0.45);backgr
 @keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
 .divider{height:1px;background:var(--bdr);margin:2.5rem 0}
 .tip-box{background:var(--peach-bg);border:1px solid rgba(240,200,160,0.18);border-left:4px solid var(--peach);border-radius:var(--r-sm);padding:.7rem .9rem;margin:.7rem 0;font-size:.84rem;line-height:1.65;color:var(--tx)}
-input,select{font-size:max(16px,1em)!important}
+input,select,textarea{font-size:max(16px,1em)!important}
+/* MOBILE TOC */
+.mobile-toc{display:none}
+@media(max-width:720px){
+  .mobile-toc{display:block;margin-bottom:1.8rem;background:var(--glass);border:1px solid var(--bdr);border-radius:var(--r-lg);overflow:hidden}
+  .mobile-toc-btn{width:100%;background:none;border:none;padding:.85rem 1.1rem;display:flex;align-items:center;justify-content:space-between;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:700;color:var(--butter);text-align:left;letter-spacing:.01em}
+  .mobile-toc-btn:hover{background:var(--butter-bg)}
+  .mobile-toc-list{display:none;border-top:1px solid var(--bdr);padding:.4rem 0 .5rem}
+  .mobile-toc-list.open{display:block}
+  .mobile-toc-link{display:block;padding:.48rem 1.1rem;font-size:.83rem;color:var(--mu);text-decoration:none;cursor:pointer;transition:background .15s,color .15s;border-left:3px solid transparent}
+  .mobile-toc-link:hover{background:var(--butter-bg);color:var(--butter);border-left-color:var(--butter)}
+}
 
 </style>
 </head>
@@ -150,7 +162,25 @@ input,select{font-size:max(16px,1em)!important}
       <p style="font-size:.9rem;color:var(--mu);line-height:1.65;max-width:600px">9 dossiers · Exercices des TPs avec espace de réponse · Corrections détaillées · «&nbsp;En savoir plus&nbsp;» pour approfondir. T. Bornoz, M. Burger, F. Demont, M. Hoffmann, R. Mahrer, L. Möschler.</p>
       <div class="tip-box" style="margin-top:1rem">💡 <strong>Comment utiliser ce polycopié&nbsp;:</strong> lis l'exercice, écris ta réponse dans l'espace prévu, puis clique «&nbsp;Voir la correction&nbsp;» pour te comparer. Le bouton «&nbsp;En savoir plus&nbsp;» donne le contexte théorique.</div>
     </div>
-    
+
+<div class="mobile-toc">
+  <button class="mobile-toc-btn" onclick="var l=document.getElementById('mtoc-list');l.classList.toggle('open');this.querySelector('.mtoc-arrow').textContent=l.classList.contains('open')?'▲':'▼'">
+    <span>📑 Table des matières</span>
+    <span class="mtoc-arrow">▼</span>
+  </button>
+  <div class="mobile-toc-list" id="mtoc-list">
+    <span class="mobile-toc-link" onclick="document.getElementById('d1').scrollIntoView({behavior:'smooth'});document.getElementById('mtoc-list').classList.remove('open')">Dossier 1 — Les phonèmes</span>
+    <span class="mobile-toc-link" onclick="document.getElementById('d2').scrollIntoView({behavior:'smooth'});document.getElementById('mtoc-list').classList.remove('open')">Dossier 2 — Les morphèmes</span>
+    <span class="mobile-toc-link" onclick="document.getElementById('d3').scrollIntoView({behavior:'smooth'});document.getElementById('mtoc-list').classList.remove('open')">Dossier 3 — Les syntagmes</span>
+    <span class="mobile-toc-link" onclick="document.getElementById('d4').scrollIntoView({behavior:'smooth'});document.getElementById('mtoc-list').classList.remove('open')">Dossier 4 — Valence verbale et rôles actantiels</span>
+    <span class="mobile-toc-link" onclick="document.getElementById('d5').scrollIntoView({behavior:'smooth'});document.getElementById('mtoc-list').classList.remove('open')">Dossier 5 — Dynamique informationnelle</span>
+    <span class="mobile-toc-link" onclick="document.getElementById('d6').scrollIntoView({behavior:'smooth'});document.getElementById('mtoc-list').classList.remove('open')">Dossier 6 — Passif, impersonnel, pronominal</span>
+    <span class="mobile-toc-link" onclick="document.getElementById('d7').scrollIntoView({behavior:'smooth'});document.getElementById('mtoc-list').classList.remove('open')">Dossier 7 — Les clauses atypiques</span>
+    <span class="mobile-toc-link" onclick="document.getElementById('d8').scrollIntoView({behavior:'smooth'});document.getElementById('mtoc-list').classList.remove('open')">Dossier 8 — Adjectifs épithètes et constructions détachées</span>
+    <span class="mobile-toc-link" onclick="document.getElementById('d9').scrollIntoView({behavior:'smooth'});document.getElementById('mtoc-list').classList.remove('open')">Dossier 9 — De la clause à la phrase — dislocations</span>
+  </div>
+</div>
+
 <section class="dossier" id="d1">
   <div class="dos-badge">Dossier 1</div>
   <h2 class="dos-title">Les phonèmes</h2>
