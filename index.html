@@ -193,6 +193,18 @@ footer strong{color:var(--pr)}
 .nc-teal .nc-tag{background:rgba(184,216,184,0.10);color:var(--sage)}
 .nc-teal .nc-cta{color:var(--sage)}
 
+.nc-rose::after{background:linear-gradient(90deg,var(--rose),var(--peach))}
+.nc-rose:hover{box-shadow:0 10px 36px rgba(240,184,196,0.18);border-color:rgba(240,184,196,0.36)}
+.nc-rose .nc-title{background:linear-gradient(90deg,var(--rose),var(--peach));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nc-rose .nc-tag{background:rgba(240,184,196,0.10);color:var(--rose)}
+.nc-rose .nc-cta{color:var(--rose)}
+
+.nc-butter::after{background:linear-gradient(90deg,var(--butter),var(--peach))}
+.nc-butter:hover{box-shadow:0 10px 36px rgba(240,224,160,0.18);border-color:rgba(240,224,160,0.36)}
+.nc-butter .nc-title{background:linear-gradient(90deg,var(--butter),var(--peach));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nc-butter .nc-tag{background:rgba(240,224,160,0.10);color:var(--butter)}
+.nc-butter .nc-cta{color:var(--butter)}
+
 /* ── STAT BOX GLASS ── */
 .stat-box{
   background:var(--card);
@@ -225,6 +237,8 @@ footer strong{color:var(--lav)}
     <a href="flashcards.html">Flashcards</a>
     <a href="entrainement.html">Entraînement</a>
     <a href="ressources.html">Ressources</a>
+    <a href="polycop_cours.html">Polycopié cours</a>
+    <a href="polycop_tp.html">Polycopié TP</a>
   </div>
   <button class="btn-icon" id="themeBtn" onclick="toggleTheme()" title="Changer le thème">🌙</button>
 </nav>
@@ -331,6 +345,40 @@ footer strong{color:var(--lav)}
         <span class="nc-tag">Liens</span>
       </div>
       <div class="nc-cta">Consulter →</div>
+    </a>
+
+    <a href="polycop_cours.html" class="nav-card nc-rose">
+      <div class="nc-head">
+        <div class="nc-icon">📝</div>
+        <div class="nc-text">
+          <div class="nc-title">Polycopié de cours</div>
+          <div class="nc-sub">Résumés chapitres simplifiés, flashcards, Q&amp;R, tableaux récap et exercices — expliqué comme si tu avais 10 ans.</div>
+        </div>
+      </div>
+      <div class="nc-tags">
+        <span class="nc-tag">10 chapitres</span>
+        <span class="nc-tag">Résumés</span>
+        <span class="nc-tag">Flashcards</span>
+        <span class="nc-tag">Exercices</span>
+      </div>
+      <div class="nc-cta">Lire →</div>
+    </a>
+
+    <a href="polycop_tp.html" class="nav-card nc-butter">
+      <div class="nc-head">
+        <div class="nc-icon">🔬</div>
+        <div class="nc-text">
+          <div class="nc-title">Polycopié TP</div>
+          <div class="nc-sub">Tous les exercices de TP avec zones de brouillon, corrections détaillées et cases "En savoir plus" pour la théorie.</div>
+        </div>
+      </div>
+      <div class="nc-tags">
+        <span class="nc-tag">Exercices TP</span>
+        <span class="nc-tag">Corrections</span>
+        <span class="nc-tag">Zone réponse</span>
+        <span class="nc-tag">Théorie</span>
+      </div>
+      <div class="nc-cta">S'exercer →</div>
     </a>
 
   </div>
