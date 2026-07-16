@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260716');})();</script>
+<title>Polycopié de cours — Linguistique UNIL 2025</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap');
+:root{
+  --bg:#13111a;--bg-warm:#1c1820;
+  --glass:rgba(255,255,255,0.06);--glass-h:rgba(255,255,255,0.10);
+  --bdr:rgba(255,255,255,0.10);--bdr-s:rgba(255,255,255,0.18);
+  --lav:#c8b8f0;--lav-bg:rgba(200,184,240,0.10);
+  --mint:#a8d8c4;--mint-bg:rgba(168,216,196,0.10);
+  --peach:#f0c8a0;--peach-bg:rgba(240,200,160,0.10);
+  --sky:#a8c8f0;--sky-bg:rgba(168,200,240,0.10);
+  --rose:#f0b8c4;--rose-bg:rgba(240,184,196,0.10);
+  --butter:#f0e0a0;--butter-bg:rgba(240,224,160,0.10);
+  --sage:#b8d8b8;--sage-bg:rgba(184,216,184,0.10);
+  --tx:#e8e4f0;--mu:rgba(232,228,240,0.55);--tf:rgba(232,228,240,0.28);
+  --r:14px;--r-sm:8px;--r-lg:20px;
+  --sb:rgba(22,18,30,0.90);
+}
+[data-theme="light"]{
+  --bg:#f5f3f8;--bg-warm:#ede9f4;
+  --glass:rgba(255,255,255,0.72);--glass-h:rgba(255,255,255,0.88);
+  --bdr:rgba(120,100,180,0.18);--bdr-s:rgba(120,100,180,0.32);
+  --lav:#7c6cc0;--lav-bg:rgba(120,100,180,0.10);
+  --mint:#2a8a68;--mint-bg:rgba(42,138,104,0.10);
+  --peach:#b87030;--peach-bg:rgba(184,112,48,0.10);
+  --sky:#3060b0;--sky-bg:rgba(48,96,176,0.10);
+  --rose:#b03060;--rose-bg:rgba(176,48,96,0.10);
+  --butter:#a08020;--butter-bg:rgba(160,128,32,0.10);
+  --sage:#386838;--sage-bg:rgba(56,104,56,0.10);
+  --tx:#1a1525;--mu:rgba(26,21,37,0.55);--tf:rgba(26,21,37,0.30);
+  --sb:rgba(240,236,250,0.95);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--tx);min-height:100vh;transition:background .3s,color .3s;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 55% 45% at 10% 15%,rgba(200,184,240,0.14) 0%,transparent 65%),radial-gradient(ellipse 45% 40% at 88% 75%,rgba(240,200,160,0.11) 0%,transparent 65%),radial-gradient(ellipse 38% 35% at 55% 95%,rgba(168,216,196,0.09) 0%,transparent 65%)}
+/* NAV */
+.topnav{position:sticky;top:0;z-index:100;background:rgba(19,17,26,0.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--bdr);padding:.7rem 1.5rem;display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
+[data-theme="light"] .topnav{background:rgba(245,243,248,0.95)}
+.topnav-brand{font-family:'DM Serif Display',serif;font-size:1rem;font-weight:800;background:linear-gradient(90deg,var(--lav),var(--sky));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none;white-space:nowrap;margin-right:.4rem}
+.nav-links{display:flex;gap:.25rem;flex-wrap:wrap;flex:1}
+.nav-links a{color:var(--mu);text-decoration:none;font-size:.8rem;padding:.3rem .65rem;border-radius:7px;transition:background .15s,color .15s;font-weight:500;white-space:nowrap}
+.nav-links a:hover{background:var(--lav-bg);color:var(--tx)}
+.theme-btn{background:none;border:none;cursor:pointer;font-size:1.1rem;padding:.3rem .45rem;border-radius:7px;color:var(--mu);transition:background .15s;line-height:1;margin-left:auto}
+.theme-btn:hover{background:var(--lav-bg)}
+/* LAYOUT */
+.page-wrap{display:flex;min-height:calc(100vh - 52px);position:relative;z-index:1}
+.sidebar{width:230px;min-width:230px;position:sticky;top:52px;height:calc(100vh - 52px);overflow-y:auto;background:var(--sb);border-right:1px solid var(--bdr);padding:.6rem 0;flex-shrink:0;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+@media(max-width:720px){.sidebar{display:none}}
+.sb-title{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--mu);padding:.5rem .9rem .25rem;margin-top:.4rem}
+.sb-link{display:block;padding:.32rem .9rem;font-size:.79rem;color:var(--mu);text-decoration:none;border-left:3px solid transparent;transition:.15s;cursor:pointer}
+.sb-link:hover,.sb-link.active{background:var(--lav-bg);border-color:var(--lav);color:var(--lav)}
+.content{flex:1;padding:2rem 2.5rem;max-width:860px}
+@media(max-width:720px){.content{padding:1.2rem 1rem}}
+/* CHAPTER */
+.chapter{margin-bottom:4rem;scroll-margin-top:70px}
+.ch-badge{display:inline-block;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:.25rem .8rem;border-radius:50px;margin-bottom:.8rem}
+.ch-title{font-family:'DM Serif Display',serif;font-size:1.7rem;line-height:1.15;margin-bottom:.5rem;color:var(--tx)}
+.ch-sub{font-size:.88rem;color:var(--mu);margin-bottom:1.6rem;line-height:1.6}
+/* SECTION LABELS */
+.sec-label{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--mu);margin:1.8rem 0 .7rem;display:flex;align-items:center;gap:.5rem}
+.sec-label::after{content:'';flex:1;height:1px;background:var(--bdr)}
+/* SUMMARY BOXES */
+.box{border-radius:var(--r);padding:1rem 1.2rem;margin:.65rem 0;border-left:4px solid;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.box p,.box li{font-size:.875rem;line-height:1.68;margin:.22rem 0}
+.box ul{padding-left:1.2rem;margin:.4rem 0}
+.box-def{background:var(--lav-bg);border-color:var(--lav)}
+.box-ex{background:var(--mint-bg);border-color:var(--mint)}
+.box-ret{background:var(--butter-bg);border-color:var(--butter)}
+.box-att{background:var(--rose-bg);border-color:var(--rose)}
+.box-lbl{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.35rem;opacity:.85}
+.box-def .box-lbl{color:var(--lav)}
+.box-ex .box-lbl{color:var(--mint)}
+.box-ret .box-lbl{color:var(--butter)}
+.box-att .box-lbl{color:var(--rose)}
+.summary-text{font-size:.9rem;line-height:1.75;color:var(--tx)}
+.summary-text p{margin:.55rem 0}
+.summary-text strong{color:var(--lav)}
+/* TABLE */
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:.8rem 0;border-radius:var(--r);box-shadow:0 2px 12px rgba(0,0,0,.25)}
+table{border-collapse:collapse;width:100%;font-size:.82rem;min-width:320px;border-radius:var(--r);overflow:hidden}
+th{background:rgba(200,184,240,0.15);color:var(--lav);font-weight:700;padding:.55rem .8rem;text-align:left;font-size:.78rem;text-transform:uppercase;letter-spacing:.05em}
+td{padding:.48rem .8rem;border-bottom:1px solid var(--bdr);vertical-align:top;line-height:1.55}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:var(--glass)}
+/* FLASHCARDS */
+.fc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.8rem;margin:.6rem 0}
+.fc-card{perspective:900px;height:135px;cursor:pointer;user-select:none}
+.fc-inner{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .5s cubic-bezier(.4,0,.2,1)}
+.fc-card.flipped .fc-inner{transform:rotateY(180deg)}
+.fc-card:hover:not(.flipped) .fc-inner{transform:rotateY(6deg) scale(1.02)}
+.fc-front,.fc-back{position:absolute;inset:0;border-radius:var(--r);backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;align-items:center;justify-content:center;padding:.8rem 1rem;text-align:center}
+.fc-front{background:linear-gradient(145deg,rgba(200,184,240,0.25),rgba(168,200,240,0.20));border:1px solid var(--lav);color:var(--tx);font-size:.8rem;font-weight:600;font-family:'DM Serif Display',serif}
+.fc-back{background:var(--glass);border:1px solid var(--bdr);color:var(--tx);transform:rotateY(180deg);font-size:.77rem;line-height:1.5;backdrop-filter:blur(10px)}
+.fc-hint{text-align:center;font-size:.7rem;color:var(--mu);margin:.3rem 0;font-style:italic}
+/* Q&A */
+.qa-block{border:1px solid var(--bdr);border-radius:var(--r);margin:.7rem 0;overflow:hidden;background:var(--glass);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.qa-q{padding:.65rem 1rem;font-size:.875rem;line-height:1.65;font-weight:500;color:var(--tx);border-bottom:1px solid var(--bdr)}
+.qa-zone{padding:.5rem 1rem}
+.exo-draft{display:block;width:100%;min-height:72px;resize:vertical;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);border-radius:var(--r-sm);color:var(--tx);font-family:inherit;font-size:max(16px,1em);padding:.55rem .8rem;margin:.4rem 0;outline:none;line-height:1.6;transition:border-color .15s;-webkit-appearance:none}
+[data-theme="light"] .exo-draft{background:rgba(0,0,0,0.03);border-color:rgba(120,100,180,0.20)}
+.exo-draft:focus{border-color:var(--lav)}
+.exo-draft::placeholder{color:var(--tf);font-style:italic}
+.btn-rev{display:inline-flex;align-items:center;gap:.3rem;margin:.3rem 0 .5rem;padding:.32rem .75rem;background:var(--lav);color:#fff;border:none;border-radius:var(--r-sm);cursor:pointer;font-size:.78rem;font-weight:600;transition:opacity .15s,transform .12s}
+.btn-rev:hover{opacity:.88;transform:translateY(-1px)}
+.qa-ans{display:none;padding:.55rem 1rem .7rem;background:var(--mint-bg);border-top:1px solid var(--bdr);font-size:.85rem;line-height:1.65}
+.qa-ans p{margin:.25rem 0}
+.qa-ans ul{padding-left:1.2rem;margin:.3rem 0}
+.qa-ans li{margin:.2rem 0;line-height:1.55}
+/* NAV CARD accent per chapter */
+.ch-0 .ch-badge,.ch-0 .sb-link.active{background:var(--lav-bg);color:var(--lav)}
+.ch-1 .ch-badge{background:var(--sky-bg);color:var(--sky)}.ch-1{--acc:var(--sky);--acc-bg:var(--sky-bg)}
+.ch-2 .ch-badge{background:var(--mint-bg);color:var(--mint)}.ch-2{--acc:var(--mint);--acc-bg:var(--mint-bg)}
+.ch-3 .ch-badge{background:var(--peach-bg);color:var(--peach)}.ch-3{--acc:var(--peach);--acc-bg:var(--peach-bg)}
+.ch-4 .ch-badge{background:var(--butter-bg);color:var(--butter)}.ch-4{--acc:var(--butter);--acc-bg:var(--butter-bg)}
+.ch-5 .ch-badge{background:var(--rose-bg);color:var(--rose)}.ch-5{--acc:var(--rose);--acc-bg:var(--rose-bg)}
+.ch-6 .ch-badge{background:var(--sage-bg);color:var(--sage)}.ch-6{--acc:var(--sage);--acc-bg:var(--sage-bg)}
+.ch-7 .ch-badge{background:var(--lav-bg);color:var(--lav)}.ch-7{--acc:var(--lav);--acc-bg:var(--lav-bg)}
+.ch-8 .ch-badge{background:var(--sky-bg);color:var(--sky)}.ch-8{--acc:var(--sky);--acc-bg:var(--sky-bg)}
+.ch-9 .ch-badge{background:var(--mint-bg);color:var(--mint)}.ch-9{--acc:var(--mint);--acc-bg:var(--mint-bg)}
+input,textarea,select{font-size:max(16px,1em)!important}
+
+</style>
+</head>
+<body>
+<nav class="topnav">
+  <a class="topnav-brand" href="index.html">Linguistique Fr.</a>
+  <div class="nav-links">
+    <a href="revision_complet.html">Révision</a>
+    <a href="ressources.html">Ressources</a>
+    <a href="polycop_tp.html">Polycopié TP</a>
+    <a href="flashcards.html">Flashcards</a>
+  </div>
+  <button class="theme-btn" id="thbtn" onclick="toggleTheme()">🌙</button>
+</nav>
+<div class="page-wrap">
+  <nav class="sidebar">
+    <div class="sb-title">Chapitres</div>
+    <a class="sb-link" data-ch="ch0" onclick="document.getElementById('ch0').scrollIntoView({behavior:'smooth'})">Intro Sémiologie, signe et niveaux d'analyse</a>
+<a class="sb-link" data-ch="ch1" onclick="document.getElementById('ch1').scrollIntoView({behavior:'smooth'})">Ch. 1 Phonétique, phonologie et graphémique</a>
+<a class="sb-link" data-ch="ch2" onclick="document.getElementById('ch2').scrollIntoView({behavior:'smooth'})">Ch. 2 La morphologie</a>
+<a class="sb-link" data-ch="ch3" onclick="document.getElementById('ch3').scrollIntoView({behavior:'smooth'})">Ch. 3 Syntaxe de la clause canonique</a>
+<a class="sb-link" data-ch="ch4" onclick="document.getElementById('ch4').scrollIntoView({behavior:'smooth'})">Ch. 4 L'ordre dans la clause</a>
+<a class="sb-link" data-ch="ch5" onclick="document.getElementById('ch5').scrollIntoView({behavior:'smooth'})">Ch. 5 Types de clauses et voix</a>
+<a class="sb-link" data-ch="ch6" onclick="document.getElementById('ch6').scrollIntoView({behavior:'smooth'})">Ch. 6 Extensions du groupe nominal</a>
+<a class="sb-link" data-ch="ch7" onclick="document.getElementById('ch7').scrollIntoView({behavior:'smooth'})">Ch. 7 Extensions du groupe verbal</a>
+<a class="sb-link" data-ch="ch8" onclick="document.getElementById('ch8').scrollIntoView({behavior:'smooth'})">Ch. 8 La clause complexe</a>
+<a class="sb-link" data-ch="ch9" onclick="document.getElementById('ch9').scrollIntoView({behavior:'smooth'})">Ch. 9 La phrase graphique</a>
+  </nav>
+  <main class="content">
+    <h1 style="font-family:'DM Serif Display',serif;font-size:2rem;margin-bottom:.4rem;background:linear-gradient(135deg,var(--lav),var(--sky));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Polycopié de cours</h1>
+    <p style="color:var(--mu);font-size:.9rem;margin-bottom:2rem">Linguistique française · UNIL 2025 · R. Mahrer — Résumés simplifiés, flashcards, Q&amp;R par chapitre</p>
+    
+<section class="chapter ch-0" id="ch0">
+  <span class="ch-badge" style="background:#c8b8f022;color:#c8b8f0">Intro</span>
+  <h2 class="ch-title">Sémiologie, signe et niveaux d'analyse</h2>
+  <p class="ch-sub">Introduction — Linguistique française UNIL 2025 · R. Mahrer</p>
+
+  <div class="sec-label">Résumé simplifié</div>
+  <div class="summary-text">
+<p>La <strong>linguistique</strong> est la science qui étudie le langage humain de façon objective — elle décrit comment les gens parlent réellement, sans leur dire comment ils <em>devraient</em> parler. C'est la différence entre un biologiste qui observe les animaux et un entraîneur qui leur donne des leçons.</p>
+<p>Au cœur de la linguistique, il y a la notion de <strong>signe</strong>. Un signe, c'est comme un sandwich en deux parties : le <strong>signifiant</strong> (la forme sonore ou écrite — le mot « chat ») et le <strong>signifié</strong> (l'idée dans ta tête — le concept de l'animal à moustaches). Ce lien est <strong>arbitraire</strong> : rien dans le son /ʃa/ ne ressemble à un chat ! Preuve : en anglais on dit <em>cat</em>, en allemand <em>Katze</em>.</p>
+<p>André Martinet a montré que les langues humaines ont une <strong>double articulation</strong> : on peut décomposer un énoncé en unités <em>avec sens</em> (les <strong>monèmes/morphèmes</strong>, 1ère articulation), puis chaque monème se redécompose en unités <em>sans sens</em> (les <strong>phonèmes</strong>, 2ème articulation). Avec ~36 phonèmes, le français génère des millions de mots.</p>
+<p>Les linguistes organisent leur travail en <strong>niveaux</strong> : phonologie (sons) → morphologie (mots) → syntaxe (phrases) → sémantique (sens) → pragmatique (contexte). Chaque niveau s'appuie sur le niveau inférieur.</p>
+</div>
+  <div class="box box-def"><div class="box-lbl">Définition</div><p><strong>Signe linguistique</strong> = signifiant (forme) + signifié (concept). Lien arbitraire et systémique.</p></div><div class="box box-ex"><div class="box-lbl">Exemple</div><p>🐱 <em>chat</em> /ʃa/ ← signifiant | concept de félins domestiques ← signifié. Le chat réel = référent (hors du signe).</p></div><div class="box box-ret"><div class="box-lbl">À retenir</div><p><strong>Langue</strong> = système abstrait partagé. <strong>Parole</strong> = utilisation concrète individuelle. Comme les règles du foot vs le match joué.</p></div>
+
+  <div class="sec-label">Tableau récapitulatif</div>
+  <div class="tbl-wrap"><table><thead><tr><th>Concept</th><th>Définition</th><th>Exemple</th></tr></thead><tbody><tr><td>Signifiant</td><td>Forme sonore ou graphique du signe</td><td>/ʃa/ ou ‹chat›</td></tr><tr><td>Signifié</td><td>Concept mental associé</td><td>Idée du petit félin</td></tr><tr><td>Référent</td><td>Objet réel dans le monde</td><td>Le chat de ta voisine</td></tr><tr><td>Signe arbitraire</td><td>Lien signifiant/signifié sans motivation naturelle</td><td>chat ≠ cat ≠ Katze</td></tr><tr><td>1ère articulation</td><td>Décomposition en monèmes (avec sens)</td><td>chant-eur-s → 3 unités</td></tr><tr><td>2ème articulation</td><td>Décomposition en phonèmes (sans sens)</td><td>/ʃ/+/ɑ̃/+/t/ → 3 phonèmes</td></tr></tbody></table></div>
+
+  <div class="sec-label">Flashcards</div>
+  <div class="fc-grid"><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">Qu'est-ce qu'un signe linguistique ?</div><div class="fc-back">Signifiant (forme) + Signifié (concept). Lien arbitraire : /ʃa/ n'a rien de félin par nature.</div></div></div><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">Qu'est-ce que la double articulation ?</div><div class="fc-back">1ère : en monèmes (sens) → 2ème : en phonèmes (sans sens). Économie : 36 phonèmes → millions de mots.</div></div></div><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">Langue vs Parole</div><div class="fc-back">Langue = système abstrait collectif. Parole = usage individuel concret. Règles du foot vs match joué.</div></div></div><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">Qu'est-ce que la valeur systémique d'un signe ?</div><div class="fc-back">Un signe vaut par opposition aux autres : 'rouge' existe parce qu'il y a 'bleu', 'vert'...</div></div></div><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">Quelle est la différence entre phonétique et phonologie ?</div><div class="fc-back">Phonétique = sons concrets (physique). Phonologie = sons distinctifs dans un système (le phonème /ʁ/ englobe toutes les prononciations du R français).</div></div></div></div><p class="fc-hint">Clique sur une carte pour la retourner</p>
+
+  <div class="sec-label">Questions — Réponses</div>
+  <div class="qa-block"><div class="qa-q">Expliquez pourquoi le lien entre signifiant et signifié est dit « arbitraire ».</div><div class="qa-zone"><button class="btn-rev" onclick="revAns(this)">Voir la réponse ↓</button><div class="qa-ans"><p>Il est arbitraire car aucun lien naturel, physique ou logique n'unit la forme du signe à son sens. Le même animal s'appelle <em>chat</em>, <em>cat</em>, <em>Katze</em>, <em>gato</em> selon les langues — si le lien était naturel, toutes les langues utiliseraient la même forme. La seule chose qui maintient le lien, c'est la <strong>convention sociale</strong> : la communauté linguistique s'accorde tacitement sur ce lien.</p></div></div></div><div class="qa-block"><div class="qa-q">Décrivez les deux articulations du langage avec un exemple.</div><div class="qa-zone"><button class="btn-rev" onclick="revAns(this)">Voir la réponse ↓</button><div class="qa-ans"><p><strong>1ère articulation</strong> : l'énoncé se divise en monèmes (unités de sens). Ex. : <em>chanteur</em> = {chant-} + {-eur} (2 monèmes).</p><p><strong>2ème articulation</strong> : chaque monème se divise en phonèmes (unités distinctives sans sens propre). Ex. : /ʃɑ̃/ = /ʃ/ + /ɑ̃/ (2 phonèmes).</p><p>Avantage : avec ~36 phonèmes, on produit des milliers de monèmes, combinés en énoncés illimités.</p></div></div></div><div class="qa-block"><div class="qa-q">Quels sont les niveaux d'analyse linguistique et comment s'articulent-ils ?</div><div class="qa-zone"><button class="btn-rev" onclick="revAns(this)">Voir la réponse ↓</button><div class="qa-ans"><ul><li><strong>Phonologie</strong> : phonèmes (sons distinctifs)</li><li><strong>Morphologie</strong> : morphèmes (plus petites unités de sens)</li><li><strong>Syntaxe</strong> : syntagmes et clauses</li><li><strong>Sémantique</strong> : sens des mots et énoncés</li><li><strong>Pragmatique</strong> : sens en contexte</li></ul><p>Chaque niveau est constitué d'unités du niveau inférieur : les phonèmes forment les morphèmes, les morphèmes forment les syntagmes, etc.</p></div></div></div><div class="qa-block"><div class="qa-q">Donnez un exemple de signe non-linguistique et analysez-le selon Saussure.</div><div class="qa-zone"><button class="btn-rev" onclick="revAns(this)">Voir la réponse ↓</button><div class="qa-ans"><p>Ex. : un feu tricolore.</p><ul><li><strong>Signifiant</strong> : la lumière rouge</li><li><strong>Signifié</strong> : « stop / danger »</li><li><strong>Référent</strong> : les voitures qui s'arrêtent</li></ul><p>Le lien est <strong>conventionnel mais non arbitraire</strong> : le rouge est associé au danger dans de nombreuses cultures — c'est un signe plus motivé que les signes linguistiques.</p></div></div></div>
+</section>
+<section class="chapter ch-1" id="ch1">
+  <span class="ch-badge" style="background:#a8c8f022;color:#a8c8f0">Ch. 1</span>
+  <h2 class="ch-title">Phonétique, phonologie et graphémique</h2>
+  <p class="ch-sub">Chapitre 1 — Linguistique française UNIL 2025 · R. Mahrer</p>
+
+  <div class="sec-label">Résumé simplifié</div>
+  <div class="summary-text">
+<p>La <strong>phonétique</strong> étudie les sons du langage tels qu'ils sont produits physiquement. Chaque son (ou <strong>phone</strong>) est unique — quand tu prononces /r/ en roulant la langue comme en région ou en grasseyant comme à Paris, ce sont deux phones différents.</p>
+<p>La <strong>phonologie</strong>, elle, s'intéresse aux sons qui <em>changent le sens</em> dans une langue : les <strong>phonèmes</strong>. En français, /p/ et /b/ sont deux phonèmes distincts parce que <em>pas</em> ≠ <em>bas</em>. La preuve s'appelle une <strong>paire minimale</strong>. On teste ça avec la <strong>commutation</strong> : substitue un son, si le sens change → deux phonèmes.</p>
+<p>Le <strong>schwa</strong> /ə/ est une voyelle paresseuse : il disparaît souvent (« j(e) viens »), sauf quand sa chute créerait trois consonnes d'affilée impossibles à prononcer — c'est la <strong>règle des trois consonnes</strong>.</p>
+<p>La <strong>graphémique</strong> étudie l'écriture. Un <strong>graphème</strong> = une unité d'écriture qui correspond à un phonème (comme ‹ch› → /ʃ/). On distingue trois types : les <strong>alphagraphèmes</strong> (représentent des phonèmes), les <strong>topogrammes</strong> (ponctuent et organisent : virgule, majuscule), et les <strong>logograms</strong> (représentent un mot entier : ‹&› = « et »).</p>
+</div>
+  <div class="box box-def"><div class="box-lbl">Phonème</div><p>Plus petite unité <strong>distinctive</strong> d'une langue. Sans sens propre, mais change le sens par substitution. Ex. : /p/ vs /b/ → <em>pain</em> vs <em>bain</em>.</p></div><div class="box box-ex"><div class="box-lbl">Test de commutation</div><p>On substitue un son dans un mot. Si le sens change → deux phonèmes distincts. Si le sens reste identique → deux allophones du même phonème.</p></div><div class="box box-ret"><div class="box-lbl">Schwa — règle des 3 consonnes</div><p>Le /ə/ tombe SAUF si sa chute produit 3 consonnes imprononcables. <em>j(e) dors</em> → /ʒdɔʁ/ ✓ (2 consonnes). <em>l(e) glas</em> → /lɡla/ ✗ → /ləɡla/ (maintenu).</p></div><div class="box box-att"><div class="box-lbl">Attention</div><p>Phonème ≠ lettre ! ‹ou› = 1 graphème = 1 phonème /u/. ‹eau› = 3 lettres = 1 phonème /o/.</p></div>
+
+  <div class="sec-label">Tableau récapitulatif</div>
+  <div class="tbl-wrap"><table><thead><tr><th>Concept</th><th>Description</th><th>Exemple</th></tr></thead><tbody><tr><td>Phone</td><td>Son concret produit</td><td>/r/ roulé vs /r/ grasseyé</td></tr><tr><td>Phonème</td><td>Son distinctif (change le sens)</td><td>/p/ et /b/ : <em>pas</em> ≠ <em>bas</em></td></tr><tr><td>Allophone</td><td>Variante du même phonème</td><td>/r/ roulé et /r/ grasseyé = allophones de /ʁ/</td></tr><tr><td>Paire minimale</td><td>Deux mots différant d'1 seul phonème</td><td>/vu/ — /bu/ : <em>vu</em> ≠ <em>bu</em></td></tr><tr><td>Alphagraphème</td><td>Graphème représentant un phonème</td><td>‹ch› → /ʃ/, ‹ou› → /u/</td></tr><tr><td>Topogramme</td><td>Signe graphique non phonétique</td><td>Virgule, majuscule, apostrophe</td></tr><tr><td>Logogram</td><td>Représente un mot entier</td><td>‹&› = « et », ‹@› = « arobase »</td></tr><tr><td>Phonographie</td><td>Système où l'écriture reflète les sons</td><td>‹sac› → /s/+/a/+/k/</td></tr><tr><td>Sémiographie</td><td>Lettres muettes à valeur morphologique</td><td>‹-s› du pluriel : <em>chats</em></td></tr></tbody></table></div>
+
+  <div class="sec-label">Flashcards</div>
+  <div class="fc-grid"><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">Phonème vs phone ?</div><div class="fc-back">Phone = son concret physique. Phonème = unité distinctive du système. Tous les /r/ du français sont des phones différents, mais un seul phonème /ʁ/.</div></div></div><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">Qu'est-ce qu'une paire minimale ?</div><div class="fc-back">Deux mots ne différant que d'UN seul phonème. Ex. : <em>pain/bain</em>, <em>sot/zoo</em>. Prouve que deux sons sont des phonèmes distincts.</div></div></div><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">Schwa : quand tombe-t-il ?</div><div class="fc-back">Il tombe quand sa chute ne crée pas 3 consonnes d'affilée (ex. <em>je dors</em> → /ʒdɔʁ/). Il reste sinon (ex. <em>le glas</em> → /ləɡla/).</div></div></div><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">Alphagraphème vs topogramme vs logogram ?</div><div class="fc-back">Alphagraphème → phonème. Topogramme → organisation visuelle (ponctuation). Logogram → mot entier (& @ #).</div></div></div><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">Pourquoi l'orthographe française est-elle si complexe ?</div><div class="fc-back">Elle est morphologique : note des infos grammaticales non prononcées (<em>chats</em> : le ‹s› est muet mais marque le pluriel).</div></div></div><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">Combien de phonèmes en français ?</div><div class="fc-back">Environ 36 (selon les analyses) : ~16 voyelles + ~20 consonnes.</div></div></div></div><p class="fc-hint">Clique sur une carte pour la retourner</p>
+
+  <div class="sec-label">Questions — Réponses</div>
+  <div class="qa-block"><div class="qa-q">Quelle est la différence entre phonétique et phonologie ?</div><div class="qa-zone"><button class="btn-rev" onclick="revAns(this)">Voir la réponse ↓</button><div class="qa-ans"><p><strong>Phonétique</strong> : étudie les sons concrets (phones) tels qu'ils sont produits physiquement — articulation, acoustique. Elle ne s'intéresse pas à la fonction dans la langue.</p><p><strong>Phonologie</strong> : étudie le système des sons distinctifs (phonèmes) dans une langue donnée — quels sons changent le sens ? Elle est fonctionnelle et structurale.</p><p>Ex. : le R roulé et le R grasseyé sont deux phones différents (phonétique), mais le même phonème /ʁ/ (phonologie).</p></div></div></div><div class="qa-block"><div class="qa-q">Comment fonctionne le test de commutation ? Donnez un exemple complet.</div><div class="qa-zone"><button class="btn-rev" onclick="revAns(this)">Voir la réponse ↓</button><div class="qa-ans"><p>On prend un mot et on substitue un son par un autre dans la même position.</p><p>Ex. avec <em>pas</em> /pa/ :</p><ul><li>/p/ → /b/ : <em>bas</em> — sens différent ✓ → /p/ et /b/ sont deux phonèmes distincts.</li><li>/p/ → /m/ : <em>ma</em> — sens différent ✓ → /p/ et /m/ sont deux phonèmes distincts.</li><li>Si deux variantes du R ne changent jamais le sens → ce sont des allophones (un seul phonème).</li></ul></div></div></div><div class="qa-block"><div class="qa-q">Expliquez la distinction phonographie / sémiographie avec exemples.</div><div class="qa-zone"><button class="btn-rev" onclick="revAns(this)">Voir la réponse ↓</button><div class="qa-ans"><p><strong>Phonographie</strong> : les graphèmes représentent des sons. Ex. ‹s› dans <em>sac</em> → /s/. Ce qui s'écrit se prononce.</p><p><strong>Sémiographie</strong> : les graphèmes portent un sens grammatical non prononcé. Ex. :</p><ul><li>‹s› dans <em>chats</em> = marque du pluriel, non prononcé</li><li>‹-ent› dans <em>ils marchent</em> = flexion 3e pl., inaudible à l'oral</li><li>‹-aient/-ais/-ait› = marque de l'imparfait</li></ul></div></div></div><div class="qa-block"><div class="qa-q">Qu'est-ce que la règle des trois consonnes et dans quel contexte s'applique-t-elle ?</div><div class="qa-zone"><button class="btn-rev" onclick="revAns(this)">Voir la réponse ↓</button><div class="qa-ans"><p>Le schwa /ə/ peut tomber à l'oral sauf quand sa suppression entraînerait un groupe de 3 consonnes consécutives impossibles à prononcer en français.</p><p>Exemples :</p><ul><li><em>je dors</em> : sans schwa → /ʒdɔʁ/ (2 consonnes) ✓ → schwa tombe</li><li><em>le glas</em> : sans schwa → /lɡla/ (3 consonnes) ✗ → schwa se maintient : /ləɡla/</li><li><em>je te le dis</em> : plusieurs schwas peuvent tomber mais au moins un doit rester</li></ul></div></div></div>
+</section>
+<section class="chapter ch-2" id="ch2">
+  <span class="ch-badge" style="background:#a8d8c422;color:#a8d8c4">Ch. 2</span>
+  <h2 class="ch-title">La morphologie</h2>
+  <p class="ch-sub">Chapitre 2 — Linguistique française UNIL 2025 · R. Mahrer</p>
+
+  <div class="sec-label">Résumé simplifié</div>
+  <div class="summary-text">
+<p>La <strong>morphologie</strong>, c'est la science qui s'intéresse à la structure interne des mots. Elle demande : comment les mots sont-ils construits ? Quelles sont leurs « briques » de base ?</p>
+<p>La brique fondamentale s'appelle le <strong>morphème</strong> : c'est la plus petite unité qui a un sens. Dans le mot <em>chanteurs</em>, il y a trois morphèmes : {chant-} (l'action de chanter), {-eur} (celui qui fait l'action), {-s} (le pluriel). On les trouve grâce à la <strong>commutation</strong> : substituer une partie et voir si le sens change.</p>
+<p>Il y a deux grandes familles. Les <strong>morphèmes lexicaux</strong> portent le sens de base (les racines : {chant-}, {maison}, {grand}). Les <strong>morphèmes grammaticaux</strong> ajoutent des informations de grammaire ({-s} pluriel, {-ais} imparfait, {re-} répétition).</p>
+<p>Pour construire de nouveaux mots, le français utilise trois procédés : la <strong>dérivation</strong> (ajouter un affixe : <em>chant → chanteur</em>), la <strong>composition</strong> (coller deux bases : <em>porte-monnaie</em>), et les <strong>mots-valises</strong> (fusionner deux mots tronqués : <em>brunch = breakfast + lunch</em>).</p>
+<p>Attention : un même morphème peut avoir plusieurs formes selon son entourage — c'est l'<strong>allomorphie</strong>. Le préfixe de négation {in-} devient {im-} devant /p,b,m/ (<em>impossible</em>), {il-} devant /l/ (<em>illégal</em>), {ir-} devant /r/ (<em>irrégulier</em>).</p>
+</div>
+  <div class="box box-def"><div class="box-lbl">Morphème</div><p>Plus petite unité de sens. Peut être lié (nécessite une base : {-eur}) ou libre (fonctionne seul : {grand}). Ne pas confondre avec la syllabe !</p></div><div class="box box-ex"><div class="box-lbl">Dérivation vs Flexion</div><p><strong>Dérivation</strong> : crée un nouveau lexème, souvent change la catégorie. <em>beau → beauté</em> (adj→N).<br><strong>Flexion</strong> : adapte le même lexème à la grammaire, ne change pas la catégorie. <em>chante, chantons, chanterai</em> (toujours V).</p></div><div class="box box-ret"><div class="box-lbl">Allomorphes de {in-}</div><p>{in-} = {im-} + {il-} + {ir-} + {in-}. Tous ont le même sens (négation) mais des formes différentes selon le contexte phonologique.</p></div>
+
+  <div class="sec-label">Tableau récapitulatif</div>
+  <div class="tbl-wrap"><table><thead><tr><th>Procédé</th><th>Définition</th><th>Exemple</th></tr></thead><tbody><tr><td>Flexion</td><td>Adapte le mot à la grammaire (genre, nb, temps)</td><td><em>chante → chantaient</em> (toujours verbe)</td></tr><tr><td>Dérivation préfixale</td><td>Ajoute un préfixe</td><td><em>heureux → malheureux</em></td></tr><tr><td>Dérivation suffixale</td><td>Ajoute un suffixe, souvent change catégorie</td><td><em>chanter → chanteur</em> (V→N)</td></tr><tr><td>Composition populaire</td><td>Juxtaposition de deux bases entières</td><td><em>porte-monnaie, chou-fleur</em></td></tr><tr><td>Composition savante</td><td>Bases latines ou grecques</td><td><em>cardiologie, microbiologie</em></td></tr><tr><td>Mots-valises</td><td>Fusion avec troncation</td><td><em>brunch</em> (breakfast+lunch)</td></tr><tr><td>Conversion</td><td>Changement de catégorie sans affixe</td><td><em>le manger</em> (V→N), <em>un rose</em> (Adj→N)</td></tr></tbody></table></div>
+
+  <div class="sec-label">Flashcards</div>
+  <div class="fc-grid"><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">Morphème libre vs lié ?</div><div class="fc-back">Libre = peut fonctionner seul comme mot (grand, maison). Lié = doit s'attacher à une base (-eur, re-, -s).</div></div></div><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">Dérivation vs composition ?</div><div class="fc-back">Dérivation : base + affixe (chant+eur). Composition : base + base (porte+monnaie).</div></div></div><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">Qu'est-ce qu'un allomorphe ?</div><div class="fc-back">Variante phonétique d'un même morphème. {in-} : im-possible, il-légal, ir-régulier, in-utile → tous expriment la négation.</div></div></div><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">Flexion vs dérivation ?</div><div class="fc-back">Flexion : même lexème, adapté à la grammaire (chante/chantons). Dérivation : nouveau lexème, parfois nouvelle catégorie (chanter→chanteur).</div></div></div><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">Qu'est-ce que le paradigme flexionnel ?</div><div class="fc-back">L'ensemble de toutes les formes fléchies d'un même lexème. Ex. CHANTER : je chante, tu chantes, il chantait, nous chanterons...</div></div></div><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">Mot-valise vs dérivation ?</div><div class="fc-back">Mot-valise = fusion avec troncation de deux mots (brunch, courriel). Dérivation = base existante + affixe grammatical.</div></div></div></div><p class="fc-hint">Clique sur une carte pour la retourner</p>
+
+  <div class="sec-label">Questions — Réponses</div>
+  <div class="qa-block"><div class="qa-q">Analysez le mot <em>reconstitutionne­llement</em> en morphèmes.</div><div class="qa-zone"><button class="btn-rev" onclick="revAns(this)">Voir la réponse ↓</button><div class="qa-ans"><ul><li>{re-} : préfixe de répétition</li><li>{con-} : préfixe de conjonction (ensemble)</li><li>{-stitut-} : base (latin <em>statuere</em> = établir)</li><li>{-ion} : suffixe nominalisateur → crée un nom</li><li>{-nel/-el} : suffixe adjectivalisateur → crée un adjectif</li><li>{-le} : flexion de genre féminin</li><li>{-ment} : suffixe adverbialisateur → crée un adverbe</li></ul><p>Catégorie finale : <strong>adverbe</strong>.</p></div></div></div><div class="qa-block"><div class="qa-q">Quelle est la différence entre morphème lexical et morphème grammatical ?</div><div class="qa-zone"><button class="btn-rev" onclick="revAns(this)">Voir la réponse ↓</button><div class="qa-ans"><p><strong>Morphème lexical</strong> (ou base/radical) : porte le sens référentiel du mot. Il renvoie à un concept du monde. Ex. : {chant-}, {maison}, {grand}.</p><p><strong>Morphème grammatical</strong> : apporte une information de grammaire (flexion) ou crée un nouveau mot (dérivatif). Ex. : {-s} (pluriel), {-ais} (imparfait), {re-} (répétition), {-eur} (agentif).</p></div></div></div><div class="qa-block"><div class="qa-q">Expliquez l'allomorphie du préfixe {in-} avec tous ses allomorphes.</div><div class="qa-zone"><button class="btn-rev" onclick="revAns(this)">Voir la réponse ↓</button><div class="qa-ans"><p>Le morphème {in-} exprime la négation/privatif. Il prend des formes différentes selon le phonème initial de la base :</p><ul><li>{im-} devant /p/, /b/, /m/ : <em>impossible, imbuvable, immoral</em></li><li>{il-} devant /l/ : <em>illégal, illisible</em></li><li>{ir-} devant /r/ : <em>irrégulier, irréel</em></li><li>{in-} ailleurs : <em>inutile, inconnu, indécis</em></li></ul><p>C'est une adaptation phonétique : les variantes rendent la prononciation plus fluide (assimilation).</p></div></div></div><div class="qa-block"><div class="qa-q">Distinguez dérivation, composition et conversion, avec un exemple de chacun.</div><div class="qa-zone"><button class="btn-rev" onclick="revAns(this)">Voir la réponse ↓</button><div class="qa-ans"><p><strong>Dérivation</strong> : base + affixe. <em>beau → beauté</em> (Adj + suffixe -té → N).</p><p><strong>Composition</strong> : base + base. <em>rouge + gorge → rouge-gorge</em> (N composé).</p><p><strong>Conversion</strong> (ou dérivation zéro) : changement de catégorie sans ajout d'affixe. <em>le manger</em> (V → N), <em>un vieux rose</em> (Adj → N).</p></div></div></div>
+</section>
+<section class="chapter ch-3" id="ch3">
+  <span class="ch-badge" style="background:#f0c8a022;color:#f0c8a0">Ch. 3</span>
+  <h2 class="ch-title">Syntaxe de la clause canonique</h2>
+  <p class="ch-sub">Chapitre 3 — Linguistique française UNIL 2025 · R. Mahrer</p>
+
+  <div class="sec-label">Résumé simplifié</div>
+  <div class="summary-text">
+<p>La <strong>syntaxe</strong> étudie comment les mots se combinent en unités plus grandes. L'unité de base de la syntaxe est la <strong>clause</strong> — pas la « phrase » (notion ambiguë), mais un énoncé organisé autour d'un <strong>prédicat verbal</strong>.</p>
+<p>La <strong>clause canonique</strong> est le modèle de référence : <strong>Sujet + Verbe + (Compléments)</strong>. Ex. : <em>Le chat mange la souris.</em> Toutes les autres constructions (questions, passif, etc.) dérivent de ce modèle.</p>
+<p>Les mots ne se combinent pas en vrac : ils forment des <strong>syntagmes</strong>, des groupes organisés autour d'une tête. Un <strong>GN</strong> (groupe nominal) a un nom-tête. Un <strong>GV</strong> (groupe verbal) a un verbe-tête.</p>
+<p>Chaque verbe a une <strong>valence</strong> — le nombre d'actants qu'il réclame. <em>dormir</em> : valence 1 (juste un sujet). <em>manger</em> : valence 2 (sujet + objet). <em>donner</em> : valence 3 (sujet + objet direct + objet indirect). Il existe aussi des verbes <strong>avalents</strong> (0 actant) comme <em>il pleut</em>.</p>
+<p>Chaque clause a aussi une <strong>dynamique informationnelle</strong> : le <strong>thème</strong> (TH) est ce dont on parle (info connue), le <strong>rhème</strong> (RH) est ce qu'on en dit (info nouvelle). Généralement en français : TH d'abord, RH ensuite.</p>
+</div>
+  <div class="box box-def"><div class="box-lbl">Clause</div><p>Unité minimale de communication, organisée autour d'un prédicat verbal conjugué. Différente de la « phrase graphique » qui est une unité d'écriture.</p></div><div class="box box-ex"><div class="box-lbl">Valence verbale</div><p><strong>Avalente (0)</strong> : <em>il pleut</em> — le <em>il</em> est vide de sens.<br><strong>Monovalente (1)</strong> : <em>le chat dort</em>.<br><strong>Bivalente (2)</strong> : <em>Paul lit un livre</em>.<br><strong>Trivalente (3)</strong> : <em>Paul donne un livre à Marie</em>.</p></div><div class="box box-ret"><div class="box-lbl">Thème–Rhème</div><p>TH = ce dont on parle (connu). RH = info nouvelle. En français non marqué : TH avant RH.<br>Ex. : <em>Mon chat (TH) / dort toute la journée (RH).</em></p></div><div class="box box-att"><div class="box-lbl">Sujet ≠ Agent</div><p>Au passif, le sujet syntaxique n'est plus l'agent sémantique. <em>La souris est mangée par le chat</em> : « souris » = sujet + patient.</p></div>
+
+  <div class="sec-label">Tableau récapitulatif</div>
+  <div class="tbl-wrap"><table><thead><tr><th>Fonction</th><th>Définition</th><th>Test</th><th>Exemple</th></tr></thead><tbody><tr><td>Sujet</td><td>Arg. en accord avec le verbe</td><td>C'est X qui V / pronominalisé par il/elle</td><td><em>Le chat</em> mange</td></tr><tr><td>COD</td><td>Complément direct (sans prép.)</td><td>Pronominalisé par le/la/les</td><td>Il lit <em>un livre</em></td></tr><tr><td>COI</td><td>Complément indirect (avec prép.)</td><td>Pronominalisé par lui/leur/y/en</td><td>Il parle <em>à Marie</em></td></tr><tr><td>Circonstant</td><td>Complément mobile et supprimable</td><td>Déplaçable en tête, supprimable</td><td><em>Le soir</em>, il chante</td></tr><tr><td>Attribut du sujet</td><td>Relié au sujet par copule</td><td>Remplacé par <em>le</em> (<em>il l'est</em>)</td><td>Il est <em>médecin</em></td></tr></tbody></table></div>
+
+  <div class="sec-label">Flashcards</div>
+  <div class="fc-grid"><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">Clause canonique ?</div><div class="fc-back">Structure de référence : Sujet + Verbe + (Compléments). Ex. : Le chat mange la souris.</div></div></div><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">Valence d'un verbe ?</div><div class="fc-back">Nombre d'actants requis. 0=avalent (il pleut), 1=monovalent (dormir), 2=bivalent (lire), 3=trivalent (donner).</div></div></div><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">Comment identifier le sujet ?</div><div class="fc-back">1. Accord avec le verbe. 2. Pronominalisable par il/elle. 3. Inversible (Mange-t-il?). 4. Extractible par c'est...qui.</div></div></div><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">COD vs COI vs Circonstant ?</div><div class="fc-back">COD : direct, pronom le/la/les. COI : indirect (prép. imposée), pronom lui/leur. Circonstant : mobile + supprimable.</div></div></div><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">Thème vs Rhème ?</div><div class="fc-back">TH = info connue, ce dont on parle. RH = info nouvelle, ce qu'on dit du TH. Ordre neutre en français : TH→RH.</div></div></div></div><p class="fc-hint">Clique sur une carte pour la retourner</p>
+
+  <div class="sec-label">Questions — Réponses</div>
+  <div class="qa-block"><div class="qa-q">Qu'est-ce que la valence verbale ? Illustrez avec 4 exemples de valences différentes.</div><div class="qa-zone"><button class="btn-rev" onclick="revAns(this)">Voir la réponse ↓</button><div class="qa-ans"><p>La <strong>valence</strong> est le nombre d'actants (arguments) qu'un verbe requiert pour former une clause grammaticale.</p><ul><li><strong>Avalente (0)</strong> : <em>il pleut</em> — le pronom <em>il</em> est explétif (vide).</li><li><strong>Monovalente (1)</strong> : <em>le chat dort</em> — seul le sujet est requis.</li><li><strong>Bivalente (2)</strong> : <em>Paul mange une pomme</em> — sujet + COD.</li><li><strong>Trivalente (3)</strong> : <em>Paul donne un livre à Marie</em> — sujet + COD + COI.</li></ul></div></div></div><div class="qa-block"><div class="qa-q">Comment distinguer un COD, un COI et un circonstant ?</div><div class="qa-zone"><button class="btn-rev" onclick="revAns(this)">Voir la réponse ↓</button><div class="qa-ans"><p><strong>COD</strong> : sans préposition, pronominalisable par <em>le/la/les</em>, non supprimable (si bivalent). Ex. : <em>Il lit <u>un livre</u></em> → <em>Il le lit.</em></p><p><strong>COI</strong> : avec préposition imposée par le verbe, pronominalisable par <em>lui/leur/y/en</em>. Ex. : <em>Il parle <u>à Marie</u></em> → <em>Il lui parle.</em></p><p><strong>Circonstant</strong> : mobile (peut se déplacer), supprimable sans rendre la clause agrammaticale. Ex. : <em><u>Le soir</u>, il lit.</em></p></div></div></div><div class="qa-block"><div class="qa-q">Expliquez la distinction thème–rhème et son rôle dans la communication.</div><div class="qa-zone"><button class="btn-rev" onclick="revAns(this)">Voir la réponse ↓</button><div class="qa-ans"><p>Le <strong>thème</strong> (TH) est l'élément dont on parle — information déjà connue ou supposée connue du destinataire. Il est généralement en position initiale.</p><p>Le <strong>rhème</strong> (RH) est ce qu'on dit du thème — information nouvelle, apportée par l'énonciateur.</p><p>Ex. : <em>Mon chat (TH) / ronronne toute la nuit (RH).</em></p><p>Cette structure permet de gérer le flux informationnel : on part de ce que l'interlocuteur connaît déjà pour lui apporter du nouveau.</p></div></div></div>
+</section>
+<section class="chapter ch-4" id="ch4">
+  <span class="ch-badge" style="background:#f0e0a022;color:#f0e0a0">Ch. 4</span>
+  <h2 class="ch-title">L'ordre dans la clause</h2>
+  <p class="ch-sub">Chapitre 4 — Linguistique française UNIL 2025 · R. Mahrer</p>
+
+  <div class="sec-label">Résumé simplifié</div>
+  <div class="summary-text">
+<p>En français, l'ordre neutre (non marqué) est <strong>Sujet–Verbe–Objet</strong> (<em>Paul mange une pomme</em>). Mais on peut réorganiser cet ordre pour mettre en valeur certains éléments.</p>
+<p>La <strong>dislocation</strong> place un constituant hors de la clause principale, repris par un pronom. À gauche : <em>Mon chat, il dort.</em> (thème emphatique). À droite : <em>Il dort, mon chat.</em> (précision après coup).</p>
+<p>Les <strong>clivées</strong> utilisent la structure <em>C'est X qui/que…</em> pour mettre X en focus : <em>C'est <strong>Paul</strong> qui a mangé la pomme</em> (focus sur le sujet). Très utile pour contraster ou insister.</p>
+<p>Le <strong>passif</strong> (<em>être + participe passé</em>) inverse sujet et objet : <em>La pomme est mangée par Paul.</em> Le COD de l'actif devient sujet du passif. Cela permet de thématiser le patient ou d'effacer l'agent.</p>
+<p>Les <strong>constructions impersonnelles</strong> utilisent un <em>il</em> vide : <em>Il part trois étudiants.</em> Le sujet réel (logique) passe en position post-verbale — rhème fort.</p>
+</div>
+  <div class="box box-def"><div class="box-lbl">Clivée</div><p>Structure <em>C'est X qui/que…</em> focalisant un constituant X. X peut être sujet, COD, ou circonstant. Ex. : <em>C'est Paul qui est venu.</em></p></div><div class="box box-ex"><div class="box-lbl">Dislocation</div><p><strong>Gauche</strong> : <em>Ce livre, je l'ai adoré.</em> → thème à gauche.<br><strong>Droite</strong> : <em>Je l'ai adoré, ce livre.</em> → précision après.</p></div><div class="box box-ret"><div class="box-lbl">Passif</div><p>Actif : <em>Le chat mange la souris.</em><br>Passif : <em>La souris est mangée (par le chat).</em><br>Le COD devient sujet. L'agent peut être effacé.</p></div>
+
+  <div class="sec-label">Tableau récapitulatif</div>
+  <div class="tbl-wrap"><table><thead><tr><th>Construction</th><th>Structure</th><th>Effet</th><th>Exemple</th></tr></thead><tbody><tr><td>Ordre neutre</td><td>S V COD</td><td>Déclaration non marquée</td><td>Paul mange une pomme</td></tr><tr><td>Dislocation gauche</td><td>X, pronom V…</td><td>Thème emphatique</td><td>Ma sœur, elle adore ça</td></tr><tr><td>Dislocation droite</td><td>pronom V…, X</td><td>Précision / afterthought</td><td>Il adore ça, mon chat</td></tr><tr><td>Clivée</td><td>C'est X qui/que…</td><td>Focus sur X</td><td>C'est Paul qui chante</td></tr><tr><td>Pseudo-clivée</td><td>Ce qui X, c'est Y</td><td>Contraste fort</td><td>Ce que j'aime, c'est dormir</td></tr><tr><td>Passif</td><td>être + PP (par agent)</td><td>Thématise le patient</td><td>La souris est mangée</td></tr><tr><td>Construction impersonnelle</td><td>Il V + sujet logique</td><td>Focus sur le sujet logique</td><td>Il arrive trois étudiants</td></tr></tbody></table></div>
+
+  <div class="sec-label">Flashcards</div>
+  <div class="fc-grid"><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">Dislocation gauche vs droite ?</div><div class="fc-back">Gauche : thème avant (Ma sœur, elle chante). Droite : précision après coup (Elle chante bien, ma sœur).</div></div></div><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">Clivée : structure et effet ?</div><div class="fc-back">C'est X qui/que… Focalise X. Ex. : C'est Marie qui a gagné (focus sur Marie, pas sur quelqu'un d'autre).</div></div></div><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">Formation du passif ?</div><div class="fc-back">être + participe passé. COD de l'actif → sujet passif. Sujet actif → complément d'agent (par…) ou effacé.</div></div></div><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">Pseudo-clivée ?</div><div class="fc-back">Ce qui/que… c'est… Exemple : Ce que j'aime, c'est le chocolat. Contraste ou mise en relief forte.</div></div></div><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">Construction impersonnelle ?</div><div class="fc-back">Il + verbe + sujet logique postposé. Ex. : Il reste deux places. Le sujet logique (deux places) est le rhème fort.</div></div></div></div><p class="fc-hint">Clique sur une carte pour la retourner</p>
+
+  <div class="sec-label">Questions — Réponses</div>
+  <div class="qa-block"><div class="qa-q">Transformez la phrase <em>Marie mange une pomme le matin</em> en 3 clivées différentes.</div><div class="qa-zone"><button class="btn-rev" onclick="revAns(this)">Voir la réponse ↓</button><div class="qa-ans"><ul><li>Sujet focalisé : <em>C'est <strong>Marie</strong> qui mange une pomme le matin.</em></li><li>COD focalisé : <em>C'est <strong>une pomme</strong> que Marie mange le matin.</em></li><li>Circonstant focalisé : <em>C'est <strong>le matin</strong> que Marie mange une pomme.</em></li></ul></div></div></div><div class="qa-block"><div class="qa-q">Expliquez l'effet pragmatique de la dislocation gauche vs droite.</div><div class="qa-zone"><button class="btn-rev" onclick="revAns(this)">Voir la réponse ↓</button><div class="qa-ans"><p><strong>Dislocation gauche</strong> : le constituant disloqué est présenté comme le <em>thème</em> — ce dont on va parler. Elle établit un cadre thématique avant l'assertion. Ex. : <em>Ce film, je l'ai adoré.</em></p><p><strong>Dislocation droite</strong> : le constituant est ajouté après, comme une précision, un rappel ou une pensée après coup (<em>afterthought</em>). Ex. : <em>Il ne mange plus rien, mon chat.</em></p></div></div></div><div class="qa-block"><div class="qa-q">Quels sont les effets du passif sur la structure informationnelle ?</div><div class="qa-zone"><button class="btn-rev" onclick="revAns(this)">Voir la réponse ↓</button><div class="qa-ans"><p>Le passif permet de :</p><ul><li><strong>Thématiser le patient</strong> : le COD de l'actif devient sujet du passif (position thématique) : <em>La décision (TH) a été prise hier.</em></li><li><strong>Effacer l'agent</strong> : quand l'agent est inconnu, non pertinent ou tabou : <em>La banque a été braquée</em> (sans agent).</li><li><strong>Mettre en continuité topicale</strong> : garder le même référent en position sujet de clause en clause.</li></ul></div></div></div>
+</section>
+<section class="chapter ch-5" id="ch5">
+  <span class="ch-badge" style="background:#f0b8c422;color:#f0b8c4">Ch. 5</span>
+  <h2 class="ch-title">Types de clauses et voix</h2>
+  <p class="ch-sub">Chapitre 5 — Linguistique française UNIL 2025 · R. Mahrer</p>
+
+  <div class="sec-label">Résumé simplifié</div>
+  <div class="summary-text">
+<p>On peut « faire des choses » avec les mots : affirmer, questionner, ordonner, exclaimer. Ces <strong>modalités de clause</strong> correspondent à des structures syntaxiques différentes.</p>
+<p>La <strong>déclarative</strong> est la forme neutre, pour affirmer. L'<strong>interrogative</strong> pose une question — totale (oui/non : <em>Il vient ?</em>) ou partielle (sur un constituant : <em>Qui vient ?</em>). L'<strong>impérative</strong> exprime un ordre sans sujet exprimé (<em>Viens !</em>). L'<strong>exclamative</strong> exprime une surprise (<em>Comme il est grand !</em>).</p>
+<p>Une clause peut être <strong>verbale</strong> ou <strong>averbale</strong> (sans verbe conjugué : <em>Silence ! Au feu ! Interdit de fumer.</em>). Ces dernières sont quand même des clauses car elles forment un acte communicatif complet.</p>
+<p>Les <strong>subordonnées</strong> sont des clauses insérées dans une clause principale. Une <strong>complétive</strong> (<em>Je sais qu'il viendra</em>) fonctionne comme COD. Une <strong>circonstancielle</strong> (<em>Quand il pleut, je reste</em>) fonctionne comme circonstant. Une <strong>relative</strong> modifie un nom.</p>
+</div>
+  <div class="box box-def"><div class="box-lbl">Modalités de clause</div><p>Déclarative (assertion), interrogative totale (oui/non) ou partielle (sur un constituant), impérative (ordre), exclamative.</p></div><div class="box box-ex"><div class="box-lbl">Clause averbale</div><p>Clause sans verbe conjugué, mais qui forme un acte complet : <em>Silence ! / Taxi ! / Interdit de fumer. / Défense d'entrer.</em></p></div><div class="box box-ret"><div class="box-lbl">Passif vs pronominal passif</div><p>Passif morphologique (<em>être</em>+PP) : agent possible (<em>par qn</em>).<br>Pronominal passif (<em>se</em>+V) : agent impossible. <em>Ce produit se vend bien.</em></p></div>
+
+  <div class="sec-label">Tableau récapitulatif</div>
+  <div class="tbl-wrap"><table><thead><tr><th>Type</th><th>Structure</th><th>Exemple</th></tr></thead><tbody><tr><td>Déclarative</td><td>S V (C)</td><td>Il mange une pomme.</td></tr><tr><td>Interrogative totale</td><td>Est-ce que / inversion / ↗</td><td>Mange-t-il ? / Il mange ?</td></tr><tr><td>Interrogative partielle</td><td>Mot-Q + inversion/est-ce que</td><td>Que mange-t-il ?</td></tr><tr><td>Impérative</td><td>V sans sujet</td><td>Mange ta pomme !</td></tr><tr><td>Exclamative</td><td>Comme / Que / Quel + groupe</td><td>Comme il mange vite !</td></tr><tr><td>Averbale nominale</td><td>GN seul</td><td>Silence ! / Taxi !</td></tr><tr><td>Averbale infinitive</td><td>Infinitif seul</td><td>Ne pas fumer.</td></tr></tbody></table></div>
+
+  <div class="sec-label">Flashcards</div>
+  <div class="fc-grid"><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">Interrogative totale vs partielle ?</div><div class="fc-back">Totale : réponse oui/non (Il vient ? → Oui). Partielle : porte sur un constituant (Qui vient ? Quand vient-il ?).</div></div></div><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">Clause averbale : exemples ?</div><div class="fc-back">Silence ! / Au feu ! / Défense d'entrer. / Bon courage ! Pas de verbe conjugué mais acte communicatif complet.</div></div></div><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">Passif morphologique vs pronominal passif ?</div><div class="fc-back">Morphologique : être+PP, agent possible (par le chat). Pronominal : se+V, agent impossible (ça se dit bien).</div></div></div><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">Complétive vs circonstancielle vs relative ?</div><div class="fc-back">Complétive = COD/sujet (Je crois qu'il vient). Circonstancielle = circonstant (Quand il vient…). Relative = modifie un nom (l'homme qui vient).</div></div></div><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">Dans quels contextes une infinitive apparaît-elle ?</div><div class="fc-back">Après verbe de perception (j'entends chanter), après préposition (sans manger), valeur impérative (Ne pas fumer).</div></div></div></div><p class="fc-hint">Clique sur une carte pour la retourner</p>
+
+  <div class="sec-label">Questions — Réponses</div>
+  <div class="qa-block"><div class="qa-q">Distinguez les quatre types de modalités de clause avec un exemple de chacun.</div><div class="qa-zone"><button class="btn-rev" onclick="revAns(this)">Voir la réponse ↓</button><div class="qa-ans"><ul><li><strong>Déclarative</strong> : <em>Il pleut ce matin.</em> — assertion neutre.</li><li><strong>Interrogative</strong> : totale : <em>Pleut-il ?</em> / partielle : <em>Quand pleut-il ?</em></li><li><strong>Impérative</strong> : <em>Prends un parapluie !</em> — ordre, sans sujet exprimé.</li><li><strong>Exclamative</strong> : <em>Comme il pleut fort !</em> — expression d'une réaction affective.</li></ul></div></div></div><div class="qa-block"><div class="qa-q">Qu'est-ce qu'une clause averbale ? Est-ce vraiment une clause ?</div><div class="qa-zone"><button class="btn-rev" onclick="revAns(this)">Voir la réponse ↓</button><div class="qa-ans"><p>Une clause <strong>averbale</strong> est une clause sans verbe conjugué. Exemples : <em>Silence ! / Au feu ! / Interdit de stationner. / Magnifique !</em></p><p>C'est bien une clause car elle forme un <em>acte communicatif complet</em> : elle peut avoir une force illocutoire (ordre, exclamation, avertissement). La définition moderne de la clause ne requiert pas un verbe — elle requiert un prédicat, qui peut être nominal ou adjectival.</p></div></div></div><div class="qa-block"><div class="qa-q">Expliquez la différence entre passif morphologique et construction pronominale passive.</div><div class="qa-zone"><button class="btn-rev" onclick="revAns(this)">Voir la réponse ↓</button><div class="qa-ans"><p><strong>Passif morphologique</strong> : auxiliaire <em>être</em> + participe passé. L'agent peut être exprimé avec <em>par</em>.</p><p>Ex. : <em>Ce livre a été écrit par Proust.</em> ← on peut dire par qui.</p><p><strong>Construction pronominale à valeur passive</strong> : pronom <em>se</em> + verbe. L'agent ne peut PAS être exprimé.</p><p>Ex. : <em>Le français se parle dans 30 pays.</em> ← on ne peut pas ajouter « par quelqu'un ».</p><p>Test : <em>par + agent</em> possible ? Oui → passif morphologique. Non → pronominal passif.</p></div></div></div>
+</section>
+<section class="chapter ch-6" id="ch6">
+  <span class="ch-badge" style="background:#b8d8b822;color:#b8d8b8">Ch. 6</span>
+  <h2 class="ch-title">Extensions du groupe nominal</h2>
+  <p class="ch-sub">Chapitre 6 — Linguistique française UNIL 2025 · R. Mahrer</p>
+
+  <div class="sec-label">Résumé simplifié</div>
+  <div class="summary-text">
+<p>Un groupe nominal minimal, c'est juste Déterminant + Nom : <em>le chat</em>. Mais on peut l'enrichir avec des <strong>extensions</strong> qui précisent ou qualifient le nom.</p>
+<p>L'<strong>épithète</strong> est un adjectif directement attaché au nom (sans virgule) : <em>un <strong>grand</strong> chat noir</em>. Elle restreint ou qualifie le nom-tête.</p>
+<p>La <strong>proposition relative</strong> est une subordonnée qui modifie un nom (son <em>antécédent</em>) via un pronom relatif. La <strong>relative déterminative</strong> est indispensable : <em>le chat <strong>qui dort</strong></em> (sans la relative, on ne sait pas de quel chat il s'agit). La <strong>relative explicative</strong> est entre virgules, accessoire : <em>mon chat, <strong>qui aime dormir</strong>, est paresseux</em>.</p>
+<p>La <strong>construction détachée</strong> (ou apposition) est séparée par une virgule et a une grande mobilité syntaxique : <em><strong>Fatigué</strong>, le chat s'endormit.</em></p>
+<p>Les <strong>groupes prépositionnels (GPrép)</strong> peuvent aussi modifier un nom : <em>la maison <strong>de mes parents</strong></em>. On peut les emboîter : <em>une bouteille [de vin [de Bourgogne [de 2020]]]</em>.</p>
+</div>
+  <div class="box box-def"><div class="box-lbl">Relative déterminative vs explicative</div><p><strong>Déterminative</strong> : sans virgule, restreint le référent (indispensable). <em>Le chat qui dort est paresseux.</em><br><strong>Explicative</strong> : entre virgules, info accessoire. <em>Mon chat, qui dort toujours, est paresseux.</em></p></div><div class="box box-ex"><div class="box-lbl">Pronoms relatifs</div><p><em>qui</em> (sujet) / <em>que</em> (COD) / <em>dont</em> (compl. de <em>de</em>) / <em>où</em> (lieu/temps) / <em>lequel</em> (après préposition).</p></div><div class="box box-ret"><div class="box-lbl">Construction détachée</div><p>Adjectif ou GN séparé par virgule, mobile dans la phrase. <em>Épuisée, elle s'endormit. / Elle s'endormit, épuisée.</em></p></div>
+
+  <div class="sec-label">Tableau récapitulatif</div>
+  <div class="tbl-wrap"><table><thead><tr><th>Extension</th><th>Définition</th><th>Exemple</th></tr></thead><tbody><tr><td>Épithète liée</td><td>Adj. directement attaché au N</td><td><em>une belle maison rouge</em></td></tr><tr><td>Épithète détachée</td><td>Adj. séparé par virgule, mobile</td><td><em>Fatiguée, elle dormit</em></td></tr><tr><td>Relative déterminative</td><td>Subordonnée relative sans virgule</td><td><em>le livre que je lis</em></td></tr><tr><td>Relative explicative</td><td>Subordonnée relative avec virgules</td><td><em>ce livre, que j'adore, est épuisé</em></td></tr><tr><td>Apposition</td><td>GN séparé par virgule</td><td><em>Paris, capitale de la France</em></td></tr><tr><td>GPrép</td><td>Préposition + complément</td><td><em>la maison de mes parents</em></td></tr></tbody></table></div>
+
+  <div class="sec-label">Flashcards</div>
+  <div class="fc-grid"><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">Relative déterminative vs explicative ?</div><div class="fc-back">Déterminative : sans virgule, restreint le sens du nom (lequel des X ?). Explicative : entre virgules, info supplémentaire sur un référent déjà identifié.</div></div></div><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">Pronoms relatifs : lequel choisir ?</div><div class="fc-back">qui = sujet. que = COD. dont = avec de. où = lieu/temps. lequel/laquelle = après préposition (sur lequel, avec laquelle).</div></div></div><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">Épithète vs attribut ?</div><div class="fc-back">Épithète : dans le GN, directement au nom (un beau chat). Attribut du sujet : après verbe copule (Le chat est beau / semble fatigué).</div></div></div><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">GPrép comme modificateur de N ?</div><div class="fc-back">GPrép = prép + complément. Peut modifier un nom : la maison [de brique], le chat [du voisin]. Peut s'emboîter : une bouteille de vin de Bourgogne.</div></div></div></div><p class="fc-hint">Clique sur une carte pour la retourner</p>
+
+  <div class="sec-label">Questions — Réponses</div>
+  <div class="qa-block"><div class="qa-q">Distinguez relative déterminative et relative explicative avec exemples contrastés.</div><div class="qa-zone"><button class="btn-rev" onclick="revAns(this)">Voir la réponse ↓</button><div class="qa-ans"><p><strong>Déterminative</strong> (sans virgule) : restreint l'ensemble des référents visés. La relative est essentielle au sens.</p><p>Ex. : <em>Les étudiants <u>qui ont raté l'examen</u> doivent repasser.</em> → Pas tous les étudiants, seulement ceux qui ont raté.</p><p><strong>Explicative</strong> (avec virgules) : apporte une information supplémentaire sur un référent déjà identifié. Supprimable sans changer le sens essentiel.</p><p>Ex. : <em>Marie, <u>qui est ma meilleure amie</u>, a réussi.</em> → Marie est déjà identifiée ; la relative est un commentaire.</p></div></div></div><div class="qa-block"><div class="qa-q">Analysez le GN : <em>une bouteille de vieux vin de Bourgogne millésimé</em>.</div><div class="qa-zone"><button class="btn-rev" onclick="revAns(this)">Voir la réponse ↓</button><div class="qa-ans"><ul><li>Tête nominale : <em>bouteille</em></li><li>Déterminant : <em>une</em></li><li>GPrép1 : <em>de vieux vin de Bourgogne millésimé</em> (modifie <em>bouteille</em>)<ul><li>Tête nominale : <em>vin</em></li><li>Épithète ante-posée : <em>vieux</em></li><li>GPrép2 : <em>de Bourgogne</em> (modifie <em>vin</em>)</li><li>Épithète post-posée : <em>millésimé</em></li></ul></li></ul></div></div></div>
+</section>
+<section class="chapter ch-7" id="ch7">
+  <span class="ch-badge" style="background:#c8b8f022;color:#c8b8f0">Ch. 7</span>
+  <h2 class="ch-title">Extensions du groupe verbal</h2>
+  <p class="ch-sub">Chapitre 7 — Linguistique française UNIL 2025 · R. Mahrer</p>
+
+  <div class="sec-label">Résumé simplifié</div>
+  <div class="summary-text">
+<p>Le <strong>groupe verbal (GV)</strong> est constitué du verbe + ses arguments essentiels (les éléments exigés par la valence). Mais on peut ajouter des <strong>circonstants</strong> — des compléments optionnels qui précisent les circonstances.</p>
+<p>Un <strong>circonstant</strong> se reconnaît à trois critères : il est <strong>supprimable</strong> (la clause reste grammaticale sans lui), <strong>mobile</strong> (on peut le déplacer), et <strong>multipliable</strong> (on peut en mettre plusieurs). Ex. : <em>Il chante <strong>ici</strong>, <strong>le soir</strong>, <strong>avec joie</strong>.</em></p>
+<p>Un circonstant en <strong>position initiale</strong> joue souvent un rôle de <strong>cadre thématique</strong> : il établit le contexte avant l'assertion. Ex. : <em><strong>Chaque matin</strong>, les rues se vident.</em></p>
+<p>Les <strong>périphrases verbales</strong> combinent un auxiliaire + infinitif/participe pour exprimer un <strong>aspect</strong> ou une <strong>modalité</strong> : <em>être en train de</em> (progressif), <em>aller + inf.</em> (ingressif futur proche), <em>venir de + inf.</em> (résultatif récent), <em>devoir + inf.</em> (obligation/probabilité).</p>
+</div>
+  <div class="box box-def"><div class="box-lbl">Circonstant</div><p>Complément <strong>facultatif + mobile + multipliable</strong>. Différent du COD/COI qui sont exigés par la valence.</p></div><div class="box box-ex"><div class="box-lbl">Périphrases verbales</div><p><em>Il va partir</em> (futur proche) / <em>Il est en train de manger</em> (progressif) / <em>Il vient de finir</em> (passé récent) / <em>Il doit travailler</em> (obligation).</p></div><div class="box box-ret"><div class="box-lbl">Circonstant initial = cadre thématique</div><p>Un circonstant en tête de clause établit un contexte pour l'assertion : <em>En été, les jours sont longs.</em> → le circonstant cadre, le reste est le rhème.</p></div>
+
+  <div class="sec-label">Tableau récapitulatif</div>
+  <div class="tbl-wrap"><table><thead><tr><th>Type de circonstant</th><th>Catégorie grammaticale</th><th>Exemple</th></tr></thead><tbody><tr><td>Lieu</td><td>GPrép / GAdv</td><td>dans le jardin / là-bas</td></tr><tr><td>Temps</td><td>GN / GPrép / GAdv</td><td>ce matin / depuis hier / tôt</td></tr><tr><td>Manière</td><td>GAdv / GPrép / Gérondif</td><td>rapidement / avec soin / en chantant</td></tr><tr><td>Cause</td><td>GPrép / Subord.</td><td>à cause de / parce que</td></tr><tr><td>But</td><td>GPrép / Infinitive</td><td>pour / afin de + inf.</td></tr><tr><td>Condition</td><td>Subord. conditionnelle</td><td>si / à condition que</td></tr></tbody></table></div>
+
+  <div class="sec-label">Flashcards</div>
+  <div class="fc-grid"><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">3 critères du circonstant ?</div><div class="fc-back">1. Supprimable (clause reste grammaticale). 2. Mobile (déplaçable). 3. Multipliable (plusieurs à la fois).</div></div></div><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">Périphrase progressive vs ingressive ?</div><div class="fc-back">Progressive : être en train de + inf. (action en cours). Ingressive : aller + inf. (action imminente). Résultative récente : venir de + inf.</div></div></div><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">Circonstant initial = thème cadre ?</div><div class="fc-back">Oui : en position initiale, le circonstant établit le contexte (lieu, temps, condition) dans lequel s'inscrit le rhème. Ex. : À Paris, les loyers sont élevés.</div></div></div></div><p class="fc-hint">Clique sur une carte pour la retourner</p>
+
+  <div class="sec-label">Questions — Réponses</div>
+  <div class="qa-block"><div class="qa-q">Quels sont les trois critères qui permettent d'identifier un circonstant ?</div><div class="qa-zone"><button class="btn-rev" onclick="revAns(this)">Voir la réponse ↓</button><div class="qa-ans"><p>Un circonstant est un complément qui satisfait les trois critères suivants :</p><ul><li><strong>Supprimable</strong> : sa suppression ne rend pas la clause agrammaticale. Ex. : <em>Il chante (le soir)</em> ✓</li><li><strong>Mobile</strong> : il peut se déplacer en tête ou en milieu sans changer le sens essentiel. Ex. : <em>Le soir, il chante / Il chante, le soir</em> ✓</li><li><strong>Multipliable</strong> : on peut en ajouter plusieurs du même type. Ex. : <em>Il chante ici, le soir, avec joie</em> ✓</li></ul><p>Ces critères le distinguent des COD/COI qui sont exigés par la valence et ne sont pas librement supprimables.</p></div></div></div><div class="qa-block"><div class="qa-q">Expliquez les périphrases aspectuelles en français avec un exemple de chaque.</div><div class="qa-zone"><button class="btn-rev" onclick="revAns(this)">Voir la réponse ↓</button><div class="qa-ans"><ul><li><strong>Progressif</strong> : <em>être en train de + inf.</em> → action en cours. <em>Il est en train de lire.</em></li><li><strong>Ingressif / futur proche</strong> : <em>aller + inf.</em> → action imminente. <em>Il va partir.</em></li><li><strong>Résultatif récent</strong> : <em>venir de + inf.</em> → action récemment achevée. <em>Il vient de finir.</em></li><li><strong>Modal (obligation)</strong> : <em>devoir + inf.</em> → obligation ou probabilité. <em>Il doit travailler.</em></li></ul></div></div></div>
+</section>
+<section class="chapter ch-8" id="ch8">
+  <span class="ch-badge" style="background:#a8c8f022;color:#a8c8f0">Ch. 8</span>
+  <h2 class="ch-title">La clause complexe</h2>
+  <p class="ch-sub">Chapitre 8 — Linguistique française UNIL 2025 · R. Mahrer</p>
+
+  <div class="sec-label">Résumé simplifié</div>
+  <div class="summary-text">
+<p>Une <strong>clause complexe</strong> contient au moins deux propositions : une principale et une ou plusieurs subordonnées (ou coordonnées).</p>
+<p>La <strong>coordination</strong> unit deux clauses de même rang avec une conjonction (<em>et, mais, ou, donc, or, ni, car</em>) : <em>Il pleut <strong>et</strong> je reste.</em></p>
+<p>La <strong>subordination</strong> enchâsse une clause dans une autre où elle remplit une fonction. Types de subordonnées :</p>
+<ul style='padding-left:1.3rem;margin:.4rem 0;font-size:.9rem'><li><strong>Complétive</strong> (que + indicatif/subjonctif) : COD ou sujet</li><li><strong>Circonstancielle</strong> : circonstant de la principale</li><li><strong>Relative</strong> : modificateur d'un nom</li><li><strong>Interrogative indirecte</strong> : enchâsse une question</li></ul>
+<p>Le <strong>discours indirect</strong> rapporte les paroles de quelqu'un en les intégrant à la syntaxe de la principale. Passage DI→DD : changement de personne, de déictiques temporels, et de temps verbaux.</p>
+</div>
+  <div class="box box-def"><div class="box-lbl">Coordination vs subordination</div><p><strong>Coordination</strong> : deux clauses de même rang (et, mais, ou). <strong>Subordination</strong> : clause enchâssée dans une autre, remplissant une fonction syntaxique.</p></div><div class="box box-ex"><div class="box-lbl">Discours indirect</div><p>DD : <em>Il dit : « Je pars demain. »</em><br>DI : <em>Il dit qu'il partait le lendemain.</em><br>Changements : personne, temps, déictiques.</p></div><div class="box box-ret"><div class="box-lbl">Conjonctions de coordination</div><p><strong>mais ou et donc or ni car</strong> — aide-mémoire : « mais où est donc Ornicar ? »</p></div>
+
+  <div class="sec-label">Tableau récapitulatif</div>
+  <div class="tbl-wrap"><table><thead><tr><th>Type de subordonnée</th><th>Fonction</th><th>Conjonction/pronom</th><th>Exemple</th></tr></thead><tbody><tr><td>Complétive</td><td>COD ou sujet</td><td>que</td><td>Il sait <em>que tu viendras</em></td></tr><tr><td>Circonstancielle temporelle</td><td>Circonstant</td><td>quand / lorsque</td><td><em>Quand il vient</em>, je chante</td></tr><tr><td>Circonstancielle causale</td><td>Circonstant</td><td>parce que / car</td><td><em>Parce qu'il pleut</em>, je reste</td></tr><tr><td>Circonstancielle concessive</td><td>Circonstant</td><td>bien que + subj.</td><td><em>Bien qu'il pleuve</em>, je sors</td></tr><tr><td>Relative</td><td>Modificateur de N</td><td>qui/que/dont/où</td><td>l'homme <em>qui chante</em></td></tr><tr><td>Interrogative indirecte</td><td>COD</td><td>si / ce qui / ce que</td><td>Je me demande <em>s'il vient</em></td></tr></tbody></table></div>
+
+  <div class="sec-label">Flashcards</div>
+  <div class="fc-grid"><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">Coordination vs subordination ?</div><div class="fc-back">Coordination : même rang, conjonction (et/mais/ou). Subordination : clause enchâssée remplissant une fonction (COD, circonstant, modificateur de N).</div></div></div><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">DD → DI : quels changements ?</div><div class="fc-back">Personne (je → il/elle), déictiques temporels (demain → le lendemain, hier → la veille), temps verbaux (présent → imparfait, futur → conditionnel).</div></div></div><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">5 conjonctions de coordination ?</div><div class="fc-back">et, mais, ou, donc, or, ni, car. Aide-mémoire : « mais où est donc Ornicar ? »</div></div></div><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">Complétive au subjonctif vs indicatif ?</div><div class="fc-back">Indicatif : verbes de croyance/déclaration (je crois que...). Subjonctif : verbes de volonté, doute, émotion (je veux que..., bien que...).</div></div></div></div><p class="fc-hint">Clique sur une carte pour la retourner</p>
+
+  <div class="sec-label">Questions — Réponses</div>
+  <div class="qa-block"><div class="qa-q">Analysez la clause complexe suivante : <em>Bien qu'il soit épuisé, Paul, qui rentrait de voyage, prépara néanmoins le dîner.</em></div><div class="qa-zone"><button class="btn-rev" onclick="revAns(this)">Voir la réponse ↓</button><div class="qa-ans"><ul><li><strong>Subordonnée concessive</strong> : <em>Bien qu'il soit épuisé</em> (bien que + subjonctif)</li><li><strong>Sujet</strong> : <em>Paul</em></li><li><strong>Relative explicative</strong> (apposée au sujet) : <em>qui rentrait de voyage</em></li><li><strong>Circonstant adverbal</strong> : <em>néanmoins</em> (connecteur concessif)</li><li><strong>Verbe principal</strong> : <em>prépara</em> (passé simple)</li><li><strong>COD</strong> : <em>le dîner</em></li></ul></div></div></div><div class="qa-block"><div class="qa-q">Transformez en discours indirect : <em>Il a dit : « Je partirai demain matin avec mes amis. »</em></div><div class="qa-zone"><button class="btn-rev" onclick="revAns(this)">Voir la réponse ↓</button><div class="qa-ans"><p>DI : <em>Il a dit qu'il partirait <strong>le lendemain matin</strong> avec ses amis.</em></p><p>Changements opérés :</p><ul><li>Personne : <em>Je</em> → <em>il</em></li><li>Temps : futur <em>partirai</em> → conditionnel <em>partirait</em></li><li>Déictique temporel : <em>demain</em> → <em>le lendemain</em></li><li>Suppression guillemets + deux-points → conjonction <em>que</em></li></ul></div></div></div>
+</section>
+<section class="chapter ch-9" id="ch9">
+  <span class="ch-badge" style="background:#a8d8c422;color:#a8d8c4">Ch. 9</span>
+  <h2 class="ch-title">La phrase graphique</h2>
+  <p class="ch-sub">Chapitre 9 — Linguistique française UNIL 2025 · R. Mahrer</p>
+
+  <div class="sec-label">Résumé simplifié</div>
+  <div class="summary-text">
+<p>La <strong>phrase graphique</strong> est une unité d'écriture : elle commence par une majuscule et se termine par un signe de ponctuation fort (. ? ! …). C'est une unité <em>visuelle</em>, pas nécessairement linguistique.</p>
+<p>La <strong>clause</strong> est une unité <em>linguistique</em> centrée sur un prédicat verbal. Une phrase graphique peut contenir plusieurs clauses, et une clause peut être averbale.</p>
+<p>La <strong>ponctuation</strong> joue plusieurs rôles : <strong>syntaxique</strong> (virgule entre circonstant antéposé et principale), <strong>prosodique</strong> (marque des pauses), <strong>pragmatique</strong> (? et ! indiquent le type d'acte de parole).</p>
+<p>On peut analyser un texte écrit sur trois plans : le plan <strong>morphosyntaxique</strong> (clauses et syntagmes), le plan <strong>topographique</strong> (mise en page, paragraphes), et le plan <strong>pragmasyntaxique</strong> (thème–rhème, dislocation, organisation de l'information).</p>
+</div>
+  <div class="box box-def"><div class="box-lbl">Phrase graphique vs clause</div><p><strong>Phrase graphique</strong> = majuscule + ponctuation forte. Unité graphique.<br><strong>Clause</strong> = prédicat verbal. Unité linguistique.<br>≠ : une phrase graphique peut contenir plusieurs clauses.</p></div><div class="box box-ex"><div class="box-lbl">Rôles de la ponctuation</div><p>Virgule : sépare un circonstant antéposé de la principale.<br>Point-virgule : entre clauses coordonnées proches.<br>? et ! : marquent le type d'acte de parole.</p></div><div class="box box-ret"><div class="box-lbl">3 plans d'analyse d'un texte</div><p>1. <strong>Morphosyntaxique</strong> : clauses, syntagmes, fonctions.<br>2. <strong>Topographique</strong> : mise en page, paragraphes, tirets.<br>3. <strong>Pragmasyntaxique</strong> : TH/RH, dislocation, connecteurs.</p></div><div class="box box-att"><div class="box-lbl">Erreur courante</div><p>On ne met PAS de virgule entre le sujet et son verbe : *<em>Le chat, mange.</em> est incorrect.</p></div>
+
+  <div class="sec-label">Tableau récapitulatif</div>
+  <div class="tbl-wrap"><table><thead><tr><th>Signe de ponctuation</th><th>Rôle syntaxique</th><th>Rôle pragmatique</th></tr></thead><tbody><tr><td>Virgule</td><td>Sépare circonstant antéposé / éléments d'une liste</td><td>Pause légère, délimite le thème</td></tr><tr><td>Point-virgule</td><td>Entre deux clauses coordonnées</td><td>Pause intermédiaire, lien logique fort</td></tr><tr><td>Point</td><td>Fin de phrase graphique déclarative</td><td>Acte d'assertion complet</td></tr><tr><td>Point d'interrogation</td><td>Fin d'interrogative</td><td>Acte de question</td></tr><tr><td>Point d'exclamation</td><td>Fin d'exclamative / impérative</td><td>Acte d'exclamation / ordre</td></tr><tr><td>Deux-points</td><td>Introduit explication / citation (DD)</td><td>Annonce ce qui suit</td></tr><tr><td>Guillemets</td><td>Encadrent discours direct</td><td>Marque citationelle</td></tr></tbody></table></div>
+
+  <div class="sec-label">Flashcards</div>
+  <div class="fc-grid"><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">Phrase graphique vs clause ?</div><div class="fc-back">Phrase graphique : unité graphique (majuscule → point). Clause : unité linguistique (prédicat verbal). Une phrase graphique peut contenir plusieurs clauses.</div></div></div><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">3 rôles de la ponctuation ?</div><div class="fc-back">1. Syntaxique (virgule pour circonstant antéposé). 2. Prosodique (marque des pauses). 3. Pragmatique (? et ! indiquent l'acte de langage).</div></div></div><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">3 plans d'analyse d'un texte écrit ?</div><div class="fc-back">1. Morphosyntaxique (clauses/syntagmes). 2. Topographique (mise en page, paragraphes). 3. Pragmasyntaxique (TH/RH, connecteurs, dislocation).</div></div></div><div class="fc-card" onclick="flipCard(this)"><div class="fc-inner"><div class="fc-front">Peut-on mettre une virgule entre sujet et verbe ?</div><div class="fc-back">NON. *Le chat, mange la souris. est agrammatical. La virgule ne peut pas séparer le sujet de son verbe.</div></div></div></div><p class="fc-hint">Clique sur une carte pour la retourner</p>
+
+  <div class="sec-label">Questions — Réponses</div>
+  <div class="qa-block"><div class="qa-q">Quelle est la différence entre une phrase graphique et une clause ?</div><div class="qa-zone"><button class="btn-rev" onclick="revAns(this)">Voir la réponse ↓</button><div class="qa-ans"><p><strong>Phrase graphique</strong> : unité délimitée graphiquement par une majuscule initiale et un signe de ponctuation fort final (. ? ! …). C'est une notion orthographique.</p><p><strong>Clause</strong> : unité linguistique organisée autour d'un prédicat verbal conjugué. C'est une notion syntaxique.</p><p>Relations possibles :</p><ul><li>Une phrase graphique peut contenir PLUSIEURS clauses : <em>Il pleut ; je reste.</em> = 2 clauses.</li><li>Une phrase graphique peut être une clause averbale : <em>Silence !</em> = 0 verbe conjugué.</li></ul></div></div></div><div class="qa-block"><div class="qa-q">Analysez sur 3 plans : <em>Les animaux, réfléchissez avant de les manger.</em></div><div class="qa-zone"><button class="btn-rev" onclick="revAns(this)">Voir la réponse ↓</button><div class="qa-ans"><p><strong>Plan morphosyntaxique</strong> :</p><ul><li><em>Les animaux</em> : GN, dislocation gauche</li><li><em>réfléchissez</em> : V impératif 2e pl. (clause principale)</li><li><em>avant de les manger</em> : sub. circonstancielle temporelle (infinitive)</li><li><em>les</em> : pronom COD coréférentiel à <em>les animaux</em></li></ul><p><strong>Plan topographique</strong> : une seule phrase graphique, virgule après le GN disloqué.</p><p><strong>Plan pragmasyntaxique</strong> : TH = <em>les animaux</em> (dislocation gauche = cadrage thématique). RH = <em>réfléchissez avant de les manger</em> (injonction). Effet rhétorique : interpellation directe du destinataire.</p></div></div></div>
+</section>
+  </main>
+</div>
+<script>
+
+function flipCard(c){c.classList.toggle('flipped')}
+function revAns(btn){
+  var a=btn.nextElementSibling;
+  if(!a)return;
+  if(a.style.display==='block'){a.style.display='none';btn.textContent='Voir la réponse ↓';}
+  else{a.style.display='block';btn.textContent='Masquer ↑';}
+}
+function toggleTheme(){
+  var t=document.documentElement.getAttribute('data-theme')==='light'?'dark':'light';
+  document.documentElement.setAttribute('data-theme',t);
+  document.getElementById('thbtn').textContent=t==='light'?'☀️':'🌙';
+  try{localStorage.setItem('pc_theme',t)}catch(e){}
+}
+(function(){
+  var s=localStorage.getItem('pc_theme')||'dark';
+  document.documentElement.setAttribute('data-theme',s);
+  document.addEventListener('DOMContentLoaded',function(){
+    var b=document.getElementById('thbtn');
+    if(b)b.textContent=s==='light'?'☀️':'🌙';
+    // Inject textareas before each btn-rev
+    document.querySelectorAll('.btn-rev').forEach(function(btn){
+      var p=btn.previousElementSibling;
+      if(!p||!p.classList.contains('exo-draft')){
+        var ta=document.createElement('textarea');
+        ta.className='exo-draft';ta.placeholder='Votre réponse…';
+        btn.parentNode.insertBefore(ta,btn);
+      }
+    });
+    // Sidebar active on scroll
+    var chs=document.querySelectorAll('.chapter');
+    var links=document.querySelectorAll('.sb-link[data-ch]');
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          links.forEach(function(l){l.classList.remove('active')});
+          var l=document.querySelector('.sb-link[data-ch="'+e.target.id+'"]');
+          if(l)l.classList.add('active');
+        }
+      });
+    },{rootMargin:'-20% 0px -70% 0px'});
+    chs.forEach(function(c){obs.observe(c)});
+  });
+})();
+
+</script>
+</body>
+</html>

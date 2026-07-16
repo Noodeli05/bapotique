@@ -38,7 +38,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{font-size:16px;scroll-behavior:smooth;overflow-x:hidden}
 body{overflow-x:hidden}
-table,img,video,iframe{max-width:100%}
+img,video,iframe{max-width:100%}
 
 /* ── BODY ───────────────────────────────────────────────────────────────── */
 body{
@@ -207,9 +207,10 @@ blockquote{
 /* ── TABLES ─────────────────────────────────────────────────────────────── */
 .tab-content{overflow-x:auto;-webkit-overflow-scrolling:touch}
 table{
-  border-collapse:collapse;margin:1rem 0;width:100%;
-  font-size:.84rem;min-width:320px;
-  border-radius:var(--r-md);overflow:hidden;
+  border-collapse:collapse;margin:1rem 0;
+  width:max-content;min-width:100%;
+  font-size:.84rem;
+  border-radius:var(--r-md);
   box-shadow:0 2px 12px rgba(0,0,0,.3);
 }
 th{
