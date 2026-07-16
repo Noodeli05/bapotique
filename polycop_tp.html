@@ -132,7 +132,7 @@ input,select,textarea{font-size:max(16px,1em)!important}
 .tts-btn{background:none;border:1px solid var(--bdr,rgba(255,255,255,.1));border-radius:6px;padding:.18rem .48rem;font-size:.78rem;cursor:pointer;color:var(--mu,rgba(232,228,240,.55));transition:all .15s;line-height:1.2;flex-shrink:0;user-select:none;vertical-align:middle;font-family:inherit}
 .tts-btn:hover,.tts-btn[data-s="1"]{background:var(--lav-bg,rgba(200,184,240,.1));color:var(--lav,#c8b8f0);border-color:var(--lav,#c8b8f0)}
 </style>
-</head>
+<link rel="manifest" href="manifest.json"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js");</script></head>
 <body>
 <nav class="topnav">
   <a class="topnav-brand" href="index.html">Linguistique Fr.</a>
@@ -142,6 +142,8 @@ input,select,textarea{font-size:max(16px,1em)!important}
     <a href="polycop_cours.html">Polycopié cours</a>
     <a href="ressources.html">Ressources</a>
     <a href="flashcards.html">Flashcards</a>
+    <a href="examen.html">Examen</a>
+    <a href="stats.html">Progression</a>
   </div>
   <button class="theme-btn" id="theme-btn" onclick="toggleTheme()">🌙</button>
 </nav>

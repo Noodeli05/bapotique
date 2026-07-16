@@ -206,8 +206,13 @@ input, textarea, select { font-size: max(16px, 1em) !important; }
 .tts-btn{background:none;border:1px solid var(--bdr,rgba(255,255,255,.1));border-radius:6px;padding:.18rem .48rem;font-size:.78rem;cursor:pointer;color:var(--mu,rgba(232,228,240,.55));transition:all .15s;line-height:1.2;flex-shrink:0;user-select:none;vertical-align:middle;font-family:inherit}
 .tts-btn:hover,.tts-btn[data-s="1"]{background:var(--lav-bg,rgba(200,184,240,.1));color:var(--lav,#c8b8f0);border-color:var(--lav,#c8b8f0)}
 .tts-card-btn{position:absolute;bottom:.55rem;left:.7rem;z-index:2}
+/* SM-2 */
+.sm2-info{font-size:.72rem;color:var(--tx-muted,rgba(232,228,240,.55));text-align:center;min-height:1.3em;padding:.2rem 0}
+#btn-sm2.active{background:var(--lav-bg);color:var(--lav);border-color:var(--lav)}
+.swipe-hint{font-size:.68rem;color:var(--tx-faint,rgba(232,228,240,.3));text-align:center;margin-top:.3rem;display:none}
+@media(max-width:720px){.swipe-hint{display:block}}
 </style>
-</head>
+<link rel="manifest" href="manifest.json"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js");</script></head>
 <body>
 
 <!-- Header -->
@@ -219,6 +224,8 @@ input, textarea, select { font-size: max(16px, 1em) !important; }
     <a href="ressources.html">Ressources</a>
     <a href="flashcards.html" class="active">Flashcards</a>
     <a href="entrainement.html">Entraînement</a>
+    <a href="examen.html">Examen</a>
+    <a href="stats.html">Progression</a>
   </nav>
   <button class="btn-icon" id="theme-toggle" title="Changer le thème">🌙</button>
   <button class="btn-icon" id="shortcuts-toggle" title="Raccourcis clavier">⌨️</button>
@@ -324,6 +331,8 @@ input, textarea, select { font-size: max(16px, 1em) !important; }
     </div>
     <div class="card-chapter" id="card-chapter"></div>
     <div class="flip-hint" id="flip-hint">Cliquez pour retourner · Espace</div>
+    <div class="sm2-info" id="sm2-info"></div>
+    <div class="swipe-hint">← À revoir &nbsp;|&nbsp; ↑ Retourner &nbsp;|&nbsp; → Je sais</div>
 
     <!-- Navigation -->
     <div class="fc-controls">
@@ -335,6 +344,7 @@ input, textarea, select { font-size: max(16px, 1em) !important; }
 
     <!-- Toolbar -->
     <div class="fc-toolbar">
+      <button class="tool-btn" id="btn-sm2" onclick="toggleSM2()" title="Répétition espacée type Anki">🧠 Mode Anki</button>
       <button class="tool-btn" id="btn-shuffle" onclick="toggleShuffle()" title="Mélanger (R)">🔀 Mélanger</button>
       <button class="tool-btn" id="btn-flash" onclick="toggleFlash()" title="Mode flash">⚡ Flash</button>
       <select class="speed-select" id="flash-speed" onchange="setFlashSpeed(this.value)">
@@ -381,6 +391,7 @@ function _loadState() {
 const _saved = _loadState();
 
 const state = {
+  sm2Mode: localStorage.getItem('bap_sm2_mode') === '1',
   filtered: [],
   index: 0,
   flipped: false,
@@ -421,7 +432,14 @@ function buildDeck(restoreCard) {
   if (state.filterKey === 'fav') pool = pool.filter(c => state.favorites.has(c.id));
   else if (state.filterKey === 'review') pool = pool.filter(c => state.session.review.has(c.id));
   else if (state.filterKey === 'mastered') pool = pool.filter(c => state.session.mastered.has(c.id));
-  if (state.shuffle) pool = [...pool].sort(() => Math.random() - .5);
+  if (state.sm2Mode) {
+    const now = Date.now(), all = _sm2Data();
+    pool = [...pool].sort((a, b) => {
+      const na = (all[a.id] || {nextReview: 0}).nextReview;
+      const nb = (all[b.id] || {nextReview: 0}).nextReview;
+      return na - nb;
+    });
+  } else if (state.shuffle) pool = [...pool].sort(() => Math.random() - .5);
   state.filtered = pool;
   // Restore by card ID if provided, else stay at 0
   const targetId = restoreCard || state.lastCardId;
@@ -501,6 +519,7 @@ function renderCard() {
   // prev/next buttons
   document.getElementById('btn-prev').disabled = state.index === 0;
   document.getElementById('btn-next').disabled = state.index === total - 1;
+  _updateSM2Info(card);
 }
 
 function flipCard() {
@@ -534,8 +553,10 @@ function markKnow() {
   state.session.mastered.add(card.id);
   state.session.review.delete(card.id);
   saveSession();
+  if (state.sm2Mode) _sm2Update(card.id, 4); else _bapLog(true);
   updateDash();
   updateSidebarCounts();
+  _updateSM2Info(card);
   nextCard();
 }
 
@@ -545,8 +566,10 @@ function markReview() {
   state.session.review.add(card.id);
   state.session.mastered.delete(card.id);
   saveSession();
+  if (state.sm2Mode) _sm2Update(card.id, 1); else _bapLog(false);
   updateDash();
   updateSidebarCounts();
+  _updateSM2Info(card);
   nextCard();
 }
 
@@ -855,6 +878,78 @@ updateSidebarCounts();
 if (location.hash.startsWith('#card-')) {
   goToCard(location.hash.slice(6));
 }
+
+// ─── SM-2 Répétition espacée ─────────────────────────────────────────────────
+const _SM2_KEY = 'bap_sm2', _BAP_LOG = 'bap_log', _BAP_STK = 'bap_streak', _SM2_MODE = 'bap_sm2_mode';
+(function(){ if(state.sm2Mode) document.getElementById('btn-sm2').classList.add('active'); })();
+
+function _sm2Data() { return JSON.parse(localStorage.getItem(_SM2_KEY)||'{}'); }
+
+function _sm2Update(id, q) {
+  const all=_sm2Data();
+  let d=all[id]||{ef:2.5,interval:0,nextReview:0,reps:0};
+  if(q<3){d.reps=0;d.interval=1;}
+  else{
+    if(d.reps===0)d.interval=1;
+    else if(d.reps===1)d.interval=6;
+    else d.interval=Math.round(d.interval*d.ef);
+    d.reps++;
+    d.ef=Math.max(1.3,d.ef+(0.1-(5-q)*(0.08+(5-q)*0.02)));
+  }
+  d.nextReview=Date.now()+d.interval*86400000;
+  all[id]=d;
+  localStorage.setItem(_SM2_KEY,JSON.stringify(all));
+  _bapLog(q>=3);
+}
+
+function _bapLog(ok) {
+  const today=new Date().toISOString().slice(0,10);
+  let log=JSON.parse(localStorage.getItem(_BAP_LOG)||'[]');
+  const i=log.findIndex(e=>e.date===today);
+  if(i>=0){log[i].n++;if(ok)log[i].ok++;}
+  else log.push({date:today,n:1,ok:ok?1:0});
+  if(log.length>90)log=log.slice(-90);
+  localStorage.setItem(_BAP_LOG,JSON.stringify(log));
+  let st=JSON.parse(localStorage.getItem(_BAP_STK)||'{"last":"","count":0}');
+  if(st.last!==today){
+    const yest=new Date(Date.now()-86400000).toISOString().slice(0,10);
+    st.count=st.last===yest?st.count+1:1; st.last=today;
+    localStorage.setItem(_BAP_STK,JSON.stringify(st));
+  }
+}
+
+function _updateSM2Info(card) {
+  const el=document.getElementById('sm2-info');
+  if(!el||!card)return;
+  if(!state.sm2Mode){el.textContent='';return;}
+  const all=_sm2Data(), d=all[card.id];
+  if(!d||d.reps===0){el.textContent='✨ Nouvelle carte';return;}
+  const days=Math.round((d.nextReview-Date.now())/86400000);
+  if(days<=0)el.textContent='📅 À réviser aujourd\'hui';
+  else el.textContent=`⏱ Prochaine révision dans ${days} jour${days>1?'s':''}`;
+}
+
+function toggleSM2() {
+  state.sm2Mode=!state.sm2Mode;
+  localStorage.setItem(_SM2_MODE,state.sm2Mode?'1':'0');
+  document.getElementById('btn-sm2').classList.toggle('active',state.sm2Mode);
+  buildDeck();
+}
+
+// Cache cards so examen.html + stats.html can read them
+try{localStorage.setItem('bap_cards_cache',JSON.stringify(CARDS.map(c=>({id:c.id,front:c.front,back:c.back,chapter:c.chapter,source:c.source}))));}catch(e){}
+
+// ─── Swipe gestures ───────────────────────────────────────────────────────────
+(function(){
+  var sx=0,sy=0,cw=document.getElementById('card-wrap');
+  if(!cw)return;
+  cw.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;sy=e.touches[0].clientY;},{passive:true});
+  cw.addEventListener('touchend',function(e){
+    var dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;
+    if(Math.abs(dx)>Math.abs(dy)&&Math.abs(dx)>50){if(dx>0)markKnow();else markReview();}
+    else if(Math.abs(dy)>50&&Math.abs(dx)<40)flipCard();
+  },{passive:true});
+})();
 
 // ─── TTS ─────────────────────────────────────────────────────────────────────
 var _ttsCur=null;

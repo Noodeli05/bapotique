@@ -204,6 +204,16 @@ footer strong{color:var(--pr)}
 .nc-butter .nc-title{background:linear-gradient(90deg,var(--butter),var(--peach));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .nc-butter .nc-tag{background:rgba(240,224,160,0.10);color:var(--butter)}
 .nc-butter .nc-cta{color:var(--butter)}
+.nc-mint::after{background:linear-gradient(90deg,var(--mint),var(--sky))}
+.nc-mint:hover{box-shadow:0 10px 36px rgba(168,216,196,0.18);border-color:rgba(168,216,196,0.36)}
+.nc-mint .nc-title{background:linear-gradient(90deg,var(--mint),var(--sky));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nc-mint .nc-tag{background:rgba(168,216,196,0.10);color:var(--mint)}
+.nc-mint .nc-cta{color:var(--mint)}
+.nc-sky::after{background:linear-gradient(90deg,var(--sky),var(--lav))}
+.nc-sky:hover{box-shadow:0 10px 36px rgba(168,200,240,0.18);border-color:rgba(168,200,240,0.36)}
+.nc-sky .nc-title{background:linear-gradient(90deg,var(--sky),var(--lav));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nc-sky .nc-tag{background:rgba(168,200,240,0.10);color:var(--sky)}
+.nc-sky .nc-cta{color:var(--sky)}
 
 /* ── STAT BOX GLASS ── */
 .stat-box{
@@ -227,7 +237,7 @@ footer strong{color:var(--pr)}
 /* ── FOOTER ── */
 footer strong{color:var(--lav)}
 </style>
-</head>
+<link rel="manifest" href="manifest.json"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js");</script></head>
 <body>
 
 <nav class="topnav">
@@ -237,6 +247,8 @@ footer strong{color:var(--lav)}
     <a href="flashcards.html">Flashcards</a>
     <a href="entrainement.html">Entraînement</a>
     <a href="ressources.html">Ressources</a>
+    <a href="examen.html">Examen</a>
+    <a href="stats.html">Progression</a>
     <a href="polycop_cours.html">Polycopié cours</a>
     <a href="polycop_tp.html">Polycopié TP</a>
   </div>
@@ -379,6 +391,38 @@ footer strong{color:var(--lav)}
         <span class="nc-tag">Théorie</span>
       </div>
       <div class="nc-cta">S'exercer →</div>
+    </a>
+
+    <a href="examen.html" class="nav-card nc-sky">
+      <div class="nc-head">
+        <div class="nc-icon">📝</div>
+        <div class="nc-text">
+          <div class="nc-title">Mode Examen</div>
+          <div class="nc-sub">Simulation d'examen chronomètre : mode QCM ou cartes flash, score final et récap des erreurs.</div>
+        </div>
+      </div>
+      <div class="nc-tags">
+        <span class="nc-tag">Chronomètre</span>
+        <span class="nc-tag">QCM</span>
+        <span class="nc-tag">Score</span>
+      </div>
+      <div class="nc-cta">Commencer →</div>
+    </a>
+
+    <a href="stats.html" class="nav-card nc-mint">
+      <div class="nc-head">
+        <div class="nc-icon">📊</div>
+        <div class="nc-text">
+          <div class="nc-title">Ma Progression</div>
+          <div class="nc-sub">Tableau de bord : série quotidienne, calendrier des révisions, graphes d'évolution et avancement par chapitre.</div>
+        </div>
+      </div>
+      <div class="nc-tags">
+        <span class="nc-tag">Streak</span>
+        <span class="nc-tag">Heatmap</span>
+        <span class="nc-tag">Statistiques</span>
+      </div>
+      <div class="nc-cta">Voir →</div>
     </a>
 
   </div>

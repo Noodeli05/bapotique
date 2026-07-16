@@ -1,0 +1,17 @@
+{
+  "name": "Bapotique — Linguistique UNIL",
+  "short_name": "Bapotique",
+  "description": "Flashcards et révisions de linguistique UNIL 2025",
+  "start_url": "/bapotique/?v=20260716",
+  "scope": "/bapotique/",
+  "display": "standalone",
+  "background_color": "#13111a",
+  "theme_color": "#13111a",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ],
+  "screenshots": [],
+  "categories": ["education"]
+}

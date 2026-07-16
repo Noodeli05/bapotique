@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260716');}());</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Examen — Linguistique UNIL 2025</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* ── Variables ── */
+:root {
+  --bg:#13111a; --bg-warm:#1c1820;
+  --glass:rgba(255,255,255,0.06); --glass-hover:rgba(255,255,255,0.10);
+  --border:rgba(255,255,255,0.10); --border-strong:rgba(255,255,255,0.18);
+
+  --lav:#c8b8f0;    --lav-bg:rgba(200,184,240,0.10);
+  --mint:#a8d8c4;   --mint-bg:rgba(168,216,196,0.10);
+  --peach:#f0c8a0;  --peach-bg:rgba(240,200,160,0.10);
+  --sky:#a8c8f0;    --sky-bg:rgba(168,200,240,0.10);
+  --rose:#f0b8c4;   --rose-bg:rgba(240,184,196,0.10);
+  --butter:#f0e0a0; --butter-bg:rgba(240,224,160,0.10);
+  --sage:#b8d8b8;   --sage-bg:rgba(184,216,184,0.10);
+
+  --tx:#e8e4f0; --tx-muted:rgba(232,228,240,0.55); --tx-faint:rgba(232,228,240,0.30);
+  --r-card:16px; --r-sm:10px; --r-lg:22px;
+
+  --pr:#c8b8f0; --pr2:#a898d8; --teal:#a8d8c4; --cyan:#a8c8f0; --amber:#f0c8a0;
+  --card:rgba(255,255,255,0.06); --card2:rgba(255,255,255,0.04);
+  --sb:rgba(22,18,30,0.88);
+  --bdr:rgba(255,255,255,0.10); --mu:rgba(232,228,240,0.55);
+  --nav:rgba(19,17,26,0.92); --radius:16px;
+  --card-bg:rgba(255,255,255,0.06); --nav-bg:rgba(19,17,26,0.92);
+  --nav-active:rgba(200,184,240,0.15);
+  --text:#e8e4f0; --muted:rgba(232,228,240,0.55);
+  --primary:#c8b8f0; --primary-lt:rgba(200,184,240,0.10); --primary-dk:#a898d8;
+}
+[data-theme="light"] {
+  --bg:#f5f3f8; --bg-warm:#ede9f4;
+  --glass:rgba(255,255,255,0.70); --glass-hover:rgba(255,255,255,0.85);
+  --border:rgba(120,100,180,0.18); --border-strong:rgba(120,100,180,0.32);
+  --tx:#1a1525; --tx-muted:rgba(26,21,37,0.55); --tx-faint:rgba(26,21,37,0.30);
+  --card:rgba(255,255,255,0.70); --card2:rgba(255,255,255,0.55);
+  --sb:rgba(240,236,250,0.95);
+  --bdr:rgba(120,100,180,0.18); --mu:rgba(26,21,37,0.55);
+  --nav:rgba(245,243,248,0.95); --nav-bg:rgba(245,243,248,0.95);
+  --nav-active:rgba(120,100,180,0.12);
+  --card-bg:rgba(255,255,255,0.70);
+  --text:#1a1525; --muted:rgba(26,21,37,0.55);
+  --primary:#7c6cc0; --primary-lt:rgba(120,100,180,0.10); --primary-dk:#5a4b9a;
+  --pr:#7c6cc0; --pr2:#5a4b9a; --teal:#5aaa88; --cyan:#5888c0;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--tx);min-height:100vh;display:flex;flex-direction:column;transition:background .3s,color .3s;overflow-x:hidden}
+body::before{
+  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 60% 50% at 15% 20%, rgba(200,184,240,0.10) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 45% at 85% 75%, rgba(168,216,196,0.08) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 35% at 50% 50%, rgba(168,200,240,0.06) 0%, transparent 65%);
+}
+
+/* ── Header ── */
+.site-header{
+  position:relative;z-index:10;
+  background:var(--sb);padding:.8rem 1.5rem;display:flex;align-items:center;gap:.6rem;
+  box-shadow:0 2px 16px rgba(0,0,0,.5);flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+}
+.site-header h1{font-family:'DM Serif Display',serif;font-size:1.05rem;color:#fff;flex-shrink:0;white-space:nowrap}
+.nav-links{display:flex;gap:.4rem;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.nav-links a{color:rgba(232,228,240,0.80);text-decoration:none;font-size:.8rem;padding:.3rem .6rem;border-radius:6px;transition:background .15s,color .15s;white-space:nowrap}
+.nav-links a:hover,.nav-links a.active{background:rgba(200,184,240,0.18);color:#fff}
+.btn-icon{background:none;border:none;cursor:pointer;font-size:1.1rem;color:var(--mu);padding:.3rem;border-radius:6px;transition:background .15s;flex-shrink:0}
+.btn-icon:hover{background:rgba(255,255,255,.1)}
+
+/* ── Main layout ── */
+.main-wrap{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;align-items:center;padding:2rem 1rem;min-height:0}
+
+/* ── Fade screens ── */
+.screen{width:100%;max-width:680px;animation:fadeIn .35s ease}
+.screen.hidden{display:none}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* ── Config screen ── */
+.config-card{background:var(--card);border:1px solid var(--bdr);border-radius:var(--r-lg);padding:2rem;backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);}
+.config-card::before{content:'';position:absolute;inset:0;border-radius:inherit;background:linear-gradient(135deg,rgba(255,255,255,.04) 0%,transparent 60%);pointer-events:none}
+.config-card{position:relative;overflow:hidden}
+.config-title{font-family:'DM Serif Display',serif;font-size:1.6rem;color:var(--tx);margin-bottom:.25rem;text-align:center}
+.config-sub{font-size:.85rem;color:var(--mu);text-align:center;margin-bottom:2rem}
+
+.config-section{margin-bottom:1.5rem}
+.config-label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mu);margin-bottom:.6rem;display:block}
+.pill-group{display:flex;flex-wrap:wrap;gap:.45rem}
+.pill{background:rgba(255,255,255,.04);border:1px solid var(--bdr);color:var(--mu);padding:.38rem .85rem;border-radius:20px;font-size:.82rem;cursor:pointer;transition:all .18s;user-select:none}
+.pill:hover{background:rgba(200,184,240,0.08);color:var(--tx);border-color:var(--pr)}
+.pill.sel{background:linear-gradient(135deg,rgba(200,184,240,0.22),rgba(168,200,240,0.14));color:var(--tx);border-color:var(--pr);box-shadow:0 2px 10px rgba(200,184,240,0.18)}
+
+.mode-grid{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+.mode-card{background:rgba(255,255,255,.04);border:1px solid var(--bdr);border-radius:var(--r-card);padding:1rem;cursor:pointer;transition:all .2s;text-align:center;user-select:none}
+.mode-card:hover{background:rgba(200,184,240,0.08);border-color:var(--pr)}
+.mode-card.sel{background:rgba(200,184,240,0.12);border-color:var(--pr);box-shadow:0 3px 12px rgba(200,184,240,0.20)}
+.mode-icon{font-size:1.8rem;margin-bottom:.4rem}
+.mode-name{font-size:.9rem;font-weight:600;color:var(--tx);margin-bottom:.2rem}
+.mode-desc{font-size:.72rem;color:var(--mu);line-height:1.4}
+
+.btn-start{width:100%;padding:.9rem 1.5rem;border-radius:24px;border:none;cursor:pointer;font-size:1rem;font-weight:700;font-family:'DM Sans',sans-serif;background:linear-gradient(135deg,var(--pr),var(--pr2));color:#fff;box-shadow:0 4px 20px rgba(200,184,240,0.30);transition:all .2s;margin-top:.5rem;letter-spacing:.02em}
+.btn-start:hover{transform:translateY(-2px);box-shadow:0 6px 28px rgba(200,184,240,0.40)}
+.btn-start:active{transform:translateY(0)}
+
+/* ── Exam screen ── */
+.exam-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;flex-wrap:wrap;gap:.5rem}
+.exam-counter{font-size:.85rem;color:var(--mu)}
+.exam-counter strong{color:var(--tx);font-weight:700}
+
+.timer-display{font-family:'DM Mono','Courier New',monospace;font-size:1.1rem;font-weight:700;color:var(--lav);background:rgba(200,184,240,0.08);border:1px solid rgba(200,184,240,0.20);border-radius:10px;padding:.3rem .75rem;letter-spacing:.05em;transition:color .3s,background .3s,border-color .3s}
+.timer-display.warn{color:var(--peach);background:rgba(240,200,160,0.12);border-color:rgba(240,200,160,0.30)}
+.timer-display.crit{color:var(--rose);background:rgba(240,184,196,0.14);border-color:rgba(240,184,196,0.35);animation:pulse-timer 1s infinite}
+@keyframes pulse-timer{0%,100%{opacity:1}50%{opacity:.65}}
+.timer-display.hidden{display:none}
+
+.exam-progress{width:100%;height:5px;background:rgba(255,255,255,.08);border-radius:5px;overflow:hidden;margin-bottom:1.5rem}
+.exam-progress-bar{height:100%;background:linear-gradient(90deg,var(--pr),var(--teal));border-radius:5px;transition:width .4s ease}
+
+/* ── Flashcard flip card ── */
+.card-wrap{perspective:1200px;width:100%;height:320px;cursor:pointer;margin-bottom:1rem}
+.card-inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .55s cubic-bezier(.4,0,.2,1)}
+.card-wrap.flipped .card-inner{transform:rotateY(180deg)}
+.card-face{position:absolute;inset:0;border-radius:var(--radius);backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;text-align:center;overflow:hidden}
+.card-face::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);pointer-events:none}
+.card-front{background:linear-gradient(145deg,var(--pr),var(--pr2));box-shadow:0 8px 40px rgba(200,184,240,0.28)}
+.card-front .clabel{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.65;margin-bottom:.8rem;color:#fff}
+.card-front .ctext{font-family:'DM Serif Display',serif;font-size:1.25rem;color:#fff;line-height:1.5;overflow-y:auto;max-height:220px;width:100%}
+.card-front .chint{position:absolute;bottom:.85rem;font-size:.65rem;opacity:.5;color:#fff;font-style:italic}
+.card-back{background:var(--card2);border:2px solid var(--pr);box-shadow:0 8px 32px rgba(200,184,240,0.12);transform:rotateY(180deg)}
+.card-back .clabel{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:.8rem}
+.card-back .ctext{font-size:1rem;color:var(--tx);line-height:1.6;overflow-y:auto;max-height:240px;width:100%}
+
+.flip-hint{font-size:.72rem;color:var(--mu);text-align:center;margin-bottom:.8rem;opacity:.8}
+.flip-hint.hidden{visibility:hidden}
+
+.rating-row{display:flex;gap:.8rem;justify-content:center;width:100%}
+.btn-rate{padding:.6rem 1.6rem;border-radius:22px;border:none;cursor:pointer;font-size:.9rem;font-weight:700;font-family:'DM Sans',sans-serif;transition:all .2s;display:flex;align-items:center;gap:.4rem}
+.btn-rate.hidden{visibility:hidden;pointer-events:none}
+.btn-correct{background:linear-gradient(90deg,#059669,#34d399);color:#fff;box-shadow:0 3px 14px rgba(52,211,153,0.30)}
+.btn-correct:hover{transform:translateY(-2px);box-shadow:0 5px 20px rgba(52,211,153,0.40)}
+.btn-incorrect{background:linear-gradient(90deg,#c0392b,#f87171);color:#fff;box-shadow:0 3px 14px rgba(248,113,113,0.28)}
+.btn-incorrect:hover{transform:translateY(-2px);box-shadow:0 5px 20px rgba(248,113,113,0.38)}
+
+.btn-flip{padding:.6rem 1.8rem;border-radius:22px;border:1px solid var(--pr);background:rgba(200,184,240,0.10);color:var(--pr);font-size:.9rem;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;transition:all .2s}
+.btn-flip:hover{background:rgba(200,184,240,0.18);transform:translateY(-1px)}
+
+/* ── QCM ── */
+.qcm-question-card{background:var(--card);border:1px solid var(--bdr);border-radius:var(--r-card);padding:2rem;margin-bottom:1rem;position:relative;overflow:hidden}
+.qcm-question-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);pointer-events:none}
+.qcm-qlabel{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lav);margin-bottom:.8rem}
+.qcm-qtext{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--tx);line-height:1.5}
+
+.qcm-choices{display:flex;flex-direction:column;gap:.5rem;margin-bottom:.5rem}
+.qcm-btn{background:rgba(255,255,255,.04);border:1px solid var(--bdr);border-radius:var(--r-sm);padding:.75rem 1.1rem;cursor:pointer;font-size:.88rem;color:var(--tx);transition:all .18s;text-align:left;font-family:'DM Sans',sans-serif;line-height:1.4;position:relative;overflow:hidden}
+.qcm-btn::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.03) 0%,transparent 50%);pointer-events:none}
+.qcm-btn:hover:not(:disabled){background:rgba(200,184,240,0.08);border-color:var(--pr);transform:translateX(2px)}
+.qcm-btn:disabled{cursor:default}
+.qcm-btn.correct{background:rgba(52,211,153,.14);border-color:#34d399;color:#34d399}
+.qcm-btn.wrong{background:rgba(248,113,113,.12);border-color:#f87171;color:#f87171}
+.qcm-btn .opt-letter{display:inline-block;width:1.4em;height:1.4em;line-height:1.4em;text-align:center;border-radius:50%;background:rgba(255,255,255,.08);font-size:.75rem;font-weight:700;margin-right:.55rem;flex-shrink:0;vertical-align:middle}
+
+/* ── Results screen ── */
+.results-card{background:var(--card);border:1px solid var(--bdr);border-radius:var(--r-lg);padding:2rem;backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);position:relative;overflow:hidden}
+.results-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);pointer-events:none}
+
+.results-hero{display:flex;align-items:center;gap:2rem;margin-bottom:2rem;flex-wrap:wrap;justify-content:center}
+.ring-wrap{position:relative;flex-shrink:0}
+.ring-pct{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ring-score{font-size:1.6rem;font-weight:800;color:var(--tx);line-height:1}
+.ring-label{font-size:.65rem;color:var(--mu);margin-top:.15rem}
+
+.results-stats{display:flex;flex-direction:column;gap:.5rem}
+.results-big-score{font-family:'DM Serif Display',serif;font-size:2.4rem;color:var(--tx);line-height:1;margin-bottom:.2rem}
+.results-pct{font-size:1.1rem;font-weight:700;margin-bottom:.8rem}
+.stat-pill{display:inline-flex;align-items:center;gap:.35rem;font-size:.78rem;padding:.3rem .7rem;border-radius:10px;background:rgba(255,255,255,.05);border:1px solid var(--bdr);color:var(--mu);margin-right:.35rem;margin-bottom:.3rem}
+.stat-pill .dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.dot-ok{background:#34d399}.dot-ko{background:#f87171}.dot-skip{background:var(--mu)}.dot-time{background:var(--lav)}
+
+.results-divider{border:none;border-top:1px solid var(--bdr);margin:1.5rem 0}
+.results-list-title{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mu);margin-bottom:.8rem}
+.results-list{display:flex;flex-direction:column;gap:.5rem;max-height:380px;overflow-y:auto;padding-right:.25rem}
+.results-list::-webkit-scrollbar{width:4px}.results-list::-webkit-scrollbar-track{background:rgba(255,255,255,.04)}.results-list::-webkit-scrollbar-thumb{background:rgba(200,184,240,.25);border-radius:4px}
+
+.result-item{display:flex;align-items:flex-start;gap:.7rem;padding:.65rem .75rem;border-radius:10px;border:1px solid var(--bdr);background:rgba(255,255,255,.025);font-size:.82rem}
+.result-item.ok{border-left:3px solid #34d399}
+.result-item.ko{border-left:3px solid #f87171}
+.result-icon{font-size:.95rem;flex-shrink:0;margin-top:.05rem}
+.result-body{flex:1;min-width:0}
+.result-q{color:var(--tx);font-weight:600;margin-bottom:.2rem;overflow-wrap:break-word}
+.result-a{color:var(--mu);font-size:.78rem;overflow-wrap:break-word}
+.result-a strong{color:var(--teal)}
+
+.results-actions{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.5rem;justify-content:center}
+.btn-action{padding:.6rem 1.3rem;border-radius:20px;border:none;cursor:pointer;font-size:.84rem;font-weight:600;font-family:'DM Sans',sans-serif;transition:all .2s;display:inline-flex;align-items:center;gap:.4rem}
+.btn-primary{background:linear-gradient(135deg,var(--pr),var(--pr2));color:#fff;box-shadow:0 3px 14px rgba(200,184,240,0.28)}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 5px 20px rgba(200,184,240,0.38)}
+.btn-ghost{background:rgba(255,255,255,.05);border:1px solid var(--bdr);color:var(--tx)}
+.btn-ghost:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.20)}
+.btn-mint{background:rgba(168,216,196,0.12);border:1px solid rgba(168,216,196,0.35);color:var(--mint)}
+.btn-mint:hover{background:rgba(168,216,196,0.20)}
+
+/* ── No-data message ── */
+.no-data-card{background:var(--card);border:1px solid var(--bdr);border-radius:var(--r-lg);padding:3rem 2rem;text-align:center;backdrop-filter:blur(22px)}
+.no-data-icon{font-size:3rem;margin-bottom:1rem}
+.no-data-msg{font-size:1rem;color:var(--mu);margin-bottom:1.5rem;line-height:1.6}
+.no-data-link{display:inline-block;padding:.6rem 1.4rem;border-radius:20px;background:linear-gradient(135deg,var(--pr),var(--pr2));color:#fff;font-weight:600;text-decoration:none;font-size:.9rem;transition:transform .2s,box-shadow .2s}
+.no-data-link:hover{transform:translateY(-2px);box-shadow:0 5px 18px rgba(200,184,240,0.35)}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:rgba(200,184,240,0.20);border-radius:4px}
+
+/* ── Responsive ── */
+@media(max-width:600px){
+  .main-wrap{padding:1rem .6rem}
+  .config-card,.results-card{padding:1.3rem}
+  .mode-grid{grid-template-columns:1fr 1fr}
+  .card-wrap{height:260px}
+  .card-face{padding:1.3rem}
+  .card-front .ctext{font-size:1.05rem}
+  .site-header h1{font-size:.9rem}
+  .results-big-score{font-size:1.8rem}
+  .results-hero{gap:1rem}
+}
+input,textarea,select{font-size:max(16px,1em)!important}
+</style>
+<link rel="manifest" href="manifest.json"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js");</script></head>
+<body>
+<header class="site-header">
+  <h1>📋 Examen — Linguistique UNIL 2025</h1>
+  <nav class="nav-links">
+    <a href="index.html">Accueil</a>
+    <a href="revision_complet.html">Révision</a>
+    <a href="ressources.html">Ressources</a>
+    <a href="flashcards.html">Flashcards</a>
+    <a href="entrainement.html">Entraînement</a>
+    <a href="stats.html">Progression</a>
+    <a href="examen.html" class="active">Examen</a>
+  </nav>
+  <button class="btn-icon" id="btn-theme" title="Basculer le thème">🌙</button>
+</header>
+
+<main class="main-wrap">
+
+  <!-- ══ SCREEN: no data ══ -->
+  <div class="screen hidden" id="screen-nodata">
+    <div class="no-data-card">
+      <div class="no-data-icon">📦</div>
+      <p class="no-data-msg">
+        Aucune carte trouvée en mémoire.<br>
+        Visitez d'abord la page Flashcards pour charger les données.
+      </p>
+      <a href="flashcards.html" class="no-data-link">Aller aux Flashcards →</a>
+    </div>
+  </div>
+
+  <!-- ══ SCREEN: config ══ -->
+  <div class="screen hidden" id="screen-config">
+    <div class="config-card">
+      <h2 class="config-title">Simulation d'examen</h2>
+      <p class="config-sub" id="config-sub-text">Configurez votre session puis lancez l'examen.</p>
+
+      <div class="config-section">
+        <span class="config-label">Nombre de questions</span>
+        <div class="pill-group" id="pills-count">
+          <button class="pill" data-val="10">10</button>
+          <button class="pill sel" data-val="20">20</button>
+          <button class="pill" data-val="30">30</button>
+          <button class="pill" data-val="all">Toutes</button>
+        </div>
+      </div>
+
+      <div class="config-section">
+        <span class="config-label">Durée</span>
+        <div class="pill-group" id="pills-duration">
+          <button class="pill sel" data-val="0">Sans limite</button>
+          <button class="pill" data-val="300">5 min</button>
+          <button class="pill" data-val="600">10 min</button>
+          <button class="pill" data-val="1200">20 min</button>
+          <button class="pill" data-val="1800">30 min</button>
+        </div>
+      </div>
+
+      <div class="config-section">
+        <span class="config-label">Source</span>
+        <div class="pill-group" id="pills-source">
+          <button class="pill sel" data-val="all">Toutes les sources</button>
+          <button class="pill" data-val="Révision complète">Révision complète</button>
+          <button class="pill" data-val="Flashcards thématiques">Flashcards thématiques</button>
+        </div>
+      </div>
+
+      <div class="config-section">
+        <span class="config-label">Mode</span>
+        <div class="mode-grid" id="mode-grid">
+          <div class="mode-card sel" data-mode="cards">
+            <div class="mode-icon">🃏</div>
+            <div class="mode-name">Cartes</div>
+            <div class="mode-desc">Retournez la carte, évaluez-vous Correct / Incorrect</div>
+          </div>
+          <div class="mode-card" data-mode="qcm">
+            <div class="mode-icon">🎯</div>
+            <div class="mode-name">QCM</div>
+            <div class="mode-desc">4 propositions, choisissez la bonne réponse</div>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn-start" id="btn-start">Commencer l'examen →</button>
+    </div>
+  </div>
+
+  <!-- ══ SCREEN: exam ══ -->
+  <div class="screen hidden" id="screen-exam">
+    <div class="exam-header">
+      <span class="exam-counter">Question <strong id="ex-cur">1</strong> / <strong id="ex-tot">20</strong></span>
+      <div class="timer-display hidden" id="timer-display">00:00</div>
+    </div>
+    <div class="exam-progress"><div class="exam-progress-bar" id="exam-progress-bar" style="width:0%"></div></div>
+
+    <!-- Flashcard sub-view -->
+    <div id="view-cards">
+      <div class="card-wrap" id="card-wrap" onclick="flipCard()">
+        <div class="card-inner" id="card-inner">
+          <div class="card-face card-front">
+            <div class="clabel">Question</div>
+            <div class="ctext" id="cf-text"></div>
+            <div class="chint">Cliquez pour retourner</div>
+          </div>
+          <div class="card-face card-back">
+            <div class="clabel">Réponse</div>
+            <div class="ctext" id="cb-text"></div>
+          </div>
+        </div>
+      </div>
+      <p class="flip-hint" id="flip-hint">Cliquez sur la carte ou appuyez sur espace pour la retourner.</p>
+      <div class="rating-row">
+        <button class="btn-rate btn-incorrect hidden" id="btn-incorrect" onclick="rateCard(false)">✗ Incorrect</button>
+        <button class="btn-rate btn-flip" id="btn-flip" onclick="flipCard()">Retourner</button>
+        <button class="btn-rate btn-correct hidden" id="btn-correct" onclick="rateCard(true)">✓ Correct</button>
+      </div>
+    </div>
+
+    <!-- QCM sub-view -->
+    <div id="view-qcm" style="display:none">
+      <div class="qcm-question-card">
+        <div class="qcm-qlabel">Question</div>
+        <div class="qcm-qtext" id="qcm-qtext"></div>
+      </div>
+      <div class="qcm-choices" id="qcm-choices"></div>
+    </div>
+  </div>
+
+  <!-- ══ SCREEN: results ══ -->
+  <div class="screen hidden" id="screen-results">
+    <div class="results-card">
+      <div class="results-hero">
+        <div class="ring-wrap">
+          <canvas id="ring-canvas" width="120" height="120"></canvas>
+          <div class="ring-pct">
+            <div class="ring-score" id="ring-score-text">0%</div>
+            <div class="ring-label">réussite</div>
+          </div>
+        </div>
+        <div class="results-stats">
+          <div class="results-big-score" id="res-big-score">— / —</div>
+          <div class="results-pct" id="res-pct-text" style="color:var(--lav)">0 %</div>
+          <div>
+            <span class="stat-pill"><span class="dot dot-ok"></span><span id="res-ok-count">0 correctes</span></span>
+            <span class="stat-pill"><span class="dot dot-ko"></span><span id="res-ko-count">0 incorrectes</span></span>
+            <span class="stat-pill"><span class="dot dot-time"></span><span id="res-time">—</span></span>
+          </div>
+        </div>
+      </div>
+
+      <hr class="results-divider">
+      <p class="results-list-title">Détail des réponses</p>
+      <div class="results-list" id="results-list"></div>
+
+      <div class="results-actions">
+        <button class="btn-action btn-primary" id="btn-retry">↺ Recommencer</button>
+        <button class="btn-action btn-ghost" id="btn-reconfig">⚙ Nouvelle config</button>
+        <a href="flashcards.html" class="btn-action btn-mint">📚 Voir les cartes</a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+/* ═══════════════════════════════════════════════════════
+   STATE
+═══════════════════════════════════════════════════════ */
+const CACHE_KEY = 'bap_cards_cache';
+const LOG_KEY   = 'bap_log';
+
+let allCards = [];
+let examCards = [];
+let examConfig = { count: 20, duration: 0, source: 'all', mode: 'cards' };
+let examState = {
+  idx: 0,
+  results: [],      // {card, correct}
+  flipped: false,
+  answered: false,  // QCM: prevents double-click
+  startTime: null,
+  timerSec: 0,
+  timerInterval: null,
+};
+
+/* ═══════════════════════════════════════════════════════
+   THEME
+═══════════════════════════════════════════════════════ */
+(function initTheme(){
+  const saved = localStorage.getItem('bap_theme') || 'dark';
+  if(saved==='light') document.documentElement.setAttribute('data-theme','light');
+  updateThemeBtn();
+})();
+document.getElementById('btn-theme').addEventListener('click', () => {
+  const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+  if(isLight){
+    document.documentElement.removeAttribute('data-theme');
+    localStorage.setItem('bap_theme','dark');
+  } else {
+    document.documentElement.setAttribute('data-theme','light');
+    localStorage.setItem('bap_theme','light');
+  }
+  updateThemeBtn();
+});
+function updateThemeBtn(){
+  const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+  document.getElementById('btn-theme').textContent = isLight ? '☀️' : '🌙';
+}
+
+/* ═══════════════════════════════════════════════════════
+   SCREENS
+═══════════════════════════════════════════════════════ */
+function showScreen(id){
+  ['screen-nodata','screen-config','screen-exam','screen-results'].forEach(s=>{
+    const el = document.getElementById(s);
+    if(el.id === id){el.classList.remove('hidden');}
+    else{el.classList.add('hidden');}
+  });
+}
+
+/* ═══════════════════════════════════════════════════════
+   INIT
+═══════════════════════════════════════════════════════ */
+window.addEventListener('DOMContentLoaded', () => {
+  const raw = localStorage.getItem(CACHE_KEY);
+  if(!raw){ showScreen('screen-nodata'); return; }
+  try { allCards = JSON.parse(raw); } catch(e){ showScreen('screen-nodata'); return; }
+  if(!Array.isArray(allCards) || allCards.length === 0){ showScreen('screen-nodata'); return; }
+  buildConfigUI();
+  showScreen('screen-config');
+});
+
+/* ═══════════════════════════════════════════════════════
+   CONFIG UI
+═══════════════════════════════════════════════════════ */
+function buildConfigUI(){
+  // Update sub-text with total count
+  document.getElementById('config-sub-text').textContent =
+    `${allCards.length} cartes disponibles. Configurez votre session puis lancez l'examen.`;
+
+  // detect unique sources
+  const sources = [...new Set(allCards.map(c=>c.source).filter(Boolean))];
+  const sourceGroup = document.getElementById('pills-source');
+  // clear dynamic source pills (keep "all")
+  const allPill = sourceGroup.querySelector('[data-val="all"]');
+  sourceGroup.innerHTML = '';
+  sourceGroup.appendChild(allPill);
+  sources.forEach(s=>{
+    const b = document.createElement('button');
+    b.className = 'pill'; b.dataset.val = s; b.textContent = s;
+    sourceGroup.appendChild(b);
+  });
+
+  setupPillGroup('pills-count',    v => examConfig.count    = v === 'all' ? 'all' : +v);
+  setupPillGroup('pills-duration', v => examConfig.duration = +v);
+  setupPillGroup('pills-source',   v => examConfig.source   = v);
+  setupModeGrid();
+
+  document.getElementById('btn-start').addEventListener('click', startExam);
+}
+
+function setupPillGroup(groupId, setter){
+  const group = document.getElementById(groupId);
+  group.querySelectorAll('.pill').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      group.querySelectorAll('.pill').forEach(b=>b.classList.remove('sel'));
+      btn.classList.add('sel');
+      setter(btn.dataset.val);
+    });
+  });
+}
+
+function setupModeGrid(){
+  document.getElementById('mode-grid').querySelectorAll('.mode-card').forEach(card=>{
+    card.addEventListener('click', ()=>{
+      document.querySelectorAll('.mode-card').forEach(c=>c.classList.remove('sel'));
+      card.classList.add('sel');
+      examConfig.mode = card.dataset.mode;
+    });
+  });
+}
+
+/* ═══════════════════════════════════════════════════════
+   START EXAM
+═══════════════════════════════════════════════════════ */
+function startExam(){
+  // Filter by source
+  let pool = allCards.slice();
+  if(examConfig.source !== 'all'){
+    pool = pool.filter(c => c.source === examConfig.source);
+  }
+  if(pool.length === 0){
+    alert('Aucune carte disponible pour cette source.');
+    return;
+  }
+
+  // Shuffle
+  pool = shuffle(pool);
+
+  // Limit count
+  const n = examConfig.count === 'all' ? pool.length : Math.min(examConfig.count, pool.length);
+  examCards = pool.slice(0, n);
+
+  // Reset state
+  examState.idx = 0;
+  examState.results = [];
+  examState.flipped = false;
+  examState.answered = false;
+  examState.startTime = Date.now();
+
+  // Setup timer
+  clearInterval(examState.timerInterval);
+  examState.timerSec = examConfig.duration;
+
+  const timerEl = document.getElementById('timer-display');
+  if(examConfig.duration > 0){
+    timerEl.classList.remove('hidden','warn','crit');
+    timerEl.textContent = formatTime(examState.timerSec);
+    examState.timerInterval = setInterval(tickTimer, 1000);
+  } else {
+    timerEl.classList.add('hidden');
+  }
+
+  showScreen('screen-exam');
+  renderExamQuestion();
+}
+
+function tickTimer(){
+  examState.timerSec--;
+  const timerEl = document.getElementById('timer-display');
+  const pct = examState.timerSec / examConfig.duration;
+
+  timerEl.textContent = formatTime(Math.max(0, examState.timerSec));
+  timerEl.classList.remove('warn','crit');
+  if(pct < 0.10) timerEl.classList.add('crit');
+  else if(pct < 0.20) timerEl.classList.add('warn');
+
+  if(examState.timerSec <= 0){
+    clearInterval(examState.timerInterval);
+    autoSubmit();
+  }
+}
+
+function autoSubmit(){
+  // Mark remaining cards as missed (incorrect)
+  for(let i = examState.idx; i < examCards.length; i++){
+    examState.results.push({ card: examCards[i], correct: false, missed: true });
+  }
+  examState.idx = examCards.length;
+  showResults();
+}
+
+function formatTime(s){
+  const m = Math.floor(s/60);
+  const ss = s % 60;
+  return String(m).padStart(2,'0') + ':' + String(ss).padStart(2,'0');
+}
+
+/* ═══════════════════════════════════════════════════════
+   RENDER QUESTION
+═══════════════════════════════════════════════════════ */
+function renderExamQuestion(){
+  const card = examCards[examState.idx];
+  const total = examCards.length;
+  const cur   = examState.idx + 1;
+
+  document.getElementById('ex-cur').textContent = cur;
+  document.getElementById('ex-tot').textContent = total;
+  document.getElementById('exam-progress-bar').style.width = ((cur-1)/total*100) + '%';
+
+  if(examConfig.mode === 'cards'){
+    renderCardMode(card);
+  } else {
+    renderQCMMode(card);
+  }
+}
+
+/* ── Card mode ── */
+function renderCardMode(card){
+  document.getElementById('view-cards').style.display = '';
+  document.getElementById('view-qcm').style.display = 'none';
+
+  // Reset flip
+  const wrap = document.getElementById('card-wrap');
+  wrap.classList.remove('flipped');
+  examState.flipped = false;
+
+  document.getElementById('cf-text').textContent = card.front;
+  document.getElementById('cb-text').textContent = card.back;
+
+  // Show flip btn, hide rating
+  document.getElementById('btn-flip').style.display = '';
+  document.getElementById('btn-correct').classList.add('hidden');
+  document.getElementById('btn-incorrect').classList.add('hidden');
+  document.getElementById('flip-hint').classList.remove('hidden');
+}
+
+function flipCard(){
+  const wrap = document.getElementById('card-wrap');
+  const flipped = !examState.flipped;
+  examState.flipped = flipped;
+
+  if(flipped){
+    wrap.classList.add('flipped');
+    // Show rating, hide flip btn
+    document.getElementById('btn-flip').style.display = 'none';
+    document.getElementById('btn-correct').classList.remove('hidden');
+    document.getElementById('btn-incorrect').classList.remove('hidden');
+    document.getElementById('flip-hint').classList.add('hidden');
+  } else {
+    wrap.classList.remove('flipped');
+    document.getElementById('btn-flip').style.display = '';
+    document.getElementById('btn-correct').classList.add('hidden');
+    document.getElementById('btn-incorrect').classList.add('hidden');
+    document.getElementById('flip-hint').classList.remove('hidden');
+  }
+}
+
+function rateCard(correct){
+  examState.results.push({ card: examCards[examState.idx], correct });
+  nextQuestion();
+}
+
+/* ── QCM mode ── */
+function renderQCMMode(card){
+  document.getElementById('view-cards').style.display = 'none';
+  document.getElementById('view-qcm').style.display = '';
+  examState.answered = false;
+
+  document.getElementById('qcm-qtext').textContent = card.front;
+
+  // Build 4 options: correct + 3 random distractors
+  const distractors = allCards
+    .filter(c => c.id !== card.id && c.back && c.back.trim() !== '')
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 3);
+
+  const options = shuffle([card, ...distractors]);
+  const letters = ['A','B','C','D'];
+  const container = document.getElementById('qcm-choices');
+  container.innerHTML = '';
+
+  options.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'qcm-btn';
+    btn.innerHTML = `<span class="opt-letter">${letters[i]}</span>${escHtml(opt.back)}`;
+    const isCorrect = opt.id === card.id;
+    if(isCorrect) btn.dataset.correct = '1';
+    btn.addEventListener('click', () => onQCMAnswer(btn, isCorrect, card));
+    container.appendChild(btn);
+  });
+}
+
+function onQCMAnswer(clickedBtn, isCorrect, card){
+  if(examState.answered) return;
+  examState.answered = true;
+
+  // Disable all buttons
+  const btns = document.querySelectorAll('#qcm-choices .qcm-btn');
+  btns.forEach(b => { b.disabled = true; });
+
+  if(isCorrect){
+    clickedBtn.classList.add('correct');
+  } else {
+    clickedBtn.classList.add('wrong');
+    // Highlight the correct answer button
+    btns.forEach(b => {
+      if(b.dataset.correct === '1') b.classList.add('correct');
+    });
+  }
+
+  examState.results.push({ card, correct: isCorrect });
+
+  setTimeout(() => nextQuestion(), 1500);
+}
+
+/* ── Advance ── */
+function nextQuestion(){
+  examState.idx++;
+  if(examState.idx >= examCards.length){
+    clearInterval(examState.timerInterval);
+    showResults();
+  } else {
+    renderExamQuestion();
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   KEYBOARD
+═══════════════════════════════════════════════════════ */
+document.addEventListener('keydown', e => {
+  if(document.getElementById('screen-exam').classList.contains('hidden')) return;
+  if(examConfig.mode !== 'cards') return;
+  if(e.key === ' ' || e.key === 'Enter'){
+    e.preventDefault();
+    if(!examState.flipped) flipCard();
+  }
+  if(examState.flipped){
+    if(e.key === 'ArrowRight' || e.key === '1') rateCard(true);
+    if(e.key === 'ArrowLeft'  || e.key === '2') rateCard(false);
+  }
+});
+
+/* ═══════════════════════════════════════════════════════
+   RESULTS
+═══════════════════════════════════════════════════════ */
+function showResults(){
+  clearInterval(examState.timerInterval);
+
+  const total   = examState.results.length;
+  const okCount = examState.results.filter(r=>r.correct).length;
+  const koCount = total - okCount;
+  const pct     = total > 0 ? Math.round(okCount/total*100) : 0;
+
+  const elapsed = Math.round((Date.now() - examState.startTime)/1000);
+  const timeStr = formatTime(elapsed);
+
+  // Score display
+  document.getElementById('res-big-score').textContent = `${okCount} / ${total}`;
+  const pctEl = document.getElementById('res-pct-text');
+  pctEl.textContent = `${pct} %`;
+  pctEl.style.color = pct >= 70 ? 'var(--mint)' : pct >= 50 ? 'var(--peach)' : 'var(--rose)';
+
+  document.getElementById('res-ok-count').textContent = `${okCount} correcte${okCount!==1?'s':''}`;
+  document.getElementById('res-ko-count').textContent = `${koCount} incorrecte${koCount!==1?'s':''}`;
+  document.getElementById('res-time').textContent = `⏱ ${timeStr}`;
+
+  // Ring chart
+  drawRing(pct);
+  document.getElementById('ring-score-text').textContent = `${pct}%`;
+
+  // Detail list
+  const list = document.getElementById('results-list');
+  list.innerHTML = '';
+  examState.results.forEach((r,i)=>{
+    const div = document.createElement('div');
+    div.className = 'result-item ' + (r.correct ? 'ok' : 'ko');
+    div.innerHTML = `
+      <span class="result-icon">${r.correct ? '✓' : '✗'}</span>
+      <div class="result-body">
+        <div class="result-q">${escHtml(r.card.front)}</div>
+        <div class="result-a"><strong>→</strong> ${escHtml(r.card.back)}</div>
+      </div>`;
+    list.appendChild(div);
+  });
+
+  // Log to bap_log
+  logResults(total, okCount);
+
+  showScreen('screen-results');
+}
+
+function drawRing(pct){
+  const canvas = document.getElementById('ring-canvas');
+  const ctx = canvas.getContext('2d');
+  const cx = 60, cy = 60, r = 48, lw = 10;
+  ctx.clearRect(0,0,120,120);
+
+  // Track
+  ctx.beginPath();
+  ctx.arc(cx,cy,r,0,Math.PI*2);
+  ctx.strokeStyle = 'rgba(255,255,255,0.08)';
+  ctx.lineWidth = lw;
+  ctx.stroke();
+
+  if(pct <= 0) return;
+
+  // Fill
+  const color = pct >= 70 ? '#34d399' : pct >= 50 ? '#f0c8a0' : '#f87171';
+  const end = -Math.PI/2 + (pct/100)*Math.PI*2;
+  ctx.beginPath();
+  ctx.arc(cx,cy,r,-Math.PI/2,end);
+  ctx.strokeStyle = color;
+  ctx.lineWidth = lw;
+  ctx.lineCap = 'round';
+  ctx.stroke();
+}
+
+function logResults(total, ok){
+  const today = new Date().toISOString().slice(0,10);
+  let log = [];
+  try { log = JSON.parse(localStorage.getItem(LOG_KEY)) || []; } catch(e){ log = []; }
+  if(!Array.isArray(log)) log = [];
+
+  const entry = log.find(e => e.date === today);
+  if(entry){
+    entry.n  = (entry.n  || 0) + total;
+    entry.ok = (entry.ok || 0) + ok;
+  } else {
+    log.push({ date: today, n: total, ok });
+  }
+  localStorage.setItem(LOG_KEY, JSON.stringify(log));
+}
+
+/* ═══════════════════════════════════════════════════════
+   RESULTS ACTIONS
+═══════════════════════════════════════════════════════ */
+document.getElementById('btn-retry').addEventListener('click', () => {
+  startExam();
+});
+document.getElementById('btn-reconfig').addEventListener('click', () => {
+  clearInterval(examState.timerInterval);
+  showScreen('screen-config');
+});
+
+/* ═══════════════════════════════════════════════════════
+   UTILS
+═══════════════════════════════════════════════════════ */
+function shuffle(arr){
+  const a = arr.slice();
+  for(let i=a.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+
+function escHtml(s){
+  if(!s) return '';
+  return String(s)
+    .replace(/&/g,'&amp;')
+    .replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;');
+}
+</script>
+</body>
+</html>
