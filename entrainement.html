@@ -170,7 +170,6 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
   <div class="deck-sub" id="dk-sub"></div>
   <div class="fc-progress"><div class="fc-progress-bar" id="fc-pbar" style="width:0%"></div></div>
   <div class="fc-counter" id="fc-ctr">Carte 0 / 0</div>
-  <div style="text-align:center"><a href="toutes_les_cartes.html" style="display:inline-flex;align-items:center;gap:.4rem;background:rgba(255,140,66,.12);border:1px solid var(--bdr);color:var(--tx);padding:.4rem 1rem;border-radius:10px;font-size:.8rem;font-weight:600;text-decoration:none;transition:all .15s" onmouseover="this.style.background='rgba(255,140,66,.25)'" onmouseout="this.style.background='rgba(255,140,66,.12)'">📋 Voir toutes les cartes</a></div>
   <div class="fc-toolbar">
     <button class="tool-btn" id="btn-shuf" onclick="toggleShuffle()">🔀 Mélanger</button>
     <button class="tool-btn" id="btn-flash" onclick="toggleFlash()">⚡ Flash</button>
@@ -231,21 +230,14 @@ function ldSet(k){ try{ return new Set(JSON.parse(localStorage.getItem(lk(k))||'
 function svSet(k, set){ localStorage.setItem(lk(k), JSON.stringify([...set])); }
 
 function initS(){
-  let nav={};
-  try{ nav=JSON.parse(localStorage.getItem(lk('nav'))||'{}'); }catch(e){}
   S = {
     pool:[], idx:0, flipped:false,
-    fk: nav.fk||'all', fsec: nav.fsec||null, shuf: nav.shuf||false,
-    _restoreId: nav.cardId||null,
+    fk:'all', fsec:null, shuf:false,
     flashOn:false, flashTimer:null, flashSpd:5000,
     testOn:false, testQs:[], testI:0, testScore:0,
     sess:{ mk: ldSet('mk'), rv: ldSet('rv') },
     favs: ldSet('fav'),
   };
-}
-function saveNav(){
-  const cardId=S.pool[S.idx]?.id;
-  localStorage.setItem(lk('nav'), JSON.stringify({fk:S.fk, fsec:S.fsec, shuf:S.shuf, cardId}));
 }
 
 // ── Deck switch ───────────────────────────────────────────────────────────────
@@ -257,15 +249,13 @@ function switchDeck(i){
   document.getElementById('dk-title').textContent = deck.icon+' '+deck.label;
   document.getElementById('dk-sub').textContent = deck.cards.length+' cartes · '+deck.sections.length+' sections';
   initS();
-  // Restore filter + shuffle UI before building pool
-  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active',b.dataset.f===S.fk));
-  document.getElementById('btn-shuf').classList.toggle('active',S.shuf);
-  buildPool(S._restoreId);
+  buildPool();
   renderSecs();
   renderCard();
   updateCounts();
   updateDash();
   localStorage.setItem('fcE_last',i);
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active',b.dataset.f==='all'));
 }
 
 // ── Pool building ─────────────────────────────────────────────────────────────
@@ -342,8 +332,8 @@ function flipCard(){
   S.flipped=!S.flipped;
   document.getElementById('card-wrap').classList.toggle('flipped',S.flipped);
 }
-function nextCard(){ if(S.idx<S.pool.length-1){ S.idx++; renderCard(); saveNav(); } }
-function prevCard(){ if(S.idx>0){ S.idx--; renderCard(); saveNav(); } }
+function nextCard(){ if(S.idx<S.pool.length-1){ S.idx++; renderCard(); } }
+function prevCard(){ if(S.idx>0){ S.idx--; renderCard(); } }
 
 function markKnow(){
   if(!S.pool.length) return;
@@ -351,7 +341,7 @@ function markKnow(){
   S.sess.mk.add(c.id); S.sess.rv.delete(c.id);
   svSet('mk',S.sess.mk); svSet('rv',S.sess.rv);
   updateCounts(); updateDash(); checkMastery();
-  if(S.idx<S.pool.length-1) nextCard(); else saveNav();
+  if(S.idx<S.pool.length-1) nextCard();
 }
 function markReview(){
   if(!S.pool.length) return;
@@ -359,7 +349,7 @@ function markReview(){
   S.sess.rv.add(c.id); S.sess.mk.delete(c.id);
   svSet('mk',S.sess.mk); svSet('rv',S.sess.rv);
   updateCounts(); updateDash();
-  if(S.idx<S.pool.length-1) nextCard(); else saveNav();
+  if(S.idx<S.pool.length-1) nextCard();
 }
 function toggleFav(){
   if(!S.pool.length) return;
@@ -378,17 +368,17 @@ function applyFilter(k,btn){
   document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
   document.querySelectorAll('#sec-list .filter-btn').forEach(b=>b.classList.remove('active'));
   if(btn) btn.classList.add('active');
-  buildPool(); renderCard(); saveNav();
+  buildPool(); renderCard();
 }
 function applySection(sec,btn){
   if(S.fsec===sec){ S.fsec=null; document.querySelectorAll('#sec-list .filter-btn').forEach(b=>b.classList.remove('active')); }
   else{ S.fsec=sec; document.querySelectorAll('#sec-list .filter-btn').forEach(b=>b.classList.remove('active')); if(btn) btn.classList.add('active'); }
-  buildPool(); renderCard(); saveNav();
+  buildPool(); renderCard();
 }
 function replayReview(){
   S.fk='review'; S.fsec=null;
   document.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active',b.dataset.f==='review'));
-  buildPool(); renderCard(); saveNav();
+  buildPool(); renderCard();
 }
 
 // ── Shuffle ───────────────────────────────────────────────────────────────────
@@ -396,7 +386,7 @@ function toggleShuffle(){
   S.shuf=!S.shuf;
   document.getElementById('btn-shuf').classList.toggle('active',S.shuf);
   const curId=S.pool[S.idx]?.id;
-  buildPool(curId); renderCard(); saveNav();
+  buildPool(curId); renderCard();
 }
 
 // ── Flash mode ────────────────────────────────────────────────────────────────
@@ -581,14 +571,13 @@ function switchAll(){
   document.getElementById('dk-title').textContent='🗂️ Toutes les cartes';
   document.getElementById('dk-sub').textContent=allCards.length+' cartes · '+allSections.length+' sections';
   initS();
-  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active',b.dataset.f===S.fk));
-  document.getElementById('btn-shuf').classList.toggle('active',S.shuf);
-  buildPool(S._restoreId);
+  buildPool();
   renderSecs();
   renderCard();
   updateCounts();
   updateDash();
   localStorage.setItem('fcE_last','all');
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active',b.dataset.f==='all'));
 }
 
 // ── Init ──────────────────────────────────────────────────────────────────────
