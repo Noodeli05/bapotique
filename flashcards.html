@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260717');}());</script>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260718');}());</script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Flashcards — Linguistique UNIL 2025</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -569,11 +569,26 @@ function markReview() {
   state.session.review.add(card.id);
   state.session.mastered.delete(card.id);
   saveSession();
-  if (state.sm2Mode) _sm2Update(card.id, 1); else _bapLog(false);
+  if (state.sm2Mode) {
+    _sm2Update(card.id, 1);
+    // Anki-style: failed card loops back ~3 positions later in the session
+    if (state.filtered.length > 1) {
+      state.filtered.splice(state.index, 1);
+      const insertAt = Math.min(state.index + 3, state.filtered.length);
+      state.filtered.splice(insertAt, 0, card);
+      // state.index now points to the next card (shifted into current slot)
+      state.flipped = false;
+      renderCard();
+      saveStudyState();
+    } else {
+      nextCard();
+    }
+  } else {
+    _bapLog(false);
+    nextCard();
+  }
   updateDash();
   updateSidebarCounts();
-  _updateSM2Info(card);
-  nextCard();
 }
 
 function toggleFav() {
