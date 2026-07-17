@@ -122,7 +122,7 @@
 
   // Close on outside click
   document.addEventListener('click',function(e){
-    if(!panel.contains(e.target)&&e.target!==fab)panel.classList.remove('open');
+    if(!panel.contains(e.target)&&!fab.contains(e.target))panel.classList.remove('open');
   });
 
   render();
