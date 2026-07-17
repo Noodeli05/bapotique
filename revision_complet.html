@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260717e');}());</script><title>Révision Linguistique Française — UNIL 2025</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet"><style>
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260717f');}());</script><title>Révision Linguistique Française — UNIL 2025</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet"><style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap');
 
 /* ── VARIABLES ─────────────────────────────────────────────────────────── */
@@ -1540,7 +1540,7 @@ function showDos(id){
   if(d)d.classList.add('active');
   var nav=document.getElementById('nav'+id);
   if(nav)nav.classList.add('active');
-  if(d){var tc=d.querySelectorAll('.tab-content');var tb=d.querySelectorAll('.tab-btn');tc.forEach(t=>t.classList.remove('active'));tb.forEach(b=>b.classList.remove('active'));if(tc[0])tc[0].classList.add('active');if(tb[0])tb[0].classList.add('active');}
+  if(d){var tc=d.querySelectorAll('.tab-content');var tb=d.querySelectorAll('.tab-btn');tc.forEach(t=>t.classList.remove('active'));tb.forEach(b=>b.classList.remove('active'));if(tc[0])tc[0].classList.add('active');if(tb[0])tb[0].classList.add('active');if(tc[0])initAccordion(tc[0]);}
   window.scrollTo(0,0);
   document.getElementById('sidebar').classList.remove('open');
 }
@@ -1618,9 +1618,6 @@ function initAccordion(tc){
     });
   });
 }
-// init accordion for the initial active tab
-var _d0=document.getElementById('d0');
-if(_d0){var _tc0=_d0.querySelector('.tab-content.active');if(_tc0)initAccordion(_tc0);}
 function toggleThemeRC(){var th=document.documentElement.getAttribute('data-theme')==='light'?'dark':'light';document.documentElement.setAttribute('data-theme',th);localStorage.setItem('bap_theme',th);_updateThemeBtn(th);}
 function _updateThemeBtn(th){var b=document.getElementById('btn-theme-rc'),l=document.getElementById('btn-theme-rc-lbl');if(!b)return;if(th==='light'){b.innerHTML='<svg class="ic"><use href="#i-sun"/></svg><span id="btn-theme-rc-lbl">Clair</span>';}else{b.innerHTML='<svg class="ic"><use href="#i-moon"/></svg><span id="btn-theme-rc-lbl">Sombre</span>';}}
 (function(){var t=localStorage.getItem('bap_theme')||'dark';if(t==='light')document.documentElement.setAttribute('data-theme','light');document.addEventListener('DOMContentLoaded',function(){_updateThemeBtn(t);});})();
