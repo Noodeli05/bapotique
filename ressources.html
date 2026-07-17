@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260717h');}());</script>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260717i');}());</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ressources Linguistique UNIL 2025</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -200,8 +200,11 @@ backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);}
 }
 .r-h4 { font-size:.83rem; font-weight:600; color:var(--muted); margin-bottom:.3rem; }
 .r-tog { font-size:.68rem; color:var(--muted); transition:.2s; flex-shrink:0; }
-.r-h2.collapsed .r-tog { transform:rotate(-90deg); }
-.r-sec-body.hidden { display:none; }
+/* Subsections collapsed by default; open class added on click */
+.r-sec-l2 > .r-sec-body { display:none; }
+.r-h2.open + .r-sec-body { display:block; }
+.r-h2 .r-tog { transform:rotate(-90deg); }
+.r-h2.open .r-tog { transform:rotate(0deg); }
 .r-sec-l2 { padding-left:.5rem; }
 .r-sec-l3 { padding-left:1rem; }
 
@@ -1047,9 +1050,7 @@ function showTab(id) {
 
 // Section collapse
 function rToggle(el) {
-  el.classList.toggle('collapsed');
-  var body = el.nextElementSibling;
-  if (body) body.classList.toggle('hidden');
+  el.classList.toggle('open');
 }
 
 // TOC nav
@@ -1145,12 +1146,6 @@ document.addEventListener('DOMContentLoaded', function() {
     var first = document.querySelector('.tnav-btn');
     if (first) showTab(first.dataset.tab);
   }
-  // Collapse all subsections by default
-  document.querySelectorAll('.r-h2').forEach(function(h){
-    h.classList.add('collapsed');
-    var body=h.nextElementSibling;
-    if(body&&body.classList.contains('r-sec-body'))body.classList.add('hidden');
-  });
 });
 
 document.addEventListener('keydown', e => {
