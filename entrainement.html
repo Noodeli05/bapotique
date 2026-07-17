@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260719');}());</script>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260717');}());</script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Entraînement — Linguistique UNIL 2025</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -185,6 +185,8 @@ input, textarea, select { font-size: max(16px, 1em) !important; }
 .swipe-ov-ok{background:rgba(52,211,153,0.22);color:#34d399}
 .swipe-ov-no{background:rgba(248,113,113,0.22);color:#f87171}
 .site-header h1 a,.site-header h1 a:visited{color:inherit;text-decoration:none}.site-header h1 a:hover{opacity:.8}
+.btn-all-cards{display:inline-flex;align-items:center;gap:.45rem;background:rgba(255,140,66,.18);border:1.5px solid rgba(255,140,66,.4);color:#ffa050;font-size:.82rem;font-weight:700;padding:.48rem 1.1rem;border-radius:20px;text-decoration:none;transition:background .18s,transform .15s;white-space:nowrap}
+.btn-all-cards:hover{background:rgba(255,140,66,.30);transform:translateY(-1px)}
 .ic{width:1em;height:1em;vertical-align:-.15em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;display:inline-block;overflow:visible}
 .ic-fill{fill:currentColor;stroke:none}
 </style>
@@ -271,6 +273,7 @@ input, textarea, select { font-size: max(16px, 1em) !important; }
     <button class="tool-btn" id="btn-test" onclick="startTest()"><svg class="ic"><use href="#i-repeat"/></svg> Test</button>
     <button class="tool-btn" onclick="replayReview()"><svg class="ic"><use href="#i-refresh-cw"/></svg> À revoir</button>
   </div>
+  <a href="entrainement_all.html" class="btn-all-cards"><svg class="ic"><use href="#i-layers"/></svg> Voir toutes les cartes</a>
   <div id="card-swipe">
   <div class="card-wrap" id="card-wrap" onclick="flipCard()">
     <div class="card-inner" id="card-inner">
@@ -788,10 +791,77 @@ function toggleSM2E(){
       setTimeout(function(){sw.style.cssText='';ok.style.cssText='';no.style.cssText='';},220);
     }
   },{passive:true});
+  // Mouse drag support (desktop)
+  var cw2=document.getElementById('card-wrap');
+  var mouseDown=false,mx0=0,mdragged=false,suppressClick=false;
+  sw.addEventListener('mousedown',function(e){
+    if(e.button!==0||animating)return;
+    mouseDown=true;mdragged=false;mx0=e.clientX;
+    sw.style.transition='none';sw.style.cursor='grabbing';
+  });
+  document.addEventListener('mousemove',function(e){
+    if(!mouseDown||animating)return;
+    var dx=e.clientX-mx0;
+    if(!mdragged&&Math.abs(dx)<6)return;
+    mdragged=true;
+    var prog=Math.min(Math.abs(dx)/120,1);
+    sw.style.transform='translateX('+dx+'px) rotate('+(dx*0.06)+'deg)';
+    if(dx>0){ok.style.opacity=prog;no.style.opacity=0;}
+    else{no.style.opacity=prog;ok.style.opacity=0;}
+  });
+  document.addEventListener('mouseup',function(e){
+    if(!mouseDown)return;
+    mouseDown=false;sw.style.cursor='';
+    if(!mdragged){mdragged=false;return;}
+    suppressClick=true;
+    var dx=e.clientX-mx0;
+    mdragged=false;
+    if(Math.abs(dx)>50){
+      animating=true;
+      var dir=dx>0?1:-1;
+      sw.style.transition='transform .28s ease-in,opacity .28s ease-in';
+      sw.style.transform='translateX('+(dir*110)+'%) rotate('+(dir*12)+'deg)';
+      sw.style.opacity='0';
+      setTimeout(function(){
+        if(dx>0)markKnow();else markReview();
+        sw.style.transition='none';
+        sw.style.transform='translateX('+(-dir*40)+'px)';
+        sw.style.opacity='0';
+        ok.style.opacity=0;no.style.opacity=0;
+        setTimeout(function(){
+          sw.style.transition='transform .28s ease-out,opacity .28s ease-out';
+          sw.style.transform='none';sw.style.opacity='1';
+          setTimeout(function(){animating=false;sw.style.cssText='';ok.style.cssText='';no.style.cssText='';},300);
+        },30);
+      },260);
+    } else {
+      sw.style.transition='transform .2s ease,opacity .2s ease';
+      sw.style.transform='none';
+      ok.style.opacity=0;no.style.opacity=0;
+      setTimeout(function(){sw.style.cssText='';ok.style.cssText='';no.style.cssText='';},220);
+    }
+  });
+  if(cw2)cw2.addEventListener('click',function(e){
+    if(suppressClick){suppressClick=false;e.stopImmediatePropagation();e.preventDefault();}
+  },true);
 })();
 
 // ─── TTS ─────────────────────────────────────────────────────────────────────
-var _ttsCur=null;
+var _ttsCur=null,_bestFrVoice=null;
+(function _loadVoices(){
+  var vv=speechSynthesis.getVoices().filter(function(v){return v.lang&&v.lang.startsWith('fr');});
+  var pref=['Google','Amélie','Thomas','Audrey','Marie','Rémi','Enhanced'];
+  _bestFrVoice=null;
+  for(var i=0;i<pref.length;i++){var f=vv.find(function(v){return v.name.indexOf(pref[i])>=0;});if(f){_bestFrVoice=f;break;}}
+  if(!_bestFrVoice&&vv.length)_bestFrVoice=vv[0];
+})();
+if(typeof speechSynthesis!=='undefined')speechSynthesis.addEventListener('voiceschanged',function(){
+  var vv=speechSynthesis.getVoices().filter(function(v){return v.lang&&v.lang.startsWith('fr');});
+  var pref=['Google','Amélie','Thomas','Audrey','Marie','Rémi','Enhanced'];
+  _bestFrVoice=null;
+  for(var i=0;i<pref.length;i++){var f=vv.find(function(v){return v.name.indexOf(pref[i])>=0;});if(f){_bestFrVoice=f;break;}}
+  if(!_bestFrVoice&&vv.length)_bestFrVoice=vv[0];
+});
 function _ttsStop(){if(_ttsCur){speechSynthesis.cancel();_ttsCur.removeAttribute('data-s');_ttsCur=null;}}
 function _ttsId(btn,id){
   var el=document.getElementById(id);
@@ -801,7 +871,8 @@ function _ttsId(btn,id){
   var txt=(el.innerText||el.textContent||'').trim();
   if(!txt)return;
   var u=new SpeechSynthesisUtterance(txt);
-  u.lang='fr-FR';u.rate=.95;
+  u.lang='fr-FR';u.rate=.88;u.pitch=1.05;
+  if(_bestFrVoice)u.voice=_bestFrVoice;
   btn.setAttribute('data-s','1');_ttsCur=btn;
   u.onend=u.onerror=function(){btn.removeAttribute('data-s');if(_ttsCur===btn)_ttsCur=null;};
   speechSynthesis.speak(u);

@@ -55,4 +55,19 @@
   var st=d.createElement('style');
   st.textContent='.ic{width:1em;height:1em;vertical-align:-.15em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;display:inline-block;overflow:visible}.ic-fill{fill:currentColor;stroke:none}';
   d.head.appendChild(st);
+
+  // Cursor glow — desktop only (no touch device)
+  if(window.matchMedia('(hover:hover)').matches){
+    var gl=d.createElement('div');
+    gl.style.cssText='position:fixed;pointer-events:none;z-index:99999;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(200,184,240,0.13) 0%,rgba(200,184,240,0.04) 40%,transparent 70%);transform:translate(-50%,-50%);transition:opacity .4s;opacity:0;will-change:transform,left,top;mix-blend-mode:screen';
+    d.body.appendChild(gl);
+    var glx=0,gly=0,raf=null;
+    d.addEventListener('mousemove',function(e){
+      glx=e.clientX;gly=e.clientY;
+      if(!raf)raf=requestAnimationFrame(function(){
+        gl.style.left=glx+'px';gl.style.top=gly+'px';gl.style.opacity='1';raf=null;
+      });
+    });
+    d.addEventListener('mouseleave',function(){gl.style.opacity='0';});
+  }
 })();

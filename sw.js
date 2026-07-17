@@ -1,5 +1,5 @@
 // Service Worker — Bapotique PWA
-const CACHE = 'bap-v4';
+const CACHE = 'bap-v5';
 const ASSETS = [
   './',
   './index.html',
