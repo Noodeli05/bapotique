@@ -220,6 +220,12 @@ input, textarea, select { font-size: max(16px, 1em) !important; }
 .swipe-ov-ok{background:rgba(52,211,153,0.22);color:#34d399}
 .swipe-ov-no{background:rgba(248,113,113,0.22);color:#f87171}
 .site-header h1 a,.site-header h1 a:visited{color:inherit;text-decoration:none}.site-header h1 a:hover{opacity:.8}
+/* Zen mode */
+body.zen-mode .fc-sidebar,body.zen-mode .fc-toolbar,body.zen-mode .session-dash,body.zen-mode .swipe-hint,body.zen-mode .flip-hint,body.zen-mode .sm2-info,body.zen-mode .fc-counter,body.zen-mode .card-section,body.zen-mode .shortcuts-panel{display:none!important}
+body.zen-mode .site-header{opacity:.15;pointer-events:none;transition:opacity .3s}
+body.zen-mode .site-header:hover{opacity:1;pointer-events:all}
+body.zen-mode .fc-area{gap:1.2rem;padding-top:2rem}
+#btn-zen.active{background:rgba(200,184,240,.22);color:var(--lav);border-color:var(--lav);font-weight:600;box-shadow:0 0 10px rgba(200,184,240,0.3)}
 </style>
 <link rel="manifest" href="manifest.json"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js");</script></head>
 <body>
@@ -370,6 +376,7 @@ input, textarea, select { font-size: max(16px, 1em) !important; }
         <option value="12000">12s</option>
       </select>
       <button class="tool-btn" id="btn-test" onclick="startTest()" title="Mode test (T)"><svg class="ic"><use href="#i-edit"/></svg> Tester</button>
+      <button class="tool-btn" id="btn-zen" onclick="toggleZen()" title="Mode Zen — moins de distractions"><svg class="ic"><use href="#i-sparkles"/></svg> Zen</button>
       <a href="all_cards.html" class="tool-btn" style="text-decoration:none"><svg class="ic"><use href="#i-layers"/></svg> Toutes les cartes</a>
     </div>
 
@@ -1112,6 +1119,11 @@ function _ttsId(btn,id){
   u.onend=u.onerror=function(){btn.removeAttribute('data-s');if(_ttsCur===btn)_ttsCur=null;};
   speechSynthesis.speak(u);
 }
+function toggleZen(){
+  document.body.classList.toggle('zen-mode');
+  document.getElementById('btn-zen').classList.toggle('active',document.body.classList.contains('zen-mode'));
+}
+window.addEventListener('beforeunload',function(){if(typeof speechSynthesis!=='undefined')speechSynthesis.cancel();});
 </script>
 <script src="notes.js"></script></body>
 </html>

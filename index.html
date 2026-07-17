@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260717');}());</script>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260717b');}());</script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Linguistique Française — UNIL 2025</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -408,22 +408,22 @@ function toggleTheme(){
 </script>
 <script src="notes.js"></script>
 <script>
-// Floating linguistic symbols in background
+// Floating linguistic symbols — continuous fall
 (function(){
-  var syms=['GN','GV','GAdj','GPrep','/ʃ/','[N]','[V]','/ə/','σ','Φ','∅','✎','α','β','λ','S→NP+VP','Det','Adj','/ʁ/','N','V','Adv','✏'];
+  var syms=['GN','GV','GAdj','GPrep','/ʃ/','[N]','[V]','/ə/','σ','Φ','∅','✎','α','β','λ','S→NP+VP','Det','Adj','/ʁ/','N','V','Adv','✏','[Adj]','Spec','X̄','IP'];
   var wrap=document.createElement('div');
   wrap.style.cssText='position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden';
   document.body.appendChild(wrap);
   var seed=0;function rng(){seed=(seed*16807+0)%2147483647;return (seed-1)/2147483646;}
   seed=42;
   var st=document.createElement('style');
-  st.textContent='@keyframes bapFloat{0%,100%{transform:translateY(0) rotate(0deg)}30%{transform:translateY(-22px) rotate(4deg)}65%{transform:translateY(10px) rotate(-3deg)}}';
+  st.textContent='@keyframes bapFall{0%{transform:translateY(-80px) rotate(0deg)}100%{transform:translateY(110vh) rotate(340deg)}}';
   document.head.appendChild(st);
-  for(var i=0;i<22;i++){
+  for(var i=0;i<30;i++){
     var el=document.createElement('span');
     el.textContent=syms[i%syms.length];
-    var x=rng()*95,y=rng()*95,sz=.65+rng()*.75,dur=14+rng()*18,del=rng()*12,op=.05+rng()*.07;
-    el.style.cssText='position:absolute;font-family:"DM Serif Display",serif;font-size:'+sz+'rem;color:rgba(200,184,240,'+op.toFixed(2)+');left:'+x+'%;top:'+y+'%;animation:bapFloat '+dur.toFixed(1)+'s '+del.toFixed(1)+'s ease-in-out infinite;user-select:none;white-space:nowrap';
+    var x=rng()*96,sz=.6+rng()*.9,dur=6+rng()*10,del=-(rng()*dur),op=.06+rng()*.09;
+    el.style.cssText='position:absolute;font-family:"DM Serif Display",serif;font-size:'+sz+'rem;color:rgba(200,184,240,'+op.toFixed(2)+');left:'+x+'%;top:-5%;animation:bapFall '+dur.toFixed(1)+'s '+del.toFixed(1)+'s linear infinite;user-select:none;white-space:nowrap';
     wrap.appendChild(el);
   }
 })();

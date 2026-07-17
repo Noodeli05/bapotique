@@ -98,14 +98,17 @@ body::before{
 .card.flipped .card-inner{transform:rotateY(180deg)}
 .card:hover:not(.flipped) .card-inner{transform:rotateY(6deg) scale(1.02)}
 .card-front,.card-back{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:14px;display:flex;flex-direction:column;padding:1rem 1.1rem;overflow:hidden}
-.card-front{background:linear-gradient(145deg,var(--pr),var(--pr2));box-shadow:0 4px 18px rgba(255,140,66,.3)}
-.card-back{background:var(--card);border:2px solid var(--bdr);transform:rotateY(180deg);box-shadow:0 4px 14px rgba(0,0,0,.25)}
-.card-label{font-size:.65rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;opacity:.6;margin-bottom:.4rem;color:#fff}
-.card-back .card-label{color:var(--teal)}
-.card-front p{font-size:.83rem;line-height:1.5;color:#fff;font-weight:500;flex:1;overflow-y:auto}
+.card-front{background:var(--card);border:1.5px solid rgba(200,184,240,0.22);box-shadow:0 4px 16px rgba(0,0,0,.3);position:relative;overflow:hidden}
+.card-front::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,rgba(200,184,240,0.7),rgba(168,200,240,0.4),transparent)}
+.card:hover:not(.flipped) .card-inner{transform:rotateY(4deg) scale(1.02)}
+.card-back{background:rgba(255,255,255,0.04);border:1.5px solid rgba(168,216,196,0.22);transform:rotateY(180deg);box-shadow:0 4px 14px rgba(0,0,0,.25)}
+.card-back::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,rgba(168,216,196,0.7),rgba(200,184,240,0.3),transparent)}
+.card-label{font-size:.65rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;opacity:.75;margin-bottom:.4rem;color:var(--lav)}
+.card-back .card-label{color:var(--mint)}
+.card-front p{font-size:.83rem;line-height:1.5;color:var(--tx);font-weight:500;flex:1;overflow-y:auto}
 .card-back p{font-size:.8rem;line-height:1.55;color:var(--tx);flex:1;overflow-y:auto}
-.deck-badge{margin-top:auto;font-size:.65rem;font-weight:700;opacity:.6;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#fff}
-.sec-badge{color:var(--teal);opacity:.75}
+.deck-badge{margin-top:auto;font-size:.65rem;font-weight:700;opacity:.55;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--lav)}
+.sec-badge{color:var(--mint);opacity:.75}
 .empty{grid-column:1/-1;text-align:center;padding:4rem 2rem;color:var(--mu)}
 @media(max-width:600px){.grid{grid-template-columns:1fr;padding:.8rem 1rem 2rem}.card{height:180px}.controls{padding:.8rem 1rem}}
 
@@ -621,6 +624,7 @@ function _ttsInject_page(){
   _ttsInject('.card-front','start',true);
   _ttsInject('.card-back','start',true);
 }
+window.addEventListener('beforeunload',function(){if(typeof speechSynthesis!=='undefined')speechSynthesis.cancel();});
 </script>
 <script src="notes.js"></script></body>
 </html>
