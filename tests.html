@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="fr"><head>
 <meta charset="UTF-8">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache">
-<script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260717n');}());</script>
+<script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260717o');}());</script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Tests de validation — Linguistique UNIL 2025</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -159,10 +159,37 @@ h3.q-head:hover{background:var(--glass-hover)}
 .err-block li{font-size:.85rem;color:var(--tx-muted);line-height:1.6;margin:.3rem 0}
 .err-block li strong{color:var(--tx)}
 
+/* ── PRACTICE FORMAT ── */
+.practice-intro{font-size:.83rem;color:var(--tx-muted);background:rgba(200,184,240,0.07);border:1px solid rgba(200,184,240,0.18);border-radius:var(--r-sm);padding:.7rem 1rem;margin-bottom:1.4rem;line-height:1.65}
+.subq-block{margin-bottom:.85rem;background:var(--glass);border:1px solid var(--border);border-radius:var(--r-card);overflow:hidden}
+.subq-header{padding:.8rem 1rem;display:flex;align-items:flex-start;gap:.65rem}
+.subq-letter{font-family:'DM Serif Display',serif;font-size:1.05rem;color:var(--lav);flex-shrink:0;min-width:1.5rem;padding-top:.05rem}
+.subq-text{flex:1;font-size:.87rem;color:var(--tx);line-height:1.65}
+.subq-pts{font-size:.7rem;color:var(--tx-faint);flex-shrink:0;border:1px solid var(--border);border-radius:4px;padding:.1rem .42rem;margin-left:.3rem;white-space:nowrap}
+.subq-actions{display:flex;gap:.45rem;flex-wrap:wrap;padding:.3rem 1rem .7rem;border-top:1px solid var(--border)}
+.action-btn{display:inline-flex;align-items:center;gap:.3rem;font-size:.77rem;font-family:inherit;border:1px solid;border-radius:var(--r-sm);padding:.28rem .65rem;cursor:pointer;transition:background .15s,color .15s,border-color .15s;background:transparent}
+.btn-hint{color:var(--butter);border-color:rgba(240,224,160,0.28)}
+.btn-hint:hover,.btn-hint.open{background:rgba(240,224,160,0.12)}
+.btn-answer{color:var(--mint);border-color:rgba(168,216,196,0.28)}
+.btn-answer:hover,.btn-answer.open{background:rgba(168,216,196,0.12)}
+.subq-hint,.subq-answer{padding:.85rem 1rem 1rem;border-top:1px solid var(--border);display:none}
+.hint-inner,.answer-inner{font-size:.85rem;line-height:1.65}
+.hint-inner ul,.answer-inner ul{padding-left:1.1rem}
+.hint-inner li,.answer-inner li{margin:.3rem 0;color:var(--tx-muted)}
+.hint-inner li strong,.answer-inner li strong{color:var(--tx)}
+.hint-inner a{color:var(--butter);font-size:.8rem;text-decoration:none;border-bottom:1px solid rgba(240,224,160,0.3)}
+.hint-inner a:hover{border-bottom-color:var(--butter)}
+.warn{font-size:.8rem;color:var(--rose);margin-top:.5rem;display:block}
+[data-theme="light"] .subq-block{background:rgba(255,255,255,0.70)}
+[data-theme="light"] .subq-hint,[data-theme="light"] .subq-answer{border-top-color:rgba(120,100,180,0.12)}
+[data-theme="light"] .btn-hint{color:var(--peach);border-color:rgba(200,120,64,0.30)}
+[data-theme="light"] .btn-answer{color:var(--mint);border-color:rgba(58,154,114,0.30)}
 @media(max-width:600px){
   .hero{padding:1.8rem 1rem 1rem}
   .test-panel{padding:1.2rem 1rem 3rem}
   .topnav-title{display:none}
+  .subq-header{flex-wrap:wrap}
+  .subq-pts{margin-left:auto}
 }
 </style>
 <link rel="manifest" href="manifest.json">
@@ -210,119 +237,121 @@ h3.q-head:hover{background:var(--glass-hover)}
   <span class="score-chip chip-bad">8,25 / 20 · Note 3/6</span>
 </div>
 
+<p class="practice-intro">Mode entraînement — essaie de répondre à chaque question, puis révèle la théorie à mobiliser ou la réponse modèle.</p>
+
 <!-- Q1 -->
 <div class="q-block">
   <h3 class="q-head" onclick="qToggle(this)">
     <span class="acc-arr">▸</span>
     Q.1 — Phonétique du joual (Tremblay)
-    <span class="q-score">4,75 / 11</span>
+    <span class="q-score">11 pts</span>
   </h3>
   <div class="q-wrap">
     <div class="source-box">
       <span class="lbl">Texte support</span>
-      <p><em>La Grosse Femme d'à côté est enceinte</em>, Michel Tremblay (1981). Mercedes et Betty, deux prostituées, parlent d'un soldat timide.</p>
+      <p><em>La Grosse Femme d'à côté est enceinte</em>, Michel Tremblay (1981).</p>
       <blockquote>– Si y'avait demandé quequ'chose, y l'arait eu !<br>
       – Peut-être qu'y arait aimé ça que tu prennes toé-même les initiatives… Quand y font rien, des fois, c't' à toé de te débrouiller.</blockquote>
     </div>
 
-    <p class="section-title">Q.1a — Rétablir le français standard + transcriptions IPA (5 pts)</p>
-    <div class="consigne-box">Rétablir la version standard. Transcrire en API les deux versions (originale et standard). Repérer les différences phonologiques.</div>
-
-    <div class="elena-box">
-      <span class="lbl">Réponse d'Elena</span>
-      <p><strong>Standard :</strong> « Si il avait demandé quelque chose, il l'aurait eu ! »<br>
-      « Quand ils font rien, des fois, c'est à toi de te débrouiller. »</p>
-      <p><strong>Transcription standard (1re réplique) :</strong><br>
-      <span class="ipa">[silaved(ə)mãdekɛlkəʃozilloʁɛty]</span></p>
-      <p><strong>Transcription standard (2e réplique) :</strong><br>
-      <span class="ipa">[defwɑsɛtatwɑdɔt(ə)debʁuje]</span><br>
-      <span style="font-size:.78rem;color:var(--rose);font-style:italic">→ correcteur : « il manque un bout » −0,25</span></p>
-      <p><strong>Transcription joual (1re réplique) :</strong><br>
-      <span class="ipa">[sijaved(ə)kɛfsozilaʁɛty]</span></p>
-      <p><strong>Transcription joual (2e réplique) :</strong><br>
-      <span class="ipa">[pɔtɛtR(ə)kijaʁɛtemɛsɑk(ə)typʁɛn(ə)twɑmɛm(ə)ʁezinisjatvʁɛiʃɑ̃ɛ̃]</span><br>
-      <span class="ipa">[defwɑstatwe dɔt(ə)debʁuje]</span></p>
-    </div>
-    <div class="corr-box">
-      <span class="lbl">Commentaires du correcteur</span>
-      <ul>
-        <li>Version standard : correcte dans l'ensemble. <span class="corr-note-inline">« il manque un bout » −0,25 ; « = un graphème » +0,5</span></li>
-        <li>Erreurs de symboles IPA : ⟨∫⟩ au lieu de ⟨ʃ⟩, ⟨ʀ⟩ au lieu de ⟨ʁ⟩, crochets non maîtrisés.</li>
-        <li>Notation des nasales et du schwa imprécise.</li>
-      </ul>
-      <p><strong>Note Q.1a : 3,25 / 5</strong></p>
-    </div>
-    <div class="model-box">
-      <span class="lbl">Ce qu'il fallait écrire</span>
-      <h4>Version standard (correcte)</h4>
-      <p>« S'il avait demandé quelque chose, il l'aurait eu ! »<br>
-      « Peut-être qu'il aurait aimé que tu prennes toi-même les initiatives… Quand ils font rien, des fois, c'est à toi de te débrouiller. »</p>
-      <h4>Transcription IPA — version standard (1re réplique)</h4>
-      <p><span class="ipa">[sil avɛ dmɑ̃de kɛlkə ʃoz il loʁɛ ty]</span></p>
-      <h4>Transcription IPA — version joual (1re réplique)</h4>
-      <p><span class="ipa">[si j avɛ dmɑ̃de kɛk ʃoz i laʁɛ ty]</span></p>
-      <p>Symboles à retenir : <span class="ipa">ʁ</span> (r uvulaire fr.), <span class="ipa">ʃ</span> (ch), <span class="ipa">ɛ</span> (è), <span class="ipa">ɑ̃</span> (an nasal), <span class="ipa">ɔ</span> (o ouvert).</p>
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(a)</span>
+        <span class="subq-text">Rétablissez la version en français standard. Transcrivez en API les deux versions (originale et standard).</span>
+        <span class="subq-pts">5 pts</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li><strong>Transcription IPA</strong> — symboles phonétiques du français : <a href="polycop_cours.html">Cours → Phonologie</a></li>
+            <li>Symboles essentiels : <span class="ipa">ʁ</span> (r uvulaire), <span class="ipa">ʃ</span> (ch), <span class="ipa">ɛ</span> (è ouvert), <span class="ipa">ɑ̃</span> (an nasal), <span class="ipa">ə</span> (schwa)</li>
+            <li>Les crochets <span class="ipa">[ ]</span> délimitent une transcription phonétique (réalisation concrète)</li>
+            <li><strong>Joual</strong> : variété de français québécois — amuïssement du /l/ pronominal, relâchement vocalique, chute du schwa</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>Version standard :</strong><br>« S'il avait demandé quelque chose, il l'aurait eu ! »<br>« Peut-être qu'il aurait aimé que tu prennes toi-même les initiatives… Quand ils font rien, des fois, c'est à toi de te débrouiller. »</li>
+            <li><strong>IPA standard (1re réplique) :</strong> <span class="ipa">[sil avɛ dmɑ̃de kɛlkə ʃoz il loʁɛ ty]</span></li>
+            <li><strong>IPA joual (1re réplique) :</strong> <span class="ipa">[si j avɛ dmɑ̃de kɛk ʃoz i laʁɛ ty]</span></li>
+            <li>Symboles à maîtriser : <span class="ipa">ʁ</span> (≠ ʀ), <span class="ipa">ʃ</span> (≠ ∫), <span class="ipa">ɛ</span>, <span class="ipa">ɑ̃</span></li>
+          </ul>
+        </div>
+      </div>
     </div>
 
-    <p class="section-title">Q.1b — Différences phonologiques (5 pts)</p>
-    <div class="elena-box">
-      <span class="lbl">Réponse d'Elena</span>
-      <p>« La répétition du phonème /a/ dans "y'arait" au lieu de /o/ pour le français standard serait perçu comme une faute. »<br>
-      « On constate l'utilisation de voyelles nasales… [lesquelles ?] »<br>
-      « Certains /ə/ caduc sont prononcés en fin de phrase… »</p>
-    </div>
-    <div class="corr-box">
-      <span class="lbl">Commentaires du correcteur</span>
-      <ul>
-        <li><strong>« ≠ linguistique ! »</strong> — la réponse mêle jugements normatifs et description phonologique.</li>
-        <li>Les voyelles nasales ne sont pas précisées : lesquelles diffèrent ?</li>
-        <li>Confusion morphèmes / phonèmes : « Les morphèmes sont la base de la phonologie. Hem ! »</li>
-        <li>Le schwa caduc ne "porte pas d'accent" — affirmation fausse.</li>
-      </ul>
-      <p><strong>Note Q.1b : 1 / 5</strong></p>
-    </div>
-    <div class="model-box">
-      <span class="lbl">Ce qu'il fallait écrire</span>
-      <p>Lister les différences phonème par phonème, de façon systématique et neutre :</p>
-      <table class="diff-table">
-        <thead><tr><th>Phénomène</th><th>Standard</th><th>Joual</th><th>Explication</th></tr></thead>
-        <tbody>
-          <tr><td>Chute du /l/ pronominal</td><td><span class="ipa">/il/</span> « il »</td><td><span class="ipa">/i/</span> « y » ; <span class="ipa">/j/</span> devant V</td><td>Amuïssement du /l/ en fin de syllabe</td></tr>
-          <tr><td>Relâchement du conditionnel</td><td><span class="ipa">/oʁɛ/</span> « aurait »</td><td><span class="ipa">/aʁɛ/</span> « arait »</td><td>/o/ → /a/ (voyelle postérieure → antérieure)</td></tr>
-          <tr><td>Diphtongaison de /wa/</td><td><span class="ipa">/twa/</span> « toi »</td><td><span class="ipa">/twe/</span> « toé »</td><td>Fermeture de la 2e partie de la diphtongue</td></tr>
-          <tr><td>Réduction de /kɛlkə/</td><td><span class="ipa">/kɛlkə/</span> « quelque »</td><td><span class="ipa">/kɛk/</span> « quequ' »</td><td>Chute du /l/ et syncopie du schwa</td></tr>
-          <tr><td>Élision de /sɛt a/</td><td><span class="ipa">/sɛ ta/</span> « c'est à »</td><td><span class="ipa">/sta/</span> « c't' à »</td><td>Effacement vocalique en chaîne</td></tr>
-        </tbody>
-      </table>
-      <p><em>Règle : décrire phonème → phonème, sans jugement de valeur. Ne jamais confondre phonème et morphème.</em></p>
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(b)</span>
+        <span class="subq-text">Repérez toutes les différences phonologiques entre le joual et le français standard, et décrivez-les.</span>
+        <span class="subq-pts">5 pts</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li><strong>Phonologie descriptive</strong> — <a href="polycop_cours.html">Cours → Phonologie</a> : décrire phénomène par phénomène, sans jugement normatif</li>
+            <li>Phénomènes clés : amuïssement, syncope, diphtongaison, relâchement vocalique</li>
+            <li><strong>Méthode :</strong> comparer phonème → phonème pour chaque différence</li>
+            <li>Ne pas confondre <strong>phonème</strong> (unité phonologique sans sens) et <strong>morphème</strong> (unité grammaticale avec sens)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <table class="diff-table">
+            <thead><tr><th>Phénomène</th><th>Standard</th><th>Joual</th><th>Explication</th></tr></thead>
+            <tbody>
+              <tr><td>Chute du /l/ pronominal</td><td><span class="ipa">/il/</span> « il »</td><td><span class="ipa">/i/</span> « y » ; <span class="ipa">/j/</span> devant V</td><td>Amuïssement du /l/ en fin de syllabe</td></tr>
+              <tr><td>Relâchement du conditionnel</td><td><span class="ipa">/oʁɛ/</span> « aurait »</td><td><span class="ipa">/aʁɛ/</span> « arait »</td><td>/o/ → /a/ (voyelle postérieure → antérieure)</td></tr>
+              <tr><td>Diphtongaison de /wa/</td><td><span class="ipa">/twa/</span> « toi »</td><td><span class="ipa">/twe/</span> « toé »</td><td>Fermeture de la 2e partie de la diphtongue</td></tr>
+              <tr><td>Réduction de /kɛlkə/</td><td><span class="ipa">/kɛlkə/</span> « quelque »</td><td><span class="ipa">/kɛk/</span> « quequ' »</td><td>Chute du /l/ et syncope du schwa</td></tr>
+              <tr><td>Élision de /sɛt a/</td><td><span class="ipa">/sɛ ta/</span> « c'est à »</td><td><span class="ipa">/sta/</span> « c't' à »</td><td>Effacement vocalique en chaîne</td></tr>
+            </tbody>
+          </table>
+          <ul><li>Règle : décrire phonème → phonème, sans jugement normatif.</li></ul>
+        </div>
+      </div>
     </div>
 
-    <p class="section-title">Q.1c — La graphie non standard (hors total de 11 pts)</p>
-    <div class="elena-box">
-      <span class="lbl">Réponse d'Elena</span>
-      <p>« La graphie non-standard fait référence au français québécois qui semble être "mal-parlé"… »<br>
-      « Cela fait référence au 20ème siècle, au français parisien vulgaire… »<br>
-      « La chute de certains schwa montre cette différence de syntaxe. »</p>
-    </div>
-    <div class="corr-box">
-      <span class="lbl">Commentaires du correcteur</span>
-      <ul>
-        <li><strong>« !! ? »</strong> — le joual n'a aucun rapport avec le "français parisien vulgaire".</li>
-        <li>Confondre syntaxe et phonologie : la chute du schwa est un phénomène <em>phonologique</em>.</li>
-        <li>Jugement normatif ("mal-parlé") à éviter en linguistique descriptive.</li>
-      </ul>
-      <p><strong>Note Q.1c : 0,5</strong></p>
-    </div>
-    <div class="model-box">
-      <span class="lbl">Ce qu'il fallait écrire</span>
-      <p>La graphie non standard joue un rôle <strong>sociolinguistique et littéraire</strong> :</p>
-      <ul>
-        <li><strong>Mimétisme oral :</strong> Tremblay transcrit phonétiquement le joual pour que le lecteur "entende" l'accent (graphies comme "toé", "y'avait").</li>
-        <li><strong>Marquage social :</strong> ces formes signalent l'appartenance à la classe ouvrière québécoise francophone des années 1940.</li>
-        <li><strong>Légitimation du joual :</strong> écrire une variété stigmatisée, c'est la reconnaître comme matière littéraire à part entière.</li>
-        <li><strong>Authenticité des personnages :</strong> leurs voix sonnent "vrai", l'oralité est transcrite, pas corrigée.</li>
-      </ul>
-      <p>Le joual est une <strong>variété linguistique légitime</strong> avec ses propres règles — pas du "mauvais français".</p>
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(c)</span>
+        <span class="subq-text">Commentez : que représente la graphie non standard utilisée par Tremblay et pourquoi y recourir ?</span>
+        <span class="subq-pts">1 pt</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li><strong>Sociolinguistique</strong> — <a href="polycop_cours.html">Cours → Variation linguistique</a> : variété, registre, marquage social</li>
+            <li>Concepts : sociolecte, variété stigmatisée vs légitime, mimétisme oral, authenticité littéraire</li>
+            <li>Le joual est une variété linguistique légitime — pas du "mauvais français"</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>Mimétisme oral :</strong> Tremblay transcrit phonétiquement le joual pour que le lecteur "entende" l'accent</li>
+            <li><strong>Marquage social :</strong> ces formes signalent l'appartenance à la classe ouvrière québécoise francophone</li>
+            <li><strong>Légitimation du joual :</strong> écrire une variété stigmatisée, c'est la reconnaître comme matière littéraire</li>
+            <li><strong>Authenticité des personnages :</strong> leurs voix sonnent "vrai", l'oralité est transcrite, pas corrigée</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -332,104 +361,111 @@ h3.q-head:hover{background:var(--glass-hover)}
   <h3 class="q-head" onclick="qToggle(this)">
     <span class="acc-arr">▸</span>
     Q.2 — Innovations lexicales en publicité
-    <span class="q-score">3,5 / 9</span>
+    <span class="q-score">9 pts</span>
   </h3>
   <div class="q-wrap">
     <div class="source-box">
       <span class="lbl">Support — 4 affiches publicitaires</span>
-      <p style="font-size:.82rem;color:var(--tx-muted);margin-bottom:.6rem">Quatre affiches de publicité ou de communication publique comportant des créations lexicales :</p>
       <div class="poster-grid">
 
-        <!-- 1. La Redoute -->
-        <div class="poster-card" style="background:rgba(100,60,200,0.12);border-color:rgba(140,80,220,0.25)">
-          <div class="poster-brand" style="font-size:.68rem;letter-spacing:.12em;color:rgba(200,180,255,0.6);font-weight:600">LA REDOUTE INTÉRIEURS</div>
-          <div class="poster-brand" style="font-size:1.5rem;letter-spacing:.06em;color:#c8a0ff">LARE</div>
-          <div class="poster-slogan">« Plus belle la nuit. »<br>Parure de lit Kumco</div>
-          <div style="font-size:.92rem;color:#e0d0ff;font-style:italic;font-family:'DM Serif Display',serif;margin:.2rem 0">Vivre le <strong>beau</strong>.</div>
-          <span class="poster-lexeme poster-lexeme-lav">→ « beau » Adj converti en N</span>
+        <!-- 1. La Redoute Intérieurs -->
+        <div class="poster-card" style="background:rgba(80,40,160,0.18);border-color:rgba(140,80,220,0.30)">
+          <div style="font-size:.58rem;letter-spacing:.14em;color:rgba(200,180,255,0.55);font-weight:700;text-transform:uppercase">La Redoute Intérieurs</div>
+          <div style="font-family:'DM Serif Display',serif;font-size:1.15rem;color:rgba(220,200,255,0.9);font-style:italic;line-height:1.2;margin:.3rem 0">Plus belle la nuit.</div>
+          <div style="font-size:.7rem;color:rgba(200,180,255,0.5)">Parure de lit · Kumco</div>
+          <div style="font-family:'DM Serif Display',serif;font-size:.95rem;color:#e0d0ff;font-style:italic;margin:.35rem 0;border-top:1px solid rgba(140,80,220,0.2);padding-top:.35rem">Vivre le <strong style="color:#c8a0ff">beau</strong>.</div>
+          <span class="poster-lexeme poster-lexeme-lav">→ « beau » Adj → N (conversion)</span>
         </div>
 
-        <!-- 2. Sephora -->
-        <div class="poster-card" style="background:rgba(0,80,60,0.18);border-color:rgba(0,180,120,0.25)">
-          <div class="poster-brand" style="font-size:.78rem;letter-spacing:.18em;color:rgba(200,240,220,0.7)">SEPHORA</div>
-          <div class="poster-brand" style="font-size:1.05rem;letter-spacing:.08em;color:#fff;text-shadow:0 0 12px rgba(0,200,140,0.4)">S≡BLIMIT≡DE</div>
-          <div class="poster-slogan">Campagne maquillage</div>
-          <span class="poster-lexeme poster-lexeme-mint">→ « sublimitude »</span>
+        <!-- 2. Sephora SUBLIMITUDE -->
+        <div class="poster-card" style="background:#0a0a0a;border-color:rgba(255,255,255,0.15)">
+          <div style="font-size:.62rem;letter-spacing:.22em;color:rgba(255,255,255,0.45);font-weight:700;text-transform:uppercase">SEPHORA</div>
+          <div style="font-size:1.05rem;letter-spacing:.05em;color:#fff;font-weight:900;margin:.25rem 0;line-height:1.1">S<span style="color:rgba(255,255,255,0.3)">=</span>BLIMIT<span style="color:rgba(255,255,255,0.3)">=</span>DE</div>
+          <div style="font-size:.72rem;color:rgba(255,255,255,0.35);margin-bottom:.2rem">sublimitude</div>
+          <span class="poster-lexeme poster-lexeme-mint">→ dérivation par suffixation (-itude)</span>
         </div>
 
         <!-- 3. Règles du savoir-voyager -->
-        <div class="poster-card" style="background:rgba(200,100,20,0.12);border-color:rgba(240,140,40,0.28)">
-          <div class="poster-brand" style="font-size:.68rem;color:rgba(240,180,100,0.7);letter-spacing:.05em">LES RÈGLES DU</div>
-          <div class="poster-brand" style="font-size:1rem;color:#f0b060">SAVOIR-VOYAGER</div>
-          <div class="poster-slogan">Guide de règles de transport en bus<br><em style="font-size:.7rem">(titre / logo superposé)</em></div>
-          <span class="poster-lexeme poster-lexeme-sky">→ « savoir-voyager » (composition)</span>
+        <div class="poster-card" style="background:rgba(30,90,160,0.15);border-color:rgba(80,140,220,0.28)">
+          <div style="font-size:.6rem;color:rgba(160,200,255,0.5);letter-spacing:.08em;text-transform:uppercase">Guide des</div>
+          <div style="font-size:.72rem;font-weight:700;color:rgba(160,200,255,0.6);letter-spacing:.05em;text-transform:uppercase">Règles du</div>
+          <div style="font-size:1rem;font-weight:900;color:#90c0f0;letter-spacing:.03em">SAVOIR-VOYAGER</div>
+          <div style="font-size:.65rem;color:rgba(160,200,255,0.4);font-style:italic;margin:.2rem 0">titre / logo superposé sur le document</div>
+          <span class="poster-lexeme poster-lexeme-sky">→ composition (savoir + voyager)</span>
         </div>
 
         <!-- 4. DécouvrRire -->
-        <div class="poster-card" style="background:rgba(220,30,30,0.12);border-color:rgba(240,60,60,0.25)">
-          <div class="poster-brand" style="font-size:1rem;color:#ff8080;line-height:1">Découv</div>
-          <div class="poster-brand" style="font-size:1rem;color:#ff4444;margin-top:-.1rem">Rire</div>
-          <div class="poster-slogan">Festival d'humour · Cossonay<br>24–27 sept. 2025 · Théâtre du Pré-aux-Moines</div>
-          <span class="poster-lexeme poster-lexeme-rose">→ « découvRire » (découvrir + rire)</span>
+        <div class="poster-card" style="background:rgba(180,20,20,0.15);border-color:rgba(240,60,60,0.28)">
+          <div style="font-size:1.4rem;font-weight:900;color:#ff9090;line-height:1;letter-spacing:-.01em">Découv<span style="color:#ff4444">R</span>ire</div>
+          <div style="font-size:.65rem;color:rgba(255,160,160,0.55);margin:.2rem 0">Festival d'humour · Cossonay<br>24–27 sept. 2025</div>
+          <span class="poster-lexeme poster-lexeme-rose">→ mot-valise (découvrir + rire)</span>
         </div>
 
       </div>
     </div>
 
-    <p class="section-title">Q.2a — Mode de construction des lexèmes (8 pts)</p>
-    <div class="consigne-box">Identifiez et analysez le mode de construction. Pour les dérivations, procédez par commutation.</div>
-
-    <div class="elena-box">
-      <span class="lbl">Réponse d'Elena</span>
-      <ul>
-        <li>« sublimitude » → <strong>mot-valise</strong> (sublime + altitude) <span class="corr-note-inline">✗ correction : ce n'est pas "altitude"</span></li>
-        <li>« découvRire » → deux morphèmes (découvrir + rire), procédé par dérivation <span class="corr-note-inline">✗ type de procédé non précisé</span></li>
-        <li>« savoir-voyager » → <strong>composition</strong> (trait d'union) ✓</li>
-        <li>« Vivre le beau » → <strong>conversion</strong> Adj → N ✓ <span class="corr-note-inline">(ref. à "Plus belle la vie")</span></li>
-      </ul>
-    </div>
-    <div class="corr-box">
-      <span class="lbl">Commentaires du correcteur</span>
-      <ul>
-        <li><strong>« sublimitude » :</strong> ce n'est pas un mot-valise mais une <em>dérivation</em>. Note : 0,5.</li>
-        <li><strong>« découvrire » :</strong> Elena identifie la dérivation mais ne précise pas le <em>type</em>. → 0 point.</li>
-        <li><strong>« savoir-voyager » :</strong> 0/1 (raison non explicitée par le correcteur).</li>
-        <li><strong>« beau » :</strong> conversion correctement identifiée. → 1 point.</li>
-      </ul>
-    </div>
-    <div class="model-box">
-      <span class="lbl">Ce qu'il fallait écrire</span>
-      <h4>1. « sublimitude »</h4>
-      <p><strong>Dérivation par suffixation</strong> : base <em>sublime</em> (Adj) + suffixe nominal <em>-itude</em> → nom abstrait.<br>
-      Commutation : sol-itude, las-situde, multi-tude → confirme que -itude est un morphème dérivationnel productif.<br>
-      Ce n'est pas un mot-valise : il n'y a pas de fusion de deux mots complets.</p>
-      <h4>2. « découvrire »</h4>
-      <p><strong>Mot-valise / contamination phonologique</strong> : fusion de <em>découvrir</em> + <em>rire</em>.<br>
-      Chevauchement sur la séquence <span class="ipa">-ʁiʁ</span> : [dekuvʁiʁ] ← [dekuvʁiʁ] + [ʁiʁ].<br>
-      Double sens : "découvrir en riant" → humour métalinguistique (affiche de festival d'humour).</p>
-      <h4>3. « savoir-voyager »</h4>
-      <p><strong>Composition par juxtaposition</strong> : savoir (V/N) + voyager (V) liés par un trait d'union.<br>
-      Nominalisation d'une locution verbale → "le savoir-voyager" fonctionne comme GN.<br>
-      Cf. le savoir-faire, le savoir-vivre (même schéma).</p>
-      <h4>4. « beau » (Vivre le beau)</h4>
-      <p><strong>Conversion</strong> (transposition) : <em>beau</em> Adj → <em>le beau</em> N.<br>
-      Changement de catégorie syntaxique sans modification morphologique. L'article défini signale la nominalisation.</p>
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(a)</span>
+        <span class="subq-text">Identifiez et analysez le mode de construction des lexèmes «sublimitude», «découvRire», «savoir-voyager», «beau». Pour les cas de dérivation, procédez par commutation.</span>
+        <span class="subq-pts">8 pts</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li><strong>Morphologie lexicale</strong> — <a href="polycop_cours.html">Cours → Morphologie</a> : dérivation, composition, conversion, mot-valise</li>
+            <li><strong>Dérivation</strong> : base + affixe (préfixe/suffixe). Commutation = remplacer la base pour vérifier que l'affixe est séparable</li>
+            <li><strong>Composition</strong> : juxtaposition de deux bases lexicales autonomes</li>
+            <li><strong>Conversion</strong> : changement de catégorie grammaticale sans modification formelle</li>
+            <li><strong>Mot-valise</strong> : fusion de deux formes avec chevauchement phonologique</li>
+            <li><a href="flashcards.html">Flashcards → Morphologie</a> pour réviser les procédés</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>« sublimitude »</strong> — Dérivation par suffixation : base <em>sublime</em> (Adj) + suffixe nominal <em>-itude</em> → nom abstrait.<br>Commutation : sol-itude, las-situde, multi-tude → confirme que -itude est un morphème dérivationnel productif. (≠ mot-valise)</li>
+            <li><strong>« découvRire »</strong> — Mot-valise : fusion de <em>découvrir</em> + <em>rire</em>. Chevauchement sur la séquence <span class="ipa">-ʁiʁ</span>. Double sens : "découvrir en riant".</li>
+            <li><strong>« savoir-voyager »</strong> — Composition par juxtaposition : savoir (V/N) + voyager (V). Nominalisation d'une locution verbale. Cf. le savoir-faire, le savoir-vivre.</li>
+            <li><strong>« beau » (Vivre le beau)</strong> — Conversion : <em>beau</em> Adj → <em>le beau</em> N. Changement de catégorie sans modification morphologique. L'article défini signale la nominalisation.</li>
+          </ul>
+        </div>
+      </div>
     </div>
 
-    <p class="section-title">Q.2b — Pourquoi ces innovations lexicales ? (1 pt)</p>
-    <div class="elena-box">
-      <span class="lbl">Réponse d'Elena</span>
-      <p>« Recourir à de telles innovations sert à attirer le regard. Ce sont souvent des mot-valises ou des néologismes qui vont capter l'attention du public et créer un questionnement ou des réactions telles que le rire, la curiosité. »</p>
-    </div>
-    <div class="model-box">
-      <span class="lbl">Commentaire</span>
-      <p>Réponse globalement correcte (note : 1/1). À enrichir avec :</p>
-      <ul>
-        <li><strong>Mémorisation :</strong> un mot inattendu se retient mieux qu'un mot banal.</li>
-        <li><strong>Effet ludique :</strong> le jeu sur la langue engage le lecteur activement.</li>
-        <li><strong>Identité de marque :</strong> la création lexicale différencie le produit.</li>
-        <li><strong>Densité sémantique :</strong> un mot-valise condense deux sens en un seul signifiant.</li>
-      </ul>
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(b)</span>
+        <span class="subq-text">Pourquoi recourir à de telles innovations lexicales en communication dans l'espace public ?</span>
+        <span class="subq-pts">1 pt</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li><strong>Néologie et communication</strong> — fonctions du néologisme en publicité</li>
+            <li>Penser à : mémorisation, effet ludique, identité de marque, densité sémantique</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>Mémorisation :</strong> un mot inattendu se retient mieux qu'un mot banal</li>
+            <li><strong>Effet ludique :</strong> le jeu sur la langue engage le lecteur activement</li>
+            <li><strong>Identité de marque :</strong> la création lexicale différencie le produit</li>
+            <li><strong>Densité sémantique :</strong> un mot-valise condense deux sens en un seul signifiant</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -444,123 +480,161 @@ h3.q-head:hover{background:var(--glass-hover)}
   <span class="score-chip chip-bad">7,5 / 20 · Note 3/6</span>
 </div>
 
+<p class="practice-intro">Mode entraînement — essaie de répondre à chaque question, puis révèle la théorie à mobiliser ou la réponse modèle.</p>
+
 <!-- Q1 Cendrars -->
 <div class="q-block">
   <h3 class="q-head" onclick="qToggle(this)">
     <span class="acc-arr">▸</span>
     Q.1 — Syntaxe et DI : Cendrars, <em>L'homme foudroyé</em>
-    <span class="q-score">~3 / 10</span>
+    <span class="q-score">10 pts · obtenu : 2</span>
   </h3>
   <div class="q-wrap">
     <div class="source-box">
       <span class="lbl">Texte support</span>
-      <p>Blaise Cendrars raconte sa visite d'un quartier sud de Paris avec Fernand Léger. Les Gitanes ont fui, effrayées par l'accoutrement de Léger.</p>
       <blockquote>« Ce pauvre Léger, un quart d'heure auparavant, place d'Italie où je lui avais donné rendez-vous pour prendre le tramway, je lui avais déjà fait des remontrances au sujet de son déguisement. C'est de Fernand Léger, le peintre cubiste, que je parle. Cela faisait des mois que Fernand, ce gros lambin si sympathique, me tannait pour que je le mène voir les Gitanes. »</blockquote>
+      <p style="font-size:.78rem;color:var(--tx-muted)">Blaise Cendrars, <em>L'homme foudroyé</em> ([1945] 2013 : 232)</p>
     </div>
 
-    <p class="section-title">Q.1a — Analyse de la 1re phrase (clauses + constructions détachées)</p>
-    <div class="elena-box">
-      <span class="lbl">Réponse d'Elena</span>
-      <p>« La phrase comporte quatre clauses. — Deux clauses averbales dont une construction détachée : "Ce pauvre Léger", à valeur rhématique. — "place d'Italie où je lui avais donné rendez-vous pour prendre le tramway" est une clause complexe par coordination avec le coordonnant locatif "où". — Il y a également une clause relative subordonnée avec le lexème "pour" à valeur causale. — La dernière clause est prédicative avec extension du GN "au sujet de son déguisement". »</p>
-    </div>
-    <div class="corr-box">
-      <span class="lbl">Commentaires du correcteur</span>
-      <ul>
-        <li>« Ce pauvre Léger » est thématique (topic connu), pas rhématique.</li>
-        <li>"où" est un <em>pronom relatif</em>, pas un coordonnant.</li>
-        <li>"pour" introduit une finale (but), pas une causale.</li>
-        <li>Confusions entre construction détachée, clause subordonnée relative et clause principale.</li>
-      </ul>
-      <p><strong>Note Q.1a : 0,5</strong></p>
-    </div>
-    <div class="model-box">
-      <span class="lbl">Ce qu'il fallait écrire</span>
-      <p><strong>Phrase 1 :</strong> « Ce pauvre Léger, un quart d'heure auparavant, place d'Italie où je lui avais donné rendez-vous pour prendre le tramway, je lui avais déjà fait des remontrances au sujet de son déguisement. »</p>
-      <p><strong>Clause principale :</strong> « je lui avais déjà fait des remontrances au sujet de son déguisement »</p>
-      <p><strong>Constructions détachées (périphériques) :</strong></p>
-      <ul>
-        <li><strong>« Ce pauvre Léger »</strong> → dislocation gauche du SN sujet (<em>thème</em> : point de départ connu)</li>
-        <li><strong>« un quart d'heure auparavant »</strong> → cadre temporel (circonstanciel détaché)</li>
-        <li><strong>« place d'Italie »</strong> → cadre locatif (clause averbale à 1 terme)</li>
-      </ul>
-      <p><strong>Clause subordonnée relative :</strong> « où je lui avais donné rendez-vous » (relative de lieu, antécédent : "place d'Italie")</p>
-      <p><strong>Clause subordonnée finale :</strong> « pour prendre le tramway » (but, non-finie à l'infinitif)</p>
-    </div>
-
-    <p class="section-title">Q.1b — Analyse de la 2e phrase</p>
-    <div class="elena-box">
-      <span class="lbl">Réponse d'Elena</span>
-      <p>« C'est de Fernand Léger, le peintre cubiste, que je parle. »<br>
-      → « C'est de Fernand Léger" est une clause à présentatif avec "c'est" qui a une valeur passive car le sujet subit l'action. "que je parle" est une clause relative détachée. Cette phrase est thématique car le prédicat est présenté avant le sujet. »</p>
-    </div>
-    <div class="corr-box">
-      <span class="lbl">Commentaires du correcteur</span>
-      <ul>
-        <li><strong>Erreur majeure :</strong> la clause clivée n'est PAS passive. Ce sont deux constructions totalement différentes.</li>
-        <li>"que je parle" n'est pas une relative mais la clause enchâssée d'une clivée.</li>
-        <li>La phrase est <em>rhématique</em> (focus sur Fernand Léger), pas thématique.</li>
-      </ul>
-      <p><strong>Note Q.1b : 0,5</strong></p>
-    </div>
-    <div class="model-box">
-      <span class="lbl">Ce qu'il fallait écrire</span>
-      <p><strong>Clause clivée</strong> : construction syntaxique à extraction focalisante de la forme <em>c'est X que/qui P</em>.</p>
-      <ul>
-        <li><strong>Élément focalisé (rhème fort) :</strong> « de Fernand Léger » → information mise en relief, souvent contrastive</li>
-        <li><strong>Clause enchâssée :</strong> « que je parle » → la clause clivée n'est PAS passive (le sujet de "parler" reste "je", qui est agent)</li>
-        <li><strong>Apposition détachée :</strong> « le peintre cubiste » → identification supplémentaire, clause averbale attributive</li>
-        <li><strong>Valeur DI :</strong> la clivée focalise rhématiquement — Cendrars précise de qui il parle (peut-être pour éviter une ambiguïté)</li>
-      </ul>
-      <p><em>Mémo : Clivée ≠ Passive. Dans la passive, l'agent est effacé ou mis en complément. Dans la clivée, la syntaxe reste active — seule la mise en relief change.</em></p>
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(a)</span>
+        <span class="subq-text">Analysez la composition de la première phrase : nombre et type de clauses, constructions détachées.</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li><strong>Syntaxe de la phrase complexe</strong> — <a href="polycop_cours.html">Cours → Syntaxe</a> : clause principale, subordonnées, constructions périphériques</li>
+            <li><strong>Construction détachée</strong> : élément séparé par virgule, périphérique à la clause principale</li>
+            <li><strong>Dislocation gauche</strong> : SN en tête de phrase repris par un pronom dans la clause principale → valeur thématique</li>
+            <li><strong>Clause averbale</strong> : pas de verbe conjugué (ex. circonstanciel locatif seul)</li>
+            <li><strong>Subordonnée relative</strong> : introduite par pronom relatif (où, qui, que…)</li>
+            <li><strong>Subordonnée finale</strong> : « pour + infinitif » → but</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>Clause principale :</strong> « je lui avais déjà fait des remontrances au sujet de son déguisement »</li>
+            <li><strong>Dislocation gauche :</strong> « Ce pauvre Léger » → <em>thème</em> (point de départ connu), repris par "lui" dans la principale</li>
+            <li><strong>Cadre temporel :</strong> « un quart d'heure auparavant » → circonstanciel détaché</li>
+            <li><strong>Cadre locatif :</strong> « place d'Italie » → clause averbale à 1 terme, détachée</li>
+            <li><strong>Subordonnée relative :</strong> « où je lui avais donné rendez-vous » (relative de lieu, antécédent : "place d'Italie")</li>
+            <li><strong>Subordonnée finale :</strong> « pour prendre le tramway » (but, non-finie à l'infinitif)</li>
+          </ul>
+        </div>
+      </div>
     </div>
 
-    <p class="section-title">Q.1c — Adjectifs épithètes : position et sens</p>
-    <div class="elena-box">
-      <span class="lbl">Réponse d'Elena</span>
-      <p>« "un quart d'heure auparavant" a une valeur prédicative temporelle. "Le peintre cubiste" sert d'apport d'information. "Ce gros lambin si sympathique" décrit M. Fernand en se moquant de lui. Les adjectifs antéposés apportent une valeur objective. »</p>
-    </div>
-    <div class="corr-box">
-      <span class="lbl">Commentaires du correcteur</span>
-      <ul>
-        <li><strong>« Vous confondez épithètes et extensions du GN en général. »</strong></li>
-        <li>"un quart d'heure auparavant" n'est pas un adjectif — c'est un GN circonstanciel.</li>
-        <li>Antéposé = valeur affective/subjective (et non "objective").</li>
-      </ul>
-    </div>
-    <div class="model-box">
-      <span class="lbl">Ce qu'il fallait écrire</span>
-      <p><strong>Épithète = adjectif directement intégré au GN</strong> (attaché au nom, pas en position attribut).</p>
-      <p>Épithètes dans l'extrait :</p>
-      <ul>
-        <li><strong>« pauvre »</strong> dans « ce pauvre Léger » → antéposé, valeur <em>affective</em> (empathie ironique du narrateur)</li>
-        <li><strong>« cubiste »</strong> dans « le peintre cubiste » → postposé, valeur <em>classificatoire/objective</em> (propriété du référent)</li>
-        <li><strong>« gros »</strong> dans « ce gros lambin » → antéposé, valeur <em>affective péjorative</em> (moquerie amicale)</li>
-        <li><strong>« sympathique »</strong> dans « si sympathique » → postposé (après adverbe intensif), valeur <em>descriptive atténuée</em></li>
-      </ul>
-      <p><strong>Règle de position :</strong> antéposé = jugement subjectif du narrateur / postposé = description objective de la propriété.<br>
-      <em>Ce que ne sont PAS des épithètes ici : "le peintre cubiste" (apposition), "un quart d'heure auparavant" (GN circonstanciel).</em></p>
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(b)</span>
+        <span class="subq-text">Même analyse pour la deuxième phrase.</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li><strong>Clause clivée</strong> — <a href="polycop_cours.html">Cours → Syntaxe / DI</a> : construction <em>c'est X que/qui P</em>, à valeur focalisante</li>
+            <li><strong>Focus rhématique :</strong> la clivée met en relief un constituant (≠ passive !)</li>
+            <li><strong>Apposition détachée :</strong> GN identifiant le référent, séparé par des virgules</li>
+            <li>Clivée ≠ Passive : dans la clivée, la syntaxe reste active</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>Construction clivée :</strong> « C'est de Fernand Léger… que je parle »</li>
+            <li><strong>Élément focalisé (rhème fort) :</strong> « de Fernand Léger » → information mise en relief</li>
+            <li><strong>Clause enchâssée :</strong> « que je parle » (≠ relative — c'est la clause de la clivée)</li>
+            <li><strong>Apposition détachée :</strong> « le peintre cubiste » → identification supplémentaire, clause averbale attributive</li>
+            <li><strong>Valeur DI :</strong> la clivée focalise rhématiquement — Cendrars précise de qui il parle</li>
+            <li><em>Mémo : Clivée ≠ Passive. Dans la passive, l'agent est effacé ; dans la clivée, la syntaxe reste active.</em></li>
+          </ul>
+        </div>
+      </div>
     </div>
 
-    <p class="section-title">Q.1d — Image de soi et de Léger</p>
-    <div class="elena-box">
-      <span class="lbl">Réponse d'Elena</span>
-      <p>« La répétition de "je" accentue que le narrateur est égocentrique. Le narrateur donne une image péjorative de lui-même et de son ami car le déguisement de son ami fait peur. Fernand ressemble à un policier en civil… »</p>
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(c)</span>
+        <span class="subq-text">Soulignez les adjectifs épithètes et commentez leur sens selon leur position (antéposé / postposé).</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li><strong>Épithète</strong> — <a href="polycop_cours.html">Cours → Syntaxe du GN</a> : adjectif directement attaché au nom dans le GN</li>
+            <li><strong>Antéposé</strong> (avant le nom) → valeur affective / subjective du locuteur</li>
+            <li><strong>Postposé</strong> (après le nom) → valeur classificatoire / objective</li>
+            <li>≠ Apposition : séparée par des virgules, déplaçable</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>« pauvre »</strong> dans « ce pauvre Léger » → antéposé, valeur <em>affective</em> (empathie ironique)</li>
+            <li><strong>« cubiste »</strong> dans « le peintre cubiste » → postposé, valeur <em>classificatoire/objective</em></li>
+            <li><strong>« gros »</strong> dans « ce gros lambin » → antéposé, valeur <em>affective péjorative</em> (moquerie tendre)</li>
+            <li><strong>« sympathique »</strong> dans « si sympathique » → postposé, valeur <em>descriptive atténuée</em></li>
+            <li><em>≠ épithètes : "le peintre cubiste" = apposition ; "un quart d'heure auparavant" = GN circonstanciel.</em></li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="model-box">
-      <span class="lbl">Ce qu'il fallait écrire</span>
-      <p><strong>Image du narrateur (Cendrars) :</strong></p>
-      <ul>
-        <li>Se positionne comme guide et connaisseur du Paris populaire (c'est lui qui mène Léger)</li>
-        <li>Ton d'autorité affectueuse : il fait des "remontrances" à son ami</li>
-        <li>Ironie douce-amère : il prédit que le déguisement posera problème</li>
-      </ul>
-      <p><strong>Image de Léger :</strong></p>
-      <ul>
-        <li>Lourd et naïf : « ce gros lambin » → valeur affective moqueuse mais tendre</li>
-        <li>Décalé dans son accoutrement : « déguisement » (terme fort, carnavalesque)</li>
-        <li>Insistant mais dépendant : « me tannait pour que je le mène »</li>
-      </ul>
-      <p>La tension comique repose sur le contraste entre la célébrité de Léger (peintre cubiste renommé) et sa maladresse sociale dans cet espace populaire.</p>
+
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(d)</span>
+        <span class="subq-text">Quelle image le narrateur donne-t-il de lui-même et de Léger dans cet extrait ?</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li><strong>Énonciation</strong> — le narrateur comme instance textuelle</li>
+            <li>Indices linguistiques : choix lexicaux, épithètes affectives, verbes d'action, ton</li>
+            <li>Analyser le portrait via les choix syntaxiques et morphologiques du texte</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>Image du narrateur (Cendrars) :</strong>
+              <ul>
+                <li>Guide et connaisseur du Paris populaire (c'est lui qui mène Léger)</li>
+                <li>Autorité affectueuse : il fait des "remontrances" à son ami</li>
+                <li>Ironie douce-amère : il prédit que le déguisement posera problème</li>
+              </ul>
+            </li>
+            <li><strong>Image de Léger :</strong>
+              <ul>
+                <li>Lourd et naïf : « ce gros lambin » → valeur affective moqueuse mais tendre</li>
+                <li>Décalé : « déguisement » (terme fort, carnavalesque)</li>
+                <li>Insistant mais dépendant : « me tannait pour que je le mène »</li>
+              </ul>
+            </li>
+            <li>Tension comique : contraste entre la célébrité de Léger (peintre cubiste) et sa maladresse sociale</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -570,91 +644,108 @@ h3.q-head:hover{background:var(--glass-hover)}
   <h3 class="q-head" onclick="qToggle(this)">
     <span class="acc-arr">▸</span>
     Q.2 — Syntaxe et DI : Perec, <em>W ou le souvenir d'enfance</em>
-    <span class="q-score">~4,5 / 10</span>
+    <span class="q-score">10 pts · obtenu : 5,5</span>
   </h3>
   <div class="q-wrap">
     <div class="source-box">
       <span class="lbl">Texte support</span>
-      <blockquote>Courir sur les cendrées, courir dans les marais, courir dans la boue. Courir, sauter, lancer les poids. Ramper. S'accroupir, se relever. Se relever, s'accroupir. Très vite, de plus en plus vite. Courir en rond, se jeter à terre, ramper, se relever, courir. Rester debout, au garde-à-vous, des heures, des jours, des jours et des nuits. À plat ventre ! Debout ! Habillez-vous ! Déshabillez-vous ! Habillez-vous ! Déshabillez-vous ! Courez ! Sautez ! Rampez ! À genoux !</blockquote>
-      <p>Phrase soulignée : <em>Courir sur les cendrées, courir dans les marais, courir dans la boue.</em><br>
-      Phrase en gras : <em>À plat ventre !</em></p>
+      <p style="font-size:.8rem;color:var(--tx-muted);margin-bottom:.45rem">Phrase soulignée = 1re phrase · Phrase en gras = « À plat ventre ! »</p>
+      <blockquote><u>Courir sur les cendrées, courir dans les marais, courir dans la boue.</u> Courir, sauter, lancer les poids. Ramper. S'accroupir, se relever. Se relever, s'accroupir. Très vite, de plus en plus vite. Courir en rond, se jeter à terre, ramper, se relever, courir. Rester debout, au garde-à-vous, des heures, des jours, des jours et des nuits. <strong>À plat ventre !</strong> Debout ! Habillez-vous ! Déshabillez-vous ! Habillez-vous ! Déshabillez-vous ! Courez ! Sautez ! Rampez ! À genoux !</blockquote>
+      <p style="font-size:.78rem;color:var(--tx-muted)">Georges Perec, <em>W ou le souvenir d'enfance</em></p>
     </div>
 
-    <p class="section-title">Q.2a — Analyse de la phrase soulignée</p>
-    <div class="elena-box">
-      <span class="lbl">Réponse d'Elena</span>
-      <p>« Il s'agit de trois clauses infinitives juxtaposées par des asyndètes à virgules. L'ordre canonique n'est pas respecté. Le verbe à l'infinitif est placé en premier, lui accordant la valeur d'instrument. Les GPrep "sur" et "dans" apportent des précisions… »</p>
-    </div>
-    <div class="corr-box">
-      <span class="lbl">Commentaires du correcteur</span>
-      <ul>
-        <li>Points accordés sur la reconnaissance des clauses infinitives et de l'asyndète.</li>
-        <li>Manque de précision sur la <em>progression</em> informationnelle (thème/rhème).</li>
-        <li>Le terme "instrument" est inexact : l'infinitif n'a pas de valeur instrumentale ici.</li>
-      </ul>
-      <p><strong>Note Q.2a : ~3 / 5 (partiellement juste)</strong></p>
-    </div>
-    <div class="model-box">
-      <span class="lbl">Ce qu'il fallait écrire</span>
-      <p><strong>3 clauses infinitives juxtaposées</strong> (asyndète : pas de connecteur entre elles)</p>
-      <ul>
-        <li><strong>Syntaxe :</strong> structure V(inf) + GPrep — pas de sujet explicite (l'infinitif efface l'agent)</li>
-        <li><strong>Sémantique :</strong> « courir » = thème verbal constant (anaphore) ; les GPrep varient → localisation dégradante (surface dure → eau → boue)</li>
-        <li><strong>DI :</strong> dynamique entièrement rhématique — chaque clause apporte une info nouvelle (le lieu) sans thème nominal explicite ; le sujet humain est absent, réduit à l'action</li>
-        <li><strong>Progression :</strong> rythme ternaire régulier, progression par dégradation des espaces (cendrée → marais → boue) → intensification de la violence des conditions</li>
-        <li><strong>Effet :</strong> absence de sujet = déshumanisation ; on ne sait pas qui court — n'importe qui, tout le monde, personne</li>
-      </ul>
-    </div>
-
-    <p class="section-title">Q.2b — Analyse de la phrase « À plat ventre ! »</p>
-    <div class="elena-box">
-      <span class="lbl">Réponse d'Elena</span>
-      <p>« C'est une clause averbale existentielle car on donne un ordre et on fait exister ce qu'on voit. L'absence de verbe est faite exprès pour aller droit au but. »</p>
-    </div>
-    <div class="corr-box">
-      <span class="lbl">Commentaires du correcteur</span>
-      <ul>
-        <li><strong>Erreur terminologique :</strong> ce n'est PAS une clause existentielle. L'existentiel, c'est "il y a + GN".</li>
-        <li>La clause averbale injonctive est une construction à part.</li>
-      </ul>
-      <p><strong>Note Q.2b : 0,5</strong></p>
-    </div>
-    <div class="model-box">
-      <span class="lbl">Ce qu'il fallait écrire</span>
-      <p><strong>Clause averbale injonctive</strong> (ou impérative elliptique) : un seul constituant, GPrep.</p>
-      <ul>
-        <li><strong>Syntaxe :</strong> GPrep seul, pas de verbe, pas de sujet → économie maximale</li>
-        <li><strong>Sémantique :</strong> ordre militaire brusque, impératif implicite (≈ « Mettez-vous à plat ventre ! »)</li>
-        <li><strong>DI :</strong> entièrement rhématique — l'ordre est l'information totale ; le thème (les athlètes) est présupposé par le contexte</li>
-        <li><strong>Effet :</strong> la brièveté extrême mime la brutalité du commandement ; pas de temps pour articuler une clause complète</li>
-      </ul>
-      <p><em>Mémo : Existentiel ≠ Injonctif. Existentiel = "Il y a des athlètes." Injonctif = "À plat ventre !"</em></p>
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(a)</span>
+        <span class="subq-text">Analysez la phrase soulignée : clauses, syntaxe, sémantique, structure informationnelle (thème/rhème), progression.</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li><strong>Clause infinitive</strong> — <a href="polycop_cours.html">Cours → Syntaxe</a> : pas de sujet explicite, verbe à l'infinitif</li>
+            <li><strong>Asyndète</strong> : juxtaposition sans connecteur</li>
+            <li><strong>Thème / Rhème</strong> — <a href="polycop_cours.html">Cours → DI</a> : thème = info connue, rhème = info nouvelle</li>
+            <li><strong>Progression thématique</strong> : comment l'information avance d'une clause à l'autre</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>Syntaxe :</strong> 3 clauses infinitives juxtaposées (asyndète) — structure V(inf) + GPrep, sans sujet explicite</li>
+            <li><strong>Sémantique :</strong> « courir » = thème verbal constant (anaphore) ; les GPrep varient → localisation dégradante (surface dure → eau → boue)</li>
+            <li><strong>DI :</strong> dynamique entièrement rhématique — chaque clause apporte une info nouvelle (le lieu) ; le sujet humain est absent</li>
+            <li><strong>Progression :</strong> rythme ternaire, dégradation des espaces (cendrée → marais → boue) → intensification de la violence</li>
+            <li><strong>Effet :</strong> absence de sujet = déshumanisation</li>
+          </ul>
+        </div>
+      </div>
     </div>
 
-    <p class="section-title">Q.2c — Progression de l'extrait</p>
-    <div class="elena-box">
-      <span class="lbl">Réponse d'Elena</span>
-      <p>« L'extrait a une dynamique informationnelle avec une succession d'événements. Des verbes à l'infinitif et au subjonctif [sic] créent du stress. La syntaxe canonique n'est pas respectée. Le narrateur commence par des longues phrases puis des simples mots. »</p>
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(b)</span>
+        <span class="subq-text">Analysez la phrase « À plat ventre ! » : syntaxique, sémantique, informationnel.</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li><strong>Clause averbale</strong> — <a href="polycop_cours.html">Cours → Syntaxe</a> : pas de verbe conjugué</li>
+            <li><strong>Types :</strong> injonctive, existentielle, attributive — ne pas les confondre !</li>
+            <li>Existentielle = "Il y a…" / Injonctive = ordre elliptique bref</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>Syntaxe :</strong> clause averbale injonctive — GPrep seul, pas de verbe, pas de sujet → économie maximale</li>
+            <li><strong>Sémantique :</strong> ordre militaire brusque, impératif implicite (≈ « Mettez-vous à plat ventre ! »)</li>
+            <li><strong>DI :</strong> entièrement rhématique — l'ordre est l'information totale ; le thème (les athlètes) est présupposé</li>
+            <li><strong>Effet :</strong> la brièveté extrême mime la brutalité du commandement</li>
+            <li><em>Mémo : Existentiel ≠ Injonctif. "Il y a des athlètes." ≠ "À plat ventre !"</em></li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="corr-box">
-      <span class="lbl">Commentaires du correcteur</span>
-      <ul>
-        <li>Confusion : « verbes au subjonctif » — ce sont des <em>infinitifs</em> (1re partie) et des <em>impératifs</em> (2e partie), pas du subjonctif.</li>
-        <li>Commentaire sur le contexte : « Mais il y a le contexte du texte du livre ! »</li>
-        <li>La confusion thème / rhème est récurrente.</li>
-      </ul>
-      <p><strong>Note Q.2c : 1</strong></p>
-    </div>
-    <div class="model-box">
-      <span class="lbl">Ce qu'il fallait écrire</span>
-      <p><strong>Progression en deux temps :</strong></p>
-      <ul>
-        <li><strong>1re partie (infinitifs) :</strong> distance narrative, impersonnel → on décrit les épreuves sans s'adresser à quelqu'un. Phrases ternaires, rythme ample.</li>
-        <li><strong>2e partie (impératifs) :</strong> interpellation directe brutale → "Courez ! Rampez !" Les corps sont commandés à la 2e personne. Phrases ultra-courtes, parfois un seul mot.</li>
-      </ul>
-      <p><strong>Progression formelle :</strong> phrases longues → phrases courtes → mots seuls → dégradation de la syntaxe parallèle à la dégradation humaine.</p>
-      <p><strong>Dégradation sémantique :</strong> courir (sport) → ramper (animal) → "à plat ventre" (soumission totale) → les Jeux olympiques deviennent camp de concentration.</p>
-      <p><strong>DI :</strong> absence systématique de thème nominal → les êtres humains disparaissent syntaxiquement ; seules les actions (rhèmes) existent.</p>
+
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(c)</span>
+        <span class="subq-text">Commentez la progression du passage dans son ensemble.</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li><strong>Progression thématique</strong> — <a href="polycop_cours.html">Cours → DI</a></li>
+            <li>Observer : modes verbaux (infinitif vs impératif), longueur des phrases, présence/absence de sujet</li>
+            <li>Dégradation sémantique : du sport vers la soumission totale</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>1re partie (infinitifs) :</strong> distance narrative, impersonnel → description des épreuves. Rythme ternaire ample.</li>
+            <li><strong>2e partie (impératifs) :</strong> interpellation directe brutale — "Courez ! Rampez !" Phrases ultra-courtes, parfois un seul mot.</li>
+            <li><strong>Progression formelle :</strong> phrases longues → courtes → mots seuls → dégradation de la syntaxe parallèle à la dégradation humaine</li>
+            <li><strong>Dégradation sémantique :</strong> courir (sport) → ramper (animal) → "à plat ventre" (soumission) → les Jeux deviennent camp de concentration</li>
+            <li><strong>DI :</strong> absence systématique de thème nominal → les êtres humains disparaissent syntaxiquement ; seules les actions (rhèmes) existent</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -736,6 +827,13 @@ h3.q-head:hover{background:var(--glass-hover)}
 
 <script src="notes.js"></script>
 <script>
+function subToggle(btn,type){
+  var block=btn.closest('.subq-block');
+  var panel=block.querySelector('.subq-'+type);
+  var isOpen=panel.style.display==='block';
+  panel.style.display=isOpen?'none':'block';
+  btn.classList.toggle('open',!isOpen);
+}
 function showTest(n){
   document.querySelectorAll('.test-panel').forEach(function(p){p.classList.remove('active');});
   document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});
