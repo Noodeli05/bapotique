@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260719');}());</script><title>Révision Linguistique Française — UNIL 2025</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet"><style>
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260717c');}());</script><title>Révision Linguistique Française — UNIL 2025</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet"><style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap');
 
 /* ── VARIABLES ─────────────────────────────────────────────────────────── */
@@ -1514,11 +1514,11 @@ function initAccordion(tc){
     g.h3.parentNode.insertBefore(wrap,g.children[0]);
     g.children.forEach(function(c){wrap.appendChild(c);});
     var arrow=document.createElement('span');
-    arrow.className='acc-arr';arrow.textContent='▾';
+    arrow.className='acc-arr';arrow.textContent='▸';
     g.h3.prepend(arrow);
     g.h3.classList.add('acc-head');
-    var open=true;
-    wrap.style.cssText='overflow:hidden;max-height:none;opacity:1;transition:max-height .35s ease,opacity .3s ease';
+    var open=false;
+    wrap.style.cssText='overflow:hidden;max-height:0;opacity:0;transition:max-height .35s ease,opacity .3s ease';
     g.h3.addEventListener('click',function(){
       open=!open;
       if(!open){
