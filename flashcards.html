@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260716');}());</script>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260717');}());</script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Flashcards — Linguistique UNIL 2025</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -413,6 +413,8 @@ const state = {
   },
   favorites: new Set(_loadSaved(LS_FAV, '[]')),
 };
+
+const _SM2_KEY = 'bap_sm2', _BAP_LOG = 'bap_log', _BAP_STK = 'bap_streak', _SM2_MODE = 'bap_sm2_mode';
 
 function saveStudyState() {
   const card = state.filtered[state.index];
@@ -881,7 +883,6 @@ if (location.hash.startsWith('#card-')) {
 }
 
 // ─── SM-2 Répétition espacée ─────────────────────────────────────────────────
-const _SM2_KEY = 'bap_sm2', _BAP_LOG = 'bap_log', _BAP_STK = 'bap_streak', _SM2_MODE = 'bap_sm2_mode';
 (function(){ if(state.sm2Mode) document.getElementById('btn-sm2').classList.add('active'); })();
 
 function _sm2Data() { return JSON.parse(localStorage.getItem(_SM2_KEY)||'{}'); }
