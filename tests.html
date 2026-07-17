@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="fr"><head>
 <meta charset="UTF-8">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache">
-<script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260717j');}());</script>
+<script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260717m');}());</script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Tests de validation — Linguistique UNIL 2025</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -137,6 +137,19 @@ h3.q-head:hover{background:var(--glass-hover)}
 .err-tag{display:inline-block;font-size:.7rem;font-weight:700;text-transform:uppercase;padding:.1rem .45rem;border-radius:4px;margin-right:.3rem;vertical-align:middle}
 .err-red{background:rgba(240,184,196,0.18);color:var(--rose)}
 .err-ok{background:rgba(168,216,196,0.18);color:var(--mint)}
+
+/* ── POSTER CARDS (Q.2 Oct) ── */
+.poster-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.65rem;margin:.7rem 0}
+.poster-card{background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:var(--r-sm);padding:.75rem .8rem;text-align:center;display:flex;flex-direction:column;align-items:center;gap:.25rem}
+.poster-brand{font-weight:900;font-size:1.05rem;letter-spacing:.04em;color:var(--tx);line-height:1.15}
+.poster-slogan{font-size:.73rem;color:var(--tx-muted);font-style:italic}
+.poster-lexeme{display:inline-block;font-size:.8rem;font-weight:700;padding:.15rem .5rem;border-radius:4px;margin-top:.2rem}
+.poster-lexeme-lav{background:var(--lav-bg);color:var(--lav)}
+.poster-lexeme-mint{background:var(--mint-bg);color:var(--mint)}
+.poster-lexeme-sky{background:var(--sky-bg);color:var(--sky)}
+.poster-lexeme-rose{background:var(--rose-bg);color:var(--rose)}
+[data-theme="light"] .poster-card{background:rgba(120,100,180,0.05)}
+@media(max-width:480px){.poster-grid{grid-template-columns:1fr}}
 .section-title{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--tx-faint);margin:1.4rem 0 .6rem;padding-bottom:.3rem;border-bottom:1px solid var(--border)}
 
 /* ── BILAN ERREURS ── */
@@ -217,10 +230,18 @@ h3.q-head:hover{background:var(--glass-hover)}
 
     <div class="elena-box">
       <span class="lbl">Réponse d'Elena</span>
-      <p><strong>Standard :</strong> « S'il avait demandé quelque chose, il l'aurait eu ! »<br>
-      « Peut-être qu'il aurait aimé que tu prennes toi-même les initiatives… Quand ils font rien, des fois, c'est à toi de te débrouiller. »</p>
-      <p><strong>Transcription standard :</strong> <span class="ipa">[silaved(ə)mâde kElkə∫oziloʀety]</span></p>
-      <p><strong>Transcription joual :</strong> <span class="ipa">[sijaved(ə)mâdekerfozilaʀety]</span></p>
+      <p><strong>Standard :</strong> « Si il avait demandé quelque chose, il l'aurait eu ! »<br>
+      « Quand ils font rien, des fois, c'est à toi de te débrouiller. »</p>
+      <p><strong>Transcription standard (1re réplique) :</strong><br>
+      <span class="ipa">[silaved(ə)mãdekɛlkəʃozilloʁɛty]</span></p>
+      <p><strong>Transcription standard (2e réplique) :</strong><br>
+      <span class="ipa">[defwɑsɛtatwɑdɔt(ə)debʁuje]</span><br>
+      <span style="font-size:.78rem;color:var(--rose);font-style:italic">→ correcteur : « il manque un bout » −0,25</span></p>
+      <p><strong>Transcription joual (1re réplique) :</strong><br>
+      <span class="ipa">[sijaved(ə)kɛfsozilaʁɛty]</span></p>
+      <p><strong>Transcription joual (2e réplique) :</strong><br>
+      <span class="ipa">[pɔtɛtR(ə)kijaʁɛtemɛsɑk(ə)typʁɛn(ə)twɑmɛm(ə)ʁezinisjatvʁɛiʃɑ̃ɛ̃]</span><br>
+      <span class="ipa">[defwɑstatwe dɔt(ə)debʁuje]</span></p>
     </div>
     <div class="corr-box">
       <span class="lbl">Commentaires du correcteur</span>
@@ -315,8 +336,34 @@ h3.q-head:hover{background:var(--glass-hover)}
   </h3>
   <div class="q-wrap">
     <div class="source-box">
-      <span class="lbl">Texte support</span>
-      <p>Quatre affiches publicitaires avec des créations lexicales : <strong>« sublimitude »</strong>, <strong>« découvrire »</strong>, <strong>« savoir-voyager »</strong>, <strong>« beau »</strong> (dans « Vivre le beau »).</p>
+      <span class="lbl">Support — 4 affiches publicitaires</span>
+      <p style="font-size:.82rem;color:var(--tx-muted);margin-bottom:.6rem">Quatre affiches de publicité ou de communication publique comportant des créations lexicales :</p>
+      <div class="poster-grid">
+        <div class="poster-card">
+          <div class="poster-brand" style="font-size:.72rem;letter-spacing:.1em;color:var(--tx-muted)">LA REDOUTE INTÉRIEURS</div>
+          <div class="poster-brand" style="font-size:1.4rem;color:var(--lav)">LARE</div>
+          <div class="poster-slogan">« Plus belle la nuit. » · Parure de lit</div>
+          <div class="poster-slogan" style="font-size:.85rem;font-style:normal;color:var(--tx)">Vivre le <em>beau</em>.</div>
+          <span class="poster-lexeme poster-lexeme-lav">→ « le beau » (Adj → N)</span>
+        </div>
+        <div class="poster-card">
+          <div class="poster-brand" style="letter-spacing:.15em;font-size:.9rem">SEPHORA</div>
+          <div class="poster-brand" style="font-size:1.3rem">SUBLIMITUDE</div>
+          <div class="poster-slogan">Campagne parfum</div>
+          <span class="poster-lexeme poster-lexeme-sky">→ « sublimitude »</span>
+        </div>
+        <div class="poster-card">
+          <div class="poster-brand" style="font-size:.85rem">Règles du</div>
+          <div class="poster-brand">savoir-voyager</div>
+          <div class="poster-slogan">Guide pratique de voyage</div>
+          <span class="poster-lexeme poster-lexeme-mint">→ « savoir-voyager »</span>
+        </div>
+        <div class="poster-card">
+          <div class="poster-brand">Découv<span style="color:var(--rose)">Rire</span></div>
+          <div class="poster-slogan">Festival d'humour · Dossonay<br>26–27 sept. 2025</div>
+          <span class="poster-lexeme poster-lexeme-rose">→ « découvRire »</span>
+        </div>
+      </div>
     </div>
 
     <p class="section-title">Q.2a — Mode de construction des lexèmes (8 pts)</p>
@@ -392,7 +439,7 @@ h3.q-head:hover{background:var(--glass-hover)}
   <h3 class="q-head" onclick="qToggle(this)">
     <span class="acc-arr">▸</span>
     Q.1 — Syntaxe et DI : Cendrars, <em>L'homme foudroyé</em>
-    <span class="q-score">~4 / 10</span>
+    <span class="q-score">~3 / 10</span>
   </h3>
   <div class="q-wrap">
     <div class="source-box">
@@ -513,7 +560,7 @@ h3.q-head:hover{background:var(--glass-hover)}
   <h3 class="q-head" onclick="qToggle(this)">
     <span class="acc-arr">▸</span>
     Q.2 — Syntaxe et DI : Perec, <em>W ou le souvenir d'enfance</em>
-    <span class="q-score">~3,5 / 10</span>
+    <span class="q-score">~4,5 / 10</span>
   </h3>
   <div class="q-wrap">
     <div class="source-box">
@@ -535,7 +582,7 @@ h3.q-head:hover{background:var(--glass-hover)}
         <li>Manque de précision sur la <em>progression</em> informationnelle (thème/rhème).</li>
         <li>Le terme "instrument" est inexact : l'infinitif n'a pas de valeur instrumentale ici.</li>
       </ul>
-      <p><strong>Note Q.2a : ~2 / 3 (partiellement juste)</strong></p>
+      <p><strong>Note Q.2a : ~3 / 5 (partiellement juste)</strong></p>
     </div>
     <div class="model-box">
       <span class="lbl">Ce qu'il fallait écrire</span>
@@ -560,7 +607,7 @@ h3.q-head:hover{background:var(--glass-hover)}
         <li><strong>Erreur terminologique :</strong> ce n'est PAS une clause existentielle. L'existentiel, c'est "il y a + GN".</li>
         <li>La clause averbale injonctive est une construction à part.</li>
       </ul>
-      <p><strong>Note Q.2b : 1,5</strong></p>
+      <p><strong>Note Q.2b : 0,5</strong></p>
     </div>
     <div class="model-box">
       <span class="lbl">Ce qu'il fallait écrire</span>
