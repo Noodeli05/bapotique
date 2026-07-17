@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260719');}());</script>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260717h');}());</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ressources Linguistique UNIL 2025</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1145,6 +1145,12 @@ document.addEventListener('DOMContentLoaded', function() {
     var first = document.querySelector('.tnav-btn');
     if (first) showTab(first.dataset.tab);
   }
+  // Collapse all subsections by default
+  document.querySelectorAll('.r-h2').forEach(function(h){
+    h.classList.add('collapsed');
+    var body=h.nextElementSibling;
+    if(body&&body.classList.contains('r-sec-body'))body.classList.add('hidden');
+  });
 });
 
 document.addEventListener('keydown', e => {
