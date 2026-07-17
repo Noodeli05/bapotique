@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260719');})();</script>
+<script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260717q');})();</script>
 <title>Polycopié de cours — Linguistique UNIL 2025</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -441,6 +441,32 @@ input,textarea,select{font-size:max(16px,1em)!important}
 </div>
 <script>
 
+// Chapter accordion
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('.chapter').forEach(function(ch){
+    var h2=ch.querySelector('.ch-title');
+    var sub=ch.querySelector('.ch-sub');
+    if(!h2)return;
+    var body=document.createElement('div');
+    body.className='ch-body';
+    body.style.cssText='display:none;overflow:hidden';
+    var pivot=sub||h2;
+    var nodes=[];var n=pivot.nextSibling;
+    while(n){nodes.push(n);n=n.nextSibling;}
+    nodes.forEach(function(nd){body.appendChild(nd);});
+    ch.appendChild(body);
+    var arr=document.createElement('span');
+    arr.textContent='▸';
+    arr.style.cssText='margin-right:.45rem;color:var(--lav);font-size:.75em;display:inline-block;transition:transform .25s;vertical-align:middle;line-height:1';
+    h2.insertBefore(arr,h2.firstChild);
+    h2.style.cursor='pointer';h2.style.userSelect='none';
+    h2.addEventListener('click',function(){
+      var open=body.style.display==='block';
+      body.style.display=open?'none':'block';
+      arr.style.transform=open?'':'rotate(90deg)';
+    });
+  });
+});
 function flipCard(c){c.classList.toggle('flipped')}
 function revAns(btn){
   var a=btn.nextElementSibling;
