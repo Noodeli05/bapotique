@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260717f');}());</script><title>Révision Linguistique Française — UNIL 2025</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet"><style>
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260717g');}());</script><title>Révision Linguistique Française — UNIL 2025</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet"><style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap');
 
 /* ── VARIABLES ─────────────────────────────────────────────────────────── */
@@ -1559,6 +1559,9 @@ function revAns(btn){var b=btn.nextElementSibling;if(b){b.classList.toggle('show
 function revAllQ(sec){sec.querySelectorAll('.ablk,.exo-ans').forEach(b=>b.classList.add('show'));sec.querySelectorAll('.btn-rev').forEach(b=>b.textContent='Masquer');}
 document.getElementById('menu-tog').addEventListener('click',function(){document.getElementById('sidebar').classList.toggle('open');});
 showDos(0);
+// Pre-initialize accordion for EVERY dossier's first (theory) tab so they're
+// collapsed on first visit, not just D0
+document.querySelectorAll('.dossier').forEach(function(d){var tc=d.querySelector('.tab-content');if(tc)initAccordion(tc);});
 // Inject draft textarea before every answer-reveal button (exercises + tests blancs)
 document.querySelectorAll('.btn-rev').forEach(function(btn){
   var prev=btn.previousElementSibling;
