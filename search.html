@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260716');}());</script>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260719');}());</script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Recherche — Linguistique UNIL 2025</title>
 <link rel="manifest" href="manifest.json"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js");</script>
@@ -91,11 +91,14 @@ mark{background:rgba(200,184,240,0.28);color:var(--lav);border-radius:3px;paddin
   .rc-front{font-size:.88rem}
 }
 .site-header h1 a,.site-header h1 a:visited{color:inherit;text-decoration:none}.site-header h1 a:hover{opacity:.8}
+.ic{width:1em;height:1em;vertical-align:-.15em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;display:inline-block;overflow:visible}
+.ic-fill{fill:currentColor;stroke:none}
 </style>
 </head>
 <body>
+<script src="icons.js"></script>
 <header class="site-header">
-  <h1><a href="index.html">🔍 Recherche</a></h1>
+  <h1><a href="index.html"><svg class="ic"><use href="#i-search"/></svg> Recherche</a></h1>
   <nav class="nav-links">
     <a href="index.html">Accueil</a>
     <a href="revision_complet.html">Révision</a>
@@ -106,23 +109,23 @@ mark{background:rgba(200,184,240,0.28);color:var(--lav);border-radius:3px;paddin
     <a href="stats.html">Progression</a>
     <a href="search.html" class="active">Recherche</a>
   </nav>
-  <button class="btn-icon" id="theme-toggle" title="Changer le thème">🌙</button>
+  <button class="btn-icon" id="theme-toggle" title="Changer le thème"><svg class="ic"><use href="#i-moon"/></svg></button>
 </header>
 
 <main>
   <h2>Recherche globale</h2>
 
   <div id="no-cache" class="no-cache" style="display:none">
-    <div class="no-cache-icon">📚</div>
+    <div class="no-cache-icon"><svg class="ic"><use href="#i-book-open"/></svg></div>
     <p>Les données des flashcards ne sont pas encore disponibles.<br>Visitez d'abord la page Flashcards pour les charger.</p>
     <a href="flashcards.html" class="btn-go">Aller aux Flashcards →</a>
   </div>
 
   <div id="search-area" style="display:none">
     <div class="search-wrap">
-      <span class="search-icon">🔍</span>
+      <span class="search-icon"><svg class="ic"><use href="#i-search"/></svg></span>
       <input class="search-input" id="q" type="search" placeholder="Rechercher un terme, une définition, un chapitre…" autocomplete="off" autocorrect="off" spellcheck="false">
-      <button class="search-clear" id="clear-btn" onclick="clearSearch()" title="Effacer">✕</button>
+      <button class="search-clear" id="clear-btn" onclick="clearSearch()" title="Effacer"><svg class="ic"><use href="#i-x"/></svg></button>
     </div>
     <div class="filter-row" id="filter-row"></div>
     <div class="results-header" id="res-header"></div>
@@ -135,12 +138,12 @@ mark{background:rgba(200,184,240,0.28);color:var(--lav);border-radius:3px;paddin
 (function(){
   const t=localStorage.getItem('fc_theme')||'dark';
   document.documentElement.setAttribute('data-theme',t);
-  document.getElementById('theme-toggle').textContent=t==='dark'?'🌙':'☀️';
+  document.getElementById('theme-toggle').innerHTML=t==='dark'?'<svg class="ic"><use href="#i-moon"/></svg>':'<svg class="ic"><use href="#i-sun"/></svg>';
 })();
 document.getElementById('theme-toggle').onclick=function(){
   const t=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';
   document.documentElement.setAttribute('data-theme',t);
-  this.textContent=t==='dark'?'🌙':'☀️';
+  this.innerHTML=t==='dark'?'<svg class="ic"><use href="#i-moon"/></svg>':'<svg class="ic"><use href="#i-sun"/></svg>';
   localStorage.setItem('fc_theme',t);
 };
 
@@ -230,7 +233,7 @@ function doSearch() {
     : '';
 
   if (!hits.length) {
-    res.innerHTML = `<div class="empty"><div class="empty-icon">🔍</div><p>Aucun résultat pour « ${esc(q)} ».<br>Essayez un autre terme.</p></div>`;
+    res.innerHTML = `<div class="empty"><div class="empty-icon"><svg class="ic"><use href="#i-search"/></svg></div><p>Aucun résultat pour « ${esc(q)} ».<br>Essayez un autre terme.</p></div>`;
     return;
   }
 
@@ -250,7 +253,7 @@ function clearSearch() {
   document.getElementById('res-header').textContent = '';
   document.getElementById('results').innerHTML = '';
   document.getElementById('q').focus();
-  history.replaceState(null, '', location.pathname + '?v=20260716');
+  history.replaceState(null, '', location.pathname + '?v=20260719');
 }
 
 document.getElementById('q').addEventListener('input', function() {

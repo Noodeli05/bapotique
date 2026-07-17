@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260716');}());</script>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260719');}());</script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Progression — Linguistique UNIL 2025</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -282,9 +282,12 @@ footer strong{color:#c8b8f0}
   .stat-num{font-size:1.55rem}
 }
 .site-header h1 a,.site-header h1 a:visited{color:inherit;text-decoration:none}.site-header h1 a:hover{opacity:.8}
+.ic{width:1em;height:1em;vertical-align:-.15em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;display:inline-block;overflow:visible}
+.ic-fill{fill:currentColor;stroke:none}
 </style>
 <link rel="manifest" href="manifest.json"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js");</script></head>
 <body>
+<script src="icons.js"></script>
 
 <div id="tooltip"></div>
 
@@ -300,7 +303,7 @@ footer strong{color:#c8b8f0}
     <a href="examen.html">Examen</a>
     <a href="search.html">Recherche</a>
   </nav>
-  <button class="btn-icon" id="btn-theme" onclick="toggleTheme()" title="Changer le thème">🌙</button>
+  <button class="btn-icon" id="btn-theme" onclick="toggleTheme()" title="Changer le thème"><svg class="ic"><use href="#i-moon"/></svg></button>
 </header>
 
 <main class="page-main">
@@ -319,25 +322,25 @@ footer strong{color:#c8b8f0}
   <!-- ── Stat tiles ── -->
   <div class="stat-grid">
     <div class="stat-tile st-fire">
-      <div class="stat-icon">🔥</div>
+      <div class="stat-icon"><svg class="ic"><use href="#i-flame"/></svg></div>
       <div class="stat-num" id="st-streak">—</div>
       <div class="stat-label">Série actuelle</div>
       <div class="stat-sub" id="st-streak-sub"></div>
     </div>
     <div class="stat-tile st-study">
-      <div class="stat-icon">📚</div>
+      <div class="stat-icon"><svg class="ic"><use href="#i-book-open"/></svg></div>
       <div class="stat-num" id="st-studied">—</div>
       <div class="stat-label">Révisées</div>
       <div class="stat-sub" id="st-studied-sub"></div>
     </div>
     <div class="stat-tile st-master">
-      <div class="stat-icon">✅</div>
+      <div class="stat-icon"><svg class="ic"><use href="#i-check-circle"/></svg></div>
       <div class="stat-num" id="st-mastered">—</div>
       <div class="stat-label">Maîtrisées</div>
       <div class="stat-sub" id="st-mastered-sub"></div>
     </div>
     <div class="stat-tile st-due">
-      <div class="stat-icon">📅</div>
+      <div class="stat-icon"><svg class="ic"><use href="#i-calendar"/></svg></div>
       <div class="stat-num" id="st-due">—</div>
       <div class="stat-label">À réviser</div>
       <div class="stat-sub" id="st-due-sub"></div>
@@ -408,7 +411,7 @@ const LS_THEME  = 'stats_theme';
   const s = localStorage.getItem(LS_THEME);
   if (s) {
     document.documentElement.setAttribute('data-theme', s);
-    document.getElementById('btn-theme').textContent = s === 'light' ? '🌙' : '☀️';
+    document.getElementById('btn-theme').innerHTML = s === 'light' ? '<svg class="ic"><use href="#i-moon"/></svg>' : '<svg class="ic"><use href="#i-sun"/></svg>';
   }
 })();
 
@@ -417,7 +420,7 @@ function toggleTheme(){
   const next = cur === 'light' ? 'dark' : 'light';
   document.documentElement.setAttribute('data-theme', next);
   localStorage.setItem(LS_THEME, next);
-  document.getElementById('btn-theme').textContent = next === 'light' ? '🌙' : '☀️';
+  document.getElementById('btn-theme').innerHTML = next === 'light' ? '<svg class="ic"><use href="#i-moon"/></svg>' : '<svg class="ic"><use href="#i-sun"/></svg>';
   if (window._chartDays) drawChart(window._chartDays);
 }
 
@@ -768,7 +771,7 @@ function renderMaturity(sm2){
 /* ── Empty state ── */
 function emptyHTML(msg){
   return `<div class="empty">
-    <div class="empty-icon">📊</div>
+    <div class="empty-icon"><svg class="ic" style="width:2rem;height:2rem"><use href="#i-bar-chart"/></svg></div>
     <div class="empty-title">Pas encore de données</div>
     <p class="empty-body">${msg}</p>
   </div>`;

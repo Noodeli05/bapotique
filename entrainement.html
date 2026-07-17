@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260716');}());</script>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260719');}());</script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Entraînement — Linguistique UNIL 2025</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -179,12 +179,15 @@ input, textarea, select { font-size: max(16px, 1em) !important; }
 .swipe-hint{font-size:.68rem;color:rgba(232,228,240,.3);text-align:center;margin-top:.3rem;display:none}
 @media(max-width:720px){.swipe-hint{display:block}}
 .site-header h1 a,.site-header h1 a:visited{color:inherit;text-decoration:none}.site-header h1 a:hover{opacity:.8}
+.ic{width:1em;height:1em;vertical-align:-.15em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;display:inline-block;overflow:visible}
+.ic-fill{fill:currentColor;stroke:none}
 </style>
 <link rel="manifest" href="manifest.json"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js");</script></head>
 <body>
+<script src="icons.js"></script>
 <canvas id="confetti-canvas"></canvas>
 <header class="site-header">
-  <h1><a href="index.html">🎯 Entraînement — Linguistique UNIL 2025</a></h1>
+  <h1><a href="index.html"><svg class="ic"><use href="#i-target"/></svg> Entraînement — Linguistique UNIL 2025</a></h1>
   <nav class="nav-links">
     <a href="index.html">Accueil</a>
     <a href="revision_complet.html">Révision</a>
@@ -194,21 +197,21 @@ input, textarea, select { font-size: max(16px, 1em) !important; }
     <a href="examen.html">Examen</a>
     <a href="search.html">Recherche</a>
     <a href="stats.html">Progression</a>
-    <a href="entrainement_all.html" style="background:rgba(255,140,66,.18);color:#fff;font-weight:700">📋 Toutes les cartes</a>
+    <a href="entrainement_all.html" style="background:rgba(255,140,66,.18);color:#fff;font-weight:700"><svg class="ic"><use href="#i-clipboard"/></svg> Toutes les cartes</a>
   </nav>
-  <button class="btn-icon" id="btn-theme" title="Thème">🌙</button>
-  <button class="btn-icon" id="btn-sc" title="Raccourcis">⌨️</button>
+  <button class="btn-icon" id="btn-theme" title="Thème"><svg class="ic"><use href="#i-moon"/></svg></button>
+  <button class="btn-icon" id="btn-sc" title="Raccourcis"><svg class="ic"><use href="#i-settings"/></svg></button>
 </header>
-<div class="deck-picker"><button class="deck-tab" data-deck="all" onclick="switchAll()" id="tab-all">🗂️ <span class="dtl">Toutes</span><span class="dtc" id="tc-all"></span></button>
-<button class="deck-tab active" data-deck="0" onclick="switchDeck(0)">📝 <span class="dtl">Révision</span><span class="dtc" id="tc0"></span></button>
-<button class="deck-tab" data-deck="1" onclick="switchDeck(1)">✅ <span class="dtl">Corrigés TP</span><span class="dtc" id="tc1"></span></button>
-<button class="deck-tab" data-deck="2" onclick="switchDeck(2)">📖 <span class="dtl">Guide</span><span class="dtc" id="tc2"></span></button>
-<button class="deck-tab" data-deck="3" onclick="switchDeck(3)">🎓 <span class="dtl">Cours</span><span class="dtc" id="tc3"></span></button>
-<button class="deck-tab" data-deck="4" onclick="switchDeck(4)">📚 <span class="dtl">Polycopié</span><span class="dtc" id="tc4"></span></button>
-<button class="deck-tab" data-deck="5" onclick="switchDeck(5)">🏫 <span class="dtl">Séances</span><span class="dtc" id="tc5"></span></button>
-<button class="deck-tab" data-deck="6" onclick="switchDeck(6)">📊 <span class="dtl">Synthèse</span><span class="dtc" id="tc6"></span></button>
-<button class="deck-tab" data-deck="7" onclick="switchDeck(7)">🧑‍🏫 <span class="dtl">Résumé TP</span><span class="dtc" id="tc7"></span></button>
-<button class="deck-tab" data-deck="8" onclick="switchDeck(8)">🔬 <span class="dtl">TP Complet</span><span class="dtc" id="tc8"></span></button>
+<div class="deck-picker"><button class="deck-tab" data-deck="all" onclick="switchAll()" id="tab-all"><svg class="ic"><use href="#i-layers"/></svg> <span class="dtl">Toutes</span><span class="dtc" id="tc-all"></span></button>
+<button class="deck-tab active" data-deck="0" onclick="switchDeck(0)"><svg class="ic"><use href="#i-edit"/></svg> <span class="dtl">Révision</span><span class="dtc" id="tc0"></span></button>
+<button class="deck-tab" data-deck="1" onclick="switchDeck(1)"><svg class="ic"><use href="#i-check-circle"/></svg> <span class="dtl">Corrigés TP</span><span class="dtc" id="tc1"></span></button>
+<button class="deck-tab" data-deck="2" onclick="switchDeck(2)"><svg class="ic"><use href="#i-book-open"/></svg> <span class="dtl">Guide</span><span class="dtc" id="tc2"></span></button>
+<button class="deck-tab" data-deck="3" onclick="switchDeck(3)"><svg class="ic"><use href="#i-graduation-cap"/></svg> <span class="dtl">Cours</span><span class="dtc" id="tc3"></span></button>
+<button class="deck-tab" data-deck="4" onclick="switchDeck(4)"><svg class="ic"><use href="#i-book-open"/></svg> <span class="dtl">Polycopié</span><span class="dtc" id="tc4"></span></button>
+<button class="deck-tab" data-deck="5" onclick="switchDeck(5)"><svg class="ic"><use href="#i-book-open"/></svg> <span class="dtl">Séances</span><span class="dtc" id="tc5"></span></button>
+<button class="deck-tab" data-deck="6" onclick="switchDeck(6)"><svg class="ic"><use href="#i-bar-chart"/></svg> <span class="dtl">Synthèse</span><span class="dtc" id="tc6"></span></button>
+<button class="deck-tab" data-deck="7" onclick="switchDeck(7)"><svg class="ic"><use href="#i-book-open"/></svg> <span class="dtl">Résumé TP</span><span class="dtc" id="tc7"></span></button>
+<button class="deck-tab" data-deck="8" onclick="switchDeck(8)"><svg class="ic"><use href="#i-search"/></svg> <span class="dtl">TP Complet</span><span class="dtc" id="tc8"></span></button>
 </div>
 <div class="shortcuts-panel" id="sc-panel">
   <div class="sc-grid">
@@ -227,10 +230,10 @@ input, textarea, select { font-size: max(16px, 1em) !important; }
   <div class="sidebar-section">
     <div class="sidebar-label">Filtres</div>
     <div class="filter-group">
-      <button class="filter-btn active" data-f="all" onclick="applyFilter('all',this)">📚 Toutes<span class="cnt" id="cnt-all">0</span></button>
-      <button class="filter-btn" data-f="fav" onclick="applyFilter('fav',this)">⭐ Favoris<span class="cnt" id="cnt-fav">0</span></button>
-      <button class="filter-btn" data-f="review" onclick="applyFilter('review',this)">🔴 À revoir<span class="cnt" id="cnt-rv">0</span></button>
-      <button class="filter-btn" data-f="mastered" onclick="applyFilter('mastered',this)">🟢 Maîtrisées<span class="cnt" id="cnt-mk">0</span></button>
+      <button class="filter-btn active" data-f="all" onclick="applyFilter('all',this)"><svg class="ic"><use href="#i-book-open"/></svg> Toutes<span class="cnt" id="cnt-all">0</span></button>
+      <button class="filter-btn" data-f="fav" onclick="applyFilter('fav',this)"><svg class="ic ic-fill"><use href="#i-star"/></svg> Favoris<span class="cnt" id="cnt-fav">0</span></button>
+      <button class="filter-btn" data-f="review" onclick="applyFilter('review',this)"><svg class="ic"><use href="#i-x-circle"/></svg> À revoir<span class="cnt" id="cnt-rv">0</span></button>
+      <button class="filter-btn" data-f="mastered" onclick="applyFilter('mastered',this)"><svg class="ic"><use href="#i-check-circle"/></svg> Maîtrisées<span class="cnt" id="cnt-mk">0</span></button>
     </div>
   </div>
   <div class="sidebar-section">
@@ -250,30 +253,30 @@ input, textarea, select { font-size: max(16px, 1em) !important; }
   <div class="fc-progress"><div class="fc-progress-bar" id="fc-pbar" style="width:0%"></div></div>
   <div class="fc-counter" id="fc-ctr">Carte 0 / 0</div>
   <div class="fc-toolbar">
-    <button class="tool-btn" id="btn-sm2" onclick="toggleSM2E()">🧠 Mode Anki</button>
-    <button class="tool-btn" id="btn-shuf" onclick="toggleShuffle()">🔀 Mélanger</button>
-    <button class="tool-btn" id="btn-flash" onclick="toggleFlash()">⚡ Flash</button>
+    <button class="tool-btn" id="btn-sm2" onclick="toggleSM2E()"><svg class="ic"><use href="#i-repeat"/></svg> Mode Anki</button>
+    <button class="tool-btn" id="btn-shuf" onclick="toggleShuffle()"><svg class="ic"><use href="#i-shuffle"/></svg> Mélanger</button>
+    <button class="tool-btn" id="btn-flash" onclick="toggleFlash()"><svg class="ic"><use href="#i-zap"/></svg> Flash</button>
     <select class="speed-sel" id="flash-spd" onchange="setFlashSpeed(this.value)">
       <option value="3000">3s</option>
       <option value="5000" selected>5s</option>
       <option value="8000">8s</option>
       <option value="12000">12s</option>
     </select>
-    <button class="tool-btn" id="btn-test" onclick="startTest()">🧠 Test</button>
-    <button class="tool-btn" onclick="replayReview()">🔄 À revoir</button>
+    <button class="tool-btn" id="btn-test" onclick="startTest()"><svg class="ic"><use href="#i-repeat"/></svg> Test</button>
+    <button class="tool-btn" onclick="replayReview()"><svg class="ic"><use href="#i-refresh-cw"/></svg> À revoir</button>
   </div>
   <div class="card-wrap" id="card-wrap" onclick="flipCard()">
     <div class="card-inner" id="card-inner">
       <div class="card-face card-front">
         <div class="clabel">Question</div>
         <div class="ctext" id="cf-text">Chargement…</div>
-        <span class="card-fav" id="card-fav" onclick="event.stopPropagation();toggleFav()">☆</span>
-        <button class="tts-btn tts-card-btn" onclick="event.stopPropagation();_ttsId(this,'cf-text')" title="Écouter">🔊</button>
+        <span class="card-fav" id="card-fav" onclick="event.stopPropagation();toggleFav()"><svg class="ic"><use href="#i-star"/></svg></span>
+        <button class="tts-btn tts-card-btn" onclick="event.stopPropagation();_ttsId(this,'cf-text')" title="Écouter"><svg class="ic"><use href="#i-volume-2"/></svg></button>
       </div>
       <div class="card-face card-back">
         <div class="clabel">Réponse</div>
         <div class="ctext" id="cb-text"></div>
-        <button class="tts-btn tts-card-btn" onclick="event.stopPropagation();_ttsId(this,'cb-text')" title="Écouter">🔊</button>
+        <button class="tts-btn tts-card-btn" onclick="event.stopPropagation();_ttsId(this,'cb-text')" title="Écouter"><svg class="ic"><use href="#i-volume-2"/></svg></button>
       </div>
     </div>
   </div>
@@ -284,7 +287,7 @@ input, textarea, select { font-size: max(16px, 1em) !important; }
   <div class="fc-controls" id="fc-controls">
     <button class="btn-nav" id="btn-prev" onclick="prevCard()" disabled>‹</button>
     <button class="btn btn-know" onclick="markKnow()">✓ Je sais !</button>
-    <button class="btn btn-review" onclick="markReview()">✗ À revoir</button>
+    <button class="btn btn-review" onclick="markReview()"><svg class="ic"><use href="#i-x"/></svg> À revoir</button>
     <button class="btn-nav" id="btn-next" onclick="nextCard()">›</button>
   </div>
   <div class="test-area" id="test-area" style="display:none"></div>
@@ -330,7 +333,7 @@ function switchDeck(i){
   if(S&&S.testOn){ S.testOn=false; document.getElementById('test-area').style.display='none'; document.getElementById('card-wrap').style.display=''; document.getElementById('fc-controls').style.display=''; }
   ADI=i; deck=DECKS[i];
   document.querySelectorAll('.deck-tab').forEach(t=>t.classList.toggle('active',t.dataset.deck===String(i)));
-  document.getElementById('dk-title').textContent = deck.icon+' '+deck.label;
+  document.getElementById('dk-title').innerHTML = deck.icon+' '+deck.label;
   document.getElementById('dk-sub').textContent = deck.cards.length+' cartes · '+deck.sections.length+' sections';
   initS();
   buildPool();
@@ -370,7 +373,7 @@ function renderCard(){
     document.getElementById('card-sec').textContent='';
     document.getElementById('fc-ctr').textContent='0 / 0';
     document.getElementById('fc-pbar').style.width='0%';
-    document.getElementById('card-fav').textContent='☆';
+    document.getElementById('card-fav').innerHTML='<svg class="ic"><use href="#i-star"/></svg>';
     document.getElementById('card-fav').classList.remove('active');
     document.getElementById('btn-prev').disabled=true;
     document.getElementById('btn-next').disabled=true;
@@ -383,7 +386,7 @@ function renderCard(){
   document.getElementById('fc-ctr').textContent='Carte '+(S.idx+1)+' / '+cards.length;
   document.getElementById('fc-pbar').style.width=((S.idx+1)/cards.length*100)+'%';
   const isFav=S.favs.has(c.id);
-  document.getElementById('card-fav').textContent=isFav?'★':'☆';
+  document.getElementById('card-fav').innerHTML=isFav?'<svg class="ic ic-fill"><use href="#i-star"/></svg>':'<svg class="ic"><use href="#i-star"/></svg>';
   document.getElementById('card-fav').classList.toggle('active',isFav);
   document.getElementById('btn-prev').disabled=S.idx===0;
   document.getElementById('btn-next').disabled=S.idx===cards.length-1;
@@ -449,7 +452,7 @@ function toggleFav(){
   if(S.favs.has(c.id)) S.favs.delete(c.id); else S.favs.add(c.id);
   svSet('fav',S.favs);
   const el=document.getElementById('card-fav');
-  el.textContent=S.favs.has(c.id)?'★':'☆';
+  el.innerHTML=S.favs.has(c.id)?'<svg class="ic ic-fill"><use href="#i-star"/></svg>':'<svg class="ic"><use href="#i-star"/></svg>';
   el.classList.toggle('active',S.favs.has(c.id));
   updateCounts();
 }
@@ -486,11 +489,11 @@ function toggleFlash(){
   if(S.flashOn){
     clearInterval(S.flashTimer); S.flashOn=false;
     document.getElementById('btn-flash').classList.remove('active');
-    document.getElementById('btn-flash').textContent='⚡ Flash';
+    document.getElementById('btn-flash').innerHTML='<svg class="ic"><use href="#i-zap"/></svg> Flash';
   } else {
     S.flashOn=true;
     document.getElementById('btn-flash').classList.add('active');
-    document.getElementById('btn-flash').textContent='⏸ Flash';
+    document.getElementById('btn-flash').innerHTML='⏸ Flash';
     S.flashTimer=setInterval(()=>{
       if(S.flipped){
         S.flipped=false; document.getElementById('card-wrap').classList.remove('flipped');
@@ -528,9 +531,9 @@ function renderTQ(){
   const area=document.getElementById('test-area');
   if(S.testI>=S.testQs.length){
     const pct=Math.round(S.testScore/S.testQs.length*100);
-    area.innerHTML=`<div class="test-score">🎉 Score : ${S.testScore}/${S.testQs.length} (${pct}%)</div>
+    area.innerHTML=`<div class="test-score"><svg class="ic"><use href="#i-award"/></svg> Score : ${S.testScore}/${S.testQs.length} (${pct}%)</div>
       <div style="text-align:center;margin-top:1rem">
-        <button class="btn btn-know" onclick="S.testI=0;S.testScore=0;renderTQ()">🔄 Rejouer</button>
+        <button class="btn btn-know" onclick="S.testI=0;S.testScore=0;renderTQ()"><svg class="ic"><use href="#i-refresh-cw"/></svg> Rejouer</button>
         <button class="btn btn-secondary" style="margin-left:.5rem" onclick="startTest()">← Quitter</button>
       </div>`;
     if(pct===100) confetti();
@@ -621,7 +624,7 @@ function toggleTheme(){
   const next=document.documentElement.getAttribute('data-theme')==='light'?'dark':'light';
   document.documentElement.setAttribute('data-theme',next);
   localStorage.setItem('fcE_theme',next);
-  document.getElementById('btn-theme').textContent=next==='light'?'🌙':'☀️';
+  document.getElementById('btn-theme').innerHTML=next==='light'?'<svg class="ic"><use href="#i-moon"/></svg>':'<svg class="ic"><use href="#i-sun"/></svg>';
 }
 document.getElementById('btn-theme').addEventListener('click',toggleTheme);
 document.getElementById('btn-sc').addEventListener('click',()=>document.getElementById('sc-panel').classList.toggle('show'));
@@ -660,7 +663,7 @@ function switchAll(){
   });
   deck={id:'all',label:'Toutes les cartes',short:'Toutes',icon:'🗂️',cards:allCards,sections:allSections};
   document.querySelectorAll('.deck-tab').forEach(t=>t.classList.toggle('active',t.dataset.deck==='all'));
-  document.getElementById('dk-title').textContent='🗂️ Toutes les cartes';
+  document.getElementById('dk-title').innerHTML='<svg class="ic"><use href="#i-layers"/></svg> Toutes les cartes';
   document.getElementById('dk-sub').textContent=allCards.length+' cartes · '+allSections.length+' sections';
   initS();
   buildPool();
@@ -709,9 +712,9 @@ function _eUpdateSM2Info(c){
   if(!el||!c)return;
   if(!S||!S.sm2){el.textContent='';return;}
   var d=(_eData())[c.id];
-  if(!d||d.reps===0){el.textContent='✨ Nouvelle carte';return;}
+  if(!d||d.reps===0){el.innerHTML='<svg class="ic"><use href="#i-sparkles"/></svg> Nouvelle carte';return;}
   var days=Math.round((d.nextReview-Date.now())/86400000);
-  el.textContent=days<=0?'📅 À réviser aujourd\'hui':'⏱ Prochaine révision dans '+days+' jour'+(days>1?'s':'');
+  el.innerHTML=days<=0?'<svg class="ic"><use href="#i-calendar"/></svg> À réviser aujourd\'hui':'<svg class="ic"><use href="#i-clock"/></svg> Prochaine révision dans '+days+' jour'+(days>1?'s':'');
 }
 function toggleSM2E(){
   S.sm2=!S.sm2;

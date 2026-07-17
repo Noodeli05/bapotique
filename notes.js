@@ -41,21 +41,23 @@
   .bap-nsend:hover{background:rgba(200,184,240,.28)}
   .bap-empty{text-align:center;padding:1.5rem .5rem;font-size:.78rem;color:rgba(232,228,240,.35)}
   [data-theme="light"] .bap-empty{color:rgba(26,23,48,.35)}
+  .ic{width:1em;height:1em;vertical-align:-.15em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;display:inline-block;overflow:visible}
+  .ic-fill{fill:currentColor;stroke:none}
   `;
   document.head.appendChild(style);
 
   var fab=document.createElement('button');
   fab.className='bap-notes-fab';
   fab.title='Notes personnelles';
-  fab.innerHTML='📝<span class="bap-cnt" id="bap-cnt"></span>';
+  fab.innerHTML='<svg class="ic"><use href="#i-edit"/></svg><span class="bap-cnt" id="bap-cnt"></span>';
   document.body.appendChild(fab);
 
   var panel=document.createElement('div');
   panel.className='bap-notes-panel';
   panel.innerHTML=`
     <div class="bap-nhead">
-      <h4>📝 Notes</h4>
-      <button onclick="this.closest('.bap-notes-panel').classList.remove('open')" title="Fermer">✕</button>
+      <h4><svg class="ic"><use href="#i-edit"/></svg> Notes</h4>
+      <button onclick="this.closest('.bap-notes-panel').classList.remove('open')" title="Fermer"><svg class="ic"><use href="#i-x"/></svg></button>
     </div>
     <div class="bap-nlist" id="bap-nlist"></div>
     <div class="bap-nadd">
@@ -84,7 +86,7 @@
     list.innerHTML=notes.slice().reverse().map(function(n){
       return '<div class="bap-note" data-id="'+n.id+'">'
         +'<div class="bap-note-text">'+esc(n.text)+'</div>'
-        +'<div class="bap-note-meta"><span>'+fmtDate(n.ts)+'</span><button class="bap-note-del" onclick="bapDelNote(\''+n.id+'\')" title="Supprimer">🗑</button></div>'
+        +'<div class="bap-note-meta"><span>'+fmtDate(n.ts)+'</span><button class="bap-note-del" onclick="bapDelNote(\''+n.id+'\')" title="Supprimer"><svg class="ic"><use href="#i-trash"/></svg></button></div>'
         +'</div>';
     }).join('');
   }

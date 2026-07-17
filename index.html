@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260716');}());</script>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260719');}());</script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Linguistique Française — UNIL 2025</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -236,9 +236,14 @@ footer strong{color:var(--pr)}
 
 /* ── FOOTER ── */
 footer strong{color:var(--lav)}
+
+/* ── ICON SYSTEM ── */
+.ic{width:1em;height:1em;vertical-align:-.15em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;display:inline-block;overflow:visible}
+.ic-fill{fill:currentColor;stroke:none}
 </style>
 <link rel="manifest" href="manifest.json"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js");</script></head>
 <body>
+<script src="icons.js"></script>
 
 <nav class="topnav">
   <a class="topnav-brand" href="index.html">Linguistique Fr.</a>
@@ -253,7 +258,7 @@ footer strong{color:var(--lav)}
     <a href="polycop_cours.html">Polycopié cours</a>
     <a href="polycop_tp.html">Polycopié TP</a>
   </div>
-  <button class="btn-icon" id="themeBtn" onclick="toggleTheme()" title="Changer le thème">🌙</button>
+  <button class="btn-icon" id="themeBtn" onclick="toggleTheme()" title="Changer le thème"><svg class="ic"><use href="#i-moon"/></svg></button>
 </nav>
 
 <section class="hero">
@@ -262,8 +267,8 @@ footer strong{color:var(--lav)}
   <h1><span class="grad">Linguistique<br>Française</span></h1>
   <p class="hero-desc">Ton espace de révision complet pour le cours de linguistique française. Fiches structurées, flashcards interactives, entraînement par decks et ressources réunis au même endroit.</p>
   <div class="hero-cta">
-    <a href="revision_complet.html" class="btn-cta btn-cta-pr">📖 Commencer à réviser</a>
-    <a href="entrainement.html" class="btn-cta btn-cta-sec">🎯 S'entraîner</a>
+    <a href="revision_complet.html" class="btn-cta btn-cta-pr"><svg class="ic"><use href="#i-book-open"/></svg> Commencer à réviser</a>
+    <a href="entrainement.html" class="btn-cta btn-cta-sec"><svg class="ic"><use href="#i-target"/></svg> S'entraîner</a>
   </div>
 </section>
 
@@ -292,7 +297,7 @@ footer strong{color:var(--lav)}
 
     <a href="revision_complet.html" class="nav-card nc-purple">
       <div class="nc-head">
-        <div class="nc-icon">📖</div>
+        <div class="nc-icon"><svg class="ic"><use href="#i-book-open"/></svg></div>
         <div class="nc-text">
           <div class="nc-title">Révision Complète</div>
           <div class="nc-sub">Fiches de cours par dossier, tableaux de synthèse, exercices guidés, tests blancs et prédictions d'examen.</div>
@@ -310,7 +315,7 @@ footer strong{color:var(--lav)}
 
     <a href="flashcards.html" class="nav-card nc-cyan">
       <div class="nc-head">
-        <div class="nc-icon">🃏</div>
+        <div class="nc-icon"><svg class="ic"><use href="#i-layers"/></svg></div>
         <div class="nc-text">
           <div class="nc-title">Flashcards</div>
           <div class="nc-sub">448 cartes Q&amp;R à mémoriser avec retournement 3D, mode test, favoris et suivi de progression.</div>
@@ -328,7 +333,7 @@ footer strong{color:var(--lav)}
 
     <a href="entrainement.html" class="nav-card nc-amber">
       <div class="nc-head">
-        <div class="nc-icon">🎯</div>
+        <div class="nc-icon"><svg class="ic"><use href="#i-target"/></svg></div>
         <div class="nc-text">
           <div class="nc-title">Entraînement</div>
           <div class="nc-sub">9 decks thématiques avec 437+ cartes, mode flash minuté, confetti, stats de session et mastery tracking.</div>
@@ -345,7 +350,7 @@ footer strong{color:var(--lav)}
 
     <a href="ressources.html" class="nav-card nc-teal">
       <div class="nc-head">
-        <div class="nc-icon">📚</div>
+        <div class="nc-icon"><svg class="ic"><use href="#i-book-open"/></svg></div>
         <div class="nc-text">
           <div class="nc-title">Ressources</div>
           <div class="nc-sub">Documents de cours, bibliographie, outils linguistiques et liens utiles pour approfondir chaque notion.</div>
@@ -362,7 +367,7 @@ footer strong{color:var(--lav)}
 
     <a href="polycop_cours.html" class="nav-card nc-rose">
       <div class="nc-head">
-        <div class="nc-icon">📝</div>
+        <div class="nc-icon"><svg class="ic"><use href="#i-edit"/></svg></div>
         <div class="nc-text">
           <div class="nc-title">Polycopié de cours</div>
           <div class="nc-sub">Résumés chapitres simplifiés, flashcards, Q&amp;R, tableaux récap et exercices — expliqué comme si tu avais 10 ans.</div>
@@ -379,7 +384,7 @@ footer strong{color:var(--lav)}
 
     <a href="polycop_tp.html" class="nav-card nc-butter">
       <div class="nc-head">
-        <div class="nc-icon">🔬</div>
+        <div class="nc-icon"><svg class="ic"><use href="#i-search"/></svg></div>
         <div class="nc-text">
           <div class="nc-title">Polycopié TP</div>
           <div class="nc-sub">Tous les exercices de TP avec zones de brouillon, corrections détaillées et cases "En savoir plus" pour la théorie.</div>
@@ -396,7 +401,7 @@ footer strong{color:var(--lav)}
 
     <a href="examen.html" class="nav-card nc-sky">
       <div class="nc-head">
-        <div class="nc-icon">📝</div>
+        <div class="nc-icon"><svg class="ic"><use href="#i-edit"/></svg></div>
         <div class="nc-text">
           <div class="nc-title">Mode Examen</div>
           <div class="nc-sub">Simulation d'examen chronomètre : mode QCM ou cartes flash, score final et récap des erreurs.</div>
@@ -412,7 +417,7 @@ footer strong{color:var(--lav)}
 
     <a href="stats.html" class="nav-card nc-mint">
       <div class="nc-head">
-        <div class="nc-icon">📊</div>
+        <div class="nc-icon"><svg class="ic"><use href="#i-bar-chart"/></svg></div>
         <div class="nc-text">
           <div class="nc-title">Ma Progression</div>
           <div class="nc-sub">Tableau de bord : série quotidienne, calendrier des révisions, graphes d'évolution et avancement par chapitre.</div>
@@ -437,14 +442,14 @@ footer strong{color:var(--lav)}
 function toggleTheme(){
   const t=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';
   document.documentElement.setAttribute('data-theme',t);
-  document.getElementById('themeBtn').textContent=t==='dark'?'🌙':'☀️';
+  document.getElementById('themeBtn').innerHTML=t==='dark'?'<svg class="ic"><use href="#i-moon"/></svg>':'<svg class="ic"><use href="#i-sun"/></svg>';
   localStorage.setItem('idx_theme',t);
 }
 (function(){
   const t=localStorage.getItem('idx_theme')||'dark';
   document.documentElement.setAttribute('data-theme',t);
   const b=document.getElementById('themeBtn');
-  if(b) b.textContent=t==='dark'?'🌙':'☀️';
+  if(b) b.innerHTML=t==='dark'?'<svg class="ic"><use href="#i-moon"/></svg>':'<svg class="ic"><use href="#i-sun"/></svg>';
 })();
 </script>
 <script src="notes.js"></script></body>

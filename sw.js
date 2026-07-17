@@ -14,6 +14,7 @@ const ASSETS = [
   './stats.html',
   './examen.html',
   './search.html',
+  './icons.js',
   './notes.js',
   './manifest.json',
   './icon-192.png',

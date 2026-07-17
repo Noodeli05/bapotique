@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260716');})();</script>
+<script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260719');})();</script>
 <title>Polycopié de cours — Linguistique UNIL 2025</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -146,9 +146,12 @@ input,textarea,select{font-size:max(16px,1em)!important}
 /* TTS */
 .tts-btn{background:none;border:1px solid var(--bdr,rgba(255,255,255,.1));border-radius:6px;padding:.18rem .48rem;font-size:.78rem;cursor:pointer;color:var(--mu,rgba(232,228,240,.55));transition:all .15s;line-height:1.2;flex-shrink:0;user-select:none;vertical-align:middle;font-family:inherit}
 .tts-btn:hover,.tts-btn[data-s="1"]{background:var(--lav-bg,rgba(200,184,240,.1));color:var(--lav,#c8b8f0);border-color:var(--lav,#c8b8f0)}
+.ic{width:1em;height:1em;vertical-align:-.15em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;display:inline-block;overflow:visible}
+.ic-fill{fill:currentColor;stroke:none}
 </style>
 <link rel="manifest" href="manifest.json"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js");</script></head>
 <body>
+<script src="icons.js"></script>
 <nav class="topnav">
   <a class="topnav-brand" href="index.html">Linguistique Fr.</a>
   <div class="nav-links">
@@ -160,7 +163,7 @@ input,textarea,select{font-size:max(16px,1em)!important}
     <a href="search.html">Recherche</a>
     <a href="stats.html">Progression</a>
   </div>
-  <button class="theme-btn" id="thbtn" onclick="toggleTheme()">🌙</button>
+  <button class="theme-btn" id="thbtn" onclick="toggleTheme()"><svg class="ic"><use href="#i-moon"/></svg></button>
 </nav>
 <div class="page-wrap">
   <nav class="sidebar">
@@ -182,7 +185,7 @@ input,textarea,select{font-size:max(16px,1em)!important}
 
 <div class="mobile-toc">
   <button class="mobile-toc-btn" onclick="var l=document.getElementById('ctoc-list');l.classList.toggle('open');this.querySelector('.ctoc-arrow').textContent=l.classList.contains('open')?'▲':'▼'">
-    <span>📑 Table des matières</span>
+    <span><svg class="ic"><use href="#i-file-text"/></svg> Table des matières</span>
     <span class="ctoc-arrow">▼</span>
   </button>
   <div class="mobile-toc-list" id="ctoc-list">
@@ -448,7 +451,7 @@ function revAns(btn){
 function toggleTheme(){
   var t=document.documentElement.getAttribute('data-theme')==='light'?'dark':'light';
   document.documentElement.setAttribute('data-theme',t);
-  document.getElementById('thbtn').textContent=t==='light'?'☀️':'🌙';
+  document.getElementById('thbtn').innerHTML=t==='light'?'<svg class="ic"><use href="#i-sun"/></svg>':'<svg class="ic"><use href="#i-moon"/></svg>';
   try{localStorage.setItem('pc_theme',t)}catch(e){}
 }
 (function(){
@@ -456,7 +459,7 @@ function toggleTheme(){
   document.documentElement.setAttribute('data-theme',s);
   document.addEventListener('DOMContentLoaded',function(){
     var b=document.getElementById('thbtn');
-    if(b)b.textContent=s==='light'?'☀️':'🌙';
+    if(b)b.innerHTML=s==='light'?'<svg class="ic"><use href="#i-sun"/></svg>':'<svg class="ic"><use href="#i-moon"/></svg>';
     // Inject textareas before each btn-rev
     document.querySelectorAll('.btn-rev').forEach(function(btn){
       var p=btn.previousElementSibling;
@@ -484,7 +487,7 @@ function toggleTheme(){
 
 </script>
 <script>
-!function(){var syn=window.speechSynthesis,cur=null,cBtn=null;function stop(){if(syn)syn.cancel();if(cBtn){cBtn.textContent='🔊';cBtn.removeAttribute('data-s');}cur=null;cBtn=null;}function speak(txt,btn){var same=cBtn===btn;stop();if(same||!syn||!txt)return;var u=new SpeechSynthesisUtterance(txt);u.lang='fr-FR';u.rate=0.88;cur=u;cBtn=btn;if(btn){btn.textContent='⏹';btn.setAttribute('data-s','1');}u.onend=u.onerror=function(){if(cur===u)stop();};syn.speak(u);}window._ttsRead=function(btn,el){var cl=el.cloneNode(true);cl.querySelectorAll('.tts-btn,.corr-box,.savoir-box,.qa-ans,.fc-back,.tbl-wrap').forEach(function(x){x.remove();});speak(cl.innerText.trim(),btn);};window._ttsInject=function(sel,pos,sp){document.querySelectorAll(sel).forEach(function(el){if(el.querySelector('.tts-btn'))return;var btn=document.createElement('button');btn.className='tts-btn';btn.title='Écouter';btn.textContent='🔊';btn.addEventListener('click',function(e){if(sp)e.stopPropagation();window._ttsRead(btn,el);});if(pos==='start')el.insertBefore(btn,el.firstChild);else el.appendChild(btn);});};window.addEventListener('DOMContentLoaded',function(){_ttsInject_page();});}();
+!function(){var syn=window.speechSynthesis,cur=null,cBtn=null;var _icV2='<svg class="ic"><use href="#i-volume-2"/></svg>';function stop(){if(syn)syn.cancel();if(cBtn){cBtn.innerHTML=_icV2;cBtn.removeAttribute('data-s');}cur=null;cBtn=null;}function speak(txt,btn){var same=cBtn===btn;stop();if(same||!syn||!txt)return;var u=new SpeechSynthesisUtterance(txt);u.lang='fr-FR';u.rate=0.88;cur=u;cBtn=btn;if(btn){btn.innerHTML=_icV2;btn.setAttribute('data-s','1');}u.onend=u.onerror=function(){if(cur===u)stop();};syn.speak(u);}window._ttsRead=function(btn,el){var cl=el.cloneNode(true);cl.querySelectorAll('.tts-btn,.corr-box,.savoir-box,.qa-ans,.fc-back,.tbl-wrap').forEach(function(x){x.remove();});speak(cl.innerText.trim(),btn);};window._ttsInject=function(sel,pos,sp){document.querySelectorAll(sel).forEach(function(el){if(el.querySelector('.tts-btn'))return;var btn=document.createElement('button');btn.className='tts-btn';btn.title='Écouter';btn.innerHTML=_icV2;btn.addEventListener('click',function(e){if(sp)e.stopPropagation();window._ttsRead(btn,el);});if(pos==='start')el.insertBefore(btn,el.firstChild);else el.appendChild(btn);});};window.addEventListener('DOMContentLoaded',function(){_ttsInject_page();});}();
 </script>
 <script>
 function _ttsInject_page(){

@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260718');}());</script>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260719');}());</script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Flashcards — Linguistique UNIL 2025</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -200,6 +200,8 @@ body::before{
   .nav-links a{font-size:.72rem;padding:.22rem .45rem;white-space:nowrap}
 }
 
+.ic{width:1em;height:1em;vertical-align:-.15em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;display:inline-block;overflow:visible}
+.ic-fill{fill:currentColor;stroke:none}
 /* iOS auto-zoom prevention: keep all inputs >= 16px */
 input, textarea, select { font-size: max(16px, 1em) !important; }
 /* TTS */
@@ -215,10 +217,11 @@ input, textarea, select { font-size: max(16px, 1em) !important; }
 </style>
 <link rel="manifest" href="manifest.json"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js");</script></head>
 <body>
+<script src="icons.js"></script>
 
 <!-- Header -->
 <header class="site-header">
-  <h1><a href="index.html">🃏 Flashcards — Linguistique UNIL 2025</a></h1>
+  <h1><a href="index.html"><svg class="ic"><use href="#i-layers"/></svg> Flashcards — Linguistique UNIL 2025</a></h1>
   <nav class="nav-links">
     <a href="index.html">Accueil</a>
     <a href="revision_complet.html">Révision</a>
@@ -229,8 +232,8 @@ input, textarea, select { font-size: max(16px, 1em) !important; }
     <a href="search.html">Recherche</a>
     <a href="stats.html">Progression</a>
   </nav>
-  <button class="btn-icon" id="theme-toggle" title="Changer le thème">🌙</button>
-  <button class="btn-icon" id="shortcuts-toggle" title="Raccourcis clavier">⌨️</button>
+  <button class="btn-icon" id="theme-toggle" title="Changer le thème"><svg class="ic"><use href="#i-moon"/></svg></button>
+  <button class="btn-icon" id="shortcuts-toggle" title="Raccourcis clavier"><svg class="ic"><use href="#i-settings"/></svg></button>
 </header>
 
 <!-- Shortcuts panel -->
@@ -254,16 +257,16 @@ input, textarea, select { font-size: max(16px, 1em) !important; }
     <div class="sidebar-label">Filtres</div>
     <div class="filter-group" id="filter-group">
       <button class="filter-btn active" data-filter="all" onclick="applyFilter('all',this)">
-        📚 Toutes les cartes<span class="count" id="count-all">0</span>
+        <svg class="ic"><use href="#i-book-open"/></svg> Toutes les cartes<span class="count" id="count-all">0</span>
       </button>
       <button class="filter-btn" data-filter="fav" onclick="applyFilter('fav',this)">
-        ⭐ Favoris<span class="count" id="count-fav">0</span>
+        <svg class="ic ic-fill"><use href="#i-star"/></svg> Favoris<span class="count" id="count-fav">0</span>
       </button>
       <button class="filter-btn" data-filter="review" onclick="applyFilter('review',this)">
-        🔴 À revoir<span class="count" id="count-review">0</span>
+        <svg class="ic"><use href="#i-x-circle"/></svg> À revoir<span class="count" id="count-review">0</span>
       </button>
       <button class="filter-btn" data-filter="mastered" onclick="applyFilter('mastered',this)">
-        🟢 Maîtrisées<span class="count" id="count-mastered">0</span>
+        <svg class="ic"><use href="#i-check-circle"/></svg> Maîtrisées<span class="count" id="count-mastered">0</span>
       </button>
     </div>
   </div>
@@ -303,8 +306,8 @@ input, textarea, select { font-size: max(16px, 1em) !important; }
         </div>
       </div>
       <div style="display:flex;flex-direction:column;gap:.4rem;align-items:flex-end">
-        <button class="btn btn-secondary" onclick="replayReview()" style="font-size:.75rem">🔁 Revoir les ❌</button>
-        <button class="btn btn-secondary" onclick="resetSession()" style="font-size:.75rem">↺ Réinitialiser</button>
+        <button class="btn btn-secondary" onclick="replayReview()" style="font-size:.75rem"><svg class="ic"><use href="#i-repeat"/></svg> Revoir les <svg class="ic"><use href="#i-x-circle"/></svg></button>
+        <button class="btn btn-secondary" onclick="resetSession()" style="font-size:.75rem"><svg class="ic"><use href="#i-rotate-ccw"/></svg> Réinitialiser</button>
       </div>
     </div>
 
@@ -321,13 +324,13 @@ input, textarea, select { font-size: max(16px, 1em) !important; }
           <div class="card-label">Question</div>
           <div class="card-text" id="card-front-text">Chargement…</div>
           <div class="card-source" id="card-source"></div>
-          <span class="card-fav" id="card-fav" onclick="event.stopPropagation();toggleFav()" title="Favori (F)">☆</span>
-          <button class="tts-btn tts-card-btn" onclick="event.stopPropagation();_ttsId(this,'card-front-text')" title="Écouter">🔊</button>
+          <span class="card-fav" id="card-fav" onclick="event.stopPropagation();toggleFav()" title="Favori (F)"><svg class="ic"><use href="#i-star"/></svg></span>
+          <button class="tts-btn tts-card-btn" onclick="event.stopPropagation();_ttsId(this,'card-front-text')" title="Écouter"><svg class="ic"><use href="#i-volume-2"/></svg></button>
         </div>
         <div class="card-face card-back">
           <div class="card-label">Réponse</div>
           <div class="card-text" id="card-back-text"></div>
-          <button class="tts-btn tts-card-btn" onclick="event.stopPropagation();_ttsId(this,'card-back-text')" title="Écouter">🔊</button>
+          <button class="tts-btn tts-card-btn" onclick="event.stopPropagation();_ttsId(this,'card-back-text')" title="Écouter"><svg class="ic"><use href="#i-volume-2"/></svg></button>
         </div>
       </div>
     </div>
@@ -339,24 +342,24 @@ input, textarea, select { font-size: max(16px, 1em) !important; }
     <!-- Navigation -->
     <div class="fc-controls">
       <button class="btn-nav" id="btn-prev" onclick="prevCard()" title="Précédent (←)">‹</button>
-      <button class="btn btn-review" onclick="markReview()" title="À revoir (N)">🔴 À revoir</button>
-      <button class="btn btn-know" onclick="markKnow()" title="Je sais ! (S)">🟢 Je sais !</button>
+      <button class="btn btn-review" onclick="markReview()" title="À revoir (N)"><svg class="ic"><use href="#i-x-circle"/></svg> À revoir</button>
+      <button class="btn btn-know" onclick="markKnow()" title="Je sais ! (S)"><svg class="ic"><use href="#i-check-circle"/></svg> Je sais !</button>
       <button class="btn-nav" id="btn-next" onclick="nextCard()" title="Suivant (→)">›</button>
     </div>
 
     <!-- Toolbar -->
     <div class="fc-toolbar">
-      <button class="tool-btn" id="btn-sm2" onclick="toggleSM2()" title="Répétition espacée type Anki">🧠 Mode Anki</button>
-      <button class="tool-btn" id="btn-shuffle" onclick="toggleShuffle()" title="Mélanger (R)">🔀 Mélanger</button>
-      <button class="tool-btn" id="btn-flash" onclick="toggleFlash()" title="Mode flash">⚡ Flash</button>
+      <button class="tool-btn" id="btn-sm2" onclick="toggleSM2()" title="Répétition espacée type Anki"><svg class="ic"><use href="#i-repeat"/></svg> Mode Anki</button>
+      <button class="tool-btn" id="btn-shuffle" onclick="toggleShuffle()" title="Mélanger (R)"><svg class="ic"><use href="#i-shuffle"/></svg> Mélanger</button>
+      <button class="tool-btn" id="btn-flash" onclick="toggleFlash()" title="Mode flash"><svg class="ic"><use href="#i-zap"/></svg> Flash</button>
       <select class="speed-select" id="flash-speed" onchange="setFlashSpeed(this.value)">
         <option value="3000">3s</option>
         <option value="5000" selected>5s</option>
         <option value="8000">8s</option>
         <option value="12000">12s</option>
       </select>
-      <button class="tool-btn" id="btn-test" onclick="startTest()" title="Mode test (T)">📝 Tester</button>
-      <a href="all_cards.html" class="tool-btn" style="text-decoration:none">🗂️ Toutes les cartes</a>
+      <button class="tool-btn" id="btn-test" onclick="startTest()" title="Mode test (T)"><svg class="ic"><use href="#i-edit"/></svg> Tester</button>
+      <a href="all_cards.html" class="tool-btn" style="text-decoration:none"><svg class="ic"><use href="#i-layers"/></svg> Toutes les cartes</a>
     </div>
 
     <!-- Test area (hidden by default) -->
@@ -518,7 +521,7 @@ function renderCard() {
   if (state.flipped) wrap.classList.add('flipped'); else wrap.classList.remove('flipped');
   // fav star
   const favEl = document.getElementById('card-fav');
-  favEl.textContent = state.favorites.has(card.id) ? '★' : '☆';
+  favEl.innerHTML = state.favorites.has(card.id) ? '<svg class="ic ic-fill"><use href="#i-star"/></svg>' : '<svg class="ic"><use href="#i-star"/></svg>';
   favEl.classList.toggle('active', state.favorites.has(card.id));
   // prev/next buttons
   document.getElementById('btn-prev').disabled = state.index === 0;
@@ -709,7 +712,7 @@ function toggleFlash() {
     document.getElementById('flip-hint').textContent = 'Cliquez pour retourner · Espace';
   } else {
     document.getElementById('btn-flash').classList.add('active');
-    document.getElementById('flip-hint').textContent = `⚡ Flash mode actif (${state.flashSpeed / 1000}s)`;
+    document.getElementById('flip-hint').innerHTML = `<svg class="ic"><use href="#i-zap"/></svg> Flash mode actif (${state.flashSpeed / 1000}s)`;
     state.flashTimer = setInterval(() => {
       if (state.flipped) nextCard();
       else flipCard();
@@ -831,7 +834,7 @@ function toggleTheme() {
   const next = cur === 'light' ? 'dark' : 'light';
   document.documentElement.setAttribute('data-theme', next);
   localStorage.setItem(LS_THEME, next);
-  document.getElementById('theme-toggle').textContent = next === 'light' ? '🌙' : '☀️';
+  document.getElementById('theme-toggle').innerHTML = next === 'light' ? '<svg class="ic"><use href="#i-moon"/></svg>' : '<svg class="ic"><use href="#i-sun"/></svg>';
 }
 
 // ─── Keyboard shortcuts ───────────────────────────────────────────────────────
@@ -941,10 +944,10 @@ function _updateSM2Info(card) {
   if(!el||!card)return;
   if(!state.sm2Mode){el.textContent='';return;}
   const all=_sm2Data(), d=all[card.id];
-  if(!d||d.reps===0){el.textContent='✨ Nouvelle carte';return;}
+  if(!d||d.reps===0){el.innerHTML='<svg class="ic"><use href="#i-sparkles"/></svg> Nouvelle carte';return;}
   const days=Math.round((d.nextReview-Date.now())/86400000);
-  if(days<=0)el.textContent='📅 À réviser aujourd\'hui';
-  else el.textContent=`⏱ Prochaine révision dans ${days} jour${days>1?'s':''}`;
+  if(days<=0)el.innerHTML='<svg class="ic"><use href="#i-calendar"/></svg> À réviser aujourd\'hui';
+  else el.innerHTML=`<svg class="ic"><use href="#i-clock"/></svg> Prochaine révision dans ${days} jour${days>1?'s':''}`;
 }
 
 function toggleSM2() {

@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260716');}());</script>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260719');}());</script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Toutes les cartes — Linguistique UNIL 2025</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -142,22 +142,25 @@ input, textarea, select { font-size: max(16px, 1em) !important; }
 .tts-btn{background:none;border:1px solid var(--bdr,rgba(255,255,255,.1));border-radius:6px;padding:.18rem .48rem;font-size:.78rem;cursor:pointer;color:var(--mu,rgba(232,228,240,.55));transition:all .15s;line-height:1.2;flex-shrink:0;user-select:none;vertical-align:middle;font-family:inherit}
 .tts-btn:hover,.tts-btn[data-s="1"]{background:var(--lav-bg,rgba(200,184,240,.1));color:var(--lav,#c8b8f0);border-color:var(--lav,#c8b8f0)}
 .ac-header h1 a,.ac-header h1 a:visited{color:inherit;text-decoration:none}.ac-header h1 a:hover{opacity:.8}
+.ic{width:1em;height:1em;vertical-align:-.15em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;display:inline-block;overflow:visible}
+.ic-fill{fill:currentColor;stroke:none}
 </style>
 <link rel="manifest" href="manifest.json"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js");</script></head>
 <body>
+<script src="icons.js"></script>
 
 <header class="ac-header">
-  <h1><a href="index.html">🗂️ Toutes les cartes — 448 flashcards</a></h1>
+  <h1><a href="index.html"><svg class="ic"><use href="#i-layers"/></svg> Toutes les cartes — 448 flashcards</a></h1>
   <nav class="nav-links">
     <a href="index.html">Accueil</a>
     <a href="revision_complet.html">Révision</a>
     <a href="ressources.html">Ressources</a>
-    <a href="flashcards.html">📖 Étudier</a>
+    <a href="flashcards.html"><svg class="ic"><use href="#i-book-open"/></svg> Étudier</a>
     <a href="examen.html">Examen</a>
     <a href="search.html">Recherche</a>
     <a href="stats.html">Progression</a>
   </nav>
-  <button class="btn-icon" id="theme-toggle" title="Thème">🌙</button>
+  <button class="btn-icon" id="theme-toggle" title="Thème"><svg class="ic"><use href="#i-moon"/></svg></button>
 </header>
 
 <div class="ac-controls">
@@ -165,9 +168,9 @@ input, textarea, select { font-size: max(16px, 1em) !important; }
   <div class="filter-tabs">
     <button class="ftab active" data-filter="all" onclick="setFilter('all',this)">Toutes <span id="cnt-all"></span></button>
     <button class="ftab" data-filter="unseen" onclick="setFilter('unseen',this)">Pas encore répondues</button>
-    <button class="ftab" data-filter="mastered" onclick="setFilter('mastered',this)">🟢 Je sais</button>
-    <button class="ftab" data-filter="review" onclick="setFilter('review',this)">🔴 Je ne sais pas</button>
-    <button class="ftab" data-filter="fav" onclick="setFilter('fav',this)">⭐ Favoris</button>
+    <button class="ftab" data-filter="mastered" onclick="setFilter('mastered',this)"><svg class="ic"><use href="#i-check-circle"/></svg> Je sais</button>
+    <button class="ftab" data-filter="review" onclick="setFilter('review',this)"><svg class="ic"><use href="#i-x-circle"/></svg> Je ne sais pas</button>
+    <button class="ftab" data-filter="fav" onclick="setFilter('fav',this)"><svg class="ic ic-fill"><use href="#i-star"/></svg> Favoris</button>
   </div>
   <span class="ac-count" id="ac-count"></span>
 </div>
@@ -241,8 +244,8 @@ function toggleCard(el) {
 function toggleFav(event, id) {
   event.stopPropagation();
   const el = event.currentTarget;
-  if (favs.has(id)) { favs.delete(id); el.textContent = '☆'; el.classList.remove('active'); }
-  else { favs.add(id); el.textContent = '★'; el.classList.add('active'); }
+  if (favs.has(id)) { favs.delete(id); el.innerHTML = '<svg class="ic"><use href="#i-star"/></svg>'; el.classList.remove('active'); }
+  else { favs.add(id); el.innerHTML = '<svg class="ic ic-fill"><use href="#i-star"/></svg>'; el.classList.add('active'); }
   localStorage.setItem(LS_FAV, JSON.stringify([...favs]));
 }
 
@@ -253,15 +256,15 @@ function renderGrid() {
   document.getElementById('cnt-all').textContent = `(${CARDS.length})`;
 
   if (!visible.length) {
-    grid.innerHTML = '<div class="ac-empty"><div style="font-size:2.5rem;margin-bottom:.5rem">🔍</div>Aucune carte trouvée</div>';
+    grid.innerHTML = '<div class="ac-empty"><div style="font-size:2.5rem;margin-bottom:.5rem"><svg class="ic" style="width:2.5rem;height:2.5rem"><use href="#i-search"/></svg></div>Aucune carte trouvée</div>';
     return;
   }
 
   grid.innerHTML = visible.map(c => {
     const st = cardStatus(c.id);
     const isFav = favs.has(c.id);
-    const statusLabel = st === 'mastered' ? '<span class="card-status status-mastered">🟢 Je sais</span>'
-                      : st === 'review'   ? '<span class="card-status status-review">🔴 À revoir</span>'
+    const statusLabel = st === 'mastered' ? '<span class="card-status status-mastered"><svg class="ic"><use href="#i-check-circle"/></svg> Je sais</span>'
+                      : st === 'review'   ? '<span class="card-status status-review"><svg class="ic"><use href="#i-x-circle"/></svg> À revoir</span>'
                       :                     '<span class="card-status status-unseen">○ Pas vue</span>';
     return `<div class="ac-card ${st} ${isFav?'fav':''}" onclick="toggleCard(this)">
       ${statusLabel}
@@ -276,7 +279,7 @@ function renderGrid() {
         <div class="ac-back-text">${c.back}</div>
         <a class="study-link" href="flashcards.html#card-${c.id}">▶ Étudier cette carte</a>
       </div>
-      <span class="ac-fav ${isFav?'active':''}" onclick="toggleFav(event,'${c.id}')">${isFav?'★':'☆'}</span>
+      <span class="ac-fav ${isFav?'active':''}" onclick="toggleFav(event,'${c.id}')">${isFav?'<svg class="ic ic-fill"><use href="#i-star"/></svg>':'<svg class="ic"><use href="#i-star"/></svg>'}</span>
     </div>`;
   }).join('');
 }
@@ -299,14 +302,14 @@ document.getElementById('theme-toggle').addEventListener('click', () => {
   const next = cur === 'light' ? 'dark' : 'light';
   document.documentElement.setAttribute('data-theme', next);
   localStorage.setItem(LS_THEME, next);
-  document.getElementById('theme-toggle').textContent = next === 'light' ? '🌙' : '☀️';
+  document.getElementById('theme-toggle').innerHTML = next === 'light' ? '<svg class="ic"><use href="#i-moon"/></svg>' : '<svg class="ic"><use href="#i-sun"/></svg>';
 });
 
 renderSourcePills();
 renderGrid();
 </script>
 <script>
-!function(){var syn=window.speechSynthesis,cur=null,cBtn=null;function stop(){if(syn)syn.cancel();if(cBtn){cBtn.textContent='🔊';cBtn.removeAttribute('data-s');}cur=null;cBtn=null;}function speak(txt,btn){var same=cBtn===btn;stop();if(same||!syn||!txt)return;var u=new SpeechSynthesisUtterance(txt);u.lang='fr-FR';u.rate=0.88;cur=u;cBtn=btn;if(btn){btn.textContent='⏹';btn.setAttribute('data-s','1');}u.onend=u.onerror=function(){if(cur===u)stop();};syn.speak(u);}window._ttsRead=function(btn,el){var cl=el.cloneNode(true);cl.querySelectorAll('.tts-btn,.corr-box,.savoir-box,.qa-ans,.fc-back,.tbl-wrap').forEach(function(x){x.remove();});speak(cl.innerText.trim(),btn);};window._ttsInject=function(sel,pos,sp){document.querySelectorAll(sel).forEach(function(el){if(el.querySelector('.tts-btn'))return;var btn=document.createElement('button');btn.className='tts-btn';btn.title='Écouter';btn.textContent='🔊';btn.addEventListener('click',function(e){if(sp)e.stopPropagation();window._ttsRead(btn,el);});if(pos==='start')el.insertBefore(btn,el.firstChild);else el.appendChild(btn);});};window.addEventListener('DOMContentLoaded',function(){_ttsInject_page();});}();
+!function(){var syn=window.speechSynthesis,cur=null,cBtn=null;var IC_VOL='<svg class="ic"><use href="#i-volume-2"/></svg>';function stop(){if(syn)syn.cancel();if(cBtn){cBtn.innerHTML=IC_VOL;cBtn.removeAttribute('data-s');}cur=null;cBtn=null;}function speak(txt,btn){var same=cBtn===btn;stop();if(same||!syn||!txt)return;var u=new SpeechSynthesisUtterance(txt);u.lang='fr-FR';u.rate=0.88;cur=u;cBtn=btn;if(btn){btn.innerHTML=IC_VOL;btn.setAttribute('data-s','1');}u.onend=u.onerror=function(){if(cur===u)stop();};syn.speak(u);}window._ttsRead=function(btn,el){var cl=el.cloneNode(true);cl.querySelectorAll('.tts-btn,.corr-box,.savoir-box,.qa-ans,.fc-back,.tbl-wrap').forEach(function(x){x.remove();});speak(cl.innerText.trim(),btn);};window._ttsInject=function(sel,pos,sp){document.querySelectorAll(sel).forEach(function(el){if(el.querySelector('.tts-btn'))return;var btn=document.createElement('button');btn.className='tts-btn';btn.title='Écouter';btn.innerHTML=IC_VOL;btn.addEventListener('click',function(e){if(sp)e.stopPropagation();window._ttsRead(btn,el);});if(pos==='start')el.insertBefore(btn,el.firstChild);else el.appendChild(btn);});};window.addEventListener('DOMContentLoaded',function(){_ttsInject_page();});}();
 </script>
 <script>
 function _ttsInject_page(){
