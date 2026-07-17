@@ -1,0 +1,726 @@
+<!DOCTYPE html><html lang="fr"><head>
+<meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache">
+<script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260717j');}());</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Tests de validation — Linguistique UNIL 2025</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#13111a;--bg-warm:#1c1820;
+  --glass:rgba(255,255,255,0.06);--glass-hover:rgba(255,255,255,0.10);
+  --border:rgba(255,255,255,0.10);--border-strong:rgba(255,255,255,0.18);
+  --lav:#c8b8f0;--lav-bg:rgba(200,184,240,0.10);
+  --mint:#a8d8c4;--mint-bg:rgba(168,216,196,0.10);
+  --peach:#f0c8a0;--peach-bg:rgba(240,200,160,0.10);
+  --sky:#a8c8f0;--sky-bg:rgba(168,200,240,0.10);
+  --rose:#f0b8c4;--rose-bg:rgba(240,184,196,0.10);
+  --butter:#f0e0a0;--butter-bg:rgba(240,224,160,0.10);
+  --sage:#b8d8b8;--sage-bg:rgba(184,216,184,0.10);
+  --tx:#e8e4f0;--tx-muted:rgba(232,228,240,0.55);--tx-faint:rgba(232,228,240,0.30);
+  --r-card:16px;--r-sm:10px;--r-lg:22px;
+  --nav:rgba(19,17,26,0.92);--bdr:rgba(255,255,255,0.10);
+}
+[data-theme="light"]{
+  --bg:#f5f3f8;--bg-warm:#ede9f4;
+  --glass:rgba(255,255,255,0.70);--glass-hover:rgba(255,255,255,0.85);
+  --border:rgba(120,100,180,0.18);--border-strong:rgba(120,100,180,0.32);
+  --tx:#1a1525;--tx-muted:rgba(26,21,37,0.55);--tx-faint:rgba(26,21,37,0.30);
+  --lav:#7c6cc0;--lav-bg:rgba(120,100,180,0.10);
+  --mint:#3a9a72;--mint-bg:rgba(58,154,114,0.10);
+  --peach:#c87840;--peach-bg:rgba(200,120,64,0.10);
+  --sky:#4878c0;--sky-bg:rgba(72,120,192,0.10);
+  --rose:#c84860;--rose-bg:rgba(200,72,96,0.10);
+  --nav:rgba(245,243,248,0.95);--bdr:rgba(120,100,180,0.18);
+}
+[data-theme="light"] body{background:var(--bg)}
+[data-theme="light"] .topnav{background:var(--nav);border-bottom-color:var(--bdr)}
+[data-theme="light"] .test-card{background:rgba(255,255,255,0.80);border-color:rgba(120,100,180,0.18)}
+[data-theme="light"] .tab-btn{color:rgba(26,21,37,0.50)}
+[data-theme="light"] .tab-btn.active{background:rgba(120,100,180,0.13);color:#5c4ca0;border-bottom-color:#7c6cc0}
+[data-theme="light"] .q-head{background:rgba(255,255,255,0.70)}
+[data-theme="light"] .q-head:hover{background:rgba(255,255,255,0.90)}
+[data-theme="light"] h3.q-head{color:#1a1525}
+[data-theme="light"] .elena-box{background:rgba(120,100,180,0.08);border-color:rgba(120,100,180,0.25)}
+[data-theme="light"] .corr-box{background:rgba(200,72,96,0.07);border-color:rgba(200,72,96,0.25)}
+[data-theme="light"] .model-box{background:rgba(58,154,114,0.08);border-color:rgba(58,154,114,0.25)}
+[data-theme="light"] .source-box{background:rgba(72,120,192,0.07);border-color:rgba(72,120,192,0.20)}
+[data-theme="light"] .lbl{opacity:.7}
+[data-theme="light"] p,[data-theme="light"] li,[data-theme="light"] .ipa{color:rgba(26,21,37,0.75)}
+[data-theme="light"] .q-score{color:rgba(26,21,37,0.50)}
+[data-theme="light"] .acc-arr{color:var(--lav)}
+[data-theme="light"] .score-banner{background:rgba(255,255,255,0.80)}
+[data-theme="light"] .btn-theme{background:rgba(120,100,180,0.12);color:#5c4ca0;border-color:rgba(120,100,180,0.25)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--tx);min-height:100vh;overflow-x:hidden;transition:background .3s,color .3s}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(ellipse 55% 45% at 15% 20%,rgba(200,184,240,0.12) 0%,transparent 65%),
+  radial-gradient(ellipse 45% 40% at 85% 75%,rgba(168,216,196,0.09) 0%,transparent 65%),
+  radial-gradient(ellipse 35% 30% at 55% 50%,rgba(240,200,160,0.07) 0%,transparent 65%)}
+
+/* ── TOPNAV ── */
+.topnav{position:sticky;top:0;z-index:100;background:var(--nav);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--bdr);padding:.7rem 1.5rem;display:flex;align-items:center;gap:1rem}
+.topnav a{color:var(--tx-muted);text-decoration:none;font-size:.85rem;display:flex;align-items:center;gap:.35rem;transition:color .15s}
+.topnav a:hover{color:var(--tx)}
+.topnav .ic{width:16px;height:16px}
+.topnav-title{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--tx);flex:1;text-align:center}
+.btn-theme{background:var(--glass);border:1px solid var(--border);border-radius:var(--r-sm);padding:.35rem .65rem;color:var(--tx-muted);cursor:pointer;display:flex;align-items:center;gap:.3rem;font-size:.78rem;font-family:inherit;transition:background .15s,color .15s}
+.btn-theme:hover{background:var(--glass-hover);color:var(--tx)}
+
+/* ── HERO ── */
+.hero{padding:2.5rem 1.5rem 1.5rem;text-align:center;position:relative;z-index:1}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(1.6rem,4vw,2.4rem);color:var(--tx);margin-bottom:.4rem}
+.hero .sub{font-size:.9rem;color:var(--tx-muted);margin-bottom:1.4rem}
+.score-row{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+.score-card{background:var(--glass);border:1px solid var(--border);border-radius:var(--r-card);padding:.7rem 1.2rem;text-align:center;min-width:140px}
+.score-card .date{font-size:.72rem;color:var(--tx-muted);margin-bottom:.2rem}
+.score-card .pts{font-size:1.4rem;font-weight:700;color:var(--lav);font-family:'DM Serif Display',serif}
+.score-card .note{font-size:.8rem;color:var(--tx-muted)}
+
+/* ── TABS ── */
+.tabs-nav{display:flex;gap:.3rem;padding:.8rem 1.5rem 0;border-bottom:1px solid var(--border);position:relative;z-index:1;overflow-x:auto;flex-wrap:nowrap}
+.tab-btn{background:none;border:none;border-bottom:2px solid transparent;padding:.5rem .9rem;font-size:.84rem;font-family:inherit;color:var(--tx-muted);cursor:pointer;white-space:nowrap;transition:color .15s,border-color .15s;display:flex;align-items:center;gap:.35rem}
+.tab-btn .ic{width:15px;height:15px}
+.tab-btn.active{color:var(--lav);border-bottom-color:var(--lav)}
+.test-panel{display:none;max-width:820px;margin:0 auto;padding:1.8rem 1.5rem 4rem;position:relative;z-index:1}
+.test-panel.active{display:block}
+
+/* ── SCORE BANNER ── */
+.score-banner{background:var(--glass);border:1px solid var(--border);border-radius:var(--r-lg);padding:1rem 1.4rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.8rem;margin-bottom:1.6rem;backdrop-filter:blur(12px)}
+.score-banner .info{font-size:.82rem;color:var(--tx-muted)}
+.score-banner .info strong{color:var(--tx)}
+.score-chip{font-size:1.1rem;font-weight:700;font-family:'DM Serif Display',serif;padding:.3rem .9rem;border-radius:999px;border:1px solid}
+.chip-bad{color:var(--rose);border-color:rgba(240,184,196,0.35);background:rgba(240,184,196,0.10)}
+.chip-ok{color:var(--butter);border-color:rgba(240,224,160,0.35);background:rgba(240,224,160,0.10)}
+.chip-good{color:var(--mint);border-color:rgba(168,216,196,0.35);background:rgba(168,216,196,0.10)}
+
+/* ── QUESTION ACCORDION ── */
+.q-block{margin-bottom:1rem}
+h3.q-head{display:flex;align-items:center;justify-content:space-between;gap:.6rem;padding:.75rem 1rem;background:var(--glass);border:1px solid var(--border);border-radius:var(--r-card);cursor:pointer;font-family:'DM Sans',inherit;font-size:.95rem;font-weight:600;color:var(--tx);transition:background .15s;user-select:none}
+h3.q-head:hover{background:var(--glass-hover)}
+.acc-arr{font-size:.8em;color:var(--lav);flex-shrink:0;transition:transform .2s}
+.q-score{font-size:.78rem;color:var(--tx-muted);font-weight:400;margin-left:auto;padding-right:.4rem}
+.q-wrap{display:none;padding:1rem 0 .5rem}
+
+/* ── CONTENT BOXES ── */
+.lbl{display:inline-block;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.45rem;opacity:.8}
+.source-box{background:var(--sky-bg);border:1px solid rgba(168,200,240,0.20);border-radius:var(--r-card);padding:1rem 1.2rem;margin-bottom:.9rem}
+.source-box .lbl{color:var(--sky)}
+.source-box blockquote{font-style:italic;font-size:.88rem;color:var(--tx-muted);line-height:1.7;border-left:3px solid var(--sky);padding-left:.9rem;margin:.4rem 0}
+.source-box p{font-size:.84rem;color:var(--tx-muted);line-height:1.6;margin:.3rem 0}
+.consigne-box{font-size:.85rem;color:var(--tx-muted);background:rgba(255,255,255,0.03);border-left:3px solid var(--lav);padding:.7rem 1rem;border-radius:0 var(--r-sm) var(--r-sm) 0;margin-bottom:.9rem;line-height:1.6}
+.consigne-box strong{color:var(--lav)}
+.elena-box{background:var(--lav-bg);border:1px solid rgba(200,184,240,0.20);border-radius:var(--r-card);padding:.9rem 1.1rem;margin-bottom:.7rem}
+.elena-box .lbl{color:var(--lav)}
+.elena-box p,.elena-box li{font-size:.86rem;color:var(--tx);line-height:1.65;margin:.3rem 0}
+.elena-box ul,.elena-box ol{padding-left:1.2rem}
+.corr-box{background:var(--rose-bg);border:1px solid rgba(240,184,196,0.22);border-radius:var(--r-card);padding:.9rem 1.1rem;margin-bottom:.7rem}
+.corr-box .lbl{color:var(--rose)}
+.corr-box p,.corr-box li{font-size:.85rem;color:var(--tx);line-height:1.65;margin:.25rem 0}
+.corr-box ul{padding-left:1.1rem}
+.corr-note-inline{display:inline;color:var(--rose);font-size:.8em;font-style:italic}
+.model-box{background:var(--mint-bg);border:1px solid rgba(168,216,196,0.22);border-radius:var(--r-card);padding:.9rem 1.1rem;margin-bottom:.7rem}
+.model-box .lbl{color:var(--mint)}
+.model-box p,.model-box li{font-size:.86rem;color:var(--tx);line-height:1.65;margin:.3rem 0}
+.model-box ul,.model-box ol{padding-left:1.2rem}
+.model-box h4{font-size:.82rem;font-weight:700;color:var(--mint);margin:.6rem 0 .2rem}
+.ipa{font-family:'Courier New',monospace;font-size:.84rem;color:var(--butter);background:rgba(240,224,160,0.08);padding:.15rem .4rem;border-radius:4px;display:inline-block}
+.diff-table{width:100%;border-collapse:collapse;font-size:.81rem;margin:.5rem 0}
+.diff-table th{background:rgba(255,255,255,0.06);color:var(--tx-muted);font-weight:600;padding:.4rem .6rem;text-align:left;border-bottom:1px solid var(--border)}
+.diff-table td{padding:.4rem .6rem;border-bottom:1px solid rgba(255,255,255,0.05);vertical-align:top}
+.diff-table tr:last-child td{border-bottom:none}
+[data-theme="light"] .diff-table th{background:rgba(120,100,180,0.08)}
+[data-theme="light"] .diff-table td{border-bottom-color:rgba(120,100,180,0.10)}
+.err-tag{display:inline-block;font-size:.7rem;font-weight:700;text-transform:uppercase;padding:.1rem .45rem;border-radius:4px;margin-right:.3rem;vertical-align:middle}
+.err-red{background:rgba(240,184,196,0.18);color:var(--rose)}
+.err-ok{background:rgba(168,216,196,0.18);color:var(--mint)}
+.section-title{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--tx-faint);margin:1.4rem 0 .6rem;padding-bottom:.3rem;border-bottom:1px solid var(--border)}
+
+/* ── BILAN ERREURS ── */
+.err-block{background:var(--glass);border:1px solid var(--border);border-radius:var(--r-card);padding:1rem 1.2rem;margin-bottom:1rem}
+.err-block h3{font-size:.9rem;font-weight:700;color:var(--tx);margin-bottom:.6rem;display:flex;align-items:center;gap:.5rem}
+.err-block ul{padding-left:1.1rem}
+.err-block li{font-size:.85rem;color:var(--tx-muted);line-height:1.6;margin:.3rem 0}
+.err-block li strong{color:var(--tx)}
+
+@media(max-width:600px){
+  .hero{padding:1.8rem 1rem 1rem}
+  .test-panel{padding:1.2rem 1rem 3rem}
+  .topnav-title{display:none}
+}
+</style>
+<link rel="manifest" href="manifest.json">
+<meta name="mobile-web-app-capable" content="yes">
+<script>if("serviceWorker"in navigator)navigator.serviceWorker.register("sw.js");</script>
+</head>
+<body>
+<script src="icons.js"></script>
+
+<nav class="topnav">
+  <a href="index.html"><svg class="ic"><use href="#i-home"/></svg> Accueil</a>
+  <a href="revision_complet.html"><svg class="ic"><use href="#i-book-open"/></svg> Révision</a>
+  <span class="topnav-title">Tests de validation</span>
+  <button class="btn-theme" id="theme-btn" onclick="toggleTheme()"><svg class="ic"><use href="#i-moon"/></svg></button>
+</nav>
+
+<div class="hero">
+  <h1>Tests de validation continue</h1>
+  <p class="sub">UNIL 2025 — Linguistique française — Nikolic Elena</p>
+  <div class="score-row">
+    <div class="score-card">
+      <div class="date">17 octobre 2025</div>
+      <div class="pts">8,25 / 20</div>
+      <div class="note">Note : 3 / 6</div>
+    </div>
+    <div class="score-card">
+      <div class="date">12 décembre 2025</div>
+      <div class="pts">7,5 / 20</div>
+      <div class="note">Note : 3 / 6</div>
+    </div>
+  </div>
+</div>
+
+<div class="tabs-nav">
+  <button class="tab-btn active" onclick="showTest(0)"><svg class="ic"><use href="#i-edit"/></svg> Test 1 — Oct.</button>
+  <button class="tab-btn" onclick="showTest(1)"><svg class="ic"><use href="#i-edit"/></svg> Test 2 — Déc.</button>
+  <button class="tab-btn" onclick="showTest(2)"><svg class="ic"><use href="#i-target"/></svg> Bilan erreurs</button>
+</div>
+
+<!-- ═══════════════════════════════ TEST 1 ═══════════════════════════════ -->
+<div class="test-panel active" id="test0">
+
+<div class="score-banner">
+  <div class="info"><strong>Test 1 — 17 octobre 2025</strong><br>Durée 60 min · sans documentation (sauf dictionnaire)</div>
+  <span class="score-chip chip-bad">8,25 / 20 · Note 3/6</span>
+</div>
+
+<!-- Q1 -->
+<div class="q-block">
+  <h3 class="q-head" onclick="qToggle(this)">
+    <span class="acc-arr">▸</span>
+    Q.1 — Phonétique du joual (Tremblay)
+    <span class="q-score">4,75 / 11</span>
+  </h3>
+  <div class="q-wrap">
+    <div class="source-box">
+      <span class="lbl">Texte support</span>
+      <p><em>La Grosse Femme d'à côté est enceinte</em>, Michel Tremblay (1981). Mercedes et Betty, deux prostituées, parlent d'un soldat timide.</p>
+      <blockquote>– Si y'avait demandé quequ'chose, y l'arait eu !<br>
+      – Peut-être qu'y arait aimé ça que tu prennes toé-même les initiatives… Quand y font rien, des fois, c't' à toé de te débrouiller.</blockquote>
+    </div>
+
+    <p class="section-title">Q.1a — Rétablir le français standard + transcriptions IPA (5 pts)</p>
+    <div class="consigne-box">Rétablir la version standard. Transcrire en API les deux versions (originale et standard). Repérer les différences phonologiques.</div>
+
+    <div class="elena-box">
+      <span class="lbl">Réponse d'Elena</span>
+      <p><strong>Standard :</strong> « S'il avait demandé quelque chose, il l'aurait eu ! »<br>
+      « Peut-être qu'il aurait aimé que tu prennes toi-même les initiatives… Quand ils font rien, des fois, c'est à toi de te débrouiller. »</p>
+      <p><strong>Transcription standard :</strong> <span class="ipa">[silaved(ə)mâde kElkə∫oziloʀety]</span></p>
+      <p><strong>Transcription joual :</strong> <span class="ipa">[sijaved(ə)mâdekerfozilaʀety]</span></p>
+    </div>
+    <div class="corr-box">
+      <span class="lbl">Commentaires du correcteur</span>
+      <ul>
+        <li>Version standard : correcte dans l'ensemble. <span class="corr-note-inline">« il manque un bout » −0,25 ; « = un graphème » +0,5</span></li>
+        <li>Erreurs de symboles IPA : ⟨∫⟩ au lieu de ⟨ʃ⟩, ⟨ʀ⟩ au lieu de ⟨ʁ⟩, crochets non maîtrisés.</li>
+        <li>Notation des nasales et du schwa imprécise.</li>
+      </ul>
+      <p><strong>Note Q.1a : 3,25 / 5</strong></p>
+    </div>
+    <div class="model-box">
+      <span class="lbl">Ce qu'il fallait écrire</span>
+      <h4>Version standard (correcte)</h4>
+      <p>« S'il avait demandé quelque chose, il l'aurait eu ! »<br>
+      « Peut-être qu'il aurait aimé que tu prennes toi-même les initiatives… Quand ils font rien, des fois, c'est à toi de te débrouiller. »</p>
+      <h4>Transcription IPA — version standard (1re réplique)</h4>
+      <p><span class="ipa">[sil avɛ dmɑ̃de kɛlkə ʃoz il loʁɛ ty]</span></p>
+      <h4>Transcription IPA — version joual (1re réplique)</h4>
+      <p><span class="ipa">[si j avɛ dmɑ̃de kɛk ʃoz i laʁɛ ty]</span></p>
+      <p>Symboles à retenir : <span class="ipa">ʁ</span> (r uvulaire fr.), <span class="ipa">ʃ</span> (ch), <span class="ipa">ɛ</span> (è), <span class="ipa">ɑ̃</span> (an nasal), <span class="ipa">ɔ</span> (o ouvert).</p>
+    </div>
+
+    <p class="section-title">Q.1b — Différences phonologiques (5 pts)</p>
+    <div class="elena-box">
+      <span class="lbl">Réponse d'Elena</span>
+      <p>« La répétition du phonème /a/ dans "y'arait" au lieu de /o/ pour le français standard serait perçu comme une faute. »<br>
+      « On constate l'utilisation de voyelles nasales… [lesquelles ?] »<br>
+      « Certains /ə/ caduc sont prononcés en fin de phrase… »</p>
+    </div>
+    <div class="corr-box">
+      <span class="lbl">Commentaires du correcteur</span>
+      <ul>
+        <li><strong>« ≠ linguistique ! »</strong> — la réponse mêle jugements normatifs et description phonologique.</li>
+        <li>Les voyelles nasales ne sont pas précisées : lesquelles diffèrent ?</li>
+        <li>Confusion morphèmes / phonèmes : « Les morphèmes sont la base de la phonologie. Hem ! »</li>
+        <li>Le schwa caduc ne "porte pas d'accent" — affirmation fausse.</li>
+      </ul>
+      <p><strong>Note Q.1b : 1 / 5</strong></p>
+    </div>
+    <div class="model-box">
+      <span class="lbl">Ce qu'il fallait écrire</span>
+      <p>Lister les différences phonème par phonème, de façon systématique et neutre :</p>
+      <table class="diff-table">
+        <thead><tr><th>Phénomène</th><th>Standard</th><th>Joual</th><th>Explication</th></tr></thead>
+        <tbody>
+          <tr><td>Chute du /l/ pronominal</td><td><span class="ipa">/il/</span> « il »</td><td><span class="ipa">/i/</span> « y » ; <span class="ipa">/j/</span> devant V</td><td>Amuïssement du /l/ en fin de syllabe</td></tr>
+          <tr><td>Relâchement du conditionnel</td><td><span class="ipa">/oʁɛ/</span> « aurait »</td><td><span class="ipa">/aʁɛ/</span> « arait »</td><td>/o/ → /a/ (voyelle postérieure → antérieure)</td></tr>
+          <tr><td>Diphtongaison de /wa/</td><td><span class="ipa">/twa/</span> « toi »</td><td><span class="ipa">/twe/</span> « toé »</td><td>Fermeture de la 2e partie de la diphtongue</td></tr>
+          <tr><td>Réduction de /kɛlkə/</td><td><span class="ipa">/kɛlkə/</span> « quelque »</td><td><span class="ipa">/kɛk/</span> « quequ' »</td><td>Chute du /l/ et syncopie du schwa</td></tr>
+          <tr><td>Élision de /sɛt a/</td><td><span class="ipa">/sɛ ta/</span> « c'est à »</td><td><span class="ipa">/sta/</span> « c't' à »</td><td>Effacement vocalique en chaîne</td></tr>
+        </tbody>
+      </table>
+      <p><em>Règle : décrire phonème → phonème, sans jugement de valeur. Ne jamais confondre phonème et morphème.</em></p>
+    </div>
+
+    <p class="section-title">Q.1c — La graphie non standard (hors total de 11 pts)</p>
+    <div class="elena-box">
+      <span class="lbl">Réponse d'Elena</span>
+      <p>« La graphie non-standard fait référence au français québécois qui semble être "mal-parlé"… »<br>
+      « Cela fait référence au 20ème siècle, au français parisien vulgaire… »<br>
+      « La chute de certains schwa montre cette différence de syntaxe. »</p>
+    </div>
+    <div class="corr-box">
+      <span class="lbl">Commentaires du correcteur</span>
+      <ul>
+        <li><strong>« !! ? »</strong> — le joual n'a aucun rapport avec le "français parisien vulgaire".</li>
+        <li>Confondre syntaxe et phonologie : la chute du schwa est un phénomène <em>phonologique</em>.</li>
+        <li>Jugement normatif ("mal-parlé") à éviter en linguistique descriptive.</li>
+      </ul>
+      <p><strong>Note Q.1c : 0,5</strong></p>
+    </div>
+    <div class="model-box">
+      <span class="lbl">Ce qu'il fallait écrire</span>
+      <p>La graphie non standard joue un rôle <strong>sociolinguistique et littéraire</strong> :</p>
+      <ul>
+        <li><strong>Mimétisme oral :</strong> Tremblay transcrit phonétiquement le joual pour que le lecteur "entende" l'accent (graphies comme "toé", "y'avait").</li>
+        <li><strong>Marquage social :</strong> ces formes signalent l'appartenance à la classe ouvrière québécoise francophone des années 1940.</li>
+        <li><strong>Légitimation du joual :</strong> écrire une variété stigmatisée, c'est la reconnaître comme matière littéraire à part entière.</li>
+        <li><strong>Authenticité des personnages :</strong> leurs voix sonnent "vrai", l'oralité est transcrite, pas corrigée.</li>
+      </ul>
+      <p>Le joual est une <strong>variété linguistique légitime</strong> avec ses propres règles — pas du "mauvais français".</p>
+    </div>
+  </div>
+</div>
+
+<!-- Q2 -->
+<div class="q-block">
+  <h3 class="q-head" onclick="qToggle(this)">
+    <span class="acc-arr">▸</span>
+    Q.2 — Innovations lexicales en publicité
+    <span class="q-score">3,5 / 9</span>
+  </h3>
+  <div class="q-wrap">
+    <div class="source-box">
+      <span class="lbl">Texte support</span>
+      <p>Quatre affiches publicitaires avec des créations lexicales : <strong>« sublimitude »</strong>, <strong>« découvrire »</strong>, <strong>« savoir-voyager »</strong>, <strong>« beau »</strong> (dans « Vivre le beau »).</p>
+    </div>
+
+    <p class="section-title">Q.2a — Mode de construction des lexèmes (8 pts)</p>
+    <div class="consigne-box">Identifiez et analysez le mode de construction. Pour les dérivations, procédez par commutation.</div>
+
+    <div class="elena-box">
+      <span class="lbl">Réponse d'Elena</span>
+      <ul>
+        <li>« sublimitude » → <strong>mot-valise</strong> (sublime + altitude)</li>
+        <li>« découvrire » → <strong>dérivation</strong> (découvr- + rire), procédé par dérivation</li>
+        <li>« savoir-voyager » → <strong>composition</strong> (trait d'union)</li>
+        <li>« beau » → <strong>jct sémantique (?)</strong> / conversion Adj → N</li>
+      </ul>
+    </div>
+    <div class="corr-box">
+      <span class="lbl">Commentaires du correcteur</span>
+      <ul>
+        <li><strong>« sublimitude » :</strong> ce n'est pas un mot-valise mais une <em>dérivation</em>. Note : 0,5.</li>
+        <li><strong>« découvrire » :</strong> Elena identifie la dérivation mais ne précise pas le <em>type</em>. → 0 point.</li>
+        <li><strong>« savoir-voyager » :</strong> 0/1 (raison non explicitée par le correcteur).</li>
+        <li><strong>« beau » :</strong> conversion correctement identifiée. → 1 point.</li>
+      </ul>
+    </div>
+    <div class="model-box">
+      <span class="lbl">Ce qu'il fallait écrire</span>
+      <h4>1. « sublimitude »</h4>
+      <p><strong>Dérivation par suffixation</strong> : base <em>sublime</em> (Adj) + suffixe nominal <em>-itude</em> → nom abstrait.<br>
+      Commutation : sol-itude, las-situde, multi-tude → confirme que -itude est un morphème dérivationnel productif.<br>
+      Ce n'est pas un mot-valise : il n'y a pas de fusion de deux mots complets.</p>
+      <h4>2. « découvrire »</h4>
+      <p><strong>Mot-valise / contamination phonologique</strong> : fusion de <em>découvrir</em> + <em>rire</em>.<br>
+      Chevauchement sur la séquence <span class="ipa">-ʁiʁ</span> : [dekuvʁiʁ] ← [dekuvʁiʁ] + [ʁiʁ].<br>
+      Double sens : "découvrir en riant" → humour métalinguistique (affiche de festival d'humour).</p>
+      <h4>3. « savoir-voyager »</h4>
+      <p><strong>Composition par juxtaposition</strong> : savoir (V/N) + voyager (V) liés par un trait d'union.<br>
+      Nominalisation d'une locution verbale → "le savoir-voyager" fonctionne comme GN.<br>
+      Cf. le savoir-faire, le savoir-vivre (même schéma).</p>
+      <h4>4. « beau » (Vivre le beau)</h4>
+      <p><strong>Conversion</strong> (transposition) : <em>beau</em> Adj → <em>le beau</em> N.<br>
+      Changement de catégorie syntaxique sans modification morphologique. L'article défini signale la nominalisation.</p>
+    </div>
+
+    <p class="section-title">Q.2b — Pourquoi ces innovations lexicales ? (1 pt)</p>
+    <div class="elena-box">
+      <span class="lbl">Réponse d'Elena</span>
+      <p>« Recourir à de telles innovations sert à attirer le regard. Ce sont souvent des mot-valises ou des néologismes qui vont capter l'attention du public et créer un questionnement ou des réactions telles que le rire, la curiosité. »</p>
+    </div>
+    <div class="model-box">
+      <span class="lbl">Commentaire</span>
+      <p>Réponse globalement correcte (note : 1/1). À enrichir avec :</p>
+      <ul>
+        <li><strong>Mémorisation :</strong> un mot inattendu se retient mieux qu'un mot banal.</li>
+        <li><strong>Effet ludique :</strong> le jeu sur la langue engage le lecteur activement.</li>
+        <li><strong>Identité de marque :</strong> la création lexicale différencie le produit.</li>
+        <li><strong>Densité sémantique :</strong> un mot-valise condense deux sens en un seul signifiant.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</div><!-- /test0 -->
+
+<!-- ═══════════════════════════════ TEST 2 ═══════════════════════════════ -->
+<div class="test-panel" id="test1">
+
+<div class="score-banner">
+  <div class="info"><strong>Test 2 — 12 décembre 2025</strong><br>Durée 90 min · sans documentation (sauf dictionnaire)</div>
+  <span class="score-chip chip-bad">7,5 / 20 · Note 3/6</span>
+</div>
+
+<!-- Q1 Cendrars -->
+<div class="q-block">
+  <h3 class="q-head" onclick="qToggle(this)">
+    <span class="acc-arr">▸</span>
+    Q.1 — Syntaxe et DI : Cendrars, <em>L'homme foudroyé</em>
+    <span class="q-score">~4 / 10</span>
+  </h3>
+  <div class="q-wrap">
+    <div class="source-box">
+      <span class="lbl">Texte support</span>
+      <p>Blaise Cendrars raconte sa visite d'un quartier sud de Paris avec Fernand Léger. Les Gitanes ont fui, effrayées par l'accoutrement de Léger.</p>
+      <blockquote>« Ce pauvre Léger, un quart d'heure auparavant, place d'Italie où je lui avais donné rendez-vous pour prendre le tramway, je lui avais déjà fait des remontrances au sujet de son déguisement. C'est de Fernand Léger, le peintre cubiste, que je parle. Cela faisait des mois que Fernand, ce gros lambin si sympathique, me tannait pour que je le mène voir les Gitanes. »</blockquote>
+    </div>
+
+    <p class="section-title">Q.1a — Analyse de la 1re phrase (clauses + constructions détachées)</p>
+    <div class="elena-box">
+      <span class="lbl">Réponse d'Elena</span>
+      <p>« La phrase comporte quatre clauses. — Deux clauses averbales dont une construction détachée : "Ce pauvre Léger", à valeur rhématique. — "place d'Italie où je lui avais donné rendez-vous pour prendre le tramway" est une clause complexe par coordination avec le coordonnant locatif "où". — Il y a également une clause relative subordonnée avec le lexème "pour" à valeur causale. — La dernière clause est prédicative avec extension du GN "au sujet de son déguisement". »</p>
+    </div>
+    <div class="corr-box">
+      <span class="lbl">Commentaires du correcteur</span>
+      <ul>
+        <li>« Ce pauvre Léger » est thématique (topic connu), pas rhématique.</li>
+        <li>"où" est un <em>pronom relatif</em>, pas un coordonnant.</li>
+        <li>"pour" introduit une finale (but), pas une causale.</li>
+        <li>Confusions entre construction détachée, clause subordonnée relative et clause principale.</li>
+      </ul>
+      <p><strong>Note Q.1a : 0,5</strong></p>
+    </div>
+    <div class="model-box">
+      <span class="lbl">Ce qu'il fallait écrire</span>
+      <p><strong>Phrase 1 :</strong> « Ce pauvre Léger, un quart d'heure auparavant, place d'Italie où je lui avais donné rendez-vous pour prendre le tramway, je lui avais déjà fait des remontrances au sujet de son déguisement. »</p>
+      <p><strong>Clause principale :</strong> « je lui avais déjà fait des remontrances au sujet de son déguisement »</p>
+      <p><strong>Constructions détachées (périphériques) :</strong></p>
+      <ul>
+        <li><strong>« Ce pauvre Léger »</strong> → dislocation gauche du SN sujet (<em>thème</em> : point de départ connu)</li>
+        <li><strong>« un quart d'heure auparavant »</strong> → cadre temporel (circonstanciel détaché)</li>
+        <li><strong>« place d'Italie »</strong> → cadre locatif (clause averbale à 1 terme)</li>
+      </ul>
+      <p><strong>Clause subordonnée relative :</strong> « où je lui avais donné rendez-vous » (relative de lieu, antécédent : "place d'Italie")</p>
+      <p><strong>Clause subordonnée finale :</strong> « pour prendre le tramway » (but, non-finie à l'infinitif)</p>
+    </div>
+
+    <p class="section-title">Q.1b — Analyse de la 2e phrase</p>
+    <div class="elena-box">
+      <span class="lbl">Réponse d'Elena</span>
+      <p>« C'est de Fernand Léger, le peintre cubiste, que je parle. »<br>
+      → « C'est de Fernand Léger" est une clause à présentatif avec "c'est" qui a une valeur passive car le sujet subit l'action. "que je parle" est une clause relative détachée. Cette phrase est thématique car le prédicat est présenté avant le sujet. »</p>
+    </div>
+    <div class="corr-box">
+      <span class="lbl">Commentaires du correcteur</span>
+      <ul>
+        <li><strong>Erreur majeure :</strong> la clause clivée n'est PAS passive. Ce sont deux constructions totalement différentes.</li>
+        <li>"que je parle" n'est pas une relative mais la clause enchâssée d'une clivée.</li>
+        <li>La phrase est <em>rhématique</em> (focus sur Fernand Léger), pas thématique.</li>
+      </ul>
+      <p><strong>Note Q.1b : 0,5</strong></p>
+    </div>
+    <div class="model-box">
+      <span class="lbl">Ce qu'il fallait écrire</span>
+      <p><strong>Clause clivée</strong> : construction syntaxique à extraction focalisante de la forme <em>c'est X que/qui P</em>.</p>
+      <ul>
+        <li><strong>Élément focalisé (rhème fort) :</strong> « de Fernand Léger » → information mise en relief, souvent contrastive</li>
+        <li><strong>Clause enchâssée :</strong> « que je parle » → la clause clivée n'est PAS passive (le sujet de "parler" reste "je", qui est agent)</li>
+        <li><strong>Apposition détachée :</strong> « le peintre cubiste » → identification supplémentaire, clause averbale attributive</li>
+        <li><strong>Valeur DI :</strong> la clivée focalise rhématiquement — Cendrars précise de qui il parle (peut-être pour éviter une ambiguïté)</li>
+      </ul>
+      <p><em>Mémo : Clivée ≠ Passive. Dans la passive, l'agent est effacé ou mis en complément. Dans la clivée, la syntaxe reste active — seule la mise en relief change.</em></p>
+    </div>
+
+    <p class="section-title">Q.1c — Adjectifs épithètes : position et sens</p>
+    <div class="elena-box">
+      <span class="lbl">Réponse d'Elena</span>
+      <p>« "un quart d'heure auparavant" a une valeur prédicative temporelle. "Le peintre cubiste" sert d'apport d'information. "Ce gros lambin si sympathique" décrit M. Fernand en se moquant de lui. Les adjectifs antéposés apportent une valeur objective. »</p>
+    </div>
+    <div class="corr-box">
+      <span class="lbl">Commentaires du correcteur</span>
+      <ul>
+        <li><strong>« Vous confondez épithètes et extensions du GN en général. »</strong></li>
+        <li>"un quart d'heure auparavant" n'est pas un adjectif — c'est un GN circonstanciel.</li>
+        <li>Antéposé = valeur affective/subjective (et non "objective").</li>
+      </ul>
+    </div>
+    <div class="model-box">
+      <span class="lbl">Ce qu'il fallait écrire</span>
+      <p><strong>Épithète = adjectif directement intégré au GN</strong> (attaché au nom, pas en position attribut).</p>
+      <p>Épithètes dans l'extrait :</p>
+      <ul>
+        <li><strong>« pauvre »</strong> dans « ce pauvre Léger » → antéposé, valeur <em>affective</em> (empathie ironique du narrateur)</li>
+        <li><strong>« cubiste »</strong> dans « le peintre cubiste » → postposé, valeur <em>classificatoire/objective</em> (propriété du référent)</li>
+        <li><strong>« gros »</strong> dans « ce gros lambin » → antéposé, valeur <em>affective péjorative</em> (moquerie amicale)</li>
+        <li><strong>« sympathique »</strong> dans « si sympathique » → postposé (après adverbe intensif), valeur <em>descriptive atténuée</em></li>
+      </ul>
+      <p><strong>Règle de position :</strong> antéposé = jugement subjectif du narrateur / postposé = description objective de la propriété.<br>
+      <em>Ce que ne sont PAS des épithètes ici : "le peintre cubiste" (apposition), "un quart d'heure auparavant" (GN circonstanciel).</em></p>
+    </div>
+
+    <p class="section-title">Q.1d — Image de soi et de Léger</p>
+    <div class="elena-box">
+      <span class="lbl">Réponse d'Elena</span>
+      <p>« La répétition de "je" accentue que le narrateur est égocentrique. Le narrateur donne une image péjorative de lui-même et de son ami car le déguisement de son ami fait peur. Fernand ressemble à un policier en civil… »</p>
+    </div>
+    <div class="model-box">
+      <span class="lbl">Ce qu'il fallait écrire</span>
+      <p><strong>Image du narrateur (Cendrars) :</strong></p>
+      <ul>
+        <li>Se positionne comme guide et connaisseur du Paris populaire (c'est lui qui mène Léger)</li>
+        <li>Ton d'autorité affectueuse : il fait des "remontrances" à son ami</li>
+        <li>Ironie douce-amère : il prédit que le déguisement posera problème</li>
+      </ul>
+      <p><strong>Image de Léger :</strong></p>
+      <ul>
+        <li>Lourd et naïf : « ce gros lambin » → valeur affective moqueuse mais tendre</li>
+        <li>Décalé dans son accoutrement : « déguisement » (terme fort, carnavalesque)</li>
+        <li>Insistant mais dépendant : « me tannait pour que je le mène »</li>
+      </ul>
+      <p>La tension comique repose sur le contraste entre la célébrité de Léger (peintre cubiste renommé) et sa maladresse sociale dans cet espace populaire.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Q2 Perec -->
+<div class="q-block">
+  <h3 class="q-head" onclick="qToggle(this)">
+    <span class="acc-arr">▸</span>
+    Q.2 — Syntaxe et DI : Perec, <em>W ou le souvenir d'enfance</em>
+    <span class="q-score">~3,5 / 10</span>
+  </h3>
+  <div class="q-wrap">
+    <div class="source-box">
+      <span class="lbl">Texte support</span>
+      <blockquote>Courir sur les cendrées, courir dans les marais, courir dans la boue. Courir, sauter, lancer les poids. Ramper. S'accroupir, se relever. Se relever, s'accroupir. Très vite, de plus en plus vite. Courir en rond, se jeter à terre, ramper, se relever, courir. Rester debout, au garde-à-vous, des heures, des jours, des jours et des nuits. À plat ventre ! Debout ! Habillez-vous ! Déshabillez-vous ! Habillez-vous ! Déshabillez-vous ! Courez ! Sautez ! Rampez ! À genoux !</blockquote>
+      <p>Phrase soulignée : <em>Courir sur les cendrées, courir dans les marais, courir dans la boue.</em><br>
+      Phrase en gras : <em>À plat ventre !</em></p>
+    </div>
+
+    <p class="section-title">Q.2a — Analyse de la phrase soulignée</p>
+    <div class="elena-box">
+      <span class="lbl">Réponse d'Elena</span>
+      <p>« Il s'agit de trois clauses infinitives juxtaposées par des asyndètes à virgules. L'ordre canonique n'est pas respecté. Le verbe à l'infinitif est placé en premier, lui accordant la valeur d'instrument. Les GPrep "sur" et "dans" apportent des précisions… »</p>
+    </div>
+    <div class="corr-box">
+      <span class="lbl">Commentaires du correcteur</span>
+      <ul>
+        <li>Points accordés sur la reconnaissance des clauses infinitives et de l'asyndète.</li>
+        <li>Manque de précision sur la <em>progression</em> informationnelle (thème/rhème).</li>
+        <li>Le terme "instrument" est inexact : l'infinitif n'a pas de valeur instrumentale ici.</li>
+      </ul>
+      <p><strong>Note Q.2a : ~2 / 3 (partiellement juste)</strong></p>
+    </div>
+    <div class="model-box">
+      <span class="lbl">Ce qu'il fallait écrire</span>
+      <p><strong>3 clauses infinitives juxtaposées</strong> (asyndète : pas de connecteur entre elles)</p>
+      <ul>
+        <li><strong>Syntaxe :</strong> structure V(inf) + GPrep — pas de sujet explicite (l'infinitif efface l'agent)</li>
+        <li><strong>Sémantique :</strong> « courir » = thème verbal constant (anaphore) ; les GPrep varient → localisation dégradante (surface dure → eau → boue)</li>
+        <li><strong>DI :</strong> dynamique entièrement rhématique — chaque clause apporte une info nouvelle (le lieu) sans thème nominal explicite ; le sujet humain est absent, réduit à l'action</li>
+        <li><strong>Progression :</strong> rythme ternaire régulier, progression par dégradation des espaces (cendrée → marais → boue) → intensification de la violence des conditions</li>
+        <li><strong>Effet :</strong> absence de sujet = déshumanisation ; on ne sait pas qui court — n'importe qui, tout le monde, personne</li>
+      </ul>
+    </div>
+
+    <p class="section-title">Q.2b — Analyse de la phrase « À plat ventre ! »</p>
+    <div class="elena-box">
+      <span class="lbl">Réponse d'Elena</span>
+      <p>« C'est une clause averbale existentielle car on donne un ordre et on fait exister ce qu'on voit. L'absence de verbe est faite exprès pour aller droit au but. »</p>
+    </div>
+    <div class="corr-box">
+      <span class="lbl">Commentaires du correcteur</span>
+      <ul>
+        <li><strong>Erreur terminologique :</strong> ce n'est PAS une clause existentielle. L'existentiel, c'est "il y a + GN".</li>
+        <li>La clause averbale injonctive est une construction à part.</li>
+      </ul>
+      <p><strong>Note Q.2b : 1,5</strong></p>
+    </div>
+    <div class="model-box">
+      <span class="lbl">Ce qu'il fallait écrire</span>
+      <p><strong>Clause averbale injonctive</strong> (ou impérative elliptique) : un seul constituant, GPrep.</p>
+      <ul>
+        <li><strong>Syntaxe :</strong> GPrep seul, pas de verbe, pas de sujet → économie maximale</li>
+        <li><strong>Sémantique :</strong> ordre militaire brusque, impératif implicite (≈ « Mettez-vous à plat ventre ! »)</li>
+        <li><strong>DI :</strong> entièrement rhématique — l'ordre est l'information totale ; le thème (les athlètes) est présupposé par le contexte</li>
+        <li><strong>Effet :</strong> la brièveté extrême mime la brutalité du commandement ; pas de temps pour articuler une clause complète</li>
+      </ul>
+      <p><em>Mémo : Existentiel ≠ Injonctif. Existentiel = "Il y a des athlètes." Injonctif = "À plat ventre !"</em></p>
+    </div>
+
+    <p class="section-title">Q.2c — Progression de l'extrait</p>
+    <div class="elena-box">
+      <span class="lbl">Réponse d'Elena</span>
+      <p>« L'extrait a une dynamique informationnelle avec une succession d'événements. Des verbes à l'infinitif et au subjonctif [sic] créent du stress. La syntaxe canonique n'est pas respectée. Le narrateur commence par des longues phrases puis des simples mots. »</p>
+    </div>
+    <div class="corr-box">
+      <span class="lbl">Commentaires du correcteur</span>
+      <ul>
+        <li>Confusion : « verbes au subjonctif » — ce sont des <em>infinitifs</em> (1re partie) et des <em>impératifs</em> (2e partie), pas du subjonctif.</li>
+        <li>Commentaire sur le contexte : « Mais il y a le contexte du texte du livre ! »</li>
+        <li>La confusion thème / rhème est récurrente.</li>
+      </ul>
+      <p><strong>Note Q.2c : 1</strong></p>
+    </div>
+    <div class="model-box">
+      <span class="lbl">Ce qu'il fallait écrire</span>
+      <p><strong>Progression en deux temps :</strong></p>
+      <ul>
+        <li><strong>1re partie (infinitifs) :</strong> distance narrative, impersonnel → on décrit les épreuves sans s'adresser à quelqu'un. Phrases ternaires, rythme ample.</li>
+        <li><strong>2e partie (impératifs) :</strong> interpellation directe brutale → "Courez ! Rampez !" Les corps sont commandés à la 2e personne. Phrases ultra-courtes, parfois un seul mot.</li>
+      </ul>
+      <p><strong>Progression formelle :</strong> phrases longues → phrases courtes → mots seuls → dégradation de la syntaxe parallèle à la dégradation humaine.</p>
+      <p><strong>Dégradation sémantique :</strong> courir (sport) → ramper (animal) → "à plat ventre" (soumission totale) → les Jeux olympiques deviennent camp de concentration.</p>
+      <p><strong>DI :</strong> absence systématique de thème nominal → les êtres humains disparaissent syntaxiquement ; seules les actions (rhèmes) existent.</p>
+    </div>
+  </div>
+</div>
+
+</div><!-- /test1 -->
+
+<!-- ═══════════════════════════════ BILAN ═══════════════════════════════ -->
+<div class="test-panel" id="test2">
+
+<div class="score-banner">
+  <div class="info"><strong>Bilan des erreurs récurrentes</strong><br>Identifiées sur les deux tests — axes de progression</div>
+</div>
+
+<div class="err-block">
+  <h3><span class="err-tag err-red">Erreur 1</span>Jugements normatifs dans une analyse linguistique</h3>
+  <ul>
+    <li>Écrire qu'une variété est "mal-parlée", "vulgaire" ou "fautive" n'est pas de la linguistique — c'est de la normativité.</li>
+    <li><strong>Règle :</strong> la linguistique <em>décrit</em> les faits de langue sans les juger. Le joual est une variété légitime avec ses propres règles phonologiques.</li>
+  </ul>
+</div>
+
+<div class="err-block">
+  <h3><span class="err-tag err-red">Erreur 2</span>Confusion phonème / morphème</h3>
+  <ul>
+    <li>Un phonème est une unité phonologique distinctive (sans sens) : /p/, /b/, /ʁ/…</li>
+    <li>Un morphème est une unité grammaticale (avec sens) : <em>-itude</em>, <em>dé-</em>, <em>-s</em> du pluriel.</li>
+    <li><strong>Règle :</strong> ne jamais dire "les morphèmes produisent des différences phonologiques".</li>
+  </ul>
+</div>
+
+<div class="err-block">
+  <h3><span class="err-tag err-red">Erreur 3</span>Épithète ≠ extension du GN</h3>
+  <ul>
+    <li><strong>Épithète :</strong> adjectif directement attaché au nom dans le GN ("le peintre <em>cubiste</em>").</li>
+    <li><strong>Extension du GN :</strong> terme plus large = tout ce qui s'ajoute au noyau nominal (apposition, relative, complément du nom…).</li>
+    <li>"Le peintre cubiste" = apposition (pas une épithète). "Ce gros lambin" = "gros" est épithète de "lambin".</li>
+  </ul>
+</div>
+
+<div class="err-block">
+  <h3><span class="err-tag err-red">Erreur 4</span>Clause clivée ≠ construction passive</h3>
+  <ul>
+    <li><strong>Passive :</strong> "Léger est regardé par les Gitanes." → le patient devient sujet, l'agent est déplacé.</li>
+    <li><strong>Clivée :</strong> "C'est Léger que je regarde." → la syntaxe reste active, on focalise un constituant.</li>
+    <li>La clivée est une construction de <em>mise en relief rhématique</em>, pas une voix.</li>
+  </ul>
+</div>
+
+<div class="err-block">
+  <h3><span class="err-tag err-red">Erreur 5</span>Confusion thème / information nouvelle (rhème)</h3>
+  <ul>
+    <li><strong>Thème :</strong> information connue, point de départ de l'énoncé (≠ sujet grammatical).</li>
+    <li><strong>Rhème :</strong> information nouvelle, ce qu'on dit du thème.</li>
+    <li>Dire qu'une clause est "entièrement thématique" alors qu'elle n'a que des rhèmes est contradictoire.</li>
+  </ul>
+</div>
+
+<div class="err-block">
+  <h3><span class="err-tag err-red">Erreur 6</span>Clause averbale existentielle ≠ injonctive</h3>
+  <ul>
+    <li><strong>Existentielle :</strong> "Il y a des soldats." → présentative avec "il y a".</li>
+    <li><strong>Injonctive :</strong> "À plat ventre !" → ordre elliptique, verbe sous-entendu à l'impératif.</li>
+    <li><strong>Attributive :</strong> "Magnifique, cette vue !" → Adj + GN, sans copule.</li>
+  </ul>
+</div>
+
+<div class="err-block">
+  <h3><span class="err-tag err-ok">À retenir</span>Méthode générale pour les analyses linguistiques</h3>
+  <ul>
+    <li><strong>Nommer précisément :</strong> pas "une sorte de dérivation" mais "dérivation par suffixation avec le morphème -itude".</li>
+    <li><strong>Prouver par commutation :</strong> pour toute dérivation, montrer que le morphème est séparable et productif.</li>
+    <li><strong>Séparer niveaux d'analyse :</strong> phonologie ≠ morphologie ≠ syntaxe ≠ sémantique ≠ pragmatique.</li>
+    <li><strong>Éviter le littéraire pur :</strong> "effet de style", "suspense", "égocentrique" ne sont pas des termes linguistiques.</li>
+    <li><strong>Citer les formes :</strong> toujours donner l'exemple exact du texte avant de commenter.</li>
+  </ul>
+</div>
+
+</div><!-- /test2 -->
+
+<script src="notes.js"></script>
+<script>
+function showTest(n){
+  document.querySelectorAll('.test-panel').forEach(function(p){p.classList.remove('active');});
+  document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});
+  var p=document.getElementById('test'+n);
+  if(p)p.classList.add('active');
+  document.querySelectorAll('.tab-btn')[n].classList.add('active');
+}
+function qToggle(h){
+  var wrap=h.nextElementSibling;
+  var arr=h.querySelector('.acc-arr');
+  if(!wrap)return;
+  if(wrap.style.display==='block'){
+    wrap.style.maxHeight=wrap.scrollHeight+'px';
+    wrap.style.overflow='hidden';
+    wrap.style.transition='max-height .3s ease,opacity .2s ease';
+    requestAnimationFrame(function(){wrap.style.maxHeight='0';wrap.style.opacity='0';setTimeout(function(){wrap.style.display='none';wrap.style.maxHeight='';wrap.style.opacity='';},310);});
+    if(arr)arr.style.transform='rotate(0deg)';
+  } else {
+    wrap.style.display='block';
+    wrap.style.overflow='hidden';
+    wrap.style.maxHeight='0';wrap.style.opacity='0';
+    wrap.style.transition='max-height .35s ease,opacity .25s ease';
+    requestAnimationFrame(function(){requestAnimationFrame(function(){
+      wrap.style.maxHeight=wrap.scrollHeight+'px';wrap.style.opacity='1';
+      setTimeout(function(){wrap.style.maxHeight='none';wrap.style.overflow='';},360);
+    });});
+    if(arr)arr.style.transform='rotate(90deg)';
+  }
+}
+function toggleTheme(){
+  var th=document.documentElement.getAttribute('data-theme')==='light'?'dark':'light';
+  document.documentElement.setAttribute('data-theme',th);
+  localStorage.setItem('bap_theme',th);
+  document.getElementById('theme-btn').innerHTML=th==='light'?'<svg class="ic"><use href="#i-sun"/></svg>':'<svg class="ic"><use href="#i-moon"/></svg>';
+}
+(function(){
+  var t=localStorage.getItem('bap_theme')||'dark';
+  if(t==='light')document.documentElement.setAttribute('data-theme','light');
+  document.addEventListener('DOMContentLoaded',function(){
+    var b=document.getElementById('theme-btn');
+    if(b)b.innerHTML=t==='light'?'<svg class="ic"><use href="#i-sun"/></svg>':'<svg class="ic"><use href="#i-moon"/></svg>';
+  });
+})();
+</script>
+</body></html>
