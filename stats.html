@@ -239,12 +239,20 @@ body::before{
 .leg-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
 
 /* ── Chapter progress ── */
-.chapter-list{display:flex;flex-direction:column;gap:.7rem}
-.ch-row{display:flex;flex-direction:column;gap:.28rem}
+.ch-accordion{border:1px solid var(--bdr);border-radius:12px;overflow:hidden}
+.ch-acc-toggle{width:100%;background:var(--card2);border:none;cursor:pointer;padding:.75rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:.6rem;font-family:'DM Sans',sans-serif;font-size:.85rem;color:var(--tx);transition:background .15s;text-align:left}
+.ch-acc-toggle:hover{background:rgba(200,184,240,0.08)}
+.ch-acc-summary{font-size:.72rem;color:var(--mu);flex-shrink:0}
+.ch-acc-arr{font-size:.7rem;color:var(--lav);transition:transform .25s;flex-shrink:0}
+.ch-acc-toggle.open .ch-acc-arr{transform:rotate(90deg)}
+.ch-acc-body{display:none;padding:.55rem .8rem .75rem}
+.ch-acc-body.open{display:block}
+.chapter-list{display:flex;flex-direction:column;gap:.55rem}
+.ch-row{display:flex;flex-direction:column;gap:.22rem}
 .ch-top{display:flex;align-items:baseline;justify-content:space-between;gap:.5rem}
-.ch-name{font-size:.8rem;color:var(--tx);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;flex:1}
-.ch-count{font-size:.68rem;color:var(--mu);white-space:nowrap;flex-shrink:0;font-variant-numeric:tabular-nums}
-.ch-bar-bg{height:5px;background:rgba(255,255,255,0.06);border-radius:5px;overflow:hidden}
+.ch-name{font-size:.78rem;color:var(--tx);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;flex:1}
+.ch-count{font-size:.65rem;color:var(--mu);white-space:nowrap;flex-shrink:0;font-variant-numeric:tabular-nums}
+.ch-bar-bg{height:4px;background:rgba(255,255,255,0.06);border-radius:5px;overflow:hidden}
 [data-theme="light"] .ch-bar-bg{background:rgba(0,0,0,0.07)}
 .ch-bar{height:100%;border-radius:5px;background:linear-gradient(90deg,#c8b8f0,#a8c8f0);transition:width .65s cubic-bezier(.4,0,.2,1)}
 
@@ -421,7 +429,7 @@ const LS_SM2    = 'bap_sm2';
 const LS_LOG    = 'bap_log';
 const LS_STREAK = 'bap_streak';
 const LS_CARDS  = 'bap_cards_cache';
-const LS_THEME  = 'stats_theme';
+const LS_THEME = 'bap_theme';
 
 /* ── Theme ── */
 (function(){
@@ -767,12 +775,15 @@ function renderChapters(cards, sm2){
   }
 
   const sorted = Object.entries(groups).sort((a,b) => b[1].total - a[1].total);
-  document.getElementById('ch-meta').textContent = `${sorted.length} chapitres · ${cards.length} cartes`;
+  const totalStudied = sorted.reduce((acc,[,v]) => acc + v.studied, 0);
+  const totalCards = cards.length;
+  const globalPct = totalCards ? Math.round(totalStudied/totalCards*100) : 0;
+  document.getElementById('ch-meta').textContent = `${sorted.length} chapitres · ${globalPct}% étudiés`;
 
-  let html = '<div class="chapter-list">';
+  let rows = '<div class="chapter-list">';
   for (const [name, {total, studied}] of sorted){
     const pct = total ? Math.round(studied/total*100) : 0;
-    html += `<div class="ch-row">
+    rows += `<div class="ch-row">
       <div class="ch-top">
         <div class="ch-name" title="${name}">${name}</div>
         <div class="ch-count">${studied}&thinsp;/&thinsp;${total} <span style="opacity:.5">(${pct}%)</span></div>
@@ -780,8 +791,22 @@ function renderChapters(cards, sm2){
       <div class="ch-bar-bg"><div class="ch-bar" style="width:${pct}%"></div></div>
     </div>`;
   }
-  html += '</div>';
-  area.innerHTML = html;
+  rows += '</div>';
+
+  area.innerHTML = `<div class="ch-accordion">
+    <button class="ch-acc-toggle" onclick="chAccToggle(this)">
+      <span>Voir la progression par chapitre</span>
+      <span class="ch-acc-summary">${totalStudied}&thinsp;/&thinsp;${totalCards} cartes · ${globalPct}%</span>
+      <span class="ch-acc-arr">▸</span>
+    </button>
+    <div class="ch-acc-body">${rows}</div>
+  </div>`;
+}
+
+function chAccToggle(btn){
+  btn.classList.toggle('open');
+  var body=btn.nextElementSibling;
+  body.classList.toggle('open');
 }
 
 /* ── Maturity ── */

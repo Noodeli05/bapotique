@@ -42,8 +42,8 @@
   --primary:#c8b8f0; --primary-lt:rgba(200,184,240,0.10); --primary-dk:#a898d8;
   --def-bg:rgba(200,184,240,0.10); --def-bd:#c8b8f0; --def-lbl:#c8b8f0;
   --ex-bg:rgba(168,216,196,0.10); --ex-bd:#a8d8c4; --ex-lbl:#a8d8c4;
-  --ret-bg:rgba(240,224,160,0.10); --ret-bd:#f0e0a0; --ret-lbl:#f0e0a0;
-  --att-bg:rgba(240,184,196,0.10); --att-bd:#f0b8c4; --att-lbl:#f0b8c4;
+  --ret-bg:rgba(240,200,160,0.10); --ret-bd:#f0c8a0; --ret-lbl:#f0c8a0;
+  --att-bg:rgba(240,200,160,0.10); --att-bd:#f0c8a0; --att-lbl:#f0c8a0;
   --ans-bg:rgba(168,216,196,0.10); --ans-bd:#a8d8c4; --ans-lbl:#a8d8c4;
   --note-bg:rgba(255,255,255,0.04); --note-bd:rgba(255,255,255,0.10); --note-lbl:rgba(232,228,240,0.55);
 }
@@ -64,8 +64,8 @@
   --primary:#7c6cc0; --primary-lt:rgba(120,100,180,0.10); --primary-dk:#5a4b9a;
   --def-bg:rgba(200,184,240,0.15); --def-bd:#9880d8; --def-lbl:#5c3f9a;
   --ex-bg:rgba(168,216,196,0.15); --ex-bd:#5aaa88; --ex-lbl:#246048;
-  --ret-bg:rgba(240,224,160,0.15); --ret-bd:#c8a840; --ret-lbl:#7a5c00;
-  --att-bg:rgba(240,184,196,0.15); --att-bd:#c85870; --att-lbl:#7a1030;
+  --ret-bg:rgba(240,200,160,0.15); --ret-bd:#c89040; --ret-lbl:#7a4a00;
+  --att-bg:rgba(240,200,160,0.15); --att-bd:#c89040; --att-lbl:#7a4a00;
   --ans-bg:rgba(168,216,196,0.15); --ans-bd:#5aaa88; --ans-lbl:#246048;
   --note-bg:rgba(240,236,250,0.80); --note-bd:rgba(120,100,180,0.30); --note-lbl:rgba(26,21,37,0.55);
 }
@@ -150,8 +150,16 @@ backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);}
   border-right:1px solid var(--border);
   padding:.3rem 0;
 backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);}
+/* ── TOC toggle button (mobile only) ── */
+.toc-toggle-btn{display:none;background:none;border:1px solid rgba(200,184,240,0.30);cursor:pointer;padding:.28rem .55rem;border-radius:6px;color:var(--primary);font-size:.75rem;font-family:'DM Sans',sans-serif;font-weight:600;align-items:center;gap:.3rem;white-space:nowrap;flex-shrink:0;transition:background .15s}
+.toc-toggle-btn:hover{background:rgba(200,184,240,0.12)}
+.ic{width:1em;height:1em;vertical-align:-.15em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;display:inline-block;overflow:visible}
 @media(max-width:680px){
-  .r-toc{ display:none; }
+  .toc-toggle-btn{display:inline-flex}
+  .r-toc{display:none;position:fixed;top:0;left:0;bottom:0;z-index:300;width:min(280px,85vw);overflow-y:auto;box-shadow:6px 0 32px rgba(0,0,0,.45)}
+  .r-toc.toc-open{display:block!important}
+  .toc-backdrop{display:none;position:fixed;inset:0;z-index:299;background:rgba(0,0,0,.45)}
+  .toc-backdrop.open{display:block}
   .r-content{ padding:.9rem 1rem; }
   #topnav-title { font-size:.75rem; padding:.45rem .6rem; }
   .tnav-btn { font-size:.72rem; padding:.45rem .6rem; }
@@ -217,6 +225,12 @@ backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);}
 }
 .r-h4 { font-size:.83rem; font-weight:600; color:var(--muted); margin-bottom:.3rem; }
 .r-tog { font-size:.68rem; color:var(--muted); transition:.2s; flex-shrink:0; }
+/* L1 chapters collapsed by default */
+.r-sec-l1 > .r-sec-body { display:none; }
+.r-h1.open + .r-sec-body { display:block; }
+.r-h1 { cursor:pointer; user-select:none; }
+.r-h1 .r-tog { transform:rotate(-90deg); }
+.r-h1.open .r-tog { transform:rotate(0deg); }
 /* Subsections collapsed by default; open class added on click */
 .r-sec-l2 > .r-sec-body { display:none; }
 .r-h2.open + .r-sec-body { display:block; }
@@ -508,10 +522,12 @@ input, textarea, select { font-size: max(16px, 1em) !important; }
 <script src="icons.js"></script>
 <div id="topnav">
   <div id="topnav-title"><a href="index.html"><svg class="ic"><use href="#i-home"/></svg></a> &nbsp;|&nbsp; <a href="revision_complet.html">← Retour</a></div>
+  <button class="toc-toggle-btn" id="tocToggleBtn" onclick="toggleToc()" aria-label="Table des matières"><svg class="ic" style="width:.85em;height:.85em"><use href="#i-list"/></svg> Table des mat.</button>
   <button class="topnav-burger" onclick="document.querySelector('.topnav-links').classList.toggle('open')" aria-label="Menu navigation"><svg class="ic"><use href="#i-menu"/></svg></button>
   <div class="topnav-links"><button class="tnav-btn" data-tab="guide" onclick="showTab('guide');document.querySelector('.topnav-links').classList.remove('open')"><svg class="ic"><use href="#i-book-open"/></svg> Guide UNIL</button><button class="tnav-btn" data-tab="resume" onclick="showTab('resume');document.querySelector('.topnav-links').classList.remove('open')"><svg class="ic"><use href="#i-book-open"/></svg> Résumé Cours</button><button class="tnav-btn" data-tab="seances-g" onclick="showTab('seances-g');document.querySelector('.topnav-links').classList.remove('open')"><svg class="ic"><use href="#i-graduation-cap"/></svg> Séances Cours</button><button class="tnav-btn" data-tab="seances-tp" onclick="showTab('seances-tp');document.querySelector('.topnav-links').classList.remove('open')"><svg class="ic"><use href="#i-calendar"/></svg> Séances TP</button><button class="tnav-btn" data-tab="revision" onclick="showTab('revision');document.querySelector('.topnav-links').classList.remove('open')"><svg class="ic"><use href="#i-dumbbell"/></svg> Révision TP</button><button class="tnav-btn" data-tab="corriges" onclick="showTab('corriges');document.querySelector('.topnav-links').classList.remove('open')"><svg class="ic"><use href="#i-check-circle"/></svg> Corrigés TP</button><button class="tnav-btn" data-tab="questions" onclick="showTab('questions');document.querySelector('.topnav-links').classList.remove('open')"><svg class="ic"><use href="#i-help-circle"/></svg> Questions</button><button class="tnav-btn" data-tab="tableau" onclick="showTab('tableau');document.querySelector('.topnav-links').classList.remove('open')"><svg class="ic"><use href="#i-bar-chart"/></svg> Tableau</button><button class="tnav-btn" data-tab="examens" onclick="showTab('examens');document.querySelector('.topnav-links').classList.remove('open')"><svg class="ic"><use href="#i-edit"/></svg> Examens</button></div>
   <button class="theme-btn" id="theme-btn" onclick="toggleTheme()" title="Changer le thème"><svg class="ic"><use href="#i-moon"/></svg></button>
 </div>
+<div id="toc-backdrop" class="toc-backdrop" onclick="closeToc()"></div>
 <div id="main">
 <div class="r-panel" id="panel-guide"><div class="r-layout"><nav class="r-toc" id="toc-guide"><div class="r-search-wrap"><input type="text" class="r-search" placeholder="Chercher…" oninput="rSearch(this)"></div><ul class="rtoc-root"><li class="rtoc-l1"><a href="#r1-1" onclick="rNav(this)">INTRODUCTION — Qu&#x27;est-ce que la linguistique ?</a><ul><li class="rtoc-l2"><a href="#r2-2" onclick="rNav(this)">1. La linguistique : une science empirique</a></li><li class="rtoc-l2"><a href="#r2-3" onclick="rNav(this)">2. Le signe linguistique (Saussure)</a></li><li class="rtoc-l2"><a href="#r2-4" onclick="rNav(this)">3. Double articulation et niveaux d&#x27;analyse</a></li><li class="rtoc-l2"><a href="#r2-5" onclick="rNav(this)">4. De la clause à la phrase : trois plans d&#x27;organisation</a></li></ul></li><li class="rtoc-l1"><a href="#r1-6" onclick="rNav(this)">CHAPITRE 1 — Phonétique, phonologie et graphémique du français</a><ul><li class="rtoc-l2"><a href="#r2-7" onclick="rNav(this)">1. Éléments de phonétique</a></li><li class="rtoc-l2"><a href="#r2-8" onclick="rNav(this)">2. Éléments de phonologie</a></li><li class="rtoc-l2"><a href="#r2-9" onclick="rNav(this)">3. Éléments de graphémique</a></li></ul></li><li class="rtoc-l1"><a href="#r1-10" onclick="rNav(this)">CHAPITRE 2 — La morphologie</a><ul><li class="rtoc-l2"><a href="#r2-11" onclick="rNav(this)">1. Le signe linguistique revisité</a></li><li class="rtoc-l2"><a href="#r2-12" onclick="rNav(this)">2. Identifier les morphèmes : le test de commutation</a></li><li class="rtoc-l2"><a href="#r2-13" onclick="rNav(this)">3. Typologie des morphèmes</a></li><li class="rtoc-l2"><a href="#r2-14" onclick="rNav(this)">4. Construction du lexique</a></li></ul></li><li class="rtoc-l1"><a href="#r1-15" onclick="rNav(this)">CHAPITRE 3 — Syntaxe de la clause canonique</a><ul><li class="rtoc-l2"><a href="#r2-16" onclick="rNav(this)">1. Phrase et clause</a></li><li class="rtoc-l2"><a href="#r2-17" onclick="rNav(this)">2. Plans d&#x27;analyse de la clause</a></li></ul></li><li class="rtoc-l1"><a href="#r1-18" onclick="rNav(this)">CHAPITRE 4 — L&#x27;ordre dans la clause</a><ul><li class="rtoc-l2"><a href="#r2-19" onclick="rNav(this)">1. L&#x27;ordre des mots : entre contraintes et liberté</a></li><li class="rtoc-l2"><a href="#r2-20" onclick="rNav(this)">2. La clause inversée</a></li><li class="rtoc-l2"><a href="#r2-21" onclick="rNav(this)">3. Les dispositifs d&#x27;extraction : clivées et pseudo-clivées</a></li><li class="rtoc-l2"><a href="#r2-22" onclick="rNav(this)">4. Constructions verbales</a></li></ul></li><li class="rtoc-l1"><a href="#r1-23" onclick="rNav(this)">CHAPITRE 5 — Les types de clauses</a><ul><li class="rtoc-l2"><a href="#r2-24" onclick="rNav(this)">1. La clause averbale</a></li><li class="rtoc-l2"><a href="#r2-25" onclick="rNav(this)">2. La clause infinitive</a></li><li class="rtoc-l2"><a href="#r2-26" onclick="rNav(this)">3. La clause à présentatif</a></li></ul></li><li class="rtoc-l1"><a href="#r1-27" onclick="rNav(this)">CHAPITRE 6 — Extensions du groupe nominal</a><ul><li class="rtoc-l2"><a href="#r2-28" onclick="rNav(this)">1. L&#x27;adjectif épithète</a></li><li class="rtoc-l2"><a href="#r2-29" onclick="rNav(this)">2. GPrép complément du nom</a></li><li class="rtoc-l2"><a href="#r2-30" onclick="rNav(this)">3. Les constructions détachées (CD)</a></li><li class="rtoc-l2"><a href="#r2-31" onclick="rNav(this)">4. Les constructions absolues</a></li><li class="rtoc-l2"><a href="#r2-32" onclick="rNav(this)">5. Les propositions relatives</a></li></ul></li><li class="rtoc-l1"><a href="#r1-33" onclick="rNav(this)">CHAPITRE 7 — Extension du GV, circonstants et modalisateurs</a><ul><li class="rtoc-l2"><a href="#r2-34" onclick="rNav(this)">1. Compléments valenciels vs. circonstanciels vs. circonstants</a></li><li class="rtoc-l2"><a href="#r2-35" onclick="rNav(this)">2. Comment identifier les circonstants : critères</a></li><li class="rtoc-l2"><a href="#r2-36" onclick="rNav(this)">3. Valeurs sémantiques des circonstants</a></li><li class="rtoc-l2"><a href="#r2-37" onclick="rNav(this)">4. Compléments modalisateurs</a></li></ul></li><li class="rtoc-l1"><a href="#r1-38" onclick="rNav(this)">CHAPITRE 8 — Syntaxe de la clause complexe</a><ul><li class="rtoc-l2"><a href="#r2-39" onclick="rNav(this)">1. La subordination</a></li><li class="rtoc-l2"><a href="#r2-40" onclick="rNav(this)">2. La corrélation</a></li></ul></li><li class="rtoc-l1"><a href="#r1-41" onclick="rNav(this)">CHAPITRE 9 — Composition de la phrase graphique</a><ul><li class="rtoc-l2"><a href="#r2-42" onclick="rNav(this)">1. Juxtaposition et coordination</a></li><li class="rtoc-l2"><a href="#r2-43" onclick="rNav(this)">2. L&#x27;insertion parenthétique</a></li><li class="rtoc-l2"><a href="#r2-44" onclick="rNav(this)">3. La dislocation</a></li><li class="rtoc-l2"><a href="#r2-45" onclick="rNav(this)">4. Complément après point</a></li></ul></li><li class="rtoc-l1"><a href="#r1-46" onclick="rNav(this)">ANNEXE — Tableau récapitulatif des types de clauses (DocuNouille étendu)</a></li><li class="rtoc-l1"><a href="#r1-47" onclick="rNav(this)">ANNEXE — Conseils méthodologiques pour les tests</a><ul><li class="rtoc-l2"><a href="#r2-48" onclick="rNav(this)">Questions typiques du 1er test (phonologie + morphologie)</a></li><li class="rtoc-l2"><a href="#r2-49" onclick="rNav(this)">Questions typiques du 2e test (syntaxe)</a></li><li class="rtoc-l2"><a href="#r2-50" onclick="rNav(this)">Points particulièrement délicats à maîtriser</a></li></ul></li></ul></nav><div class="r-content"><section class="r-sec r-sec-l1" id="r1-1"><h2 class="r-h1" >INTRODUCTION — Qu&#x27;est-ce que la linguistique ? <span class="r-tog">▾</span></h2><div class="r-sec-body"><section class="r-sec r-sec-l2" id="r2-2"><h3 class="r-h2" onclick="rToggle(this)">1. La linguistique : une science empirique <span class="r-tog">▾</span></h3><div class="r-sec-body"><div class="rb-text"><p>La linguistique est la science qui étudie le langage humain. Elle est dite empirique parce qu&#x27;elle se fonde sur l&#x27;observation des faits de langue réels, et non sur des jugements de valeur sur ce qui est « beau » ou « correct ».</p></div><div class="rb-def"><div class="rb-label"><svg class="ic"><use href="#i-book-open"/></svg> Définition</div><p>Le LANGAGE est la faculté proprement humaine de communiquer, de se référer au monde et de se représenter soi-même grâce à des systèmes de signes (les langues). Il sert à communiquer avec autrui, à désigner le réel, à exprimer la subjectivité et à parler du langage lui-même (métalangage).</p><p>Distinction fondamentale : langue vs. parole</p><p>La LANGUE est le système abstrait, le code partagé par une communauté. Par exemple, les règles qui font que « il mange » est acceptable en français alors que « il mangeons » ne l&#x27;est pas. La langue est ce qui est répétable d&#x27;un énoncé à l&#x27;autre.</p><p>La PAROLE est l&#x27;usage singulier et concret de la langue par un individu à un moment donné. Chaque fois qu&#x27;on dit « bonjour », c&#x27;est un événement unique (la parole), mais on applique les mêmes règles (la langue).</p></div><div class="rb-ex"><div class="rb-label">✏️ Exemple</div><p>Je dis « bonjour » ce matin = un acte de PAROLE unique, singulier.</p><p>Le fait que « bonjour » ait deux syllabes et soit un salut = propriété de la LANGUE.</p><p>Optique descriptive vs. normative</p><p>Le linguiste n&#x27;est pas là pour dire comment il FAUT parler (optique normative, propre aux grammairiens scolaires), mais pour décrire et expliquer comment les gens parlent effectivement.</p><ul class="rb-ul"><li>Normative : « On ne dit pas &#x27;je suis allé à&#x27; mais... »</li><li>Descriptive (linguistique) : « Dans la communauté X, on observe la construction Y qui fonctionne ainsi... »</li></ul></div><div class="fc-section"><button class="fc-toggle-btn" onclick="fcToggle(this)"><svg class="ic"><use href="#i-layers"/></svg> Flashcards (2) <span class="fc-arrow">▾</span></button><div class="fc-grid fc-hidden"><div class="fc-hint">Cliquez sur une carte pour la retourner</div><div class="fc-card" onclick="fcFlip(this)"><div class="fc-inner"><div class="fc-front"><div class="fc-face-inner">Qu'est-ce que <em>Le LANGAGE</em>&nbsp;?</div></div><div class="fc-back"><div class="fc-face-inner">Le LANGAGE est la faculté proprement humaine de communiquer, de se référer au monde et de se représenter soi-même grâce à des systèmes de signes (les langues). Il sert à communiquer avec autrui, à désigner le réel, à exprimer la subjectivité et à parler du langage lui-même (métalangage). Distinction fondamentale : langue vs. parole La LANGUE est le système abstrait, le code partagé par une communauté. Par exemple, les règles qui font que « il mange » est acceptable en français alors que « il mangeons » ne l&#x27;est pas. La langue est ce qui est répétable d&#x27;un énoncé à l&#x27;autre. La PAROLE est l&#x27;usage singulier et concret de la langue par un individu à un moment donné. Chaque fois qu&#x27;on dit « bonjour », c&#x27;est un événement unique (la parole), mais on applique les mêmes règles (la langue).</div></div></div></div><div class="fc-card" onclick="fcFlip(this)"><div class="fc-inner"><div class="fc-front"><div class="fc-face-inner">✏️ Exemple de <em>1. La linguistique : une science empirique</em></div></div><div class="fc-back"><div class="fc-face-inner">Je dis « bonjour » ce matin = un acte de PAROLE unique, singulier. Le fait que « bonjour » ait deux syllabes et soit un salut = propriété de la LANGUE. Optique descriptive vs. normative</div></div></div></div></div></div></div></section><section class="r-sec r-sec-l2" id="r2-3"><h3 class="r-h2" onclick="rToggle(this)">2. Le signe linguistique (Saussure) <span class="r-tog">▾</span></h3><div class="r-sec-body"><div class="rb-text"><p>Ferdinand de Saussure (1857–1913), linguiste genevois, est considéré comme le père de la linguistique moderne. Il a formalisé la notion de signe.</p></div><div class="rb-def"><div class="rb-label"><svg class="ic"><use href="#i-book-open"/></svg> Définition</div><p>Un SIGNE est l&#x27;association indissociable d&#x27;un SIGNIFIANT (la face perceptible : les sons ou les lettres) et d&#x27;un SIGNIFIÉ (la face mentale : le contenu, la représentation). Saussure compare le signe à une feuille de papier : impossible de couper le recto sans couper le verso.</p><p>Propriétés essentielles du signe :</p><ul class="rb-ul"><li>Arbitraire : Arbitraire : la relation entre signifiant et signifié est conventionnelle, pas naturelle. Il n&#x27;y a aucune raison physique pour qu&#x27;un chat s&#x27;appelle « chat » en français et « cat » en anglais.</li><li>Oppositionnel : Oppositionnel / systémique : un signe se définit par ce qu&#x27;il n&#x27;est pas. Le signe « tu » existe parce qu&#x27;il s&#x27;oppose à « je », « il », « vous », etc.</li></ul></div><div class="fc-section"><button class="fc-toggle-btn" onclick="fcToggle(this)"><svg class="ic"><use href="#i-layers"/></svg> Flashcards (1) <span class="fc-arrow">▾</span></button><div class="fc-grid fc-hidden"><div class="fc-hint">Cliquez sur une carte pour la retourner</div><div class="fc-card" onclick="fcFlip(this)"><div class="fc-inner"><div class="fc-front"><div class="fc-face-inner">Qu'est-ce que <em>Un SIGNE</em>&nbsp;?</div></div><div class="fc-back"><div class="fc-face-inner">Un SIGNE est l&#x27;association indissociable d&#x27;un SIGNIFIANT (la face perceptible : les sons ou les lettres) et d&#x27;un SIGNIFIÉ (la face mentale : le contenu, la représentation). Saussure compare le signe à une feuille de papier : impossible de couper le recto sans couper le verso. Propriétés essentielles du signe : • Arbitraire : Arbitraire : la relation entre signifiant et signifié est conventionnelle, pas naturelle. Il n&#x27;y a aucune raison physique pour qu&#x27;un chat s&#x27;appelle « chat » en français et « cat » en anglais. • Oppositionnel : Oppositionnel / systémique : un signe se définit par ce qu&#x27;il n&#x27;est pas. Le signe « tu » existe parce qu&#x27;il s&#x27;oppose à « je », « il », « vous », etc.</div></div></div></div></div></div></div></section><section class="r-sec r-sec-l2" id="r2-4"><h3 class="r-h2" onclick="rToggle(this)">3. Double articulation et niveaux d&#x27;analyse <span class="r-tog">▾</span></h3><div class="r-sec-body"><div class="rb-text"><p>Une des propriétés fondamentales du langage humain est ce qu&#x27;André Martinet appelle la double articulation : le langage est organisé sur deux niveaux distincts.</p></div><div class="rb-def"><div class="rb-label"><svg class="ic"><use href="#i-book-open"/></svg> Définition</div><p>PREMIÈRE ARTICULATION : découpage en unités pourvues d&#x27;un sens (les MORPHÈMES). Par exemple « J&#x27;ai mal à la tête » se décompose en unités significatives.
 
@@ -1072,11 +1088,32 @@ function rToggle(el) {
   el.classList.toggle('open');
 }
 
+// Wire up r-h1 click handlers (l1 chapters collapsed by default)
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.r-h1').forEach(function(h) {
+    h.addEventListener('click', function() { rToggle(h); });
+  });
+});
+
 // TOC nav
 function rNav(a) {
   var href = a.getAttribute('href');
   var target = document.querySelector(href);
-  if (target) setTimeout(() => target.scrollIntoView({behavior:'smooth', block:'start'}), 60);
+  if (target) {
+    // Auto-expand any collapsed ancestor sections
+    var el = target.parentElement;
+    while (el) {
+      if (el.classList && el.classList.contains('r-sec-body')) {
+        var hdr = el.previousElementSibling;
+        if (hdr) hdr.classList.add('open');
+      }
+      el = el.parentElement;
+    }
+    if (target.classList.contains('r-h1') || target.classList.contains('r-h2')) {
+      target.classList.add('open');
+    }
+    setTimeout(() => target.scrollIntoView({behavior:'smooth', block:'start'}), 60);
+  }
   var panel = a.closest('.r-panel');
   if (panel) {
     panel.querySelectorAll('.r-toc a').forEach(x => x.classList.remove('active'));
@@ -1166,14 +1203,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (first) showTab(first.dataset.tab);
   }
 
-  // Open first sub-section of each chapter by default
-  document.querySelectorAll('.r-sec.r-sec-l1').forEach(function(ch){
-    var firstH2 = ch.querySelector('.r-h2');
-    if(firstH2 && !firstH2.classList.contains('open')){
-      firstH2.classList.add('open');
-    }
-  });
-
   // Inject prominent search bar at top of each r-content
   document.querySelectorAll('.r-content').forEach(function(content){
     if(content.querySelector('.r-search-top')) return;
@@ -1188,8 +1217,22 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+function toggleToc(){
+  var activeToc = document.querySelector('.r-panel.active .r-toc');
+  if(!activeToc) return;
+  var isOpen = activeToc.classList.toggle('toc-open');
+  var bd = document.getElementById('toc-backdrop');
+  if(bd) bd.classList.toggle('open', isOpen);
+}
+function closeToc(){
+  document.querySelectorAll('.r-toc').forEach(function(t){ t.classList.remove('toc-open'); });
+  var bd = document.getElementById('toc-backdrop');
+  if(bd) bd.classList.remove('open');
+}
+
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') {
+    if (document.querySelector('.r-toc.toc-open')) { closeToc(); return; }
     try { window.history.back(); } catch(ex){}
   }
 });
@@ -1200,10 +1243,10 @@ function toggleTheme() {
   var next = current === 'light' ? 'dark' : 'light';
   document.documentElement.setAttribute('data-theme', next);
   document.getElementById('theme-btn').innerHTML = next === 'light' ? '<svg class="ic"><use href="#i-sun"/></svg>' : '<svg class="ic"><use href="#i-moon"/></svg>';
-  try { localStorage.setItem('res_theme', next); } catch(e){}
+  try { localStorage.setItem('bap_theme', next); } catch(e){}
 }
 (function(){
-  var saved = localStorage.getItem('res_theme') || 'dark';
+  var saved = localStorage.getItem('bap_theme') || 'dark';
   document.documentElement.setAttribute('data-theme', saved);
   document.addEventListener('DOMContentLoaded', function(){
     var btn = document.getElementById('theme-btn');

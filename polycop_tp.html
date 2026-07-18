@@ -1164,10 +1164,10 @@ function toggleTheme(){
   var n=t==='light'?'dark':'light';
   document.documentElement.setAttribute('data-theme',n);
   document.getElementById('theme-btn').innerHTML=n==='light'?'<svg class="ic"><use href="#i-sun"/></svg>':'<svg class="ic"><use href="#i-moon"/></svg>';
-  try{localStorage.setItem('tp_theme',n);}catch(e){}
+  try{localStorage.setItem('bap_theme',n);}catch(e){}
 }
 (function(){
-  var s=localStorage.getItem('tp_theme')||'dark';
+  var s=localStorage.getItem('bap_theme')||'dark';
   document.documentElement.setAttribute('data-theme',s);
   document.addEventListener('DOMContentLoaded',function(){
     var b=document.getElementById('theme-btn');

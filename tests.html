@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="fr"><head>
 <meta charset="UTF-8">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache">
-<script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260717r');}());</script>
+<script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260718');}());</script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Tests de validation — Linguistique UNIL 2025</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -227,6 +227,11 @@ h3.q-head:hover{background:var(--glass-hover)}
   <button class="tab-btn active" onclick="showTest(0)"><svg class="ic"><use href="#i-edit"/></svg> Test 1 — Oct.</button>
   <button class="tab-btn" onclick="showTest(1)"><svg class="ic"><use href="#i-edit"/></svg> Test 2 — Déc.</button>
   <button class="tab-btn" onclick="showTest(2)"><svg class="ic"><use href="#i-target"/></svg> Bilan erreurs</button>
+  <button class="tab-btn" onclick="showTest(3)"><svg class="ic"><use href="#i-book-open"/></svg> Exemple — Cheval</button>
+  <button class="tab-btn" onclick="showTest(4)"><svg class="ic"><use href="#i-book-open"/></svg> Déc. 2019</button>
+  <button class="tab-btn" onclick="showTest(5)"><svg class="ic"><use href="#i-book-open"/></svg> Déc. 2022</button>
+  <button class="tab-btn" onclick="showTest(6)"><svg class="ic"><use href="#i-book-open"/></svg> Blanc — Pleure</button>
+  <button class="tab-btn" onclick="showTest(7)"><svg class="ic"><use href="#i-layers"/></svg> Blancs difficiles</button>
 </div>
 
 <!-- ═══════════════════════════════ TEST 1 ═══════════════════════════════ -->
@@ -823,6 +828,1220 @@ h3.q-head:hover{background:var(--glass-hover)}
 </div>
 
 </div><!-- /test2 -->
+
+<!-- ═══════════════ EXEMPLE TEST 1 — CHEVAL ═══════════════ -->
+<div class="test-panel" id="test3">
+<div class="score-banner">
+  <div class="info"><strong>Exemple de test 1 — Phonologie &amp; Morphologie</strong><br>Format indicatif · 60 min · sans documentation</div>
+  <span class="score-chip chip-ok">Texte corrigé fourni</span>
+</div>
+<p class="practice-intro">Entraîne-toi sur ces questions de type examen. Révèle ensuite la théorie à mobiliser ou la réponse modèle officielle.</p>
+
+<!-- Q1 Phonologie Chaval -->
+<div class="q-block">
+  <h3 class="q-head" onclick="qToggle(this)">
+    <span class="acc-arr">▸</span>
+    Q.1 — Phonologie : le parler de Chaval
+    <span class="q-score">10 pts</span>
+  </h3>
+  <div class="q-wrap">
+    <div class="source-box">
+      <span class="lbl">Contexte</span>
+      <p>Chaval est un personnage de bande dessinée dont le parler se caractérise par une substitution systématique des voyelles. Dans ses répliques, les voyelles <em>/o/, /u/, /ø/, /y/</em> (voyelles postérieures et arrondies) sont toutes remplacées par <em>/a/</em>.</p>
+      <blockquote>— « Ja v<strong>a</strong>s t<strong>a</strong> tr<strong>a</strong>ver la t<strong>a</strong>te, t<strong>a</strong> ta canaill<strong>a</strong> ! »<br>(pour : <em>« Je veux te trouver la tête, toi, canaille ! »</em>)</blockquote>
+    </div>
+
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(a)</span>
+        <span class="subq-text">Rétablissez la version en français standard. Transcrivez en API les deux versions (originale et standard) pour la réplique donnée.</span>
+        <span class="subq-pts">4 pts</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li><strong>Transcription IPA</strong> — <a href="polycop_cours.html">Cours → Phonologie</a> : crochets [ ] pour phonétique, barres / / pour phonologique</li>
+            <li>Voyelles arrondies postérieures : <span class="ipa">/u/</span> (ou), <span class="ipa">/o/</span> (eau), <span class="ipa">/ø/</span> (feu), <span class="ipa">/y/</span> (tu)</li>
+            <li>Toutes remplacées par <span class="ipa">/a/</span> (voyelle ouverte antérieure non-arrondie)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>Version standard :</strong> « Je veux te trouver la tête, toi, canaille ! »</li>
+            <li><strong>IPA standard :</strong> <span class="ipa">[ʒə vø tə tʁuve la tɛt, twa, kanaj]</span></li>
+            <li><strong>IPA Chaval :</strong> <span class="ipa">[ʒa va ta tʁave la tɛt, ta, kanaj]</span></li>
+            <li>Substitution : /ø/ → /a/ (je&gt;ja, veux&gt;va), /u/ → /a/ (trouver&gt;traver), /wa/ → /a/ (toi&gt;ta)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(b)</span>
+        <span class="subq-text">Décrivez le trait phonologique partagé par toutes les voyelles substituées (/o/, /u/, /ø/, /y/). Pourquoi /a/ est-il le terme de substitution ?</span>
+        <span class="subq-pts">4 pts</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li><strong>Classification des voyelles</strong> : 3 axes — point d'articulation (antérieur/postérieur), aperture (fermé/ouvert), arrondissement des lèvres</li>
+            <li>Trait commun des voyelles substituées : elles sont toutes <strong>arrondies</strong> (les lèvres forment un cercle)</li>
+            <li><span class="ipa">/a/</span> est la voyelle la plus ouverte et non-arrondie → la plus éloignée du trait</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>Trait partagé : l'arrondissement</strong>. /o/, /u/, /ø/, /y/ sont toutes des voyelles <em>arrondies</em> (les lèvres s'arrondissent lors de leur articulation).</li>
+            <li><strong>Pourquoi /a/ ?</strong> /a/ est la voyelle la plus <em>ouverte</em> et <em>non-arrondie</em> du français — elle est l'opposé articulatoire maximal. C'est aussi la voyelle la plus « neutre » et facilement audible, souvent base des substitutions comiques.</li>
+            <li>La substitution crée un effet comique en supprimant le trait d'arrondissement de façon systématique → marqueur stylistique de personnage.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(c)</span>
+        <span class="subq-text">Ce changement est-il phonologique ou phonétique ? Justifiez avec le concept de paire minimale.</span>
+        <span class="subq-pts">2 pts</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li><strong>Phonologique</strong> = change le sens (paire minimale) / <strong>Phonétique</strong> = variation de réalisation sans changement de sens</li>
+            <li>Test : /u/ ≠ /a/ → « sous » vs « sa » → unités différentes → phonèmes distincts</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>Changement phonologique</strong> : /u/ et /a/ sont deux phonèmes distincts en français.</li>
+            <li><strong>Paire minimale :</strong> « sous » [su] vs « sa » [sa] — le remplacement de /u/ par /a/ change le sens → /u/ et /a/ sont deux phonèmes distincts.</li>
+            <li>Le parler de Chaval crée donc un <strong>autre code phonologique</strong>, pas une simple variation allophones (ce n'est pas de la phonétique).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Q2 Morphologie Geluck -->
+<div class="q-block">
+  <h3 class="q-head" onclick="qToggle(this)">
+    <span class="acc-arr">▸</span>
+    Q.2 — Morphologie : néologismes du <em>Chat</em> (Geluck)
+    <span class="q-score">10 pts</span>
+  </h3>
+  <div class="q-wrap">
+    <div class="source-box">
+      <span class="lbl">Support — néologismes extraits des albums de Geluck</span>
+      <blockquote>« Je prône le <em>protectionnement</em> des droits linguistiques. »<br>
+      « Le gouvernement a enrichi son <em>langabulaire</em>. »<br>
+      « Ce projet est totalement <em>inacceptuel</em>. »<br>
+      « Votre <em>créativitude</em> m'impressionne. »</blockquote>
+    </div>
+
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(a)</span>
+        <span class="subq-text">Pour chacun des quatre néologismes, identifiez le procédé de formation, décomposez les morphèmes et procédez par commutation pour les dérivations.</span>
+        <span class="subq-pts">8 pts</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li><strong>Dérivation par suffixation</strong> : base + suffixe → nouveau lexème</li>
+            <li><strong>Mot-valise</strong> : fusion de deux bases avec chevauchement phonologique</li>
+            <li><strong>Commutation</strong> : vérifier la productivité du suffixe en le remplaçant dans d'autres mots</li>
+            <li>Suffixes nominaux : <span class="ipa">-ment</span> (action), <span class="ipa">-itude</span> (état), <span class="ipa">-el/-uel</span> (adjectivisant)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>« protectionnement »</strong> — Dérivation par suffixation : <em>protection</em> (N) + <em>-nement</em> → N d'action. Commutation : gouverne-ment, fonctionn-ement. Effet humoristique : nominalisation redondante sur une base déjà nominale.</li>
+            <li><strong>« langabulaire »</strong> — Mot-valise : <em>langue/langage</em> + <em>vocabulaire</em>. Chevauchement sur <em>-ula-</em>. Condense les deux notions en une.</li>
+            <li><strong>« inacceptuel »</strong> — Dérivation : préfixe privatif <em>in-</em> + base <em>accept-</em> + suffixe adjectivisant <em>-uel</em>. Commutation : conceptuel, textuel. Base incorrecte (≠ inacceptable) → effet comique volontaire.</li>
+            <li><strong>« créativitude »</strong> — Dérivation : <em>créativi-</em> (tronqué de <em>créativité</em>) + <em>-itude</em>. Commutation : solitude, lassitude, fortitude. Pseudo-latinisme précieux, effet d'emphase ironique.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(b)</span>
+        <span class="subq-text">Quelle est la fonction de ces néologismes dans le registre comique de Geluck ?</span>
+        <span class="subq-pts">2 pts</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li>Fonctions du néologisme : mémorisation, effet ludique, satire sociale, parodie du discours pompeux</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>Satire du discours officiel :</strong> les néologismes parodient le langage pompeux des politiques, experts et intellectuels.</li>
+            <li><strong>Effet comique par incongruité morphologique :</strong> la forme est grammaticalement plausible mais sémantiquement absurde → le lecteur rit de la connivence avec les règles morphologiques.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div><!-- /test3 -->
+
+<!-- ═══════════════ DÉCEMBRE 2019 — LA PEAU DE CHAGRIN ═══════════════ -->
+<div class="test-panel" id="test4">
+<div class="score-banner">
+  <div class="info"><strong>Test 2 — Décembre 2019</strong><br>Durée 90 min · sans documentation (sauf dictionnaire)</div>
+  <span class="score-chip chip-ok">Corrigé officiel fourni</span>
+</div>
+<p class="practice-intro">Test de type examen final. Essaie de répondre avant de révéler les indices et corrections.</p>
+
+<!-- Q1 Balzac -->
+<div class="q-block">
+  <h3 class="q-head" onclick="qToggle(this)">
+    <span class="acc-arr">▸</span>
+    Q.1 — Valence et rôles actanciels : Balzac, <em>La Peau de chagrin</em>
+    <span class="q-score">8 pts</span>
+  </h3>
+  <div class="q-wrap">
+    <div class="source-box">
+      <span class="lbl">Texte support</span>
+      <blockquote>« Raphaël arracha la peau de chagrin des mains du vieillard. »</blockquote>
+      <p style="font-size:.78rem;color:var(--tx-muted)">Honoré de Balzac, <em>La Peau de chagrin</em> (1831)</p>
+    </div>
+
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(a)</span>
+        <span class="subq-text">Analysez la valence du verbe « arracher ». Combien d'actants comporte-t-il ici ? Identifiez chacun avec son rôle actanciel et sa fonction syntaxique.</span>
+        <span class="subq-pts">5 pts</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li><strong>Valence</strong> — <a href="polycop_cours.html">Cours → Syntaxe</a> : nombre d'actants qu'un verbe exige pour que son sens soit complet</li>
+            <li>Distincts des circonstants (facultatifs, déplaçables, supprimables sans modifier la structure)</li>
+            <li><strong>Rôles actanciels</strong> : AGENT (animé instigateur), AGI (inanimé sur lequel s'exerce le procès), SOURCE (provenance, lieu ou personne d'où on prend)</li>
+            <li>Test : peut-on supprimer l'actant sans que la clause soit incomplète ?</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>Valence : trivalent</strong> (3 actants requis)</li>
+            <li><strong>Actant 1 — Raphaël</strong> : sujet grammatical · rôle = AGENT (animé, instigateur du procès)</li>
+            <li><strong>Actant 2 — la peau de chagrin</strong> : COD · rôle = AGI (objet inanimé sur lequel s'exerce l'action)</li>
+            <li><strong>Actant 3 — des mains du vieillard</strong> : complément de source · rôle = SOURCE (lieu/personne d'où est prélevé l'agi)</li>
+            <li>NB : « des mains du vieillard » n'est pas circonstant — impossible de le supprimer sans que l'énoncé perde son sens ou devienne bizarre : *« Raphaël arracha la peau de chagrin. » → sémantiquement appauvri.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(b)</span>
+        <span class="subq-text">Réécrivez la clause à la voix passive. Quels changements syntaxiques et informationnels observe-t-on ?</span>
+        <span class="subq-pts">3 pts</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li><strong>Voix passive</strong> : être + participe passé (+ par + agent optionnel). Le patient devient sujet.</li>
+            <li>Changement informationnel : le THÈME change (actif = Raphaël / passif = la peau de chagrin)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>Passive :</strong> « La peau de chagrin fut arrachée des mains du vieillard par Raphaël. »</li>
+            <li><strong>Changements syntaxiques :</strong> la peau de chagrin (ancien COD) → sujet ; Raphaël (ancien sujet) → complément d'agent introduit par <em>par</em>.</li>
+            <li><strong>Changement informationnel :</strong> à l'actif, <em>Raphaël</em> est thème (point de départ) ; au passif, <em>la peau de chagrin</em> devient thème. L'agent peut être effacé pour centrer l'attention sur l'agi.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Q2 Giono -->
+<div class="q-block">
+  <h3 class="q-head" onclick="qToggle(this)">
+    <span class="acc-arr">▸</span>
+    Q.2 — Types de clauses : Giono, <em>Le Grand Troupeau</em>
+    <span class="q-score">6 pts</span>
+  </h3>
+  <div class="q-wrap">
+    <div class="source-box">
+      <span class="lbl">Texte support</span>
+      <blockquote>« Les bêtes couraient dans le couloir du chemin. À gauche : les prés. À droite : les buissons. Courir. Encore courir. Puis, soudain, s'arrêter. »</blockquote>
+      <p style="font-size:.78rem;color:var(--tx-muted)">Jean Giono, <em>Le Grand Troupeau</em> (1931)</p>
+    </div>
+
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(a)</span>
+        <span class="subq-text">Identifiez et nommez le type de chaque clause du passage. Pour les clauses averbales, précisez leur sous-type.</span>
+        <span class="subq-pts">4 pts</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li><strong>Types de clauses</strong> — <a href="polycop_cours.html">Cours → Syntaxe</a> : canonique (S-V), inversée, averbale, infinitive, participiale</li>
+            <li><strong>Clause averbale</strong> : sans verbe conjugué → sous-types : existentielle (il y a), attributive (Adj + GN), injonctive (ordre elliptique), thétique (GN seul, 1 terme)</li>
+            <li><strong>Clause infinitive</strong> : verbe à l'infinitif sans sujet explicite</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>« Les bêtes couraient dans le couloir du chemin. »</strong> → Clause canonique (S-V-Circonstant)</li>
+            <li><strong>« À gauche : les prés. »</strong> → Clause averbale <em>thétique</em> (ou existentielle) — GPrep + GN, sans verbe. Présente l'existence d'un référent dans un lieu.</li>
+            <li><strong>« À droite : les buissons. »</strong> → Même structure : clause averbale thétique.</li>
+            <li><strong>« Courir. Encore courir. »</strong> → Clauses infinitives : verbe à l'infinitif sans sujet explicite. Dynamique déshumanisante (cf. Perec).</li>
+            <li><strong>« Puis, soudain, s'arrêter. »</strong> → Clause infinitive (avec circonstants temporels détachés).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(b)</span>
+        <span class="subq-text">Commentez l'effet stylistique et informationnel de l'alternance entre clauses canoniques et non-canoniques dans ce passage.</span>
+        <span class="subq-pts">2 pts</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li>Penser à : dynamique informationnelle, présence/absence du sujet, déshumanisation, effet de tableau vs action</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>Clauses averbales thétiques :</strong> décrivent le paysage en tableau statique — tout est rhème (information pure, sans thème), impression d'inventaire brutal de la réalité.</li>
+            <li><strong>Clauses infinitives :</strong> absence de sujet → déshumanisation (les bêtes — et par métaphore les soldats — n'ont plus d'identité, seulement des actions). Rythme haché, urgence, mouvement instinctif.</li>
+            <li><strong>Progression :</strong> de la description (tableau) à l'action pure (infinitifs) → tension croissante.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Q3 Camus -->
+<div class="q-block">
+  <h3 class="q-head" onclick="qToggle(this)">
+    <span class="acc-arr">▸</span>
+    Q.3 — Clause averbale : Camus, <em>L'Étranger</em> (télégramme)
+    <span class="q-score">6 pts</span>
+  </h3>
+  <div class="q-wrap">
+    <div class="source-box">
+      <span class="lbl">Texte support — Incipit de <em>L'Étranger</em></span>
+      <blockquote>« Aujourd'hui, maman est morte. Ou peut-être hier, je ne sais pas. J'ai reçu un télégramme de l'asile : <em>« Mère décédée. Enterrement demain. Sentiments distingués. »</em> »</blockquote>
+      <p style="font-size:.78rem;color:var(--tx-muted)">Albert Camus, <em>L'Étranger</em> (1942)</p>
+    </div>
+
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(a)</span>
+        <span class="subq-text">Analysez chacune des trois clauses du télégramme : type, structure, valeurs sémantique et informationnelle.</span>
+        <span class="subq-pts">4 pts</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li><strong>Clause averbale</strong> : pas de verbe conjugué → plusieurs sous-types selon la structure</li>
+            <li><strong>Thétique</strong> : GN seul, pose l'existence d'un référent = entièrement rhématique</li>
+            <li><strong>Attributive</strong> : GN + attribut (Adj ou GN)</li>
+            <li>Le télégramme contraint l'ellipse → toute la structure verbale est supprimée</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>« Mère décédée. »</strong> → Clause averbale <em>attributive</em> (GN + participe-adjectif attributif). Équivaut à « La mère est décédée. » Entièrement rhématique : toute l'information est nouvelle.</li>
+            <li><strong>« Enterrement demain. »</strong> → Clause averbale <em>thétique</em> (GN + circonstant temporel). Équivaut à « L'enterrement aura lieu demain. » Économie maximale.</li>
+            <li><strong>« Sentiments distingués. »</strong> → Clause averbale <em>formulaire</em> (formule épistolaire figée, GN seul). Valeur conventionnelle plutôt que réelle → décalage ironique avec la nouvelle annoncée.</li>
+            <li>Effet : l'absence de verbe = absence de modalité temporelle → les faits sont posés comme bruts, sans affect, sans sujet. L'absurdité camusienne est inscrite dans la syntaxe.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(b)</span>
+        <span class="subq-text">Commentez le contraste informationnel entre la première phrase du roman (« Aujourd'hui, maman est morte. ») et les clauses du télégramme.</span>
+        <span class="subq-pts">2 pts</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li>Comparer : présence du sujet/thème, mode de présentation (canonique vs averbale), charge affective des termes</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>Narration :</strong> « maman est morte » — clause canonique avec sujet et copule. « Maman » (terme affectif, thème personnel) vs « mère » (terme officiel, neutre). Meursault <em>fait</em> de sa mère un thème.</li>
+            <li><strong>Télégramme :</strong> « Mère décédée » — averbale sans sujet, terme administratif « décédée ». L'institution réduit la mort à un fait d'état civil : entièrement rhématique, zéro affect.</li>
+            <li>Contraste : la subjectivité narrative (maman/thème) contre l'objectivité administrative (mère/rhème pur) → le texte met en lumière l'absurdité des conventions sociales face à la mort.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div><!-- /test4 -->
+
+<!-- ═══════════════ DÉCEMBRE 2022 ═══════════════ -->
+<div class="test-panel" id="test5">
+<div class="score-banner">
+  <div class="info"><strong>Test — Décembre 2022</strong><br>Dislocation &amp; clause à présentatif</div>
+  <span class="score-chip chip-ok">Corrigé officiel fourni</span>
+</div>
+<p class="practice-intro">Deux questions sur la dynamique informationnelle — constructions spécialisées.</p>
+
+<!-- Q1 Dislocation -->
+<div class="q-block">
+  <h3 class="q-head" onclick="qToggle(this)">
+    <span class="acc-arr">▸</span>
+    Q.1 — Dislocation et dynamique informationnelle
+    <span class="q-score">10 pts</span>
+  </h3>
+  <div class="q-wrap">
+    <div class="source-box">
+      <span class="lbl">Texte support</span>
+      <blockquote>« Cette femme, je la connais depuis toujours. »<br>
+      « Je la connais depuis toujours, cette femme. »<br>
+      « C'est cette femme que je connais depuis toujours. »</blockquote>
+    </div>
+
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(a)</span>
+        <span class="subq-text">Analysez les trois constructions : identifiez leur type (dislocation gauche, dislocation droite, clivée), décrivez la structure et précisez le rôle informationnel de chaque élément (thème/rhème).</span>
+        <span class="subq-pts">6 pts</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li><strong>Dislocation gauche</strong> — <a href="polycop_cours.html">Cours → DI / Dislocation</a> : GN autonome EN TÊTE repris par pronom → THÈME (info connue, point de départ)</li>
+            <li><strong>Dislocation droite</strong> : GN autonome EN QUEUE repris par pronom dans la clause → valeur de RAPPEL ou d'IDENTIFICATION du référent</li>
+            <li><strong>Clause clivée</strong> : c'est + [élément focalisé] + qui/que → RHÈME (info nouvelle, mise en relief)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>« Cette femme, je la connais depuis toujours. »</strong> — Dislocation gauche. « Cette femme » = GN autonome en tête (THÈME — point de départ, info connue ou présentée comme telle). « la » = pronom reprenant le thème. Rhème : « je connais depuis toujours ».</li>
+            <li><strong>« Je la connais depuis toujours, cette femme. »</strong> — Dislocation droite. « Cette femme » = GN en queue, en position de commentaire ou d'identification après coup. Valeur : rappel, ancrage référentiel pour clarifier le pronom.</li>
+            <li><strong>« C'est cette femme que je connais depuis toujours. »</strong> — Clause clivée. Structure : <em>c'est</em> + [cette femme] (RHÈME focalisé) + <em>que</em> + [je connais depuis toujours] (THÈME). Focalise sur l'identité de la femme comme information nouvelle.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(b)</span>
+        <span class="subq-text">Dans quel contexte discursif chacune de ces constructions serait-elle la plus naturelle ? Formulez la question implicite à laquelle chaque construction répond.</span>
+        <span class="subq-pts">4 pts</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li>La question implicite révèle ce qui est informationnel « nouveau » = le RHÈME</li>
+            <li>Test : « Et cette femme ? » / « Tu la connais depuis toujours, mais qui ? » / « Qui connais-tu depuis toujours ? »</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>Dislocation gauche</strong> — Question : « Et cette femme, tu la connais comment ? » → On part d'un thème déjà connu/mentionné pour dire quelque chose à son sujet. Contexte : continuer à parler d'un référent déjà dans le discours.</li>
+            <li><strong>Dislocation droite</strong> — Question : « Tu la connais depuis toujours ? — Qui ? » → La dislocation droite précise ou identifie un référent pronominal ambigu. Contexte : clarification en fin d'énoncé.</li>
+            <li><strong>Clivée</strong> — Question : « Qui connais-tu depuis toujours ? » → La clivée focalise sur l'identité comme information nouvelle et contrastive (cette femme, et pas une autre). Contexte : réponse à une question sur l'identité, correction d'une information erronée.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Q2 Présentatif -->
+<div class="q-block">
+  <h3 class="q-head" onclick="qToggle(this)">
+    <span class="acc-arr">▸</span>
+    Q.2 — Clause à présentatif (feux de voiture)
+    <span class="q-score">10 pts</span>
+  </h3>
+  <div class="q-wrap">
+    <div class="source-box">
+      <span class="lbl">Texte support</span>
+      <blockquote>« Au carrefour, il y avait deux voitures. Les feux de l'une brillaient dans la nuit. C'étaient de vraies lanternes de cristal. »</blockquote>
+    </div>
+
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(a)</span>
+        <span class="subq-text">Analysez « il y avait deux voitures » : type de clause, valeur informationnelle du présentatif, structure.</span>
+        <span class="subq-pts">4 pts</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li><strong>Clause à présentatif</strong> — <a href="polycop_cours.html">Cours → Syntaxe Ch.5</a> : <em>il y a</em> = présentatif existentiel. Pose l'existence d'un référent → entièrement rhématique</li>
+            <li>Valeur : introduire un référent <em>nouveau</em> dans le discours (première mention)</li>
+            <li>Déterminant indéfini après le présentatif = confirme première mention</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>Type :</strong> clause à présentatif existentiel (<em>il y a</em>)</li>
+            <li><strong>Structure :</strong> présentatif (<em>il y avait</em>) + GN indéfini (<em>deux voitures</em>)</li>
+            <li><strong>Valeur informationnelle :</strong> entièrement RHÉMATIQUE — pose l'existence de « deux voitures » comme information totalement nouvelle. Le déterminant indéfini (<em>deux</em>) confirme la première mention (≠ <em>les</em> voitures qui présupposerait un référent connu).</li>
+            <li><strong>Effet :</strong> le présentatif « ouvre la scène » en posant les acteurs avant de les qualifier (cf. Brunot : « on constate d'abord l'existence »).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(b)</span>
+        <span class="subq-text">Analysez « C'étaient de vraies lanternes de cristal » : identifiez le type de construction, distinguez-la d'une clivée, commentez son effet informationnel.</span>
+        <span class="subq-pts">4 pts</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li><strong>Présentatif attributif</strong> : <em>c'est</em> + GN → structure de prédication d'identité (≠ clivée)</li>
+            <li><strong>Clivée</strong> : <em>c'est X qui/que P</em> → relative obligatoire</li>
+            <li>Différence structurale : la clivée a une relative, le présentatif attributif a un GN seul</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>Type :</strong> clause à présentatif <em>attributif</em> (<em>c'est</em> + GN attributif)</li>
+            <li><strong>≠ Clivée :</strong> pas de relative introduite par <em>qui/que</em>. Structure : <em>c'était</em> + [de vraies lanternes de cristal] (GN seul, sans relative). La clivée aurait : <em>c'étaient les feux de la voiture qui brillaient</em>.</li>
+            <li><strong>Valeur informationnelle :</strong> le présentatif attributif IDENTIFIE un référent déjà connu (<em>les feux</em> = thème) en lui attribuant une qualité inédite (<em>de vraies lanternes de cristal</em> = rhème). Progression thématique : on part du connu pour attribuer une image poétique.</li>
+            <li><strong>Effet stylistique :</strong> la métaphore est portée par la structure présentative, qui lui donne une force assertive.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(c)</span>
+        <span class="subq-text">Commentez la progression informationnelle des trois phrases du passage dans leur ensemble.</span>
+        <span class="subq-pts">2 pts</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li>Progression thématique : comment les thèmes et rhèmes s'enchaînent d'une clause à l'autre ?</li>
+            <li>Progression linéaire vs thématique constante vs dérivée</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>P1 :</strong> Thème = Ø (présentatif, entièrement rhématique) → pose « deux voitures ».</li>
+            <li><strong>P2 :</strong> Thème = « Les feux de l'une » (extrait des voitures de P1, progression par DÉRIVATION thématique) → Rhème : « brillaient dans la nuit ».</li>
+            <li><strong>P3 :</strong> Thème = « Ces feux » (implicite, repris par <em>c'</em>) → Rhème : « de vraies lanternes de cristal ».</li>
+            <li><strong>Progression :</strong> dérivée (chaque thème est extrait du rhème précédent). Ce type construit la description en entonnoir : de l'ensemble (voitures) au détail (feux) à la métaphore (lanternes).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div><!-- /test5 -->
+
+<!-- ═══════════════ TEST BLANC — PLEURE (RICTUS) ═══════════════ -->
+<div class="test-panel" id="test6">
+<div class="score-banner">
+  <div class="info"><strong>Test blanc — Phonologie &amp; Morphologie</strong><br>Rictus (e-caduc) + « démocrature »</div>
+  <span class="score-chip chip-ok">Corrigé officiel fourni</span>
+</div>
+<p class="practice-intro">Test blanc de type examen — 60 min.</p>
+
+<!-- Q1 Rictus -->
+<div class="q-block">
+  <h3 class="q-head" onclick="qToggle(this)">
+    <span class="acc-arr">▸</span>
+    Q.1 — Phonologie : le e-caduc chez Rictus
+    <span class="q-score">10 pts</span>
+  </h3>
+  <div class="q-wrap">
+    <div class="source-box">
+      <span class="lbl">Texte support — Jehan Rictus, <em>Complainte de l'oubli des pauvres</em> (1897)</span>
+      <blockquote>« Pleure pas ! C'est la vie !<br>
+      Pleure pas ! C'est la vie !<br>
+      L' bonhomm' qu'on a vu pleurer,<br>
+      C'est p't-êtr' que l'espoir l'a quitté. »</blockquote>
+      <p style="font-size:.78rem;color:var(--tx-muted)">Rictus écrit phonétiquement le parler populaire parisien fin XIXe.</p>
+    </div>
+
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(a)</span>
+        <span class="subq-text">Relevez tous les e-caducs (e graphiques) dans ce passage. Pour chacun, indiquez s'il est réalisé ou omis, et expliquez pourquoi selon la règle des trois consonnes.</span>
+        <span class="subq-pts">6 pts</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li><strong>E caduc (schwa)</strong> — <a href="polycop_cours.html">Cours → Phonologie 1.4</a> : voyelle /ə/ dont la réalisation est variable</li>
+            <li><strong>Règle des 3 consonnes (sur les sons, pas les lettres !) :</strong><br>
+              — En fin de groupe syntaxique → toujours omis<br>
+              — Suivi d'une voyelle → tombe<br>
+              — OBLIGATOIRE si sa chute crée 3+ consonnes d'affilée<br>
+              — FACULTATIF si sa chute crée seulement 2 consonnes
+            </li>
+            <li>La graphie de Rictus (apostrophes) transcrit déjà les omissions populaires</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>« Pleure pas »</strong> → e de « Pleure » : fin de groupe prosodique → omis. Graphie « Pleure » mais prononcé [plœʁ].</li>
+            <li><strong>« C'est la vie »</strong> → e de « ce » : élision devant voyelle → c' (omis, obligatoire). E de « vie » = fin de groupe → omis.</li>
+            <li><strong>« L' bonhomm' »</strong> → e de « Le » : élision devant consonne → ici Rictus écrit L' (parler populaire). E de « bonhomme » : fin de mot → omis (non accentogène).</li>
+            <li><strong>« p't-êtr' »</strong> → e de « peut » + e de « être » : double omission. Résultat : [ptɛtʁ]. Chaque omission est licite car aucune ne crée 3 consonnes en chaîne dans ce contexte populaire.</li>
+            <li><strong>« qu'on »</strong> → e de « que » : élision devant voyelle [ɔ̃] → omis obligatoirement.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(b)</span>
+        <span class="subq-text">Que représente la graphie non-standard de Rictus (apostrophes, omissions) du point de vue sociolinguistique ? Quelle variété de langue est transcrite ?</span>
+        <span class="subq-pts">2 pts</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li>Penser à : registre populaire, sociolecte, légitimité des variétés, mimétisme oral, dimension politique de la représentation</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>Variété :</strong> parler populaire parisien de la fin du XIXe (argot des faubourgs, classes ouvrières).</li>
+            <li><strong>Choix graphique :</strong> les apostrophes transcrivent les omissions phonétiques réelles — Rictus donne à voir la parole populaire telle qu'elle se dit, pas telle qu'elle se normalise.</li>
+            <li><strong>Dimension politique :</strong> écrire une variété stigmatisée, c'est la légitimer comme matière poétique. Rictus refuse la correction orthographique comme outil de domination sociale.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(c)</span>
+        <span class="subq-text">Transcrivez phonétiquement (IPA entre crochets) la première strophe en français standard, puis en parler Rictus.</span>
+        <span class="subq-pts">2 pts</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li>Symboles clés : <span class="ipa">[ø]</span> (feu), <span class="ipa">[œ]</span> (peur), <span class="ipa">[ʁ]</span> (r), <span class="ipa">[p]</span> (p), <span class="ipa">[a]</span> (a), <span class="ipa">[pa]</span> (pas)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>Standard :</strong> <span class="ipa">[plœʁə pa sɛ la vi]</span></li>
+            <li><strong>Rictus :</strong> <span class="ipa">[plœʁ pa sɛ la vi]</span> (e final omis, sinon identique ici)</li>
+            <li>Variation principale : omission du <span class="ipa">[ə]</span> final et liaisons non réalisées dans le registre populaire.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Q2 Démocrature -->
+<div class="q-block">
+  <h3 class="q-head" onclick="qToggle(this)">
+    <span class="acc-arr">▸</span>
+    Q.2 — Morphologie : « démocrature »
+    <span class="q-score">10 pts</span>
+  </h3>
+  <div class="q-wrap">
+    <div class="source-box">
+      <span class="lbl">Contexte</span>
+      <p>Le néologisme <strong>« démocrature »</strong> est apparu dans les médias politiques francophones pour désigner un régime qui se présente comme démocratique mais qui fonctionne comme une dictature.</p>
+    </div>
+
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(a)</span>
+        <span class="subq-text">Identifiez le procédé de formation de « démocrature ». Décomposez les éléments constitutifs et montrez le mécanisme morphologique en jeu.</span>
+        <span class="subq-pts">6 pts</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li><strong>Mot-valise</strong> : fusion de deux formes avec CHEVAUCHEMENT ou troncation d'au moins un élément</li>
+            <li>Chercher les deux mots sources : <em>démocratie</em> + <em>dictature</em></li>
+            <li>Localiser le chevauchement phonologique ou la troncation</li>
+            <li>≠ composition : dans un composé, les deux bases sont intégrales</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>Procédé : mot-valise</strong> (blend en anglais)</li>
+            <li><strong>Mots sources :</strong> <em>démocratie</em> + <em>dictature</em></li>
+            <li><strong>Mécanisme :</strong> troncation de <em>démocratie</em> (→ <em>démocra-</em>) + troncation de <em>dictature</em> (→ <em>-ature</em>). Chevauchement possible sur la séquence sonore entre les deux.</li>
+            <li><strong>Structure :</strong> [démocra-] + [-ature] = <em>démocrature</em></li>
+            <li><strong>Double sens condensé :</strong> la forme porte simultanément la référence à la démocratie et à la dictature → densité sémantique maximale en un seul signifiant.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(b)</span>
+        <span class="subq-text">Comparez avec « covoiturage » et « informatique » : sont-ils aussi des mots-valises ? Distinguez les procédés en jeu.</span>
+        <span class="subq-pts">4 pts</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li><strong>Mot-valise</strong> : troncation d'au moins un morphème libre</li>
+            <li><strong>Dérivation</strong> : base + affixe (le préfixe n'est pas une troncation d'un mot autonome)</li>
+            <li><strong>Composition savante</strong> : deux bases grecques/latines non-autonomes (infor-matique = rien de tronqué)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>« covoiturage »</strong> — NON, pas un mot-valise. <em>co-</em> est un préfixe latin (cum = avec) productif : coopération, copilote. Procédé = DÉRIVATION par préfixation : <em>co-</em> + <em>voiturage</em>. Aucun mot tronqué.</li>
+            <li><strong>« informatique »</strong> — NON, pas un mot-valise. <em>infor(mation)</em> + <em>(auto)matique</em> — troncation des deux bases. C'est une COMPOSITION SAVANTE avec troncation, mais on peut aussi l'analyser comme une pseudo-composition : <em>informat-</em> (radical tronqué de information) + <em>-ique</em> (suffixe).</li>
+            <li><strong>Synthèse :</strong> seul « démocrature » est un mot-valise prototypique avec chevauchement sémantique fort entre deux mots autonomes entiers.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div><!-- /test6 -->
+
+<!-- ═══════════════ BLANCS DIFFICILES — RATTRAPAGE ═══════════════ -->
+<div class="test-panel" id="test7">
+<div class="score-banner">
+  <div class="info"><strong>Examens blancs difficiles — Format rattrapage</strong><br>Durée 90 min · sans documentation · 20 pts</div>
+  <span class="score-chip chip-ok">Réponses officielles disponibles</span>
+</div>
+<p class="practice-intro">Ces trois examens blancs sont au niveau du rattrapage — plus exigeants que les tests de validation. Écris tes réponses dans les zones prévues avant de révéler le corrigé.</p>
+
+<div class="section-title">Examen blanc 1 — Bruant &amp; Terminologie financière</div>
+
+<!-- Examen 1 Q1 -->
+<div class="q-block">
+  <h3 class="q-head" onclick="qToggle(this)">
+    <span class="acc-arr">▸</span>
+    Q.1 — Phonologie : Aristide Bruant, <em>A la Villette</em>
+    <span class="q-score">7 pts</span>
+  </h3>
+  <div class="q-wrap">
+    <div class="source-box">
+      <span class="lbl">Texte support — Aristide Bruant, chansonnier montmartrois (fin XIXe)</span>
+      <blockquote>« J'connais une fill' à la Villette,<br>
+        A s'appell' Nini peau d'chien,<br>
+        A n'est pas b'lle, mais à la rigolette,<br>
+        C'est elle qu'on aim' le mieux, ben ! »</blockquote>
+    </div>
+
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(a)</span>
+        <span class="subq-text">Transcrivez phonétiquement en API le deuxième vers en parler populaire (tel qu'il est orthographié) et en français standard.</span>
+        <span class="subq-pts">3 pts</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li>Symboles : <span class="ipa">[a]</span> (elle → a), <span class="ipa">[ɛ]</span> (è), <span class="ipa">[l]</span> (l), <span class="ipa">[ni]</span> (Nini), <span class="ipa">[ʃjɛ̃]</span> (chien)</li>
+            <li>Dans le parler populaire : <em>elle</em> → <span class="ipa">[a]</span> (pronom féminin populaire), liaisons non réalisées</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>Populaire (Bruant) :</strong> <span class="ipa">[a sapɛl nini poʃjɛ̃]</span></li>
+            <li><strong>Standard :</strong> <span class="ipa">[ɛl sapɛl nini po dʃjɛ̃]</span> — « Elle s'appelle Nini peau de chien »</li>
+            <li>Phénomènes : <em>elle</em> → <span class="ipa">[a]</span> (pronom féminin sujet populaire); e caduc de « peau » réalisé ; « de » élide devant consonne dans le standard.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(b)</span>
+        <span class="subq-text">Identifiez et décrivez quatre phénomènes phonologiques distinctifs du parler populaire de Bruant dans tout le passage.</span>
+        <span class="subq-pts">4 pts</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li>Chercher : amuïssement (chute de consonnes), syncope (chute de voyelles), substitutions pronominales, élisions</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>1. Substitution pronominale :</strong> <em>A</em> (= elle) → /a/ remplace /ɛl/ → amuïssement du /l/ dans le pronom féminin populaire.</li>
+            <li><strong>2. Chute du e initial :</strong> « J'connais » = <em>je connais</em> — élision du schwa initial devant consonne en contexte spontané.</li>
+            <li><strong>3. Omission de <em>de</em> :</strong> « peau d'chien » → élision de /də/ → /d/ seul devant consonne, résultant en syntagme quasi soudé.</li>
+            <li><strong>4. Réduction de « belle » :</strong> « b'lle » → élision interne du e caduc → /bl/ (groupe consonantique). Licite car ne crée pas 3 consonnes en chaîne ici.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Examen 1 Q2 -->
+<div class="q-block">
+  <h3 class="q-head" onclick="qToggle(this)">
+    <span class="acc-arr">▸</span>
+    Q.2 — Morphologie : terminologie financière
+    <span class="q-score">7 pts</span>
+  </h3>
+  <div class="q-wrap">
+    <div class="source-box">
+      <span class="lbl">Support — lexique financier néologique</span>
+      <blockquote>« <em>Quantitative easing</em>, <em>cryptomonnaie</em>, <em>néobanque</em>, <em>désintermédiation</em>, <em>financer</em> (employé comme verbe) »</blockquote>
+    </div>
+
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(a)</span>
+        <span class="subq-text">Pour « cryptomonnaie », « néobanque » et « désintermédiation », identifiez le procédé de formation, décomposez les morphèmes et procédez par commutation pour les affixes.</span>
+        <span class="subq-pts">5 pts</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li><em>crypto-</em> = préfixe savant grec (caché, chiffré) ; <em>néo-</em> = préfixe grec (nouveau) ; <em>dés-</em> = préfixe français d'inversion/négation</li>
+            <li><em>-ation</em> = suffixe nominal d'action productif</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>« cryptomonnaie »</strong> — Composition savante : <em>crypto-</em> (gr. kruptos = caché) + <em>monnaie</em> (N fr.). Commutation : crypto-graphie, crypto-logie. Préfixe lié à base libre.</li>
+            <li><strong>« néobanque »</strong> — Composition savante : <em>néo-</em> (gr. neos = nouveau) + <em>banque</em> (N fr.). Commutation : néo-libéralisme, néo-classicisme. Même structure.</li>
+            <li><strong>« désintermédiation »</strong> — Dérivation par préfixation + suffixation : <em>dés-</em> (préfixe de négation/inversion) + <em>intermédi(aire)-</em> (radical) + <em>-ation</em> (suffixe nominal d'action). Commutation : dés-activation, dés-organisation. Structure complexe : préfixe + radical + suffixe.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(b)</span>
+        <span class="subq-text">« Financer » est utilisé ici comme verbe transitif. Quel procédé morphologique cela illustre-t-il ? Donnez deux autres exemples du même procédé.</span>
+        <span class="subq-pts">2 pts</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li><em>finance</em> (N) → <em>financer</em> (V) = suffixation avec changement de catégorie → dérivation par suffixe verbal <em>-er</em></li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>Procédé : dérivation verbale par suffixation</strong> avec le morphème <em>-er</em> (suffixe verbal infinitif du 1er groupe).</li>
+            <li><em>finance</em> (N) + <em>-er</em> → <em>financer</em> (V). Change la catégorie : N → V.</li>
+            <li><strong>Autres exemples :</strong> <em>email</em> → <em>emailer</em> ; <em>tweet</em> → <em>tweeter</em> ; <em>budget</em> → <em>budgéter</em>.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Examen 1 Q3 -->
+<div class="q-block">
+  <h3 class="q-head" onclick="qToggle(this)">
+    <span class="acc-arr">▸</span>
+    Q.3 — Syntaxe : analyse clausale
+    <span class="q-score">6 pts</span>
+  </h3>
+  <div class="q-wrap">
+    <div class="source-box">
+      <span class="lbl">Texte support</span>
+      <blockquote>« Le tableau qu'il avait acheté pour une misère, c'est à Paris qu'il l'avait trouvé. »</blockquote>
+    </div>
+
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(a)</span>
+        <span class="subq-text">Analysez la totalité de cette phrase complexe : clauses, fonctions, constructions détachées, dynamique informationnelle.</span>
+        <span class="subq-pts">6 pts</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li><strong>Phrase complexe</strong> : identifier chaque clause (combien de verbes conjugués ?)</li>
+            <li><strong>Dislocation gauche :</strong> GN en tête repris par pronom → THÈME</li>
+            <li><strong>Relative restreinte :</strong> « qu'il avait acheté » = clause relative enchâssée dans le GN thème</li>
+            <li><strong>Clivée :</strong> « c'est X que P » → RHÈME = X</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>Structure globale :</strong> dislocation gauche + clivée → double opération de mise en relief informationnelle.</li>
+            <li><strong>Clause 1 — dislocation gauche :</strong> « Le tableau qu'il avait acheté pour une misère » = GN thème, repris par « l' » (pronom COD) dans la clause principale.</li>
+            <li><strong>Relative enchâssée :</strong> « qu'il avait acheté pour une misère » — modifie « tableau », antécédent ; « pour une misère » = circonstant de manière/prix.</li>
+            <li><strong>Clause principale — clivée :</strong> « c'est à Paris qu'il l'avait trouvé ». Structure : <em>c'est</em> + [à Paris] (RHÈME, lieu focalisé) + <em>que</em> + [il l'avait trouvé] (THÈME de la clivée).</li>
+            <li><strong>DI :</strong> Thème = le tableau (déjà connu, disloqué) → Rhème = à Paris (l'information nouvelle mise en relief). Double mouvement : donner d'abord le référent (tableau), puis en focaliser la provenance (Paris).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-title" style="margin-top:2rem">Examen blanc 2 — Texte de presse &amp; Construction détachée</div>
+
+<div class="q-block">
+  <h3 class="q-head" onclick="qToggle(this)">
+    <span class="acc-arr">▸</span>
+    Q.1 — Syntaxe : constructions détachées dans la presse
+    <span class="q-score">10 pts</span>
+  </h3>
+  <div class="q-wrap">
+    <div class="source-box">
+      <span class="lbl">Texte support — titre et chapeau de presse</span>
+      <blockquote>« Fatigués, désabusés, les électeurs ont boudé les urnes. »<br>
+      « Ces résultats, personne ne les avait anticipés. »<br>
+      « C'est la démission du premier ministre qui a tout précipité. »</blockquote>
+    </div>
+
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(a)</span>
+        <span class="subq-text">Analysez chaque phrase : identifiez le type de construction en gras, sa valeur informationnelle, et ses propriétés syntaxiques (déplaçable ? supprimable ? reprise pronominale ?).</span>
+        <span class="subq-pts">7 pts</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li><strong>Construction absolue adjectivale</strong> : GAdj détaché (Adj, [,], clause principale) → co-prédicatif</li>
+            <li><strong>Dislocation gauche</strong> : GN + [,] + clause avec pronom → thématisation</li>
+            <li><strong>Clause clivée</strong> : <em>c'est X qui P</em> → focalisation rhématique</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>P1 — « Fatigués, désabusés, les électeurs ont boudé les urnes. »</strong> : Construction absolue adjectivale (deux GAdj détachés en tête). Valeur : co-prédicative (état concomitant du sujet). Déplaçable : « Les électeurs, fatigués, désabusés, ont boudé les urnes. » ✓. Supprimable sans perte structurale : oui. Pas de reprise pronominale.</li>
+            <li><strong>P2 — « Ces résultats, personne ne les avait anticipés. »</strong> : Dislocation gauche. « Ces résultats » = GN thème repris par « les » (COD). THÈME mis en position initiale pour en faire le point de départ. Propriétés : non déplaçable sans reprise, reprise pronominale obligatoire.</li>
+            <li><strong>P3 — « C'est la démission du premier ministre qui a tout précipité. »</strong> : Clause clivée. Élément focalisé (RHÈME) : « la démission du premier ministre ». Clause enchâssée (relative avec <em>qui</em>) : « qui a tout précipité ». Valeur : focalisation contrastive — c'est CE fait, et pas un autre, qui a eu cet effet.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(b)</span>
+        <span class="subq-text">Réécrivez la deuxième phrase sans dislocation. Quelle valeur informationnelle est perdue ? Dans quel contexte discursif la dislocation gauche est-elle préférable ?</span>
+        <span class="subq-pts">3 pts</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li>Sans dislocation : ordre canonique. Quel est le THÈME et le RHÈME dans cette version ? Est-ce la même valeur ?</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>Sans dislocation :</strong> « Personne n'avait anticipé ces résultats. »</li>
+            <li><strong>Valeur perdue :</strong> dans la version avec dislocation, « ces résultats » est THÈME (info connue, posée comme point de départ). Dans la canonique, « ces résultats » est COD en position rhématique (info nouvelle).</li>
+            <li><strong>Contexte :</strong> la dislocation est préférable quand « ces résultats » a déjà été mentionné dans le discours précédent — on reprend un référent connu pour en dire quelque chose de nouveau (personne ne les avait anticipés). La canonique introduit les résultats comme information nouvelle.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-title" style="margin-top:2rem">Examen blanc 3 — Poème, Phonologie &amp; Morphologie combinées</div>
+
+<div class="q-block">
+  <h3 class="q-head" onclick="qToggle(this)">
+    <span class="acc-arr">▸</span>
+    Q.1 — Analyse combinée : Apollinaire, <em>Le Pont Mirabeau</em>
+    <span class="q-score">10 pts</span>
+  </h3>
+  <div class="q-wrap">
+    <div class="source-box">
+      <span class="lbl">Texte support</span>
+      <blockquote>« Sous le pont Mirabeau coule la Seine<br>
+        Et nos amours<br>
+        Faut-il qu'il m'en souvienne<br>
+        La joie venait toujours après la peine »</blockquote>
+      <p style="font-size:.78rem;color:var(--tx-muted)">Guillaume Apollinaire, <em>Alcools</em> (1913)</p>
+    </div>
+
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(a)</span>
+        <span class="subq-text">Analysez syntaxiquement la première phrase : type de clause, ordre des constituants, valeur informationnelle de cet ordre.</span>
+        <span class="subq-pts">4 pts</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li><strong>Clause inversée</strong> : conditions → verbe monovalent, circonstant en zone préverbale, sujet post-verbal → RHÈME fort</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>Type :</strong> clause inversée (Circonstant – V – S)</li>
+            <li><strong>Ordre :</strong> « Sous le pont Mirabeau » (GPrep circonstant, zone préverbale) + « coule » (V monovalent d'existence) + « la Seine » (sujet post-verbal)</li>
+            <li><strong>Conditions remplies :</strong> verbe monovalent (couler = ne requiert qu'un sujet), zone préverbale occupée par circonstant locatif.</li>
+            <li><strong>DI :</strong> « la Seine » en position rhématique → info nouvelle, la Seine est <em>introduite</em> dans la scène. Effet : description en tableau, le regard du poète glisse du pont à la rivière qui surgit sous lui.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(b)</span>
+        <span class="subq-text">Analysez les e-caducs dans « souvienne » et « peine ». Transcrivez phonétiquement les vers 3 et 4 en réalisation standard.</span>
+        <span class="subq-pts">3 pts</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li>E caduc en fin de mot à la rime : en poésie classique, il peut être réalisé ou non selon le vers et la métrique</li>
+            <li><span class="ipa">[vjɛn]</span> sans e final vs <span class="ipa">[vjɛnə]</span> avec e-féminin à la rime</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>« souvienne » (fin de vers 3) :</strong> en français contemporain, le e final est omis : <span class="ipa">[suvjɛn]</span>. En poésie classique, l'e-féminin était réalisé pour compter la syllabe à la rime.</li>
+            <li><strong>« peine » (fin de vers 4) :</strong> même situation : <span class="ipa">[pɛn]</span> contemporain vs <span class="ipa">[pɛnə]</span> en déclamation classique.</li>
+            <li><strong>Vers 3 :</strong> <span class="ipa">[fo til kil mɑ̃ suvjɛn]</span></li>
+            <li><strong>Vers 4 :</strong> <span class="ipa">[la ʒwa vənɛ tuʒuʁ apʁɛ la pɛn]</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="subq-block">
+      <div class="subq-header">
+        <span class="subq-letter">(c)</span>
+        <span class="subq-text">Analysez morphologiquement « souvienne » : identifiez le verbe, sa classe morphologique, et commentez la construction pronominale.</span>
+        <span class="subq-pts">3 pts</span>
+      </div>
+      <div class="subq-actions">
+        <button class="action-btn btn-hint" onclick="subToggle(this,'hint')">💡 Théorie à mobiliser</button>
+        <button class="action-btn btn-answer" onclick="subToggle(this,'answer')">✅ Réponse modèle</button>
+      </div>
+      <div class="subq-hint">
+        <div class="hint-inner">
+          <ul>
+            <li><em>se souvenir</em> = verbe <strong>essentiellement pronominal</strong> (n'existe qu'avec le pronom)</li>
+            <li><em>souvienne</em> = subjonctif présent — contexte de « il faut que »</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subq-answer">
+        <div class="answer-inner">
+          <ul>
+            <li><strong>Verbe :</strong> <em>se souvenir</em> (infinitif). Conjugué ici : <em>il m'en souvienne</em> = subjonctif présent, 3e personne, mode exigé par « il faut que ».</li>
+            <li><strong>Classe morphologique :</strong> verbe du 3e groupe, irrégulier (famille de <em>venir</em> : venir, tenir, souvenir).</li>
+            <li><strong>Construction pronominale :</strong> <em>se souvenir</em> est un verbe <em>essentiellement pronominal</em> — il n'existe pas sans le pronom réfléchi (≠ <em>souvenir</em> N = objet). Impossible de dire *« il souvient ». Le pronom ne joue donc aucun rôle actanciel — c'est un morphème vide de sens actanciel (dit pronom « lexical »).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /test7 -->
 
 <script src="notes.js"></script>
 <script>

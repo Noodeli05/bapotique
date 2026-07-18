@@ -32,7 +32,7 @@
   .bap-note-del:hover{color:#f0b8c4}
   .bap-nadd{padding:.6rem .75rem;border-top:1px solid rgba(255,255,255,0.08);flex-shrink:0;display:flex;gap:.4rem;align-items:flex-end}
   [data-theme="light"] .bap-nadd{border-top-color:rgba(0,0,0,0.08)}
-  .bap-ntxt{flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:.5rem .65rem;font-size:.8rem;font-family:'DM Sans',sans-serif;color:#e8e4f0;resize:none;min-height:60px;max-height:120px;outline:none;transition:border-color .15s}
+  .bap-ntxt{flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:.5rem .65rem;font-size:1rem;font-family:'DM Sans',sans-serif;color:#e8e4f0;resize:none;min-height:60px;max-height:120px;outline:none;transition:border-color .15s}
   [data-theme="light"] .bap-ntxt{background:rgba(255,255,255,.8);border-color:rgba(0,0,0,.12);color:#1a1730}
   .bap-ntxt:focus{border-color:rgba(200,184,240,.5)}
   .bap-ntxt::placeholder{color:rgba(232,228,240,.3)}

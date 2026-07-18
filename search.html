@@ -136,7 +136,7 @@ mark{background:rgba(200,184,240,0.28);color:var(--lav);border-radius:3px;paddin
 <script>
 // ── Theme ──────────────────────────────────────────────────────────────────
 (function(){
-  const t=localStorage.getItem('fc_theme')||'dark';
+  const t=localStorage.getItem('bap_theme')||'dark';
   document.documentElement.setAttribute('data-theme',t);
   document.getElementById('theme-toggle').innerHTML=t==='dark'?'<svg class="ic"><use href="#i-moon"/></svg>':'<svg class="ic"><use href="#i-sun"/></svg>';
 })();
@@ -144,7 +144,7 @@ document.getElementById('theme-toggle').onclick=function(){
   const t=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';
   document.documentElement.setAttribute('data-theme',t);
   this.innerHTML=t==='dark'?'<svg class="ic"><use href="#i-moon"/></svg>':'<svg class="ic"><use href="#i-sun"/></svg>';
-  localStorage.setItem('fc_theme',t);
+  localStorage.setItem('bap_theme',t);
 };
 
 // ── Data ───────────────────────────────────────────────────────────────────
