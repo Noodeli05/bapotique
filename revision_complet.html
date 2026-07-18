@@ -1444,18 +1444,18 @@ function showDos(id){
   if(d)d.classList.add('active');
   var nav=document.getElementById('nav'+id);
   if(nav)nav.classList.add('active');
-  if(d){var tc=d.querySelectorAll('.tab-content');var tb=d.querySelectorAll('.tab-btn');tc.forEach(t=>t.classList.remove('active'));tb.forEach(b=>b.classList.remove('active'));if(tc[0])tc[0].classList.add('active');if(tb[0])tb[0].classList.add('active');if(tc[0])initAccordion(tc[0]);}
+  if(d){var tc=d.querySelectorAll('.tab-content');var tb=d.querySelectorAll('.tab-btn');tc.forEach(t=>t.classList.remove('active'));tb.forEach(b=>b.classList.remove('active'));}
   window.scrollTo(0,0);
   document.getElementById('sidebar').classList.remove('open');
 }
 function showTab(el,i){
   var dos=el.closest('.dossier');
+  var tc=dos.querySelectorAll('.tab-content')[i];
+  var btn=dos.querySelectorAll('.tab-btn')[i];
+  var wasActive=tc.classList.contains('active');
   dos.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
   dos.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
-  var tc=dos.querySelectorAll('.tab-content')[i];
-  tc.classList.add('active');
-  dos.querySelectorAll('.tab-btn')[i].classList.add('active');
-  initAccordion(tc);
+  if(!wasActive){tc.classList.add('active');btn.classList.add('active');initAccordion(tc);}
 }
 function flipFC(el){el.classList.toggle('flip');}
 function flipAll(dos,f){dos.querySelectorAll('.fc').forEach(c=>{if(f)c.classList.add('flip');else c.classList.remove('flip');});}
