@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260719');}());</script>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260718');}());</script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Flashcards — Linguistique UNIL 2025</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -78,11 +78,22 @@ body::before{
 }
 
 /* ── Header ── */
-.site-header{background:var(--sb);padding:.8rem 1.5rem;display:flex;align-items:center;gap:1rem;box-shadow:0 2px 16px rgba(0,0,0,.4);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);}
+.site-header{background:var(--sb);padding:.8rem 1.5rem;display:flex;align-items:center;gap:1rem;box-shadow:0 2px 16px rgba(0,0,0,.4);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);position:relative;}
 .site-header h1{font-family:'DM Serif Display',serif;font-size:1.1rem;color:#fff;flex-shrink:0}
 .nav-links{display:flex;gap:.6rem;flex:1;overflow-x:auto;-webkit-overflow-scrolling:touch}
 .nav-links a{color:rgba(232,228,240,0.80);text-decoration:none;font-size:.82rem;padding:.3rem .7rem;border-radius:6px;transition:background .15s,color .15s}
 .nav-links a:hover,.nav-links a.active{background:rgba(200,184,240,0.18);color:#fff}
+
+/* ── HAMBURGER MOBILE ── */
+.topnav-burger{display:none;background:none;border:none;cursor:pointer;padding:.34rem .45rem;border-radius:7px;color:var(--mu);transition:background .15s;align-items:center;line-height:1;flex-shrink:0}
+.topnav-burger:hover{background:rgba(200,184,240,0.10)}
+.nav-links a.active{color:var(--lav)!important;background:rgba(200,184,240,0.12)}
+@media(max-width:760px){
+  .topnav-burger{display:flex}
+  .nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--nav,var(--sb));backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--bdr);padding:.5rem 1rem;gap:.2rem;z-index:99}
+  .nav-links.open{display:flex!important}
+  .nav-links a{padding:.55rem .8rem;border-radius:7px;width:100%}
+}
 .btn-icon{background:none;border:none;cursor:pointer;font-size:1.1rem;color:var(--mu);padding:.3rem;border-radius:6px;transition:background .15s}
 .btn-icon:hover{background:rgba(255,255,255,.1)}
 
@@ -121,7 +132,7 @@ body::before{
 .card-chapter{font-size:.72rem;color:var(--mu);text-align:center;margin-top:.2rem}
 .card-fav{position:absolute;top:.7rem;right:.8rem;font-size:1.1rem;cursor:pointer;opacity:.5;transition:opacity .2s,transform .2s}
 .card-fav:hover,.card-fav.active{opacity:1;transform:scale(1.2)}
-.flip-hint{font-size:.72rem;color:var(--mu);text-align:center}
+.flip-hint{font-size:.85rem;color:var(--mu);text-align:center;opacity:0.85}
 
 /* ── Controls ── */
 .fc-controls{display:flex;align-items:center;gap:.75rem;width:100%;max-width:560px;justify-content:center;flex-wrap:wrap}
@@ -194,10 +205,12 @@ body::before{
   .btn{padding:.45rem .9rem;font-size:.78rem}
   .fc-toolbar{gap:.35rem}
   .tool-btn{font-size:.7rem;padding:.3rem .55rem}
-  .site-header{padding:.5rem .8rem;gap:.4rem;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .site-header{padding:.5rem .8rem;gap:.4rem;flex-wrap:nowrap;position:relative;overflow:visible}
   .site-header h1{font-size:.85rem;white-space:nowrap;flex-shrink:0}
-  .nav-links{gap:.25rem;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch}
-  .nav-links a{font-size:.72rem;padding:.22rem .45rem;white-space:nowrap}
+}
+@media(max-width:700px){
+  .btn-sidebar-toggle{display:flex!important;align-items:center;gap:.4rem;background:rgba(255,255,255,.06);border:1px solid var(--bdr);border-radius:8px;padding:.5rem 1rem;color:var(--tx);font-size:.82rem;cursor:pointer;margin:.5rem auto;width:fit-content}
+  .fc-sidebar.sidebar-open, .sidebar.sidebar-open{display:block!important;position:fixed;inset:0;z-index:200;overflow-y:auto;background:var(--bg);padding:1rem}
 }
 
 .ic{width:1em;height:1em;vertical-align:-.15em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;display:inline-block;overflow:visible}
@@ -245,9 +258,11 @@ body.zen-mode .fc-area{gap:1.2rem;padding-top:2rem}
     <a href="stats.html">Progression</a>
     <a href="all_cards.html" style="background:rgba(200,184,240,.18);color:#fff;font-weight:700"><svg class="ic"><use href="#i-layers"/></svg> Toutes les cartes</a>
   </nav>
+  <button class="topnav-burger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu navigation"><svg class="ic"><use href="#i-menu"/></svg></button>
   <button class="btn-icon" id="theme-toggle" title="Changer le thème"><svg class="ic"><use href="#i-moon"/></svg></button>
   <button class="btn-icon" id="shortcuts-toggle" title="Raccourcis clavier"><svg class="ic"><use href="#i-settings"/></svg></button>
 </header>
+<script>(function(){var p=location.pathname.split('/').pop()||'index.html';document.querySelectorAll('.nav-links a').forEach(function(a){var h=(a.getAttribute('href')||'').replace('./','');if(h===p)a.classList.add('active');});})();</script>
 
 <!-- Shortcuts panel -->
 <div class="shortcuts-panel" id="shortcuts-panel">
@@ -263,6 +278,9 @@ body.zen-mode .fc-area{gap:1.2rem;padding-top:2rem}
   </div>
 </div>
 
+<button class="btn-sidebar-toggle" onclick="document.querySelector('.fc-sidebar').classList.toggle('sidebar-open')" style="display:none">
+  <svg class="ic"><use href="#i-filter"/></svg> Filtrer par chapitre
+</button>
 <div class="fc-layout">
 <!-- Sidebar -->
 <aside class="fc-sidebar" id="fc-sidebar">
@@ -376,7 +394,7 @@ body.zen-mode .fc-area{gap:1.2rem;padding-top:2rem}
         <option value="12000">12s</option>
       </select>
       <button class="tool-btn" id="btn-test" onclick="startTest()" title="Mode test (T)"><svg class="ic"><use href="#i-edit"/></svg> Tester</button>
-      <button class="tool-btn" id="btn-zen" onclick="toggleZen()" title="Mode Zen — moins de distractions"><svg class="ic"><use href="#i-sparkles"/></svg> Zen</button>
+      <button class="tool-btn" id="btn-zen" onclick="toggleZen()" title="Mode Zen · recommandé pour la concentration" style="border:1px solid rgba(46,191,165,0.4);color:#2EBFA5"><svg class="ic"><use href="#i-sparkles"/></svg> Zen</button>
       <a href="all_cards.html" class="tool-btn" style="text-decoration:none"><svg class="ic"><use href="#i-layers"/></svg> Toutes les cartes</a>
     </div>
 

@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260719');}());</script>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260718');}());</script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Toutes les cartes — Entraînement UNIL 2025</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -96,11 +96,11 @@ body::before{
 .card{height:200px;perspective:900px;cursor:pointer;user-select:none}
 .card-inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .5s cubic-bezier(.4,0,.2,1)}
 .card.flipped .card-inner{transform:rotateY(180deg)}
-.card:hover:not(.flipped) .card-inner{transform:rotateY(6deg) scale(1.02)}
+.card:hover:not(.flipped) .card-inner{transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,0,0,0.3)}
 .card-front,.card-back{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:14px;display:flex;flex-direction:column;padding:1rem 1.1rem;overflow:hidden}
 .card-front{background:var(--card);border:1.5px solid rgba(200,184,240,0.22);box-shadow:0 4px 16px rgba(0,0,0,.3);position:relative;overflow:hidden}
 .card-front::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,rgba(200,184,240,0.7),rgba(168,200,240,0.4),transparent)}
-.card:hover:not(.flipped) .card-inner{transform:rotateY(4deg) scale(1.02)}
+/* tilt removed */
 .card-back{background:rgba(255,255,255,0.04);border:1.5px solid rgba(168,216,196,0.22);transform:rotateY(180deg);box-shadow:0 4px 14px rgba(0,0,0,.25)}
 .card-back::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,rgba(168,216,196,0.7),rgba(200,184,240,0.3),transparent)}
 .card-label{font-size:.65rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;opacity:.75;margin-bottom:.4rem;color:var(--lav)}
@@ -112,6 +112,22 @@ body::before{
 .empty{grid-column:1/-1;text-align:center;padding:4rem 2rem;color:var(--mu)}
 @media(max-width:600px){.grid{grid-template-columns:1fr;padding:.8rem 1rem 2rem}.card{height:180px}.controls{padding:.8rem 1rem}}
 
+/* ── HAMBURGER MOBILE ── */
+.topnav-burger{display:none;background:none;border:none;cursor:pointer;padding:.34rem .45rem;border-radius:7px;color:var(--mu);transition:background .15s;align-items:center;line-height:1;flex-shrink:0}
+.topnav-burger:hover{background:rgba(200,184,240,0.10)}
+.topnav-links a.active{color:var(--lav)!important;background:rgba(200,184,240,0.12)}
+@media(max-width:760px){
+  .topnav-burger{display:flex}
+  .topnav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--nav);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--bdr);padding:.5rem 1rem;gap:.2rem;z-index:99}
+  .topnav-links.open{display:flex!important}
+  .topnav-links a{padding:.55rem .8rem;border-radius:7px;width:100%}
+}
+/* ── PAGINATION ── */
+.pagination-bar{display:flex;align-items:center;justify-content:center;gap:.5rem;padding:1.5rem 1rem;flex-wrap:wrap}
+.page-btn{background:rgba(255,255,255,.06);border:1px solid var(--bdr);color:var(--tx);padding:.4rem .8rem;border-radius:7px;cursor:pointer;font-size:.82rem;font-family:'DM Sans',sans-serif;transition:background .15s}
+.page-btn:hover,.page-btn.active{background:rgba(200,184,240,0.15);border-color:var(--lav);color:var(--lav)}
+.page-btn:disabled{opacity:.35;cursor:not-allowed}
+.page-info{font-size:.8rem;color:var(--mu);padding:0 .5rem}
 /* iOS auto-zoom prevention: keep all inputs >= 16px */
 input, textarea, select { font-size: max(16px, 1em) !important; }
 /* TTS */
@@ -126,12 +142,14 @@ input, textarea, select { font-size: max(16px, 1em) !important; }
 <script src="icons.js"></script>
 <nav class="topnav">
   <h1><a href="index.html"><svg class="ic"><use href="#i-target"/></svg> Toutes les cartes — Entraînement</a></h1>
-  <div class="nav-links">
+  <div class="nav-links topnav-links">
     <a href="entrainement.html">← Retour</a>
     <a href="index.html">Accueil</a>
   </div>
+  <button class="topnav-burger" onclick="document.querySelector('.topnav-links').classList.toggle('open')" aria-label="Menu navigation"><svg class="ic"><use href="#i-menu"/></svg></button>
   <button class="btn-icon" id="themeBtn" onclick="toggleTheme()" title="Thème"><svg class="ic"><use href="#i-moon"/></svg></button>
 </nav>
+<script>(function(){var p=location.pathname.split('/').pop()||'index.html';document.querySelectorAll('.topnav-links a').forEach(function(a){var h=(a.getAttribute('href')||'').replace('./','');if(h===p)a.classList.add('active');});})();</script>
 <div class="controls">
   <div class="search-row">
     <input class="search-box" id="searchBox" type="text" placeholder="Rechercher dans toutes les cartes…" oninput="applyFilters()">
@@ -141,6 +159,11 @@ input, textarea, select { font-size: max(16px, 1em) !important; }
     <button class="filter-btn active" data-deck="all" onclick="filterDeck(this)"><svg class="ic"><use href="#i-layers"/></svg> Tous les decks</button>
     <button class="filter-btn" data-deck="d1" onclick="filterDeck(this)"><svg class="ic"><use href="#i-edit"/></svg> Révision</button><button class="filter-btn" data-deck="d2" onclick="filterDeck(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Corrigés TP</button><button class="filter-btn" data-deck="d3" onclick="filterDeck(this)"><svg class="ic"><use href="#i-book-open"/></svg> Guide</button><button class="filter-btn" data-deck="d4" onclick="filterDeck(this)"><svg class="ic"><use href="#i-graduation-cap"/></svg> Cours</button><button class="filter-btn" data-deck="d5" onclick="filterDeck(this)"><svg class="ic"><use href="#i-book-open"/></svg> Polycopié</button><button class="filter-btn" data-deck="d6" onclick="filterDeck(this)"><svg class="ic"><use href="#i-book-open"/></svg> Séances</button><button class="filter-btn" data-deck="d7" onclick="filterDeck(this)"><svg class="ic"><use href="#i-bar-chart"/></svg> Synthèse</button><button class="filter-btn" data-deck="d8" onclick="filterDeck(this)"><svg class="ic"><use href="#i-book-open"/></svg> Résumé TP</button><button class="filter-btn" data-deck="d9" onclick="filterDeck(this)"><svg class="ic"><use href="#i-search"/></svg> TP Complet</button>
   </div>
+</div>
+<div style="text-align:center;margin:.5rem 0 1rem">
+  <a href="entrainement.html" style="display:inline-flex;align-items:center;gap:.4rem;background:rgba(200,184,240,0.10);border:1px solid rgba(200,184,240,0.20);color:var(--lav);padding:.45rem 1.1rem;border-radius:8px;font-size:.82rem;font-weight:600;text-decoration:none;transition:background .15s">
+    <svg class="ic"><use href="#i-target"/></svg> Aller en mode entraînement →
+  </a>
 </div>
 <div class="grid" id="grid">
 <div class="card" data-deck="d1" data-sec="THÈME 0 — INTRODUCTION : SÉMIOLOGIE, SIGNE ET NIVEAUX D'ANALYSE" onclick="this.classList.toggle('flipped')"><div class="card-inner"><div class="card-front"><span class="card-label">Q</span><p>Qu'est-ce qu'un signe au sens sémiologique ? Donnez sa structure et un exemple concret non linguistique.</p><span class="deck-badge"><svg class="ic"><use href="#i-edit"/></svg> Révision</span></div><div class="card-back"><span class="card-label">R</span><p>Un signe est l'association d'une EXPRESSION (signifiant, donnée perceptive) et d'un CONTENU (signifié, donnée cognitive). L'expression « tient lieu » du contenu. Exemple : position des couverts dans l'assiette → couverts à l'intérieur = « débarrasser » ; couverts sur le bord = « ne pas débarrasser ». L'expression (position physique) renvoie à un contenu (instruction comportementale). Pour la langue : /arbre/ = signifiant ; concept d'arbre = signifié. L'association est arbitraire et systémique.</p><span class="deck-badge sec-badge">THÈME 0 — INTRODUCTION : SÉMIOLOGIE, SIGNE ET NIVE…</span></div></div></div>
@@ -577,32 +600,68 @@ input, textarea, select { font-size: max(16px, 1em) !important; }
 <div class="card" data-deck="d9" data-sec="DOSSIER 8-9 — PHRASE GRAPHIQUE ET COMPOSITION" onclick="this.classList.toggle('flipped')"><div class="card-inner"><div class="card-front"><span class="card-label">Q</span><p>Comment analyser et distinguer les INSERTIONS PARENTHÉTIQUES dans un texte littéraire ?</p><span class="deck-badge"><svg class="ic"><use href="#i-search"/></svg> TP Complet</span></div><div class="card-back"><span class="card-label">R</span><p>MÉTHODE : identifier la relation syntaxique (ou son absence) entre l'insertion et la clause d'accueil. INCISE (source énonciative) : chercher l'inversion sujet-verbe (dit-il, m'a-t-il dit, répondirent-ils). L'incise ne peut pas être déplacée sans modifier le sens. Elle indique QUI parle, pense ou dit. INCIDENTE (commentaire métalinguistique) : forme variable (je crois, il me semble, j'en suis sûr, comme je l'ai dit). Peut être déplacée dans la clause sans changer fondamentalement le sens. Elle indique COMMENT le locuteur se positionne par rapport à ce qu'il dit (degré de certitude, réserves, assentiment). EFFET STYLISTIQUE : un texte sans insertions = assertion nue. Avec incidentes = locuteur visible dans sa parole, subjectivité affichée.</p><span class="deck-badge sec-badge">DOSSIER 8-9 — PHRASE GRAPHIQUE ET COMPOSITION</span></div></div></div>
 <div class="card" data-deck="d9" data-sec="DOSSIER 8-9 — PHRASE GRAPHIQUE ET COMPOSITION" onclick="this.classList.toggle('flipped')"><div class="card-inner"><div class="card-front"><span class="card-label">Q</span><p>Distinguez JUXTAPOSITION et COORDINATION. Analysez l'effet de chacune dans un texte littéraire.</p><span class="deck-badge"><svg class="ic"><use href="#i-search"/></svg> TP Complet</span></div><div class="card-back"><span class="card-label">R</span><p>JUXTAPOSITION : clauses enchaînées SANS terme relationnel. Lien logique IMPLICITE que le destinataire doit inférer (effet de sens généré par la co-présence). COORDINATION : lien EXPLICITE par une conjonction de coordination qui indique la nature du lien. EFFETS dans un texte littéraire : JUXTAPOSITION → accumulation d'impressions, style « notation », simultanéité, implicite riche (le lecteur fait le travail). Ex. : « Le soleil était chaud. Les oiseaux chantaient. Il songea à partir. » COORDINATION → lien logique clairement établi, progression argumentative ou narrative plus explicite. Ex. : « Le soleil était chaud et les oiseaux chantaient, mais il resta. » Le « mais » = adversatif (contraste). CONCLUSION : la parataxe (juxtaposition) est un choix stylistique fort, lié à une esthétique de l'ellipse et de l'implicite.</p><span class="deck-badge sec-badge">DOSSIER 8-9 — PHRASE GRAPHIQUE ET COMPOSITION</span></div></div></div>
 </div>
+<div id="paginationBarBottom" class="pagination-bar"></div>
 <script>
-let activeDeck='all';
+var CARDS_PER_PAGE=24;
+var currentPage=1;
+var allCards=[];
+
+function buildCardIndex(){
+  allCards=Array.from(document.querySelectorAll('#grid .card'));
+}
+
+function renderPagination(total,current){
+  var totalPages=Math.max(1,Math.ceil(total/CARDS_PER_PAGE));
+  function html(container){
+    var h='';
+    h+='<button class="page-btn" '+(current<=1?'disabled':'')+" onclick=\"goPage("+(current-1)+")\">← Précédente</button>";
+    h+='<span class="page-info">Page '+current+' / '+totalPages+' ('+total+' carte'+(total>1?'s':'')+')</span>';
+    h+='<button class="page-btn" '+(current>=totalPages?'disabled':'')+" onclick=\"goPage("+(current+1)+")\">Suivante →</button>";
+    container.innerHTML=h;
+  }
+  var bot=document.getElementById('paginationBarBottom');
+  if(bot)html(bot);
+}
+
+function goPage(p){
+  currentPage=p;
+  applyFilters(true);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+var activeDeck='all';
 function filterDeck(btn){
-  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active');});
   btn.classList.add('active');
   activeDeck=btn.dataset.deck;
+  currentPage=1;
   applyFilters();
 }
-function applyFilters(){
-  const q=document.getElementById('searchBox').value.toLowerCase().trim();
-  const cards=document.querySelectorAll('.card');
-  let shown=0;
-  cards.forEach(c=>{
-    const matchDeck=activeDeck==='all'||c.dataset.deck===activeDeck;
-    const text=(c.querySelector('.card-front p').textContent+' '+c.querySelector('.card-back p').textContent).toLowerCase();
-    const matchQ=!q||text.includes(q);
-    const vis=matchDeck&&matchQ;
-    c.style.display=vis?'':'none';
-    if(vis)shown++;
+function applyFilters(keepPage){
+  if(!keepPage)currentPage=1;
+  if(allCards.length===0)buildCardIndex();
+  var q=document.getElementById('searchBox').value.toLowerCase().trim();
+  var filtered=allCards.filter(function(c){
+    var matchDeck=activeDeck==='all'||c.dataset.deck===activeDeck;
+    var text=(c.querySelector('.card-front p').textContent+' '+c.querySelector('.card-back p').textContent).toLowerCase();
+    var matchQ=!q||text.includes(q);
+    return matchDeck&&matchQ;
   });
-  const empty=document.getElementById('empty-msg');
-  if(shown===0){
-    if(!empty){const e=document.createElement('div');e.id='empty-msg';e.className='empty';e.innerHTML='<p>Aucune carte trouvée</p>';document.getElementById('grid').appendChild(e);}
+  var totalPages=Math.max(1,Math.ceil(filtered.length/CARDS_PER_PAGE));
+  if(currentPage>totalPages)currentPage=totalPages;
+  var start=(currentPage-1)*CARDS_PER_PAGE;
+  var end=start+CARDS_PER_PAGE;
+  var pageCards=filtered.slice(start,end);
+  allCards.forEach(function(c){c.style.display='none';});
+  pageCards.forEach(function(c){c.style.display='';});
+  var empty=document.getElementById('empty-msg');
+  if(filtered.length===0){
+    if(!empty){var e=document.createElement('div');e.id='empty-msg';e.className='empty';e.innerHTML='<p>Aucune carte trouvée</p>';document.getElementById('grid').appendChild(e);}
   }else if(empty){empty.remove();}
-  document.getElementById('countBadge').textContent=shown+' carte'+(shown>1?'s':'');
+  document.getElementById('countBadge').textContent=filtered.length+' carte'+(filtered.length>1?'s':'');
+  renderPagination(filtered.length,currentPage);
 }
+window.addEventListener('DOMContentLoaded',function(){buildCardIndex();applyFilters();});
 function toggleTheme(){
   const t=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';
   document.documentElement.setAttribute('data-theme',t);

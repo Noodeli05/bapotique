@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260717p');}());</script>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260718');}());</script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Linguistique Française — UNIL 2025</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -85,6 +85,17 @@ body::before{
 .btn-icon{background:none;border:none;cursor:pointer;font-size:1.15rem;padding:.34rem .45rem;border-radius:7px;color:var(--mu);transition:background .15s;line-height:1}
 .btn-icon:hover{background:rgba(200,184,240,0.10)}
 
+/* ── HAMBURGER MOBILE ── */
+.topnav-burger{display:none;background:none;border:none;cursor:pointer;padding:.34rem .45rem;border-radius:7px;color:var(--mu);transition:background .15s;align-items:center;line-height:1;flex-shrink:0}
+.topnav-burger:hover{background:rgba(200,184,240,0.10)}
+.topnav-links a.active{color:var(--lav)!important;background:rgba(200,184,240,0.12)}
+@media(max-width:760px){
+  .topnav-burger{display:flex}
+  .topnav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--nav);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--bdr);padding:.5rem 1rem;gap:.2rem;z-index:99}
+  .topnav-links.open{display:flex!important}
+  .topnav-links a{padding:.55rem .8rem;border-radius:7px;width:100%}
+}
+
 /* ── HERO ── */
 .hero{position:relative;padding:7rem 2rem 4.5rem;text-align:center;overflow:hidden}
 .hero-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 65% 55% at 28% 42%,rgba(200,184,240,0.18) 0%,transparent 65%),radial-gradient(ellipse 50% 45% at 72% 58%,rgba(240,200,160,0.10) 0%,transparent 65%),radial-gradient(ellipse 40% 30% at 50% 10%,rgba(168,200,240,0.08) 0%,transparent 65%)}
@@ -120,6 +131,7 @@ body::before{
 .nc-text{flex:1;min-width:0}
 .nc-title{font-family:'DM Serif Display',serif;font-size:1.18rem;font-weight:800;line-height:1.15;margin-bottom:.35rem}
 .nc-sub{font-size:.83rem;color:var(--mu);line-height:1.6}
+.nc-sub{font-size:.73rem;color:var(--mu);margin-top:.18rem;line-height:1.4}
 .nc-tags{display:flex;gap:.38rem;flex-wrap:wrap}
 .nc-tag{font-size:.7rem;font-weight:600;padding:.22rem .62rem;border-radius:20px}
 .nc-cta{align-self:flex-end;font-size:.83rem;font-weight:700;transition:transform .18s}
@@ -261,6 +273,7 @@ footer strong{color:var(--lav)}
     <a href="polycop_tp.html">Polycopié TP</a>
     <a href="tests.html">Tests</a>
   </div>
+  <button class="topnav-burger" onclick="document.querySelector('.topnav-links').classList.toggle('open')" aria-label="Menu navigation"><svg class="ic"><use href="#i-menu"/></svg></button>
   <button class="btn-icon" id="themeBtn" onclick="toggleTheme()" title="Changer le thème"><svg class="ic"><use href="#i-moon"/></svg></button>
 </nav>
 
@@ -296,110 +309,64 @@ footer strong{color:var(--lav)}
 </div>
 
 <section class="cards-wrap">
-  <div class="section-label">Choisir une section</div>
+  <div class="cards-group-label" style="width:100%;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lav);opacity:.7;margin:.5rem 0 .3rem;padding:0 .25rem">📖 Réviser</div>
   <div class="cards-grid">
-
     <a href="revision_complet.html" class="nav-card nc-purple">
-      <div class="nc-head">
-        <div class="nc-icon"><svg class="ic"><use href="#i-graduation-cap"/></svg></div>
-        <div class="nc-text">
-          <div class="nc-title">Révision Complète</div>
-        </div>
-      </div>
+      <div class="nc-head"><div class="nc-icon"><svg class="ic"><use href="#i-graduation-cap"/></svg></div>
+      <div class="nc-text"><div class="nc-title">Révision Complète</div><div class="nc-sub">11 dossiers · théorie, exercices, flashcards</div></div></div>
       <div class="nc-cta">Explorer →</div>
     </a>
-
     <a href="flashcards.html" class="nav-card nc-cyan">
-      <div class="nc-head">
-        <div class="nc-icon"><svg class="ic"><use href="#i-layers"/></svg></div>
-        <div class="nc-text">
-          <div class="nc-title">Flashcards</div>
-        </div>
-      </div>
+      <div class="nc-head"><div class="nc-icon"><svg class="ic"><use href="#i-layers"/></svg></div>
+      <div class="nc-text"><div class="nc-title">Flashcards</div><div class="nc-sub">448 cartes · algo SM-2 · mode Zen disponible</div></div></div>
       <div class="nc-cta">Mémoriser →</div>
     </a>
-
     <a href="entrainement.html" class="nav-card nc-amber">
-      <div class="nc-head">
-        <div class="nc-icon"><svg class="ic"><use href="#i-target"/></svg></div>
-        <div class="nc-text">
-          <div class="nc-title">Entraînement</div>
-        </div>
-      </div>
+      <div class="nc-head"><div class="nc-icon"><svg class="ic"><use href="#i-target"/></svg></div>
+      <div class="nc-text"><div class="nc-title">Entraînement</div><div class="nc-sub">9 decks thématiques · questions courtes</div></div></div>
       <div class="nc-cta">S'entraîner →</div>
     </a>
-
-    <a href="search.html" class="nav-card nc-sky">
-      <div class="nc-head">
-        <div class="nc-icon"><svg class="ic"><use href="#i-search"/></svg></div>
-        <div class="nc-text">
-          <div class="nc-title">Recherche</div>
-        </div>
-      </div>
-      <div class="nc-cta">Chercher →</div>
-    </a>
-
-    <a href="ressources.html" class="nav-card nc-teal">
-      <div class="nc-head">
-        <div class="nc-icon"><svg class="ic"><use href="#i-lightbulb"/></svg></div>
-        <div class="nc-text">
-          <div class="nc-title">Ressources</div>
-        </div>
-      </div>
-      <div class="nc-cta">Consulter →</div>
-    </a>
-
-    <a href="polycop_cours.html" class="nav-card nc-rose">
-      <div class="nc-head">
-        <div class="nc-icon"><svg class="ic"><use href="#i-file-text"/></svg></div>
-        <div class="nc-text">
-          <div class="nc-title">Polycopié de cours</div>
-        </div>
-      </div>
-      <div class="nc-cta">Lire →</div>
-    </a>
-
-    <a href="polycop_tp.html" class="nav-card nc-butter">
-      <div class="nc-head">
-        <div class="nc-icon"><svg class="ic"><use href="#i-clipboard"/></svg></div>
-        <div class="nc-text">
-          <div class="nc-title">Polycopié TP</div>
-        </div>
-      </div>
-      <div class="nc-cta">S'exercer →</div>
-    </a>
-
     <a href="examen.html" class="nav-card nc-mint">
-      <div class="nc-head">
-        <div class="nc-icon"><svg class="ic"><use href="#i-award"/></svg></div>
-        <div class="nc-text">
-          <div class="nc-title">Mode Examen</div>
-        </div>
-      </div>
+      <div class="nc-head"><div class="nc-icon"><svg class="ic"><use href="#i-award"/></svg></div>
+      <div class="nc-text"><div class="nc-title">Mode Examen</div><div class="nc-sub">Simulation d'examen chronométrée</div></div></div>
       <div class="nc-cta">Commencer →</div>
     </a>
-
+  </div>
+  <div class="cards-group-label" style="width:100%;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--peach);opacity:.7;margin:1.2rem 0 .3rem;padding:0 .25rem">📚 Lire & Chercher</div>
+  <div class="cards-grid">
+    <a href="polycop_cours.html" class="nav-card nc-rose">
+      <div class="nc-head"><div class="nc-icon"><svg class="ic"><use href="#i-file-text"/></svg></div>
+      <div class="nc-text"><div class="nc-title">Polycopié de cours</div><div class="nc-sub">10 chapitres résumés · fiches + Q&R</div></div></div>
+      <div class="nc-cta">Lire →</div>
+    </a>
+    <a href="polycop_tp.html" class="nav-card nc-butter">
+      <div class="nc-head"><div class="nc-icon"><svg class="ic"><use href="#i-clipboard"/></svg></div>
+      <div class="nc-text"><div class="nc-title">Polycopié TP</div><div class="nc-sub">9 dossiers d'exercices · brouillons + corrections</div></div></div>
+      <div class="nc-cta">S'exercer →</div>
+    </a>
+    <a href="ressources.html" class="nav-card nc-teal">
+      <div class="nc-head"><div class="nc-icon"><svg class="ic"><use href="#i-lightbulb"/></svg></div>
+      <div class="nc-text"><div class="nc-title">Ressources</div><div class="nc-sub">Concepts clés · tableaux · exemples détaillés</div></div></div>
+      <div class="nc-cta">Consulter →</div>
+    </a>
+    <a href="search.html" class="nav-card nc-sky">
+      <div class="nc-head"><div class="nc-icon"><svg class="ic"><use href="#i-search"/></svg></div>
+      <div class="nc-text"><div class="nc-title">Recherche</div><div class="nc-sub">Chercher un mot, un concept, une règle</div></div></div>
+      <div class="nc-cta">Chercher →</div>
+    </a>
+  </div>
+  <div class="cards-group-label" style="width:100%;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mint);opacity:.7;margin:1.2rem 0 .3rem;padding:0 .25rem">📊 Suivre</div>
+  <div class="cards-grid">
     <a href="stats.html" class="nav-card nc-mint">
-      <div class="nc-head">
-        <div class="nc-icon"><svg class="ic"><use href="#i-bar-chart"/></svg></div>
-        <div class="nc-text">
-          <div class="nc-title">Ma Progression</div>
-        </div>
-      </div>
+      <div class="nc-head"><div class="nc-icon"><svg class="ic"><use href="#i-bar-chart"/></svg></div>
+      <div class="nc-text"><div class="nc-title">Ma Progression</div><div class="nc-sub">Heatmap · statistiques · maturité des cartes</div></div></div>
       <div class="nc-cta">Voir →</div>
     </a>
-
     <a href="tests.html" class="nav-card nc-rose">
-      <div class="nc-head">
-        <div class="nc-icon"><svg class="ic"><use href="#i-check-square"/></svg></div>
-        <div class="nc-text">
-          <div class="nc-title">Mes Tests</div>
-          <div class="nc-sub" style="font-size:.72rem;color:var(--tx-muted);margin-top:.15rem">Oct : 8,25/20 · Déc : 7,5/20</div>
-        </div>
-      </div>
+      <div class="nc-head"><div class="nc-icon"><svg class="ic"><use href="#i-check-square"/></svg></div>
+      <div class="nc-text"><div class="nc-title">Mes Tests</div><div class="nc-sub">S'entraîner sur les vrais sujets d'examen</div></div></div>
       <div class="nc-cta">S'entraîner →</div>
     </a>
-
   </div>
 </section>
 
@@ -421,27 +388,8 @@ function toggleTheme(){
   const b=document.getElementById('themeBtn');
   if(b) b.innerHTML=t==='dark'?'<svg class="ic"><use href="#i-moon"/></svg>':'<svg class="ic"><use href="#i-sun"/></svg>';
 })();
+(function(){var p=location.pathname.split('/').pop()||'index.html';document.querySelectorAll('.topnav-links a').forEach(function(a){var h=(a.getAttribute('href')||'').replace('./','');if(h===p)a.classList.add('active');});})();
 </script>
 <script src="notes.js"></script>
-<script>
-// Floating linguistic symbols — continuous fall
-(function(){
-  var syms=['GN','GV','GAdj','GPrep','/ʃ/','[N]','[V]','/ə/','σ','Φ','∅','✎','α','β','λ','S→NP+VP','Det','Adj','/ʁ/','N','V','Adv','✏','[Adj]','Spec','X̄','IP'];
-  var wrap=document.createElement('div');
-  wrap.style.cssText='position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden';
-  document.body.appendChild(wrap);
-  var seed=0;function rng(){seed=(seed*16807+0)%2147483647;return (seed-1)/2147483646;}
-  seed=42;
-  var st=document.createElement('style');
-  st.textContent='@keyframes bapFall{0%{transform:translateY(-80px) rotate(0deg)}100%{transform:translateY(110vh) rotate(340deg)}}';
-  document.head.appendChild(st);
-  for(var i=0;i<30;i++){
-    var el=document.createElement('span');
-    el.textContent=syms[i%syms.length];
-    var x=rng()*96,sz=.6+rng()*.9,dur=6+rng()*10,del=-(rng()*dur),op=.06+rng()*.09;
-    el.style.cssText='position:absolute;font-family:"DM Serif Display",serif;font-size:'+sz+'rem;color:rgba(200,184,240,'+op.toFixed(2)+');left:'+x+'%;top:-5%;animation:bapFall '+dur.toFixed(1)+'s '+del.toFixed(1)+'s linear infinite;user-select:none;white-space:nowrap';
-    wrap.appendChild(el);
-  }
-})();
-</script></body>
+</body>
 </html>
