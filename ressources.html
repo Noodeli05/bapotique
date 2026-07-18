@@ -1215,6 +1215,35 @@ document.addEventListener('DOMContentLoaded', function() {
     wrap.appendChild(inp);
     content.insertBefore(wrap, content.firstChild);
   });
+
+  // Inject prev/next tab navigation at bottom of each r-content
+  (function(){
+    var TABS = [
+      {id:'guide', label:'Guide UNIL'},
+      {id:'resume', label:'Résumé Cours'},
+      {id:'seances-g', label:'Séances Cours'},
+      {id:'seances-tp', label:'Séances TP'},
+      {id:'revision', label:'Révision TP'},
+      {id:'corriges', label:'Corrigés TP'},
+      {id:'questions', label:'Questions'},
+      {id:'tableau', label:'Tableau'},
+      {id:'examens', label:'Examens'}
+    ];
+    var btnStyle = 'background:var(--card);border:1px solid var(--bdr);border-radius:10px;padding:.55rem 1rem;color:var(--mu);cursor:pointer;font-size:.8rem;font-family:inherit;display:inline-flex;align-items:center;gap:.35rem;transition:background .15s,color .15s;white-space:nowrap';
+    TABS.forEach(function(tab, i){
+      var panel = document.getElementById('panel-' + tab.id);
+      if (!panel) return;
+      var content = panel.querySelector('.r-content');
+      if (!content) return;
+      var prev = TABS[i - 1], next = TABS[i + 1];
+      var nav = document.createElement('div');
+      nav.style.cssText = 'display:flex;justify-content:space-between;align-items:center;padding:1.6rem 0 .5rem;margin-top:2rem;border-top:1px solid var(--bdr)';
+      var prevBtn = prev ? '<button style="' + btnStyle + '" onclick="showTab(\'' + prev.id + '\');this.closest(\'.r-content\').scrollTop=0"><svg class="ic" style="width:.9em;height:.9em"><use href="#i-chevron-left"/></svg> ' + prev.label + '</button>' : '<span></span>';
+      var nextBtn = next ? '<button style="' + btnStyle + '" onclick="showTab(\'' + next.id + '\');this.closest(\'.r-content\').scrollTop=0">' + next.label + ' <svg class="ic" style="width:.9em;height:.9em"><use href="#i-chevron-right"/></svg></button>' : '<span></span>';
+      nav.innerHTML = prevBtn + nextBtn;
+      content.appendChild(nav);
+    });
+  })();
 });
 
 function toggleToc(){

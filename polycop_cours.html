@@ -460,8 +460,29 @@ input,textarea,select{font-size:max(16px,1em)!important}
 </div>
 <script>
 
-// Chapter accordion
+// Chapter accordion + prev/next navigation
 document.addEventListener('DOMContentLoaded',function(){
+  var chapters=Array.from(document.querySelectorAll('.chapter'));
+  var btnStyle='background:var(--card,rgba(255,255,255,.06));border:1px solid var(--bdr,rgba(255,255,255,.1));border-radius:10px;padding:.55rem 1rem;color:var(--mu,rgba(232,228,240,.55));cursor:pointer;font-size:.8rem;font-family:inherit;display:inline-flex;align-items:center;gap:.35rem;transition:background .15s,color .15s;white-space:nowrap';
+  chapters.forEach(function(ch,i){
+    var prev=chapters[i-1], next=chapters[i+1];
+    var nav=document.createElement('div');
+    nav.style.cssText='display:flex;justify-content:space-between;align-items:center;padding:1.4rem 0 .5rem;margin-top:1.6rem;border-top:1px solid var(--bdr,rgba(255,255,255,.1))';
+    function goTo(target){
+      // open target's accordion if collapsed
+      var body=target.querySelector('.ch-body');
+      if(body&&body.style.display!=='block'){
+        var arr=target.querySelector('.ch-title span');
+        if(body){body.style.display='block';if(arr)arr.style.transform='rotate(90deg)';}
+      }
+      target.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+    nav.innerHTML=(prev?'<button style="'+btnStyle+'" class="ch-nav-btn"><svg class="ic" style="width:.9em;height:.9em"><use href="#i-chevron-left"/></svg> '+prev.querySelector('.ch-title').textContent.replace(/^▸\s*/,'')+'</button>':'<span></span>')+
+    (next?'<button style="'+btnStyle+'" class="ch-nav-btn">'+next.querySelector('.ch-title').textContent.replace(/^▸\s*/,'')+' <svg class="ic" style="width:.9em;height:.9em"><use href="#i-chevron-right"/></svg></button>':'<span></span>');
+    ch.appendChild(nav);
+    if(prev) nav.querySelectorAll('.ch-nav-btn')[0] && nav.querySelectorAll('.ch-nav-btn')[0].addEventListener('click',function(){goTo(prev);});
+    if(next) nav.querySelectorAll('.ch-nav-btn')[next&&prev?1:0] && nav.querySelectorAll('.ch-nav-btn')[next&&prev?1:0].addEventListener('click',function(){goTo(next);});
+  });
   document.querySelectorAll('.chapter').forEach(function(ch){
     var h2=ch.querySelector('.ch-title');
     var sub=ch.querySelector('.ch-sub');

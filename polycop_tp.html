@@ -1236,5 +1236,21 @@ function _ttsInject_page(){
   if(h && h.nextSibling) h.parentNode.insertBefore(rb, h.nextSibling);
   else document.body.insertBefore(rb, document.body.children[1]);
 })();
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var NAMES = ['','Les phonèmes','Les morphèmes','Les syntagmes','Valence verbale et rôles actantiels','Dynamique informationnelle','Passif, impersonnel, pronominal','Les clauses atypiques','Adjectifs épithètes et constructions détachées','De la clause à la phrase — dislocations'];
+  var btnStyle = 'background:var(--card);border:1px solid var(--bdr);border-radius:10px;padding:.55rem 1rem;color:var(--mu);cursor:pointer;font-size:.8rem;font-family:inherit;display:inline-flex;align-items:center;gap:.35rem;transition:background .15s,color .15s;white-space:nowrap';
+  for (var i = 1; i <= 9; i++) {
+    var dos = document.getElementById('d' + i);
+    if (!dos) continue;
+    var nav = document.createElement('div');
+    nav.style.cssText = 'display:flex;justify-content:space-between;align-items:center;padding:1.6rem 0 .5rem;margin-top:2rem;border-top:1px solid var(--bdr)';
+    var prevBtn = i > 1 ? '<button style="' + btnStyle + '" onclick="document.getElementById(\'d' + (i-1) + '\').scrollIntoView({behavior:\'smooth\',block:\'start\'})"><svg class="ic" style="width:.9em;height:.9em"><use href="#i-chevron-left"/></svg> D' + (i-1) + ' — ' + NAMES[i-1] + '</button>' : '<span></span>';
+    var nextBtn = i < 9 ? '<button style="' + btnStyle + '" onclick="document.getElementById(\'d' + (i+1) + '\').scrollIntoView({behavior:\'smooth\',block:\'start\'})">D' + (i+1) + ' — ' + NAMES[i+1] + ' <svg class="ic" style="width:.9em;height:.9em"><use href="#i-chevron-right"/></svg></button>' : '<span></span>';
+    nav.innerHTML = prevBtn + nextBtn;
+    dos.appendChild(nav);
+  }
+});
 </script></body>
 </html>
