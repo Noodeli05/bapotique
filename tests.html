@@ -194,7 +194,7 @@ h3.q-head:hover{background:var(--glass-hover)}
 </style>
 <link rel="manifest" href="manifest.json">
 <meta name="mobile-web-app-capable" content="yes">
-<script>if("serviceWorker"in navigator)navigator.serviceWorker.register("sw.js");</script>
+<script>if("serviceWorker"in navigator)navigator.serviceWorker.register("sw.js",{updateViaCache:"none"});</script>
 </head>
 <body>
 <script src="icons.js"></script>
