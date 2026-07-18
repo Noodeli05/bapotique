@@ -1444,7 +1444,7 @@ function showDos(id){
   if(d)d.classList.add('active');
   var nav=document.getElementById('nav'+id);
   if(nav)nav.classList.add('active');
-  if(d){var tc=d.querySelectorAll('.tab-content');var tb=d.querySelectorAll('.tab-btn');tc.forEach(t=>t.classList.remove('active'));tb.forEach(b=>b.classList.remove('active'));if(tc[0])tc[0].classList.add('active');if(tb[0])tb[0].classList.add('active');}
+  if(d){var tc=d.querySelectorAll('.tab-content');var tb=d.querySelectorAll('.tab-btn');tc.forEach(t=>t.classList.remove('active'));tb.forEach(b=>b.classList.remove('active'));if(tc[0])tc[0].classList.add('active');if(tb[0])tb[0].classList.add('active');if(tc[0])initAccordion(tc[0]);}
   window.scrollTo(0,0);
   document.getElementById('sidebar').classList.remove('open');
 }
@@ -1505,8 +1505,9 @@ function initAccordion(tc){
     arrow.className='acc-arr';arrow.textContent='▾';
     g.h3.prepend(arrow);
     g.h3.classList.add('acc-head');
-    var open=true;
-    wrap.style.cssText='overflow:hidden;max-height:none;opacity:1;transition:max-height .35s ease,opacity .3s ease';
+    var open=false;
+    wrap.style.cssText='overflow:hidden;max-height:0;opacity:0;transition:max-height .35s ease,opacity .3s ease';
+    arrow.textContent='▸';
     g.h3.addEventListener('click',function(){
       open=!open;
       if(!open){
@@ -1521,9 +1522,10 @@ function initAccordion(tc){
     });
   });
 }
-// init accordion for the initial active tab
-var _d0=document.getElementById('d0');
-if(_d0){var _tc0=_d0.querySelector('.tab-content.active');if(_tc0)initAccordion(_tc0);}
+// init accordion for all dossiers on page load (all start collapsed)
+document.querySelectorAll('.dossier').forEach(function(d){
+  var tc=d.querySelector('.tab-content');if(tc)initAccordion(tc);
+});
 </script>
 <script>
 !function(){var syn=window.speechSynthesis,cur=null,cBtn=null;function stop(){if(syn)syn.cancel();if(cBtn){cBtn.innerHTML='<svg class="ic"><use href="#i-volume-2"/></svg>';cBtn.removeAttribute('data-s');}cur=null;cBtn=null;}function speak(txt,btn){var same=cBtn===btn;stop();if(same||!syn||!txt)return;var u=new SpeechSynthesisUtterance(txt);u.lang='fr-FR';u.rate=0.88;cur=u;cBtn=btn;if(btn){btn.innerHTML='<svg class="ic"><use href="#i-volume-2"/></svg>';btn.setAttribute('data-s','1');}u.onend=u.onerror=function(){if(cur===u)stop();};syn.speak(u);}window._ttsRead=function(btn,el){var cl=el.cloneNode(true);cl.querySelectorAll('.tts-btn,.corr-box,.savoir-box,.qa-ans,.fc-back,.tbl-wrap').forEach(function(x){x.remove();});speak(cl.innerText.trim(),btn);};window._ttsInject=function(sel,pos,sp){document.querySelectorAll(sel).forEach(function(el){if(el.querySelector('.tts-btn'))return;var btn=document.createElement('button');btn.className='tts-btn';btn.title='Écouter';btn.innerHTML='<svg class="ic"><use href="#i-volume-2"/></svg>';btn.addEventListener('click',function(e){if(sp)e.stopPropagation();window._ttsRead(btn,el);});if(pos==='start')el.insertBefore(btn,el.firstChild);else el.appendChild(btn);});};window.addEventListener('DOMContentLoaded',function(){_ttsInject_page();});}();
