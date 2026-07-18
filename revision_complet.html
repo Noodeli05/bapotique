@@ -468,7 +468,7 @@ input, textarea, select { font-size: max(16px, 1em) !important; }
 h3.acc-head{cursor:pointer;display:flex;align-items:center;gap:.4rem;user-select:none;transition:opacity .15s}
 h3.acc-head:hover{opacity:.8}
 .acc-arr{color:var(--lav);font-size:.85em;flex-shrink:0;transition:transform .2s;line-height:1}
-.acc-wrap{overflow:hidden}
+.acc-wrap{overflow:hidden;display:none}.acc-wrap.open{display:block}
 /* ── PER-DOSSIER NAV ACTIVE ACCENT ─────────────────────────────────────── */
 #nav0.active,#nav1.active{background:rgba(200,184,240,0.18)!important;border-left:3px solid var(--lav)!important}
 #nav2.active,#nav3.active{background:rgba(168,216,196,0.18)!important;border-left:3px solid var(--mint)!important}
@@ -1505,11 +1505,9 @@ function initAccordion(tc){
     arrow.className='acc-arr';arrow.textContent='▸';
     g.h3.prepend(arrow);
     g.h3.classList.add('acc-head');
-    wrap.style.display='none';
     g.h3.addEventListener('click',function(){
-      var open=wrap.style.display!=='none';
-      wrap.style.display=open?'none':'block';
-      arrow.textContent=open?'▸':'▾';
+      var open=wrap.classList.toggle('open');
+      arrow.textContent=open?'▾':'▸';
     });
   });
 }
