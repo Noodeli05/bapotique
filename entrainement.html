@@ -135,7 +135,7 @@ body::before{
 .card-back .ctext{font-size:1rem;color:var(--tx);line-height:1.6;overflow-y:auto;max-height:230px;width:100%}
 .card-fav{position:absolute;top:.7rem;right:.8rem;font-size:1.05rem;cursor:pointer;opacity:.5;transition:opacity .2s,transform .2s;user-select:none}
 .card-fav:hover,.card-fav.active{opacity:1;transform:scale(1.2)}
-.card-section{font-size:.7rem;color:var(--mu);text-align:center}
+.card-section{font-size:.68rem;color:var(--mu);text-align:center;padding:.2rem .5rem;border-radius:20px;border:1px solid rgba(200,184,240,0.20);background:rgba(200,184,240,0.06);display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .flip-hint{font-size:.7rem;color:var(--mu);text-align:center}
 .fc-controls{display:flex;align-items:center;gap:.7rem;justify-content:center;flex-wrap:wrap;width:100%}
 .btn{padding:.48rem 1.2rem;border-radius:20px;border:none;cursor:pointer;font-size:.84rem;font-weight:600;transition:all .2s}
@@ -206,9 +206,10 @@ input, textarea, select { font-size: max(16px, 1em) !important; }
 .btn-all-cards{display:inline-flex;align-items:center;gap:.45rem;background:rgba(255,140,66,.18);border:1.5px solid rgba(255,140,66,.4);color:#ffa050;font-size:.82rem;font-weight:700;padding:.48rem 1.1rem;border-radius:20px;text-decoration:none;transition:background .18s,transform .15s;white-space:nowrap}
 .btn-all-cards:hover{background:rgba(255,140,66,.30);transform:translateY(-1px)}
 /* Zen mode */
-body.zen-mode .fc-sidebar,body.zen-mode .deck-picker,body.zen-mode .fc-toolbar,body.zen-mode .session-dash,body.zen-mode .swipe-hint,body.zen-mode .flip-hint,body.zen-mode .sm2-info,body.zen-mode .fc-counter,body.zen-mode .card-section,body.zen-mode .btn-all-cards,body.zen-mode .shortcuts-panel{display:none!important}
-body.zen-mode .site-header{opacity:.15;pointer-events:none;transition:opacity .3s}
-body.zen-mode .site-header:hover{opacity:1;pointer-events:all}
+body.zen-mode .fc-sidebar,body.zen-mode .deck-picker,body.zen-mode .fc-toolbar,body.zen-mode .session-dash,body.zen-mode .swipe-hint,body.zen-mode .flip-hint,body.zen-mode .sm2-info,body.zen-mode .fc-counter,body.zen-mode .card-section,body.zen-mode .btn-all-cards,body.zen-mode .shortcuts-panel,body.zen-mode .btn-sidebar-toggle{display:none!important}
+body.zen-mode .site-header{opacity:.15;transition:opacity .3s}
+body.zen-mode .site-header:hover{opacity:1}
+body.zen-mode .site-header h1 a{pointer-events:all;opacity:1}
 body.zen-mode .fc-area{gap:1.2rem;padding-top:2rem}
 #btn-zen.active{background:rgba(200,184,240,.22);color:var(--lav);border-color:var(--lav);font-weight:600;box-shadow:0 0 10px rgba(200,184,240,0.3)}
 .ic{width:1em;height:1em;vertical-align:-.15em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;display:inline-block;overflow:visible}
@@ -439,7 +440,8 @@ function renderCard(){
   const c=cards[S.idx];
   document.getElementById('cf-text').textContent=c.q;
   document.getElementById('cb-text').textContent=c.r;
-  document.getElementById('card-sec').innerHTML=c.section||'';
+  var secName = (c.section||'').replace(/^THÈME\s+\d+\s+[—–-]+\s*/i,'').replace(/^CHAPITRE\s+\d+\s+[—–-]+\s*/i,'');
+  document.getElementById('card-sec').textContent=secName;
   document.getElementById('fc-ctr').textContent='Carte '+(S.idx+1)+' / '+cards.length;
   document.getElementById('fc-pbar').style.width=((S.idx+1)/cards.length*100)+'%';
   const isFav=S.favs.has(c.id);
@@ -684,14 +686,14 @@ function confetti(){
 
 // ── Theme ─────────────────────────────────────────────────────────────────────
 (function(){
-  const saved=localStorage.getItem('fcE_theme');
+  const saved=localStorage.getItem('bap_theme');
   if(saved) document.documentElement.setAttribute('data-theme',saved);
   else if(window.matchMedia?.('(prefers-color-scheme:light)').matches) document.documentElement.setAttribute('data-theme','light');
 })();
 function toggleTheme(){
   const next=document.documentElement.getAttribute('data-theme')==='light'?'dark':'light';
   document.documentElement.setAttribute('data-theme',next);
-  localStorage.setItem('fcE_theme',next);
+  localStorage.setItem('bap_theme',next);
   document.getElementById('btn-theme').innerHTML=next==='light'?'<svg class="ic"><use href="#i-moon"/></svg>':'<svg class="ic"><use href="#i-sun"/></svg>';
 }
 document.getElementById('btn-theme').addEventListener('click',toggleTheme);
