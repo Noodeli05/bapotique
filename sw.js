@@ -1,8 +1,7 @@
 // Service Worker — Bapotique PWA
-const CACHE = 'bap-v16';
+const CACHE = 'bap-v17';
 const ASSETS = [
   './',
-  './index.html',
   './flashcards.html',
   './entrainement.html',
   './entrainement_all.html',
@@ -39,8 +38,22 @@ self.addEventListener('activate', e => {
 self.addEventListener('fetch', e => {
   if (e.request.method !== 'GET') return;
   const url = new URL(e.request.url);
-  // Skip cross-origin requests (fonts, etc.)
   if (url.origin !== location.origin) return;
+
+  // HTML files: network-first (toujours charger la version fraîche)
+  if (url.pathname.endsWith('.html') || url.pathname === '/' || url.pathname.endsWith('/')) {
+    e.respondWith(
+      fetch(e.request).then(resp => {
+        if (!resp || resp.status !== 200 || resp.type !== 'basic') return resp;
+        const clone = resp.clone();
+        caches.open(CACHE).then(c => c.put(e.request, clone));
+        return resp;
+      }).catch(() => caches.match(e.request))
+    );
+    return;
+  }
+
+  // JS, images, manifest : cache-first
   e.respondWith(
     caches.match(e.request).then(cached => {
       if (cached) return cached;
