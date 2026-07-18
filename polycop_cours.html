@@ -165,7 +165,7 @@ input,textarea,select{font-size:max(16px,1em)!important}
 /* SIDEBAR ACTIVE */
 .sidebar a.active{color:var(--lav);font-weight:600}
 </style>
-<link rel="manifest" href="manifest.json"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js");</script></head>
+<link rel="manifest" href="manifest.json"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js",{updateViaCache:"none"});</script></head>
 <body>
 <script src="icons.js"></script>
 <nav class="topnav">
