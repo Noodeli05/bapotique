@@ -468,7 +468,7 @@ input, textarea, select { font-size: max(16px, 1em) !important; }
 h3.acc-head{cursor:pointer;display:flex;align-items:center;gap:.4rem;user-select:none;transition:opacity .15s}
 h3.acc-head:hover{opacity:.8}
 .acc-arr{color:var(--lav);font-size:.85em;flex-shrink:0;transition:transform .2s;line-height:1}
-.acc-wrap{overflow:hidden;transition:max-height .35s ease,opacity .3s ease}
+.acc-wrap{overflow:hidden}
 /* ── PER-DOSSIER NAV ACTIVE ACCENT ─────────────────────────────────────── */
 #nav0.active,#nav1.active{background:rgba(200,184,240,0.18)!important;border-left:3px solid var(--lav)!important}
 #nav2.active,#nav3.active{background:rgba(168,216,196,0.18)!important;border-left:3px solid var(--mint)!important}
@@ -1502,23 +1502,14 @@ function initAccordion(tc){
     g.h3.parentNode.insertBefore(wrap,g.children[0]);
     g.children.forEach(function(c){wrap.appendChild(c);});
     var arrow=document.createElement('span');
-    arrow.className='acc-arr';arrow.textContent='▾';
+    arrow.className='acc-arr';arrow.textContent='▸';
     g.h3.prepend(arrow);
     g.h3.classList.add('acc-head');
-    var open=false;
-    wrap.style.cssText='overflow:hidden;max-height:0;opacity:0;transition:max-height .35s ease,opacity .3s ease';
-    arrow.textContent='▸';
+    wrap.style.display='none';
     g.h3.addEventListener('click',function(){
-      open=!open;
-      if(!open){
-        var h=wrap.scrollHeight;
-        wrap.style.maxHeight=h+'px';
-        requestAnimationFrame(function(){wrap.style.maxHeight='0';wrap.style.opacity='0';});
-      } else {
-        wrap.style.maxHeight=wrap.scrollHeight+'px';wrap.style.opacity='1';
-        setTimeout(function(){wrap.style.maxHeight='none';},360);
-      }
-      arrow.textContent=open?'▾':'▸';
+      var open=wrap.style.display!=='none';
+      wrap.style.display=open?'none':'block';
+      arrow.textContent=open?'▸':'▾';
     });
   });
 }
