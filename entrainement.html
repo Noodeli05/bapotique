@@ -167,7 +167,7 @@ body::before{
 #confetti-canvas{position:fixed;inset:0;pointer-events:none;z-index:9999}
 .empty{text-align:center;padding:3rem;color:var(--mu)}
 @media(max-width:700px){
-  .fc-sidebar{display:none}
+  .fc-sidebar{display:none;position:fixed;top:56px;left:0;bottom:0;z-index:200;width:min(300px,88vw);overflow-y:auto;background:var(--bg);border-right:1px solid var(--bdr);box-shadow:4px 0 24px rgba(0,0,0,.35)}
   .fc-main{padding:.8rem}
   .card-wrap{height:240px}
   .card-face{padding:1.2rem}
@@ -182,6 +182,8 @@ body::before{
 @media(max-width:700px){
   .btn-sidebar-toggle{display:flex!important;align-items:center;gap:.4rem;background:rgba(255,255,255,.06);border:1px solid var(--bdr);border-radius:8px;padding:.5rem 1rem;color:var(--tx);font-size:.82rem;cursor:pointer;margin:.5rem auto;width:fit-content}
   .fc-sidebar.sidebar-open{display:block!important}
+  .sidebar-backdrop{display:none;position:fixed;inset:0;z-index:199;background:rgba(0,0,0,.45)}
+  .sidebar-backdrop.open{display:block}
 }
 /* iOS auto-zoom prevention: keep all inputs >= 16px */
 input, textarea, select { font-size: max(16px, 1em) !important; }
@@ -244,6 +246,7 @@ body.zen-mode .fc-area{gap:1.2rem;padding-top:2rem}
 <button class="deck-tab" data-deck="6" onclick="switchDeck(6)" title="Fiches de synthèse"><svg class="ic"><use href="#i-bar-chart"/></svg> <span class="dtl">Synthèse</span><span class="dtc" id="tc6"></span></button>
 <button class="deck-tab" data-deck="7" onclick="switchDeck(7)" title="Résumé des travaux pratiques"><svg class="ic"><use href="#i-book-open"/></svg> <span class="dtl">Résumé TP</span><span class="dtc" id="tc7"></span></button>
 <button class="deck-tab" data-deck="8" onclick="switchDeck(8)" title="Travaux pratiques complets"><svg class="ic"><use href="#i-search"/></svg> <span class="dtl">TP Complet</span><span class="dtc" id="tc8"></span></button>
+<a href="entrainement_all.html" class="btn-all-cards"><svg class="ic"><use href="#i-layers"/></svg> Toutes les cartes</a>
 </div>
 <div class="shortcuts-panel" id="sc-panel">
   <div class="sc-grid">
@@ -282,7 +285,8 @@ body.zen-mode .fc-area{gap:1.2rem;padding-top:2rem}
   </div>
 </aside>
 <main class="fc-main">
-<button class="btn-sidebar-toggle" onclick="document.querySelector('.fc-sidebar').classList.toggle('sidebar-open')"><svg class="ic"><use href="#i-filter"/></svg> Filtrer</button>
+<div id="sidebarBackdrop" class="sidebar-backdrop" onclick="closeSidebarMobile()"></div>
+<button class="btn-sidebar-toggle" onclick="toggleSidebarMobile()"><svg class="ic"><use href="#i-filter"/></svg> Filtrer</button>
 <div class="fc-area">
   <div class="deck-title" id="dk-title"></div>
   <div class="deck-sub" id="dk-sub"></div>
@@ -435,7 +439,7 @@ function renderCard(){
   const c=cards[S.idx];
   document.getElementById('cf-text').textContent=c.q;
   document.getElementById('cb-text').textContent=c.r;
-  document.getElementById('card-sec').textContent=c.section||'';
+  document.getElementById('card-sec').innerHTML=c.section||'';
   document.getElementById('fc-ctr').textContent='Carte '+(S.idx+1)+' / '+cards.length;
   document.getElementById('fc-pbar').style.width=((S.idx+1)/cards.length*100)+'%';
   const isFav=S.favs.has(c.id);
@@ -530,6 +534,17 @@ function replayReview(){
 }
 
 // ── Shuffle ───────────────────────────────────────────────────────────────────
+function toggleSidebarMobile(){
+  var sb=document.querySelector('.fc-sidebar');
+  var bd=document.getElementById('sidebarBackdrop');
+  var open=sb.classList.toggle('sidebar-open');
+  if(bd) bd.classList.toggle('open', open);
+}
+function closeSidebarMobile(){
+  document.querySelector('.fc-sidebar').classList.remove('sidebar-open');
+  var bd=document.getElementById('sidebarBackdrop');
+  if(bd) bd.classList.remove('open');
+}
 function toggleShuffle(){
   S.shuf=!S.shuf;
   document.getElementById('btn-shuf').classList.toggle('active',S.shuf);
