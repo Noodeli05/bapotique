@@ -552,7 +552,11 @@ function renderCard() {
   document.getElementById('card-front-text').innerHTML = card.front;
   document.getElementById('card-back-text').innerHTML = card.back;
   document.getElementById('card-source').textContent = card.source;
-  document.getElementById('card-chapter').textContent = card.chapter;
+  var chBadge = document.getElementById('card-chapter');
+  chBadge.textContent = card.chapter;
+  var chCol = (typeof bapColorFromTheme === 'function') ? bapColorFromTheme(card.chapter) : null;
+  if (chCol) { chBadge.style.color=chCol.c; chBadge.style.background=chCol.bg; chBadge.style.borderColor=chCol.bd; }
+  else { chBadge.style.color=''; chBadge.style.background=''; chBadge.style.borderColor=''; }
   document.getElementById('fc-counter').textContent = `${state.index + 1} / ${total}`;
   document.getElementById('fc-progress-bar').style.width = `${((state.index + 1) / total * 100).toFixed(1)}%`;
   if (state.flipped) wrap.classList.add('flipped'); else wrap.classList.remove('flipped');

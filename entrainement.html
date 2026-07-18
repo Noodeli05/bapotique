@@ -441,7 +441,11 @@ function renderCard(){
   document.getElementById('cf-text').textContent=c.q;
   document.getElementById('cb-text').textContent=c.r;
   var secName = (c.section||'').replace(/^THÈME\s+\d+\s+[—–-]+\s*/i,'').replace(/^CHAPITRE\s+\d+\s+[—–-]+\s*/i,'');
-  document.getElementById('card-sec').textContent=secName;
+  var secBadge = document.getElementById('card-sec');
+  secBadge.textContent=secName;
+  var secCol = (typeof bapColorFromTheme === 'function') ? bapColorFromTheme(c.section) : null;
+  if (secCol) { secBadge.style.color=secCol.c; secBadge.style.background=secCol.bg; secBadge.style.borderColor=secCol.bd; }
+  else { secBadge.style.color=''; secBadge.style.background=''; secBadge.style.borderColor=''; }
   document.getElementById('fc-ctr').textContent='Carte '+(S.idx+1)+' / '+cards.length;
   document.getElementById('fc-pbar').style.width=((S.idx+1)/cards.length*100)+'%';
   const isFav=S.favs.has(c.id);

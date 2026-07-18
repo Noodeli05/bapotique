@@ -101,7 +101,7 @@ body::before{
 .hero-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 65% 55% at 28% 42%,rgba(200,184,240,0.18) 0%,transparent 65%),radial-gradient(ellipse 50% 45% at 72% 58%,rgba(240,200,160,0.10) 0%,transparent 65%),radial-gradient(ellipse 40% 30% at 50% 10%,rgba(168,200,240,0.08) 0%,transparent 65%)}
 .hero-badge{display:inline-block;background:rgba(200,184,240,0.10);border:1px solid rgba(200,184,240,0.20);color:#c8b8f0;font-size:.73rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.35rem 1.1rem;border-radius:50px;margin-bottom:1.6rem}
 .hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2.4rem,6vw,4.2rem);font-weight:900;line-height:1.05;letter-spacing:-.025em;margin-bottom:1.3rem}
-.hero h1 .grad{background:linear-gradient(135deg,var(--lav) 0%,var(--sky) 40%,var(--peach) 70%,var(--mint) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero h1 .grad{background:linear-gradient(135deg,var(--lav) 0%,var(--sky) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero-desc{font-size:1.05rem;color:var(--mu);line-height:1.75;max-width:560px;margin:0 auto 2.5rem}
 .hero-cta{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
 .btn-cta{padding:.75rem 1.8rem;border-radius:10px;font-size:.9rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;border:none;transition:transform .18s,box-shadow .18s;font-family:'DM Sans',sans-serif}
@@ -291,60 +291,60 @@ footer strong{color:var(--lav)}
 
 <div class="stats-wrap">
   <div class="stat-box">
-    <div class="stat-num" style="background:linear-gradient(135deg,#6C63FF,#00D4FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">10</div>
+    <div class="stat-num" style="color:var(--lav)">10</div>
     <div class="stat-lbl">Chapitres de cours</div>
   </div>
   <div class="stat-box">
-    <div class="stat-num" style="background:linear-gradient(135deg,#00D4FF,#6C63FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">9</div>
+    <div class="stat-num" style="color:var(--sky)">9</div>
     <div class="stat-lbl">Dossiers TP</div>
   </div>
   <div class="stat-box">
-    <div class="stat-num" style="background:linear-gradient(135deg,#FF8C42,#2EBFA5);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">448</div>
+    <div class="stat-num" style="color:var(--mint)">448</div>
     <div class="stat-lbl">Flashcards thématiques</div>
   </div>
   <div class="stat-box">
-    <div class="stat-num" style="background:linear-gradient(135deg,#2EBFA5,#00D4FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">433</div>
+    <div class="stat-num" style="color:var(--peach)">433</div>
     <div class="stat-lbl">Cartes d'entraînement</div>
   </div>
 </div>
 
 <section class="cards-wrap">
-  <div class="cards-group-label" style="width:100%;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lav);opacity:.7;margin:.5rem 0 .3rem;padding:0 .25rem">📖 Réviser</div>
+  <div class="cards-group-label" style="width:100%;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lav);opacity:.8;margin:.5rem 0 .3rem;padding:0 .25rem"><svg class="ic" style="width:.9em;height:.9em;vertical-align:-.1em"><use href="#i-graduation-cap"/></svg> Réviser</div>
   <div class="cards-grid">
     <a href="revision_complet.html" class="nav-card nc-purple">
       <div class="nc-head"><div class="nc-icon"><svg class="ic"><use href="#i-graduation-cap"/></svg></div>
       <div class="nc-text"><div class="nc-title">Révision Complète</div><div class="nc-sub">11 dossiers · théorie, exercices, flashcards</div></div></div>
       <div class="nc-cta">Explorer →</div>
     </a>
-    <a href="flashcards.html" class="nav-card nc-cyan">
+    <a href="flashcards.html" class="nav-card nc-purple">
       <div class="nc-head"><div class="nc-icon"><svg class="ic"><use href="#i-layers"/></svg></div>
       <div class="nc-text"><div class="nc-title">Flashcards</div><div class="nc-sub">448 cartes · algo SM-2 · mode Zen disponible</div></div></div>
       <div class="nc-cta">Mémoriser →</div>
     </a>
-    <a href="entrainement.html" class="nav-card nc-amber">
+    <a href="entrainement.html" class="nav-card nc-purple">
       <div class="nc-head"><div class="nc-icon"><svg class="ic"><use href="#i-target"/></svg></div>
       <div class="nc-text"><div class="nc-title">Entraînement</div><div class="nc-sub">9 decks thématiques · questions courtes</div></div></div>
       <div class="nc-cta">S'entraîner →</div>
     </a>
-    <a href="examen.html" class="nav-card nc-mint">
+    <a href="examen.html" class="nav-card nc-purple">
       <div class="nc-head"><div class="nc-icon"><svg class="ic"><use href="#i-award"/></svg></div>
       <div class="nc-text"><div class="nc-title">Mode Examen</div><div class="nc-sub">Simulation d'examen chronométrée</div></div></div>
       <div class="nc-cta">Commencer →</div>
     </a>
   </div>
-  <div class="cards-group-label" style="width:100%;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--peach);opacity:.7;margin:1.2rem 0 .3rem;padding:0 .25rem">📚 Lire & Chercher</div>
+  <div class="cards-group-label" style="width:100%;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sky);opacity:.8;margin:1.2rem 0 .3rem;padding:0 .25rem"><svg class="ic" style="width:.9em;height:.9em;vertical-align:-.1em"><use href="#i-book-open"/></svg> Lire & Chercher</div>
   <div class="cards-grid">
-    <a href="polycop_cours.html" class="nav-card nc-rose">
+    <a href="polycop_cours.html" class="nav-card nc-sky">
       <div class="nc-head"><div class="nc-icon"><svg class="ic"><use href="#i-file-text"/></svg></div>
       <div class="nc-text"><div class="nc-title">Polycopié de cours</div><div class="nc-sub">10 chapitres résumés · fiches + Q&R</div></div></div>
       <div class="nc-cta">Lire →</div>
     </a>
-    <a href="polycop_tp.html" class="nav-card nc-butter">
+    <a href="polycop_tp.html" class="nav-card nc-sky">
       <div class="nc-head"><div class="nc-icon"><svg class="ic"><use href="#i-clipboard"/></svg></div>
       <div class="nc-text"><div class="nc-title">Polycopié TP</div><div class="nc-sub">9 dossiers d'exercices · brouillons + corrections</div></div></div>
       <div class="nc-cta">S'exercer →</div>
     </a>
-    <a href="ressources.html" class="nav-card nc-teal">
+    <a href="ressources.html" class="nav-card nc-sky">
       <div class="nc-head"><div class="nc-icon"><svg class="ic"><use href="#i-lightbulb"/></svg></div>
       <div class="nc-text"><div class="nc-title">Ressources</div><div class="nc-sub">Concepts clés · tableaux · exemples détaillés</div></div></div>
       <div class="nc-cta">Consulter →</div>
@@ -355,14 +355,14 @@ footer strong{color:var(--lav)}
       <div class="nc-cta">Chercher →</div>
     </a>
   </div>
-  <div class="cards-group-label" style="width:100%;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mint);opacity:.7;margin:1.2rem 0 .3rem;padding:0 .25rem">📊 Suivre</div>
+  <div class="cards-group-label" style="width:100%;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mint);opacity:.8;margin:1.2rem 0 .3rem;padding:0 .25rem"><svg class="ic" style="width:.9em;height:.9em;vertical-align:-.1em"><use href="#i-bar-chart"/></svg> Suivre</div>
   <div class="cards-grid">
     <a href="stats.html" class="nav-card nc-mint">
       <div class="nc-head"><div class="nc-icon"><svg class="ic"><use href="#i-bar-chart"/></svg></div>
       <div class="nc-text"><div class="nc-title">Ma Progression</div><div class="nc-sub">Heatmap · statistiques · maturité des cartes</div></div></div>
       <div class="nc-cta">Voir →</div>
     </a>
-    <a href="tests.html" class="nav-card nc-rose">
+    <a href="tests.html" class="nav-card nc-mint">
       <div class="nc-head"><div class="nc-icon"><svg class="ic"><use href="#i-check-square"/></svg></div>
       <div class="nc-text"><div class="nc-title">Mes Tests</div><div class="nc-sub">S'entraîner sur les vrais sujets d'examen</div></div></div>
       <div class="nc-cta">S'entraîner →</div>

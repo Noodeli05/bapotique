@@ -4,6 +4,8 @@
   s.setAttribute('aria-hidden','true');
   s.style.cssText='display:none;position:absolute;width:0;height:0;overflow:hidden';
   var I={
+    'chevron-left':'<polyline points="15 18 9 12 15 6"/>',
+    'chevron-right':'<polyline points="9 18 15 12 9 6"/>',
     'home':'<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>',
     'search':'<circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>',
     'book-open':'<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>',
@@ -106,6 +108,30 @@
   } else {
     replaceEmojiLabels();
   }
+
+  // Chapter/theme color system (5 linguistic levels)
+  var BAP_C = [
+    {c:'#c8b8f0',bg:'rgba(200,184,240,.13)',bd:'rgba(200,184,240,.38)'},  // 0 lav  — intro/sémiologie
+    {c:'#a8c8f0',bg:'rgba(168,200,240,.13)',bd:'rgba(168,200,240,.38)'},  // 1 sky  — phonologie+graphémique
+    {c:'#a8d8c4',bg:'rgba(168,216,196,.13)',bd:'rgba(168,216,196,.38)'},  // 2 mint — morphologie
+    {c:'#f0c8a0',bg:'rgba(240,200,160,.13)',bd:'rgba(240,200,160,.38)'},  // 3 peach — syntaxe/clause
+    {c:'#f0b8c4',bg:'rgba(240,184,196,.13)',bd:'rgba(240,184,196,.38)'}   // 4 rose — complexe/phrase
+  ];
+  window.bapColorFromTheme = function(str) {
+    var s = (str||'').toLowerCase();
+    var dm = s.match(/^d(\d+)/); // D0, D1…D10
+    if (dm) { var n=parseInt(dm[1]); return n===0?BAP_C[0]:n<=2?BAP_C[1]:n===3?BAP_C[2]:n<=6?BAP_C[3]:BAP_C[4]; }
+    var tm = s.match(/th[eè]me\s*(\d+)/); // Thème 0…9
+    if (tm) { var n=parseInt(tm[1]); return n===0?BAP_C[0]:n<=2?BAP_C[1]:n===3?BAP_C[2]:n<=6?BAP_C[3]:BAP_C[4]; }
+    var dos = s.match(/dossier\s*(\d+)/); // Dossier 1…9
+    if (dos) { var n=parseInt(dos[1]); return n===1?BAP_C[1]:n===2?BAP_C[2]:n<=5?BAP_C[3]:BAP_C[4]; }
+    if (/intro|sémio|signe/.test(s)) return BAP_C[0];
+    if (/phon|graphém/.test(s)) return BAP_C[1];
+    if (/morph/.test(s)) return BAP_C[2];
+    if (/syntaxe|clause\s*can|valence|ordre|type\s*de/.test(s)) return BAP_C[3];
+    if (/extens|phrase\s*graph|disloc|complexe/.test(s)) return BAP_C[4];
+    return null;
+  };
 
   // Cursor glow — desktop only (pointer device)
   if(window.matchMedia('(pointer:fine)').matches){
