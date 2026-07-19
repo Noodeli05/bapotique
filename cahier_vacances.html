@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260719d');}());</script>
+<script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260719f');}());</script>
 <title>Cahier de vacances — Linguistique française UNIL 2025</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
@@ -144,6 +144,8 @@ tr:last-child td{border-bottom:none}
 .ch-progress input[type=checkbox]{display:none}
 .ch-progress input[type=checkbox]:checked + .ch-cb-box{background:var(--acc,#7c6cc0);border-color:var(--acc,#7c6cc0);color:#fff}
 .ch-cb-box{width:16px;height:16px;border-radius:4px;border:1.5px solid var(--acc,#7c6cc0);display:grid;place-items:center;font-size:.65rem;flex-shrink:0;transition:background .15s,border-color .15s}
+.ch-cb-box::after{content:'';display:none}
+.ch-progress input[type=checkbox]:checked + .ch-cb-box::after{content:'✓';display:block}
 .ch-progress label:has(input:checked){background:var(--acc,#7c6cc0);color:#fff;border-color:var(--acc,#7c6cc0)}
 .ch-progress label:has(input:checked) .ch-cb-box{background:#fff;color:var(--acc,#7c6cc0);border-color:#fff}
 
@@ -160,15 +162,31 @@ tr:last-child td{border-bottom:none}
 /* ── PRINT STYLES ── */
 @media print{
   body{background:#fff;font-size:10.5pt}
-  .book{max-width:none;padding:0;margin:0}
-  .page{box-shadow:none;border-radius:0;margin-bottom:0;padding:18mm 20mm;min-height:auto;page-break-after:always;break-after:page}
+  .book{max-width:none;padding:0;margin:0;counter-reset:cahier-page}
+  .page{box-shadow:none;border-radius:0;margin-bottom:0;padding:18mm 20mm;min-height:auto;page-break-after:always;break-after:page;counter-increment:cahier-page;position:relative}
   .page:last-child{page-break-after:auto;break-after:auto}
-  .cover{min-height:auto;padding:25mm 20mm}
+  .cover{min-height:auto;padding:25mm 20mm;counter-increment:none}
   .cover-title{-webkit-text-fill-color:#c8b8f0;background:none;color:#c8b8f0}
   .print-btn{display:none!important}
   h2,h3,.ch-header{page-break-after:avoid;break-after:avoid}
   .exo-block,.box{page-break-inside:avoid;break-inside:avoid}
   .no-print{display:none!important}
+  /* numéro de page imprimé */
+  .page-num{
+    position:absolute;bottom:10mm;right:15mm;
+    font-size:8pt;color:#aaa;font-weight:600;
+    letter-spacing:.04em;
+  }
+  .cover .page-num,.toc-page .page-num{display:none!important}
+
+  /* ── NUMÉROS DE PAGE ── */
+  .book{counter-reset:cahier-p}
+  .page:not(.page-cover):not(.page-toc){counter-increment:cahier-p}
+  .page:not(.page-cover):not(.page-toc)::after{
+    content:'— ' counter(cahier-p) ' —';
+    position:absolute;bottom:9mm;left:0;right:0;
+    text-align:center;font-size:7.5pt;color:#bbb;letter-spacing:.08em;
+  }
 
   /* ── ÉCONOMIE D'ENCRE : supprime tous les fonds colorés ── */
   .box-def,.box-ex,.box-ret,.box-att,
@@ -246,7 +264,7 @@ tr:last-child td{border-bottom:none}
 <div class="book">
 
 <!-- ══════════════ COUVERTURE ══════════════ -->
-<div class="page" style="padding:0">
+<div class="page page-cover" style="padding:0">
 <div class="cover">
   <div style="margin-bottom:1.5rem">
     <div style="font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(200,184,240,.55);margin-bottom:.8rem">Linguistique française · UNIL 2025</div>
@@ -270,7 +288,7 @@ tr:last-child td{border-bottom:none}
 </div>
 
 <!-- ══════════════ TABLE DES MATIÈRES ══════════════ -->
-<div class="page">
+<div class="page page-toc">
   <div class="toc-title">Table des matières</div>
   <div class="toc-label">Fiches de cours &amp; exercices</div>
   <div class="toc-section">
@@ -311,9 +329,9 @@ tr:last-child td{border-bottom:none}
     <p class="ch-desc">La linguistique comme science · Le signe saussurien · La double articulation · Les niveaux d'analyse</p>
   </div>
   <div class="ch-progress">
-    <label><input type="checkbox" id="lu-c0" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Lu</label>
-    <label><input type="checkbox" id="fait-c0" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Exercices faits</label>
-    <label><input type="checkbox" id="corr-c0" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Corrigé vérifié</label>
+    <label><input type="checkbox" id="lu-c0" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Lu</label>
+    <label><input type="checkbox" id="fait-c0" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Exercices faits</label>
+    <label><input type="checkbox" id="corr-c0" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Corrigé vérifié</label>
   </div>
   <div class="visual-summary">
     <div class="vs-title">Résumé visuel — 5 points clés</div>
@@ -448,9 +466,9 @@ tr:last-child td{border-bottom:none}
     <p class="ch-desc">Phone vs phonème · Allophones · Paire minimale · Schwa · Graphèmes</p>
   </div>
   <div class="ch-progress">
-    <label><input type="checkbox" id="lu-c1" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Lu</label>
-    <label><input type="checkbox" id="fait-c1" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Exercices faits</label>
-    <label><input type="checkbox" id="corr-c1" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Corrigé vérifié</label>
+    <label><input type="checkbox" id="lu-c1" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Lu</label>
+    <label><input type="checkbox" id="fait-c1" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Exercices faits</label>
+    <label><input type="checkbox" id="corr-c1" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Corrigé vérifié</label>
   </div>
   <div class="visual-summary">
     <div class="vs-title">Résumé visuel — 5 points clés</div>
@@ -650,9 +668,9 @@ tr:last-child td{border-bottom:none}
     <p class="ch-desc">Morphème libre/lié · Dérivation · Flexion · Composition · Allomorphie</p>
   </div>
   <div class="ch-progress">
-    <label><input type="checkbox" id="lu-c2" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Lu</label>
-    <label><input type="checkbox" id="fait-c2" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Exercices faits</label>
-    <label><input type="checkbox" id="corr-c2" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Corrigé vérifié</label>
+    <label><input type="checkbox" id="lu-c2" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Lu</label>
+    <label><input type="checkbox" id="fait-c2" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Exercices faits</label>
+    <label><input type="checkbox" id="corr-c2" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Corrigé vérifié</label>
   </div>
   <div class="visual-summary">
     <div class="vs-title">Résumé visuel — 5 points clés</div>
@@ -818,9 +836,9 @@ tr:last-child td{border-bottom:none}
     <p class="ch-desc">Clause · Syntagme · Valence verbale · Fonctions syntaxiques · Thème–Rhème</p>
   </div>
   <div class="ch-progress">
-    <label><input type="checkbox" id="lu-c3" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Lu</label>
-    <label><input type="checkbox" id="fait-c3" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Exercices faits</label>
-    <label><input type="checkbox" id="corr-c3" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Corrigé vérifié</label>
+    <label><input type="checkbox" id="lu-c3" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Lu</label>
+    <label><input type="checkbox" id="fait-c3" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Exercices faits</label>
+    <label><input type="checkbox" id="corr-c3" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Corrigé vérifié</label>
   </div>
   <div class="visual-summary">
     <div class="vs-title">Résumé visuel — 5 points clés</div>
@@ -947,9 +965,9 @@ tr:last-child td{border-bottom:none}
     <p class="ch-desc">Dislocation · Clivée · Pseudo-clivée · Passif · Construction impersonnelle</p>
   </div>
   <div class="ch-progress">
-    <label><input type="checkbox" id="lu-c4" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Lu</label>
-    <label><input type="checkbox" id="fait-c4" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Exercices faits</label>
-    <label><input type="checkbox" id="corr-c4" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Corrigé vérifié</label>
+    <label><input type="checkbox" id="lu-c4" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Lu</label>
+    <label><input type="checkbox" id="fait-c4" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Exercices faits</label>
+    <label><input type="checkbox" id="corr-c4" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Corrigé vérifié</label>
   </div>
   <div class="visual-summary">
     <div class="vs-title">Résumé visuel — 5 points clés</div>
@@ -1069,9 +1087,9 @@ tr:last-child td{border-bottom:none}
     <p class="ch-desc">Déclarative · Interrogative · Impérative · Exclamative · Clause averbale · Passif pronominal</p>
   </div>
   <div class="ch-progress">
-    <label><input type="checkbox" id="lu-c5" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Lu</label>
-    <label><input type="checkbox" id="fait-c5" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Exercices faits</label>
-    <label><input type="checkbox" id="corr-c5" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Corrigé vérifié</label>
+    <label><input type="checkbox" id="lu-c5" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Lu</label>
+    <label><input type="checkbox" id="fait-c5" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Exercices faits</label>
+    <label><input type="checkbox" id="corr-c5" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Corrigé vérifié</label>
   </div>
   <div class="visual-summary">
     <div class="vs-title">Résumé visuel — 5 points clés</div>
@@ -1218,9 +1236,9 @@ tr:last-child td{border-bottom:none}
     <p class="ch-desc">Épithète · Relative déterminative / explicative · Apposition · GPrép modificateur</p>
   </div>
   <div class="ch-progress">
-    <label><input type="checkbox" id="lu-c6" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Lu</label>
-    <label><input type="checkbox" id="fait-c6" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Exercices faits</label>
-    <label><input type="checkbox" id="corr-c6" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Corrigé vérifié</label>
+    <label><input type="checkbox" id="lu-c6" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Lu</label>
+    <label><input type="checkbox" id="fait-c6" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Exercices faits</label>
+    <label><input type="checkbox" id="corr-c6" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Corrigé vérifié</label>
   </div>
   <div class="visual-summary">
     <div class="vs-title">Résumé visuel — 5 points clés</div>
@@ -1355,9 +1373,9 @@ tr:last-child td{border-bottom:none}
     <p class="ch-desc">Circonstants · Périphrases aspectuelles · Cadre thématique</p>
   </div>
   <div class="ch-progress">
-    <label><input type="checkbox" id="lu-c7" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Lu</label>
-    <label><input type="checkbox" id="fait-c7" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Exercices faits</label>
-    <label><input type="checkbox" id="corr-c7" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Corrigé vérifié</label>
+    <label><input type="checkbox" id="lu-c7" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Lu</label>
+    <label><input type="checkbox" id="fait-c7" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Exercices faits</label>
+    <label><input type="checkbox" id="corr-c7" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Corrigé vérifié</label>
   </div>
   <div class="visual-summary">
     <div class="vs-title">Résumé visuel — 5 points clés</div>
@@ -1471,9 +1489,9 @@ tr:last-child td{border-bottom:none}
     <p class="ch-desc">Coordination · Subordination · Types de subordonnées · Discours indirect</p>
   </div>
   <div class="ch-progress">
-    <label><input type="checkbox" id="lu-c8" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Lu</label>
-    <label><input type="checkbox" id="fait-c8" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Exercices faits</label>
-    <label><input type="checkbox" id="corr-c8" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Corrigé vérifié</label>
+    <label><input type="checkbox" id="lu-c8" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Lu</label>
+    <label><input type="checkbox" id="fait-c8" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Exercices faits</label>
+    <label><input type="checkbox" id="corr-c8" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Corrigé vérifié</label>
   </div>
   <div class="visual-summary">
     <div class="vs-title">Résumé visuel — 5 points clés</div>
@@ -1597,9 +1615,9 @@ tr:last-child td{border-bottom:none}
     <p class="ch-desc">Phrase graphique vs clause · Rôles de la ponctuation · 3 plans d'analyse</p>
   </div>
   <div class="ch-progress">
-    <label><input type="checkbox" id="lu-c9" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Lu</label>
-    <label><input type="checkbox" id="fait-c9" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Exercices faits</label>
-    <label><input type="checkbox" id="corr-c9" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Corrigé vérifié</label>
+    <label><input type="checkbox" id="lu-c9" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Lu</label>
+    <label><input type="checkbox" id="fait-c9" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Exercices faits</label>
+    <label><input type="checkbox" id="corr-c9" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Corrigé vérifié</label>
   </div>
   <div class="visual-summary">
     <div class="vs-title">Résumé visuel — 5 points clés</div>
