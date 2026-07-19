@@ -290,6 +290,43 @@ footer strong{color:var(--lav)}
   .pomo-card{padding:1.2rem 1.2rem}
   .pomo-time{font-size:1.7rem}
 }
+
+/* ── PLANNING JOURNALIER ── */
+.planning-section{display:flex;justify-content:center;padding:0 2rem 2.5rem}
+.planning-card{background:var(--card);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--bdr);border-radius:20px;padding:1.2rem 1.6rem;width:100%;max-width:560px;display:flex;flex-direction:column;gap:1rem;position:relative}
+.planning-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(200,184,240,0.16),transparent);border-radius:20px 20px 0 0;pointer-events:none}
+
+.planning-toggle-bar{display:flex;align-items:center}
+.planning-toggle{display:flex;border:1px solid var(--bdr);border-radius:9px;overflow:hidden}
+.ptoggle-btn{padding:.28rem .9rem;background:none;border:none;cursor:pointer;font-size:.8rem;font-weight:600;color:var(--mu);font-family:'DM Sans',sans-serif;transition:all .15s}
+.ptoggle-btn.ptoggle-active{background:var(--lav-bg,rgba(200,184,240,0.14));color:var(--lav)}
+
+.planning-countdown{display:flex;align-items:center;gap:1rem;padding:.75rem 1rem;background:rgba(200,184,240,0.07);border:1px solid rgba(200,184,240,0.15);border-radius:12px}
+.planning-days-num{font-family:'DM Serif Display',serif;font-size:2.2rem;font-weight:900;line-height:1}
+.planning-days-unit{font-size:.82rem;font-weight:600;color:var(--tx)}
+.planning-exam-sub{font-size:.72rem;color:var(--mu);margin-top:.15rem}
+
+.planning-phases{display:flex;flex-direction:column;gap:.5rem}
+.pphase{padding:.6rem .75rem;border-radius:10px;border:1px solid var(--bdr);background:var(--glass)}
+.pphase-active{border-color:rgba(200,184,240,0.28);background:rgba(200,184,240,0.05)}
+.pphase-done{opacity:.5}
+.pphase-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.12rem}
+.pphase-name{font-size:.8rem;font-weight:700;color:var(--tx)}
+.pphase-pct{font-size:.7rem;color:var(--mu);font-weight:600}
+.pphase-sub{font-size:.68rem;color:var(--mu);margin-bottom:.4rem}
+.pphase-bar-bg{height:5px;background:var(--bdr);border-radius:3px;overflow:hidden}
+.pphase-bar-fill{height:100%;border-radius:3px;transition:width .6s ease}
+
+.planning-tasks-hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem}
+.planning-tasks-title{font-size:.78rem;font-weight:700;color:var(--tx)}
+.planning-tasks-date{font-size:.7rem;color:var(--mu)}
+.ptask{display:flex;align-items:flex-start;gap:.6rem;padding:.42rem 0;cursor:pointer;border-bottom:1px solid var(--bdr)}
+.ptask:last-child{border-bottom:none}
+.ptask-cb{margin-top:.18rem;accent-color:var(--lav);cursor:pointer;flex-shrink:0;width:14px;height:14px}
+.ptask-text{font-size:.83rem;color:var(--tx);line-height:1.4;transition:all .2s}
+.ptask-done .ptask-text{text-decoration:line-through;color:var(--mu);opacity:.6}
+
+@media(max-width:600px){.planning-section{padding:0 1rem 2rem}}
 </style>
 <link rel="manifest" href="manifest.json"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js",{updateViaCache:"none"});</script><link rel="stylesheet" href="assets/css/common.css">
 </head>
@@ -407,6 +444,41 @@ footer strong{color:var(--lav)}
       <button class="pomo-btn-reset" onclick="pomoReset()" title="Réinitialiser">
         <svg class="ic"><use href="#i-rotate-ccw"/></svg>
       </button>
+    </div>
+  </div>
+</section>
+
+<!-- ── PLANNING JOURNALIER ── -->
+<section class="planning-section">
+  <div class="planning-card">
+    <div class="planning-toggle-bar">
+      <div class="planning-toggle">
+        <button class="ptoggle-btn ptoggle-active" id="ptoggle-libre"     onclick="planningSetMode('libre')">Libre</button>
+        <button class="ptoggle-btn"                id="ptoggle-planning"  onclick="planningSetMode('planning')">Planning</button>
+      </div>
+    </div>
+
+    <div id="planning-content" style="display:none">
+      <div class="planning-countdown">
+        <div>
+          <div class="planning-days-num" id="planning-days" style="color:var(--lav)">—</div>
+          <div class="planning-days-unit">jours</div>
+        </div>
+        <div>
+          <div style="font-size:.82rem;font-weight:600;color:var(--tx)">jusqu'à l'examen</div>
+          <div class="planning-exam-sub">31 août 2026</div>
+        </div>
+      </div>
+
+      <div class="planning-phases" id="planning-phases"></div>
+
+      <div>
+        <div class="planning-tasks-hdr">
+          <span class="planning-tasks-title">Tâches du jour</span>
+          <span class="planning-tasks-date" id="planning-today-date"></span>
+        </div>
+        <div id="planning-tasks-list"></div>
+      </div>
     </div>
   </div>
 </section>
@@ -626,6 +698,97 @@ function pomoBeep() {
     fg.setAttribute('stroke-dashoffset', 0);
     setTimeout(function(){ fg.style.transition = ''; }, 50);
   }
+})();
+
+// ── Planning journalier ───────────────────────────────────────────────────
+var PLANNING_PHASES = [
+  { name: 'Phase 1 — Révision des bases',  start:[2026,7,15], end:[2026,8,3],  color:'var(--lav)',   sub:'Chapitres 1–5 · polycopié cours' },
+  { name: 'Phase 2 — Consolidation',       start:[2026,8,4],  end:[2026,8,18], color:'var(--sky)',   sub:'Chapitres 6–10 · dossiers TP' },
+  { name: 'Phase 3 — Sprint final',        start:[2026,8,19], end:[2026,8,31], color:'var(--mint)',  sub:'Flashcards · entraînement · examen blanc' }
+];
+var PLANNING_EXAM = [2026,8,31];
+var PLANNING_TASKS = [
+  'Réviser un chapitre du polycopié cours',
+  'Faire 20 flashcards en mode révision',
+  'Compléter un exercice de TP',
+  'Rechercher 5 termes dans l\'outil Recherche',
+  'Faire un entraînement de 10 questions'
+];
+var FR_J = ['dim.','lun.','mar.','mer.','jeu.','ven.','sam.'];
+var FR_M = ['janv.','févr.','mars','avr.','mai','juin','juil.','août','sept.','oct.','nov.','déc.'];
+
+function planningDay(arr){ return new Date(arr[0], arr[1]-1, arr[2]); }
+function planningToday(){ var n=new Date(); return new Date(n.getFullYear(),n.getMonth(),n.getDate()); }
+function planningDaysLeft(){ return Math.round((planningDay(PLANNING_EXAM)-planningToday())/86400000); }
+function planningTodayKey(){ return planningToday().toISOString().slice(0,10); }
+
+function planningGetChecked(){
+  try{ var r=localStorage.getItem('bap_tasks_'+planningTodayKey()); if(r) return JSON.parse(r); }catch(e){}
+  return PLANNING_TASKS.map(function(){ return false; });
+}
+function planningSetChecked(i, v){
+  var arr=planningGetChecked(); arr[i]=v;
+  try{ localStorage.setItem('bap_tasks_'+planningTodayKey(), JSON.stringify(arr)); }catch(e){}
+}
+
+function planningSetMode(mode){
+  try{ localStorage.setItem('bap_planning_mode', mode); }catch(e){}
+  var l=document.getElementById('ptoggle-libre'), p=document.getElementById('ptoggle-planning');
+  if(l) l.classList.toggle('ptoggle-active', mode==='libre');
+  if(p) p.classList.toggle('ptoggle-active', mode==='planning');
+  var c=document.getElementById('planning-content');
+  if(c) c.style.display = mode==='planning' ? '' : 'none';
+  if(mode==='planning') planningRender();
+}
+
+function planningRender(){
+  // Compte à rebours
+  var days=planningDaysLeft();
+  var dEl=document.getElementById('planning-days');
+  if(dEl){
+    dEl.textContent = days > 0 ? days : 0;
+    dEl.style.color = days<=7 ? 'var(--rose)' : days<=14 ? 'var(--peach)' : 'var(--lav)';
+  }
+
+  // Phases
+  var pEl=document.getElementById('planning-phases');
+  if(pEl){
+    var today=planningToday();
+    pEl.innerHTML=PLANNING_PHASES.map(function(ph){
+      var s=planningDay(ph.start), e=planningDay(ph.end);
+      var status = today<s ? 'upcoming' : today>e ? 'done' : 'active';
+      var pct = status==='upcoming' ? 0 : status==='done' ? 100
+                : Math.round((today-s)/(e-s)*100);
+      return '<div class="pphase pphase-'+status+'">' +
+        '<div class="pphase-header"><span class="pphase-name">'+ph.name+'</span><span class="pphase-pct">'+pct+'%</span></div>'+
+        '<div class="pphase-sub">'+ph.sub+'</div>'+
+        '<div class="pphase-bar-bg"><div class="pphase-bar-fill" style="width:'+pct+'%;background:'+ph.color+'"></div></div>'+
+        '</div>';
+    }).join('');
+  }
+
+  // Date du jour
+  var t=planningToday();
+  var dteEl=document.getElementById('planning-today-date');
+  if(dteEl) dteEl.textContent=FR_J[t.getDay()]+' '+t.getDate()+' '+FR_M[t.getMonth()];
+
+  // Tâches
+  var tEl=document.getElementById('planning-tasks-list');
+  if(tEl){
+    var checked=planningGetChecked();
+    tEl.innerHTML=PLANNING_TASKS.map(function(task,i){
+      return '<label class="ptask'+(checked[i]?' ptask-done':'')+'">' +
+        '<input type="checkbox" class="ptask-cb"'+(checked[i]?' checked':'')+
+        ' onchange="planningSetChecked('+i+',this.checked);this.closest(\'.ptask\').classList.toggle(\'ptask-done\',this.checked)">' +
+        '<span class="ptask-text">'+task+'</span></label>';
+    }).join('');
+  }
+}
+
+// Init planning
+(function(){
+  var mode; try{ mode=localStorage.getItem('bap_planning_mode')||'libre'; }catch(e){ mode='libre'; }
+  planningSetMode(mode);
 })();
 </script>
 <script src="notes.js"></script>
