@@ -257,3 +257,57 @@
   #bap-resume { padding: 0 1rem; }
   .bap-resume-time { display: none; }
 }
+
+/* ── Fil d'Ariane (breadcrumb) ── */
+#bap-breadcrumb {
+  max-width: 960px;
+  margin: .42rem auto 0;
+  padding: 0 2rem;
+}
+
+.bap-bc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.bap-bc-item {
+  display: flex;
+  align-items: center;
+  font-size: .7rem;
+  color: var(--mu, rgba(200,195,220,0.55));
+}
+
+.bap-bc-item a {
+  color: var(--mu, rgba(200,195,220,0.6));
+  text-decoration: none;
+  transition: color .15s;
+  border-radius: 4px;
+  padding: .05rem .18rem;
+}
+
+.bap-bc-item a:hover {
+  color: var(--lav, #c8b8f0);
+  background: var(--lav-bg, rgba(200,184,240,0.10));
+}
+
+.bap-bc-sep {
+  margin: 0 .25rem;
+  opacity: .35;
+  font-size: .82rem;
+  user-select: none;
+}
+
+.bap-bc-current {
+  color: var(--tx, #e8e4f0);
+  font-weight: 500;
+  opacity: .75;
+}
+
+@media (max-width: 600px) {
+  #bap-breadcrumb { padding: 0 1rem; }
+}

@@ -108,6 +108,66 @@
        par notre version unifiée — s'exécute après DOMContentLoaded,
        donc après les scripts inline de la page */
     window.toggleTheme = bapToggleTheme;
+
+    /* Injecter le fil d'Ariane après #bap-nav */
+    var bc = document.getElementById('bap-breadcrumb');
+    if (!bc) {
+      bc = document.createElement('div');
+      bc.id = 'bap-breadcrumb';
+      container.parentNode.insertBefore(bc, container.nextSibling);
+    }
+    _bcEl = bc;
+    bapBreadcrumbReset();
+  }
+
+  /* ── Fil d'Ariane (breadcrumb) ── */
+
+  var _bcCrumbs = [];
+  var _bcEl = null;
+
+  function bapBreadcrumbRender() {
+    if (!_bcEl) return;
+    /* Masquer sur accueil ou si un seul niveau */
+    if (_bcCrumbs.length <= 1) { _bcEl.style.display = 'none'; return; }
+    _bcEl.style.display = '';
+    var html = '<nav class="bap-bc" aria-label="Fil d\'Ariane"><ol class="bap-bc-list">';
+    for (var i = 0; i < _bcCrumbs.length; i++) {
+      var c = _bcCrumbs[i];
+      var isLast = i === _bcCrumbs.length - 1;
+      if (isLast) {
+        html += '<li class="bap-bc-item bap-bc-current">' + c.label + '</li>';
+      } else {
+        html += '<li class="bap-bc-item"><a href="' + c.href + '">' + c.label + '</a>' +
+                '<span class="bap-bc-sep" aria-hidden="true">›</span></li>';
+      }
+    }
+    html += '</ol></nav>';
+    _bcEl.innerHTML = html;
+  }
+
+  function bapBreadcrumbReset() {
+    var current = location.pathname.split('/').pop() || 'index.html';
+    _bcCrumbs = [{ label: 'Accueil', href: 'index.html' }];
+    if (current !== 'index.html' && current !== '') {
+      var i, page = null;
+      for (i = 0; i < BAP_PAGES.length; i++) {
+        if (BAP_PAGES[i].href === current) { page = BAP_PAGES[i]; break; }
+      }
+      if (page) _bcCrumbs.push({ label: page.label, href: page.href });
+    }
+    bapBreadcrumbRender();
+  }
+
+  function bapBreadcrumbPush(label, href) {
+    /* Remplace à partir du 3e niveau (Accueil + Page + sous-niveaux dynamiques) */
+    if (_bcCrumbs.length > 2) _bcCrumbs = _bcCrumbs.slice(0, 2);
+    _bcCrumbs.push({ label: label, href: href || '#' });
+    bapBreadcrumbRender();
+  }
+
+  function bapBreadcrumbPop() {
+    if (_bcCrumbs.length > 2) _bcCrumbs.pop();
+    bapBreadcrumbRender();
   }
 
   /* ── Sauvegarde de la dernière page visitée ──
@@ -131,10 +191,13 @@
   }
 
   /* ── API publique ── */
-  window.bapToggleTheme  = bapToggleTheme;
-  window.bapToggleMenu   = bapToggleMenu;
-  window.bapInitNav      = bapInitNav;
-  window.bapSaveLastPage = bapSaveLastPage;
+  window.bapToggleTheme      = bapToggleTheme;
+  window.bapToggleMenu       = bapToggleMenu;
+  window.bapInitNav          = bapInitNav;
+  window.bapSaveLastPage     = bapSaveLastPage;
+  window.bapBreadcrumbReset  = bapBreadcrumbReset;
+  window.bapBreadcrumbPush   = bapBreadcrumbPush;
+  window.bapBreadcrumbPop    = bapBreadcrumbPop;
 
   document.addEventListener('DOMContentLoaded', function () {
     bapInitNav();
