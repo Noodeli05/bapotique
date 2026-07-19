@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260718');})();</script>
+<script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260719');})();</script>
 <title>Polycopié de TP — Linguistique UNIL 2025</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,12 +13,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap');
 :root{
-  --bg:#13111a;--bg-warm:#1c1820;
-  --glass:rgba(255,255,255,0.06);--glass-h:rgba(255,255,255,0.10);
-  --bdr:rgba(255,255,255,0.10);--bdr-s:rgba(255,255,255,0.18);
-  --lav:#c8b8f0;--lav-bg:rgba(200,184,240,0.10);
+  --bg:#211e30;--bg-warm:#2a2640;
+  --glass:rgba(255,255,255,0.09);--glass-h:rgba(255,255,255,0.10);
+  --bdr:rgba(255,255,255,0.13);--bdr-s:rgba(255,255,255,0.18);
+  --lav:#c8b8f0;--lav-bg:rgba(200,184,240,0.16);
   --mint:#a8d8c4;--mint-bg:rgba(168,216,196,0.10);
-  --peach:#f0c8a0;--peach-bg:rgba(240,200,160,0.10);
+  --peach:#f0c8a0;--peach-bg:rgba(240,200,160,0.16);
   --sky:#a8c8f0;--sky-bg:rgba(168,200,240,0.10);
   --rose:#f0b8c4;--rose-bg:rgba(240,184,196,0.10);
   --butter:#f0e0a0;--butter-bg:rgba(240,224,160,0.10);
@@ -46,7 +46,7 @@ html{font-size:16px;scroll-behavior:smooth;overflow-x:hidden}
 body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--tx);min-height:100vh;transition:background .3s,color .3s;overflow-x:hidden}
 body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 55% 45% at 10% 15%,rgba(200,184,240,0.14) 0%,transparent 65%),radial-gradient(ellipse 45% 40% at 88% 75%,rgba(240,200,160,0.11) 0%,transparent 65%),radial-gradient(ellipse 38% 35% at 55% 95%,rgba(168,216,196,0.09) 0%,transparent 65%)}
 /* NAV */
-.topnav{position:sticky;top:0;z-index:100;background:rgba(19,17,26,0.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--bdr);padding:.7rem 1.2rem;display:flex;align-items:center;gap:.4rem;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.topnav{position:sticky;top:0;z-index:100;background:rgba(33,30,48,0.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--bdr);padding:.7rem 1.2rem;display:flex;align-items:center;gap:.4rem;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch}
 [data-theme="light"] .topnav{background:rgba(245,243,248,0.95)}
 .topnav-brand{font-family:'DM Serif Display',serif;font-size:1rem;font-weight:800;background:linear-gradient(90deg,var(--butter),var(--peach));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none;white-space:nowrap;margin-right:.2rem;flex-shrink:0}
 .topnav-links{display:flex;gap:.25rem;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch}
@@ -56,7 +56,7 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;bac
 .theme-btn:hover{background:var(--butter-bg)}
 /* ── HAMBURGER MOBILE ── */
 .topnav-burger{display:none;background:none;border:none;cursor:pointer;padding:.34rem .45rem;border-radius:7px;color:var(--mu);transition:background .15s;align-items:center;line-height:1;flex-shrink:0}
-.topnav-burger:hover{background:rgba(200,184,240,0.10)}
+.topnav-burger:hover{background:rgba(200,184,240,0.16)}
 .topnav-links a.active{color:var(--lav)!important;background:rgba(200,184,240,0.12)}
 @media(max-width:760px){
   .topnav-burger{display:flex}
@@ -112,7 +112,7 @@ textarea.ans-input:focus{outline:none;border-color:rgba(240,224,160,0.45);backgr
 .corr-box.show{display:block;animation:fadeIn .2s ease}
 .corr-box strong{color:var(--mint)}
 .savoir-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.32rem .7rem;border:1px solid rgba(200,184,240,0.2);background:var(--lav-bg);color:var(--lav);border-radius:var(--r-sm);font-size:.75rem;cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:500;transition:.15s;margin:.3rem 0}
-.savoir-btn:hover{background:rgba(200,184,240,0.18)}
+.savoir-btn:hover{background:rgba(200,184,240,0.26)}
 .savoir-box{display:none;margin:.4rem 0;padding:.7rem .9rem;background:var(--lav-bg);border:1px solid rgba(200,184,240,0.15);border-radius:var(--r-sm);font-size:.83rem;line-height:1.65;color:var(--tx)}
 .savoir-box.show{display:block;animation:fadeIn .2s ease}
 /* TABLE */
