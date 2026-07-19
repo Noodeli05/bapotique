@@ -233,6 +233,168 @@
   window.bapBreadcrumbPush   = bapBreadcrumbPush;
   window.bapBreadcrumbPop    = bapBreadcrumbPop;
 
+  /* ── Bouton retour en haut ── */
+
+  function bapInitBackToTop() {
+    var btn = document.createElement('button');
+    btn.id = 'bap-back-top';
+    btn.className = 'bap-back-top';
+    btn.title = 'Retour en haut';
+    btn.setAttribute('aria-label', 'Retour en haut de page');
+    btn.innerHTML = '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>';
+    document.body.appendChild(btn);
+
+    var visible = false;
+    function checkScroll() {
+      var mainEl = document.getElementById('main');
+      var scrollTop = mainEl ? mainEl.scrollTop : (window.pageYOffset || document.documentElement.scrollTop || 0);
+      var shouldShow = scrollTop > 300;
+      if (shouldShow !== visible) {
+        visible = shouldShow;
+        btn.classList.toggle('bap-back-top-visible', visible);
+      }
+    }
+
+    btn.addEventListener('click', function () {
+      var mainEl = document.getElementById('main');
+      if (mainEl) {
+        mainEl.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+
+    var mainEl = document.getElementById('main');
+    if (mainEl) mainEl.addEventListener('scroll', checkScroll, { passive: true });
+    window.addEventListener('scroll', checkScroll, { passive: true });
+    checkScroll();
+  }
+
+  /* ── Toasts ── */
+
+  function bapToast(msg, type, duration) {
+    type = type || 'info';
+    duration = duration || 3000;
+    var container = document.getElementById('bap-toasts');
+    if (!container) {
+      container = document.createElement('div');
+      container.id = 'bap-toasts';
+      container.className = 'bap-toasts';
+      document.body.appendChild(container);
+    }
+    var toast = document.createElement('div');
+    toast.className = 'bap-toast bap-toast-' + type;
+
+    var iconMap = { success: '<polyline points="20 6 9 17 4 12"/>', error: '<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>', warning: '<path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>', info: '<circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>' };
+    var iconPath = iconMap[type] || iconMap.info;
+
+    toast.innerHTML =
+      '<svg class="ic bap-toast-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + iconPath + '</svg>' +
+      '<span class="bap-toast-msg">' + msg + '</span>' +
+      '<button class="bap-toast-close" aria-label="Fermer"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>';
+
+    container.appendChild(toast);
+    requestAnimationFrame(function () { toast.classList.add('bap-toast-show'); });
+
+    var timer = setTimeout(function () { dismissToast(toast); }, duration);
+    toast.querySelector('.bap-toast-close').addEventListener('click', function () {
+      clearTimeout(timer);
+      dismissToast(toast);
+    });
+    return toast;
+  }
+
+  function dismissToast(toast) {
+    toast.classList.remove('bap-toast-show');
+    toast.classList.add('bap-toast-hide');
+    setTimeout(function () { if (toast.parentNode) toast.parentNode.removeChild(toast); }, 320);
+  }
+
+  /* ── Confetti micro-reward ── */
+
+  function bapConfetti(opts) {
+    opts = opts || {};
+    var count = opts.count || 54;
+    var origin = opts.origin || { x: 0.5, y: 0.6 };
+    var colors = opts.colors || ['#c8b8f0','#a8c8f0','#a8d8c4','#f0c8a0','#f0b8c4','#fff8c0'];
+    var canvas = document.createElement('canvas');
+    canvas.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:99998;';
+    document.body.appendChild(canvas);
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    var ctx = canvas.getContext('2d');
+
+    var particles = [];
+    for (var i = 0; i < count; i++) {
+      var angle = (Math.PI * 2 * i / count) + (i % 3 === 0 ? 0.3 : -0.3);
+      var speed = 4 + (i % 5) * 1.4;
+      particles.push({
+        x: canvas.width * origin.x,
+        y: canvas.height * origin.y,
+        vx: Math.cos(angle) * speed * (0.7 + (i % 4) * 0.2),
+        vy: Math.sin(angle) * speed * (0.7 + (i % 4) * 0.2) - 3 - (i % 6),
+        color: colors[i % colors.length],
+        size: 5 + (i % 4) * 2,
+        rot: (i * 47) % 360,
+        rotSpeed: ((i % 7) - 3) * 3,
+        gravity: 0.22 + (i % 5) * 0.04,
+        alpha: 1,
+        shape: i % 3
+      });
+    }
+
+    var startTime = null;
+    var duration = 1800;
+
+    function draw(ts) {
+      if (!startTime) startTime = ts;
+      var elapsed = ts - startTime;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      var alive = false;
+      for (var j = 0; j < particles.length; j++) {
+        var p = particles[j];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += p.gravity;
+        p.vx *= 0.99;
+        p.rot += p.rotSpeed;
+        p.alpha = Math.max(0, 1 - elapsed / duration);
+        if (p.alpha <= 0) continue;
+        alive = true;
+        ctx.save();
+        ctx.globalAlpha = p.alpha;
+        ctx.fillStyle = p.color;
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rot * Math.PI / 180);
+        if (p.shape === 0) {
+          ctx.fillRect(-p.size / 2, -p.size / 4, p.size, p.size / 2);
+        } else if (p.shape === 1) {
+          ctx.beginPath();
+          ctx.arc(0, 0, p.size / 2, 0, Math.PI * 2);
+          ctx.fill();
+        } else {
+          ctx.beginPath();
+          ctx.moveTo(0, -p.size / 2);
+          ctx.lineTo(p.size / 2, p.size / 2);
+          ctx.lineTo(-p.size / 2, p.size / 2);
+          ctx.closePath();
+          ctx.fill();
+        }
+        ctx.restore();
+      }
+      if (alive && elapsed < duration + 200) {
+        requestAnimationFrame(draw);
+      } else {
+        if (canvas.parentNode) canvas.parentNode.removeChild(canvas);
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+
+  /* ── API publique toasts/confetti ── */
+  window.bapToast    = bapToast;
+  window.bapConfetti = bapConfetti;
+
   /* ── Barre de progression de lecture ── */
 
   function bapInitProgress() {
@@ -274,6 +436,7 @@
     bapInitNav();
     bapSaveLastPage();
     bapInitProgress();
+    bapInitBackToTop();
 
     /* Raccourci clavier F — mode focus */
     document.addEventListener('keydown', function (e) {
