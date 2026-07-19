@@ -2941,14 +2941,12 @@ function togglePolySection(head){
   if(arr)arr.style.transform=isOpen?'':'rotate(90deg)';
 }
 (function(){
-  try{
-    var saved=localStorage.getItem('bap_polycop_tab');
-    document.addEventListener('DOMContentLoaded',function(){
-      switchTab(saved||'tab-resume');
-    });
-  }catch(e){
-    document.addEventListener('DOMContentLoaded',function(){switchTab('tab-resume');});
-  }
+  document.addEventListener('DOMContentLoaded',function(){
+    var param=new URLSearchParams(location.search).get('tab');
+    if(param==='polycop'){switchTab('tab-polycop');return;}
+    try{var saved=localStorage.getItem('bap_polycop_tab');switchTab(saved||'tab-resume');}
+    catch(e){switchTab('tab-resume');}
+  });
 })();
 
 </script>
