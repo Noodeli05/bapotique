@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg:#2d2844; --bg-warm:#38334f;
+  --bg:#2d3b4e; --bg-warm:#344455;
   --glass:rgba(255,255,255,0.11); --glass-hover:rgba(255,255,255,0.17);
   --border:rgba(255,255,255,0.13); --border-strong:rgba(255,255,255,0.22);
 
@@ -31,9 +31,9 @@
   --card:rgba(255,255,255,0.11); --card2:rgba(255,255,255,0.08);
   --sb:rgba(22,18,30,0.88); --sb-txt:rgba(232,228,240,0.55);
   --bdr:rgba(255,255,255,0.13); --mu:rgba(232,228,240,0.55);
-  --nav:rgba(45,40,68,0.92); --radius:16px;
+  --nav:rgba(45,59,78,0.92); --radius:16px;
   /* ressources.html aliases */
-  --card-bg:rgba(255,255,255,0.11); --nav-bg:rgba(45,40,68,0.92);
+  --card-bg:rgba(255,255,255,0.11); --nav-bg:rgba(45,59,78,0.92);
   --nav-active:rgba(200,184,240,0.15);
   --text:#e8e4f0; --muted:rgba(232,228,240,0.55);
   --primary:#c8b8f0; --primary-lt:rgba(200,184,240,0.16); --primary-dk:#a898d8;
@@ -71,7 +71,7 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(-
 body::before{
   content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
   background:
-    radial-gradient(ellipse 60% 50% at 15% 20%, rgba(200,184,240,0.16) 0%, transparent 65%),
+    radial-gradient(ellipse 60% 50% at 15% 20%, rgba(168,200,240,0.22) 0%, transparent 65%),
     radial-gradient(ellipse 50% 45% at 85% 75%, rgba(168,216,196,0.14) 0%, transparent 65%),
     radial-gradient(ellipse 40% 35% at 50% 50%, rgba(168,200,240,0.12) 0%, transparent 65%);
 }
@@ -98,7 +98,7 @@ body::before{
 
 /* ── HERO ── */
 .hero{position:relative;padding:7rem 2rem 4.5rem;text-align:center;overflow:hidden}
-.hero-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 65% 55% at 28% 42%,rgba(200,184,240,0.26) 0%,transparent 65%),radial-gradient(ellipse 50% 45% at 72% 58%,rgba(240,200,160,0.16) 0%,transparent 65%),radial-gradient(ellipse 40% 30% at 50% 10%,rgba(168,200,240,0.13) 0%,transparent 65%)}
+.hero-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 65% 55% at 28% 42%,rgba(168,200,240,0.26) 0%,transparent 65%),radial-gradient(ellipse 50% 45% at 72% 58%,rgba(240,200,160,0.16) 0%,transparent 65%),radial-gradient(ellipse 40% 30% at 50% 10%,rgba(168,200,240,0.13) 0%,transparent 65%)}
 .hero-badge{display:inline-block;background:rgba(200,184,240,0.16);border:1px solid rgba(200,184,240,0.20);color:#c8b8f0;font-size:.73rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.35rem 1.1rem;border-radius:50px;margin-bottom:1.6rem}
 .hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2.4rem,6vw,4.2rem);font-weight:900;line-height:1.05;letter-spacing:-.025em;margin-bottom:1.3rem}
 .hero h1 .grad{background:linear-gradient(135deg,var(--lav) 0%,var(--sky) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
