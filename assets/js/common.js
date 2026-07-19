@@ -230,9 +230,40 @@
   window.bapBreadcrumbPush   = bapBreadcrumbPush;
   window.bapBreadcrumbPop    = bapBreadcrumbPop;
 
+  /* ── Barre de progression de lecture ── */
+
+  function bapInitProgress() {
+    var bar = document.createElement('div');
+    bar.id = 'bap-progress-bar';
+    bar.innerHTML = '<div class="bap-progress-fill"></div>';
+    document.body.appendChild(bar);
+    var fill = bar.querySelector('.bap-progress-fill');
+
+    function getScroll() {
+      var mainEl = document.getElementById('main');
+      if (mainEl && mainEl.scrollHeight > mainEl.clientHeight + 5) {
+        return { top: mainEl.scrollTop, max: mainEl.scrollHeight - mainEl.clientHeight };
+      }
+      var d = document.documentElement;
+      return { top: window.pageYOffset || d.scrollTop || 0, max: d.scrollHeight - d.clientHeight };
+    }
+
+    function update() {
+      var s = getScroll();
+      var pct = s.max > 0 ? Math.min(1, s.top / s.max) : 0;
+      fill.style.transform = 'scaleX(' + pct.toFixed(4) + ')';
+    }
+
+    var mainEl = document.getElementById('main');
+    if (mainEl) mainEl.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     bapInitNav();
     bapSaveLastPage();
+    bapInitProgress();
 
     /* Raccourci clavier F — mode focus */
     document.addEventListener('keydown', function (e) {
