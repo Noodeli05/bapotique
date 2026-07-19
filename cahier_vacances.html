@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260719k');}());</script>
+<script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260719l');}());</script>
 <title>Cahier de vacances — Linguistique française UNIL 2025</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
@@ -161,12 +161,8 @@ tr:last-child td{border-bottom:none}
 @media print{
   body{background:#fff;font-size:9pt}
   .book{max-width:none;padding:0;margin:0}
-  /* Suppression des sauts de page forcés — le contenu s'enchaîne naturellement */
-  .page{box-shadow:none;border-radius:0;margin:0;padding:5mm 6mm;min-height:auto;position:relative}
-  /* Seuls les covers/séparateurs forcent un saut */
-  .page-cover{page-break-after:always;break-after:page;padding:12mm 6mm}
-  .page-toc{page-break-after:always;break-after:page}
-  .divider-page.page,.tp-cover{page-break-before:always;break-before:page;page-break-after:always;break-after:page;padding:0}
+  /* Zéro saut de page forcé — tout s'enchaîne */
+  .page{box-shadow:none;border-radius:0;margin:0;padding:4mm 5mm;min-height:auto;position:relative;page-break-after:auto;break-after:auto}
   .cover{min-height:auto;padding:0}
   .cover-title{-webkit-text-fill-color:#c8b8f0;background:none;color:#c8b8f0}
   .print-btn,.reset-btn{display:none!important}
@@ -188,9 +184,25 @@ tr:last-child td{border-bottom:none}
   .mcq-choices{gap:.2rem;margin-top:.25rem}
   .mcq-opt{padding:.15rem .3rem;font-size:.78rem}
   .answer-line{height:1.4rem}
+
+  /* ── ÉCONOMIE D'ENCRE : supprime tous les fonds colorés ── */
+  .box-def,.box-ex,.box-ret,.box-att,
+  .exo-header,.exo-body blockquote,
+  .visual-summary,.toc-label,.ch-num-badge,
+  .mcq-opt,.corr-item-print,.source-box-print,
+  th,.cover,.divider-page,
+  *{background:transparent!important;background-image:none!important}
+  body,*{color:#000!important;-webkit-text-fill-color:#000!important}
+  .cover-title{color:#2d2540!important;-webkit-text-fill-color:#2d2540!important}
+  .box-def{border-left:3px solid #7c6cc0!important}
+  .box-ex{border-left:3px solid #2a8a68!important}
+  .box-ret{border-left:3px solid #a08020!important}
+  .box-att{border-left:3px solid #b03060!important}
+  .divider-page{border:2px solid #2d2540!important}
+  th{border-bottom:1.5px solid #2d2540!important;font-weight:700}
+  .exo-tag{border:1px solid #7c6cc0!important}
 }
-@page{size:A4;margin:8mm 10mm 14mm}
-@page{@bottom-center{content:'— ' counter(page) ' —';font-size:7pt;color:#888;letter-spacing:.08em}}
+@page{size:A4;margin:0}
 
 /* ── PRINT BUTTON ── */
 .print-btn{position:fixed;bottom:1.5rem;right:1.5rem;z-index:999;background:#7c6cc0;color:#fff;border:none;padding:.7rem 1.4rem;border-radius:50px;font-size:.85rem;font-weight:700;cursor:pointer;box-shadow:0 4px 18px rgba(124,108,192,.4);font-family:inherit;display:flex;align-items:center;gap:.4rem}
