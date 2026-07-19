@@ -105,7 +105,10 @@
         '</button>' +
         '<button class="bap-focus-btn" id="bap-focus-btn" ' +
             'onclick="bapToggleFocus()" title="Mode focus (F)">' +
-          '<svg class="ic"><use href="#i-maximize-2"/></svg>' +
+          '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+            '<polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/>' +
+            '<line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/>' +
+          '</svg>' +
         '</button>' +
       '</nav>';
 
@@ -133,7 +136,7 @@
       exitBtn.id = 'bap-focus-exit';
       exitBtn.className = 'bap-focus-exit';
       exitBtn.title = 'Quitter le mode focus (F)';
-      exitBtn.innerHTML = '<svg class="ic"><use href="#i-minimize"/></svg>';
+      exitBtn.innerHTML = '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 14 10 14 10 20"/><polyline points="20 10 14 10 14 4"/><line x1="10" y1="14" x2="3" y2="21"/><line x1="21" y1="3" x2="14" y2="10"/></svg>';
       exitBtn.addEventListener('click', bapToggleFocus);
       document.body.appendChild(exitBtn);
     }
