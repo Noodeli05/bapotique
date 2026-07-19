@@ -263,6 +263,13 @@
     update();
   }
 
+  /* Forcer la vérification de mise à jour du SW à chaque chargement */
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistration().then(function (reg) {
+      if (reg) reg.update();
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     bapInitNav();
     bapSaveLastPage();
