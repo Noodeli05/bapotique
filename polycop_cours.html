@@ -2968,7 +2968,7 @@ function togglePolySection(head){
 
 // ── STABILO HIGHLIGHTER ─────────────────────────────────────────────
 (function(){
-  var STORE='bap_hl_v2';
+  var STORE='bap_hl_v3';
   var stored={};
   try{stored=JSON.parse(localStorage.getItem(STORE))||{};}catch(e){stored={};}
 
@@ -3019,20 +3019,44 @@ function togglePolySection(head){
 
   function hideToolbar(){tb.style.display='none';pendingRange=null;}
 
+  // Check selection stays within a single block element (p, li, h3, h4, blockquote)
+  function sameBlock(range){
+    function getBlock(node){
+      var el=node.nodeType===1?node:node.parentElement;
+      while(el){
+        var t=el.tagName&&el.tagName.toLowerCase();
+        if(['p','li','blockquote','h3','h4','h5'].indexOf(t)!==-1)return el;
+        if(el.classList&&el.classList.contains('poly-body'))return null;
+        el=el.parentElement;
+      }
+      return null;
+    }
+    return getBlock(range.startContainer)===getBlock(range.endContainer);
+  }
+
   // Swatch click → apply color
   tb.querySelectorAll('.hl-swatch').forEach(function(sw){
     sw.addEventListener('mousedown',function(e){
       e.preventDefault();
       if(!pendingRange)return;
+      if(!sameBlock(pendingRange)){
+        var msg=document.createElement('div');
+        msg.style.cssText='position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);background:rgba(240,100,100,0.92);color:#fff;padding:.5rem 1.2rem;border-radius:8px;font-size:.85rem;z-index:600;pointer-events:none';
+        msg.textContent='Sélectionnez dans un seul paragraphe';
+        document.body.appendChild(msg);
+        setTimeout(function(){msg.remove();},2200);
+        hideToolbar();return;
+      }
       var bodyEl=getBodyEl(pendingRange);
       if(!bodyEl)return;
       var sid=getSid(bodyEl);
       if(!sid)return;
       try{
-        var mark=document.createElement('span');
-        mark.className='hl hl-'+sw.dataset.c;
-        mark.appendChild(pendingRange.extractContents());
-        pendingRange.insertNode(mark);
+        var range=pendingRange.cloneRange();
+        var span=document.createElement('span');
+        span.className='hl hl-'+sw.dataset.c;
+        span.appendChild(range.extractContents());
+        range.insertNode(span);
         window.getSelection().removeAllRanges();
         saveSection(sid,bodyEl);
       }catch(ex){console.warn('stabilo:',ex);}
