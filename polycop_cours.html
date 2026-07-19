@@ -193,6 +193,23 @@ input,textarea,select{font-size:max(16px,1em)!important}
 .poly-body li.sub1{margin-left:1.2rem;list-style-type:circle}
 .poly-body li.sub2{margin-left:2.4rem;list-style-type:square}
 .poly-body p.normal{font-size:.8rem;color:var(--mu);line-height:1.6;border-left:2px solid var(--bdr);padding-left:.7rem;margin:.35rem 0 .6rem}
+/* ── STABILO ── */
+mark.hl{border-radius:2px;cursor:pointer;padding:0 2px;transition:filter .15s}
+mark.hl:hover{filter:brightness(1.2)}
+mark.hl-y{background:rgba(255,224,0,0.50);color:inherit}
+mark.hl-p{background:rgba(255,100,180,0.38);color:inherit}
+mark.hl-b{background:rgba(80,170,255,0.38);color:inherit}
+mark.hl-g{background:rgba(80,220,100,0.38);color:inherit}
+[data-theme="light"] mark.hl-y{background:rgba(255,210,0,0.60)}
+[data-theme="light"] mark.hl-p{background:rgba(255,60,150,0.30)}
+[data-theme="light"] mark.hl-b{background:rgba(30,130,255,0.28)}
+[data-theme="light"] mark.hl-g{background:rgba(30,180,60,0.28)}
+#hl-toolbar{position:absolute;z-index:500;background:var(--sb,rgba(22,18,30,0.97));border:1px solid var(--bdr-s,rgba(255,255,255,0.18));border-radius:10px;padding:.4rem .55rem;display:none;align-items:center;gap:.45rem;box-shadow:0 6px 24px rgba(0,0,0,0.45);pointer-events:auto}
+.hl-swatch{width:1.25rem;height:1.25rem;border-radius:4px;cursor:pointer;border:2px solid transparent;flex-shrink:0;transition:transform .15s,border-color .15s}
+.hl-swatch:hover{transform:scale(1.25);border-color:rgba(255,255,255,0.5)}
+.hl-erase{background:none;border:1px solid var(--bdr,rgba(255,255,255,0.10));color:var(--mu);font-size:.75rem;padding:.15rem .5rem;border-radius:5px;cursor:pointer;font-family:inherit;margin-left:.1rem;transition:.15s}
+.hl-erase:hover{color:var(--tx);border-color:var(--tx)}
+.hl-hint{font-size:.7rem;color:var(--mu,rgba(232,228,240,0.55));padding:.1rem .2rem;white-space:nowrap;user-select:none}
 </style>
 <link rel="manifest" href="manifest.json"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js",{updateViaCache:"none"});</script></head>
 <body>
@@ -2947,6 +2964,134 @@ function togglePolySection(head){
     try{var saved=localStorage.getItem('bap_polycop_tab');switchTab(saved||'tab-resume');}
     catch(e){switchTab('tab-resume');}
   });
+})();
+
+// ── STABILO HIGHLIGHTER ─────────────────────────────────────────────
+(function(){
+  var STORE='bap_hl_v1';
+  var stored={};
+  try{stored=JSON.parse(localStorage.getItem(STORE))||{};}catch(e){stored={};}
+
+  // Build floating toolbar
+  var tb=document.createElement('div');
+  tb.id='hl-toolbar';
+  var COLORS=[{k:'y',bg:'#ffe000',label:'Jaune'},{k:'p',bg:'#ff8fc8',label:'Rose'},{k:'b',bg:'#64b4ff',label:'Bleu'},{k:'g',bg:'#64e050',label:'Vert'}];
+  COLORS.forEach(function(c){
+    var s=document.createElement('div');
+    s.className='hl-swatch';s.style.background=c.bg;s.title=c.label;s.dataset.c=c.k;
+    tb.appendChild(s);
+  });
+  var hint=document.createElement('span');hint.className='hl-hint';hint.textContent='Clic pour effacer';
+  var erase=document.createElement('button');erase.className='hl-erase';erase.textContent='✕ annuler';
+  tb.appendChild(hint);tb.appendChild(erase);
+  document.body.appendChild(tb);
+
+  var pendingRange=null;
+  var polyTab=document.getElementById('tab-polycop');
+  if(!polyTab)return;
+
+  // Show toolbar on text selection inside poly-body
+  polyTab.addEventListener('mouseup',function(){
+    setTimeout(function(){
+      var sel=window.getSelection();
+      if(!sel||sel.isCollapsed||!sel.rangeCount)return;
+      var range=sel.getRangeAt(0);
+      if(!range.toString().trim())return;
+      var anc=range.commonAncestorContainer;
+      var el=anc.nodeType===1?anc:anc.parentElement;
+      while(el&&!el.classList.contains('poly-body'))el=el.parentElement;
+      if(!el)return;
+      pendingRange=range.cloneRange();
+      positionToolbar(range.getBoundingClientRect());
+    },10);
+  });
+
+  function positionToolbar(rect){
+    tb.style.display='flex';
+    var scrollY=window.scrollY||document.documentElement.scrollTop;
+    var top=rect.top+scrollY-tb.offsetHeight-10;
+    if(top<scrollY+4)top=rect.bottom+scrollY+8;
+    var left=Math.max(4,rect.left+rect.width/2-100);
+    left=Math.min(left,document.documentElement.clientWidth-220);
+    tb.style.top=top+'px';
+    tb.style.left=left+'px';
+  }
+
+  function hideToolbar(){tb.style.display='none';pendingRange=null;}
+
+  // Swatch click → apply color
+  tb.querySelectorAll('.hl-swatch').forEach(function(sw){
+    sw.addEventListener('mousedown',function(e){
+      e.preventDefault();
+      if(!pendingRange)return;
+      var bodyEl=getBodyEl(pendingRange);
+      if(!bodyEl)return;
+      var sid=getSid(bodyEl);
+      if(!sid)return;
+      try{
+        var mark=document.createElement('mark');
+        mark.className='hl hl-'+sw.dataset.c;
+        mark.appendChild(pendingRange.extractContents());
+        pendingRange.insertNode(mark);
+        window.getSelection().removeAllRanges();
+        saveSection(sid,bodyEl);
+      }catch(ex){console.warn('stabilo:',ex);}
+      hideToolbar();
+    });
+  });
+
+  erase.addEventListener('mousedown',function(e){e.preventDefault();hideToolbar();});
+
+  document.addEventListener('mousedown',function(e){
+    if(!e.target.closest('#hl-toolbar'))hideToolbar();
+  });
+
+  // Click on mark → remove it
+  polyTab.addEventListener('click',function(e){
+    var mark=e.target.closest('mark.hl');
+    if(!mark)return;
+    var bodyEl=mark.closest('.poly-body');
+    var sid=bodyEl?getSid(bodyEl):null;
+    var parent=mark.parentNode;
+    while(mark.firstChild)parent.insertBefore(mark.firstChild,mark);
+    parent.removeChild(mark);
+    parent.normalize();
+    if(sid&&bodyEl)saveSection(sid,bodyEl);
+  });
+
+  function getBodyEl(range){
+    var el=range.commonAncestorContainer;
+    if(el.nodeType!==1)el=el.parentElement;
+    while(el&&!el.classList.contains('poly-body'))el=el.parentElement;
+    return el||null;
+  }
+  function getSid(bodyEl){
+    var sec=bodyEl.closest('.poly-section');
+    return sec?sec.id:null;
+  }
+  function saveSection(sid,bodyEl){
+    stored[sid]=bodyEl.innerHTML;
+    try{localStorage.setItem(STORE,JSON.stringify(stored));}catch(e){}
+  }
+  function restoreHighlights(){
+    Object.keys(stored).forEach(function(sid){
+      var sec=document.getElementById(sid);
+      if(!sec)return;
+      var body=sec.querySelector('.poly-section-body');
+      if(!body)return;
+      body.innerHTML=stored[sid];
+    });
+  }
+
+  // Restore when polycop tab becomes active
+  function tryRestore(){
+    if(polyTab.classList.contains('active')){restoreHighlights();return true;}
+    return false;
+  }
+  if(!tryRestore()){
+    var obs=new MutationObserver(function(){if(tryRestore())obs.disconnect();});
+    obs.observe(polyTab,{attributes:true,attributeFilter:['class']});
+  }
 })();
 
 </script>
