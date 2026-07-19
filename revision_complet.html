@@ -207,7 +207,7 @@ blockquote{
 /* ── TABLES ─────────────────────────────────────────────────────────────── */
 table{
   width:100%;border-collapse:collapse;margin:1rem 0;
-  font-size:.84rem;overflow-x:auto;display:block;
+  font-size:.84rem;overflow-x:auto;-webkit-overflow-scrolling:touch;display:block;
   border-radius:var(--r-md);box-shadow:0 2px 12px rgba(0,0,0,.3);
 }
 th{
@@ -468,7 +468,7 @@ input, textarea, select { font-size: max(16px, 1em) !important; }
 h3.acc-head{cursor:pointer;display:flex;align-items:center;gap:.4rem;user-select:none;transition:opacity .15s}
 h3.acc-head:hover{opacity:.8}
 .acc-arr{color:var(--lav);font-size:.85em;flex-shrink:0;transition:transform .2s;line-height:1}
-.acc-wrap{overflow:hidden;display:none}.acc-wrap.open{display:block}
+.acc-wrap{display:none}.acc-wrap.open{display:block}
 /* ── PER-DOSSIER NAV ACTIVE ACCENT ─────────────────────────────────────── */
 #nav0.active,#nav1.active{background:rgba(200,184,240,0.18)!important;border-left:3px solid var(--lav)!important}
 #nav2.active,#nav3.active{background:rgba(168,216,196,0.18)!important;border-left:3px solid var(--mint)!important}
