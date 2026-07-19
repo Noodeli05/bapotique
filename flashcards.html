@@ -113,6 +113,19 @@ body::before{
 .prog-mini{height:3px;background:rgba(255,255,255,.08);border-radius:3px;margin-top:.3rem;overflow:hidden}
 .prog-mini-bar{height:100%;background:linear-gradient(90deg,var(--pr),var(--cyan));border-radius:3px;transition:width .4s}
 
+/* ── Accordion sources & chapitres ── */
+.acc-item{margin-bottom:.18rem}
+.acc-header-row{display:flex;align-items:stretch;border-radius:7px;overflow:hidden}
+.acc-source-btn{flex:1;min-width:0;width:auto!important;border-radius:0!important}
+.acc-toggle{background:none;border:none;cursor:pointer;padding:.32rem .42rem;color:rgba(232,228,240,.38);transition:color .15s;display:flex;align-items:center;flex-shrink:0}
+.acc-toggle:hover{color:var(--lav)}
+.acc-toggle svg{transition:transform .2s}
+.acc-toggle.acc-toggle-open svg{transform:rotate(90deg)}
+.acc-body{display:none;padding-left:.8rem;flex-direction:column;gap:.08rem;margin-top:.06rem}
+.acc-body.acc-open{display:flex}
+.acc-chapter{font-size:.72rem!important;padding:.3rem .52rem!important;gap:.38rem!important}
+.acc-dot{width:4px;height:4px;border-radius:50%;background:currentColor;opacity:.38;flex-shrink:0;margin-top:.35rem}
+
 /* ── Flashcard ── */
 .fc-area{display:flex;flex-direction:column;align-items:center;gap:1rem}
 .fc-counter{font-size:.85rem;color:var(--mu);text-align:center}
@@ -291,13 +304,8 @@ body.zen-mode .fc-area{gap:1.2rem;padding-top:2rem}
   </div>
 
   <div class="sidebar-section">
-    <div class="sidebar-label">Source</div>
-    <div class="filter-group" id="source-group"></div>
-  </div>
-
-  <div class="sidebar-section">
-    <div class="sidebar-label">Chapitre</div>
-    <div class="filter-group" id="chapter-group"></div>
+    <div class="sidebar-label">Sources & Chapitres</div>
+    <div id="accordion-group"></div>
   </div>
 </aside>
 
@@ -694,34 +702,88 @@ function updateSidebarCounts() {
   document.getElementById('count-mastered').textContent = state.session.mastered.size;
 }
 
-function renderSourceList() {
-  const g = document.getElementById('source-group');
-  g.innerHTML = '';
-  ALL_SOURCES.forEach(src => {
-    const cnt = CARDS.filter(c => c.source === src).length;
-    const btn = document.createElement('button');
-    btn.className = 'filter-btn';
-    btn.innerHTML = `📁 ${src}<span class="count">${cnt}</span>`;
-    btn.onclick = () => applySource(src, btn);
-    g.appendChild(btn);
-  });
+// ── Accordion Sources & Chapitres ─────────────────────────────────────────
+function renderAccordion() {
+  const g = document.getElementById('accordion-group');
+  if (!g) return;
+  let accOpen = {};
+  try { accOpen = JSON.parse(localStorage.getItem('bap_fc_acc') || '{}'); } catch(e) {}
+
+  g.innerHTML = ALL_SOURCES.map(src => {
+    const srcCards = CARDS.filter(c => c.source === src);
+    const srcChapters = ALL_CHAPTERS.filter(ch => srcCards.some(c => c.chapter === ch));
+    const isActive = state.source === src;
+    const isOpen = isActive || (accOpen[src] === true);
+    const srcCnt = srcCards.length;
+    const sSrc = src.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
+
+    const chapHtml = srcChapters.map(ch => {
+      const cnt = srcCards.filter(c => c.chapter === ch).length;
+      const chActive = state.chapter === ch && state.source === src;
+      const sCh = ch.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
+      return `<button class="filter-btn acc-chapter${chActive?' active':''}" onclick="accSelectChapter('${sSrc}','${sCh}',this)"><span class="acc-dot"></span>${ch.substring(0,35)}<span class="count">${cnt}</span></button>`;
+    }).join('');
+
+    return `<div class="acc-item" data-src="${src}">
+      <div class="acc-header-row">
+        <button class="filter-btn acc-source-btn${isActive?' active':''}" onclick="accSelectSource('${sSrc}',this)"><svg class="ic" style="width:.85em;height:.85em;flex-shrink:0"><use href="#i-layers"/></svg>${src}<span class="count">${srcCnt}</span></button>
+        <button class="acc-toggle${isOpen?' acc-toggle-open':''}" onclick="accToggle('${sSrc}',this)" title="Ouvrir/Fermer"><svg class="ic" style="width:.78em;height:.78em"><use href="#i-chevron-right"/></svg></button>
+      </div>
+      <div class="acc-body${isOpen?' acc-open':''}">${chapHtml}</div>
+    </div>`;
+  }).join('');
 }
 
-function renderChapterList() {
-  const g = document.getElementById('chapter-group');
-  g.innerHTML = '';
-  let chapters = ALL_CHAPTERS;
-  if (state.source) chapters = chapters.filter(ch => CARDS.some(c => c.source === state.source && c.chapter === ch));
-  chapters.forEach(ch => {
-    const cnt = CARDS.filter(c => c.chapter === ch && (!state.source || c.source === state.source)).length;
-    const btn = document.createElement('button');
-    btn.className = 'filter-btn';
-    btn.style.fontSize = '.72rem';
-    btn.innerHTML = `${ch.substring(0, 40)}<span class="count">${cnt}</span>`;
-    btn.onclick = () => applyChapter(ch, btn);
-    g.appendChild(btn);
-  });
+function accToggle(src, btn) {
+  const item = btn.closest('.acc-item');
+  const body = item.querySelector('.acc-body');
+  const isOpen = body.classList.toggle('acc-open');
+  btn.classList.toggle('acc-toggle-open', isOpen);
+  let accOpen = {};
+  try { accOpen = JSON.parse(localStorage.getItem('bap_fc_acc') || '{}'); } catch(e) {}
+  accOpen[src] = isOpen;
+  try { localStorage.setItem('bap_fc_acc', JSON.stringify(accOpen)); } catch(e) {}
 }
+
+function accSelectSource(src, btn) {
+  const was = state.source === src;
+  state.source = was ? '' : src;
+  state.chapter = '';
+  document.querySelectorAll('.acc-source-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.acc-chapter').forEach(b => b.classList.remove('active'));
+  if (state.source) {
+    btn.classList.add('active');
+    const item = btn.closest('.acc-item');
+    const body = item.querySelector('.acc-body');
+    const tog = item.querySelector('.acc-toggle');
+    body.classList.add('acc-open');
+    tog.classList.add('acc-toggle-open');
+    let accOpen = {};
+    try { accOpen = JSON.parse(localStorage.getItem('bap_fc_acc') || '{}'); } catch(e) {}
+    accOpen[src] = true;
+    try { localStorage.setItem('bap_fc_acc', JSON.stringify(accOpen)); } catch(e) {}
+  }
+  buildDeck();
+  saveStudyState();
+}
+
+function accSelectChapter(src, ch, btn) {
+  if (state.source !== src) {
+    state.source = src;
+    document.querySelectorAll('.acc-source-btn').forEach(b => b.classList.remove('active'));
+    const item = btn.closest('.acc-item');
+    if (item) { const sb = item.querySelector('.acc-source-btn'); if (sb) sb.classList.add('active'); }
+  }
+  state.chapter = state.chapter === ch ? '' : ch;
+  document.querySelectorAll('.acc-chapter').forEach(b => b.classList.remove('active'));
+  if (state.chapter) btn.classList.add('active');
+  buildDeck();
+  saveStudyState();
+}
+
+// Rétrocompatibilité : redirige les anciens appels vers l'accordéon
+function renderSourceList() { renderAccordion(); }
+function renderChapterList() { renderAccordion(); }
 
 // ─── Shuffle ──────────────────────────────────────────────────────────────────
 function toggleShuffle() {
