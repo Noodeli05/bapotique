@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260719');}());</script>
+<script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260719d');}());</script>
 <title>Cahier de vacances — Linguistique française UNIL 2025</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
@@ -169,6 +169,41 @@ tr:last-child td{border-bottom:none}
   h2,h3,.ch-header{page-break-after:avoid;break-after:avoid}
   .exo-block,.box{page-break-inside:avoid;break-inside:avoid}
   .no-print{display:none!important}
+
+  /* ── ÉCONOMIE D'ENCRE : supprime tous les fonds colorés ── */
+  .box-def,.box-ex,.box-ret,.box-att,
+  .exo-header,.exo-body blockquote,
+  .visual-summary,
+  .toc-label,
+  .ch-num-badge,
+  .mcq-opt,
+  .corr-item-print,
+  .source-box-print,
+  th{background:transparent!important}
+
+  /* Garder les bordures gauches pour distinguer les sections */
+  .box-def{border-color:var(--acc,#7c6cc0)}
+  .box-ex{border-color:#2a8a68}
+  .box-ret{border-color:#a08020}
+  .box-att{border-color:#b03060}
+
+  /* Étiquettes sans fond : juste texte + bordure */
+  .exo-tag{background:transparent!important;color:var(--acc,#7c6cc0)!important;border:1px solid var(--acc,#7c6cc0)}
+  .ch-num-badge{border:1px solid var(--acc,#7c6cc0)}
+  .toc-label{border:1px solid #c8b8f0;padding:.15rem .5rem}
+
+  /* Séparateurs de divider : fond sombre → blanc avec bordure */
+  .divider-page{background:none!important;color:#1a1520!important;border:2px solid #c8b8f0;border-radius:0}
+  .divider-num{color:#e0d8f0!important}
+  .divider-title{color:#2d2540!important}
+  .divider-sub{color:#5a5070!important}
+
+  /* Cases à cocher : fond transparent */
+  .ch-progress label{background:transparent!important;color:var(--acc,#7c6cc0)!important}
+  .ch-progress label:has(input:checked){background:transparent!important;color:var(--acc,#7c6cc0)!important}
+
+  /* Tableau : entêtes sans fond */
+  th{border-bottom:1.5px solid var(--bdr,#c8b8f0)!important;color:var(--acc,#7c6cc0)!important;font-weight:700}
 }
 @page{size:A4;margin:0}
 
