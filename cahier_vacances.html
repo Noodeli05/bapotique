@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260719i');}());</script>
+<script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260719');}());</script>
 <title>Cahier de vacances — Linguistique française UNIL 2025</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
@@ -22,13 +22,13 @@ body{font-family:'DM Sans',Arial,sans-serif;background:#f7f5f0;color:#1a1520;lin
 @media(max-width:700px){.page{padding:1.5rem 1.2rem;min-height:auto}}
 
 /* ── COVER ── */
-.cover{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:260mm;background:#fff;color:#1a1520;border-radius:4px;border:3px solid #c8b8f0}
-.cover-band{width:100%;background:rgba(200,184,240,0.10);border-top:2px solid #c8b8f0;border-bottom:2px solid #c8b8f0;padding:1.2rem 2rem;margin:2rem 0}
-.cover-title{font-family:'DM Serif Display',serif;font-size:2.6rem;line-height:1.15;color:#7c6cc0}
-.cover-subtitle{font-family:'DM Serif Display',serif;font-size:1.3rem;color:#9888c8;margin:.5rem 0}
-.cover-desc{font-size:.9rem;color:#5a5070;max-width:380px;line-height:1.7;margin:.8rem auto}
-.cover-badge{display:inline-block;background:rgba(200,184,240,0.15);border:1px solid rgba(200,184,240,0.50);border-radius:50px;padding:.4rem 1.2rem;font-size:.78rem;font-weight:600;color:#7c6cc0;letter-spacing:.05em;text-transform:uppercase;margin:.4rem .3rem}
-.cover-footer{position:absolute;bottom:2.5rem;left:0;right:0;text-align:center;font-size:.7rem;color:#b0a8c8;letter-spacing:.05em}
+.cover{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:260mm;background:linear-gradient(160deg,#2d2540 0%,#1a1030 60%,#0d0a18 100%);color:#fff;border-radius:4px}
+.cover-band{width:100%;background:rgba(200,184,240,0.15);border-top:3px solid #c8b8f0;border-bottom:3px solid #c8b8f0;padding:1.2rem 2rem;margin:2rem 0}
+.cover-title{font-family:'DM Serif Display',serif;font-size:2.6rem;line-height:1.15;background:linear-gradient(135deg,#c8b8f0,#a8c8f0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.cover-subtitle{font-family:'DM Serif Display',serif;font-size:1.3rem;color:rgba(200,184,240,.8);margin:.5rem 0}
+.cover-desc{font-size:.9rem;color:rgba(232,228,240,.6);max-width:380px;line-height:1.7;margin:.8rem auto}
+.cover-badge{display:inline-block;background:rgba(200,184,240,0.18);border:1px solid rgba(200,184,240,0.35);border-radius:50px;padding:.4rem 1.2rem;font-size:.78rem;font-weight:600;color:#c8b8f0;letter-spacing:.05em;text-transform:uppercase;margin:.4rem .3rem}
+.cover-footer{position:absolute;bottom:2.5rem;left:0;right:0;text-align:center;font-size:.7rem;color:rgba(232,228,240,.35);letter-spacing:.05em}
 
 /* ── TOC ── */
 .toc-title{font-family:'DM Serif Display',serif;font-size:1.8rem;color:#2d2540;margin-bottom:1.5rem;padding-bottom:.6rem;border-bottom:3px solid #c8b8f0}
@@ -144,8 +144,6 @@ tr:last-child td{border-bottom:none}
 .ch-progress input[type=checkbox]{display:none}
 .ch-progress input[type=checkbox]:checked + .ch-cb-box{background:var(--acc,#7c6cc0);border-color:var(--acc,#7c6cc0);color:#fff}
 .ch-cb-box{width:16px;height:16px;border-radius:4px;border:1.5px solid var(--acc,#7c6cc0);display:grid;place-items:center;font-size:.65rem;flex-shrink:0;transition:background .15s,border-color .15s}
-.ch-cb-box::after{content:'';display:none}
-.ch-progress input[type=checkbox]:checked + .ch-cb-box::after{content:'✓';display:block}
 .ch-progress label:has(input:checked){background:var(--acc,#7c6cc0);color:#fff;border-color:var(--acc,#7c6cc0)}
 .ch-progress label:has(input:checked) .ch-cb-box{background:#fff;color:var(--acc,#7c6cc0);border-color:#fff}
 
@@ -161,87 +159,22 @@ tr:last-child td{border-bottom:none}
 
 /* ── PRINT STYLES ── */
 @media print{
-  body{background:#fff;font-size:9pt}
-  .book{max-width:none;padding:0;margin:0;counter-reset:cahier-page}
-  .page{box-shadow:none;border-radius:0;margin-bottom:0;padding:8mm 10mm;min-height:auto;page-break-after:always;break-after:page;counter-increment:cahier-page;position:relative}
+  body{background:#fff;font-size:10.5pt}
+  .book{max-width:none;padding:0;margin:0}
+  .page{box-shadow:none;border-radius:0;margin-bottom:0;padding:18mm 20mm;min-height:auto;page-break-after:always;break-after:page}
   .page:last-child{page-break-after:auto;break-after:auto}
-  .cover{min-height:auto;padding:15mm 10mm;counter-increment:none}
+  .cover{min-height:auto;padding:25mm 20mm}
   .cover-title{-webkit-text-fill-color:#c8b8f0;background:none;color:#c8b8f0}
-  .print-btn,.reset-btn{display:none!important}
+  .print-btn{display:none!important}
   h2,h3,.ch-header{page-break-after:avoid;break-after:avoid}
   .exo-block,.box{page-break-inside:avoid;break-inside:avoid}
   .no-print{display:none!important}
-
-  /* Compacte le contenu à l'impression */
-  .box{padding:.5rem .7rem;margin:.3rem 0}
-  .box p,.box li{font-size:.82rem;line-height:1.55;margin:.1rem 0}
-  .ch-header{margin-bottom:1rem;padding-bottom:.6rem}
-  .ch-main-title{font-size:1.4rem}
-  .sec-label{margin:1rem 0 .4rem}
-  .visual-summary{padding:.6rem .8rem;margin:0 0 .8rem}
-  .vs-grid{gap:.3rem}
-  .vs-item{font-size:.72rem;line-height:1.3}
-  .exo-block{margin:.4rem 0}
-  .exo-header{padding:.35rem .7rem}
-  .exo-body{padding:.5rem .7rem}
-  .exo-q{font-size:.82rem;margin-bottom:.35rem}
-  .mcq-choices{gap:.2rem;margin-top:.3rem}
-  .mcq-opt{padding:.2rem .35rem;font-size:.8rem}
-  .answer-line{height:1.5rem}
-  .toc-ch{padding:.25rem 0}
-  .resume p{margin:.3rem 0}
-
-  /* ── NUMÉROS DE PAGE ── */
-  .book{counter-reset:cahier-p}
-  .page:not(.page-cover):not(.page-toc){counter-increment:cahier-p}
-  .page:not(.page-cover):not(.page-toc)::after{
-    content:'— ' counter(cahier-p) ' —';
-    position:absolute;bottom:4mm;left:0;right:0;
-    text-align:center;font-size:7pt;color:#bbb;letter-spacing:.08em;
-  }
-
-  /* ── ÉCONOMIE D'ENCRE : supprime tous les fonds colorés ── */
-  .box-def,.box-ex,.box-ret,.box-att,
-  .exo-header,.exo-body blockquote,
-  .visual-summary,
-  .toc-label,
-  .ch-num-badge,
-  .mcq-opt,
-  .corr-item-print,
-  .source-box-print,
-  th{background:transparent!important}
-
-  /* Garder les bordures gauches pour distinguer les sections */
-  .box-def{border-color:var(--acc,#7c6cc0)}
-  .box-ex{border-color:#2a8a68}
-  .box-ret{border-color:#a08020}
-  .box-att{border-color:#b03060}
-
-  /* Étiquettes sans fond : juste texte + bordure */
-  .exo-tag{background:transparent!important;color:var(--acc,#7c6cc0)!important;border:1px solid var(--acc,#7c6cc0)}
-  .ch-num-badge{border:1px solid var(--acc,#7c6cc0)}
-  .toc-label{border:1px solid #c8b8f0;padding:.15rem .5rem}
-
-  /* Séparateurs de divider : fond sombre → blanc avec bordure */
-  .divider-page{background:none!important;color:#1a1520!important;border:2px solid #c8b8f0;border-radius:0}
-  .divider-num{color:#e0d8f0!important}
-  .divider-title{color:#2d2540!important}
-  .divider-sub{color:#5a5070!important}
-
-  /* Cases à cocher : fond transparent */
-  .ch-progress label{background:transparent!important;color:var(--acc,#7c6cc0)!important}
-  .ch-progress label:has(input:checked){background:transparent!important;color:var(--acc,#7c6cc0)!important}
-
-  /* Tableau : entêtes sans fond */
-  th{border-bottom:1.5px solid var(--bdr,#c8b8f0)!important;color:var(--acc,#7c6cc0)!important;font-weight:700}
 }
 @page{size:A4;margin:0}
 
 /* ── PRINT BUTTON ── */
 .print-btn{position:fixed;bottom:1.5rem;right:1.5rem;z-index:999;background:#7c6cc0;color:#fff;border:none;padding:.7rem 1.4rem;border-radius:50px;font-size:.85rem;font-weight:700;cursor:pointer;box-shadow:0 4px 18px rgba(124,108,192,.4);font-family:inherit;display:flex;align-items:center;gap:.4rem}
 .print-btn:hover{background:#6a5aae}
-.reset-btn{position:fixed;bottom:1.5rem;right:13rem;z-index:999;background:transparent;color:#b0a8c8;border:1.5px solid #c8b8f0;padding:.55rem 1rem;border-radius:50px;font-size:.75rem;font-weight:600;cursor:pointer;font-family:inherit}
-.reset-btn:hover{background:#f0ecfa;color:#7c6cc0}
 
 /* ── DIVIDER PAGE ── */
 .divider-page{display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(160deg,#2d2540,#1a1030);color:#fff;text-align:center;min-height:100mm}
@@ -275,11 +208,10 @@ tr:last-child td{border-bottom:none}
 </head>
 <body>
 <button class="print-btn no-print" onclick="window.print()">🖨️ Imprimer le cahier</button>
-<button class="reset-btn no-print" onclick="if(confirm('Remettre toutes les cases à zéro ?')) resetAllProgress()" title="Réinitialiser la progression">↺ Réinitialiser</button>
 <div class="book">
 
 <!-- ══════════════ COUVERTURE ══════════════ -->
-<div class="page page-cover" style="padding:0">
+<div class="page" style="padding:0">
 <div class="cover">
   <div style="margin-bottom:1.5rem">
     <div style="font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(200,184,240,.55);margin-bottom:.8rem">Linguistique française · UNIL 2025</div>
@@ -303,7 +235,7 @@ tr:last-child td{border-bottom:none}
 </div>
 
 <!-- ══════════════ TABLE DES MATIÈRES ══════════════ -->
-<div class="page page-toc">
+<div class="page">
   <div class="toc-title">Table des matières</div>
   <div class="toc-label">Fiches de cours &amp; exercices</div>
   <div class="toc-section">
@@ -344,9 +276,9 @@ tr:last-child td{border-bottom:none}
     <p class="ch-desc">La linguistique comme science · Le signe saussurien · La double articulation · Les niveaux d'analyse</p>
   </div>
   <div class="ch-progress">
-    <label><input type="checkbox" id="lu-c0" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Lu</label>
-    <label><input type="checkbox" id="fait-c0" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Exercices faits</label>
-    <label><input type="checkbox" id="corr-c0" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Corrigé vérifié</label>
+    <label><input type="checkbox" id="lu-c0" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Lu</label>
+    <label><input type="checkbox" id="fait-c0" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Exercices faits</label>
+    <label><input type="checkbox" id="corr-c0" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Corrigé vérifié</label>
   </div>
   <div class="visual-summary">
     <div class="vs-title">Résumé visuel — 5 points clés</div>
@@ -448,31 +380,6 @@ tr:last-child td{border-bottom:none}
   </div>
 </div>
 
-
-  <div class="sec-label">Révision complète — D0 — Introduction &amp; méthode</div>
-  <div class="box box-def"><div class="box-lbl">1. La linguistique : objet et méthode</div><p>La linguistique est la science qui étudie le langage humain. Elle ne s'intéresse pas à "bien parler" (c'est le rôle de la grammaire normative) mais à décrire le fonctionnement réel des langues. À retenir Langue = système abstrait partagé par une communauté (le français "en général"). Parole / énonciation = mise en action de la langue par un locuteur dans une situation concrète ("je te parle maintenant"). Analogy : la langue est comme les règles du foot ; la parole est le match joué.</p></div>
-  <div class="box box-def"><div class="box-lbl">2. Le signe linguistique (Saussure)</div><p>Ferdinand de Saussure (1857–1913) définit le signe linguistique comme l'union de deux faces : ┌─────────────────────────┐ │ SIGNE │ │ ┌───────────────────┐ │ │ │ SIGNIFIANT │ │ ← image acoustique / forme sonore │ │ ex. /ʃɑ̃/ │ │ │ ├───────────────────┤ │ │ │ SIGNIFIÉ │ │ ← concept mental │ │ ex. [animal...] │ │ │ └───────────────────┘ │ │ ≠ │ │ RÉFÉRENT │ ← le chat réel dans le monde └─────────────────────────┘ Le lien signifiant/signifié est arbitraire (pas de ressemblance naturelle : le même animal s'appelle chat en fr., cat en angl., Katze en all.).</p></div>
-  <div class="box box-def"><div class="box-lbl">3. La double articulation (Martinet)</div><p>André Martinet montre que les langues humaines fonctionnent sur deux niveaux : 1ère articulation → unités AVEC sens (morphèmes/monèmes) ex. "cheval-ier-s" = 3 unités porteuses de sens 2ème articulation → unités SANS sens (phonèmes) qui distinguent les mots ex. /ʃ/ vs /b/ → "chat" ≠ "bas" Exemple concret "Les cavaliers" → 1ère articulation : le-s + caval + -ier + -s 2ème articulation : /l/, /e/, /k/, /a/, /v/, /a/, /l/, /j/, /e/ … chaque phonème peut changer le mot si on le remplace.</p></div>
-  <div class="box box-def"><div class="box-lbl">4. Les niveaux d'analyse linguistique</div><p>L'analyse linguistique se fait à 4 niveaux emboîtés : ① Phonologique → phonèmes /p/, /a/, /t/ ② Morphologique → morphèmes "chat" + "-s" (pluriel) ③ Syntaxique → syntagmes [GN] + [GV] ④ Clausal → clauses La pluie tombe.</p></div>
-  <div class="box box-def"><div class="box-lbl">5. La commutation : méthode clé</div><p>La commutation consiste à remplacer un élément par un autre pour tester s'ils appartiennent à la même unité. Si le remplacement change le sens = les deux éléments sont des unités distinctes. Exemple " p as" → " b as" : /p/ et /b/ sont deux phonèmes distincts (la commutation change le mot). "cha t " vs "cha p eau" : /t/ et /p/ sont deux phonèmes distincts. " -eur " dans "chanteur" et "danseur" → le même suffixe (commutation ne change pas la valeur : agent du procès). Paire minimale : deux mots qui ne diffèrent que par un seul phonème, prouvant que ce phonème est distinctif : son / ton / bon / mon / vont . Niveaux d'analyse — récapitulatif Niveau Unité Science Exemple ① Phonologique Phonème Ph…</p></div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Auto-test</span><span class="exo-title">Test 1 — Signe et double articulation</span></div>
-    <div class="exo-body">
-      <p class="exo-q">Expliquez le principe d'arbitraire du signe avec un exemple.</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Éléments de réponse</div><p>Le lien entre signifiant (/ʃɑ̃/) et signifié (concept de chien) n'est pas naturel ni motivé : "dog" (angl.) désigne le même animal. La preuve : toutes les langues ont des formes différentes pour le même concept. Qu'est-ce que la double articulation ? Illustrez avec "boulanger". Voir la réponse 1ère articulation : boulang- (qui fait du pain) + -er (suffixe professionnel nominal) → unités avec sens.</p></div>
-    </div>
-  </div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Auto-test</span><span class="exo-title">Test 2 — Commutation et niveaux</span></div>
-    <div class="exo-body">
-      <p class="exo-q">Qu'est-ce que la méthode de commutation ? Appliquez-la à "déchirer".</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Éléments de réponse</div><p>Commutation = remplacer un élément pour tester sa valeur d'unité. "déchirer" : on peut commuter dé- par re- (rechirer ≠ sens) → dé- est un morphème. On peut commuter /d/ par /t/ → "téchirer" (agrammatical, mais /d/ est phonème identifiable). À quel niveau d'analyse appartient "qu'il pleut" dans "Je sais qu'il pleut" ? Voir la réponse Au niveau clausal : c'est une clause enchâssée (subordonnée comp</p></div>
-    </div>
-  </div>
-  <div class="box box-att"><div class="box-lbl">⚠ Erreurs fréquentes — D0 — Introduction &amp; méthode</div><p>Confondre signifié et référent Le signifié est un concept mental (dans la tête) ; le référent est l'objet dans le monde réel. "La licorne" a un signifié mais pas de référent (elle n'existe pas). Confondre langue et parole La langue est le système collectif (les règles) ; la parole est l'usage individuel et situé. On ne dit pas "le français que je parle maintenant" = la langue, mais = la parole. Confondre phonème et lettre Le phonème est une unité sonore abstraite (/f/). La lettre est graphique (⟨f⟩, ⟨ph⟩). "Photo" s'écrit avec ⟨ph⟩ mais se prononce /f/ → un seul phonème, deux lettres. Oublier …</p></div>
-
 <!-- ══════════════ CH. 1 — PHONOLOGIE ══════════════ -->
 <div class="page c1">
   <div class="ch-header">
@@ -481,9 +388,9 @@ tr:last-child td{border-bottom:none}
     <p class="ch-desc">Phone vs phonème · Allophones · Paire minimale · Schwa · Graphèmes</p>
   </div>
   <div class="ch-progress">
-    <label><input type="checkbox" id="lu-c1" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Lu</label>
-    <label><input type="checkbox" id="fait-c1" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Exercices faits</label>
-    <label><input type="checkbox" id="corr-c1" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Corrigé vérifié</label>
+    <label><input type="checkbox" id="lu-c1" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Lu</label>
+    <label><input type="checkbox" id="fait-c1" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Exercices faits</label>
+    <label><input type="checkbox" id="corr-c1" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Corrigé vérifié</label>
   </div>
   <div class="visual-summary">
     <div class="vs-title">Résumé visuel — 5 points clés</div>
@@ -626,55 +533,6 @@ tr:last-child td{border-bottom:none}
   </div>
 
 
-
-  <div class="sec-label">Révision complète — D1 — Phonétique &amp; phonologie</div>
-  <div class="box box-def"><div class="box-lbl">1. Phonétique vs phonologie</div><p>Phonétique : étude des sons réels produits et perçus (aspect physique). La transcription phonétique note tous les détails entre crochets : [pɛ̃] . Phonologie : étude des sons en tant qu'unités fonctionnelles du système de la langue. La transcription phonologique note les phonèmes entre barres obliques : /pɛ̃/ . Exemple clé Les /r/ de "Paris" et "rue" sont phonétiquement différents selon les locuteurs (roulé, uvulaire…) mais phonologiquement identiques : c'est le même phonème /ʁ/ en français standard.</p></div>
-  <div class="box box-def"><div class="box-lbl">2. Le système vocalique du français</div><p>Le français possède 16 voyelles (phonèmes vocaliques standard) : Antérieures non arrondies : /i/ vie · /e/ thé · /ɛ/ fête · /a/ patte · /ə/ le Antérieures arrondies : /y/ rue · /ø/ feu · /œ/ fleur Postérieures arrondies : /u/ doux · /o/ eau · /ɔ/ or Postérieure non arrondie : /ɑ/ pâte (tend à disparaître) Nasales : /ɛ̃/ pain · /ɑ̃/ pan · /ɔ̃/ pont · /œ̃/ un (tend à = /ɛ̃/)</p></div>
-  <div class="box box-def"><div class="box-lbl">3. Le système consonantique</div><p>Occlusives : /p/ pain · /b/ bain · /t/ ton · /d/ don · /k/ car · /g/ gar Fricatives : /f/ fou · /v/ vous · /s/ son · /z/ zon · /ʃ/ chat · /ʒ/ je Nasales : /m/ ma · /n/ nu · /ɲ/ gagne Liquides : /l/ loup · /ʁ/ rue Semi-cons. : /j/ yeux · /w/ oui · /ɥ/ nuit</p></div>
-  <div class="box box-def"><div class="box-lbl">4. Règles de transcription</div><p>On transcrit les sons , pas les lettres. "eau" → /o/ (3 lettres, 1 phonème). Le "e caduc" (/ə/) peut tomber à l'oral : "le" → [l(ə)] ou [l] selon le contexte. Les lettres muettes ne se transcrivent pas : "chat" → /ʃa/ (le ⟨t⟩ final est muet). La liaison est notée si elle se réalise : "les amis" → /lezami/. Exercice type "Pleure encor, pleure toutes tes ressources" (Rictus) Standard : /plFR plFR BkOR plFR tUt tC RCsURs/ (avec e caducs) Original : /plFR BkOR plFR tUt RsURs/ (sans e caducs = version apocope)</p></div>
-  <div class="box box-def"><div class="box-lbl">5. Traits distinctifs</div><p>Les phonèmes se définissent par des traits distinctifs (propriétés qui les différencient) : Voisement : /p/ (sourd) vs /b/ (sonore) — les cordes vocales vibrent pour /b/. Lieu d'articulation : /p/ (bilabial) vs /t/ (dental) vs /k/ (vélaire). Mode d'articulation : /p/ (occlusif) vs /f/ (fricatif). Astuce : /p/ – /b/ – /f/ – /v/ sont toutes des consonnes labiales. La différence : /p/ et /b/ sont occlusives (l'air est bloqué) ; /f/ et /v/ sont fricatives (l'air passe en frottant). Voyelles du français standard Phonème Exemple Position langue Arrondissement /i/ vie, midi Antérieure haute Non arrondie /e/ thé, été Antérieure mi-haute Non arrondie /ɛ/ fête, mère, lait Antérieure mi-basse Non arron…</p></div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Auto-test</span><span class="exo-title">Test 1 — Transcription (type Rictus)</span></div>
-    <div class="exo-body">
-      <p class="exo-q">Transcrivez phonologiquement "toutes tes ressources" en français standard.</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Éléments de réponse</div><p>/tut tε ʁəsUʁs/ — attention : "toutes" = /tut/ (s final muet), "tes" = /tε/, "ressources" = /ʁəsUʁs/. Le e caduc de "ressources" peut être maintenu ou non. Transcrivez la version orale relâchée de "pleure encor" (sans e caducs). Voir la réponse "pleure encor" version relâchée : /plœʁ ɑ̃kɔʁ/ — le e caduc de "pleure" tombe (apocope) ; liaison éventuelle avec "encor". Révéler toutes les réponses</p></div>
-    </div>
-  </div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Auto-test</span><span class="exo-title">Test 2 — Analyse phonologique</span></div>
-    <div class="exo-body">
-      <p class="exo-q">Prouvez que /ʃ/ et /ʒ/ sont deux phonèmes distincts en français.</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Éléments de réponse</div><p>Paire minimale : "champ" /ʃɑ̃/ vs "jean" /ʒɑ̃/ (ou "poché" vs "pochée"…). Un seul phonème diffère → /ʃ/ et /ʒ/ sont deux unités fonctionnelles distinctes. Combien de phonèmes dans "yeux" ? Justifiez. Voir la réponse /jø/ — 2 phonèmes : /j/ (semi-consonne) + /ø/ (voyelle antérieure arrondie). 4 lettres, 2 phonèmes. Révéler toutes les réponses</p></div>
-    </div>
-  </div>
-  <div class="box box-att"><div class="box-lbl">⚠ Erreurs fréquentes — D1 — Phonétique &amp; phonologie</div><p>Confondre lettre et phonème "ph" = 2 lettres, 1 phonème /f/. "eau" = 3 lettres, 1 phonème /o/. Ne JAMAIS compter les lettres quand on transcrit. Oublier les lettres muettes ⟨s⟩ et ⟨t⟩ finaux sont souvent muets : "chat" → /ʃa/, "gris" → /ɡʁi/. Exception : liaisons ("les amis" → /lezami/). Mal transcrire "femme" et "monsieur" "femme" → /fam/ (pas /fɛm/) ; "monsieur" → /məsjø/ (irrégularités historiques). Confondre /e/ et /ɛ/ /e/ = mi-fermée (thé) ; /ɛ/ = mi-ouverte (fête, faire). La distinction est souvent neutralisée à l'oral mais reste pertinente à l'écrit et à l'examen. Transcription phonolog…</p></div>
-
-  <div class="sec-label">Révision complète — D2 — Graphémique</div>
-  <div class="box box-def"><div class="box-lbl">1. Qu'est-ce qu'un graphème ?</div><p>Un graphème est la plus petite unité de l'écriture qui correspond à un phonème. Ce n'est pas toujours une seule lettre ! Type de graphème Exemple Phonème Monographe (1 l.) ⟨p⟩ → /p/ Digraphe (2 l.) ⟨ch⟩ → /ʃ/ | ⟨ph⟩ → /f/ Trigraphe (3 l.) ⟨eau⟩ → /o/ | ⟨ain⟩ → /ɛ̃/</p></div>
-  <div class="box box-def"><div class="box-lbl">2. Lettres muettes</div><p>Une lettre muette ne correspond à aucun phonème réalisé. Il en existe plusieurs catégories : ⟨h⟩ : toujours muet en français standard. "heure" → /œʁ/. Consonnes finales muettes : ⟨s⟩, ⟨t⟩, ⟨d⟩, ⟨p⟩, ⟨x⟩, ⟨z⟩ souvent muets en finale : "gris", "chat", "lit", "coup". ⟨e⟩ final : généralement muet (e caduc) : "table" → /tabl/. Lettres dans les digraphes : ⟨u⟩ de ⟨eau⟩, ⟨g⟩ de ⟨gn⟩ dans certaines positions. Exercice type "Châteaux" → combien de lettres muettes ? ⟨â⟩ → /ɑ/ (réalisé), ⟨t⟩ → /t/ (réalisé), ⟨e⟩ → muet, ⟨a⟩ dans ⟨eau⟩ → muet, ⟨u⟩ dans ⟨eau⟩ → muet, ⟨x⟩ final → muet (marque du pluriel) Transcription : /ʃɑto/ — 4 phonèmes pour 8 lettres</p></div>
-  <div class="box box-def"><div class="box-lbl">3. Correspondances graphème-phonème (CGP)</div><p>La relation entre graphèmes et phonèmes est complexe en français car : Un même phonème peut s'écrire de plusieurs façons : /o/ → ⟨o⟩, ⟨au⟩, ⟨eau⟩, ⟨ô⟩ Un même graphème peut correspondre à des phonèmes différents : ⟨c⟩ → /k/ (car) ou /s/ (ciel) Des groupes de lettres forment un seul phonème : ⟨ch⟩ → /ʃ/</p></div>
-  <div class="box box-def"><div class="box-lbl">4. La graphie du poème de Rictus</div><p>Jehan Rictus (1867–1933) utilise une graphie non-standard pour représenter l'oralité populaire parisienne. Il remplace les e caducs facultatifs par des apostrophes : Pleur' ! Pleure encor, pleur' tout's tes r'ssources Principe : l'apostrophe indique la chute du /ə/ à l'oral. Le /ə/ est maintenu (écrit) dans 3 cas : En fin de vers (accent possible : "Pleure" avec accent) Avant une voyelle (liaison impossible sans lui) Quand sa chute crée un groupe consonantique impossible (≥ 3 consonnes) : "le glas" (*Rlgl) Effet stylistique : la graphie apostrophique impose une diction populaire et signale que le locuteur appartient aux classes populaires parisiennes du début du XXe s.</p></div>
-  <div class="box box-def"><div class="box-lbl">5. Graphèmes contextuels</div><p>Certains graphèmes changent de valeur phonique selon leur contexte : ⟨c⟩ → /k/ devant ⟨a, o, u⟩ (car, coq, cul) ; → /s/ devant ⟨e, i, y⟩ (ciel, ceci) ⟨g⟩ → /ɡ/ devant ⟨a, o, u⟩ (gare) ; → /ʒ/ devant ⟨e, i, y⟩ (genre, gilet) ⟨s⟩ → /s/ en début de mot ou après consonne ; → /z/ entre deux voyelles (maison /mezɔ̃/) Types de graphèmes Type Graphème Phonème Exemple Monographe ⟨p⟩ /p/ pain Digraphe ⟨ch⟩ /ʃ/ chat Digraphe ⟨ph⟩ /f/ photo Digraphe ⟨gn⟩ /ɲ/ gagne Digraphe ⟨ou⟩ /u/ doux Digraphe ⟨au⟩ /o/ faux Trigraphe ⟨eau⟩ /o/ beau Trigraphe ⟨ain⟩ /ɛ̃/ pain Graphèmes contextuels : ⟨c⟩ et ⟨g⟩ Graphème Contexte Phonème Exemple ⟨c⟩ + a, o, u /k/ car, coq, cul ⟨c⟩ + e, i, y /s/ ciel, ceci, cycle ⟨ç⟩ + a, …</p></div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Auto-test</span><span class="exo-title">Test 1 — Graphémique du poème</span></div>
-    <div class="exo-body">
-      <p class="exo-q">Dans le poème de Rictus, expliquez pourquoi "Pleure" (2e occurrence, avant "encor") est écrit sans apostrophe.</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Éléments de réponse</div><p>Le e caduc de "Pleure" est maintenu car il précède une voyelle (/ɑ̃/ de "encor") : sa chute entraînerait une rencontre vocalique difficile ou une liaison complexe. Rictus respecte la règle : on maintient le /ə/ quand il est "protecteur" de la consonne suivante. Décrivez la correspondance graphème-phonème de ⟨eau⟩ dans "beau". Quel type de graphème est-ce ? Voir la réponse ⟨eau⟩ est un trigraphe (3</p></div>
-    </div>
-  </div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Auto-test</span><span class="exo-title">Test 2 — Analyse graphémique complète</span></div>
-    <div class="exo-body">
-      <p class="exo-q">Analysez tous les graphèmes de "gagnons" : type, phonème, lettre muette éventuelle.</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Éléments de réponse</div><p>⟨g⟩ → /ɡ/ ; ⟨a⟩ → /a/ ; ⟨gn⟩ → /ɲ/ (digraphe) ; ⟨o⟩ → /ɔ/ ; ⟨ns⟩ → désinence, ⟨n⟩=/n/ + ⟨s⟩=muet (marque pluriel 1ère pers.). Transcription : /ɡaɲɔ̃/ (la désinence -ons → /ɔ̃/). Révéler toutes les réponses</p></div>
-    </div>
-  </div>
-  <div class="box box-att"><div class="box-lbl">⚠ Erreurs fréquentes — D2 — Graphémique</div><p>Confondre graphème et lettre ⟨ch⟩ = 1 graphème (2 lettres), ⟨eau⟩ = 1 graphème (3 lettres). Ne pas dire "la lettre ch" mais "le graphème ⟨ch⟩". Oublier les lettres muettes dans le décompte des phonèmes "châteaux" a 8 lettres et 4 phonèmes. Toujours partir du phonème, pas de la lettre. Mal analyser l'apostrophe de Rictus L'apostrophe NE remplace PAS n'importe quel e — seulement les e caducs facultatifs . Les e caducs obligatoires (fin de vers, avant voyelle, groupe consonantique) restent écrits. ⟨s⟩ entre deux voyelles ⟨s⟩ entre deux voyelles → /z/ : "maison", "raison", "poison". Exception : ⟨s…</p></div>
-
 <!-- ══════════════ CH. 2 — MORPHOLOGIE ══════════════ -->
 <div class="page c2">
   <div class="ch-header">
@@ -683,9 +541,9 @@ tr:last-child td{border-bottom:none}
     <p class="ch-desc">Morphème libre/lié · Dérivation · Flexion · Composition · Allomorphie</p>
   </div>
   <div class="ch-progress">
-    <label><input type="checkbox" id="lu-c2" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Lu</label>
-    <label><input type="checkbox" id="fait-c2" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Exercices faits</label>
-    <label><input type="checkbox" id="corr-c2" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Corrigé vérifié</label>
+    <label><input type="checkbox" id="lu-c2" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Lu</label>
+    <label><input type="checkbox" id="fait-c2" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Exercices faits</label>
+    <label><input type="checkbox" id="corr-c2" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Corrigé vérifié</label>
   </div>
   <div class="visual-summary">
     <div class="vs-title">Résumé visuel — 5 points clés</div>
@@ -818,31 +676,6 @@ tr:last-child td{border-bottom:none}
   </div>
 
 
-
-  <div class="sec-label">Révision complète — D3 — Morphologie</div>
-  <div class="box box-def"><div class="box-lbl">1. Le morphème</div><p>Un morphème est la plus petite unité de la langue porteuse de sens. On distingue : Morphème libre : peut s'employer seul → "chat", "vite", "le". Morphème lié : ne peut exister sans base → "-eur" (chanteur), "in-" (invalide), "-s" (pluriel).</p></div>
-  <div class="box box-def"><div class="box-lbl">2. La dérivation</div><p>Processus de formation de mots par ajout d'affixes (préfixes ou suffixes) à une base : PRÉFIXE + BASE + SUFFIXE in- + valid + -ation → "invalidation" Préfixes importants Exemples in-/im-/ir-/il- : négation → invalide, impossible, irréel, illicite re-/ré- : répétition → refaire, réécrire dé-/des- : inversion → défaire, désorganiser pré- : avant → prévoir, préfixe co-/con- : ensemble → coéquipier, condisciple Suffixes importants Exemples Nominaux : -eur (chanteur = agent), -tion/-ation (action ou résultat), -ité (qualité), -isme (doctrine), -iste (adepte) Adjectivaux : -able/-ible (possible), -ique (relatif à), -eux/-euse (qui a), -al/-ale (relatif à) Verbaux : -iser (réaliser), -ifier (amplif…</p></div>
-  <div class="box box-def"><div class="box-lbl">3. La composition</div><p>Formation d'un mot par association de deux bases libres ou liées : Composition française : bases libres → "porte-monnaie", "pomme de terre" Composition savante : bases liées (greco-latines) → "dém-o-cratie" (démo = peuple + -cratie = pouvoir), "photo-graphie" Analyse de "démocratique" Composition savante : démo- (peuple, gr. dêmos ) + -crat- (pouvoir, gr. kratos ) → "démocratie" Dérivation : démocratie + -ique (suffixe adjectival "relatif à") → "démocratique" Preuve : on peut commuter "démocrat-" par "sociolog-" → "sociologique" (même suffixe, même valeur).</p></div>
-  <div class="box box-def"><div class="box-lbl">4. Le mot-valise (portmanteau)</div><p>Mot créé par fusion de deux mots qui partagent un tronçon sonore commun : "démocrature" = DÉMOCRAtie + dicTATURE ↑ tronçon partagé : /at/ Valeur : désigne un concept hybride (régime à mi-chemin entre démocratie et dictature). L'hybridité du signifiant reflète l'hybridité du signifié.</p></div>
-  <div class="box box-def"><div class="box-lbl">5. Autres procédés</div><p>Conversion : changement de catégorie sans affixe → "le coucher" (N ← V coucher) Troncation : réduction d'un mot → "prof" ← professeur, "ciné" ← cinéma Siglaison/Acronyme : initiales → "ONU", "SIDA" (devenu nom) Emprunt : mot pris à une autre langue → "marketing", "ranch" Préfixes fréquents Préfixe Sens Exemple in-/im-/ir-/il- Négation invalide, impossible, irresponsable re-/ré- Répétition refaire, réécrire dé-/des- Inversion défaire, désorganiser pré- Antériorité prévoir, préfixe sur- Excès/dessus surproduction, surnaturel sous- Insuffisance/dessous sous-estimer, sous-sol co-/con- Ensemble coéquipier, collaboration anti- Opposition anticonformiste, antidote Suffixes nominaux Suffixe Valeur E…</p></div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Auto-test</span><span class="exo-title">Test 1 — Analyse morphologique (type examen)</span></div>
-    <div class="exo-body">
-      <p class="exo-q">Analysez "démocratique", "démocrature" et "invalidation" (procédé de formation, structure, valeur des morphèmes).</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Éléments de réponse</div><p>"démocratique" : composition savante (démo- = peuple + -crat- = pouvoir) + dérivation (-ique = adj. "relatif à"). "démocrature" : mot-valise (DÉMOCRAtie + dicTATURE, tronçon /at/). "invalidation" : dérivation (in- = négation + valid = base + -ation = procès nominal). Identifiez le champ sémantique dominant dans le texte sur la démocrature. Voir la réponse Le champ sémantique dominant est celui du </p></div>
-    </div>
-  </div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Auto-test</span><span class="exo-title">Test 2 — Procédés de formation</span></div>
-    <div class="exo-body">
-      <p class="exo-q">Quelle est la différence entre dérivation et composition ? Illustrez avec un exemple chacun.</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Éléments de réponse</div><p>Dérivation = base + affixe(s) lié(s) : "invalid-ation" (base + suffixe). Composition = deux bases : "démocratie" (démo- + -cratie, deux bases liées). Dans les deux cas, la base est la partie porteuse du sens central. Pourquoi dit-on que "démocrature" est un néologisme ? Voir la réponse Néologisme = mot nouveau créé pour désigner un concept nouveau (ici, régime hybride entre démocratie et dictature</p></div>
-    </div>
-  </div>
-  <div class="box box-att"><div class="box-lbl">⚠ Erreurs fréquentes — D3 — Morphologie</div><p>Confondre base et radical La base est l'élément porteur du sens central auquel s'ajoutent les affixes. Le radical est parfois utilisé comme synonyme mais peut désigner la forme variable (alternance). En cours : utiliser "base". Oublier de préciser la valeur du morphème Ne pas dire juste "-eur = suffixe". Préciser : "-eur = suffixe nominalisateur formant un NOM D'AGENT à partir d'une BASE VERBALE". Prouvez avec une paire minimale (chanteur / danseur). Confondre mot-valise et composition La composition associe deux bases complètes (porte-monnaie). Le mot-valise tronque les deux éléments et les f…</p></div>
-
 <!-- ══════════════ CH. 3 — CLAUSE CANONIQUE ══════════════ -->
 <div class="page c3">
   <div class="ch-header">
@@ -851,9 +684,9 @@ tr:last-child td{border-bottom:none}
     <p class="ch-desc">Clause · Syntagme · Valence verbale · Fonctions syntaxiques · Thème–Rhème</p>
   </div>
   <div class="ch-progress">
-    <label><input type="checkbox" id="lu-c3" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Lu</label>
-    <label><input type="checkbox" id="fait-c3" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Exercices faits</label>
-    <label><input type="checkbox" id="corr-c3" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Corrigé vérifié</label>
+    <label><input type="checkbox" id="lu-c3" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Lu</label>
+    <label><input type="checkbox" id="fait-c3" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Exercices faits</label>
+    <label><input type="checkbox" id="corr-c3" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Corrigé vérifié</label>
   </div>
   <div class="visual-summary">
     <div class="vs-title">Résumé visuel — 5 points clés</div>
@@ -947,31 +780,6 @@ tr:last-child td{border-bottom:none}
   </div>
 
 
-
-  <div class="sec-label">Révision complète — D4 — Clause canonique</div>
-  <div class="box box-def"><div class="box-lbl">1. Structure fondamentale : GN + GV</div><p>La clause canonique est la structure de base de la phrase française : un GN sujet (ce dont on parle) + un GV prédicat (ce qu'on en dit). C'est la structure neutre, non marquée. La pluie | tombe [GN sujet] | [GV prédicat] [thème] | [rhème] Comment distinguer GN et GV ? Test de pronominalisation : Le GN sujet peut être remplacé par un pronom sujet ( il, elle, ils… ). → "La pluie tombe" → " Elle tombe" ✔ Test de l'accord : le verbe s'accorde avec le GN sujet (singulier/pluriel, 1ère/2ème/3ème personne).</p></div>
-  <div class="box box-def"><div class="box-lbl">2. La valence verbale (Tesnière)</div><p>Lucien Tesnière définit la valence comme l'aptitude du verbe à "attirer" un nombre déterminé d'actants (participants au procès). AVALENT (0) : Il pleut. Il neige. — le "il" n'est pas un vrai actant MONOVALENT (1): [S] La pluie tombe. Elle pédale. DIVALENT (2) : [S + COD/COI] Leila casse le plafonnier. Simon habite à Berlin. TRIVALENT (3) : [S + COD + COI] J'ai donné un livre à ma sœur. Important : la valence dépend du sens du verbe. Un même verbe peut avoir des valences différentes selon son emploi : gronder (bruit = monovalent) vs gronder quelqu'un (réprimander = divalent).</p></div>
-  <div class="box box-def"><div class="box-lbl">3. Les rôles actantiels</div><p>En plus de la fonction syntaxique (sujet, COD…), chaque actant a un rôle sémantique — sa place dans le procès : Tableau des rôles principaux Agent : animé qui initie/contrôle le procès. Gustave écrit un roman. → Gustave = agent. Patient / Agi : entité sur laquelle s'exerce le procès. Gustave critique l'imprimeur. → l'imprimeur = patient. Siège : entité où se manifeste un état (sans initiative). Virginie aime Paul. → Virginie = siège. Bénéficiaire : animé affecté par le procès. Gustave donne un sou au mendiant. → le mendiant = bénéficiaire. Résultatif : entité créée par le procès. Gustave a écrit des chefs-d'œuvre. → les chefs-d'œuvre = résultatifs (n'existaient pas avant). Instrument : entit…</p></div>
-  <div class="box box-def"><div class="box-lbl">4. Les fonctions syntaxiques primaires</div><p>Tests pour identifier COD vs COI COD (sans préposition) : peut être pronominalisé en le/la/les ; peut devenir sujet du passif ; répond à "quoi ?" → "J'ai lu un livre " → "Je l' ai lu" ✔ / "Un livre a été lu " ✔ COI (avec préposition, souvent à/de) : pronominalisé en lui/leur, y, en ; passivation impossible ; répond à "à qui ?" → "Je parle à Pierre " → "Je lui parle" ✔ / *"Pierre est parlé" ✗</p></div>
-  <div class="box box-def"><div class="box-lbl">5. Sous-valence et sur-valence</div><p>En discours, le verbe peut s'écarter de sa valence habituelle (valence en langue) : Exemples littéraires Sous-valence : "elle dédaigne" — DÉDAIGNER est normalement divalent (dédaigner qqch.), mais ici employé sans COD → sous-valence. Sur-valence : "Les cigales grinçaient leur chanson " (Eugène Le Roy) — GRINCE est monovalent, mais reçoit un COD → sur-valence stylistique. Datif éthique : "Il te lui a mis une bonne baffe !" → "te" = pronom témoin (2ème pers. impliquée comme témoin, sans rôle actantiel). Datif étendu : "Vous me ferez du riz de veau" → "me" = bénéficiaire étendu (pas de valence directe de "faire" avec "me"). Effet stylistique de la sur-valence : attribue à un intransitif une tra…</p></div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Auto-test</span><span class="exo-title">Test 1 — Valence et rôles actantiels</span></div>
-    <div class="exo-body">
-      <p class="exo-q">Décrivez le nombre, la fonction et le rôle actantiel de chaque actant dans "Rudolf offre les cafés aux collègues".</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Éléments de réponse</div><p>3 actants : Rudolf (S, agent), les cafés (COD, agi/patient), aux collègues (COI, bénéficiaire). Verbe trivalent. Comparez avec GRATIFIER : "Il gratifie ses collègues d'un café" → COD = bénéficiaire, COI = objet. Même situation réelle, fonctions inversées. Pourquoi "Simon habite" est-il incomplet, alors que "Elle pédale" est complet ? Voir la réponse HABITER est divalent : réclame un lieu obligatoi</p></div>
-    </div>
-  </div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Auto-test</span><span class="exo-title">Test 2 — Rôles actantiels</span></div>
-    <div class="exo-body">
-      <p class="exo-q">Dans "Virginie aime Paul", quel est le rôle de Virginie ? Justifiez.</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Éléments de réponse</div><p>Siège : elle n'a pas l'initiative d'aimer (état subi, non volontaire). Paul = patient. Verbe d'émotion → sujet = siège. Cf. "écouter" (agent) vs "entendre" (siège). Identifiez les rôles actantiels dans "Les cigales folles grinçaient leur chanson étourdissante" (Le Roy). Voir la réponse Les cigales = S, instrument (elles produisent un son mais sans "décider"). Leur chanson = COD, résultatif (la cha</p></div>
-    </div>
-  </div>
-  <div class="box box-att"><div class="box-lbl">⚠ Erreurs fréquentes — D4 — Clause canonique</div><p>Confondre rôle et fonction La fonction est syntaxique (sujet, COD, COI) ; le rôle est sémantique (agent, siège, patient). Un sujet peut être agent ("Gustave écrit") ou siège ("Gustave jubile"). Toujours donner les deux. Négliger la valence en langue vs en discours La valence "en langue" est celle du dictionnaire. En discours, un verbe peut avoir plus ou moins d'actants (sur/sous-valence). Signalez l'écart et commentez l'effet stylistique. Oublier que "il" impersonnel n'est pas un actant Dans "Il pleut", le pronom "il" est vide de référence — ce n'est pas un actant réel. Le verbe est avalent. C…</p></div>
-
 <!-- ══════════════ CH. 4 — ORDRE DANS LA CLAUSE ══════════════ -->
 <div class="page c4">
   <div class="ch-header">
@@ -980,9 +788,9 @@ tr:last-child td{border-bottom:none}
     <p class="ch-desc">Dislocation · Clivée · Pseudo-clivée · Passif · Construction impersonnelle</p>
   </div>
   <div class="ch-progress">
-    <label><input type="checkbox" id="lu-c4" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Lu</label>
-    <label><input type="checkbox" id="fait-c4" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Exercices faits</label>
-    <label><input type="checkbox" id="corr-c4" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Corrigé vérifié</label>
+    <label><input type="checkbox" id="lu-c4" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Lu</label>
+    <label><input type="checkbox" id="fait-c4" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Exercices faits</label>
+    <label><input type="checkbox" id="corr-c4" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Corrigé vérifié</label>
   </div>
   <div class="visual-summary">
     <div class="vs-title">Résumé visuel — 5 points clés</div>
@@ -1070,30 +878,6 @@ tr:last-child td{border-bottom:none}
   </div>
 
 
-
-  <div class="sec-label">Révision complète — D5 — Ordre &amp; Dynamique informationnelle</div>
-  <div class="box box-def"><div class="box-lbl">1. La dynamique informationnelle (DI)</div><p>La dynamique informationnelle décrit comment la clause organise l'information entre "ce qui est connu" et "ce qui est nouveau". Toute clause se découpe en : THÈME (TH) │ RHÈME (RH) Ce dont on parle │ Ce qu'on dit du thème Information connue │ Information nouvelle Point de départ │ But informationnel Position initiale │ Position finale (souvent) Tests pour identifier TH et RH Test du rhème : ajoutez "et pas autre chose" après un segment → si ça fonctionne, c'est le rhème. → "Gustave apporte les livres " → "les livres et pas autre chose" = les livres = rhème. Test de la négation : ce qui est hors de portée de la négation = thème. → "Gustave ne rapporte pas les livres" → Gustave (non nié) = thè…</p></div>
-  <div class="box box-def"><div class="box-lbl">2. La clause inversée</div><p>La clause inversée renverse l'ordre canonique S-V → C-V-S. Le sujet est postposé et reçoit le statut de rhème (entité nouvelle présentée). Tout à coup, derrière son dos, bondit une masse noire. [Circonstants = THÈME] [V] [S = RHÈME : entité nouvelle] Conditions d'emploi 1. Verbe monovalent (d'existence ou de mouvement : surgir, naître, paraître…). 2. Zone préverbale souvent occupée par un circonstant (cadre spatio-temporel connu). 3. Le sujet désigne une entité nouvelle (non encore identifiée dans le discours). Effet : présentation d'une entité qui "entre en scène" dans un cadre connu. Fréquent chez Balzac (descriptions inventoriantes).</p></div>
-  <div class="box box-def"><div class="box-lbl">3. La clause clivée</div><p>Structure : C'est [RH] + proposition relative [TH] . Un constituant est "extrait" et placé en position de rhème (attribut de c'est), tandis que le reste est relégué dans la relative (thème/info connue). C'est par hasard | qu'il se trouvait au festin. [RH = focus] | [TH = relative = info connue] Question implicite de la clivée "C'est Gustave qui apporte les livres" → répond à "QUI apporte les livres ?" → focus = Gustave. "C'est par hasard qu'il était là" → répond à "COMMENT était-il là ?" → focus = par hasard. Effet d'exclusivité : "c'est X (et non Y) qui P". À distinguer : clause clivée (C'est X + relative = bipartite TH/RH) vs clause à présentatif (C'est X = tout rhématique, pas de relative…</p></div>
-  <div class="box box-def"><div class="box-lbl">4. La clause pseudo-clivée</div><p>Structure : Ce [relative] / c'est [RH] . Le segment gauche catégorise sans identifier ; le segment droit identifie. Ce qui me tourmente dans mon livre, | c'est l'élément amusant. [TH = catégorisation, attente] | [RH = identification] Mécanisme de la pseudo-clivée 1. Segment gauche "Ce qui…" : on sait qu'il existe quelque chose (catégorie), mais pas encore quoi . 2. Tension informationnelle → attente du destinataire. 3. Segment droit "c'est…" : identification → comble l'attente. → RHÈME. Différence avec la clivée : dans la pseudo-clivée, le thème vient en premier (à gauche), créant une tension avant la révélation. Dynamique informationnelle — récapitulatif Notion Définition Position typique T…</p></div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Auto-test</span><span class="exo-title">Test 1 — Identifier TH et RH</span></div>
-    <div class="exo-body">
-      <p class="exo-q">Analysez la DI de "C'est le père Simon ! Ah ! Comme il a vieilli !" (Leroux). Est-ce une clivée ou un présentatif ?</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Éléments de réponse</div><p>Présentatif (tout rhématique) : identification d'une présence dans la situation. Pas de relative → pas de bipartition TH/RH d'une clivée. Si on avait "C'est le médecin qui m'a fait venir" (réponse à "Qui t'a fait venir ?"), ce serait une clivée. Dans "Tout à coup, derrière son dos, bondit une masse noire, un sanglier", identifiez TH et RH. Voir la réponse TH = "Tout à coup, derrière son dos" (circ</p></div>
-    </div>
-  </div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Auto-test</span><span class="exo-title">Test 2 — Clivée, pseudo-clivée, effets stylistiques</span></div>
-    <div class="exo-body">
-      <p class="exo-q">Comparez : (a) "Gustave apporte les livres." (b) "C'est Gustave qui apporte les livres." (c) "Ce qui m'intéresse, c'est Gustave."</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Éléments de réponse</div><p>(a) Canonique : TH = Gustave, RH = apporte les livres. (b) Clivée : TH = dans relative, RH = Gustave (focus exclusif sur l'agent). (c) Pseudo-clivée : TH = "ce qui m'intéresse" (catégorisation → tension), RH = Gustave (identification). Pourquoi la pseudo-clivée crée-t-elle une "attente" ? Voir la réponse Le segment "Ce qui/que…" catégorise un référent sans l'identifier → manque informationnel → te</p></div>
-    </div>
-  </div>
-  <div class="box box-att"><div class="box-lbl">⚠ Erreurs fréquentes — D5 — Ordre &amp; Dynamique informationnelle</div><p>Confondre clivée et présentatif La clause clivée est bipartite (TH + RH). Le présentatif est tout rhématique. Test : y a-t-il une subordonnée relative ? Si oui = clivée possible. Si non = présentatif. Mais le contexte est décisif : "C'est le médecin qui m'a fait venir" peut être les deux selon la question implicite. Ne pas justifier le thème et le rhème Ne pas se contenter de dire "le rhème c'est X". Il faut utiliser un test : test "et pas autre chose", test de la négation, ou reconstituer la question implicite à laquelle répond la clause. Oublier l'effet stylistique L'analyse DI ne s'arrête p…</p></div>
-
 <!-- ══════════════ CH. 5 — TYPES DE CLAUSES ══════════════ -->
 <div class="page c5">
   <div class="ch-header">
@@ -1102,9 +886,9 @@ tr:last-child td{border-bottom:none}
     <p class="ch-desc">Déclarative · Interrogative · Impérative · Exclamative · Clause averbale · Passif pronominal</p>
   </div>
   <div class="ch-progress">
-    <label><input type="checkbox" id="lu-c5" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Lu</label>
-    <label><input type="checkbox" id="fait-c5" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Exercices faits</label>
-    <label><input type="checkbox" id="corr-c5" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Corrigé vérifié</label>
+    <label><input type="checkbox" id="lu-c5" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Lu</label>
+    <label><input type="checkbox" id="fait-c5" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Exercices faits</label>
+    <label><input type="checkbox" id="corr-c5" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Corrigé vérifié</label>
   </div>
   <div class="visual-summary">
     <div class="vs-title">Résumé visuel — 5 points clés</div>
@@ -1217,32 +1001,6 @@ tr:last-child td{border-bottom:none}
   </div>
 
 
-
-  <div class="sec-label">Révision complète — D6 — Types de clauses</div>
-  <div class="box box-def"><div class="box-lbl">1. La clause averbale (CA)</div><p>Une clause averbale est une clause qui effectue une prédication sans verbe conjugué. Elle n'est pas une ellipse (le verbe n'est pas "récupérable" : c'est une construction à part entière). Deux termes : Délicieux, ton café ! → [Prop = adj.] + [Support = GN] Pêche interdite. → [Support = GN] + [Prop = adj.] Un terme : Délicieux ! → [Prop seule, support implicite] Locative : À ma gauche, Mohamed Ali ! → [Loc.] + [Support = GN] Trois grands types de CA Attributive : un prédicat (adjectif ou nom) assigné à un support. "Délicieux, ton café !" → prédicat = délicieux, support = ton café. Existentielle : pose l'existence d'une entité. "Tiens, un revenant !" "Ciel, mon mari !" Thétique : active un obj…</p></div>
-  <div class="box box-def"><div class="box-lbl">2. La clause infinitive (CI)</div><p>La clause infinitive comporte un verbe à l'infinitif (non conjugué). Le procès est non actualisé : pas d'ancrage temporel, pas d'ancrage personnel. Valeurs de la clause infinitive Exclamative : émotion suscitée par l'action virtuelle. "Moi, manger des insectes !" Délibérative : interroge sur la réalité de l'action. "Se mettre au sport ? Arrêter de fumer ?" Instructionnelle : action à effectuer (générale, applicable à tous). "Ne pas toucher." "Ralentir : travaux."</p></div>
-  <div class="box box-def"><div class="box-lbl">3. La clause à présentatif</div><p>Structure : présentatif + GN . Le présentatif est un formant grammatical qui présente une entité (ou un événement) à l'attention du destinataire. Présentatifs principaux : c'est → identification/deixis : C'est mon chien. voici → proximité : Voici votre commande. voilà → distance / événement : Voilà qu'il se met à neiger ! il y a → existence : Il y a des renards polaires. DI : toute la clause à présentatif est tout rhématique (pas de thème). Elle présente quelque chose de nouveau dans la situation. Dans les récits : indice de point de vue interne (perception d'un personnage).</p></div>
-  <div class="box box-def"><div class="box-lbl">4. La clause passive</div><p>Le passif réorganise les fonctions par rapport à l'actif : le patient (COD en actif) devient sujet , l'agent (sujet en actif) devient complément agent optionnel. ACTIF : Le chat mange la souris. [S/agent] [V] [COD/patient] PASSIF : La souris est mangée par le chat. [S/patient] [V passif] [C.agent] Trois effets pragmatiques du passif 1. Effacement de l'agent : "La fenêtre a été cassée." (on ne sait pas par qui → effet d'irresponsabilité ou d'inconnue). 2. Mise en relief du patient : le patient occupe la position thématique (sujet = TH) → continuité thématique dans le discours. 3. Topicalisation du patient : utile quand le patient est déjà mentionné et qu'on continue à en parler.</p></div>
-  <div class="box box-def"><div class="box-lbl">5. La clause impersonnelle</div><p>Le pronom "il" est référentiellement vide . Le vrai actant (le GN plein) est en position post-verbale, ce qui le place en position de rhème → clause tout rhématique . Il est arrivé un malheur. [Il=vide] → "un malheur" = rhème (info entièrement nouvelle) Il y a des renards polaires. (présentatif existentiel = variante de l'impersonnel)</p></div>
-  <div class="box box-def"><div class="box-lbl">6. La clause pronominale</div><p>Le verbe est accompagné d'un pronom réfléchi ( se ) qui peut avoir quatre valeurs : Quatre valeurs du pronominal Réfléchi : S = patient à lui-même. "Il se lave." (il lave lui-même). Réciproque : deux sujets agissent mutuellement. "Ils se parlent." (A parle à B et B parle à A). Passif pronominal : patient sans agent exprimé. "Ça se mange froid." = c'est mangé froid. Neutre (ou lexical) : le sujet est le siège d'une transformation. "Il s'endort." "Il s'enfuit." (le "se" fait partie du lexème verbal, aucune valeur séparable). Types de clauses averbales Type Structure Exemple Valeur Attributive (2 termes) Prédicat + Support (ou inv.) Délicieux, ton café ! Assignation de propriété Attributive (1 …</p></div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Auto-test</span><span class="exo-title">Test 1 — Clause averbale et clause infinitive</span></div>
-    <div class="exo-body">
-      <p class="exo-q">Analysez "Délicieux, ton café !" et expliquez ses trois caractéristiques de clause averbale.</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Éléments de réponse</div><p>CA attributive (2 termes) : Prop = "délicieux" (adj.), Support = "ton café". Trois effets possibles : (1) expressivité (jugement émotionnel direct) ; (2) intemporalité (aucun ancrage temporel) ; (3) sémantique = valeur d'être ("Ton café est délicieux"). La structure bimembre [préd + support] est l'ordre inverse canonique (Support &gt; Prop = mise en relief du prédicat). Distinguez les trois valeurs d</p></div>
-    </div>
-  </div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Auto-test</span><span class="exo-title">Test 2 — Passif et pronominal</span></div>
-    <div class="exo-body">
-      <p class="exo-q">Expliquez les trois effets pragmatiques du passif à partir d'un exemple.</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Éléments de réponse</div><p>Ex. "La souris est mangée par le chat." (1) Effacement de l'agent : "La fenêtre a été cassée" → on ne sait pas par qui. (2) Topicalisation du patient : le patient devient sujet = thème. (3) Continuité thématique : si le patient est déjà dans le discours, il peut rester sujet d'une suite de clauses passives. Dans "Ça se mange froid", identifiez la valeur du pronominal et comparez avec "Il se lave".</p></div>
-    </div>
-  </div>
-  <div class="box box-att"><div class="box-lbl">⚠ Erreurs fréquentes — D6 — Types de clauses</div><p>Confondre clause averbale et ellipse Une ellipse est la suppression d'un élément récupérable par le contexte. Une CA est une construction autonome, sans verbe supprimé. "Délicieux, ton café !" n'est pas une ellipse de "Ton café est délicieux" : c'est une structure à part entière avec ses propres effets. Identifier un pronominal neutre comme réfléchi Erreur fréquente : dire que "s'endormir" = réfléchi. Test : peut-on paraphraser par "endormir lui-même" ? Non → neutre. On ne peut pas séparer le "se" du verbe "s'endormir". Oublier l'effet de la DI sur le passif Le passif ne s'analyse pas seulemen…</p></div>
-
 <!-- ══════════════ CH. 6 — EXTENSIONS DU GN ══════════════ -->
 <div class="page c6">
   <div class="ch-header">
@@ -1251,9 +1009,9 @@ tr:last-child td{border-bottom:none}
     <p class="ch-desc">Épithète · Relative déterminative / explicative · Apposition · GPrép modificateur</p>
   </div>
   <div class="ch-progress">
-    <label><input type="checkbox" id="lu-c6" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Lu</label>
-    <label><input type="checkbox" id="fait-c6" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Exercices faits</label>
-    <label><input type="checkbox" id="corr-c6" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Corrigé vérifié</label>
+    <label><input type="checkbox" id="lu-c6" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Lu</label>
+    <label><input type="checkbox" id="fait-c6" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Exercices faits</label>
+    <label><input type="checkbox" id="corr-c6" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Corrigé vérifié</label>
   </div>
   <div class="visual-summary">
     <div class="vs-title">Résumé visuel — 5 points clés</div>
@@ -1353,33 +1111,6 @@ tr:last-child td{border-bottom:none}
   </div>
 
 
-
-  <div class="sec-label">Révision complète — D7 — Extensions du groupe nominal</div>
-  <div class="box box-def"><div class="box-lbl">1. Le groupe nominal étendu</div><p>Le GN canonique = Déterminant + Nom. Les extensions du GN sont des constituants qui s'ajoutent au nom-tête pour le préciser, le qualifier ou l'identifier. GN étendu = [Dét] + [Épith. antéposée] + N + [Épith. postposée] + [Complément du nom] + [Proposition relative]</p></div>
-  <div class="box box-def"><div class="box-lbl">2. Épithète intégrée</div><p>Adjectif directement rattaché au nom-tête, sans virgule ni pause : Antéposée vs Postposée Postposée (position canonique) : valeur classifiante , objective, descriptive. → "une voiture rouge " = la classe des voitures rouges (≠ voitures bleues) Antéposée : valeur subjective , affective, expressive. → "une belle journée" = appréciation personnelle du locuteur Opposition de sens possible : "un grand homme" (remarquable) ≠ "un homme grand " (de haute taille)</p></div>
-  <div class="box box-def"><div class="box-lbl">3. Épithète détachée</div><p>Adjectif séparé du GN par une virgule (et une pause à l'oral). Valeur prédicative secondaire — elle prédie une propriété en plus de la prédication principale. Épuisé , il s'endormit aussitôt. (= parce qu'il était épuisé) Elle marchait, les yeux grand ouverts , sans rien voir. Valeurs possibles : cause, temps, concession, manière — toujours inférées du contexte. L'épithète détachée est très mobile : elle peut se placer en tête, en milieu ou en fin de clause.</p></div>
-  <div class="box box-def"><div class="box-lbl">4. Apposition</div><p>GN (ou équivalent) accolé à un autre GN, séparé par une virgule, qui identifie ou reformule le référent : Sartre, philosophe existentialiste , écrit sur la liberté. Paris, la Ville Lumière , accueille des millions de touristes. À distinguer : épithète détachée = adjectif ; apposition = GN. Les deux ont une virgule et une valeur prédicative secondaire, mais la catégorie grammaticale diffère.</p></div>
-  <div class="box box-def"><div class="box-lbl">5. Construction absolue</div><p>Syntagme détaché (GN + participe ou adjectif) sans verbe conjugué, à valeur circonstancielle : La nuit tombée , ils rentrèrent. (= quand la nuit fut tombée → temps) Les bras croisés , il attendait. (→ manière) Son travail terminé , elle rentra. (→ cause) La construction absolue est à distinguer de l'épithète détachée : CA = GN + participe (mini-syntagme) ; épithète = adjectif seul.</p></div>
-  <div class="box box-def"><div class="box-lbl">6. Complément du nom (CN)</div><p>GN introduit par une préposition (le plus souvent de ) qui caractérise le nom-tête : la maison de mes parents (possession) | un vase de cristal (matière) | une idée de génie (qualité)</p></div>
-  <div class="box box-def"><div class="box-lbl">7. Proposition relative</div><p>Clause enchâssée introduite par un pronom relatif qui occupe une fonction à l'intérieur : Déterminative (sans virgule) : restreint la référence → "l'homme qui court " (≠ les autres). Explicative (avec virgule) : apporte une info supplémentaire → "Paul, qui court , est essoufflé." Extensions du GN — tableau de synthèse Extension Catégorie Virgule? Valeur principale Exemple Épithète antéposée Adjectif Non Subjective/affective une belle journée Épithète postposée Adjectif Non Classifiante/objective une voiture rouge Épithète détachée Adjectif Oui Prédicative secondaire (cause/temps/manière) Épuisé, il dort Apposition GN Oui Identification/reformulation Paris, capitale de la France Construction …</p></div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Auto-test</span><span class="exo-title">Test 1 — Identification et analyse</span></div>
-    <div class="exo-body">
-      <p class="exo-q">Identifiez et nommez toutes les extensions du GN dans : "La vieille église de pierre, magnifique et imposante, qui dominait le village."</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Éléments de réponse</div><p>"vieille" = épithète intégrée antéposée (valeur subjective/affective) ; "de pierre" = CN (matière) ; "magnifique et imposante" = épithète détachée (valeur descriptive, double adjectif coordonné) ; "qui dominait le village" = relative déterminative (restreint à cette église précise). Quelle est la différence entre "les maisons qui brûlent sont anciennes" et "les maisons, qui brûlent, sont anciennes</p></div>
-    </div>
-  </div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Auto-test</span><span class="exo-title">Test 2 — Effets stylistiques</span></div>
-    <div class="exo-body">
-      <p class="exo-q">Dans un récit de Zola : "La vieille Gervaise, épuisée de travail, regardait les lumières vacillantes." Analysez les extensions du GN sujet.</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Éléments de réponse</div><p>"vieille" = épithète intégrée antéposée (valeur affective, marque l'usure sociale) ; "épuisée de travail" = épithète détachée (valeur causale : parce qu'elle était épuisée). Effet : le GN étendu condense en une structure la description physique, sociale et émotionnelle du personnage. Expliquez la différence entre "apposition" et "construction absolue" avec un exemple chacun. Voir la réponse Apposi</p></div>
-    </div>
-  </div>
-  <div class="box box-att"><div class="box-lbl">⚠ Erreurs fréquentes — D7 — Extensions du groupe nominal</div><p>Confondre épithète détachée et apposition Critère décisif : catégorie grammaticale . Épithète détachée = adjectif (s'accorde). Apposition = GN (pas d'accord adjectival). Confondre construction absolue et épithète détachée CA = GN + participe (deux éléments forment un mini-syntagme). Épithète détachée = adjectif seul. Ex. : "Les bras croisés" (CA) vs "Épuisé" (épithète). Oublier l'effet sur la référence (relative) La relative déterminative restreint la référence (essentielle au sens). La relative explicative enrichit sans restreindre. La virgule est le marqueur formel. Oublier de mentionner la …</p></div>
-
 <!-- ══════════════ CH. 7 — EXTENSIONS DU GV ══════════════ -->
 <div class="page c7">
   <div class="ch-header">
@@ -1388,9 +1119,9 @@ tr:last-child td{border-bottom:none}
     <p class="ch-desc">Circonstants · Périphrases aspectuelles · Cadre thématique</p>
   </div>
   <div class="ch-progress">
-    <label><input type="checkbox" id="lu-c7" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Lu</label>
-    <label><input type="checkbox" id="fait-c7" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Exercices faits</label>
-    <label><input type="checkbox" id="corr-c7" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Corrigé vérifié</label>
+    <label><input type="checkbox" id="lu-c7" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Lu</label>
+    <label><input type="checkbox" id="fait-c7" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Exercices faits</label>
+    <label><input type="checkbox" id="corr-c7" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Corrigé vérifié</label>
   </div>
   <div class="visual-summary">
     <div class="vs-title">Résumé visuel — 5 points clés</div>
@@ -1471,31 +1202,6 @@ tr:last-child td{border-bottom:none}
   </div>
 
 
-
-  <div class="sec-label">Révision complète — D8 — Extensions du GV (circonstants)</div>
-  <div class="box box-def"><div class="box-lbl">1. Actants vs circonstants</div><p>Le GV peut contenir deux types de compléments : Actants (compléments valentiels) : exigés par la valence du verbe, intrinsèques au procès. Circonstants (compléments circonstanciels) : libres, non exigés par le verbe, ajoutent un cadrage. Tests pour distinguer actant / circonstant Test de suppression : "Simon habite à Berlin " → *"Simon habite." (agrammatical) = actant valenciel. "Il mange à Berlin " → "Il mange." (correct) = circonstant. Test de déplacement : le circonstant peut être déplacé en tête : " À Berlin , il mange tous les jours."</p></div>
-  <div class="box box-def"><div class="box-lbl">2. Types sémantiques de circonstants</div><p>LIEU (Où ?) → dans sa chambre, à Paris TEMPS (Quand ?) → hier, le soir, à midi MANIÈRE (Comment ?) → doucement, avec soin CAUSE (Pourquoi ?) → de joie, par fatigue BUT (Dans quel but?) → pour acheter du pain CONDITION(À quelle cond?)→ en cas de pluie CONCESSION(Malgré quoi?) → malgré la fatigue MOYEN (Par quel moyen?)→ en train, par avion</p></div>
-  <div class="box box-def"><div class="box-lbl">3. Formes de réalisation des circonstants</div><p>Forme Exemple Type GAdv (groupe adverbial) vite, hier, là-bas manière, temps, lieu GN prépositionnelle avec soin, dans la forêt manière, lieu GN "nu" (sans prép.) ce matin, deux heures temps, durée Proposition conjonctive quand il arriva temps, cause, condition… Gérondif en chantant manière, simultanéité, cond. Infinitif prépositionnel pour finir, sans hésiter but, manière</p></div>
-  <div class="box box-def"><div class="box-lbl">4. Le gérondif</div><p>Formé de en + participe présent. Contrainte : le sujet du gérondif doit être le même que le sujet du verbe principal . Valeurs du gérondif Manière + simultanéité : "Il siffle en travaillant ." (les deux actions coïncident) Condition : " En partant tôt , tu éviteras les embouteillages." Cause : " En insistant , elle a obtenu gain de cause." Anacoluthe : erreur si le sujet du gérondif ≠ sujet principal. Ex. : *" En entrant dans la salle , le professeur était déjà là." (qui entre ? pas le professeur syntaxiquement).</p></div>
-  <div class="box box-def"><div class="box-lbl">5. Position du circonstant et DI</div><p>La position du circonstant dans la clause influe sur la dynamique informationnelle : En tête de clause : valeur de cadrage — il thématise le circonstant et le présente comme le cadre dans lequel s'inscrit la prédication. → Thème cadre. En fin de clause : position rhématique — information nouvelle et accentuée. En milieu : position moins saillante, information accessoire. Comparaison DI " Hier , Paul est parti." → "Hier" = thème cadre (le temps est le cadre). L'info principale = "Paul est parti". "Paul est parti hier ." → "hier" = rhème (l'info nouvelle est le moment du départ). Actant vs circonstant : tableau comparatif Critère Actant Circonstant Exigé par le verbe ? Oui (valence) Non Suppri…</p></div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Auto-test</span><span class="exo-title">Test 1 — Circonstants et actants</span></div>
-    <div class="exo-body">
-      <p class="exo-q">Distinguez actant et circonstant dans : "Elle va à Paris chaque été." Justifiez.</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Éléments de réponse</div><p>"à Paris" = actant valenciel (aller exige un destination : *elle va). "chaque été" = circonstant de temps (elle va à Paris est complet sans lui ; il précise la fréquence). Test : *"Elle va." vs "Elle va à Paris." ✓ Analysez le gérondif dans "En insistant, elle a fini par obtenir gain de cause". Voir la réponse "En insistant" = gérondif (en + participe présent). Valeur : condition ou cause (grâce a</p></div>
-    </div>
-  </div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Auto-test</span><span class="exo-title">Test 2 — DI et position</span></div>
-    <div class="exo-body">
-      <p class="exo-q">Quel est l'effet de "Malgré la pluie, ils ont joué" vs "Ils ont joué malgré la pluie" ?</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Éléments de réponse</div><p>1. En tête : "Malgré la pluie" = thème cadre de concession. L'info principale est "ils ont joué" (fait surprenant). 2. En fin : "malgré la pluie" = rhème (l'info nouvelle est la circonstance concessive). La différence : dans le cas 1, le cadre concessif est d'abord posé. Expliquez l'effet stylistique de l'accumulation de circonstants dans la description de Zola. Voir la réponse L'accumulation de c</p></div>
-    </div>
-  </div>
-  <div class="box box-att"><div class="box-lbl">⚠ Erreurs fréquentes — D8 — Extensions du GV (circonstants)</div><p>Confondre actant de lieu et circonstant de lieu Avec habiter, aller, se trouver, venir : le lieu est un actant valenciel (obligatoire). Avec les autres verbes : le lieu est généralement un circonstant. Oublier la contrainte du sujet du gérondif Le sujet du gérondif DOIT coïncider avec le sujet du verbe principal. Vérifier systématiquement. Oublier de préciser la valeur DI de la position Pour tout circonstant, indiquer sa position (tête / milieu / fin) et son effet DI : thème cadre vs rhème. Ne pas préciser le type sémantique Ne pas dire juste "circonstant" — préciser toujours : de lieu, de tem…</p></div>
-
 <!-- ══════════════ CH. 8 — CLAUSE COMPLEXE ══════════════ -->
 <div class="page c8">
   <div class="ch-header">
@@ -1504,9 +1210,9 @@ tr:last-child td{border-bottom:none}
     <p class="ch-desc">Coordination · Subordination · Types de subordonnées · Discours indirect</p>
   </div>
   <div class="ch-progress">
-    <label><input type="checkbox" id="lu-c8" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Lu</label>
-    <label><input type="checkbox" id="fait-c8" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Exercices faits</label>
-    <label><input type="checkbox" id="corr-c8" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Corrigé vérifié</label>
+    <label><input type="checkbox" id="lu-c8" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Lu</label>
+    <label><input type="checkbox" id="fait-c8" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Exercices faits</label>
+    <label><input type="checkbox" id="corr-c8" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Corrigé vérifié</label>
   </div>
   <div class="visual-summary">
     <div class="vs-title">Résumé visuel — 5 points clés</div>
@@ -1597,31 +1303,6 @@ tr:last-child td{border-bottom:none}
   </div>
 
 
-
-  <div class="sec-label">Révision complète — D9 — La clause complexe</div>
-  <div class="box box-def"><div class="box-lbl">1. Clause simple vs clause complexe</div><p>Une clause simple = un seul prédicat verbal. Une clause complexe = une clause principale + une ou plusieurs subordonnées enchâssées. Clause simple : "Paul dort." Clause complexe: "Je sais [que Paul dort]." principale + subordonnée (complétive COD)</p></div>
-  <div class="box box-def"><div class="box-lbl">2. Les types de subordonnées</div><p>Complétive (en "que") Clause introduite par que , fonctionnant comme COD (ou sujet/attribut) du verbe principal : Je sais qu'il viendra . (COD de "sais") Mode : indicatif après croire/savoir/penser (affirmation) ; subjonctif après vouloir/douter/regretter. Interrogative indirecte Introduite par si ou un mot interrogatif ; fonctionne comme COD : Je me demande s'il viendra . / Je veux savoir qui a dit ça . Relative Introduite par un pronom relatif, rattachée à un antécédent (voir D7). Déterminative vs explicative. Circonstancielle Introduite par une conjonction de subordination, fonctionne comme circonstant : Temps : quand, lorsque, dès que, avant que, après que Cause : parce que, puisque, com…</p></div>
-  <div class="box box-def"><div class="box-lbl">3. Coordination vs subordination vs juxtaposition</div><p>Les trois types de relations entre clauses Coordination : deux clauses de même niveau reliées par une conjonction de coordination (MEONDC : Mais, Et, Or, Ni, Donc, Car). → "Il pleut mais il sort." Subordination : une clause est enchâssée dans une autre (hiérarchie). → "Il sort parce qu'il veut courir." Juxtaposition : clauses liées par ponctuation seule (virgule, ;, :) — relation logique implicite. → "Il ne parla pas : il avait peur." (cause implicite)</p></div>
-  <div class="box box-def"><div class="box-lbl">4. Modes dans les subordonnées</div><p>INDICATIF → parce que, quand, croire que (affirm.), savoir que SUBJONCTIF → bien que, pour que, vouloir que, avant que, douter que INFINITIF → pour + inf. (but), sans + inf. (manière négative)</p></div>
-  <div class="box box-def"><div class="box-lbl">5. Discours rapporté</div><p>Discours direct (DD) : paroles citées telles quelles entre guillemets. "Je viendrai demain", dit-elle. Discours indirect (DI) : paroles transposées dans une complétive. Changements obligatoires : Temps : présent → imparfait ; futur → conditionnel ; passé composé → plus-que-parfait Personnes : je/tu selon la situation Déictiques : demain → le lendemain ; hier → la veille ; ici → là Transposition DD → DI DD : "Je viendrai demain ." DI : Elle dit qu'elle viendrait le lendemain . Types de subordonnées — récapitulatif Type Introducteur Fonction Exemple Complétive que COD / sujet / attribut Je sais qu'il vient Interr. indirecte si / mot interr. COD Je demande s'il vient Relative pronom relatif Ext…</p></div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Auto-test</span><span class="exo-title">Test 1 — Identification et analyse</span></div>
-    <div class="exo-body">
-      <p class="exo-q">Analysez la structure de : "Je me demande s'il viendra et ce qu'il dira."</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Éléments de réponse</div><p>Principale : "Je me demande". Deux subordonnées coordonnées (et), toutes deux COD : 1. Interrogative indirecte "s'il viendra" (si + futur) ; 2. Interrogative indirecte "ce qu'il dira" (ce que = pronom rel. indef. + futur). Distinguez "parce que" et "puisque" avec un exemple chacun. Voir la réponse "Parce que" : cause inconnue, info nouvelle → "Il est absent parce qu'il est malade." (on l'apprend).</p></div>
-    </div>
-  </div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Auto-test</span><span class="exo-title">Test 2 — Discours rapporté</span></div>
-    <div class="exo-body">
-      <p class="exo-q">Transposez au discours indirect : "J'ai fait une erreur hier", avoua-t-il.</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Éléments de réponse</div><p>Il avoua qu'il avait fait une erreur la veille. (passé composé → plus-que-parfait ; hier → la veille ; j' → il) Quelles transformations s'appliquent lors de la transposition du discours direct au discours indirect ? Voir la réponse 1. Temps verbaux (présent → imparfait, futur → conditionnel, PC → PQP). 2. Personnes (je/tu selon situation). 3. Déictiques temporels et spatiaux (demain → le lendemain</p></div>
-    </div>
-  </div>
-  <div class="box box-att"><div class="box-lbl">⚠ Erreurs fréquentes — D9 — La clause complexe</div><p>Oublier de préciser la fonction de la subordonnée Une complétive est COD, pas juste "une subordonnée". Toujours préciser la fonction dans la principale. Mode du verbe subordonné Subjonctif : bien que, pour que, avant que, vouloir que, douter que Indicatif : parce que, quand, croire que (affirm.), si (condition) Discours indirect : oublier les déictiques Ne pas oublier de changer : demain → le lendemain, hier → la veille, ici → là, cette semaine → cette semaine-là. Coordination ≠ juxtaposition Coordination = présence d'une conjonction de coordination. Juxtaposition = lien par ponctuation seule.…</p></div>
-
 <!-- ══════════════ CH. 9 — PHRASE GRAPHIQUE ══════════════ -->
 <div class="page c9">
   <div class="ch-header">
@@ -1630,9 +1311,9 @@ tr:last-child td{border-bottom:none}
     <p class="ch-desc">Phrase graphique vs clause · Rôles de la ponctuation · 3 plans d'analyse</p>
   </div>
   <div class="ch-progress">
-    <label><input type="checkbox" id="lu-c9" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Lu</label>
-    <label><input type="checkbox" id="fait-c9" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Exercices faits</label>
-    <label><input type="checkbox" id="corr-c9" onchange="saveProgress(this)"><span class="ch-cb-box"></span> Corrigé vérifié</label>
+    <label><input type="checkbox" id="lu-c9" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Lu</label>
+    <label><input type="checkbox" id="fait-c9" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Exercices faits</label>
+    <label><input type="checkbox" id="corr-c9" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Corrigé vérifié</label>
   </div>
   <div class="visual-summary">
     <div class="vs-title">Résumé visuel — 5 points clés</div>
@@ -1702,31 +1383,6 @@ tr:last-child td{border-bottom:none}
     </div>
   </div>
 </div>
-
-
-  <div class="sec-label">Révision complète — D10 — Phrase graphique &amp; dislocation</div>
-  <div class="box box-def"><div class="box-lbl">1. La phrase graphique</div><p>La phrase graphique est une unité de l'écriture délimitée par une majuscule initiale et un point final (., !, ?, …). Elle n'est pas une unité syntaxique : elle peut contenir plusieurs clauses ou être une simple clause averbale. Exemples "Magnifique !" = 1 phrase graphique, 1 clause averbale. "Il pleut et je reste chez moi, mais demain il fera beau." = 1 phrase graphique, 3 clauses. "Dès qu'il arriva, Marie, qui l'attendait depuis des heures, se leva." = 1 phrase graphique, 3 clauses (principale + 2 subordonnées).</p></div>
-  <div class="box box-def"><div class="box-lbl">2. La dislocation</div><p>La dislocation déplace un constituant en périphérie (gauche ou droite) de la clause, avec reprise par un pronom à l'intérieur : Dislocation gauche : X, [pronom] V… Dislocation droite : … [pronom] V, X Dislocation gauche (DG) Paul , je le connais bien. → "Paul" est disloqué à gauche, repris par "le" (cataphorique). Valeur DI : thématisation (Paul = thème, info donnée). Dislocation droite (DD) Je le connais bien, Paul . → "Paul" est disloqué à droite, repris par "le" (anaphorique). Valeur DI : rhématisation / précision après coup. Exemples à l'oral DG : "Ce film, je l'ai déjà vu." / "Ta sœur, elle est vraiment sympa." DD : "Il est sympa, ton frère." / "Je l'aime bien, cette chanson."</p></div>
-  <div class="box box-def"><div class="box-lbl">3. Clivage</div><p>La clause clivée ( c'est X qui/que ) focalise un constituant en position rhématique forte : C'est Paul qui a dit ça. (Paul = focus rhématique contrastif) Différence avec la DG : DG thématise (info donnée) ; clivage focalise (rhème fort, souvent contrastif).</p></div>
-  <div class="box box-def"><div class="box-lbl">4. Inversion du sujet</div><p>Inversion simple : pronom sujet postposé → "Viendra-t-il ?" Inversion complexe : SN maintenu + pronom de reprise → "Paul viendra-t-il ?" Inversion stylistique : SN postposé, registre soutenu/littéraire → "Ainsi parla l'orateur." Valeur DI : le sujet postposé occupe une position rhématique (information nouvelle). Registre : la dislocation est très fréquente à l'oral et dans le registre familier. En littérature, elle peut mimer l'oral des personnages (style indirect libre chez Zola) ou créer un effet de proximité avec le lecteur.</p></div>
-  <div class="box box-def"><div class="box-lbl">5. Synthèse : dispositifs de variation de l'ordre</div><p>DISPOSITIF STRUCTURE VALEUR DI Dislocation gauche X, pro V Thématise X Dislocation droite pro V, X Rhématise X Clivage C'est X qui/que P Focalise X (fort) Inversion simple V-pro Sujet = rhème Inversion complexe SN V-pro SN = rhème Inversion stylistische V SN SN = rhème (soutenu) Dislocation : tableau comparatif Dislocation gauche Dislocation droite Position de l'élément Avant la clause Après la clause Pronom Cataphorique (annonce) Anaphorique (reprend) Valeur DI Thème (info connue/donnée) Rhème ou précision Contexte typique Changement de topic, oral Emphase, précision, oral Exemple Ce film, je l'ai vu. Je l'ai vu, ce film. Tous les dispositifs de variation de l'ordre Dispositif Structure Val…</p></div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Auto-test</span><span class="exo-title">Test 1 — Dislocation et clivage</span></div>
-    <div class="exo-body">
-      <p class="exo-q">Dans "Ses collègues, il leur a tout expliqué", analysez la dislocation.</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Éléments de réponse</div><p>Dislocation gauche : "ses collègues" (COI, normalement "à ses collègues") disloqué à gauche, repris par "leur" (COI). Valeur : thématisation de "ses collègues" (info donnée, on parle d'eux). Rhème = "il leur a tout expliqué". Comparez : "Il l'aime, ce chien" (DD) et "C'est ce chien qu'il aime" (clivée). Quels sont les effets ? Voir la réponse DD : "ce chien" précisé après coup, emphase orale. Cliv</p></div>
-    </div>
-  </div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Auto-test</span><span class="exo-title">Test 2 — Phrase graphique et DI</span></div>
-    <div class="exo-body">
-      <p class="exo-q">Analysez la DI dans : "Ce roman, je l'aimais, mais la fin, je la trouvais ratée."</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Éléments de réponse</div><p>Deux DG successives : "ce roman" thématisé (repris par "l'"), puis "la fin" thématisé (repris par "la"). Structure narrative : on passe d'un thème à l'autre par DG, créant un effet de progression du commentaire. Oral/spontané. Comparez les effets de "Hier, Paul est parti" et "Paul est parti hier" sur la DI. Voir la réponse 1. DG du circonstant "hier" : thème cadre temporel (on sait que c'est hier,</p></div>
-    </div>
-  </div>
-  <div class="box box-att"><div class="box-lbl">⚠ Erreurs fréquentes — D10 — Phrase graphique &amp; dislocation</div><p>Confondre phrase graphique et clause Phrase graphique = unité typographique. Clause = unité syntaxique. Ne jamais les confondre lors de l'analyse. Toujours identifier le pronom de reprise Pour toute dislocation : nommer l'élément disloqué + le pronom de reprise + sa fonction + DG ou DD + valeur DI. DG ≠ clivage DG thématise (structure : X, pro V). Clivage focalise (structure : c'est X qui/que P). Le clivage est plus contrastif et emphatique. Inversion stylistique : ne pas confondre avec l'inversion simple Inversion simple = pronom sujet postposé (V-pro, interrogation). Inversion stylistique = …</p></div>
 
 <!-- ══════════════ CORRIGÉS ══════════════ -->
 <div class="page corr-page">
@@ -3214,388 +2870,6 @@ tr:last-child td{border-bottom:none}
   </div>
 </div>
 
-
-<!-- ══════════════ SUJETS D'EXAMEN & TESTS ══════════════ -->
-<div class="page">
-  <div class="ch-header c0" style="--acc:#7c6cc0;--acc-lt:#f0ecfa;--bdr:#c8b8f0;border-color:#c8b8f0">
-    <span class="ch-num-badge" style="background:#f0ecfa;color:#7c6cc0">Examens</span>
-    <h2 class="ch-main-title" style="color:#7c6cc0">Sujets d'examens &amp; tests de validation</h2>
-    <p class="ch-desc">Sujets réels UNIL · Test 1, Test 2, Décembre 2019, Décembre 2022, exercices blancs</p>
-  </div>
-  <div class="sec-label">Test 1 — Octobre</div>
-  <div class="box box-ex"><div class="box-lbl">Texte / Support</div><p>Texte support La Grosse Femme d'à côté est enceinte , Michel Tremblay (1981). – Si y'avait demandé quequ'chose, y l'arait eu ! – Peut-être qu'y arait aimé ça que tu prennes toé-même les initiatives… Quand y font rien, des fois, c't' à toé de te débro…</p></div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(a) — 5 pts</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(a) Rétablissez la version en français standard. Transcrivez en API les deux versions (originale et standard). 5 pts</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>Version standard :</p></div>
-    </div>
-  </div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(b) — 5 pts</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(b) Repérez toutes les différences phonologiques entre le joual et le français standard, et décrivez-les. 5 pts</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>Phénomène</p></div>
-    </div>
-  </div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(c) — 1 pt</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(c) Commentez : que représente la graphie non standard utilisée par Tremblay et pourquoi y recourir ? 1 pt</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>Mimétisme oral :</p></div>
-    </div>
-  </div>
-  <div class="box box-ex"><div class="box-lbl">Texte / Support</div><p>Support — 4 affiches publicitaires → « beau » Adj → N (conversion)</p></div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(a) — 8 pts</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(a) Identifiez et analysez le mode de construction des lexèmes «sublimitude», «découvRire», «savoir-voyager», «beau». Pour les cas de dérivation, procédez par commutation. 8 pts</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>« sublimitude »</p></div>
-    </div>
-  </div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(b) — 1 pt</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(b) Pourquoi recourir à de telles innovations lexicales en communication dans l'espace public ? 1 pt</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>Mémorisation :</p></div>
-    </div>
-  </div>
-  <div class="sec-label">Test 2 — Décembre</div>
-  <div class="box box-ex"><div class="box-lbl">Texte / Support</div><p>Texte support « Ce pauvre Léger, un quart d'heure auparavant, place d'Italie où je lui avais donné rendez-vous pour prendre le tramway, je lui avais déjà fait des remontrances au sujet de son déguisement. C'est de Fernand Léger, le peintre cubiste, q…</p></div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(a)</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(a) Analysez la composition de la première phrase : nombre et type de clauses, constructions détachées.</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>Clause principale :</p></div>
-    </div>
-  </div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(b)</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(b) Même analyse pour la deuxième phrase.</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>Construction clivée :</p></div>
-    </div>
-  </div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(c)</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(c) Soulignez les adjectifs épithètes et commentez leur sens selon leur position (antéposé / postposé).</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>« pauvre »</p></div>
-    </div>
-  </div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(d)</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(d) Quelle image le narrateur donne-t-il de lui-même et de Léger dans cet extrait ?</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>Image du narrateur (Cendrars) :</p></div>
-    </div>
-  </div>
-  <div class="box box-ex"><div class="box-lbl">Texte / Support</div><p>Texte support Phrase soulignée = 1re phrase · Phrase en gras = « À plat ventre ! » Courir sur les cendrées, courir dans les marais, courir dans la boue. Courir, sauter, lancer les poids. Ramper. S'accroupir, se relever. Se relever, s'accroupir. Très …</p></div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(a)</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(a) Analysez la phrase soulignée : clauses, syntaxe, sémantique, structure informationnelle (thème/rhème), progression.</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>Syntaxe :</p></div>
-    </div>
-  </div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(b)</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(b) Analysez la phrase « À plat ventre ! » : syntaxique, sémantique, informationnel.</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>Syntaxe :</p></div>
-    </div>
-  </div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(c)</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(c) Commentez la progression du passage dans son ensemble.</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>1re partie (infinitifs) :</p></div>
-    </div>
-  </div>
-  <div class="sec-label">Exemple — Chaval</div>
-  <div class="box box-ex"><div class="box-lbl">Texte / Support</div><p>Contexte Chaval est un personnage de bande dessinée dont le parler se caractérise par une substitution systématique des voyelles. Dans ses répliques, les voyelles /o/, /u/, /ø/, /y/ (voyelles postérieures et arrondies) sont toutes remplacées par /a/ …</p></div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(a) — 4 pts</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(a) Rétablissez la version en français standard. Transcrivez en API les deux versions (originale et standard) pour la réplique donnée. 4 pts</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>Version standard :</p></div>
-    </div>
-  </div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(b) — 4 pts</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(b) Décrivez le trait phonologique partagé par toutes les voyelles substituées (/o/, /u/, /ø/, /y/). Pourquoi /a/ est-il le terme de substitution ? 4 pts</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>Trait partagé : l'arrondissement</p></div>
-    </div>
-  </div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(c) — 2 pts</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(c) Ce changement est-il phonologique ou phonétique ? Justifiez avec le concept de paire minimale. 2 pts</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>Changement phonologique</p></div>
-    </div>
-  </div>
-  <div class="sec-label">Exemple — Geluck</div>
-  <div class="box box-ex"><div class="box-lbl">Texte / Support</div><p>Support — néologismes extraits des albums de Geluck « Je prône le protectionnement des droits linguistiques. » « Le gouvernement a enrichi son langabulaire . » « Ce projet est totalement inacceptuel . » « Votre créativitude m'impressionne. »</p></div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(a) — 8 pts</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(a) Pour chacun des quatre néologismes, identifiez le procédé de formation, décomposez les morphèmes et procédez par commutation pour les dérivations. 8 pts</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>« protectionnement »</p></div>
-    </div>
-  </div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(b) — 2 pts</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(b) Quelle est la fonction de ces néologismes dans le registre comique de Geluck ? 2 pts</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>Satire du discours officiel :</p></div>
-    </div>
-  </div>
-  <div class="sec-label">Examen décembre 2019</div>
-  <div class="box box-ex"><div class="box-lbl">Texte / Support</div><p>Texte support « Raphaël arracha la peau de chagrin des mains du vieillard. » Honoré de Balzac, La Peau de chagrin (1831)</p></div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(a) — 5 pts</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(a) Analysez la valence du verbe « arracher ». Combien d'actants comporte-t-il ici ? Identifiez chacun avec son rôle actanciel et sa fonction syntaxique. 5 pts</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>Valence : trivalent</p></div>
-    </div>
-  </div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(b) — 3 pts</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(b) Réécrivez la clause à la voix passive. Quels changements syntaxiques et informationnels observe-t-on ? 3 pts</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>Passive :</p></div>
-    </div>
-  </div>
-  <div class="box box-ex"><div class="box-lbl">Texte / Support</div><p>Texte support « Les bêtes couraient dans le couloir du chemin. À gauche : les prés. À droite : les buissons. Courir. Encore courir. Puis, soudain, s'arrêter. » Jean Giono, Le Grand Troupeau (1931)</p></div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(a) — 4 pts</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(a) Identifiez et nommez le type de chaque clause du passage. Pour les clauses averbales, précisez leur sous-type. 4 pts</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>« Les bêtes couraient dans le couloir du chemin. »</p></div>
-    </div>
-  </div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(b) — 2 pts</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(b) Commentez l'effet stylistique et informationnel de l'alternance entre clauses canoniques et non-canoniques dans ce passage. 2 pts</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>Clauses averbales thétiques :</p></div>
-    </div>
-  </div>
-  <div class="sec-label">Examen décembre 2022</div>
-  <div class="box box-ex"><div class="box-lbl">Texte / Support</div><p>Texte support — Incipit de L'Étranger « Aujourd'hui, maman est morte. Ou peut-être hier, je ne sais pas. J'ai reçu un télégramme de l'asile : « Mère décédée. Enterrement demain. Sentiments distingués. » » Albert Camus, L'Étranger (1942)</p></div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(a) — 4 pts</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(a) Analysez chacune des trois clauses du télégramme : type, structure, valeurs sémantique et informationnelle. 4 pts</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>« Mère décédée. »</p></div>
-    </div>
-  </div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(b) — 2 pts</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(b) Commentez le contraste informationnel entre la première phrase du roman (« Aujourd'hui, maman est morte. ») et les clauses du télégramme. 2 pts</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>Narration :</p></div>
-    </div>
-  </div>
-  <div class="box box-ex"><div class="box-lbl">Texte / Support</div><p>Texte support « Cette femme, je la connais depuis toujours. » « Je la connais depuis toujours, cette femme. » « C'est cette femme que je connais depuis toujours. »</p></div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(a) — 6 pts</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(a) Analysez les trois constructions : identifiez leur type (dislocation gauche, dislocation droite, clivée), décrivez la structure et précisez le rôle informationnel de chaque élément (thème/rhème). 6 pts</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>« Cette femme, je la connais depuis toujours. »</p></div>
-    </div>
-  </div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(b) — 4 pts</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(b) Dans quel contexte discursif chacune de ces constructions serait-elle la plus naturelle ? Formulez la question implicite à laquelle chaque construction répond. 4 pts</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>Dislocation gauche</p></div>
-    </div>
-  </div>
-  <div class="box box-ex"><div class="box-lbl">Texte / Support</div><p>Texte support « Au carrefour, il y avait deux voitures. Les feux de l'une brillaient dans la nuit. C'étaient de vraies lanternes de cristal. »</p></div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(a) — 4 pts</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(a) Analysez « il y avait deux voitures » : type de clause, valeur informationnelle du présentatif, structure. 4 pts</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>Type :</p></div>
-    </div>
-  </div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(b) — 4 pts</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(b) Analysez « C'étaient de vraies lanternes de cristal » : identifiez le type de construction, distinguez-la d'une clivée, commentez son effet informationnel. 4 pts</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>Type :</p></div>
-    </div>
-  </div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(c) — 2 pts</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(c) Commentez la progression informationnelle des trois phrases du passage dans leur ensemble. 2 pts</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>P1 :</p></div>
-    </div>
-  </div>
-  <div class="sec-label">Exercice blanc — Verlaine</div>
-  <div class="box box-ex"><div class="box-lbl">Texte / Support</div><p>Texte support — Jehan Rictus, Complainte de l'oubli des pauvres (1897) « Pleure pas ! C'est la vie ! Pleure pas ! C'est la vie ! L' bonhomm' qu'on a vu pleurer, C'est p't-êtr' que l'espoir l'a quitté. » Rictus écrit phonétiquement le parler populaire…</p></div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(a) — 6 pts</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(a) Relevez tous les e-caducs (e graphiques) dans ce passage. Pour chacun, indiquez s'il est réalisé ou omis, et expliquez pourquoi selon la règle des trois consonnes. 6 pts</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>« Pleure pas »</p></div>
-    </div>
-  </div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(b) — 2 pts</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(b) Que représente la graphie non-standard de Rictus (apostrophes, omissions) du point de vue sociolinguistique ? Quelle variété de langue est transcrite ? 2 pts</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>Variété :</p></div>
-    </div>
-  </div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(c) — 2 pts</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(c) Transcrivez phonétiquement (IPA entre crochets) la première strophe en français standard, puis en parler Rictus. 2 pts</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>Standard :</p></div>
-    </div>
-  </div>
-  <div class="box box-ex"><div class="box-lbl">Texte / Support</div><p>Contexte Le néologisme « démocrature » est apparu dans les médias politiques francophones pour désigner un régime qui se présente comme démocratique mais qui fonctionne comme une dictature.</p></div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(a) — 6 pts</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(a) Identifiez le procédé de formation de « démocrature ». Décomposez les éléments constitutifs et montrez le mécanisme morphologique en jeu. 6 pts</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>Procédé : mot-valise</p></div>
-    </div>
-  </div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(b) — 4 pts</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(b) Comparez avec « covoiturage » et « informatique » : sont-ils aussi des mots-valises ? Distinguez les procédés en jeu. 4 pts</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>« covoiturage »</p></div>
-    </div>
-  </div>
-  <div class="box box-ex"><div class="box-lbl">Texte / Support</div><p>Texte support — Aristide Bruant, chansonnier montmartrois (fin XIXe) « J'connais une fill' à la Villette, A s'appell' Nini peau d'chien, A n'est pas b'lle, mais à la rigolette, C'est elle qu'on aim' le mieux, ben ! »</p></div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(a) — 3 pts</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(a) Transcrivez phonétiquement en API le deuxième vers en parler populaire (tel qu'il est orthographié) et en français standard. 3 pts</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>Populaire (Bruant) :</p></div>
-    </div>
-  </div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(b) — 4 pts</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(b) Identifiez et décrivez quatre phénomènes phonologiques distinctifs du parler populaire de Bruant dans tout le passage. 4 pts</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>1. Substitution pronominale :</p></div>
-    </div>
-  </div>
-  <div class="sec-label">Exercice blanc difficile</div>
-  <div class="box box-ex"><div class="box-lbl">Texte / Support</div><p>Support — lexique financier néologique « Quantitative easing , cryptomonnaie , néobanque , désintermédiation , financer (employé comme verbe) »</p></div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(a) — 5 pts</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(a) Pour « cryptomonnaie », « néobanque » et « désintermédiation », identifiez le procédé de formation, décomposez les morphèmes et procédez par commutation pour les affixes. 5 pts</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>« cryptomonnaie »</p></div>
-    </div>
-  </div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(b) — 2 pts</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(b) « Financer » est utilisé ici comme verbe transitif. Quel procédé morphologique cela illustre-t-il ? Donnez deux autres exemples du même procédé. 2 pts</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>Procédé : dérivation verbale par suffixation</p></div>
-    </div>
-  </div>
-  <div class="box box-ex"><div class="box-lbl">Texte / Support</div><p>Texte support « Le tableau qu'il avait acheté pour une misère, c'est à Paris qu'il l'avait trouvé. »</p></div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(a) — 6 pts</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(a) Analysez la totalité de cette phrase complexe : clauses, fonctions, constructions détachées, dynamique informationnelle. 6 pts</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>Structure globale :</p></div>
-    </div>
-  </div>
-  <div class="box box-ex"><div class="box-lbl">Texte / Support</div><p>Texte support — titre et chapeau de presse « Fatigués, désabusés, les électeurs ont boudé les urnes. » « Ces résultats, personne ne les avait anticipés. » « C'est la démission du premier ministre qui a tout précipité. »</p></div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(a) — 7 pts</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(a) Analysez chaque phrase : identifiez le type de construction en gras, sa valeur informationnelle, et ses propriétés syntaxiques (déplaçable ? supprimable ? reprise pronominale ?). 7 pts</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>P1 — « Fatigués, désabusés, les électeurs ont boudé les urnes. »</p></div>
-    </div>
-  </div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(b) — 3 pts</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(b) Réécrivez la deuxième phrase sans dislocation. Quelle valeur informationnelle est perdue ? Dans quel contexte discursif la dislocation gauche est-elle préférable ? 3 pts</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>Sans dislocation :</p></div>
-    </div>
-  </div>
-  <div class="box box-ex"><div class="box-lbl">Texte / Support</div><p>Texte support « Sous le pont Mirabeau coule la Seine Et nos amours Faut-il qu'il m'en souvienne La joie venait toujours après la peine » Guillaume Apollinaire, Alcools (1913)</p></div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(a) — 4 pts</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(a) Analysez syntaxiquement la première phrase : type de clause, ordre des constituants, valeur informationnelle de cet ordre. 4 pts</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>Type :</p></div>
-    </div>
-  </div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(b) — 3 pts</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(b) Analysez les e-caducs dans « souvienne » et « peine ». Transcrivez phonétiquement les vers 3 et 4 en réalisation standard. 3 pts</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>« souvienne » (fin de vers 3) :</p></div>
-    </div>
-  </div>
-  <div class="exo-block">
-    <div class="exo-header"><span class="exo-tag">Examen</span><span class="exo-title">(c) — 3 pts</span></div>
-    <div class="exo-body">
-      <p class="exo-q">(c) Analysez morphologiquement « souvienne » : identifiez le verbe, sa classe morphologique, et commentez la construction pronominale. 3 pts</p>
-      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span></div>
-      <div class="box box-ret" style="margin-top:.5rem"><div class="box-lbl">Corrigé</div><p>Verbe :</p></div>
-    </div>
-  </div>
-  <div class="sec-label">Bilan — Erreurs fréquentes aux examens</div>
-  <div class="box box-att"><div class="box-lbl">⚠ À éviter absolument</div><p><strong>Erreur 1</strong> : Erreur 1 Jugements normatifs dans une analyse linguistique Écrire qu'une variété est "mal-parlée", "vulgaire" ou "fautive" n'est pas de la linguistique — c'est de la normativité. Règle : la linguistiq </p></div>
-</div>
-
 <!-- ══════════════ PAGE DE FIN ══════════════ -->
 <div class="page" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:297mm">
   <div style="font-family:'DM Serif Display',serif;font-size:2.4rem;color:#7c6cc0;margin-bottom:1.2rem">Bon courage !</div>
@@ -3608,28 +2882,13 @@ tr:last-child td{border-bottom:none}
 
 <script>
 // Persist checkbox state via localStorage
-// v2: reset all old saved values on first load with new key prefix
-var CAHIER_VERSION = 'v2';
 function saveProgress(el) {
-  localStorage.setItem('cahier2_' + el.id, el.checked ? '1' : '0');
+  localStorage.setItem('cahier_' + el.id, el.checked ? '1' : '0');
 }
 function loadProgress() {
-  // Efface toutes les anciennes clés cahier_ (ancienne version)
-  Object.keys(localStorage).forEach(function(k) {
-    if (k.startsWith('cahier_')) localStorage.removeItem(k);
-  });
-  // Charge uniquement les clés cahier2_
   document.querySelectorAll('.ch-progress input[type=checkbox]').forEach(function(el) {
-    var v = localStorage.getItem('cahier2_' + el.id);
-    el.checked = (v === '1');
-  });
-}
-function resetAllProgress() {
-  Object.keys(localStorage).forEach(function(k) {
-    if (k.startsWith('cahier2_')) localStorage.removeItem(k);
-  });
-  document.querySelectorAll('.ch-progress input[type=checkbox]').forEach(function(el) {
-    el.checked = false;
+    var v = localStorage.getItem('cahier_' + el.id);
+    if (v === '1') el.checked = true;
   });
 }
 document.addEventListener('DOMContentLoaded', loadProgress);
