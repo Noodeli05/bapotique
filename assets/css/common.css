@@ -261,6 +261,72 @@
   .bap-resume-time { display: none; }
 }
 
+/* ── Bouton mode focus ── */
+.bap-focus-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: .32rem .45rem;
+  border-radius: 7px;
+  color: var(--mu, rgba(200,195,220,0.7));
+  transition: background .15s;
+  line-height: 1;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+.bap-focus-btn:hover {
+  background: var(--lav-bg, rgba(200,184,240,0.12));
+}
+
+/* En mode focus : masquer la barre de navigation */
+html.bap-focus #bap-nav { display: none; }
+
+/* Bouton flottant pour quitter le mode focus */
+.bap-focus-exit {
+  display: none;
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 9999;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background: rgba(45,59,78,0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(200,184,240,0.35);
+  color: var(--lav, #c8b8f0);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: background .15s, transform .15s, opacity .25s;
+  opacity: 0;
+  transform: scale(0.85);
+}
+.bap-focus-exit:hover {
+  background: rgba(200,184,240,0.28);
+  transform: scale(1.08);
+}
+html.bap-focus .bap-focus-exit {
+  display: flex;
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* En mode focus : sidebar collapse (revision_complet) */
+@media (min-width: 769px) {
+  #sidebar {
+    transition: width .3s ease, min-width .3s ease, padding .3s ease;
+  }
+  html.bap-focus #sidebar {
+    width: 0 !important;
+    min-width: 0 !important;
+    overflow: hidden;
+    padding: 0 !important;
+  }
+}
+
 /* ── Fil d'Ariane (breadcrumb) ── */
 #bap-breadcrumb {
   max-width: 960px;
