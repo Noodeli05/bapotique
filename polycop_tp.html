@@ -1226,6 +1226,27 @@ function _ttsInject_page(){
 </script>
 <script>
 document.addEventListener('DOMContentLoaded', function(){
+  // Breadcrumb + progress context via IntersectionObserver
+  var dosEls = document.querySelectorAll('.dossier[id]');
+  if(dosEls.length && typeof bapBreadcrumbPush === 'function'){
+    // Set initial breadcrumb for first dossier
+    var _h = dosEls[0].querySelector('.dos-title');
+    if(_h) bapBreadcrumbPush('D1 — ' + _h.textContent.trim(), '#d1');
+    if(typeof bapSetProgressContext === 'function') bapSetProgressContext('D1');
+    var ioTP = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          var h2 = e.target.querySelector('.dos-title');
+          var badge = e.target.querySelector('.dos-badge');
+          var lbl = (badge ? badge.textContent.trim() + ' — ' : '') + (h2 ? h2.textContent.trim() : e.target.id);
+          if(typeof bapBreadcrumbPush==='function') bapBreadcrumbPush(lbl,'#'+e.target.id);
+          if(typeof bapSetProgressContext==='function') bapSetProgressContext((badge||{textContent:e.target.id}).textContent.trim());
+        }
+      });
+    },{rootMargin:'-5% 0px -80% 0px'});
+    dosEls.forEach(function(d){ ioTP.observe(d); });
+  }
+
   var NAMES = ['','Les phonèmes','Les morphèmes','Les syntagmes','Valence verbale et rôles actantiels','Dynamique informationnelle','Passif, impersonnel, pronominal','Les clauses atypiques','Adjectifs épithètes et constructions détachées','De la clause à la phrase — dislocations'];
   var btnStyle = 'background:var(--card);border:1px solid var(--bdr);border-radius:10px;padding:.55rem 1rem;color:var(--mu);cursor:pointer;font-size:.8rem;font-family:inherit;display:inline-flex;align-items:center;gap:.35rem;transition:background .15s,color .15s;white-space:nowrap';
   for (var i = 1; i <= 9; i++) {

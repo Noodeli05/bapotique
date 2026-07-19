@@ -1455,6 +1455,14 @@ function showDos(id){
   if(d){var tc=d.querySelectorAll('.tab-content');var tb=d.querySelectorAll('.tab-btn');tc.forEach(t=>t.classList.remove('active'));tb.forEach(b=>b.classList.remove('active'));if(tc[0])tc[0].classList.add('active');if(tb[0])tb[0].classList.add('active');if(tc[0])initAccordion(tc[0]);}
   window.scrollTo(0,0);
   document.getElementById('sidebar').classList.remove('open');
+  // Dynamic breadcrumb + progress context
+  if(d){
+    var h2=d.querySelector('.dos-hd h2');
+    var lbl=h2?h2.textContent.trim():'D'+id;
+    if(typeof bapBreadcrumbPush==='function') bapBreadcrumbPush(lbl,'#');
+    if(typeof bapSetProgressContext==='function') bapSetProgressContext(lbl.split('—')[0].trim());
+  }
+  window._bapRevDos=id;
 }
 function showTab(el,i){
   var dos=el.closest('.dossier');
@@ -1471,6 +1479,12 @@ function revAns(btn){var b=btn.nextElementSibling;if(b){b.classList.toggle('show
 function revAllQ(sec){sec.querySelectorAll('.ablk,.exo-ans').forEach(b=>b.classList.add('show'));sec.querySelectorAll('.btn-rev').forEach(b=>b.textContent='Masquer');}
 document.getElementById('menu-tog').addEventListener('click',function(){document.getElementById('sidebar').classList.toggle('open');});
 showDos(0);
+// Re-push breadcrumb after common.js nav init (showDos(0) runs before DOMContentLoaded)
+document.addEventListener('DOMContentLoaded',function(){
+  var _id=window._bapRevDos||0;
+  var _d=document.getElementById('d'+_id);
+  if(_d&&typeof bapBreadcrumbPush==='function'){var _h=_d.querySelector('.dos-hd h2');if(_h)bapBreadcrumbPush(_h.textContent.trim(),'#');}
+});
 // Prev/next chapter navigation at bottom of each dossier
 (function(){
   var NAMES=['Introduction & méthode','Phonétique & phonologie','Graphémique','Morphologie','Clause canonique','Ordre & DI','Types de clauses','Extensions du GN','Extensions du GV','Clause complexe','Phrase graphique'];

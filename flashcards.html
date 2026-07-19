@@ -103,8 +103,12 @@ body::before{
 .fc-main{flex:1;padding:1.5rem;overflow-y:auto;max-width:900px;margin:0 auto;width:100%;min-width:0;word-break:break-word;overflow-wrap:break-word}
 
 /* ── Sidebar ── */
-.sidebar-section{margin-bottom:1rem}
-.sidebar-label{font-size:.68rem;font-weight:700;letter-spacing:.08em;color:var(--mu);text-transform:uppercase;padding:.2rem .5rem;margin-bottom:.3rem}
+.sidebar-section{margin-bottom:.5rem}
+.sidebar-label{font-size:.68rem;font-weight:700;letter-spacing:.08em;color:var(--mu);text-transform:uppercase;padding:.28rem .5rem;margin-bottom:0;display:flex;align-items:center;cursor:pointer;user-select:none;border-radius:6px;transition:background .15s}
+.sidebar-label:hover{background:rgba(200,184,240,0.09);color:rgba(232,228,240,.75)}
+.sl-chev{margin-left:auto;flex-shrink:0;transition:transform .22s;color:rgba(232,228,240,.28)}
+.sidebar-section-body{padding-top:.3rem}
+.sidebar-section-body.ss-closed{display:none}
 .filter-group{display:flex;flex-direction:column;gap:.15rem}
 .filter-btn{display:flex;align-items:center;gap:.5rem;padding:.38rem .6rem;border-radius:7px;cursor:pointer;font-size:.8rem;color:rgba(232,228,240,0.75);background:none;border:none;text-align:left;transition:background .15s,color .15s;width:100%}
 .filter-btn:hover,.filter-btn.active{background:rgba(200,184,240,0.15);color:#fff}
@@ -285,27 +289,37 @@ body.zen-mode .fc-area{gap:1.2rem;padding-top:2rem}
 <div class="fc-layout">
 <!-- Sidebar -->
 <aside class="fc-sidebar" id="fc-sidebar">
-  <div class="sidebar-section">
-    <div class="sidebar-label">Filtres</div>
-    <div class="filter-group" id="filter-group">
-      <button class="filter-btn active" data-filter="all" onclick="applyFilter('all',this)">
-        <svg class="ic"><use href="#i-book-open"/></svg> Toutes les cartes<span class="count" id="count-all">0</span>
-      </button>
-      <button class="filter-btn" data-filter="fav" onclick="applyFilter('fav',this)">
-        <svg class="ic ic-fill"><use href="#i-star"/></svg> Favoris<span class="count" id="count-fav">0</span>
-      </button>
-      <button class="filter-btn" data-filter="review" onclick="applyFilter('review',this)">
-        <svg class="ic"><use href="#i-x-circle"/></svg> À revoir<span class="count" id="count-review">0</span>
-      </button>
-      <button class="filter-btn" data-filter="mastered" onclick="applyFilter('mastered',this)">
-        <svg class="ic"><use href="#i-check-circle"/></svg> Maîtrisées<span class="count" id="count-mastered">0</span>
-      </button>
+  <div class="sidebar-section" id="ss-filtres">
+    <div class="sidebar-label" onclick="toggleSidebarSection('filtres')">
+      Filtres
+      <svg class="ic sl-chev" style="width:.72em;height:.72em"><use href="#i-chevron-right"/></svg>
+    </div>
+    <div class="sidebar-section-body" id="ssb-filtres">
+      <div class="filter-group" id="filter-group">
+        <button class="filter-btn active" data-filter="all" onclick="applyFilter('all',this)">
+          <svg class="ic"><use href="#i-book-open"/></svg> Toutes les cartes<span class="count" id="count-all">0</span>
+        </button>
+        <button class="filter-btn" data-filter="fav" onclick="applyFilter('fav',this)">
+          <svg class="ic ic-fill"><use href="#i-star"/></svg> Favoris<span class="count" id="count-fav">0</span>
+        </button>
+        <button class="filter-btn" data-filter="review" onclick="applyFilter('review',this)">
+          <svg class="ic"><use href="#i-x-circle"/></svg> À revoir<span class="count" id="count-review">0</span>
+        </button>
+        <button class="filter-btn" data-filter="mastered" onclick="applyFilter('mastered',this)">
+          <svg class="ic"><use href="#i-check-circle"/></svg> Maîtrisées<span class="count" id="count-mastered">0</span>
+        </button>
+      </div>
     </div>
   </div>
 
-  <div class="sidebar-section">
-    <div class="sidebar-label">Sources & Chapitres</div>
-    <div id="accordion-group"></div>
+  <div class="sidebar-section" id="ss-sources">
+    <div class="sidebar-label" onclick="toggleSidebarSection('sources')">
+      Sources &amp; Chapitres
+      <svg class="ic sl-chev" style="width:.72em;height:.72em"><use href="#i-chevron-right"/></svg>
+    </div>
+    <div class="sidebar-section-body ss-closed" id="ssb-sources">
+      <div id="accordion-group"></div>
+    </div>
   </div>
 </aside>
 
@@ -448,6 +462,7 @@ const state = {
     review:   new Set(_loadSaved(LS_REVIEW,   '[]')),
   },
   favorites: new Set(_loadSaved(LS_FAV, '[]')),
+  consecKnow: 0,
 };
 
 const _SM2_KEY = 'bap_sm2', _BAP_LOG = 'bap_log', _BAP_STK = 'bap_streak', _SM2_MODE = 'bap_sm2_mode';
@@ -600,12 +615,19 @@ function markKnow() {
   updateDash();
   updateSidebarCounts();
   _updateSM2Info(card);
+  state.consecKnow++;
+  if (state.consecKnow > 0 && state.consecKnow % 10 === 0) {
+    if (typeof window.bapConfetti === 'function') window.bapConfetti({count:60});
+    else confetti();
+    if (typeof window.bapToast === 'function') window.bapToast('🔥 ' + state.consecKnow + ' bonnes réponses d\'affilée !', 'success', 3000);
+  }
   nextCard();
 }
 
 function markReview() {
   const card = state.filtered[state.index];
   if (!card) return;
+  state.consecKnow = 0;
   state.session.review.add(card.id);
   state.session.mastered.delete(card.id);
   saveSession();
@@ -946,6 +968,33 @@ document.addEventListener('keydown', e => {
   }
 });
 
+// ─── Sidebar sections collapsible ─────────────────────────────────────────────
+function _ssSavedState() {
+  try { return JSON.parse(localStorage.getItem('bap_sidebar_sects') || '{}'); } catch(e) { return {}; }
+}
+function _ssApply(id, isOpen) {
+  var body = document.getElementById('ssb-' + id);
+  var label = document.querySelector('#ss-' + id + ' .sidebar-label');
+  var chev  = label ? label.querySelector('.sl-chev') : null;
+  if (!body) return;
+  if (isOpen) { body.classList.remove('ss-closed'); } else { body.classList.add('ss-closed'); }
+  if (chev) chev.style.transform = isOpen ? 'rotate(90deg)' : '';
+}
+(function initSidebarSections() {
+  var saved = _ssSavedState();
+  _ssApply('filtres', 'filtres' in saved ? saved['filtres'] : true);
+  _ssApply('sources', 'sources' in saved ? saved['sources'] : false);
+})();
+function toggleSidebarSection(id) {
+  var body = document.getElementById('ssb-' + id);
+  if (!body) return;
+  var nowOpen = body.classList.contains('ss-closed');
+  _ssApply(id, nowOpen);
+  var s = _ssSavedState();
+  s[id] = nowOpen;
+  try { localStorage.setItem('bap_sidebar_sects', JSON.stringify(s)); } catch(e) {}
+}
+
 // ─── Init ─────────────────────────────────────────────────────────────────────
 document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
 document.getElementById('shortcuts-toggle').addEventListener('click', () => {
@@ -1024,8 +1073,15 @@ function _bapLog(ok) {
   let st=JSON.parse(localStorage.getItem(_BAP_STK)||'{"last":"","count":0}');
   if(st.last!==today){
     const yest=new Date(Date.now()-86400000).toISOString().slice(0,10);
+    const prev=st.count;
     st.count=st.last===yest?st.count+1:1; st.last=today;
     localStorage.setItem(_BAP_STK,JSON.stringify(st));
+    const milestones=[5,10,25,50,100];
+    if(milestones.includes(st.count)&&st.count>prev){
+      if(typeof window.bapConfetti==='function')window.bapConfetti({count:120});
+      else confetti();
+      if(typeof window.bapToast==='function')window.bapToast('🎉 Série de '+st.count+' jours consécutifs !','success',4000);
+    }
   }
 }
 

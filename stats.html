@@ -274,6 +274,40 @@ body::before{
 .mat-n{font-family:'DM Serif Display',serif;font-size:1.3rem;line-height:1;color:var(--tx);font-variant-numeric:tabular-nums}
 .mat-pct{font-size:.62rem;color:var(--tx-faint);margin-top:.1rem}
 
+/* ── Exam tracking ── */
+.exam-header{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:1.1rem}
+.exam-days-row{display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap}
+.exam-days-big{font-family:'DM Serif Display',serif;font-size:clamp(2rem,6vw,3rem);font-weight:400;line-height:1;color:var(--peach);font-variant-numeric:tabular-nums}
+.exam-days-sub{font-size:.82rem;color:var(--mu);line-height:1.4}
+.exam-phase-badge{padding:.3rem .8rem;border-radius:20px;font-size:.7rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;flex-shrink:0;border:1px solid transparent;align-self:center}
+.exam-ph1{background:rgba(168,216,196,.15);color:var(--mint);border-color:rgba(168,216,196,.3)}
+.exam-ph2{background:rgba(168,200,240,.15);color:var(--sky);border-color:rgba(168,200,240,.3)}
+.exam-ph3{background:rgba(240,200,160,.15);color:var(--peach);border-color:rgba(240,200,160,.3)}
+.exam-pbars{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.1rem}
+.exam-pbar-row{display:flex;align-items:center;gap:.6rem}
+.exam-pbar-lbl{font-size:.72rem;color:var(--mu);width:90px;flex-shrink:0}
+.exam-pbar-bg{flex:1;height:8px;background:rgba(255,255,255,.06);border-radius:6px;overflow:hidden}
+[data-theme="light"] .exam-pbar-bg{background:rgba(0,0,0,.07)}
+.exam-pbar-fill{height:100%;border-radius:6px;transition:width .65s cubic-bezier(.4,0,.2,1)}
+.exam-pbar-time{background:linear-gradient(90deg,var(--sky),var(--lav))}
+.exam-pbar-content{background:linear-gradient(90deg,var(--mint),var(--sage))}
+.exam-pbar-content.behind{background:linear-gradient(90deg,#f0a060,#e87040)}
+.exam-pbar-pct{font-size:.7rem;font-variant-numeric:tabular-nums;color:var(--mu);width:32px;text-align:right;flex-shrink:0}
+.exam-counters{display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem;margin-bottom:1.1rem}
+.exam-counter{background:var(--card2);border:1px solid var(--bdr);border-radius:12px;padding:.8rem .65rem;text-align:center}
+.exam-counter-n{font-family:'DM Serif Display',serif;font-size:1.55rem;line-height:1;color:var(--lav);font-variant-numeric:tabular-nums;margin-bottom:.22rem}
+.exam-counter-lbl{font-size:.63rem;color:var(--mu);line-height:1.4}
+.exam-hist-title{font-size:.7rem;font-weight:600;color:var(--mu);letter-spacing:.04em;text-transform:uppercase;margin-bottom:.55rem}
+.exam-hist{display:flex;gap:4px;align-items:flex-end;height:56px}
+.exam-hist-col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:3px}
+.exam-hist-bar{width:100%;border-radius:3px 3px 0 0;min-height:2px}
+.exam-hist-bar-today{background:var(--lav)}
+.exam-hist-bar-past{background:rgba(200,184,240,.30)}
+.exam-hist-bar-future{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
+.exam-hist-day{font-size:.62rem;color:var(--tx-faint)}
+.exam-hist-day-today{font-size:.62rem;color:var(--lav);font-weight:600}
+@media(max-width:480px){.exam-pbar-lbl{width:70px}}
+
 /* ── Empty state ── */
 .empty{text-align:center;padding:2.5rem 1rem;color:var(--mu)}
 .empty-icon{font-size:2rem;margin-bottom:.75rem}
@@ -356,6 +390,50 @@ footer strong{color:#c8b8f0}
       <a href="flashcards.html" class="stat-cta-btn" style="display:inline-flex;align-items:center;gap:.35rem;background:rgba(200,184,240,0.12);border:1px solid rgba(200,184,240,0.25);color:var(--lav);padding:.4rem .9rem;border-radius:7px;font-size:.78rem;font-weight:600;text-decoration:none;margin-top:.4rem;transition:background .15s">
         <svg class="ic"><use href="#i-layers"/></svg> Réviser maintenant →
       </a>
+    </div>
+  </div>
+
+  <!-- ── Exam tracking ── -->
+  <div class="section" id="exam-section">
+    <div class="sec-head">
+      <h2 class="sec-title">Suivi d'objectif examen</h2>
+      <span class="exam-phase-badge" id="exam-phase-badge"></span>
+    </div>
+    <div class="exam-header">
+      <div class="exam-days-row">
+        <span class="exam-days-big" id="exam-days-big">J-43</span>
+        <span class="exam-days-sub">avant l'examen · 31 août 2026</span>
+      </div>
+    </div>
+    <div class="exam-pbars">
+      <div class="exam-pbar-row">
+        <span class="exam-pbar-lbl">Temps écoulé</span>
+        <div class="exam-pbar-bg"><div class="exam-pbar-fill exam-pbar-time" id="exam-pbar-time" style="width:0%"></div></div>
+        <span class="exam-pbar-pct" id="exam-pbar-time-pct">—</span>
+      </div>
+      <div class="exam-pbar-row">
+        <span class="exam-pbar-lbl">Contenu vu</span>
+        <div class="exam-pbar-bg"><div class="exam-pbar-fill exam-pbar-content" id="exam-pbar-content" style="width:0%"></div></div>
+        <span class="exam-pbar-pct" id="exam-pbar-content-pct">—</span>
+      </div>
+    </div>
+    <div class="exam-counters">
+      <div class="exam-counter">
+        <div class="exam-counter-n" id="exam-ctd-cards">—</div>
+        <div class="exam-counter-lbl">cartes jamais vues</div>
+      </div>
+      <div class="exam-counter">
+        <div class="exam-counter-n" id="exam-ctd-chapters">—</div>
+        <div class="exam-counter-lbl">chapitres à découvrir</div>
+      </div>
+      <div class="exam-counter">
+        <div class="exam-counter-n" id="exam-ctd-sessions">—</div>
+        <div class="exam-counter-lbl">séances de révision</div>
+      </div>
+    </div>
+    <div>
+      <div class="exam-hist-title">Activité cette semaine</div>
+      <div id="exam-hist"></div>
     </div>
   </div>
 
@@ -829,6 +907,99 @@ function renderMaturity(sm2){
     </div>`;
 }
 
+/* ── Exam objective tracking ── */
+function renderExamTracking(sm2, log, cards) {
+  var EXAM  = new Date(2026, 7, 31); // Aug 31
+  var START = new Date(2026, 3,  1); // Apr  1
+  var today = new Date(); today.setHours(0,0,0,0);
+
+  var msLeft   = EXAM - today;
+  var daysLeft = Math.max(0, Math.ceil(msLeft / 86400000));
+  var bigEl = document.getElementById('exam-days-big');
+  if (bigEl) bigEl.textContent = daysLeft > 0 ? 'J-' + daysLeft : 'Aujourd\'hui !';
+
+  var totalMs   = EXAM - START;
+  var elapsedMs = today - START;
+  var timePct    = Math.min(100, Math.max(0, Math.round(elapsedMs / totalMs * 100)));
+
+  var seenCards = 0;
+  for (var id in sm2) { if (sm2[id].reps > 0) seenCards++; }
+  var contentPct = Math.round(seenCards / TOTAL * 100);
+
+  var tBar = document.getElementById('exam-pbar-time');
+  var cBar = document.getElementById('exam-pbar-content');
+  if (tBar) tBar.style.width = timePct + '%';
+  if (cBar) {
+    cBar.style.width = contentPct + '%';
+    if (contentPct < timePct - 10) cBar.classList.add('behind');
+    else cBar.classList.remove('behind');
+  }
+  var tPct = document.getElementById('exam-pbar-time-pct');
+  var cPct = document.getElementById('exam-pbar-content-pct');
+  if (tPct) tPct.textContent = timePct + '%';
+  if (cPct) cPct.textContent = contentPct + '%';
+
+  var PHASES = [
+    { s:new Date(2026,3,1),  e:new Date(2026,4,31),  lbl:'Phase 1 · Découverte',         cls:'exam-ph1' },
+    { s:new Date(2026,5,1),  e:new Date(2026,6,14),  lbl:'Phase 2 · Consolidation',            cls:'exam-ph2' },
+    { s:new Date(2026,6,15), e:new Date(2026,7,31),  lbl:'Phase 3 · Révision intensive',  cls:'exam-ph3' }
+  ];
+  var badge = document.getElementById('exam-phase-badge');
+  if (badge) {
+    var found = null;
+    for (var i=0; i<PHASES.length; i++) { if (today >= PHASES[i].s && today <= PHASES[i].e) { found = PHASES[i]; break; } }
+    badge.textContent = found ? found.lbl : (daysLeft <= 0 ? 'Examen passé' : 'En préparation');
+    badge.className   = 'exam-phase-badge ' + (found ? found.cls : 'exam-ph3');
+  }
+
+  var cardsUnseen = TOTAL - seenCards;
+  var chapDiscovery = 0;
+  if (cards) {
+    var chapSeen = {}, chapTotal = {};
+    for (var j=0; j<cards.length; j++) {
+      var ch = cards[j].chapter || '(divers)';
+      if (!chapTotal[ch]) { chapTotal[ch] = 0; chapSeen[ch] = 0; }
+      chapTotal[ch]++;
+      var sc = sm2[cards[j].id];
+      if (sc && sc.reps > 0) chapSeen[ch]++;
+    }
+    for (var ch2 in chapTotal) { if (chapSeen[ch2] === 0) chapDiscovery++; }
+  }
+  var sessionDates = {};
+  for (var k=0; k<log.length; k++) sessionDates[log[k].date] = 1;
+  var sessionCount = Object.keys(sessionDates).length;
+
+  var ctdCards     = document.getElementById('exam-ctd-cards');
+  var ctdChapters  = document.getElementById('exam-ctd-chapters');
+  var ctdSessions  = document.getElementById('exam-ctd-sessions');
+  if (ctdCards)    ctdCards.textContent    = cardsUnseen;
+  if (ctdChapters) ctdChapters.textContent = cards ? chapDiscovery : '—';
+  if (ctdSessions) ctdSessions.textContent = sessionCount;
+
+  var mn   = logMap(log);
+  var dow  = (today.getDay() + 6) % 7;
+  var DAYS = ['L','M','M','J','V','S','D'];
+  var weekData = [];
+  for (var d=0; d<7; d++) {
+    var wd = new Date(today); wd.setDate(today.getDate() - dow + d);
+    var ws = ymd(wd);
+    weekData.push({ s:ws, n:mn[ws]||0, isToday:ws===ymd(today), isFuture:wd>today, lbl:DAYS[d] });
+  }
+  var maxN = 1;
+  for (var m=0; m<weekData.length; m++) { if (weekData[m].n > maxN) maxN = weekData[m].n; }
+  var histHtml = '<div class="exam-hist">';
+  for (var h=0; h<weekData.length; h++) {
+    var w = weekData[h];
+    var barH   = w.isFuture ? 2 : Math.max(2, Math.round(w.n / maxN * 50));
+    var barCls = w.isFuture ? 'exam-hist-bar-future' : (w.isToday ? 'exam-hist-bar-today' : 'exam-hist-bar-past');
+    var dayCls = w.isToday ? 'exam-hist-day-today' : 'exam-hist-day';
+    histHtml += '<div class="exam-hist-col"><div class="exam-hist-bar ' + barCls + '" style="height:' + barH + 'px" title="' + w.n + ' cartes"></div><div class="' + dayCls + '">' + w.lbl + '</div></div>';
+  }
+  histHtml += '</div>';
+  var histEl = document.getElementById('exam-hist');
+  if (histEl) histEl.innerHTML = histHtml;
+}
+
 /* ── Empty state ── */
 function emptyHTML(msg){
   return `<div class="empty">
@@ -844,6 +1015,7 @@ function renderAll(){
   const stats = computeStats(data.sm2, data.streak);
 
   renderStats(stats);
+  renderExamTracking(data.sm2, data.log, data.cards);
 
   const now = new Date();
   document.getElementById('last-updated').textContent =
