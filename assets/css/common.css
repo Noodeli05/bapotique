@@ -156,3 +156,104 @@
     padding-left: calc(.8rem - 2px);
   }
 }
+
+/* ── Carte "Reprendre où j'en étais" (index.html) ── */
+#bap-resume {
+  max-width: 960px;
+  margin: .65rem auto 0;
+  padding: 0 2rem;
+}
+
+.bap-resume-card {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding: .62rem 1rem .62rem 1.1rem;
+  background: var(--glass, rgba(255,255,255,0.10));
+  border: 1px solid rgba(200,184,240,0.25);
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--tx, #e8e4f0);
+  transition: background .15s, border-color .15s, transform .15s;
+  position: relative;
+  overflow: hidden;
+}
+.bap-resume-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200,184,240,0.22), transparent);
+  pointer-events: none;
+}
+.bap-resume-card:hover {
+  background: var(--glass-hover, rgba(255,255,255,0.15));
+  border-color: rgba(200,184,240,0.45);
+  transform: translateY(-1px);
+}
+
+.bap-resume-icon {
+  color: var(--lav, #c8b8f0);
+  flex-shrink: 0;
+  opacity: .85;
+}
+
+.bap-resume-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  flex-wrap: wrap;
+}
+
+.bap-resume-label {
+  font-size: .68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  color: var(--lav, #c8b8f0);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.bap-resume-page {
+  font-size: .88rem;
+  font-weight: 600;
+  color: var(--tx, #e8e4f0);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bap-resume-time {
+  font-size: .72rem;
+  color: var(--mu, rgba(232,228,240,.55));
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-left: auto;
+  padding-left: .5rem;
+}
+
+.bap-resume-dismiss {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--mu, rgba(232,228,240,.55));
+  line-height: 1;
+  padding: .25rem .35rem;
+  border-radius: 6px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  transition: color .15s, background .15s;
+  margin-left: .25rem;
+}
+.bap-resume-dismiss:hover {
+  color: var(--tx, #e8e4f0);
+  background: rgba(255,255,255,.08);
+}
+
+@media (max-width: 600px) {
+  #bap-resume { padding: 0 1rem; }
+  .bap-resume-time { display: none; }
+}

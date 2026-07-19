@@ -263,6 +263,43 @@ footer strong{color:var(--lav)}
 
 <div id="bap-nav"></div>
 
+<!-- Point 2 : reprendre où j'en étais -->
+<div id="bap-resume" style="display:none"></div>
+<script>
+(function(){
+  try {
+    var raw = localStorage.getItem('bap_last_page');
+    if (!raw) return;
+    if (sessionStorage.getItem('bap_resume_dismissed') === '1') return;
+    var d = JSON.parse(raw);
+    if (!d || !d.href || !d.label) return;
+    var diff = Math.floor((new Date().getTime() - (d.ts || 0)) / 1000);
+    var t;
+    if (diff < 60) t = 'à l\'instant';
+    else if (diff < 3600) t = 'il y a ' + Math.floor(diff/60) + ' min';
+    else if (diff < 86400) t = 'il y a ' + Math.floor(diff/3600) + ' h';
+    else { var j = Math.floor(diff/86400); t = 'il y a ' + j + (j > 1 ? ' jours' : ' jour'); }
+    var el = document.getElementById('bap-resume');
+    if (!el) return;
+    el.innerHTML =
+      '<a href="' + d.href + '" class="bap-resume-card">' +
+        '<svg class="ic bap-resume-icon"><use href="#i-rotate-ccw"/></svg>' +
+        '<span class="bap-resume-text">' +
+          '<span class="bap-resume-label">Reprendre</span>' +
+          '<span class="bap-resume-page">' + d.label + '</span>' +
+        '</span>' +
+        '<span class="bap-resume-time">' + t + '</span>' +
+        '<button class="bap-resume-dismiss" ' +
+          'onclick="event.preventDefault();event.stopPropagation();' +
+          'try{sessionStorage.setItem(\'bap_resume_dismissed\',\'1\')}catch(x){}' +
+          'document.getElementById(\'bap-resume\').style.display=\'none\'" ' +
+          'title="Ignorer"><svg class="ic"><use href="#i-x"/></svg></button>' +
+      '</a>';
+    el.style.display = '';
+  } catch(e) {}
+})();
+</script>
+
 <section class="hero">
   <div class="hero-glow"></div>
   <div class="hero-badge">UNIL · R. Mahrer · 2025</div>

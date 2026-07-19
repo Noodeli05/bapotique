@@ -110,11 +110,35 @@
     window.toggleTheme = bapToggleTheme;
   }
 
-  /* ── API publique ── */
-  window.bapToggleTheme = bapToggleTheme;
-  window.bapToggleMenu  = bapToggleMenu;
-  window.bapInitNav     = bapInitNav;
+  /* ── Sauvegarde de la dernière page visitée ──
+     Écrit dans bap_last_page : { href, label, ts }
+     Ignoré sur index.html (page d'accueil) */
+  function bapSaveLastPage() {
+    var current = location.pathname.split('/').pop() || 'index.html';
+    if (current === 'index.html' || current === '') return;
+    var i, page = null;
+    for (i = 0; i < BAP_PAGES.length; i++) {
+      if (BAP_PAGES[i].href === current) { page = BAP_PAGES[i]; break; }
+    }
+    if (!page) return;
+    try {
+      localStorage.setItem('bap_last_page', JSON.stringify({
+        href: page.href,
+        label: page.label,
+        ts: new Date().getTime()
+      }));
+    } catch (e) {}
+  }
 
-  document.addEventListener('DOMContentLoaded', bapInitNav);
+  /* ── API publique ── */
+  window.bapToggleTheme  = bapToggleTheme;
+  window.bapToggleMenu   = bapToggleMenu;
+  window.bapInitNav      = bapInitNav;
+  window.bapSaveLastPage = bapSaveLastPage;
+
+  document.addEventListener('DOMContentLoaded', function () {
+    bapInitNav();
+    bapSaveLastPage();
+  });
 
 })();
