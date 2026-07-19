@@ -194,7 +194,7 @@ input,textarea,select{font-size:max(16px,1em)!important}
 .poly-body li.sub2{margin-left:2.4rem;list-style-type:square}
 .poly-body p.normal{font-size:.8rem;color:var(--mu);line-height:1.6;border-left:2px solid var(--bdr);padding-left:.7rem;margin:.35rem 0 .6rem}
 /* ── STABILO ── */
-.hl{border-radius:2px;cursor:pointer;padding:0 2px;transition:filter .15s;color:var(--tx)!important}
+.hl{border-radius:2px;cursor:pointer;padding:0 2px;transition:filter .15s;color:var(--tx)!important;-webkit-tap-highlight-color:rgba(255,255,255,0.2);touch-action:manipulation;user-select:none;-webkit-user-select:none}
 .hl:hover{filter:brightness(1.15)}
 .hl-y{background:rgba(255,224,0,0.50)}
 .hl-p{background:rgba(255,100,180,0.42)}
@@ -2990,8 +2990,8 @@ function togglePolySection(head){
   var polyTab=document.getElementById('tab-polycop');
   if(!polyTab)return;
 
-  // Show toolbar on text selection inside poly-body
-  polyTab.addEventListener('mouseup',function(){
+  // Show toolbar on text selection inside poly-body (mouse + touch)
+  function onSelectionEnd(){
     setTimeout(function(){
       var sel=window.getSelection();
       if(!sel||sel.isCollapsed||!sel.rangeCount)return;
@@ -3003,8 +3003,10 @@ function togglePolySection(head){
       if(!el)return;
       pendingRange=range.cloneRange();
       positionToolbar(range.getBoundingClientRect());
-    },10);
-  });
+    },80);
+  }
+  polyTab.addEventListener('mouseup',onSelectionEnd);
+  polyTab.addEventListener('touchend',onSelectionEnd);
 
   function positionToolbar(rect){
     tb.style.display='flex';
@@ -3034,9 +3036,24 @@ function togglePolySection(head){
     return getBlock(range.startContainer)===getBlock(range.endContainer);
   }
 
+  // Attach erase handler directly on a span — works on iOS (no delegation)
+  function attachRemoveHandler(span,sid,bodyEl){
+    function doRemove(e){
+      e.preventDefault();e.stopPropagation();
+      var parent=span.parentNode;
+      if(!parent)return;
+      while(span.firstChild)parent.insertBefore(span.firstChild,span);
+      parent.removeChild(span);
+      parent.normalize();
+      if(sid&&bodyEl)saveSection(sid,bodyEl);
+    }
+    span.addEventListener('click',doRemove);
+    span.addEventListener('touchend',doRemove);
+  }
+
   // Swatch click → apply color
   tb.querySelectorAll('.hl-swatch').forEach(function(sw){
-    sw.addEventListener('mousedown',function(e){
+    function applyColor(e){
       e.preventDefault();
       if(!pendingRange)return;
       if(!sameBlock(pendingRange)){
@@ -3057,31 +3074,25 @@ function togglePolySection(head){
         span.className='hl hl-'+sw.dataset.c;
         span.appendChild(range.extractContents());
         range.insertNode(span);
+        attachRemoveHandler(span,sid,bodyEl);
         window.getSelection().removeAllRanges();
         saveSection(sid,bodyEl);
       }catch(ex){console.warn('stabilo:',ex);}
       hideToolbar();
-    });
+    }
+    sw.addEventListener('mousedown',applyColor);
+    sw.addEventListener('touchend',applyColor);
   });
 
   erase.addEventListener('mousedown',function(e){e.preventDefault();hideToolbar();});
+  erase.addEventListener('touchend',function(e){e.preventDefault();hideToolbar();});
 
   document.addEventListener('mousedown',function(e){
     if(!e.target.closest('#hl-toolbar'))hideToolbar();
   });
-
-  // Click on mark → remove it
-  polyTab.addEventListener('click',function(e){
-    var mark=e.target.closest('.hl');
-    if(!mark)return;
-    var bodyEl=mark.closest('.poly-body');
-    var sid=bodyEl?getSid(bodyEl):null;
-    var parent=mark.parentNode;
-    while(mark.firstChild)parent.insertBefore(mark.firstChild,mark);
-    parent.removeChild(mark);
-    parent.normalize();
-    if(sid&&bodyEl)saveSection(sid,bodyEl);
-  });
+  document.addEventListener('touchstart',function(e){
+    if(!e.target.closest('#hl-toolbar')&&!e.target.closest('.poly-body'))hideToolbar();
+  },{passive:true});
 
   function getBodyEl(range){
     var el=range.commonAncestorContainer;
@@ -3097,6 +3108,16 @@ function togglePolySection(head){
     stored[sid]=bodyEl.innerHTML;
     try{localStorage.setItem(STORE,JSON.stringify(stored));}catch(e){}
   }
+
+  // Re-attach remove handlers to all .hl spans in a body after innerHTML restore
+  function reattachHandlers(bodyEl){
+    var sid=getSid(bodyEl);
+    if(!sid)return;
+    bodyEl.querySelectorAll('.hl').forEach(function(span){
+      attachRemoveHandler(span,sid,bodyEl);
+    });
+  }
+
   function restoreHighlights(){
     Object.keys(stored).forEach(function(sid){
       var sec=document.getElementById(sid);
@@ -3104,18 +3125,12 @@ function togglePolySection(head){
       var body=sec.querySelector('.poly-section-body');
       if(!body)return;
       body.innerHTML=stored[sid];
+      reattachHandlers(body);
     });
   }
 
-  // Restore when polycop tab becomes active
-  function tryRestore(){
-    if(polyTab.classList.contains('active')){restoreHighlights();return true;}
-    return false;
-  }
-  if(!tryRestore()){
-    var obs=new MutationObserver(function(){if(tryRestore())obs.disconnect();});
-    obs.observe(polyTab,{attributes:true,attributeFilter:['class']});
-  }
+  // Restore unconditionally as soon as DOM is ready (persists across tab switches and reloads)
+  document.addEventListener('DOMContentLoaded',restoreHighlights);
 })();
 
 </script>
