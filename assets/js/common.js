@@ -109,12 +109,13 @@
        donc après les scripts inline de la page */
     window.toggleTheme = bapToggleTheme;
 
-    /* Injecter le fil d'Ariane après #bap-nav */
+    /* Injecter le fil d'Ariane comme enfant de #bap-nav
+       (et non sibling dans le body — évite de perturber les layouts flex-row) */
     var bc = document.getElementById('bap-breadcrumb');
     if (!bc) {
       bc = document.createElement('div');
       bc.id = 'bap-breadcrumb';
-      container.parentNode.insertBefore(bc, container.nextSibling);
+      container.appendChild(bc);
     }
     _bcEl = bc;
     bapBreadcrumbReset();
