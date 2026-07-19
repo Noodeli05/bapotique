@@ -261,8 +261,13 @@
 /* ── Fil d'Ariane (breadcrumb) ── */
 #bap-breadcrumb {
   max-width: 960px;
-  margin: .42rem auto 0;
-  padding: 0 2rem;
+  margin: 0 auto;
+  padding: .3rem 2rem .4rem;
+  /* Fond opaque : couvre le contenu qui défile derrière la zone sticky */
+  background: var(--bg, #13111a);
+}
+[data-theme="light"] #bap-breadcrumb {
+  background: #f5f3f8;
 }
 
 .bap-bc-list {
@@ -309,5 +314,5 @@
 }
 
 @media (max-width: 600px) {
-  #bap-breadcrumb { padding: 0 1rem; }
+  #bap-breadcrumb { padding: .3rem 1rem .4rem; }
 }
