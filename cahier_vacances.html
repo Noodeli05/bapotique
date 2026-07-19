@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260719');}());</script>
+<title>Cahier de vacances — Linguistique française UNIL 2025</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* ── RESET ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px}
+body{font-family:'DM Sans',Arial,sans-serif;background:#f7f5f0;color:#1a1520;line-height:1.6}
+
+/* ── SCREEN WRAPPER ── */
+.book{max-width:800px;margin:0 auto;padding:2rem 1rem}
+
+/* ── PAGE BREAKS ── */
+.page{background:#fff;box-shadow:0 2px 20px rgba(0,0,0,.10);border-radius:4px;margin-bottom:2.5rem;padding:3rem 3.5rem;position:relative;min-height:297mm}
+@media(max-width:700px){.page{padding:1.5rem 1.2rem;min-height:auto}}
+
+/* ── COVER ── */
+.cover{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:260mm;background:linear-gradient(160deg,#2d2540 0%,#1a1030 60%,#0d0a18 100%);color:#fff;border-radius:4px}
+.cover-band{width:100%;background:rgba(200,184,240,0.15);border-top:3px solid #c8b8f0;border-bottom:3px solid #c8b8f0;padding:1.2rem 2rem;margin:2rem 0}
+.cover-title{font-family:'DM Serif Display',serif;font-size:2.6rem;line-height:1.15;background:linear-gradient(135deg,#c8b8f0,#a8c8f0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.cover-subtitle{font-family:'DM Serif Display',serif;font-size:1.3rem;color:rgba(200,184,240,.8);margin:.5rem 0}
+.cover-desc{font-size:.9rem;color:rgba(232,228,240,.6);max-width:380px;line-height:1.7;margin:.8rem auto}
+.cover-badge{display:inline-block;background:rgba(200,184,240,0.18);border:1px solid rgba(200,184,240,0.35);border-radius:50px;padding:.4rem 1.2rem;font-size:.78rem;font-weight:600;color:#c8b8f0;letter-spacing:.05em;text-transform:uppercase;margin:.4rem .3rem}
+.cover-footer{position:absolute;bottom:2.5rem;left:0;right:0;text-align:center;font-size:.7rem;color:rgba(232,228,240,.35);letter-spacing:.05em}
+
+/* ── TOC ── */
+.toc-title{font-family:'DM Serif Display',serif;font-size:1.8rem;color:#2d2540;margin-bottom:1.5rem;padding-bottom:.6rem;border-bottom:3px solid #c8b8f0}
+.toc-section{margin-bottom:.3rem}
+.toc-ch{display:flex;align-items:baseline;gap:.5rem;padding:.35rem 0;border-bottom:1px dotted #d0c8e8}
+.toc-ch-num{font-family:'DM Serif Display',serif;font-size:.82rem;color:#8878c0;min-width:3.5rem;font-weight:700}
+.toc-ch-title{font-size:.88rem;color:#2d2540;flex:1}
+.toc-ch-page{font-size:.78rem;color:#8878c0;font-weight:600}
+.toc-label{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#8878c0;margin:1.2rem 0 .4rem;padding:.25rem .6rem;background:#f0ecfa;border-radius:4px;display:inline-block}
+
+/* ── CHAPTER HEADER ── */
+.ch-header{margin-bottom:1.8rem;padding-bottom:1rem;border-bottom:2px solid}
+.ch-num-badge{display:inline-block;font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.25rem .85rem;border-radius:50px;margin-bottom:.6rem}
+.ch-main-title{font-family:'DM Serif Display',serif;font-size:1.75rem;line-height:1.15;margin-bottom:.3rem}
+.ch-desc{font-size:.85rem;line-height:1.65;color:#5a5070}
+
+/* ── COLOURS PER CHAPTER ── */
+.c0{--acc:#7c6cc0;--acc-lt:#f0ecfa;--bdr:#c8b8f0}
+.c1{--acc:#3060b0;--acc-lt:#eaf0fc;--bdr:#a8c8f0}
+.c2{--acc:#2a8a68;--acc-lt:#eafaf4;--bdr:#a8d8c4}
+.c3{--acc:#b87030;--acc-lt:#fdf5ec;--bdr:#f0c8a0}
+.c4{--acc:#a08020;--acc-lt:#fdf8ec;--bdr:#f0e0a0}
+.c5{--acc:#b03060;--acc-lt:#fdeef4;--bdr:#f0b8c4}
+.c6{--acc:#386838;--acc-lt:#eef8ee;--bdr:#b8d8b8}
+.c7{--acc:#7c6cc0;--acc-lt:#f0ecfa;--bdr:#c8b8f0}
+.c8{--acc:#3060b0;--acc-lt:#eaf0fc;--bdr:#a8c8f0}
+.c9{--acc:#2a8a68;--acc-lt:#eafaf4;--bdr:#a8d8c4}
+
+.ch-header{border-color:var(--bdr)}
+.ch-num-badge{background:var(--acc-lt);color:var(--acc)}
+.ch-main-title{color:var(--acc)}
+
+/* ── SECTION LABEL ── */
+.sec-label{font-size:.62rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--acc,#7c6cc0);margin:1.8rem 0 .7rem;display:flex;align-items:center;gap:.5rem}
+.sec-label::after{content:'';flex:1;height:1.5px;background:var(--bdr,#c8b8f0)}
+
+/* ── THEORY BOXES ── */
+.box{border-radius:6px;padding:.9rem 1.1rem;margin:.55rem 0;border-left:4px solid}
+.box p,.box li{font-size:.855rem;line-height:1.7;margin:.18rem 0}
+.box ul{padding-left:1.1rem;margin:.3rem 0}
+.box-lbl{font-size:.62rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.28rem}
+.box-def{background:var(--acc-lt,#f0ecfa);border-color:var(--acc,#7c6cc0)}
+.box-def .box-lbl{color:var(--acc,#7c6cc0)}
+.box-ex{background:#eafaf4;border-color:#2a8a68}
+.box-ex .box-lbl{color:#2a8a68}
+.box-ret{background:#fdf8ec;border-color:#a08020}
+.box-ret .box-lbl{color:#a08020}
+.box-att{background:#fdeef4;border-color:#b03060}
+.box-att .box-lbl{color:#b03060}
+
+/* ── RÉSUMÉ ── */
+.resume{font-size:.875rem;line-height:1.75;color:#1a1520}
+.resume p{margin:.5rem 0}
+.resume strong{color:var(--acc,#7c6cc0)}
+.resume em{color:#5a5070}
+
+/* ── TABLE ── */
+.tbl-wrap{overflow-x:auto;margin:.8rem 0;border-radius:6px;border:1px solid var(--bdr,#c8b8f0)}
+table{border-collapse:collapse;width:100%;font-size:.8rem}
+th{background:var(--acc-lt,#f0ecfa);color:var(--acc,#7c6cc0);font-weight:700;padding:.48rem .75rem;text-align:left;font-size:.73rem;text-transform:uppercase;letter-spacing:.04em}
+td{padding:.42rem .75rem;border-bottom:1px solid #e8e0f0;vertical-align:top;line-height:1.5}
+tr:last-child td{border-bottom:none}
+
+/* ── EXERCISES ── */
+.exo-block{border:1.5px solid var(--bdr,#c8b8f0);border-radius:8px;margin:.65rem 0;overflow:hidden}
+.exo-header{background:var(--acc-lt,#f0ecfa);padding:.5rem .9rem;display:flex;align-items:center;gap:.5rem;border-bottom:1px solid var(--bdr,#c8b8f0)}
+.exo-tag{font-size:.6rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#fff;background:var(--acc,#7c6cc0);padding:.18rem .55rem;border-radius:50px}
+.exo-title{font-size:.8rem;font-weight:600;color:var(--acc,#7c6cc0)}
+.exo-body{padding:.8rem .9rem}
+.exo-q{font-size:.855rem;font-weight:600;color:#1a1520;margin-bottom:.5rem;line-height:1.6}
+.exo-inst{font-size:.78rem;color:#5a5070;font-style:italic;margin-bottom:.6rem}
+
+/* Fill-in-the-blank */
+.blank{display:inline-block;border-bottom:1.5px solid var(--acc,#7c6cc0);min-width:80px;height:1.1em;vertical-align:bottom;margin:0 .15rem}
+.blank-lg{min-width:130px}
+.blank-sm{min-width:50px}
+
+/* MCQ */
+.mcq-choices{display:flex;flex-direction:column;gap:.32rem;margin-top:.4rem}
+.mcq-opt{display:flex;align-items:flex-start;gap:.55rem;font-size:.845rem;padding:.3rem .45rem;border-radius:5px;background:#fafafa;border:1px solid #e0d8f0}
+.mcq-circle{width:16px;height:16px;border-radius:50%;border:1.5px solid var(--acc,#7c6cc0);flex-shrink:0;margin-top:.1rem}
+
+/* True/False */
+.tf-row{display:flex;align-items:flex-start;gap:.6rem;font-size:.845rem;padding:.3rem 0;border-bottom:1px dotted #e0d8f0}
+.tf-row:last-child{border-bottom:none}
+.tf-boxes{display:flex;gap:.4rem;flex-shrink:0;margin-top:.1rem}
+.tf-box{width:18px;height:18px;border:1.5px solid var(--acc,#7c6cc0);border-radius:3px;flex-shrink:0}
+
+/* Match */
+.match-grid{display:grid;grid-template-columns:1fr 1fr;gap:.4rem .8rem;font-size:.845rem}
+.match-row{display:flex;align-items:baseline;gap:.4rem}
+.match-letter{font-weight:700;color:var(--acc,#7c6cc0);min-width:1.4rem}
+.match-line{flex:1;border-bottom:1px solid var(--acc,#7c6cc0);height:1.1em}
+
+/* Write answer */
+.answer-lines{margin:.5rem 0}
+.answer-line{display:block;width:100%;border-bottom:1px solid #c8b8f0;height:1.8rem;margin-bottom:.15rem}
+
+/* ── CORRIGÉ ── */
+.corr-page .ch-main-title{color:#2d2540}
+.corr-ch{margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:1px solid #e0d8f0}
+.corr-ch-title{font-family:'DM Serif Display',serif;font-size:1.1rem;color:#7c6cc0;margin-bottom:.8rem}
+.corr-item{margin:.5rem 0;font-size:.855rem;line-height:1.65}
+.corr-num{font-weight:700;color:#7c6cc0;min-width:2rem;display:inline-block}
+.corr-ans{color:#1a1520}
+.corr-ans strong{color:#2a8a68}
+.corr-sep{height:1px;background:#e0d8f0;margin:1rem 0}
+
+/* ── PRINT STYLES ── */
+@media print{
+  body{background:#fff;font-size:10.5pt}
+  .book{max-width:none;padding:0;margin:0}
+  .page{box-shadow:none;border-radius:0;margin-bottom:0;padding:18mm 20mm;min-height:auto;page-break-after:always;break-after:page}
+  .page:last-child{page-break-after:auto;break-after:auto}
+  .cover{min-height:auto;padding:25mm 20mm}
+  .cover-title{-webkit-text-fill-color:#c8b8f0;background:none;color:#c8b8f0}
+  .print-btn{display:none!important}
+  h2,h3,.ch-header{page-break-after:avoid;break-after:avoid}
+  .exo-block,.box{page-break-inside:avoid;break-inside:avoid}
+  .no-print{display:none!important}
+}
+@page{size:A4;margin:0}
+
+/* ── PRINT BUTTON ── */
+.print-btn{position:fixed;bottom:1.5rem;right:1.5rem;z-index:999;background:#7c6cc0;color:#fff;border:none;padding:.7rem 1.4rem;border-radius:50px;font-size:.85rem;font-weight:700;cursor:pointer;box-shadow:0 4px 18px rgba(124,108,192,.4);font-family:inherit;display:flex;align-items:center;gap:.4rem}
+.print-btn:hover{background:#6a5aae}
+
+/* ── DIVIDER PAGE ── */
+.divider-page{display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(160deg,#2d2540,#1a1030);color:#fff;text-align:center;min-height:100mm}
+.divider-num{font-family:'DM Serif Display',serif;font-size:5rem;color:rgba(200,184,240,.15);line-height:1}
+.divider-title{font-family:'DM Serif Display',serif;font-size:1.6rem;color:#c8b8f0;margin:.3rem 0}
+.divider-sub{font-size:.85rem;color:rgba(232,228,240,.5)}
+</style>
+</head>
+<body>
+<button class="print-btn no-print" onclick="window.print()">🖨️ Imprimer le cahier</button>
+<div class="book">
+
+<!-- ══════════════ COUVERTURE ══════════════ -->
+<div class="page" style="padding:0">
+<div class="cover">
+  <div style="margin-bottom:1.5rem">
+    <div style="font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(200,184,240,.55);margin-bottom:.8rem">Linguistique française · UNIL 2025</div>
+    <div class="cover-title">Cahier de vacances</div>
+    <div class="cover-subtitle">Linguistique française</div>
+  </div>
+  <div class="cover-band">
+    <div style="font-size:.8rem;color:rgba(200,184,240,.7);margin-bottom:.5rem">10 chapitres · Cours + Exercices + Corrigés</div>
+    <div>
+      <span class="cover-badge">Sémiologie</span>
+      <span class="cover-badge">Phonologie</span>
+      <span class="cover-badge">Morphologie</span>
+      <span class="cover-badge">Syntaxe</span>
+      <span class="cover-badge">Clause complexe</span>
+    </div>
+  </div>
+  <div class="cover-desc">Révise tout le programme de linguistique française au fil de fiches de cours claires et d'exercices variés conçus pour consolider chaque notion clé.</div>
+  <div style="margin-top:1.5rem;font-size:.72rem;color:rgba(232,228,240,.4);letter-spacing:.05em">R. Mahrer · UNIL 2025 · Elena Nikolic</div>
+  <div class="cover-footer">Imprimé depuis bapotique.github.io · 2026</div>
+</div>
+</div>
+
+<!-- ══════════════ TABLE DES MATIÈRES ══════════════ -->
+<div class="page">
+  <div class="toc-title">Table des matières</div>
+  <div class="toc-label">Fiches de cours &amp; exercices</div>
+  <div class="toc-section">
+    <div class="toc-ch"><span class="toc-ch-num">Intro</span><span class="toc-ch-title">Sémiologie, signe et niveaux d'analyse</span><span class="toc-ch-page">p. 3</span></div>
+    <div class="toc-ch"><span class="toc-ch-num">Ch. 1</span><span class="toc-ch-title">Phonétique, phonologie et graphémique</span><span class="toc-ch-page">p. 5</span></div>
+    <div class="toc-ch"><span class="toc-ch-num">Ch. 2</span><span class="toc-ch-title">La morphologie</span><span class="toc-ch-page">p. 7</span></div>
+    <div class="toc-ch"><span class="toc-ch-num">Ch. 3</span><span class="toc-ch-title">Syntaxe de la clause canonique</span><span class="toc-ch-page">p. 9</span></div>
+    <div class="toc-ch"><span class="toc-ch-num">Ch. 4</span><span class="toc-ch-title">L'ordre dans la clause</span><span class="toc-ch-page">p. 11</span></div>
+    <div class="toc-ch"><span class="toc-ch-num">Ch. 5</span><span class="toc-ch-title">Types de clauses et voix</span><span class="toc-ch-page">p. 13</span></div>
+    <div class="toc-ch"><span class="toc-ch-num">Ch. 6</span><span class="toc-ch-title">Extensions du groupe nominal</span><span class="toc-ch-page">p. 15</span></div>
+    <div class="toc-ch"><span class="toc-ch-num">Ch. 7</span><span class="toc-ch-title">Extensions du groupe verbal</span><span class="toc-ch-page">p. 17</span></div>
+    <div class="toc-ch"><span class="toc-ch-num">Ch. 8</span><span class="toc-ch-title">La clause complexe</span><span class="toc-ch-page">p. 19</span></div>
+    <div class="toc-ch"><span class="toc-ch-num">Ch. 9</span><span class="toc-ch-title">La phrase graphique</span><span class="toc-ch-page">p. 21</span></div>
+  </div>
+  <div class="toc-label" style="margin-top:1.2rem">Corrigés</div>
+  <div class="toc-section">
+    <div class="toc-ch"><span class="toc-ch-num">—</span><span class="toc-ch-title">Corrigés complets (Intro → Ch. 9)</span><span class="toc-ch-page">p. 23</span></div>
+  </div>
+  <div style="margin-top:2.5rem;padding:1.2rem;background:#f0ecfa;border-radius:8px;border-left:4px solid #c8b8f0">
+    <div style="font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#7c6cc0;margin-bottom:.5rem">Mode d'emploi</div>
+    <p style="font-size:.84rem;line-height:1.7;color:#2d2540">Chaque chapitre commence par une <strong>fiche de cours</strong> avec résumé, définitions et tableau récapitulatif. Les <strong>exercices</strong> suivent immédiatement : QCM, vrai/faux, textes à trous, correspondances et questions ouvertes. Les <strong>corrigés</strong> se trouvent à la fin du cahier pour que tu puisses travailler sans être tenté de regarder tout de suite.</p>
+  </div>
+</div>
+
+<!-- ══════════════ INTRO — SÉMIOLOGIE ══════════════ -->
+<div class="page c0">
+  <div class="ch-header">
+    <span class="ch-num-badge">Introduction</span>
+    <h2 class="ch-main-title">Sémiologie, signe et niveaux d'analyse</h2>
+    <p class="ch-desc">La linguistique comme science · Le signe saussurien · La double articulation · Les niveaux d'analyse</p>
+  </div>
+
+  <div class="sec-label">Fiche de cours</div>
+  <div class="resume">
+    <p>La <strong>linguistique</strong> est la science descriptive du langage humain : elle observe comment les gens parlent réellement, sans prescrire comment ils <em>devraient</em> parler.</p>
+    <p>Au cœur de la linguistique, le <strong>signe</strong> réunit un <strong>signifiant</strong> (forme sonore ou écrite : /ʃa/) et un <strong>signifié</strong> (concept mental : l'idée du chat). Ce lien est <strong>arbitraire</strong> — rien dans /ʃa/ ne ressemble à un chat. Preuve : <em>cat</em>, <em>Katze</em>, <em>gato</em> désignent le même animal.</p>
+    <p>André Martinet a décrit la <strong>double articulation</strong> : 1ère articulation en <strong>monèmes/morphèmes</strong> (unités avec sens), 2ème articulation en <strong>phonèmes</strong> (unités sans sens). Avec ~36 phonèmes, le français génère des millions de mots.</p>
+    <p>Les <strong>niveaux d'analyse</strong> : phonologie → morphologie → syntaxe → sémantique → pragmatique. Chaque niveau s'appuie sur le niveau inférieur.</p>
+  </div>
+
+  <div class="box box-def"><div class="box-lbl">Définitions clés</div>
+    <p><strong>Signifiant</strong> = forme sonore ou graphique du signe &nbsp;|&nbsp; <strong>Signifié</strong> = concept mental associé &nbsp;|&nbsp; <strong>Référent</strong> = objet réel dans le monde</p>
+    <p><strong>Langue</strong> = système abstrait collectif &nbsp;|&nbsp; <strong>Parole</strong> = usage individuel concret</p>
+  </div>
+
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Concept</th><th>Définition</th><th>Exemple</th></tr></thead>
+    <tbody>
+      <tr><td>Signifiant</td><td>Forme sonore ou graphique</td><td>/ʃa/ ou ‹chat›</td></tr>
+      <tr><td>Signifié</td><td>Concept mental associé</td><td>Idée du petit félin</td></tr>
+      <tr><td>Signe arbitraire</td><td>Lien non motivé naturellement</td><td>chat ≠ cat ≠ Katze</td></tr>
+      <tr><td>1ère articulation</td><td>Décomposition en monèmes (avec sens)</td><td>chant-eur-s → 3 unités</td></tr>
+      <tr><td>2ème articulation</td><td>Décomposition en phonèmes (sans sens)</td><td>/ʃ/+/ɑ̃/+/t/</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="sec-label">Exercices</div>
+
+  <!-- EXO 1 -->
+  <div class="exo-block">
+    <div class="exo-header"><span class="exo-tag">QCM</span><span class="exo-title">Exercice 1 — Choisir la bonne réponse</span></div>
+    <div class="exo-body">
+      <p class="exo-inst">Entoure la lettre correspondant à la bonne réponse.</p>
+
+      <p class="exo-q">1. La linguistique est une science :</p>
+      <div class="mcq-choices">
+        <div class="mcq-opt"><div class="mcq-circle"></div>a) prescriptive — elle dit comment on <em>doit</em> parler</div>
+        <div class="mcq-opt"><div class="mcq-circle"></div>b) descriptive — elle observe comment les gens parlent réellement</div>
+        <div class="mcq-opt"><div class="mcq-circle"></div>c) normative — elle corrige les fautes</div>
+      </div>
+
+      <p class="exo-q" style="margin-top:.8rem">2. Le signifié d'un signe linguistique, c'est :</p>
+      <div class="mcq-choices">
+        <div class="mcq-opt"><div class="mcq-circle"></div>a) la forme sonore ou écrite du signe</div>
+        <div class="mcq-opt"><div class="mcq-circle"></div>b) l'objet réel dans le monde (le référent)</div>
+        <div class="mcq-opt"><div class="mcq-circle"></div>c) le concept mental associé au signe</div>
+      </div>
+
+      <p class="exo-q" style="margin-top:.8rem">3. La 2ème articulation décompose les monèmes en :</p>
+      <div class="mcq-choices">
+        <div class="mcq-opt"><div class="mcq-circle"></div>a) syllabes</div>
+        <div class="mcq-opt"><div class="mcq-circle"></div>b) phonèmes</div>
+        <div class="mcq-opt"><div class="mcq-circle"></div>c) graphèmes</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXO 2 -->
+  <div class="exo-block">
+    <div class="exo-header"><span class="exo-tag">Texte à trous</span><span class="exo-title">Exercice 2 — Complète les phrases</span></div>
+    <div class="exo-body">
+      <p class="exo-inst">Complète avec les mots suivants : <em>arbitraire · signifiant · signifié · langue · parole · double articulation</em></p>
+      <p style="font-size:.86rem;line-height:2.2">
+        1. Le mot ‹chat› est le <span class="blank blank-lg"></span> du signe ; le concept de félin domestique en est le <span class="blank blank-lg"></span>.<br>
+        2. Le lien entre la forme et le sens est dit <span class="blank blank-lg"></span> car rien ne l'impose naturellement.<br>
+        3. La <span class="blank" style="min-width:160px"></span> permet au français de générer des millions de mots avec seulement ~36 phonèmes.<br>
+        4. Les règles du football représentent la <span class="blank blank-lg"></span> ; le match joué, c'est la <span class="blank blank-lg"></span>.
+      </p>
+    </div>
+  </div>
+
+  <!-- EXO 3 -->
+  <div class="exo-block">
+    <div class="exo-header"><span class="exo-tag">Vrai / Faux</span><span class="exo-title">Exercice 3 — Vrai ou faux ?</span></div>
+    <div class="exo-body">
+      <p class="exo-inst">Coche V (vrai) ou F (faux).</p>
+      <div>
+        <div class="tf-row"><div class="tf-boxes"><div class="tf-box"></div><div class="tf-box"></div></div><div><strong>V &nbsp; F &nbsp;</strong>Le référent fait partie du signe linguistique.</div></div>
+        <div class="tf-row"><div class="tf-boxes"><div class="tf-box"></div><div class="tf-box"></div></div><div><strong>V &nbsp; F &nbsp;</strong>Tous les signes linguistiques sont motivés par la réalité qu'ils désignent.</div></div>
+        <div class="tf-row"><div class="tf-boxes"><div class="tf-box"></div><div class="tf-box"></div></div><div><strong>V &nbsp; F &nbsp;</strong>Les phonèmes ont un sens propre.</div></div>
+        <div class="tf-row"><div class="tf-boxes"><div class="tf-box"></div><div class="tf-box"></div></div><div><strong>V &nbsp; F &nbsp;</strong>La sémantique étudie le sens des mots et des énoncés.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXO 4 -->
+  <div class="exo-block">
+    <div class="exo-header"><span class="exo-tag">Question ouverte</span><span class="exo-title">Exercice 4 — Réponse développée</span></div>
+    <div class="exo-body">
+      <p class="exo-q">Expliquez pourquoi le lien entre signifiant et signifié est dit « arbitraire ». Donnez deux exemples de langues différentes pour illustrer.</p>
+      <div class="answer-lines">
+        <span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ CH. 1 — PHONOLOGIE ══════════════ -->
+<div class="page c1">
+  <div class="ch-header">
+    <span class="ch-num-badge">Chapitre 1</span>
+    <h2 class="ch-main-title">Phonétique, phonologie et graphémique</h2>
+    <p class="ch-desc">Phone vs phonème · Allophones · Paire minimale · Schwa · Graphèmes</p>
+  </div>
+
+  <div class="sec-label">Fiche de cours</div>
+  <div class="resume">
+    <p>La <strong>phonétique</strong> étudie les sons physiques (les <strong>phones</strong>). La <strong>phonologie</strong> étudie les sons distinctifs (les <strong>phonèmes</strong>) qui changent le sens dans une langue.</p>
+    <p>Une <strong>paire minimale</strong> prouve l'existence de deux phonèmes distincts : deux mots ne différant que d'un son (<em>pain/bain</em>). Le test s'appelle la <strong>commutation</strong>.</p>
+    <p>Deux phones qui sont des variantes du même phonème s'appellent des <strong>allophones</strong> (ex. : /r/ roulé et /r/ grasseyé = allophones de /ʁ/).</p>
+    <p>Le <strong>schwa</strong> /ə/ peut tomber sauf si sa chute crée 3 consonnes consécutives impossibles (<strong>règle des 3 consonnes</strong>).</p>
+    <p>La <strong>graphémique</strong> étudie l'écriture : <strong>alphagraphème</strong> (→ phonème : ‹ch›=/ʃ/), <strong>topogramme</strong> (ponctuation, majuscule), <strong>logogram</strong> (mot entier : & = « et »).</p>
+  </div>
+
+  <div class="box box-att"><div class="box-lbl">À ne pas confondre</div>
+    <p>Phonème ≠ lettre. ‹eau› = 3 lettres = 1 phonème /o/. ‹x› dans <em>taxi</em> = 1 lettre = 2 phonèmes /ks/.</p>
+  </div>
+
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Terme</th><th>Définition</th><th>Exemple</th></tr></thead>
+    <tbody>
+      <tr><td>Phone</td><td>Son concret produit</td><td>/r/ roulé vs /r/ grasseyé</td></tr>
+      <tr><td>Phonème</td><td>Son distinctif (change le sens)</td><td>/p/ vs /b/ : <em>pas ≠ bas</em></td></tr>
+      <tr><td>Allophone</td><td>Variante d'un même phonème</td><td>/r/ roulé et /r/ grasseyé = /ʁ/</td></tr>
+      <tr><td>Paire minimale</td><td>2 mots ≠ d'un seul phonème</td><td><em>vu / bu</em></td></tr>
+      <tr><td>Alphagraphème</td><td>Graphème → phonème</td><td>‹ch› → /ʃ/</td></tr>
+      <tr><td>Topogramme</td><td>Signe graphique non phonétique</td><td>virgule, majuscule</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="sec-label">Exercices</div>
+
+  <div class="exo-block">
+    <div class="exo-header"><span class="exo-tag">Correspondance</span><span class="exo-title">Exercice 1 — Relie chaque terme à sa définition</span></div>
+    <div class="exo-body">
+      <div class="match-grid">
+        <div>
+          <div class="match-row"><span class="match-letter">A.</span> Phone</div>
+          <div class="match-row"><span class="match-letter">B.</span> Phonème</div>
+          <div class="match-row"><span class="match-letter">C.</span> Allophone</div>
+          <div class="match-row"><span class="match-letter">D.</span> Paire minimale</div>
+        </div>
+        <div>
+          <div class="match-row"><span class="match-letter">1.</span> Variante d'un même phonème</div>
+          <div class="match-row"><span class="match-letter">2.</span> Son physique concret</div>
+          <div class="match-row"><span class="match-letter">3.</span> 2 mots différant d'un seul son</div>
+          <div class="match-row"><span class="match-letter">4.</span> Unité distinctive qui change le sens</div>
+        </div>
+      </div>
+      <p style="font-size:.82rem;margin-top:.6rem;color:#5a5070">Réponses : A→<span class="blank blank-sm"></span> &nbsp; B→<span class="blank blank-sm"></span> &nbsp; C→<span class="blank blank-sm"></span> &nbsp; D→<span class="blank blank-sm"></span></p>
+    </div>
+  </div>
+
+  <div class="exo-block">
+    <div class="exo-header"><span class="exo-tag">QCM</span><span class="exo-title">Exercice 2 — Phonèmes et graphèmes</span></div>
+    <div class="exo-body">
+      <p class="exo-q">1. Combien de phonèmes y a-t-il dans le mot <em>eau</em> ?</p>
+      <div class="mcq-choices">
+        <div class="mcq-opt"><div class="mcq-circle"></div>a) 3 phonèmes</div>
+        <div class="mcq-opt"><div class="mcq-circle"></div>b) 1 phonème</div>
+        <div class="mcq-opt"><div class="mcq-circle"></div>c) 2 phonèmes</div>
+      </div>
+      <p class="exo-q" style="margin-top:.8rem">2. Le schwa /ə/ dans <em>je</em> tombe-t-il dans <em>« je dors »</em> ?</p>
+      <div class="mcq-choices">
+        <div class="mcq-opt"><div class="mcq-circle"></div>a) Oui, car il n'y a que 2 consonnes en contact : /ʒd/</div>
+        <div class="mcq-opt"><div class="mcq-circle"></div>b) Non, car on obtiendrait 3 consonnes impossibles</div>
+        <div class="mcq-opt"><div class="mcq-circle"></div>c) Cela dépend du débit de parole</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="exo-block">
+    <div class="exo-header"><span class="exo-tag">Texte à trous</span><span class="exo-title">Exercice 3 — Phonétique vs phonologie</span></div>
+    <div class="exo-body">
+      <p class="exo-inst">Mots disponibles : <em>phonologie · phonétique · allophones · phonèmes · commutation</em></p>
+      <p style="font-size:.86rem;line-height:2.2">
+        La <span class="blank blank-lg"></span> étudie les sons concrets du langage tels qu'ils sont produits physiquement. La <span class="blank blank-lg"></span> étudie les sons distinctifs d'un système linguistique. Pour prouver que deux sons sont deux <span class="blank blank-lg"></span> distincts, on applique le test de <span class="blank blank-lg"></span> : si substituer un son change le sens, les deux sons sont distincts. Sinon, ce sont des <span class="blank blank-lg"></span> du même phonème.
+      </p>
+    </div>
+  </div>
+
+  <div class="exo-block">
+    <div class="exo-header"><span class="exo-tag">Question ouverte</span><span class="exo-title">Exercice 4 — Analyse</span></div>
+    <div class="exo-body">
+      <p class="exo-q">Donnez deux exemples de paires minimales en français et expliquez ce qu'elles prouvent.</p>
+      <div class="answer-lines">
+        <span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ CH. 2 — MORPHOLOGIE ══════════════ -->
+<div class="page c2">
+  <div class="ch-header">
+    <span class="ch-num-badge">Chapitre 2</span>
+    <h2 class="ch-main-title">La morphologie</h2>
+    <p class="ch-desc">Morphème libre/lié · Dérivation · Flexion · Composition · Allomorphie</p>
+  </div>
+
+  <div class="sec-label">Fiche de cours</div>
+  <div class="resume">
+    <p>La morphologie étudie la structure interne des mots. L'unité de base est le <strong>morphème</strong> : la plus petite unité porteuse de sens. Dans <em>chanteurs</em> : {chant-} + {-eur} + {-s} = 3 morphèmes.</p>
+    <p><strong>Morphème libre</strong> : peut fonctionner seul (<em>grand, maison</em>). <strong>Morphème lié</strong> : doit s'attacher à une base (<em>-eur, re-, -s</em>).</p>
+    <p>Deux grandes familles : <strong>morphèmes lexicaux</strong> (portent le sens : {chant-}) et <strong>morphèmes grammaticaux</strong> (infos de grammaire : {-s} pluriel, {-ais} imparfait).</p>
+    <p><strong>Flexion</strong> : adapte un mot à la grammaire sans créer un nouveau lexème (<em>chante → chantaient</em>). <strong>Dérivation</strong> : crée un nouveau lexème souvent avec changement de catégorie (<em>chanter → chanteur</em>).</p>
+    <p><strong>Allomorphie</strong> : un même morphème a plusieurs formes selon le contexte. {in-} → <em>im</em>possible / <em>il</em>légal / <em>ir</em>régulier / <em>in</em>utile.</p>
+  </div>
+
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Procédé</th><th>Définition</th><th>Exemple</th></tr></thead>
+    <tbody>
+      <tr><td>Flexion</td><td>Adapte sans changer le lexème</td><td><em>chante → chantaient</em></td></tr>
+      <tr><td>Dérivation suffixale</td><td>Base + suffixe, souvent change la catégorie</td><td><em>chanter → chant-eur</em> (V→N)</td></tr>
+      <tr><td>Dérivation préfixale</td><td>Préfixe + base</td><td><em>heureux → mal-heureux</em></td></tr>
+      <tr><td>Composition</td><td>Base + base</td><td><em>porte-monnaie, chou-fleur</em></td></tr>
+      <tr><td>Mot-valise</td><td>Fusion avec troncation</td><td><em>brunch</em> (breakfast+lunch)</td></tr>
+      <tr><td>Conversion</td><td>Changement de catégorie sans affixe</td><td><em>le manger</em> (V→N)</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="sec-label">Exercices</div>
+
+  <div class="exo-block">
+    <div class="exo-header"><span class="exo-tag">Analyse</span><span class="exo-title">Exercice 1 — Segmentation en morphèmes</span></div>
+    <div class="exo-body">
+      <p class="exo-inst">Décompose chaque mot en morphèmes en utilisant la notation { }. Indique la catégorie de chaque morphème (lexical / grammatical).</p>
+      <p style="font-size:.86rem;line-height:2.8">
+        1. <em>chanteurs</em> : <span class="blank" style="min-width:250px"></span><br>
+        2. <em>malheureux</em> : <span class="blank" style="min-width:250px"></span><br>
+        3. <em>impossible</em> : <span class="blank" style="min-width:250px"></span><br>
+        4. <em>prévisible</em> : <span class="blank" style="min-width:250px"></span>
+      </p>
+    </div>
+  </div>
+
+  <div class="exo-block">
+    <div class="exo-header"><span class="exo-tag">Vrai / Faux</span><span class="exo-title">Exercice 2 — Dérivation et flexion</span></div>
+    <div class="exo-body">
+      <div>
+        <div class="tf-row"><div class="tf-boxes"><div class="tf-box"></div><div class="tf-box"></div></div><div><strong>V &nbsp; F &nbsp;</strong>La dérivation crée toujours un nouveau lexème.</div></div>
+        <div class="tf-row"><div class="tf-boxes"><div class="tf-box"></div><div class="tf-box"></div></div><div><strong>V &nbsp; F &nbsp;</strong><em>chante</em> et <em>chantait</em> sont deux lexèmes différents.</div></div>
+        <div class="tf-row"><div class="tf-boxes"><div class="tf-box"></div><div class="tf-box"></div></div><div><strong>V &nbsp; F &nbsp;</strong><em>impossible</em> et <em>illégal</em> partagent le même morphème de négation.</div></div>
+        <div class="tf-row"><div class="tf-boxes"><div class="tf-box"></div><div class="tf-box"></div></div><div><strong>V &nbsp; F &nbsp;</strong>Un morphème libre peut fonctionner seul comme mot.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="exo-block">
+    <div class="exo-header"><span class="exo-tag">Classement</span><span class="exo-title">Exercice 3 — Quel procédé de formation ?</span></div>
+    <div class="exo-body">
+      <p class="exo-inst">Indique pour chaque mot s'il s'agit de : <strong>D</strong> = dérivation, <strong>C</strong> = composition, <strong>MV</strong> = mot-valise, <strong>F</strong> = flexion, <strong>CV</strong> = conversion.</p>
+      <p style="font-size:.86rem;line-height:2.5">
+        1. <em>courriel</em> (courrrier + électronique) : <span class="blank blank-sm"></span><br>
+        2. <em>porte-clé</em> : <span class="blank blank-sm"></span><br>
+        3. <em>beauté</em> : <span class="blank blank-sm"></span><br>
+        4. <em>le dîner</em> (le repas) : <span class="blank blank-sm"></span><br>
+        5. <em>ils chantaient</em> : <span class="blank blank-sm"></span>
+      </p>
+    </div>
+  </div>
+
+  <div class="exo-block">
+    <div class="exo-header"><span class="exo-tag">Question ouverte</span><span class="exo-title">Exercice 4</span></div>
+    <div class="exo-body">
+      <p class="exo-q">Expliquez l'allomorphie du préfixe {in-} avec au moins quatre exemples.</p>
+      <div class="answer-lines">
+        <span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ CH. 3 — CLAUSE CANONIQUE ══════════════ -->
+<div class="page c3">
+  <div class="ch-header">
+    <span class="ch-num-badge">Chapitre 3</span>
+    <h2 class="ch-main-title">Syntaxe de la clause canonique</h2>
+    <p class="ch-desc">Clause · Syntagme · Valence verbale · Fonctions syntaxiques · Thème–Rhème</p>
+  </div>
+
+  <div class="sec-label">Fiche de cours</div>
+  <div class="resume">
+    <p>La <strong>clause canonique</strong> est le modèle de référence : <strong>Sujet + Verbe + (Compléments)</strong>. Ex. : <em>Le chat mange la souris.</em></p>
+    <p>Les mots s'organisent en <strong>syntagmes</strong> : <strong>GN</strong> (groupe nominal, tête = nom), <strong>GV</strong> (groupe verbal, tête = verbe).</p>
+    <p>La <strong>valence</strong> d'un verbe = nombre d'actants requis : <em>avalente</em> (0 : il pleut), <em>monovalente</em> (1 : dormir), <em>bivalente</em> (2 : lire), <em>trivalente</em> (3 : donner).</p>
+    <p><strong>Thème (TH)</strong> = info connue, ce dont on parle. <strong>Rhème (RH)</strong> = info nouvelle. Ordre neutre en français : TH avant RH.</p>
+  </div>
+
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Fonction</th><th>Test</th><th>Exemple</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Sujet</strong></td><td>C'est X qui V / pronom <em>il/elle</em></td><td><em>Le chat</em> mange</td></tr>
+      <tr><td><strong>COD</strong></td><td>Pronom <em>le/la/les</em></td><td>Il lit <em>un livre</em> → Il <em>le</em> lit</td></tr>
+      <tr><td><strong>COI</strong></td><td>Pronom <em>lui/leur/y/en</em></td><td>Il parle <em>à Marie</em> → Il <em>lui</em> parle</td></tr>
+      <tr><td><strong>Circonstant</strong></td><td>Mobile + supprimable</td><td><em>Le soir</em>, il chante</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="sec-label">Exercices</div>
+
+  <div class="exo-block">
+    <div class="exo-header"><span class="exo-tag">Analyse</span><span class="exo-title">Exercice 1 — Identifier les fonctions</span></div>
+    <div class="exo-body">
+      <p class="exo-inst">Indique la fonction de chaque groupe souligné : Sujet / COD / COI / Circonstant / Attribut.</p>
+      <p style="font-size:.86rem;line-height:2.6">
+        1. <u>Paul</u> offre un livre à Marie. → <span class="blank blank-lg"></span><br>
+        2. Paul offre <u>un livre</u> à Marie. → <span class="blank blank-lg"></span><br>
+        3. Paul offre un livre <u>à Marie</u>. → <span class="blank blank-lg"></span><br>
+        4. <u>Le soir</u>, Paul lit dans son canapé. → <span class="blank blank-lg"></span><br>
+        5. Paul est <u>médecin</u>. → <span class="blank blank-lg"></span>
+      </p>
+    </div>
+  </div>
+
+  <div class="exo-block">
+    <div class="exo-header"><span class="exo-tag">Valence</span><span class="exo-title">Exercice 2 — Quelle valence ?</span></div>
+    <div class="exo-body">
+      <p class="exo-inst">Indique la valence de chaque verbe (0 = avalente, 1 = monovalente, 2 = bivalente, 3 = trivalente).</p>
+      <p style="font-size:.86rem;line-height:2.5">
+        1. <em>neiger</em> : <span class="blank blank-sm"></span><br>
+        2. <em>partir</em> : <span class="blank blank-sm"></span><br>
+        3. <em>aimer</em> : <span class="blank blank-sm"></span><br>
+        4. <em>envoyer</em> (qch à qn) : <span class="blank blank-sm"></span>
+      </p>
+    </div>
+  </div>
+
+  <div class="exo-block">
+    <div class="exo-header"><span class="exo-tag">Thème/Rhème</span><span class="exo-title">Exercice 3 — Structure informationnelle</span></div>
+    <div class="exo-body">
+      <p class="exo-inst">Dans chaque phrase, souligne le Thème (TH) et entoure le Rhème (RH).</p>
+      <p style="font-size:.86rem;line-height:2.4">
+        1. Mon chat ronronne toute la nuit.<br>
+        2. Ce livre, je l'ai adoré.<br>
+        3. Le lendemain, il repartit sans un mot.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ CH. 4 — ORDRE DANS LA CLAUSE ══════════════ -->
+<div class="page c4">
+  <div class="ch-header">
+    <span class="ch-num-badge">Chapitre 4</span>
+    <h2 class="ch-main-title">L'ordre dans la clause</h2>
+    <p class="ch-desc">Dislocation · Clivée · Pseudo-clivée · Passif · Construction impersonnelle</p>
+  </div>
+
+  <div class="sec-label">Fiche de cours</div>
+  <div class="resume">
+    <p>L'ordre neutre en français est <strong>SVO</strong> (<em>Paul mange une pomme</em>). On peut le réorganiser pour mettre en relief certains éléments.</p>
+    <p><strong>Dislocation gauche</strong> : <em>Mon chat, il dort.</em> — le thème est mis en avant.<br>
+    <strong>Dislocation droite</strong> : <em>Il dort, mon chat.</em> — précision après coup.</p>
+    <p><strong>Clivée</strong> : <em>C'est X qui/que…</em> — focalise l'élément X.</p>
+    <p><strong>Passif</strong> : <em>être + PP</em>. Le COD de l'actif devient sujet. L'agent peut être effacé.</p>
+    <p><strong>Construction impersonnelle</strong> : <em>Il V + sujet logique post-posé.</em> Ex. : <em>Il reste deux places.</em></p>
+  </div>
+
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Construction</th><th>Structure</th><th>Effet</th></tr></thead>
+    <tbody>
+      <tr><td>Dislocation gauche</td><td>X, pronom V…</td><td>Thème emphatique</td></tr>
+      <tr><td>Dislocation droite</td><td>pronom V…, X</td><td>Précision / afterthought</td></tr>
+      <tr><td>Clivée</td><td>C'est X qui/que…</td><td>Focus sur X</td></tr>
+      <tr><td>Pseudo-clivée</td><td>Ce qui/que X, c'est Y</td><td>Contraste fort</td></tr>
+      <tr><td>Passif</td><td>être + PP (par agent)</td><td>Thématise le patient</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="sec-label">Exercices</div>
+
+  <div class="exo-block">
+    <div class="exo-header"><span class="exo-tag">Transformation</span><span class="exo-title">Exercice 1 — Clivées</span></div>
+    <div class="exo-body">
+      <p class="exo-inst">Transforme la phrase <em>« Marie mange une pomme le matin »</em> en trois clivées différentes (focalise le sujet, le COD, puis le circonstant).</p>
+      <div class="answer-lines">
+        <span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="exo-block">
+    <div class="exo-header"><span class="exo-tag">Transformation</span><span class="exo-title">Exercice 2 — Passif</span></div>
+    <div class="exo-body">
+      <p class="exo-inst">Transforme les phrases suivantes à la voix passive. Indique si l'agent est maintenu ou effacé.</p>
+      <p style="font-size:.86rem;line-height:2.6">
+        1. Le chat mange la souris. → <span class="blank" style="min-width:260px"></span><br>
+        2. Le jury a récompensé la meilleure actrice. → <span class="blank" style="min-width:260px"></span><br>
+        3. On a volé mon vélo. → <span class="blank" style="min-width:260px"></span>
+      </p>
+    </div>
+  </div>
+
+  <div class="exo-block">
+    <div class="exo-header"><span class="exo-tag">Identification</span><span class="exo-title">Exercice 3 — Quelle construction ?</span></div>
+    <div class="exo-body">
+      <p class="exo-inst">Identifie la construction utilisée dans chaque phrase.</p>
+      <p style="font-size:.86rem;line-height:2.5">
+        1. <em>Ce que j'aime, c'est le chocolat.</em> → <span class="blank blank-lg"></span><br>
+        2. <em>Il reste encore des places.</em> → <span class="blank blank-lg"></span><br>
+        3. <em>Ce livre, je ne l'ai pas lu.</em> → <span class="blank blank-lg"></span><br>
+        4. <em>C'est Paul qui a écrit ce message.</em> → <span class="blank blank-lg"></span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ CH. 5 — TYPES DE CLAUSES ══════════════ -->
+<div class="page c5">
+  <div class="ch-header">
+    <span class="ch-num-badge">Chapitre 5</span>
+    <h2 class="ch-main-title">Types de clauses et voix</h2>
+    <p class="ch-desc">Déclarative · Interrogative · Impérative · Exclamative · Clause averbale · Passif pronominal</p>
+  </div>
+
+  <div class="sec-label">Fiche de cours</div>
+  <div class="resume">
+    <p>Quatre <strong>modalités de clause</strong> : <strong>déclarative</strong> (assertion), <strong>interrogative</strong> totale (oui/non) ou partielle (sur un constituant), <strong>impérative</strong> (ordre, sans sujet), <strong>exclamative</strong> (expression affective).</p>
+    <p>Une <strong>clause averbale</strong> n'a pas de verbe conjugué mais forme un acte complet : <em>Silence ! / Au feu ! / Défense d'entrer.</em></p>
+    <p><strong>Passif morphologique</strong> : <em>être + PP</em>, agent possible avec <em>par</em>. <em>Ex. : Ce livre a été écrit par Proust.</em><br>
+    <strong>Passif pronominal</strong> : <em>se + V</em>, agent impossible. <em>Ex. : Ça se dit.</em></p>
+    <p><strong>Subordonnées</strong> : complétive (COD), circonstancielle (circonstant), relative (modificateur de N).</p>
+  </div>
+
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Type</th><th>Structure</th><th>Exemple</th></tr></thead>
+    <tbody>
+      <tr><td>Déclarative</td><td>S V (C)</td><td>Il mange une pomme.</td></tr>
+      <tr><td>Interrogative totale</td><td>Est-ce que / inversion / ↗</td><td>Mange-t-il ?</td></tr>
+      <tr><td>Interrogative partielle</td><td>Mot-Q + inversion</td><td>Que mange-t-il ?</td></tr>
+      <tr><td>Impérative</td><td>V sans sujet</td><td>Mange ta pomme !</td></tr>
+      <tr><td>Exclamative</td><td>Comme / Que / Quel…</td><td>Comme il mange vite !</td></tr>
+      <tr><td>Averbale</td><td>GN / Infinitif seul</td><td>Silence ! / Ne pas fumer.</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="sec-label">Exercices</div>
+
+  <div class="exo-block">
+    <div class="exo-header"><span class="exo-tag">Identification</span><span class="exo-title">Exercice 1 — Type de clause</span></div>
+    <div class="exo-body">
+      <p class="exo-inst">Identifie le type de chaque clause.</p>
+      <p style="font-size:.86rem;line-height:2.5">
+        1. <em>Viens tout de suite !</em> → <span class="blank blank-lg"></span><br>
+        2. <em>Quand pars-tu ?</em> → <span class="blank blank-lg"></span><br>
+        3. <em>Comme elle chante bien !</em> → <span class="blank blank-lg"></span><br>
+        4. <em>Défense de fumer.</em> → <span class="blank blank-lg"></span><br>
+        5. <em>Il fait beau aujourd'hui.</em> → <span class="blank blank-lg"></span>
+      </p>
+    </div>
+  </div>
+
+  <div class="exo-block">
+    <div class="exo-header"><span class="exo-tag">QCM</span><span class="exo-title">Exercice 2 — Passif morphologique ou pronominal ?</span></div>
+    <div class="exo-body">
+      <p class="exo-q">1. <em>Ce produit se vend bien.</em> — Peut-on ajouter « par quelqu'un » ?</p>
+      <div class="mcq-choices">
+        <div class="mcq-opt"><div class="mcq-circle"></div>a) Oui → passif morphologique</div>
+        <div class="mcq-opt"><div class="mcq-circle"></div>b) Non → passif pronominal</div>
+      </div>
+      <p class="exo-q" style="margin-top:.8rem">2. <em>Ce roman a été écrit par Flaubert.</em> — Quel type de passif ?</p>
+      <div class="mcq-choices">
+        <div class="mcq-opt"><div class="mcq-circle"></div>a) Passif morphologique (être + PP)</div>
+        <div class="mcq-opt"><div class="mcq-circle"></div>b) Passif pronominal (se + V)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="exo-block">
+    <div class="exo-header"><span class="exo-tag">Question ouverte</span><span class="exo-title">Exercice 3</span></div>
+    <div class="exo-body">
+      <p class="exo-q">Pourquoi <em>« Silence ! »</em> est-il considéré comme une clause même sans verbe ? Justifie.</p>
+      <div class="answer-lines">
+        <span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ CH. 6 — EXTENSIONS DU GN ══════════════ -->
+<div class="page c6">
+  <div class="ch-header">
+    <span class="ch-num-badge">Chapitre 6</span>
+    <h2 class="ch-main-title">Extensions du groupe nominal</h2>
+    <p class="ch-desc">Épithète · Relative déterminative / explicative · Apposition · GPrép modificateur</p>
+  </div>
+
+  <div class="sec-label">Fiche de cours</div>
+  <div class="resume">
+    <p>Un <strong>GN minimal</strong> = Déterminant + Nom. On peut l'enrichir avec des <strong>extensions</strong>.</p>
+    <p><strong>Épithète liée</strong> : adjectif directement rattaché au nom (<em>un grand chat noir</em>). <strong>Épithète détachée</strong> : séparée par une virgule, mobile (<em>Fatiguée, elle dormit</em>).</p>
+    <p><strong>Relative déterminative</strong> (sans virgule) : restreint l'ensemble des référents. <em>Le chat qui dort est paresseux.</em><br>
+    <strong>Relative explicative</strong> (avec virgules) : info accessoire sur un référent déjà identifié. <em>Mon chat, qui aime dormir, est paresseux.</em></p>
+    <p>Pronoms relatifs : <em>qui</em> (sujet) / <em>que</em> (COD) / <em>dont</em> (compl. de <em>de</em>) / <em>où</em> (lieu/temps) / <em>lequel</em> (après prép.).</p>
+  </div>
+
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Extension</th><th>Exemple</th></tr></thead>
+    <tbody>
+      <tr><td>Épithète liée</td><td><em>une belle maison rouge</em></td></tr>
+      <tr><td>Épithète détachée</td><td><em>Fatiguée, elle dormit</em></td></tr>
+      <tr><td>Relative déterminative</td><td><em>le livre que je lis</em></td></tr>
+      <tr><td>Relative explicative</td><td><em>ce livre, que j'adore, est épuisé</em></td></tr>
+      <tr><td>Apposition</td><td><em>Paris, capitale de la France</em></td></tr>
+      <tr><td>GPrép modificateur</td><td><em>la maison de mes parents</em></td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="sec-label">Exercices</div>
+
+  <div class="exo-block">
+    <div class="exo-header"><span class="exo-tag">Pronom relatif</span><span class="exo-title">Exercice 1 — Quel pronom relatif ?</span></div>
+    <div class="exo-body">
+      <p class="exo-inst">Complète avec <em>qui, que, dont, où, lequel/laquelle</em>.</p>
+      <p style="font-size:.86rem;line-height:2.5">
+        1. Le livre <span class="blank blank-sm"></span> j'ai lu est passionnant.<br>
+        2. La ville <span class="blank blank-sm"></span> je suis né est magnifique.<br>
+        3. L'auteur <span class="blank blank-sm"></span> tout le monde parle a gagné le Goncourt.<br>
+        4. La table sur <span class="blank blank-lg"></span> il a posé son sac est fragile.<br>
+        5. C'est l'ami <span class="blank blank-sm"></span> m'a aidé à déménager.
+      </p>
+    </div>
+  </div>
+
+  <div class="exo-block">
+    <div class="exo-header"><span class="exo-tag">Vrai / Faux</span><span class="exo-title">Exercice 2 — Relatives</span></div>
+    <div class="exo-body">
+      <div>
+        <div class="tf-row"><div class="tf-boxes"><div class="tf-box"></div><div class="tf-box"></div></div><div><strong>V &nbsp; F &nbsp;</strong>Une relative déterminative peut être supprimée sans changer le sens essentiel.</div></div>
+        <div class="tf-row"><div class="tf-boxes"><div class="tf-box"></div><div class="tf-box"></div></div><div><strong>V &nbsp; F &nbsp;</strong>Une relative explicative est placée entre virgules.</div></div>
+        <div class="tf-row"><div class="tf-boxes"><div class="tf-box"></div><div class="tf-box"></div></div><div><strong>V &nbsp; F &nbsp;</strong><em>dont</em> s'utilise quand le verbe de la relative se construit avec <em>de</em>.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="exo-block">
+    <div class="exo-header"><span class="exo-tag">Analyse</span><span class="exo-title">Exercice 3 — Analyse du GN</span></div>
+    <div class="exo-body">
+      <p class="exo-q">Analyse le GN suivant en identifiant chaque constituant :<br><em>« une vieille bouteille de vin rouge de Bourgogne »</em></p>
+      <div class="answer-lines">
+        <span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ CH. 7 — EXTENSIONS DU GV ══════════════ -->
+<div class="page c7">
+  <div class="ch-header">
+    <span class="ch-num-badge">Chapitre 7</span>
+    <h2 class="ch-main-title">Extensions du groupe verbal</h2>
+    <p class="ch-desc">Circonstants · Périphrases aspectuelles · Cadre thématique</p>
+  </div>
+
+  <div class="sec-label">Fiche de cours</div>
+  <div class="resume">
+    <p>Le <strong>GV</strong> comprend le verbe + ses arguments. On peut y ajouter des <strong>circonstants</strong> — compléments facultatifs.</p>
+    <p>Trois critères du circonstant : <strong>supprimable</strong> (la clause reste grammaticale), <strong>mobile</strong> (déplaçable), <strong>multipliable</strong> (on peut en mettre plusieurs). Ex. : <em>Il chante ici, le soir, avec joie.</em></p>
+    <p>Un circonstant en <strong>position initiale</strong> = <strong>cadre thématique</strong> : établit le contexte avant l'assertion.</p>
+    <p><strong>Périphrases verbales</strong> : <em>être en train de + inf.</em> (progressif) / <em>aller + inf.</em> (futur proche) / <em>venir de + inf.</em> (passé récent) / <em>devoir + inf.</em> (obligation).</p>
+  </div>
+
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Périphrase</th><th>Valeur</th><th>Exemple</th></tr></thead>
+    <tbody>
+      <tr><td>être en train de + inf.</td><td>Progressif (en cours)</td><td>Il est en train de manger.</td></tr>
+      <tr><td>aller + inf.</td><td>Ingressif / futur proche</td><td>Il va partir.</td></tr>
+      <tr><td>venir de + inf.</td><td>Résultatif récent</td><td>Il vient de finir.</td></tr>
+      <tr><td>devoir + inf.</td><td>Obligation / probabilité</td><td>Il doit travailler.</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="sec-label">Exercices</div>
+
+  <div class="exo-block">
+    <div class="exo-header"><span class="exo-tag">Test</span><span class="exo-title">Exercice 1 — Circonstant ou argument ?</span></div>
+    <div class="exo-body">
+      <p class="exo-inst">Pour chaque groupe souligné, dis s'il s'agit d'un <strong>circonstant</strong> (C) ou d'un <strong>argument obligatoire</strong> (A). Applique les trois tests.</p>
+      <p style="font-size:.86rem;line-height:2.5">
+        1. Il habite <u>à Paris</u>. → <span class="blank blank-sm"></span><br>
+        2. Il chante <u>sous la douche</u>. → <span class="blank blank-sm"></span><br>
+        3. Il met son livre <u>sur la table</u>. → <span class="blank blank-sm"></span><br>
+        4. <u>Chaque matin</u>, elle court. → <span class="blank blank-sm"></span>
+      </p>
+    </div>
+  </div>
+
+  <div class="exo-block">
+    <div class="exo-header"><span class="exo-tag">Périphrases</span><span class="exo-title">Exercice 2 — Quelle valeur aspectuelle ?</span></div>
+    <div class="exo-body">
+      <p class="exo-inst">Indique la valeur de chaque périphrase : <strong>progressif / futur proche / passé récent / obligation</strong>.</p>
+      <p style="font-size:.86rem;line-height:2.5">
+        1. <em>Elle vient de raccrocher.</em> → <span class="blank blank-lg"></span><br>
+        2. <em>Le train va démarrer.</em> → <span class="blank blank-lg"></span><br>
+        3. <em>Tu dois rendre ce devoir demain.</em> → <span class="blank blank-lg"></span><br>
+        4. <em>Je suis en train de lire.</em> → <span class="blank blank-lg"></span>
+      </p>
+    </div>
+  </div>
+
+  <div class="exo-block">
+    <div class="exo-header"><span class="exo-tag">Question ouverte</span><span class="exo-title">Exercice 3</span></div>
+    <div class="exo-body">
+      <p class="exo-q">Quels sont les trois critères permettant d'identifier un circonstant ? Illustre chacun avec un exemple tiré de <em>« Il chante le soir dans le jardin. »</em></p>
+      <div class="answer-lines">
+        <span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ CH. 8 — CLAUSE COMPLEXE ══════════════ -->
+<div class="page c8">
+  <div class="ch-header">
+    <span class="ch-num-badge">Chapitre 8</span>
+    <h2 class="ch-main-title">La clause complexe</h2>
+    <p class="ch-desc">Coordination · Subordination · Types de subordonnées · Discours indirect</p>
+  </div>
+
+  <div class="sec-label">Fiche de cours</div>
+  <div class="resume">
+    <p>Une <strong>clause complexe</strong> contient plusieurs propositions. La <strong>coordination</strong> unit deux clauses de même rang (<em>et, mais, ou, donc, or, ni, car</em> — aide-mémoire : <em>mais où est donc Ornicar ?</em>).</p>
+    <p>La <strong>subordination</strong> enchâsse une clause dans une autre. Types de subordonnées :</p>
+    <ul style="padding-left:1.2rem;font-size:.875rem;line-height:1.9;margin:.4rem 0">
+      <li><strong>Complétive</strong> (que + ind./subj.) → COD ou sujet</li>
+      <li><strong>Circonstancielle</strong> → circonstant (quand, parce que, bien que…)</li>
+      <li><strong>Relative</strong> → modificateur d'un nom</li>
+      <li><strong>Interrogative indirecte</strong> → si / ce qui / ce que</li>
+    </ul>
+    <p>Au <strong>discours indirect</strong> : changement de personne (<em>je → il</em>), de temps (<em>futur → conditionnel</em>), et de déictiques (<em>demain → le lendemain</em>).</p>
+  </div>
+
+  <div class="box box-ret"><div class="box-lbl">Aide-mémoire</div>
+    <p>Conjonctions de coordination : <strong>mais · ou · et · donc · or · ni · car</strong> → « Mais où est donc Ornicar ? »</p>
+  </div>
+
+  <div class="sec-label">Exercices</div>
+
+  <div class="exo-block">
+    <div class="exo-header"><span class="exo-tag">Identification</span><span class="exo-title">Exercice 1 — Type de subordonnée</span></div>
+    <div class="exo-body">
+      <p class="exo-inst">Identifie le type de chaque subordonnée soulignée.</p>
+      <p style="font-size:.86rem;line-height:2.5">
+        1. Je sais <u>qu'il viendra demain</u>. → <span class="blank blank-lg"></span><br>
+        2. <u>Quand il pleut</u>, je reste chez moi. → <span class="blank blank-lg"></span><br>
+        3. L'homme <u>qui chante</u> est mon voisin. → <span class="blank blank-lg"></span><br>
+        4. Je me demande <u>s'il vient</u>. → <span class="blank blank-lg"></span><br>
+        5. <u>Bien qu'elle soit fatiguée</u>, elle travaille. → <span class="blank blank-lg"></span>
+      </p>
+    </div>
+  </div>
+
+  <div class="exo-block">
+    <div class="exo-header"><span class="exo-tag">Transformation</span><span class="exo-title">Exercice 2 — Discours indirect</span></div>
+    <div class="exo-body">
+      <p class="exo-inst">Transforme au discours indirect.</p>
+      <p style="font-size:.86rem;line-height:1.7;margin-bottom:.6rem">1. Il a dit : <em>« Je partirai demain matin avec mes amis. »</em></p>
+      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span></div>
+      <p style="font-size:.86rem;line-height:1.7;margin-bottom:.6rem;margin-top:.5rem">2. Elle a dit : <em>« J'ai fini mes devoirs hier soir. »</em></p>
+      <div class="answer-lines"><span class="answer-line"></span><span class="answer-line"></span></div>
+    </div>
+  </div>
+
+  <div class="exo-block">
+    <div class="exo-header"><span class="exo-tag">Analyse</span><span class="exo-title">Exercice 3 — Clause complexe complète</span></div>
+    <div class="exo-body">
+      <p class="exo-q">Analysez la clause complexe : <em>« Bien qu'il soit épuisé, Paul, qui rentrait de voyage, prépara néanmoins le dîner. »</em><br>Identifiez : la principale, chaque subordonnée et sa fonction.</p>
+      <div class="answer-lines">
+        <span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ CH. 9 — PHRASE GRAPHIQUE ══════════════ -->
+<div class="page c9">
+  <div class="ch-header">
+    <span class="ch-num-badge">Chapitre 9</span>
+    <h2 class="ch-main-title">La phrase graphique</h2>
+    <p class="ch-desc">Phrase graphique vs clause · Rôles de la ponctuation · 3 plans d'analyse</p>
+  </div>
+
+  <div class="sec-label">Fiche de cours</div>
+  <div class="resume">
+    <p><strong>Phrase graphique</strong> = unité graphique : majuscule → ponctuation forte (. ? ! …). C'est une notion orthographique.</p>
+    <p><strong>Clause</strong> = unité linguistique centrée sur un prédicat verbal. Une phrase graphique peut contenir plusieurs clauses ; une clause peut être averbale.</p>
+    <p><strong>Rôles de la ponctuation</strong> : syntaxique (virgule devant un circonstant antéposé), prosodique (pause), pragmatique (? et ! marquent l'acte de parole).</p>
+    <p><strong>3 plans d'analyse d'un texte écrit</strong> :<br>
+    1. <strong>Morphosyntaxique</strong> : clauses, syntagmes, fonctions<br>
+    2. <strong>Topographique</strong> : mise en page, paragraphes<br>
+    3. <strong>Pragmasyntaxique</strong> : TH/RH, dislocation, connecteurs</p>
+  </div>
+
+  <div class="box box-att"><div class="box-lbl">Erreur fréquente</div>
+    <p>On ne met <strong>PAS</strong> de virgule entre le sujet et son verbe : <em>*Le chat, mange.</em> est agrammatical.</p>
+  </div>
+
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Signe</th><th>Rôle syntaxique</th><th>Rôle pragmatique</th></tr></thead>
+    <tbody>
+      <tr><td>Virgule</td><td>Sépare le circonstant antéposé</td><td>Délimite le thème</td></tr>
+      <tr><td>Point-virgule</td><td>Entre deux clauses coordonnées</td><td>Lien logique fort</td></tr>
+      <tr><td>Deux-points</td><td>Introduit explication / citation</td><td>Annonce ce qui suit</td></tr>
+      <tr><td>Guillemets</td><td>Encadrent le discours direct</td><td>Marque citationelle</td></tr>
+      <tr><td>? / !</td><td>Fin d'interrogative / exclamative</td><td>Acte de parole</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="sec-label">Exercices</div>
+
+  <div class="exo-block">
+    <div class="exo-header"><span class="exo-tag">Comptage</span><span class="exo-title">Exercice 1 — Clauses vs phrase graphique</span></div>
+    <div class="exo-body">
+      <p class="exo-inst">Pour chaque phrase graphique, indique le nombre de clauses qu'elle contient.</p>
+      <p style="font-size:.86rem;line-height:2.5">
+        1. <em>Il pleut.</em> → <span class="blank blank-sm"></span> clause(s)<br>
+        2. <em>Il pleut ; je reste chez moi.</em> → <span class="blank blank-sm"></span> clause(s)<br>
+        3. <em>Silence !</em> → <span class="blank blank-sm"></span> clause(s)<br>
+        4. <em>Bien qu'il soit fatigué, Paul prépara le dîner.</em> → <span class="blank blank-sm"></span> clause(s)
+      </p>
+    </div>
+  </div>
+
+  <div class="exo-block">
+    <div class="exo-header"><span class="exo-tag">Ponctuation</span><span class="exo-title">Exercice 2 — Ponctuation correcte</span></div>
+    <div class="exo-body">
+      <p class="exo-inst">Corrige les erreurs de ponctuation dans les phrases suivantes, si nécessaire.</p>
+      <p style="font-size:.86rem;line-height:2.5">
+        1. <em>Le chat, mange la souris.</em> → <span class="blank" style="min-width:200px"></span><br>
+        2. <em>Le matin je prends un café.</em> → <span class="blank" style="min-width:200px"></span><br>
+        3. <em>Il a dit « je pars demain ».</em> → <span class="blank" style="min-width:200px"></span>
+      </p>
+    </div>
+  </div>
+
+  <div class="exo-block">
+    <div class="exo-header"><span class="exo-tag">Analyse sur 3 plans</span><span class="exo-title">Exercice 3 — Analyse complète</span></div>
+    <div class="exo-body">
+      <p class="exo-q">Analysez sur les 3 plans : <em>« Les animaux, réfléchissez avant de les manger. »</em></p>
+      <div class="answer-lines">
+        <span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span><span class="answer-line"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ CORRIGÉS ══════════════ -->
+<div class="page corr-page">
+  <div class="toc-title" style="color:#2d2540;border-color:#c8b8f0">Corrigés</div>
+  <p style="font-size:.83rem;color:#5a5070;margin-bottom:1.5rem">Tous les exercices, dans l'ordre des chapitres.</p>
+
+  <!-- INTRO -->
+  <div class="corr-ch">
+    <div class="corr-ch-title">Introduction — Sémiologie</div>
+    <div class="corr-item"><span class="corr-num">Ex. 1 QCM</span><span class="corr-ans">1. <strong>b</strong> — 2. <strong>c</strong> — 3. <strong>b</strong></span></div>
+    <div class="corr-sep"></div>
+    <div class="corr-item"><span class="corr-num">Ex. 2 Trous</span><span class="corr-ans">1. signifiant / signifié — 2. arbitraire — 3. double articulation — 4. langue / parole</span></div>
+    <div class="corr-sep"></div>
+    <div class="corr-item"><span class="corr-num">Ex. 3 V/F</span><span class="corr-ans"><strong>F</strong> (le référent est hors du signe) · <strong>F</strong> (le lien est arbitraire) · <strong>F</strong> (les phonèmes n'ont pas de sens propre) · <strong>V</strong></span></div>
+    <div class="corr-sep"></div>
+    <div class="corr-item"><span class="corr-num">Ex. 4</span><span class="corr-ans">Le lien est arbitraire car aucune relation naturelle n'unit la forme au sens. Ex. : « chien » / « dog » / « Hund » / « perro » désignent le même animal avec des formes radicalement différentes selon les langues.</span></div>
+  </div>
+
+  <!-- CH. 1 -->
+  <div class="corr-ch">
+    <div class="corr-ch-title">Chapitre 1 — Phonologie</div>
+    <div class="corr-item"><span class="corr-num">Ex. 1</span><span class="corr-ans">A→2 (son physique) · B→4 (unité distinctive) · C→1 (variante) · D→3 (2 mots ≠ d'un son)</span></div>
+    <div class="corr-sep"></div>
+    <div class="corr-item"><span class="corr-num">Ex. 2 QCM</span><span class="corr-ans">1. <strong>b</strong> (1 seul phonème /o/) — 2. <strong>a</strong> (2 consonnes /ʒd/ → le schwa tombe)</span></div>
+    <div class="corr-sep"></div>
+    <div class="corr-item"><span class="corr-num">Ex. 3 Trous</span><span class="corr-ans">phonétique / phonologie / phonèmes / commutation / allophones</span></div>
+    <div class="corr-sep"></div>
+    <div class="corr-item"><span class="corr-num">Ex. 4</span><span class="corr-ans">Ex. : <em>pain/bain</em> (/p/ vs /b/) et <em>sot/zoo</em> (/s/ vs /z/). Elles prouvent que les deux sons sont des phonèmes distincts car leur substitution change le sens du mot.</span></div>
+  </div>
+
+  <!-- CH. 2 -->
+  <div class="corr-ch">
+    <div class="corr-ch-title">Chapitre 2 — Morphologie</div>
+    <div class="corr-item"><span class="corr-num">Ex. 1</span><span class="corr-ans">1. {chant-}+{-eur}+{-s} — 2. {mal-}+{heur-}+{-eux} — 3. {im-}+{possible} — 4. {pré-}+{vis-}+{-ible}</span></div>
+    <div class="corr-sep"></div>
+    <div class="corr-item"><span class="corr-num">Ex. 2 V/F</span><span class="corr-ans"><strong>V</strong> · <strong>F</strong> (même lexème CHANTER, flexion) · <strong>V</strong> (allomorphes de {in-}) · <strong>V</strong></span></div>
+    <div class="corr-sep"></div>
+    <div class="corr-item"><span class="corr-num">Ex. 3</span><span class="corr-ans">1. MV (mot-valise) — 2. C (composition) — 3. D (dérivation suffixale) — 4. CV (conversion) — 5. F (flexion)</span></div>
+    <div class="corr-sep"></div>
+    <div class="corr-item"><span class="corr-num">Ex. 4</span><span class="corr-ans">{in-} → im- (impossible, imbuvable) / il- (illégal, illisible) / ir- (irrégulier, irréel) / in- (inutile, inconnu). Adaptation phonétique par assimilation au phonème initial de la base.</span></div>
+  </div>
+
+  <!-- CH. 3 -->
+  <div class="corr-ch">
+    <div class="corr-ch-title">Chapitre 3 — Clause canonique</div>
+    <div class="corr-item"><span class="corr-num">Ex. 1</span><span class="corr-ans">1. Sujet — 2. COD — 3. COI — 4. Circonstant — 5. Attribut du sujet</span></div>
+    <div class="corr-sep"></div>
+    <div class="corr-item"><span class="corr-num">Ex. 2</span><span class="corr-ans">1. avalente (0) — 2. monovalente (1) — 3. bivalente (2) — 4. trivalente (3)</span></div>
+    <div class="corr-sep"></div>
+    <div class="corr-item"><span class="corr-num">Ex. 3</span><span class="corr-ans">1. TH : <em>Mon chat</em> / RH : <em>ronronne toute la nuit</em> — 2. TH : <em>Ce livre</em> (disloqué) / RH : <em>je l'ai adoré</em> — 3. TH : <em>Le lendemain</em> / RH : <em>il repartit sans un mot</em></span></div>
+  </div>
+
+  <!-- CH. 4 -->
+  <div class="corr-ch">
+    <div class="corr-ch-title">Chapitre 4 — Ordre dans la clause</div>
+    <div class="corr-item"><span class="corr-num">Ex. 1</span><span class="corr-ans">1. C'est <em>Marie</em> qui mange une pomme le matin. — 2. C'est <em>une pomme</em> que Marie mange le matin. — 3. C'est <em>le matin</em> que Marie mange une pomme.</span></div>
+    <div class="corr-sep"></div>
+    <div class="corr-item"><span class="corr-num">Ex. 2</span><span class="corr-ans">1. La souris est mangée par le chat. — 2. La meilleure actrice a été récompensée par le jury. — 3. Mon vélo a été volé. (agent effacé)</span></div>
+    <div class="corr-sep"></div>
+    <div class="corr-item"><span class="corr-num">Ex. 3</span><span class="corr-ans">1. Pseudo-clivée — 2. Construction impersonnelle — 3. Dislocation gauche — 4. Clivée</span></div>
+  </div>
+
+  <!-- CH. 5 -->
+  <div class="corr-ch">
+    <div class="corr-ch-title">Chapitre 5 — Types de clauses</div>
+    <div class="corr-item"><span class="corr-num">Ex. 1</span><span class="corr-ans">1. Impérative — 2. Interrogative partielle — 3. Exclamative — 4. Averbale (infinitive) — 5. Déclarative</span></div>
+    <div class="corr-sep"></div>
+    <div class="corr-item"><span class="corr-num">Ex. 2 QCM</span><span class="corr-ans">1. <strong>b</strong> (passif pronominal, agent impossible) — 2. <strong>a</strong> (passif morphologique, être + PP)</span></div>
+    <div class="corr-sep"></div>
+    <div class="corr-item"><span class="corr-num">Ex. 3</span><span class="corr-ans">« Silence ! » est une clause car elle réalise un acte communicatif complet (ordre/injonction). La définition moderne de la clause exige un prédicat, qui peut être nominal. L'absence de verbe conjugué n'empêche pas le statut de clause.</span></div>
+  </div>
+
+  <!-- CH. 6 -->
+  <div class="corr-ch">
+    <div class="corr-ch-title">Chapitre 6 — Extensions du GN</div>
+    <div class="corr-item"><span class="corr-num">Ex. 1</span><span class="corr-ans">1. que — 2. où — 3. dont — 4. laquelle — 5. qui</span></div>
+    <div class="corr-sep"></div>
+    <div class="corr-item"><span class="corr-num">Ex. 2 V/F</span><span class="corr-ans"><strong>F</strong> (déterminative non supprimable sans perte de sens) · <strong>V</strong> · <strong>V</strong></span></div>
+    <div class="corr-sep"></div>
+    <div class="corr-item"><span class="corr-num">Ex. 3</span><span class="corr-ans">Tête : <em>bouteille</em> / Dét. : <em>une</em> / Épithète : <em>vieille</em> / GPrép1 : <em>de vin rouge de Bourgogne</em> (tête : <em>vin</em>, épith. : <em>rouge</em>, GPrép2 : <em>de Bourgogne</em>)</span></div>
+  </div>
+
+  <!-- CH. 7 -->
+  <div class="corr-ch">
+    <div class="corr-ch-title">Chapitre 7 — Extensions du GV</div>
+    <div class="corr-item"><span class="corr-num">Ex. 1</span><span class="corr-ans">1. A (argument de <em>habiter</em>, non supprimable) — 2. C — 3. A (argument de <em>mettre</em>) — 4. C</span></div>
+    <div class="corr-sep"></div>
+    <div class="corr-item"><span class="corr-num">Ex. 2</span><span class="corr-ans">1. passé récent — 2. futur proche — 3. obligation — 4. progressif</span></div>
+    <div class="corr-sep"></div>
+    <div class="corr-item"><span class="corr-num">Ex. 3</span><span class="corr-ans">1. <em>Supprimable</em> : « Il chante (le soir) » reste correct. 2. <em>Mobile</em> : « Le soir, il chante dans le jardin. » 3. <em>Multipliable</em> : « Il chante le soir dans le jardin avec joie. »</span></div>
+  </div>
+
+  <!-- CH. 8 -->
+  <div class="corr-ch">
+    <div class="corr-ch-title">Chapitre 8 — Clause complexe</div>
+    <div class="corr-item"><span class="corr-num">Ex. 1</span><span class="corr-ans">1. Complétive (COD) — 2. Circonstancielle temporelle — 3. Relative déterminative — 4. Interrogative indirecte — 5. Circonstancielle concessive</span></div>
+    <div class="corr-sep"></div>
+    <div class="corr-item"><span class="corr-num">Ex. 2 DI</span><span class="corr-ans">1. Il a dit qu'il partirait <em>le lendemain matin</em> avec ses amis. — 2. Elle a dit qu'elle avait fini ses devoirs <em>la veille au soir</em>.</span></div>
+    <div class="corr-sep"></div>
+    <div class="corr-item"><span class="corr-num">Ex. 3</span><span class="corr-ans">Principale : <em>Paul prépara le dîner</em> — Sub. concessive : <em>Bien qu'il soit épuisé</em> (circonstant) — Relative explicative : <em>qui rentrait de voyage</em> (modifie Paul) — Adverbe connectif : <em>néanmoins</em></span></div>
+  </div>
+
+  <!-- CH. 9 -->
+  <div class="corr-ch" style="border-bottom:none">
+    <div class="corr-ch-title">Chapitre 9 — Phrase graphique</div>
+    <div class="corr-item"><span class="corr-num">Ex. 1</span><span class="corr-ans">1. 1 clause — 2. 2 clauses — 3. 1 clause (averbale) — 4. 2 clauses</span></div>
+    <div class="corr-sep"></div>
+    <div class="corr-item"><span class="corr-num">Ex. 2</span><span class="corr-ans">1. <em>Le chat mange la souris.</em> (supprimer la virgule après <em>chat</em>) — 2. <em>Le matin, je prends un café.</em> (ajouter une virgule après <em>matin</em>) — 3. <em>Il a dit : « Je pars demain. »</em> (deux-points + guillemets)</span></div>
+    <div class="corr-sep"></div>
+    <div class="corr-item"><span class="corr-num">Ex. 3</span><span class="corr-ans"><strong>Morphosyntaxique</strong> : GN <em>Les animaux</em> disloqué à gauche, repris par <em>les</em> (pronom COD) ; V impératif <em>réfléchissez</em> ; sub. infinitive circonstancielle temporelle <em>avant de les manger</em>. <strong>Topographique</strong> : une phrase graphique, virgule après le GN disloqué. <strong>Pragmasyntaxique</strong> : TH = <em>Les animaux</em> (cadrage thématique), RH = injonction ; effet rhétorique d'interpellation.</span></div>
+  </div>
+</div>
+
+<!-- ══════════════ PAGE DE FIN ══════════════ -->
+<div class="page" style="padding:0">
+  <div class="cover" style="min-height:180mm">
+    <div style="font-family:'DM Serif Display',serif;font-size:2rem;background:linear-gradient(135deg,#c8b8f0,#a8c8f0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:1rem">Bon courage !</div>
+    <p style="font-size:.9rem;color:rgba(232,228,240,.6);max-width:340px;line-height:1.8">Ce cahier couvre l'intégralité du programme de linguistique française UNIL 2025. Révise régulièrement, utilise les fiches de cours comme point d'appui, et consulte les corrigés seulement après avoir répondu.</p>
+    <div style="margin-top:1.5rem;font-size:.7rem;color:rgba(232,228,240,.3);letter-spacing:.05em">Linguistique française · UNIL 2025 · R. Mahrer</div>
+  </div>
+</div>
+
+</div><!-- /book -->
+</body>
+</html>
