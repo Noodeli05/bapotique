@@ -469,8 +469,8 @@ input, textarea, select { font-size: max(16px, 1em) !important; }
 h3.acc-head{cursor:pointer;display:flex;align-items:center;gap:.4rem;user-select:none;transition:opacity .15s;padding:.25rem 0}
 h3.acc-head:hover{opacity:.8}
 .acc-arr{color:var(--lav);font-size:.85em;flex-shrink:0;line-height:1;transition:opacity .15s}
-.acc-wrap{display:block;padding:0 0 .75rem .1rem;border-bottom:1px solid rgba(255,255,255,0.05);margin-bottom:.5rem}
-.acc-wrap.open{display:none}
+.acc-wrap{display:none}
+.acc-wrap.open{display:block;padding:0 0 .75rem .1rem;animation:accSlide .22s ease;border-bottom:1px solid rgba(255,255,255,0.05);margin-bottom:.5rem}
 @keyframes accSlide{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
 /* ── PER-DOSSIER NAV ACTIVE ACCENT ─────────────────────────────────────── */
 #nav0.active,#nav1.active{background:rgba(200,184,240,0.18)!important;border-left:3px solid var(--lav)!important}
@@ -1489,7 +1489,7 @@ document.querySelectorAll('.btn-rev').forEach(function(btn){
     btn.parentNode.insertBefore(ta,btn);
   }
 });
-// Accordion: h3 sections — ouvert par défaut, clic pour replier
+// Accordion: h3 sections — replié par défaut, clic pour ouvrir
 function initAccordion(tc){
   if(!tc||tc.dataset.acc)return;
   tc.dataset.acc='1';
@@ -1501,16 +1501,16 @@ function initAccordion(tc){
   groups.forEach(function(g){
     if(!g.children.length)return;
     var wrap=document.createElement('div');
-    wrap.className='acc-wrap'; // ouvert par défaut (pas de classe .open)
+    wrap.className='acc-wrap';
     g.h3.parentNode.insertBefore(wrap,g.children[0]);
     g.children.forEach(function(c){wrap.appendChild(c);});
     var arrow=document.createElement('span');
-    arrow.className='acc-arr';arrow.textContent='▾'; // flèche bas = ouvert
+    arrow.className='acc-arr';arrow.textContent='▸';
     g.h3.prepend(arrow);
     g.h3.classList.add('acc-head');
     g.h3.addEventListener('click',function(){
-      var closed=wrap.classList.toggle('open'); // .open = caché
-      arrow.textContent=closed?'▸':'▾';
+      var open=wrap.classList.toggle('open');
+      arrow.textContent=open?'▾':'▸';
     });
   });
 }
