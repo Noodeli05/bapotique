@@ -774,6 +774,14 @@ function showResults(){
   // Log to bap_log
   logResults(total, okCount);
 
+  // Confetti for ≥70%
+  if (pct >= 70) {
+    setTimeout(function() {
+      if (typeof window.bapConfetti === 'function') window.bapConfetti({count: pct >= 90 ? 160 : 100});
+      if (typeof window.bapToast === 'function') window.bapToast(pct >= 90 ? '🏆 Excellent ! '+pct+' %' : '🎉 Réussi ! '+pct+' %', 'success', 4000);
+    }, 400);
+  }
+
   showScreen('screen-results');
 }
 

@@ -224,14 +224,15 @@
   }
 
   /* ── API publique ── */
-  window.bapToggleTheme      = bapToggleTheme;
-  window.bapToggleMenu       = bapToggleMenu;
-  window.bapToggleFocus      = bapToggleFocus;
-  window.bapInitNav          = bapInitNav;
-  window.bapSaveLastPage     = bapSaveLastPage;
-  window.bapBreadcrumbReset  = bapBreadcrumbReset;
-  window.bapBreadcrumbPush   = bapBreadcrumbPush;
-  window.bapBreadcrumbPop    = bapBreadcrumbPop;
+  window.bapToggleTheme         = bapToggleTheme;
+  window.bapToggleMenu          = bapToggleMenu;
+  window.bapToggleFocus         = bapToggleFocus;
+  window.bapInitNav             = bapInitNav;
+  window.bapSaveLastPage        = bapSaveLastPage;
+  window.bapBreadcrumbReset     = bapBreadcrumbReset;
+  window.bapBreadcrumbPush      = bapBreadcrumbPush;
+  window.bapBreadcrumbPop       = bapBreadcrumbPop;
+  window.bapSetProgressContext  = function () {};
 
   /* ── Bouton retour en haut ── */
 
@@ -398,11 +399,17 @@
   /* ── Barre de progression de lecture ── */
 
   function bapInitProgress() {
+    var navContainer = document.getElementById('bap-nav');
     var bar = document.createElement('div');
     bar.id = 'bap-progress-bar';
     bar.innerHTML = '<div class="bap-progress-fill"></div>';
-    document.body.appendChild(bar);
+    if (navContainer) navContainer.appendChild(bar);
+    else document.body.appendChild(bar);
     var fill = bar.querySelector('.bap-progress-fill');
+
+    var lblEl = document.createElement('div');
+    lblEl.id = 'bap-progress-label';
+    document.body.appendChild(lblEl);
 
     function getScroll() {
       var mainEl = document.getElementById('main');
@@ -413,16 +420,38 @@
       return { top: window.pageYOffset || d.scrollTop || 0, max: d.scrollHeight - d.clientHeight };
     }
 
+    var _ctx = '';
+    var _pct = 0;
+
+    function updateLabel() {
+      if (!_ctx) { lblEl.className = ''; return; }
+      lblEl.textContent = _ctx + ' · ' + _pct + '%';
+      lblEl.className = _pct > 1 ? 'bap-prog-lbl-vis' : '';
+    }
+
+    function positionLabel() {
+      if (!navContainer) return;
+      var r = navContainer.getBoundingClientRect();
+      lblEl.style.top = Math.round(r.bottom + 3) + 'px';
+    }
+
     function update() {
       var s = getScroll();
       var pct = s.max > 0 ? Math.min(1, s.top / s.max) : 0;
       fill.style.transform = 'scaleX(' + pct.toFixed(4) + ')';
+      _pct = Math.round(pct * 100);
+      updateLabel();
     }
+
+    positionLabel();
+    window.addEventListener('resize', positionLabel, { passive: true });
 
     var mainEl = document.getElementById('main');
     if (mainEl) mainEl.addEventListener('scroll', update, { passive: true });
     window.addEventListener('scroll', update, { passive: true });
     update();
+
+    window.bapSetProgressContext = function (text) { _ctx = text || ''; updateLabel(); };
   }
 
   /* Forcer la vérification de mise à jour du SW à chaque chargement */

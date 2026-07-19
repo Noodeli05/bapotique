@@ -5,11 +5,11 @@
 
 /* ── Barre de progression de lecture ── */
 #bap-progress-bar {
-  position: fixed;
-  top: 0;
+  position: absolute;
+  bottom: 0;
   left: 0;
   right: 0;
-  height: 3px;
+  height: 5px;
   z-index: 10000;
   pointer-events: none;
   background: rgba(200,184,240,0.07);
@@ -24,14 +24,48 @@
   transform-origin: left;
   transition: transform .12s linear;
   border-radius: 0 2px 2px 0;
+  box-shadow: 0 0 8px rgba(200,184,240,0.50), 0 0 2px rgba(168,200,240,0.30);
 }
-html.bap-focus #bap-progress-bar { display: none; }
+#bap-progress-label {
+  position: fixed;
+  right: 14px;
+  top: 58px;
+  z-index: 9999;
+  font-size: .62rem;
+  font-weight: 600;
+  color: var(--lav, #c8b8f0);
+  background: rgba(19,17,26,0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: .14rem .48rem;
+  border-radius: 6px;
+  border: 1px solid rgba(200,184,240,0.15);
+  pointer-events: none;
+  opacity: 0;
+  white-space: nowrap;
+  letter-spacing: .02em;
+  transition: opacity .2s;
+  display: none;
+}
+#bap-progress-label.bap-prog-lbl-vis {
+  display: block;
+  opacity: .88;
+}
+[data-theme="light"] #bap-progress-label {
+  background: rgba(240,236,250,0.88);
+  color: #7c6cc0;
+  border-color: rgba(120,100,180,0.20);
+}
+html.bap-focus #bap-progress-label { display: none !important; }
+[data-theme="light"] #bap-progress-bar { background: rgba(120,100,180,0.06); }
+[data-theme="light"] .bap-progress-fill { box-shadow: 0 0 8px rgba(124,108,192,0.40); }
 
 /* Wrapper sticky */
 #bap-nav {
   position: sticky;
   top: 0;
   z-index: 200;
+  overflow: visible;
 }
 
 /* Barre de navigation */
