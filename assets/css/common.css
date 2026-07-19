@@ -3,6 +3,30 @@
    Glassmorphism sombre, palette bleue-ardoise, sans framework
    ============================================================ */
 
+/* ── Barre de progression de lecture ── */
+#bap-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 10000;
+  pointer-events: none;
+  background: rgba(200,184,240,0.07);
+}
+.bap-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg,
+    var(--lav, #c8b8f0) 0%,
+    var(--sky, #a8c8f0) 55%,
+    var(--mint, #a8d8c4) 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .12s linear;
+  border-radius: 0 2px 2px 0;
+}
+html.bap-focus #bap-progress-bar { display: none; }
+
 /* Wrapper sticky */
 #bap-nav {
   position: sticky;
