@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260721');}());</script>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260719');}());</script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Flashcards — Linguistique UNIL 2025</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -241,29 +241,16 @@ body.zen-mode .site-header h1 a{pointer-events:all;opacity:1}
 body.zen-mode .fc-area{gap:1.2rem;padding-top:2rem}
 #btn-zen.active{background:rgba(200,184,240,.22);color:var(--lav);border-color:var(--lav);font-weight:600;box-shadow:0 0 10px rgba(200,184,240,0.3)}
 </style>
-<link rel="manifest" href="manifest.json"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js",{updateViaCache:"none"});</script></head>
+<link rel="manifest" href="manifest.json"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js",{updateViaCache:"none"});</script><link rel="stylesheet" href="assets/css/common.css">
+</head>
 <body>
+<script src="assets/js/common.js"></script>
 <script src="icons.js"></script>
 
-<!-- Header -->
-<header class="site-header">
-  <h1><a href="index.html"><svg class="ic"><use href="#i-layers"/></svg> Flashcards — Linguistique UNIL 2025</a></h1>
-  <nav class="nav-links">
-    <a href="index.html">Accueil</a>
-    <a href="revision_complet.html">Révision</a>
-    <a href="ressources.html">Ressources</a>
-    <a href="flashcards.html" class="active">Flashcards</a>
-    <a href="entrainement.html">Entraînement</a>
-    <a href="examen.html">Examen</a>
-    <a href="search.html">Recherche</a>
-    <a href="stats.html">Progression</a>
-    <a href="all_cards.html" style="background:rgba(200,184,240,.18);color:#fff;font-weight:700"><svg class="ic"><use href="#i-layers"/></svg> Toutes les cartes</a>
-  </nav>
-  <button class="topnav-burger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu navigation"><svg class="ic"><use href="#i-menu"/></svg></button>
-  <button class="btn-icon" id="theme-toggle" title="Changer le thème"><svg class="ic"><use href="#i-moon"/></svg></button>
+<div id="bap-nav"></div>
+<div class="bap-page-toolbar" style="display:flex;justify-content:flex-end;padding:.3rem .8rem;gap:.4rem;background:var(--nav,rgba(45,59,78,0.92));border-bottom:1px solid var(--bdr,rgba(255,255,255,0.08))">
   <button class="btn-icon" id="shortcuts-toggle" title="Raccourcis clavier"><svg class="ic"><use href="#i-settings"/></svg></button>
-</header>
-<script>(function(){var p=location.pathname.split('/').pop()||'index.html';document.querySelectorAll('.nav-links a').forEach(function(a){var h=(a.getAttribute('href')||'').replace('./','');if(h===p)a.classList.add('active');});})();</script>
+</div>
 
 <!-- Shortcuts panel -->
 <div class="shortcuts-panel" id="shortcuts-panel">

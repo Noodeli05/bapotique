@@ -211,24 +211,12 @@ input,textarea,select{font-size:max(16px,1em)!important}
 .hl-erase:hover{color:var(--tx);border-color:var(--tx)}
 .hl-hint{font-size:.7rem;color:var(--mu,rgba(232,228,240,0.55));padding:.1rem .2rem;white-space:nowrap;user-select:none}
 </style>
-<link rel="manifest" href="manifest.json"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js",{updateViaCache:"none"});</script></head>
+<link rel="manifest" href="manifest.json"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js",{updateViaCache:"none"});</script><link rel="stylesheet" href="assets/css/common.css">
+</head>
 <body>
+<script src="assets/js/common.js"></script>
 <script src="icons.js"></script>
-<nav class="topnav">
-  <a class="topnav-brand" href="index.html">Linguistique Fr.</a>
-  <div class="nav-links">
-    <a href="revision_complet.html">Révision</a>
-    <a href="ressources.html">Ressources</a>
-    <a href="polycop_tp.html">Polycopié TP</a>
-    <a href="flashcards.html">Flashcards</a>
-    <a href="examen.html">Examen</a>
-    <a href="search.html">Recherche</a>
-    <a href="stats.html">Progression</a>
-  </div>
-  <button class="topnav-burger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu navigation"><svg class="ic"><use href="#i-menu"/></svg></button>
-  <button class="theme-btn" id="thbtn" onclick="toggleTheme()"><svg class="ic"><use href="#i-moon"/></svg></button>
-</nav>
-<script>(function(){var p=location.pathname.split('/').pop()||'index.html';document.querySelectorAll('.nav-links a').forEach(function(a){var h=(a.getAttribute('href')||'').replace('./','');if(h===p)a.classList.add('active');});})();</script>
+<div id="bap-nav"></div>
 <div class="page-wrap">
   <nav class="sidebar">
     <div class="sb-title">Chapitres</div>
