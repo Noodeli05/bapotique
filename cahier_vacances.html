@@ -137,6 +137,26 @@ tr:last-child td{border-bottom:none}
 .corr-ans strong{color:#2a8a68}
 .corr-sep{height:1px;background:#e0d8f0;margin:1rem 0}
 
+
+/* ── ADHD PROGRESS TRACKER ── */
+.ch-progress{display:flex;gap:.6rem;flex-wrap:wrap;margin:.75rem 0 1rem}
+.ch-progress label{display:flex;align-items:center;gap:.45rem;font-size:.78rem;font-weight:600;color:var(--acc,#7c6cc0);cursor:pointer;user-select:none;padding:.35rem .75rem;border-radius:50px;border:1.5px solid var(--bdr,#c8b8f0);background:var(--acc-lt,#f0ecfa);transition:background .15s,border-color .15s}
+.ch-progress input[type=checkbox]{display:none}
+.ch-progress input[type=checkbox]:checked + .ch-cb-box{background:var(--acc,#7c6cc0);border-color:var(--acc,#7c6cc0);color:#fff}
+.ch-cb-box{width:16px;height:16px;border-radius:4px;border:1.5px solid var(--acc,#7c6cc0);display:grid;place-items:center;font-size:.65rem;flex-shrink:0;transition:background .15s,border-color .15s}
+.ch-progress label:has(input:checked){background:var(--acc,#7c6cc0);color:#fff;border-color:var(--acc,#7c6cc0)}
+.ch-progress label:has(input:checked) .ch-cb-box{background:#fff;color:var(--acc,#7c6cc0);border-color:#fff}
+
+/* ── ADHD VISUAL SUMMARY ── */
+.visual-summary{background:var(--acc-lt,#f0ecfa);border-radius:10px;padding:.9rem 1.1rem;margin:0 0 1.4rem;border:1.5px solid var(--bdr,#c8b8f0)}
+.vs-title{font-size:.62rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--acc,#7c6cc0);margin-bottom:.6rem}
+.vs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:.45rem}
+.vs-item{display:flex;align-items:flex-start;gap:.4rem;font-size:.78rem;line-height:1.4;color:#2d2540}
+.vs-icon{font-size:.9rem;flex-shrink:0;margin-top:.05rem}
+@media print{
+  .ch-progress{display:none!important}
+}
+
 /* ── PRINT STYLES ── */
 @media print{
   body{background:#fff;font-size:10.5pt}
@@ -223,6 +243,15 @@ tr:last-child td{border-bottom:none}
     <span class="ch-num-badge">Introduction</span>
     <h2 class="ch-main-title">Sémiologie, signe et niveaux d'analyse</h2>
     <p class="ch-desc">La linguistique comme science · Le signe saussurien · La double articulation · Les niveaux d'analyse</p>
+  </div>
+  <div class="ch-progress">
+    <label><input type="checkbox" id="lu-c0" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Lu</label>
+    <label><input type="checkbox" id="fait-c0" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Exercices faits</label>
+    <label><input type="checkbox" id="corr-c0" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Corrigé vérifié</label>
+  </div>
+  <div class="visual-summary">
+    <div class="vs-title">Résumé visuel — 5 points clés</div>
+    <div class="vs-grid"><div class="vs-item"><span class="vs-icon">🧩</span><span>Signe = signifiant + signifié (arbitraire)</span></div><div class="vs-item"><span class="vs-icon">🔡</span><span>Double articulation : monèmes → phonèmes</span></div><div class="vs-item"><span class="vs-icon">🔬</span><span>Niveaux : phonologie → morphologie → syntaxe → sémantique → pragmatique</span></div><div class="vs-item"><span class="vs-icon">⚖️</span><span>Langue (système) vs Parole (usage)</span></div><div class="vs-item"><span class="vs-icon">🌍</span><span>Arbitraire du signe : chat / cat / Katze</span></div></div>
   </div>
 
   <div class="sec-label">Fiche de cours</div>
@@ -326,6 +355,15 @@ tr:last-child td{border-bottom:none}
     <span class="ch-num-badge">Chapitre 1</span>
     <h2 class="ch-main-title">Phonétique, phonologie et graphémique</h2>
     <p class="ch-desc">Phone vs phonème · Allophones · Paire minimale · Schwa · Graphèmes</p>
+  </div>
+  <div class="ch-progress">
+    <label><input type="checkbox" id="lu-c1" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Lu</label>
+    <label><input type="checkbox" id="fait-c1" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Exercices faits</label>
+    <label><input type="checkbox" id="corr-c1" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Corrigé vérifié</label>
+  </div>
+  <div class="visual-summary">
+    <div class="vs-title">Résumé visuel — 5 points clés</div>
+    <div class="vs-grid"><div class="vs-item"><span class="vs-icon">👂</span><span>Phonétique : sons réels produits / perçus</span></div><div class="vs-item"><span class="vs-icon">🔤</span><span>Phonologie : phonèmes = unités distinctives</span></div><div class="vs-item"><span class="vs-icon">✏️</span><span>Graphémique : correspondances son-lettre</span></div><div class="vs-item"><span class="vs-icon">🔀</span><span>Commutation : /p/→/b/ dans /pa/ ↔ /ba/</span></div><div class="vs-item"><span class="vs-icon">🗣️</span><span>Traits distinctifs : voisé, nasal, labial…</span></div></div>
   </div>
 
   <div class="sec-label">Fiche de cours</div>
@@ -471,6 +509,15 @@ tr:last-child td{border-bottom:none}
     <h2 class="ch-main-title">La morphologie</h2>
     <p class="ch-desc">Morphème libre/lié · Dérivation · Flexion · Composition · Allomorphie</p>
   </div>
+  <div class="ch-progress">
+    <label><input type="checkbox" id="lu-c2" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Lu</label>
+    <label><input type="checkbox" id="fait-c2" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Exercices faits</label>
+    <label><input type="checkbox" id="corr-c2" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Corrigé vérifié</label>
+  </div>
+  <div class="visual-summary">
+    <div class="vs-title">Résumé visuel — 5 points clés</div>
+    <div class="vs-grid"><div class="vs-item"><span class="vs-icon">🧱</span><span>Morphème = plus petite unité de sens</span></div><div class="vs-item"><span class="vs-icon">🔧</span><span>Radical + affixes (préfixes / suffixes / infixes)</span></div><div class="vs-item"><span class="vs-icon">📚</span><span>Morphologie dérivationnelle vs flexionnelle</span></div><div class="vs-item"><span class="vs-icon">🔄</span><span>Alternances : oral/écrit, singulier/pluriel</span></div><div class="vs-item"><span class="vs-icon">💡</span><span>Productivité : règles appliquées à n'importe quel radical</span></div></div>
+  </div>
 
   <div class="sec-label">Fiche de cours</div>
   <div class="resume">
@@ -605,6 +652,15 @@ tr:last-child td{border-bottom:none}
     <h2 class="ch-main-title">Syntaxe de la clause canonique</h2>
     <p class="ch-desc">Clause · Syntagme · Valence verbale · Fonctions syntaxiques · Thème–Rhème</p>
   </div>
+  <div class="ch-progress">
+    <label><input type="checkbox" id="lu-c3" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Lu</label>
+    <label><input type="checkbox" id="fait-c3" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Exercices faits</label>
+    <label><input type="checkbox" id="corr-c3" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Corrigé vérifié</label>
+  </div>
+  <div class="visual-summary">
+    <div class="vs-title">Résumé visuel — 5 points clés</div>
+    <div class="vs-grid"><div class="vs-item"><span class="vs-icon">🏗️</span><span>Clause = S + V (+ compléments valentiels)</span></div><div class="vs-item"><span class="vs-icon">👤</span><span>Rôles actantiels : agent, patient, expérienceur…</span></div><div class="vs-item"><span class="vs-icon">📦</span><span>Groupes syntaxiques : GN, GV, GP, GAdj, GAdv</span></div><div class="vs-item"><span class="vs-icon">⚡</span><span>Valence : verbe mono/bi/trivalent</span></div><div class="vs-item"><span class="vs-icon">📐</span><span>Test de substitution pronominal pour délimiter</span></div></div>
+  </div>
 
   <div class="sec-label">Fiche de cours</div>
   <div class="resume">
@@ -700,6 +756,15 @@ tr:last-child td{border-bottom:none}
     <h2 class="ch-main-title">L'ordre dans la clause</h2>
     <p class="ch-desc">Dislocation · Clivée · Pseudo-clivée · Passif · Construction impersonnelle</p>
   </div>
+  <div class="ch-progress">
+    <label><input type="checkbox" id="lu-c4" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Lu</label>
+    <label><input type="checkbox" id="fait-c4" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Exercices faits</label>
+    <label><input type="checkbox" id="corr-c4" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Corrigé vérifié</label>
+  </div>
+  <div class="visual-summary">
+    <div class="vs-title">Résumé visuel — 5 points clés</div>
+    <div class="vs-grid"><div class="vs-item"><span class="vs-icon">📍</span><span>Ordre canonique SVO en français</span></div><div class="vs-item"><span class="vs-icon">🔄</span><span>Thème (TH) vs Rhème (RH) : info donnée vs nouvelle</span></div><div class="vs-item"><span class="vs-icon">💡</span><span>Clivée : «C'est X que…» → focus sur X</span></div><div class="vs-item"><span class="vs-icon">🔀</span><span>Pseudo-clivée : «Ce que j'aime, c'est…»</span></div><div class="vs-item"><span class="vs-icon">↔️</span><span>Topicalisation & dislocation = déplacement de TH</span></div></div>
+  </div>
 
   <div class="sec-label">Fiche de cours</div>
   <div class="resume">
@@ -788,6 +853,15 @@ tr:last-child td{border-bottom:none}
     <span class="ch-num-badge">Chapitre 5</span>
     <h2 class="ch-main-title">Types de clauses et voix</h2>
     <p class="ch-desc">Déclarative · Interrogative · Impérative · Exclamative · Clause averbale · Passif pronominal</p>
+  </div>
+  <div class="ch-progress">
+    <label><input type="checkbox" id="lu-c5" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Lu</label>
+    <label><input type="checkbox" id="fait-c5" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Exercices faits</label>
+    <label><input type="checkbox" id="corr-c5" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Corrigé vérifié</label>
+  </div>
+  <div class="visual-summary">
+    <div class="vs-title">Résumé visuel — 5 points clés</div>
+    <div class="vs-grid"><div class="vs-item"><span class="vs-icon">❓</span><span>Déclarative / interrogative / impérative / exclamative</span></div><div class="vs-item"><span class="vs-icon">🔄</span><span>Voix active vs passive : promotion du patient</span></div><div class="vs-item"><span class="vs-icon">🔀</span><span>Voix pronominale : réfléchie, réciproque, passive</span></div><div class="vs-item"><span class="vs-icon">🎯</span><span>Passif = agent mis en arrière-plan ou supprimé</span></div><div class="vs-item"><span class="vs-icon">📢</span><span>Intonation & ponctuation marquent le type de clause</span></div></div>
   </div>
 
   <div class="sec-label">Fiche de cours</div>
@@ -903,6 +977,15 @@ tr:last-child td{border-bottom:none}
     <h2 class="ch-main-title">Extensions du groupe nominal</h2>
     <p class="ch-desc">Épithète · Relative déterminative / explicative · Apposition · GPrép modificateur</p>
   </div>
+  <div class="ch-progress">
+    <label><input type="checkbox" id="lu-c6" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Lu</label>
+    <label><input type="checkbox" id="fait-c6" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Exercices faits</label>
+    <label><input type="checkbox" id="corr-c6" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Corrigé vérifié</label>
+  </div>
+  <div class="visual-summary">
+    <div class="vs-title">Résumé visuel — 5 points clés</div>
+    <div class="vs-grid"><div class="vs-item"><span class="vs-icon">📎</span><span>GN étendu : Dét + N + modificateurs</span></div><div class="vs-item"><span class="vs-icon">🔗</span><span>Relative déterminative vs explicative</span></div><div class="vs-item"><span class="vs-icon">📌</span><span>Apposition : GN juxtaposé non restrictif</span></div><div class="vs-item"><span class="vs-icon">🧮</span><span>Adjectif épithète : position pré/post-nominale</span></div><div class="vs-item"><span class="vs-icon">✂️</span><span>Test de suppression : extension ≠ argument obligatoire</span></div></div>
+  </div>
 
   <div class="sec-label">Fiche de cours</div>
   <div class="resume">
@@ -1004,6 +1087,15 @@ tr:last-child td{border-bottom:none}
     <h2 class="ch-main-title">Extensions du groupe verbal</h2>
     <p class="ch-desc">Circonstants · Périphrases aspectuelles · Cadre thématique</p>
   </div>
+  <div class="ch-progress">
+    <label><input type="checkbox" id="lu-c7" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Lu</label>
+    <label><input type="checkbox" id="fait-c7" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Exercices faits</label>
+    <label><input type="checkbox" id="corr-c7" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Corrigé vérifié</label>
+  </div>
+  <div class="visual-summary">
+    <div class="vs-title">Résumé visuel — 5 points clés</div>
+    <div class="vs-grid"><div class="vs-item"><span class="vs-icon">🕓</span><span>Compléments circonstanciels : temps, lieu, manière…</span></div><div class="vs-item"><span class="vs-icon">📦</span><span>Compléments vs arguments valentiels</span></div><div class="vs-item"><span class="vs-icon">🔄</span><span>Datif : COI vs datif éthique</span></div><div class="vs-item"><span class="vs-icon">🏷️</span><span>Prédicats seconds : attribut du sujet/objet</span></div><div class="vs-item"><span class="vs-icon">↕️</span><span>Mobilité des circonstants dans la clause</span></div></div>
+  </div>
 
   <div class="sec-label">Fiche de cours</div>
   <div class="resume">
@@ -1085,6 +1177,15 @@ tr:last-child td{border-bottom:none}
     <span class="ch-num-badge">Chapitre 8</span>
     <h2 class="ch-main-title">La clause complexe</h2>
     <p class="ch-desc">Coordination · Subordination · Types de subordonnées · Discours indirect</p>
+  </div>
+  <div class="ch-progress">
+    <label><input type="checkbox" id="lu-c8" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Lu</label>
+    <label><input type="checkbox" id="fait-c8" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Exercices faits</label>
+    <label><input type="checkbox" id="corr-c8" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Corrigé vérifié</label>
+  </div>
+  <div class="visual-summary">
+    <div class="vs-title">Résumé visuel — 5 points clés</div>
+    <div class="vs-grid"><div class="vs-item"><span class="vs-icon">🔗</span><span>Coordination vs subordination vs parataxe</span></div><div class="vs-item"><span class="vs-icon">📎</span><span>Subordonnées : relative, complétive, circonstancielle</span></div><div class="vs-item"><span class="vs-icon">❓</span><span>Interrogative indirecte & discours rapporté</span></div><div class="vs-item"><span class="vs-icon">🔄</span><span>Concordance des temps en DI</span></div><div class="vs-item"><span class="vs-icon">🌿</span><span>Clause principale enchâsse la clause subordonnée</span></div></div>
   </div>
 
   <div class="sec-label">Fiche de cours</div>
@@ -1177,6 +1278,15 @@ tr:last-child td{border-bottom:none}
     <span class="ch-num-badge">Chapitre 9</span>
     <h2 class="ch-main-title">La phrase graphique</h2>
     <p class="ch-desc">Phrase graphique vs clause · Rôles de la ponctuation · 3 plans d'analyse</p>
+  </div>
+  <div class="ch-progress">
+    <label><input type="checkbox" id="lu-c9" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Lu</label>
+    <label><input type="checkbox" id="fait-c9" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Exercices faits</label>
+    <label><input type="checkbox" id="corr-c9" onchange="saveProgress(this)"><span class="ch-cb-box">✓</span> Corrigé vérifié</label>
+  </div>
+  <div class="visual-summary">
+    <div class="vs-title">Résumé visuel — 5 points clés</div>
+    <div class="vs-grid"><div class="vs-item"><span class="vs-icon">✍️</span><span>Phrase graphique : majuscule → ponctuation finale</span></div><div class="vs-item"><span class="vs-icon">🔢</span><span>Peut contenir 1 ou plusieurs clauses</span></div><div class="vs-item"><span class="vs-icon">📌</span><span>Ponctuation : virgule, deux-points, point-virgule</span></div><div class="vs-item"><span class="vs-icon">🗣️</span><span>Dislocation & présentatifs dans la phrase écrite</span></div><div class="vs-item"><span class="vs-icon">📐</span><span>Morphosyntaxique / topographique / pragmasyntaxique</span></div></div>
   </div>
 
   <div class="sec-label">Fiche de cours</div>
@@ -1434,5 +1544,19 @@ tr:last-child td{border-bottom:none}
 </div>
 
 </div><!-- /book -->
+
+<script>
+// Persist checkbox state via localStorage
+function saveProgress(el) {
+  localStorage.setItem('cahier_' + el.id, el.checked ? '1' : '0');
+}
+function loadProgress() {
+  document.querySelectorAll('.ch-progress input[type=checkbox]').forEach(function(el) {
+    var v = localStorage.getItem('cahier_' + el.id);
+    if (v === '1') el.checked = true;
+  });
+}
+document.addEventListener('DOMContentLoaded', loadProgress);
+</script>
 </body>
 </html>
