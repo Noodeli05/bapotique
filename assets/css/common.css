@@ -75,12 +75,14 @@
   color: var(--tx, #e8e4f0);
 }
 
-/* Page active : gras + soulignage violet */
+/* Page active : gras + fond pill + soulignage violet */
 .bap-nav-links a.bap-nav-active {
   font-weight: 700;
   color: var(--tx, #e8e4f0) !important;
+  background: var(--lav-bg, rgba(200,184,240,0.18));
   border-bottom: 2px solid var(--lav, #c8b8f0);
   padding-bottom: calc(.3rem - 2px);
+  box-shadow: 0 0 8px rgba(200,184,240,0.12);
 }
 
 /* Boutons icônes (hamburger + thème) */
@@ -150,6 +152,7 @@
   }
 
   .bap-nav-links a.bap-nav-active {
+    background: var(--lav-bg, rgba(200,184,240,0.18));
     border-bottom: none;
     border-left: 2px solid var(--lav, #c8b8f0);
     padding-bottom: .52rem;
