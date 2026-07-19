@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260721');}());</script>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260719');}());</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ressources Linguistique UNIL 2025</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -517,15 +517,16 @@ input, textarea, select { font-size: max(16px, 1em) !important; }
 .ic{width:1em;height:1em;vertical-align:-.15em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;display:inline-block;overflow:visible}
 .ic-fill{fill:currentColor;stroke:none}
 </style>
-<link rel="manifest" href="manifest.json"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js",{updateViaCache:"none"});</script></head>
+<link rel="manifest" href="manifest.json"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js",{updateViaCache:"none"});</script><link rel="stylesheet" href="assets/css/common.css">
+</head>
 <body>
+<script src="assets/js/common.js"></script>
 <script src="icons.js"></script>
+<div id="bap-nav"></div>
 <div id="topnav">
-  <div id="topnav-title"><a href="index.html"><svg class="ic"><use href="#i-home"/></svg></a> &nbsp;|&nbsp; <a href="revision_complet.html">← Retour</a></div>
   <button class="toc-toggle-btn" id="tocToggleBtn" onclick="toggleToc()" aria-label="Table des matières"><svg class="ic" style="width:.85em;height:.85em"><use href="#i-list"/></svg> Table des mat.</button>
   <button class="topnav-burger" onclick="document.querySelector('.topnav-links').classList.toggle('open')" aria-label="Menu navigation"><svg class="ic"><use href="#i-menu"/></svg></button>
   <div class="topnav-links"><button class="tnav-btn" data-tab="guide" onclick="showTab('guide');document.querySelector('.topnav-links').classList.remove('open')"><svg class="ic"><use href="#i-book-open"/></svg> Guide UNIL</button><button class="tnav-btn" data-tab="resume" onclick="showTab('resume');document.querySelector('.topnav-links').classList.remove('open')"><svg class="ic"><use href="#i-book-open"/></svg> Résumé Cours</button><button class="tnav-btn" data-tab="seances-g" onclick="showTab('seances-g');document.querySelector('.topnav-links').classList.remove('open')"><svg class="ic"><use href="#i-graduation-cap"/></svg> Séances Cours</button><button class="tnav-btn" data-tab="seances-tp" onclick="showTab('seances-tp');document.querySelector('.topnav-links').classList.remove('open')"><svg class="ic"><use href="#i-calendar"/></svg> Séances TP</button><button class="tnav-btn" data-tab="revision" onclick="showTab('revision');document.querySelector('.topnav-links').classList.remove('open')"><svg class="ic"><use href="#i-dumbbell"/></svg> Révision TP</button><button class="tnav-btn" data-tab="corriges" onclick="showTab('corriges');document.querySelector('.topnav-links').classList.remove('open')"><svg class="ic"><use href="#i-check-circle"/></svg> Corrigés TP</button><button class="tnav-btn" data-tab="questions" onclick="showTab('questions');document.querySelector('.topnav-links').classList.remove('open')"><svg class="ic"><use href="#i-help-circle"/></svg> Questions</button><button class="tnav-btn" data-tab="tableau" onclick="showTab('tableau');document.querySelector('.topnav-links').classList.remove('open')"><svg class="ic"><use href="#i-bar-chart"/></svg> Tableau</button><button class="tnav-btn" data-tab="examens" onclick="showTab('examens');document.querySelector('.topnav-links').classList.remove('open')"><svg class="ic"><use href="#i-edit"/></svg> Examens</button></div>
-  <button class="theme-btn" id="theme-btn" onclick="toggleTheme()" title="Changer le thème"><svg class="ic"><use href="#i-moon"/></svg></button>
 </div>
 <div id="toc-backdrop" class="toc-backdrop" onclick="closeToc()"></div>
 <div id="main">

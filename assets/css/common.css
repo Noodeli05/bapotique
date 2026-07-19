@@ -1,0 +1,158 @@
+/* ============================================================
+   Bapotique — Navbar unifiée (common.css)
+   Glassmorphism sombre, palette bleue-ardoise, sans framework
+   ============================================================ */
+
+/* Wrapper sticky */
+#bap-nav {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+
+/* Barre de navigation */
+.bap-navbar {
+  position: relative; /* ancre le dropdown mobile */
+  background: var(--nav, rgba(45,59,78,0.92));
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--bdr, rgba(255,255,255,0.08));
+  padding: .6rem 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  flex-wrap: nowrap;
+  overflow-x: visible;
+}
+
+[data-theme="light"] .bap-navbar {
+  background: rgba(245,243,248,0.97);
+}
+
+/* Logo / marque */
+.bap-nav-brand {
+  font-family: 'DM Serif Display', serif;
+  font-size: .95rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--lav, #c8b8f0), var(--sky, #a8c8f0));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-decoration: none;
+  white-space: nowrap;
+  margin-right: .5rem;
+  flex-shrink: 0;
+}
+
+/* Liens de navigation */
+.bap-nav-links {
+  display: flex;
+  gap: .15rem;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  flex: 1;
+  min-width: 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.bap-nav-links::-webkit-scrollbar { display: none; }
+
+.bap-nav-links a {
+  color: var(--mu, rgba(200,195,220,0.7));
+  text-decoration: none;
+  font-size: .78rem;
+  padding: .3rem .58rem;
+  border-radius: 7px;
+  transition: background .15s, color .15s;
+  font-weight: 500;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+}
+
+.bap-nav-links a:hover {
+  background: var(--lav-bg, rgba(200,184,240,0.12));
+  color: var(--tx, #e8e4f0);
+}
+
+/* Page active : gras + soulignage violet */
+.bap-nav-links a.bap-nav-active {
+  font-weight: 700;
+  color: var(--tx, #e8e4f0) !important;
+  border-bottom: 2px solid var(--lav, #c8b8f0);
+  padding-bottom: calc(.3rem - 2px);
+}
+
+/* Boutons icônes (hamburger + thème) */
+.bap-theme-btn,
+.bap-nav-burger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: .32rem .45rem;
+  border-radius: 7px;
+  color: var(--mu, rgba(200,195,220,0.7));
+  transition: background .15s;
+  line-height: 1;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+.bap-theme-btn:hover,
+.bap-nav-burger:hover {
+  background: var(--lav-bg, rgba(200,184,240,0.12));
+}
+.bap-theme-btn { margin-left: auto; }
+
+/* Icônes lune / soleil commutées via CSS selon data-theme */
+.bap-icon-sun { display: none; }
+.bap-icon-moon { display: block; }
+[data-theme="light"] .bap-icon-sun { display: block; }
+[data-theme="light"] .bap-icon-moon { display: none; }
+
+/* Hamburger — masqué sur desktop */
+.bap-nav-burger { display: none; }
+
+/* ── Mobile (≤ 767 px) ── */
+@media (max-width: 767px) {
+  .bap-nav-burger { display: flex; }
+
+  .bap-nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--nav, rgba(45,59,78,0.97));
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--bdr, rgba(255,255,255,0.08));
+    padding: .5rem 1rem .8rem;
+    gap: .1rem;
+    z-index: 199;
+    overflow-x: visible;
+    overflow-y: auto;
+    max-height: calc(100vh - 52px);
+  }
+
+  [data-theme="light"] .bap-nav-links {
+    background: rgba(245,243,248,0.97);
+  }
+
+  .bap-nav-links.bap-open { display: flex !important; }
+
+  .bap-nav-links a {
+    padding: .52rem .8rem;
+    border-radius: 7px;
+    border-bottom: none;
+    border-left: 2px solid transparent;
+  }
+
+  .bap-nav-links a.bap-nav-active {
+    border-bottom: none;
+    border-left: 2px solid var(--lav, #c8b8f0);
+    padding-bottom: .52rem;
+    padding-left: calc(.8rem - 2px);
+  }
+}

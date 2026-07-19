@@ -255,27 +255,13 @@ footer strong{color:var(--lav)}
 .ic{width:1em;height:1em;vertical-align:-.15em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;display:inline-block;overflow:visible}
 .ic-fill{fill:currentColor;stroke:none}
 </style>
-<link rel="manifest" href="manifest.json"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js",{updateViaCache:"none"});</script></head>
+<link rel="manifest" href="manifest.json"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js",{updateViaCache:"none"});</script><link rel="stylesheet" href="assets/css/common.css">
+</head>
 <body>
+<script src="assets/js/common.js"></script>
 <script src="icons.js"></script>
 
-<nav class="topnav">
-  <a class="topnav-brand" href="index.html">Linguistique Fr.</a>
-  <div class="topnav-links">
-    <a href="revision_complet.html">Révision</a>
-    <a href="flashcards.html">Flashcards</a>
-    <a href="entrainement.html">Entraînement</a>
-    <a href="ressources.html">Ressources</a>
-    <a href="examen.html">Examen</a>
-    <a href="stats.html">Progression</a>
-    <a href="search.html">Recherche</a>
-    <a href="polycop_cours.html">Polycopié cours</a>
-    <a href="polycop_tp.html">Polycopié TP</a>
-    <a href="tests.html">Tests</a>
-  </div>
-  <button class="topnav-burger" onclick="document.querySelector('.topnav-links').classList.toggle('open')" aria-label="Menu navigation"><svg class="ic"><use href="#i-menu"/></svg></button>
-  <button class="btn-icon" id="themeBtn" onclick="toggleTheme()" title="Changer le thème"><svg class="ic"><use href="#i-moon"/></svg></button>
-</nav>
+<div id="bap-nav"></div>
 
 <section class="hero">
   <div class="hero-glow"></div>
