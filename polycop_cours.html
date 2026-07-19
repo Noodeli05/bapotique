@@ -194,16 +194,16 @@ input,textarea,select{font-size:max(16px,1em)!important}
 .poly-body li.sub2{margin-left:2.4rem;list-style-type:square}
 .poly-body p.normal{font-size:.8rem;color:var(--mu);line-height:1.6;border-left:2px solid var(--bdr);padding-left:.7rem;margin:.35rem 0 .6rem}
 /* ── STABILO ── */
-mark.hl{border-radius:2px;cursor:pointer;padding:0 2px;transition:filter .15s}
-mark.hl:hover{filter:brightness(1.2)}
-mark.hl-y{background:rgba(255,224,0,0.50);color:inherit}
-mark.hl-p{background:rgba(255,100,180,0.38);color:inherit}
-mark.hl-b{background:rgba(80,170,255,0.38);color:inherit}
-mark.hl-g{background:rgba(80,220,100,0.38);color:inherit}
-[data-theme="light"] mark.hl-y{background:rgba(255,210,0,0.60)}
-[data-theme="light"] mark.hl-p{background:rgba(255,60,150,0.30)}
-[data-theme="light"] mark.hl-b{background:rgba(30,130,255,0.28)}
-[data-theme="light"] mark.hl-g{background:rgba(30,180,60,0.28)}
+.hl{border-radius:2px;cursor:pointer;padding:0 2px;transition:filter .15s;color:var(--tx)!important}
+.hl:hover{filter:brightness(1.15)}
+.hl-y{background:rgba(255,224,0,0.50)}
+.hl-p{background:rgba(255,100,180,0.42)}
+.hl-b{background:rgba(80,170,255,0.40)}
+.hl-g{background:rgba(80,220,100,0.38)}
+[data-theme="light"] .hl-y{background:rgba(255,210,0,0.65)}
+[data-theme="light"] .hl-p{background:rgba(255,60,150,0.32)}
+[data-theme="light"] .hl-b{background:rgba(30,130,255,0.30)}
+[data-theme="light"] .hl-g{background:rgba(30,180,60,0.30)}
 #hl-toolbar{position:absolute;z-index:500;background:var(--sb,rgba(22,18,30,0.97));border:1px solid var(--bdr-s,rgba(255,255,255,0.18));border-radius:10px;padding:.4rem .55rem;display:none;align-items:center;gap:.45rem;box-shadow:0 6px 24px rgba(0,0,0,0.45);pointer-events:auto}
 .hl-swatch{width:1.25rem;height:1.25rem;border-radius:4px;cursor:pointer;border:2px solid transparent;flex-shrink:0;transition:transform .15s,border-color .15s}
 .hl-swatch:hover{transform:scale(1.25);border-color:rgba(255,255,255,0.5)}
@@ -2968,7 +2968,7 @@ function togglePolySection(head){
 
 // ── STABILO HIGHLIGHTER ─────────────────────────────────────────────
 (function(){
-  var STORE='bap_hl_v1';
+  var STORE='bap_hl_v2';
   var stored={};
   try{stored=JSON.parse(localStorage.getItem(STORE))||{};}catch(e){stored={};}
 
@@ -3029,7 +3029,7 @@ function togglePolySection(head){
       var sid=getSid(bodyEl);
       if(!sid)return;
       try{
-        var mark=document.createElement('mark');
+        var mark=document.createElement('span');
         mark.className='hl hl-'+sw.dataset.c;
         mark.appendChild(pendingRange.extractContents());
         pendingRange.insertNode(mark);
@@ -3048,7 +3048,7 @@ function togglePolySection(head){
 
   // Click on mark → remove it
   polyTab.addEventListener('click',function(e){
-    var mark=e.target.closest('mark.hl');
+    var mark=e.target.closest('.hl');
     if(!mark)return;
     var bodyEl=mark.closest('.poly-body');
     var sid=bodyEl?getSid(bodyEl):null;
