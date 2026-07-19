@@ -138,7 +138,7 @@
   // Cursor glow — desktop only (pointer device)
   if(window.matchMedia('(pointer:fine)').matches){
     var gl=d.createElement('div');
-    gl.style.cssText='position:fixed;pointer-events:none;z-index:99999;width:300px;height:300px;left:-150px;top:-150px;border-radius:50%;background:radial-gradient(circle,rgba(200,184,240,0.32) 0%,rgba(200,184,240,0.10) 40%,transparent 68%);transition:opacity .4s;opacity:0;will-change:transform';
+    gl.style.cssText='position:fixed;pointer-events:none;z-index:99999;width:300px;height:300px;left:-150px;top:-150px;border-radius:50%;background:radial-gradient(circle,rgba(168,200,240,0.32) 0%,rgba(168,200,240,0.10) 40%,transparent 68%);transition:opacity .4s;opacity:0;will-change:transform';
     d.body.appendChild(gl);
     d.addEventListener('mousemove',function(e){
       gl.style.transform='translate('+e.clientX+'px,'+e.clientY+'px)';
