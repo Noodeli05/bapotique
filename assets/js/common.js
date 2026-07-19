@@ -63,6 +63,20 @@
     if (links) links.classList.toggle('bap-open');
   }
 
+  /* ── Mode focus (plein écran sans distractions) ── */
+
+  function bapToggleFocus() {
+    var on = document.documentElement.classList.toggle('bap-focus');
+    if (on) {
+      var el = document.documentElement;
+      var req = el.requestFullscreen || el.webkitRequestFullscreen || el.mozRequestFullScreen;
+      if (req) try { req.call(el); } catch (e) {}
+    } else {
+      var ex = document.exitFullscreen || document.webkitExitFullscreen || document.mozCancelFullScreen;
+      if (ex) try { ex.call(document); } catch (e) {}
+    }
+  }
+
   /* ── Injection de la navbar ── */
 
   function bapInitNav() {
@@ -89,6 +103,10 @@
           '<span class="bap-icon-moon"><svg class="ic"><use href="#i-moon"/></svg></span>' +
           '<span class="bap-icon-sun"><svg class="ic"><use href="#i-sun"/></svg></span>' +
         '</button>' +
+        '<button class="bap-focus-btn" id="bap-focus-btn" ' +
+            'onclick="bapToggleFocus()" title="Mode focus (F)">' +
+          '<svg class="ic"><use href="#i-maximize-2"/></svg>' +
+        '</button>' +
       '</nav>';
 
     /* Appliquer le thème persisté (au cas où la page n'a pas de propre init) */
@@ -108,6 +126,17 @@
        par notre version unifiée — s'exécute après DOMContentLoaded,
        donc après les scripts inline de la page */
     window.toggleTheme = bapToggleTheme;
+
+    /* Bouton flottant pour quitter le mode focus */
+    if (!document.getElementById('bap-focus-exit')) {
+      var exitBtn = document.createElement('button');
+      exitBtn.id = 'bap-focus-exit';
+      exitBtn.className = 'bap-focus-exit';
+      exitBtn.title = 'Quitter le mode focus (F)';
+      exitBtn.innerHTML = '<svg class="ic"><use href="#i-minimize"/></svg>';
+      exitBtn.addEventListener('click', bapToggleFocus);
+      document.body.appendChild(exitBtn);
+    }
 
     /* Injecter le fil d'Ariane comme enfant de #bap-nav
        (et non sibling dans le body — évite de perturber les layouts flex-row) */
@@ -194,6 +223,7 @@
   /* ── API publique ── */
   window.bapToggleTheme      = bapToggleTheme;
   window.bapToggleMenu       = bapToggleMenu;
+  window.bapToggleFocus      = bapToggleFocus;
   window.bapInitNav          = bapInitNav;
   window.bapSaveLastPage     = bapSaveLastPage;
   window.bapBreadcrumbReset  = bapBreadcrumbReset;
@@ -203,6 +233,25 @@
   document.addEventListener('DOMContentLoaded', function () {
     bapInitNav();
     bapSaveLastPage();
+
+    /* Raccourci clavier F — mode focus */
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'f' && e.key !== 'F') return;
+      var tag = (document.activeElement && document.activeElement.tagName || '').toUpperCase();
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+      if (document.activeElement && document.activeElement.isContentEditable) return;
+      bapToggleFocus();
+    });
+
+    /* Synchroniser si l'utilisateur quitte le plein écran natif (Echap) */
+    function _onFsChange() {
+      var fs = document.fullscreenElement || document.webkitFullscreenElement;
+      if (!fs && document.documentElement.classList.contains('bap-focus')) {
+        document.documentElement.classList.remove('bap-focus');
+      }
+    }
+    document.addEventListener('fullscreenchange', _onFsChange);
+    document.addEventListener('webkitfullscreenchange', _onFsChange);
   });
 
 })();
