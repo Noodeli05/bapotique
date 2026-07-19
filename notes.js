@@ -128,10 +128,8 @@
   render();
 })();
 
-// ─── Pomodoro Timer ────────────────────────────────────────────────────────────
+// ─── Pomodoro Timer (utilise window.PomodoroState de common.js) ───────────────
 (function(){
-  var DUR={work:25*60,short:5*60,long:15*60};
-  var st={mode:'work',rem:DUR.work,running:false,iv:null};
 
   var style=document.createElement('style');
   style.textContent=`
@@ -188,15 +186,27 @@
   function fmt(s){var m=Math.floor(s/60),sc=s%60;return (m<10?'0':'')+m+':'+(sc<10?'0':'')+sc;}
   var LBLS={work:'Concentration',short:'Pause courte',long:'Pause longue'};
 
+  /* Rendu : lit l'état depuis window.PomodoroState */
   function render(){
+    var PS=window.PomodoroState;
+    var rem=PS.getRemaining();
+    var dur=PS.DURATIONS[PS.mode];
     var t=document.getElementById('bap-pom-t');
     var b=document.getElementById('bap-pom-bar');
     var btn=document.getElementById('bap-pom-btn');
-    if(t)t.textContent=fmt(st.rem);
-    if(b)b.style.width=((st.rem/DUR[st.mode])*100)+'%';
-    if(btn)btn.textContent=st.running?'⏸ Pause':'▶ Démarrer';
-    fab.textContent=fmt(st.rem);
-    fab.classList.toggle('running',st.running);
+    var lbl=document.getElementById('bap-pom-lbl');
+    if(t)t.textContent=fmt(rem);
+    if(b)b.style.width=((rem/dur)*100)+'%';
+    if(btn) btn.textContent = PS.running ? '⏸ Pause'
+      : (rem>0&&rem<dur ? '▶ Reprendre' : '▶ Démarrer');
+    if(lbl)lbl.textContent=LBLS[PS.mode]||PS.mode;
+    document.querySelectorAll('.bap-pom-mbn').forEach(function(b){
+      b.classList.toggle('active',b.dataset.m===PS.mode);
+    });
+    /* FAB : affiche le temps, estompé si pas en cours */
+    fab.textContent=fmt(rem);
+    fab.classList.toggle('running',PS.running);
+    if(!PS.running) fab.style.opacity='.7'; else fab.style.opacity='';
   }
 
   function chime(){
@@ -215,25 +225,24 @@
     }catch(e){}
   }
 
-  window.bapPom={
-    toggle:function(){
-      if(st.running){clearInterval(st.iv);st.running=false;}
-      else{
-        st.running=true;
-        st.iv=setInterval(function(){
-          if(st.rem<=0){clearInterval(st.iv);st.running=false;chime();panel.classList.add('open');render();return;}
-          st.rem--;render();
-        },1000);
+  /* Boucle de rendu — s'exécute sur toutes les pages (1 tick/s) */
+  setInterval(function(){
+    var PS=window.PomodoroState;
+    if(PS.running){
+      var rem=PS.getRemaining();
+      if(rem<=0){
+        PS.completeTick();
+        chime();
+        panel.classList.add('open');
       }
-      render();
-    },
-    reset:function(){clearInterval(st.iv);st.running=false;st.rem=DUR[st.mode];render();},
-    mode:function(m){
-      clearInterval(st.iv);st.running=false;st.mode=m;st.rem=DUR[m];
-      var lbl=document.getElementById('bap-pom-lbl');if(lbl)lbl.textContent=LBLS[m];
-      document.querySelectorAll('.bap-pom-mbn').forEach(function(b){b.classList.toggle('active',b.dataset.m===m);});
-      render();
     }
+    render();
+  },1000);
+
+  window.bapPom={
+    toggle:function(){ window.PomodoroState.toggle(); render(); },
+    reset:function(){  window.PomodoroState.reset();  render(); },
+    mode:function(m){  window.PomodoroState.setMode(m); render(); }
   };
 
   fab.addEventListener('click',function(){panel.classList.toggle('open');});

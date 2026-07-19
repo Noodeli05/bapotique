@@ -233,6 +233,102 @@
   window.bapBreadcrumbPush   = bapBreadcrumbPush;
   window.bapBreadcrumbPop    = bapBreadcrumbPop;
 
+  /* ── État Pomodoro partagé (source de vérité cross-page) ─────────────────
+     Utilise startedAt + remainingAtStart : le temps restant est calculé à
+     partir de l'horodatage, donc le timer continue de s'écouler même quand
+     l'utilisateur change de page.
+     ────────────────────────────────────────────────────────────────────── */
+  window.PomodoroState = {
+    DURATIONS : { work: 1500, short: 300, long: 900 },
+    LABELS    : { work: 'Travail', short: 'Pause courte', long: 'Pause longue' },
+    COLORS    : { work: 'var(--lav,#c8b8f0)', short: 'var(--mint,#a8d8c4)', long: 'var(--sky,#a8c8f0)' },
+    mode              : 'work',
+    running           : false,
+    sessions          : 0,
+    remainingAtStart  : 1500,
+    startedAt         : null,
+
+    getRemaining: function () {
+      if (!this.running || !this.startedAt) return this.remainingAtStart;
+      return Math.max(0, this.remainingAtStart - Math.floor((Date.now() - this.startedAt) / 1000));
+    },
+
+    save: function () {
+      try {
+        localStorage.setItem('bap_pomo_state', JSON.stringify({
+          mode: this.mode, running: this.running, sessions: this.sessions,
+          remainingAtStart: this.remainingAtStart, startedAt: this.startedAt
+        }));
+      } catch (e) {}
+    },
+
+    load: function () {
+      try {
+        var d = JSON.parse(localStorage.getItem('bap_pomo_state') || 'null');
+        if (!d) return;
+        this.mode    = d.mode    || 'work';
+        this.sessions = d.sessions || 0;
+        this.remainingAtStart = typeof d.remainingAtStart === 'number'
+          ? d.remainingAtStart : this.DURATIONS[this.mode];
+        this.startedAt = d.startedAt || null;
+        this.running   = !!d.running;
+        /* Timer qui tournait mais a expiré pendant l'absence */
+        if (this.running) {
+          var elapsed = Math.floor((Date.now() - (this.startedAt || 0)) / 1000);
+          if (elapsed >= this.remainingAtStart) {
+            this.running = false; this.startedAt = null; this.remainingAtStart = 0;
+          }
+        }
+      } catch (e) {}
+    },
+
+    start: function () {
+      if (this.running) return;
+      var rem = this.getRemaining();
+      this.remainingAtStart = rem > 0 ? rem : this.DURATIONS[this.mode];
+      this.startedAt = Date.now();
+      this.running = true;
+      this.save();
+    },
+
+    pause: function () {
+      if (!this.running) return;
+      this.remainingAtStart = this.getRemaining();
+      this.startedAt = null;
+      this.running = false;
+      this.save();
+    },
+
+    toggle: function () { this.running ? this.pause() : this.start(); },
+
+    reset: function () {
+      this.remainingAtStart = this.DURATIONS[this.mode];
+      this.startedAt = null;
+      this.running = false;
+      this.save();
+    },
+
+    setMode: function (m) {
+      if (!this.DURATIONS[m]) return;
+      this.mode = m;
+      this.remainingAtStart = this.DURATIONS[m];
+      this.startedAt = null;
+      this.running = false;
+      this.save();
+    },
+
+    completeTick: function () {
+      if (this.mode === 'work') this.sessions++;
+      this.running = false; this.startedAt = null; this.remainingAtStart = 0;
+      this.save();
+      var next = this.mode === 'work' ? (this.sessions % 4 === 0 ? 'long' : 'short') : 'work';
+      var self = this;
+      setTimeout(function () { self.setMode(next); }, 400);
+    }
+  };
+
+  window.PomodoroState.load();
+
   /* ── Bouton retour en haut ── */
 
   function bapInitBackToTop() {

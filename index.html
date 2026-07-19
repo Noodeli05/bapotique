@@ -451,27 +451,30 @@ footer strong{color:var(--lav)}
 <!-- ── PLANNING JOURNALIER ── -->
 <section class="planning-section">
   <div class="planning-card">
-    <div class="planning-toggle-bar">
-      <div class="planning-toggle">
-        <button class="ptoggle-btn ptoggle-active" id="ptoggle-libre"     onclick="planningSetMode('libre')">Libre</button>
-        <button class="ptoggle-btn"                id="ptoggle-planning"  onclick="planningSetMode('planning')">Planning</button>
+
+    <!-- Compte à rebours : toujours visible, indépendant du toggle -->
+    <div class="planning-countdown">
+      <div>
+        <div class="planning-days-num" id="planning-days" style="color:var(--lav)">—</div>
+        <div class="planning-days-unit">jours</div>
+      </div>
+      <div>
+        <div style="font-size:.82rem;font-weight:600;color:var(--tx)">jusqu'à l'examen</div>
+        <div class="planning-exam-sub">31 août 2026</div>
       </div>
     </div>
 
-    <div id="planning-content" style="display:none">
-      <div class="planning-countdown">
-        <div>
-          <div class="planning-days-num" id="planning-days" style="color:var(--lav)">—</div>
-          <div class="planning-days-unit">jours</div>
-        </div>
-        <div>
-          <div style="font-size:.82rem;font-weight:600;color:var(--tx)">jusqu'à l'examen</div>
-          <div class="planning-exam-sub">31 août 2026</div>
-        </div>
+    <!-- Toggle Libre / Planning -->
+    <div class="planning-toggle-bar">
+      <div class="planning-toggle">
+        <button class="ptoggle-btn" id="ptoggle-libre"     onclick="planningSetMode('libre')">Libre</button>
+        <button class="ptoggle-btn" id="ptoggle-planning"  onclick="planningSetMode('planning')">Planning</button>
       </div>
+    </div>
 
+    <!-- Phases + tâches : visibles uniquement en mode Planning -->
+    <div id="planning-content">
       <div class="planning-phases" id="planning-phases"></div>
-
       <div>
         <div class="planning-tasks-hdr">
           <span class="planning-tasks-title">Tâches du jour</span>
@@ -480,6 +483,7 @@ footer strong{color:var(--lav)}
         <div id="planning-tasks-list"></div>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -584,93 +588,97 @@ function toggleTheme(){
 })();
 (function(){var p=location.pathname.split('/').pop()||'index.html';document.querySelectorAll('.topnav-links a').forEach(function(a){var h=(a.getAttribute('href')||'').replace('./','');if(h===p)a.classList.add('active');});})();
 
-// ── Pomodoro ──────────────────────────────────────────────────────────────
-var POMO_CIRC = 2 * Math.PI * 68; // 427.26
-var POMO = {
-  MODES:  { work: 1500, short: 300, long: 900 },
-  LABELS: { work: 'Travail', short: 'Pause courte', long: 'Longue pause' },
-  COLORS: { work: 'var(--lav)', short: 'var(--mint)', long: 'var(--sky)' },
-  mode: 'work', remaining: 1500, total: 1500,
-  running: false, sessions: 0, timer: null
-};
+// ── Pomodoro (délègue à window.PomodoroState de common.js) ───────────────────
+var POMO_CIRC = 2 * Math.PI * 68;
+var POMO_IV   = null; // interval de mise à jour UI sur cette page
 
 function pomoSetMode(mode) {
-  if (POMO.running) pomoStop();
-  POMO.mode = mode;
-  POMO.total = POMO.MODES[mode];
-  POMO.remaining = POMO.total;
+  window.PomodoroState.setMode(mode);
+  clearInterval(POMO_IV); POMO_IV = null;
   document.querySelectorAll('.pomo-tab').forEach(function(b){ b.classList.remove('pomo-tab-active'); });
   var tab = document.getElementById('pomo-tab-' + mode);
   if (tab) tab.classList.add('pomo-tab-active');
   var fg = document.getElementById('pomo-ring-fg');
-  if (fg) fg.style.stroke = POMO.COLORS[mode];
+  if (fg) fg.style.stroke = window.PomodoroState.COLORS[mode];
   var startBtn = document.getElementById('pomo-start');
   if (startBtn) startBtn.innerHTML = '<svg class="ic"><use href="#i-play"/></svg> Démarrer';
   pomoRender();
 }
 
-function pomoToggle() { POMO.running ? pomoStop() : pomoStart(); }
-
-function pomoStart() {
-  if (POMO.remaining <= 0) { POMO.remaining = POMO.total; }
-  POMO.running = true;
+function pomoToggle() {
+  window.PomodoroState.toggle();
+  var PS = window.PomodoroState;
   var startBtn = document.getElementById('pomo-start');
-  if (startBtn) startBtn.innerHTML = '<svg class="ic"><use href="#i-pause"/></svg> Pause';
-  POMO.timer = setInterval(function() {
-    if (POMO.remaining > 0) {
-      POMO.remaining--;
-      pomoRender();
-    } else {
-      pomoStop();
-      if (POMO.mode === 'work') { POMO.sessions++; pomoRenderDots(); }
-      pomoBeep();
-      var next = POMO.mode === 'work' ? (POMO.sessions % 4 === 0 ? 'long' : 'short') : 'work';
-      setTimeout(function(){ pomoSetMode(next); }, 400);
-    }
-  }, 1000);
-}
-
-function pomoStop() {
-  POMO.running = false;
-  clearInterval(POMO.timer); POMO.timer = null;
-  var startBtn = document.getElementById('pomo-start');
-  if (startBtn) startBtn.innerHTML = '<svg class="ic"><use href="#i-play"/></svg> Reprendre';
+  if (startBtn) startBtn.innerHTML = PS.running
+    ? '<svg class="ic"><use href="#i-pause"/></svg> Pause'
+    : '<svg class="ic"><use href="#i-play"/></svg> Reprendre';
+  if (PS.running) {
+    if (!POMO_IV) POMO_IV = setInterval(pomoTick, 1000);
+  } else {
+    clearInterval(POMO_IV); POMO_IV = null;
+  }
+  pomoRender();
 }
 
 function pomoReset() {
-  pomoStop();
-  POMO.remaining = POMO.total;
+  window.PomodoroState.reset();
+  clearInterval(POMO_IV); POMO_IV = null;
+  var fg = document.getElementById('pomo-ring-fg');
+  if (fg) { fg.style.transition = 'none'; setTimeout(function(){ if(fg) fg.style.transition = ''; }, 50); }
   var startBtn = document.getElementById('pomo-start');
   if (startBtn) startBtn.innerHTML = '<svg class="ic"><use href="#i-play"/></svg> Démarrer';
-  // Désactiver la transition pour le reset immédiat
-  var fg = document.getElementById('pomo-ring-fg');
-  if (fg) { fg.style.transition = 'none'; }
   pomoRender();
-  if (fg) { setTimeout(function(){ fg.style.transition = ''; }, 50); }
+}
+
+function pomoTick() {
+  var PS = window.PomodoroState;
+  var rem = PS.getRemaining();
+  pomoRender();
+  if (rem <= 0 && PS.running) {
+    PS.completeTick();
+    clearInterval(POMO_IV); POMO_IV = null;
+    pomoBeep();
+    setTimeout(function() {
+      var m = window.PomodoroState.mode;
+      document.querySelectorAll('.pomo-tab').forEach(function(b){ b.classList.remove('pomo-tab-active'); });
+      var tab = document.getElementById('pomo-tab-' + m);
+      if (tab) tab.classList.add('pomo-tab-active');
+      var fg = document.getElementById('pomo-ring-fg');
+      if (fg) fg.style.stroke = window.PomodoroState.COLORS[m];
+      var startBtn = document.getElementById('pomo-start');
+      if (startBtn) startBtn.innerHTML = '<svg class="ic"><use href="#i-play"/></svg> Démarrer';
+      pomoRenderDots();
+      pomoRender();
+    }, 500);
+  }
 }
 
 function pomoRender() {
-  var m = Math.floor(POMO.remaining / 60);
-  var s = POMO.remaining % 60;
-  var ts = (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+  var PS  = window.PomodoroState;
+  var rem = PS.getRemaining();
+  var dur = PS.DURATIONS[PS.mode];
+  var mn  = Math.floor(rem / 60), sc = rem % 60;
+  var ts  = (mn < 10 ? '0' : '') + mn + ':' + (sc < 10 ? '0' : '') + sc;
   var timeEl = document.getElementById('pomo-time');
   if (timeEl) timeEl.textContent = ts;
   var lblEl = document.getElementById('pomo-mode-lbl');
-  if (lblEl) lblEl.textContent = POMO.LABELS[POMO.mode];
+  if (lblEl) lblEl.textContent = PS.LABELS[PS.mode];
   var fg = document.getElementById('pomo-ring-fg');
-  if (fg) fg.setAttribute('stroke-dashoffset', POMO_CIRC * (1 - POMO.remaining / POMO.total));
-  if (POMO.running) document.title = ts + ' · ' + POMO.LABELS[POMO.mode] + ' — Bapotique';
-  else document.title = 'Linguistique Française — UNIL 2025';
+  if (fg) fg.setAttribute('stroke-dashoffset', POMO_CIRC * (1 - rem / dur));
+  document.title = PS.running
+    ? ts + ' · ' + PS.LABELS[PS.mode] + ' — Bapotique'
+    : 'Linguistique Française — UNIL 2025';
 }
 
 function pomoRenderDots() {
-  var filled = POMO.sessions % 4 === 0 && POMO.sessions > 0 ? 4 : POMO.sessions % 4;
+  var n = window.PomodoroState.sessions;
+  var filled = n % 4 === 0 && n > 0 ? 4 : n % 4;
   for (var i = 0; i < 4; i++) {
     var dot = document.getElementById('pomo-dot-' + i);
     if (dot) dot.classList.toggle('done', i < filled);
   }
   var countEl = document.getElementById('pomo-session-count');
-  if (countEl) countEl.textContent = POMO.sessions + ' session' + (POMO.sessions !== 1 ? 's' : '');
+  if (countEl) countEl.textContent = n + ' session' + (n !== 1 ? 's' : '');
 }
 
 function pomoBeep() {
@@ -689,15 +697,30 @@ function pomoBeep() {
   } catch(e) {}
 }
 
-// Init ring
+/* Init ring — restaure l'état depuis PomodoroState (persistance cross-page) */
 (function(){
+  var PS = window.PomodoroState;
   var fg = document.getElementById('pomo-ring-fg');
   if (fg) {
     fg.style.transition = 'none';
     fg.setAttribute('stroke-dasharray', POMO_CIRC);
-    fg.setAttribute('stroke-dashoffset', 0);
-    setTimeout(function(){ fg.style.transition = ''; }, 50);
+    fg.setAttribute('stroke-dashoffset', POMO_CIRC * (1 - PS.getRemaining() / PS.DURATIONS[PS.mode]));
+    fg.style.stroke = PS.COLORS[PS.mode];
+    setTimeout(function(){ if(fg) fg.style.transition = ''; }, 50);
   }
+  document.querySelectorAll('.pomo-tab').forEach(function(b){ b.classList.remove('pomo-tab-active'); });
+  var tab = document.getElementById('pomo-tab-' + PS.mode);
+  if (tab) tab.classList.add('pomo-tab-active');
+  var startBtn = document.getElementById('pomo-start');
+  if (startBtn) {
+    var rem = PS.getRemaining(), dur = PS.DURATIONS[PS.mode];
+    startBtn.innerHTML = PS.running
+      ? '<svg class="ic"><use href="#i-pause"/></svg> Pause'
+      : '<svg class="ic"><use href="#i-play"/></svg> ' + (rem < dur && rem > 0 ? 'Reprendre' : 'Démarrer');
+  }
+  if (PS.running) POMO_IV = setInterval(pomoTick, 1000);
+  pomoRender();
+  pomoRenderDots();
 })();
 
 // ── Planning journalier ───────────────────────────────────────────────────
@@ -736,8 +759,16 @@ function planningSetMode(mode){
   var l=document.getElementById('ptoggle-libre'), p=document.getElementById('ptoggle-planning');
   if(l) l.classList.toggle('ptoggle-active', mode==='libre');
   if(p) p.classList.toggle('ptoggle-active', mode==='planning');
+  /* Le compte à rebours est maintenant HORS de #planning-content → toujours visible */
   var c=document.getElementById('planning-content');
   if(c) c.style.display = mode==='planning' ? '' : 'none';
+  /* Mettre à jour le compte à rebours dans tous les cas */
+  var days=planningDaysLeft();
+  var dEl=document.getElementById('planning-days');
+  if(dEl){
+    dEl.textContent = days > 0 ? days : 0;
+    dEl.style.color = days<=7 ? 'var(--rose)' : days<=14 ? 'var(--peach)' : 'var(--lav)';
+  }
   if(mode==='planning') planningRender();
 }
 
@@ -785,9 +816,9 @@ function planningRender(){
   }
 }
 
-// Init planning
+// Init planning — par défaut "planning" pour afficher le contenu dès l'ouverture
 (function(){
-  var mode; try{ mode=localStorage.getItem('bap_planning_mode')||'libre'; }catch(e){ mode='libre'; }
+  var mode; try{ mode=localStorage.getItem('bap_planning_mode')||'planning'; }catch(e){ mode='planning'; }
   planningSetMode(mode);
 })();
 </script>
