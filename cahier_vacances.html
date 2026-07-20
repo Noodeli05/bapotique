@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260719');}());</script>
+<script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260720');}());</script>
 <title>Cahier de vacances — Linguistique française UNIL 2025</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
@@ -15,7 +15,8 @@ html{font-size:16px}
 body{font-family:'DM Sans',Arial,sans-serif;background:#f7f5f0;color:#1a1520;line-height:1.6}
 
 /* ── SCREEN WRAPPER ── */
-.book{max-width:800px;margin:0 auto;padding:2rem 1rem}
+.book{margin:0 auto;padding:2rem 1rem}
+@media screen{.book{max-width:800px}}
 
 /* ── PAGE BREAKS ── */
 .page{background:#fff;box-shadow:0 2px 20px rgba(0,0,0,.10);border-radius:4px;margin-bottom:2.5rem;padding:3rem 3.5rem;position:relative;min-height:297mm}
@@ -162,10 +163,11 @@ tr:last-child td{border-bottom:none}
   .page:last-child{page-break-after:auto;break-after:auto}
   h2,h3,.ch-header{page-break-after:avoid;break-after:avoid}
   .exo-block,.box{page-break-inside:avoid;break-inside:avoid}
-  .print-btn,.no-print,.ch-progress,.bap-tts-fab,.bap-tts-panel,.bap-notes-fab,.bap-notes-panel,.bap-pom-fab,.bap-pom-panel{display:none!important}
+  .print-btn,.no-print,.ch-progress,.bap-tts-fab,.bap-tts-panel,.bap-notes-fab,.bap-notes-panel,.bap-pom-fab,.bap-pom-panel,.divider-page{display:none!important}
 
   /* covers: texte foncé sur fond blanc (économie d'encre) */
-  .cover{min-height:auto!important;padding:25mm 20mm!important;background:none!important;color:#1a1520!important}
+  /* horizontal padding = 0 car .page fournit déjà les marges latérales */
+  .cover{min-height:auto!important;padding:15mm 0!important;background:none!important;color:#1a1520!important}
   .cover-title{background:none!important;-webkit-background-clip:unset!important;background-clip:unset!important;-webkit-text-fill-color:#2d2540!important;color:#2d2540!important}
   .cover-subtitle{color:#2d2540!important}
   .cover-band{background:transparent!important;border-color:#2d2540!important}
