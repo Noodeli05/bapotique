@@ -12,109 +12,122 @@
       "tree": {
         "id": "d0-root",
         "label": "D0 — Introduction",
-        "def": "Introduction à la linguistique : science qui étudie le langage humain de façon systématique et objective.",
+        "def": "Introduction à la linguistique générale : étude scientifique du langage humain, de ses structures et de ses mécanismes.",
         "ex": [],
+        "note": "Ce chapitre pose les bases théoriques et méthodologiques de la linguistique moderne.",
         "children": [
           {
-            "id": "d0-linguistique",
+            "id": "d0-ling",
             "label": "Linguistique",
-            "def": "Étude scientifique du langage humain, de sa structure, de son fonctionnement et de son évolution.",
-            "ex": ["Phonétique, morphologie, syntaxe, sémantique, pragmatique"],
-            "note": "La linguistique s'intéresse à TOUTES les langues, pas seulement aux langues écrites ou littéraires.",
+            "def": "Étude scientifique du langage humain dans toutes ses dimensions : phonique, grammaticale, lexicale et sémantique.",
+            "ex": ["La linguistique analyse comment les langues fonctionnent et évoluent."],
+            "note": "Ferdinand de Saussure est souvent considéré comme le père de la linguistique moderne.",
             "children": [
               {
-                "id": "d0-langue-parole",
+                "id": "d0-ling-langue",
                 "label": "Langue vs Parole",
-                "def": "Distinction saussurienne : la langue est le système abstrait partagé par une communauté ; la parole est son actualisation individuelle.",
-                "ex": ["Langue : le système du français", "Parole : 'Je mange une pomme' prononcé par quelqu'un"],
+                "def": "Distinction saussurienne entre la langue (système abstrait, social, partagé par une communauté) et la parole (réalisation concrète et individuelle de ce système dans des actes de communication).",
+                "ex": ["La langue : le système grammatical du français partagé par tous les francophones. La parole : ce que dit un locuteur précis dans un contexte donné."],
+                "note": "La langue est l'objet d'étude principal de la linguistique structurale. La parole, trop variable, ne peut être étudiée directement.",
                 "children": []
               },
               {
-                "id": "d0-synchro-diachro",
-                "label": "Synchronie / Diachronie",
-                "def": "La synchronie étudie la langue à un moment donné ; la diachronie étudie son évolution à travers le temps.",
-                "ex": ["Synchronique : le français d'aujourd'hui", "Diachronique : latin → ancien français → français moderne"],
+                "id": "d0-ling-synchro",
+                "label": "Synchronie vs Diachronie",
+                "def": "La synchronie étudie la langue à un moment donné dans le temps ; la diachronie étudie l'évolution de la langue à travers le temps.",
+                "ex": ["Synchronie : le français parlé aujourd'hui. Diachronie : l'évolution du latin 'aqua' au français 'eau'."],
+                "note": "Saussure préconise l'étude synchronique comme prioritaire pour comprendre le fonctionnement du système linguistique.",
                 "children": []
               }
             ]
           },
           {
-            "id": "d0-semiologie",
+            "id": "d0-semio",
             "label": "Sémiologie",
-            "def": "Science générale des signes (Saussure). La linguistique en est la branche la plus développée.",
-            "ex": ["Le feu rouge = signe de danger", "Le mot 'chien' = signe linguistique"],
+            "def": "Science générale des signes, telle que définie par Saussure. Elle étudie la vie des signes au sein de la vie sociale et les systèmes de signification.",
+            "ex": ["La sémiologie englobe l'étude des feux de circulation, des gestes, des codes vestimentaires et des mots."],
+            "note": "La linguistique est, pour Saussure, la partie la plus importante de la sémiologie car la langue est le système de signes le plus développé.",
             "children": [
               {
-                "id": "d0-signe",
+                "id": "d0-semio-signe",
                 "label": "Signe linguistique",
-                "def": "Entité à deux faces indissociables : un signifiant (image acoustique) et un signifié (concept mental). Comme le recto et le verso d'une feuille.",
-                "ex": ["/ʃjɛ̃/ (signifiant) ↔ [concept de chien] (signifié)"],
+                "def": "Entité psychique à deux faces indissociables : le signifiant (image acoustique) et le signifié (concept), unis par un rapport arbitraire et conventionnel.",
+                "ex": ["Le mot 'arbre' : signifiant [aʁbʁ] associé au signifié (concept mental d'arbre)."],
+                "note": "Le signe ne renvoie pas directement à la chose réelle (référent), mais à un concept mental. Saussure compare le signe à une feuille de papier : on ne peut couper un côté sans couper l'autre.",
                 "children": [
                   {
-                    "id": "d0-signifiant",
+                    "id": "d0-semio-signe-signif",
                     "label": "Signifiant",
-                    "def": "L'image acoustique du signe : suite de sons mentalement représentée, pas le son physique lui-même.",
-                    "ex": ["/ʃjɛ̃/ pour 'chien'", "/po.m/ pour 'pomme'"],
+                    "def": "Face formelle du signe linguistique : l'image acoustique, c'est-à-dire la suite de sons (ou de lettres) mentalement représentée qui compose le mot.",
+                    "ex": ["Pour 'chat' : le signifiant est la séquence sonore [ʃa] ou l'image acoustique mentale correspondante."],
+                    "note": "Le signifiant est linéaire : il se déploie dans le temps (oral) ou dans l'espace (écrit). Il ne doit pas être confondu avec le son physique lui-même.",
                     "children": []
                   },
                   {
-                    "id": "d0-signifie",
+                    "id": "d0-semio-signe-signifie",
                     "label": "Signifié",
-                    "def": "Le concept mental associé au signifiant. Pas la chose réelle (référent), mais l'idée abstraite.",
-                    "ex": ["Le concept mental d'un mammifère quadrupède domestique pour 'chien'"],
+                    "def": "Face conceptuelle du signe linguistique : le concept mental associé au signifiant, sans être l'objet réel lui-même. C'est une entité abstraite.",
+                    "ex": ["Pour 'chat' : le signifié est le concept mental de l'animal félin domestique, indépendamment de tout chat particulier."],
+                    "note": "Le signifié est une notion abstraite et sociale, non une image mentale individuelle. Il est partagé par les membres d'une communauté linguistique.",
                     "children": []
                   },
                   {
-                    "id": "d0-referent",
+                    "id": "d0-semio-signe-ref",
                     "label": "Référent",
-                    "def": "La chose réelle dans le monde à laquelle renvoie le signe. Extérieur au signe lui-même.",
-                    "ex": ["Le vrai chien dans le jardin = référent de 'chien'"],
+                    "def": "L'objet ou l'entité du monde réel (ou fictif) auquel renvoie le signe linguistique dans un contexte d'usage précis. Extérieur au signe lui-même.",
+                    "ex": ["Le référent de 'ce chat' dans une situation donnée est l'animal physique présent dans la pièce au moment de l'énonciation."],
+                    "note": "Le référent n'est pas une composante du signe pour Saussure, mais il est central en sémantique référentielle et en pragmatique.",
                     "children": []
                   }
                 ]
               },
               {
-                "id": "d0-arbitraire",
+                "id": "d0-semio-arb",
                 "label": "Arbitraire du signe",
-                "def": "Le lien entre signifiant et signifié est conventionnel, non motivé par nature. Preuve : chaque langue dit la même chose avec des sons différents.",
-                "ex": ["chien / dog / Hund / cane = même signifié, signifiants différents"],
-                "note": "Exceptions apparentes : les onomatopées. Mais même elles varient selon les langues (cocorico/cock-a-doodle-doo).",
+                "def": "Principe selon lequel le lien entre le signifiant et le signifié est arbitraire : aucune raison naturelle ou logique ne justifie qu'un concept soit associé à une forme phonique particulière plutôt qu'à une autre.",
+                "ex": ["Le concept d'arbre se dit 'tree' en anglais, 'Baum' en allemand, 'arbre' en français : le lien entre son et sens n'est pas motivé par la nature."],
+                "note": "L'arbitraire est dit 'relatif' pour les mots composés ou dérivés dont le sens est partiellement motivé (ex. : 'dix-neuf' est motivé par 'dix' et 'neuf'). Les onomatopées constituent des exceptions apparentes mais varient aussi selon les langues.",
                 "children": []
               },
               {
-                "id": "d0-linearite",
+                "id": "d0-semio-lin",
                 "label": "Linéarité du signe",
-                "def": "Les signifiants se déploient dans le temps (à l'oral) ou dans l'espace (à l'écrit) selon une séquence linéaire ; deux sons ne peuvent pas être produits simultanément.",
-                "ex": ["/p/ puis /o/ puis /m/ → 'pomme'"],
+                "def": "Propriété du signifiant de se dérouler dans le temps de façon séquentielle et linéaire, un son (ou une lettre) après l'autre. Deux sons ne peuvent pas être produits strictement en même temps.",
+                "ex": ["[p-a-ʁ-i] : les phonèmes de 'Paris' se succèdent linéairement dans la chaîne parlée. On ne peut pas les produire simultanément."],
+                "note": "Cette propriété a des conséquences fondamentales sur l'organisation de la syntaxe et de la morphologie : les unités doivent s'enchaîner, pas se superposer.",
                 "children": []
               },
               {
-                "id": "d0-mutabilite",
+                "id": "d0-semio-mut",
                 "label": "Mutabilité / Immutabilité",
-                "def": "Le signe est immutable pour l'individu (on ne peut pas changer la langue seul) mais mutable dans le temps (la langue évolue collectivement).",
-                "ex": ["'manger' vient du latin 'manducare'"],
+                "def": "Le signe est immutable pour l'individu (nul ne peut modifier le signe à volonté car il est institutionnel et social), mais mutable dans la durée à travers l'usage collectif de la communauté au fil du temps.",
+                "ex": ["On ne peut décider seul d'appeler un chien 'flurp'. Pourtant les langues changent progressivement : latin 'manducare' → français 'manger'."],
+                "note": "Ce paradoxe illustre la tension entre la stabilité synchronique (immutabilité pour l'individu) et le changement diachronique (mutabilité collective).",
                 "children": []
               }
             ]
           },
           {
-            "id": "d0-double-articulation",
+            "id": "d0-double-art",
             "label": "Double articulation",
-            "def": "Principe de Martinet : le langage humain est organisé en deux niveaux d'articulation, ce qui le distingue des autres systèmes de communication.",
-            "ex": ["'chat' = 1 unité de sens / 3 phonèmes (/ʃ/, /a/, /t/)"],
+            "def": "Principe formulé par André Martinet selon lequel le langage humain s'organise en deux niveaux d'articulation distincts et hiérarchisés, ce qui confère au langage une économie remarquable.",
+            "ex": ["'Il fait chaud' s'articule en morphèmes (il, fait, chaud), eux-mêmes articulés en phonèmes (/i/, /l/, /f/, /ɛ/, /ʃ/, /o/)."],
+            "note": "La double articulation est une propriété distinctive du langage humain par rapport aux autres systèmes de communication animale, qui n'ont qu'un seul niveau.",
             "children": [
               {
-                "id": "d0-premiere-articulation",
-                "label": "1re articulation",
-                "def": "Segmentation en monèmes/morphèmes : unités minimales dotées d'un sens. Chaque morphème est une unité de sens.",
-                "ex": ["'chantions' = chant- (sens: action de chanter) + -i- (imparfait) + -ons (1re pers. pl.)"],
+                "id": "d0-da-1ere",
+                "label": "1ère articulation",
+                "def": "Niveau des monèmes / morphèmes : unités minimales dotées à la fois d'un signifiant et d'un signifié (unités de sens). Ces unités peuvent être combinées pour former des énoncés.",
+                "ex": ["Dans 'chanteurs' : chant- (action vocale) + -eur (agent) + -s (pluriel) → trois morphèmes portant chacun une signification."],
+                "note": "Les morphèmes constituent la première articulation : ils ont du sens. On peut en combiner un nombre limité pour former une infinité d'énoncés.",
                 "children": []
               },
               {
-                "id": "d0-deuxieme-articulation",
-                "label": "2e articulation",
-                "def": "Segmentation en phonèmes : unités minimales sonores SANS sens propre, qui permettent de distinguer les morphèmes entre eux.",
-                "ex": ["/p/ et /b/ distinguent 'pain' et 'bain' — chaque phonème n'a pas de sens seul"],
+                "id": "d0-da-2eme",
+                "label": "2ème articulation",
+                "def": "Niveau des phonèmes : unités sonores distinctives dépourvues de signification propre, qui servent uniquement à distinguer les morphèmes entre eux.",
+                "ex": ["Dans 'chat' vs 'rat' : [ʃ] et [ʁ] sont deux phonèmes qui distinguent les mots mais n'ont pas de sens en eux-mêmes."],
+                "note": "Les phonèmes constituent la deuxième articulation : ils distinguent sans signifier. Un inventaire restreint de phonèmes (~30 en français) suffit à former des milliers de morphèmes.",
                 "children": []
               }
             ]
@@ -122,71 +135,81 @@
           {
             "id": "d0-niveaux",
             "label": "Niveaux d'analyse",
-            "def": "La linguistique découpe l'étude de la langue en plusieurs niveaux hiérarchiques allant du son au sens en contexte.",
-            "ex": [],
+            "def": "Les différents plans d'organisation linguistique qui structurent l'analyse scientifique du langage, allant du son (niveau le plus bas) au sens en contexte (niveau le plus élevé).",
+            "ex": ["La phrase 'Le chat miaule' peut être analysée au niveau phonologique, morphologique, syntaxique, sémantique et pragmatique."],
+            "note": "Ces niveaux sont hiérarchisés mais interagissent entre eux. Les unités d'un niveau inférieur se combinent pour former les unités du niveau supérieur.",
             "children": [
               {
-                "id": "d0-phonetique",
+                "id": "d0-niv-phon",
                 "label": "Phonétique / Phonologie",
-                "def": "Phonétique : sons du langage dans leur réalité physique. Phonologie : organisation des sons en système distinctif (phonèmes).",
-                "ex": ["[r] vs /r/ : son concret vs phonème abstrait"],
+                "def": "La phonétique étudie les sons du langage dans leur réalisation physique et physiologique ; la phonologie étudie l'organisation abstraite des phonèmes en système distinctif.",
+                "ex": ["Phonétique : [ʁ] est une fricative uvulaire voisée. Phonologie : /ʁ/ s'oppose à /l/ pour distinguer 'riz' de 'lit'."],
+                "note": "C'est le niveau le plus bas de l'analyse linguistique, portant sur les unités de la deuxième articulation.",
                 "children": []
               },
               {
-                "id": "d0-graphemique",
+                "id": "d0-niv-graph",
                 "label": "Graphémique",
-                "def": "Étude du système d'écriture : les graphèmes (unités graphiques distinctives) et leurs relations avec les phonèmes.",
-                "ex": ["Le graphème 'ch' correspond au phonème /ʃ/"],
+                "def": "Étude du système d'écriture d'une langue : les graphèmes (unités graphiques minimales distinctives) et leurs correspondances avec les phonèmes.",
+                "ex": ["En français, le phonème /s/ peut s'écrire : s (sel), ss (tasse), c (ciel), ç (garçon), sc (scène), x (dix), t (nation)."],
+                "note": "La correspondance phonème-graphème est particulièrement complexe et irrégulière en français, en raison de l'histoire de la langue.",
                 "children": []
               },
               {
-                "id": "d0-morphologie",
+                "id": "d0-niv-morph",
                 "label": "Morphologie",
-                "def": "Étude de la structure interne des mots : morphèmes, dérivation, flexion, composition.",
-                "ex": ["'chanteur' = chant- + -eur (suffixe d'agent)"],
+                "def": "Étude de la structure interne des mots et des règles de formation des mots : dérivation (création de nouveaux mots), flexion (variation grammaticale) et composition.",
+                "ex": ["'chanteur' = chant- (base) + -eur (suffixe dérivationnel d'agent). 'chantions' = chant- + -i- + -ons (flexion verbale)."],
+                "note": "La morphologie est à l'interface entre le lexique (inventaire des mots) et la syntaxe (combinaison des mots).",
                 "children": []
               },
               {
-                "id": "d0-syntaxe",
+                "id": "d0-niv-synt",
                 "label": "Syntaxe",
-                "def": "Étude de la façon dont les mots se combinent en groupes, en propositions et en phrases.",
-                "ex": ["GN + GV → clause canonique"],
+                "def": "Étude des règles qui gouvernent la combinaison des mots en groupes syntaxiques, en propositions et en phrases grammaticalement correctes.",
+                "ex": ["'Le chat mange la souris' : structure GN (sujet) + GV (prédicat), avec relation Sujet-Verbe-Objet."],
+                "note": "La syntaxe décrit les relations structurelles entre les unités d'un énoncé : fonctions syntaxiques, hiérarchies de constituants, ordre des mots.",
                 "children": []
               },
               {
-                "id": "d0-semantique",
+                "id": "d0-niv-sem",
                 "label": "Sémantique",
-                "def": "Étude du sens : sens des mots (lexical) et sens des phrases (compositionnel).",
-                "ex": ["polysémie, synonymie, antonymie"],
+                "def": "Étude du sens des unités linguistiques : sens des mots (sémantique lexicale), relations sémantiques entre mots, et sens des phrases (sémantique compositionnelle).",
+                "ex": ["'Célibataire' implique sémantiquement 'non-marié'. 'Mourir' et 'décéder' sont des quasi-synonymes mais diffèrent par le registre."],
+                "note": "La sémantique s'intéresse au sens linguistique (encodé dans la langue) indépendamment du contexte d'énonciation.",
                 "children": []
               },
               {
-                "id": "d0-pragmatique",
+                "id": "d0-niv-prag",
                 "label": "Pragmatique",
-                "def": "Étude de l'usage du langage en contexte : ce que les locuteurs font avec les mots (actes de langage, implicites).",
-                "ex": ["'Il fait froid ici' peut implicitement signifier 'Ferme la fenêtre'"],
+                "def": "Étude de l'usage du langage en contexte : comment les locuteurs produisent et interprètent des énoncés dans des situations de communication, au-delà du sens littéral.",
+                "ex": ["'Tu peux passer le sel ?' est une requête, non une question sur les capacités physiques de l'interlocuteur."],
+                "note": "La pragmatique s'intéresse aux actes de langage (Austin, Searle), aux implicites, aux inférences conversationnelles (Grice) et au contexte énonciatif.",
                 "children": []
               }
             ]
           },
           {
             "id": "d0-methodes",
-            "label": "Méthodes d'analyse",
-            "def": "Outils méthodologiques fondamentaux de la linguistique structurale pour identifier et classer les unités linguistiques.",
+            "label": "Méthodes",
+            "def": "Procédures méthodologiques fondamentales utilisées en linguistique structurale pour identifier, délimiter et classer les unités linguistiques à tous les niveaux d'analyse.",
             "ex": [],
+            "note": "Ces deux méthodes (commutation et segmentation) sont applicables à tous les niveaux d'analyse et constituent la boîte à outils de base du linguiste.",
             "children": [
               {
-                "id": "d0-commutation",
+                "id": "d0-meth-comm",
                 "label": "Commutation",
-                "def": "Test qui consiste à remplacer un élément par un autre au même endroit pour vérifier si cela crée une différence de sens. Permet d'identifier les unités distinctives.",
-                "ex": ["p/b dans 'pain'/'bain' → /p/ et /b/ sont des phonèmes distincts", "chant-/march- → deux morphèmes distincts"],
+                "def": "Test consistant à substituer un élément par un autre dans un même environnement phonique ou syntaxique afin de déterminer si les deux éléments constituent des unités distinctives différentes.",
+                "ex": ["Substitution de /p/, /b/, /t/ dans 'pas'/'bas'/'tas' : la commutation révèle que /p/, /b/, /t/ sont des phonèmes distincts en français."],
+                "note": "Si la commutation entraîne un changement de sens (ou rend l'énoncé agrammatical), les deux éléments substitués appartiennent à des unités distinctives différentes.",
                 "children": []
               },
               {
-                "id": "d0-segmentation",
+                "id": "d0-meth-seg",
                 "label": "Segmentation",
-                "def": "Découpage d'un énoncé en unités successives (phonèmes, morphèmes, syntagmes) à un niveau d'analyse donné.",
-                "ex": ["'les petits chats' → [les] [petits] [chats] (lexical) → [le+s] [petit+s] [chat+s] (morphologique)"],
+                "def": "Opération consistant à découper la chaîne parlée ou écrite en constituants (segments) successifs afin d'identifier les unités pertinentes à chaque niveau d'analyse.",
+                "ex": ["'inacceptable' → in- / accept- / -able (segmentation morphologique en trois morphèmes)."],
+                "note": "La segmentation se combine avec la commutation pour identifier et valider les unités pertinentes. Elle doit être exhaustive et non-redondante.",
                 "children": []
               }
             ]
@@ -197,7 +220,7 @@
     {
       "id": "D1",
       "title": "Phonétique",
-      "subtitle": "Phonétique & phonologie",
+      "subtitle": "Sons, phonèmes & prosodie",
       "color": "#a8c8f0",
       "colorLight": "#dceeff",
       "available": true,
@@ -206,215 +229,417 @@
       "tree": {
         "id": "d1-root",
         "label": "D1 — Phonétique",
-        "def": "Étude scientifique des sons du langage humain sous leurs aspects physiques et fonctionnels.",
+        "def": "Étude scientifique des sons du langage humain sous leurs aspects physiques (acoustique), physiologiques (articulatoire) et perceptifs.",
         "ex": [],
+        "note": "La phonétique et la phonologie forment ensemble le premier niveau d'analyse linguistique, portant sur les unités de la deuxième articulation.",
         "children": [
           {
-            "id": "d1-phonetique",
+            "id": "d1-phon",
             "label": "Phonétique",
-            "def": "Branche qui étudie les sons du langage dans leur réalité physique et physiologique, sans considérer leur rôle distinctif.",
-            "ex": ["[r] alvéolaire vs [ʀ] uvulaire sont des variantes phonétiques du même phonème /r/"],
+            "def": "Discipline qui étudie les sons du langage dans leur réalisation concrète, en tant que phénomènes physiques et physiologiques, sans égard à leur valeur fonctionnelle au sein du système.",
+            "ex": ["La durée exacte du [a] dans 'patte', la fréquence du [ʁ] : phénomènes de phonétique."],
+            "note": "La phonétique s'intéresse aux sons concrets (phones, notés entre [ ]), tandis que la phonologie s'intéresse aux unités abstraites et fonctionnelles (phonèmes, notés entre / /).",
             "children": [
               {
-                "id": "d1-articulatoire",
+                "id": "d1-phon-artic",
                 "label": "Articulatoire",
-                "def": "Étudie la façon dont les sons sont produits par les organes phonatoires (lèvres, langue, cordes vocales…).",
-                "ex": ["Les lèvres forment les bilabiales /p/, /b/, /m/"],
+                "def": "Branche de la phonétique qui étudie comment les sons sont produits par les organes phonatoires : articulateurs mobiles (langue, lèvres, voile du palais, cordes vocales) et fixes (dents, palais dur, alvéoles).",
+                "ex": ["Description du [p] : consonne bilabiale occlusive sourde (deux lèvres, fermeture totale, sans vibration des cordes vocales)."],
+                "note": "Les trois paramètres classiques pour décrire une consonne sont le lieu d'articulation, le mode d'articulation et le voisement.",
                 "children": [
                   {
-                    "id": "d1-consonnes",
+                    "id": "d1-phon-artic-lieu",
+                    "label": "Lieu d'articulation",
+                    "def": "Endroit dans le conduit vocal où se produit la constriction ou l'occlusion principale lors de la production du son.",
+                    "ex": ["Bilabial : [p, b, m]. Alvéolaire : [t, d, n, s, z, l]. Palatal : [ʃ, ʒ, ɲ, j]. Vélaire : [k, g, ŋ]. Uvulaire : [ʁ]."],
+                    "note": "En français, les lieux d'articulation principaux vont des lèvres jusqu'à la luette (uvule), de l'avant vers l'arrière du conduit vocal.",
+                    "children": []
+                  },
+                  {
+                    "id": "d1-phon-artic-mode",
+                    "label": "Mode d'articulation",
+                    "def": "Manière dont le flux d'air est modifié lors de la production du son : occlusion totale suivie d'explosion, resserrement créant une friction, passage nasal, etc.",
+                    "ex": ["Occlusif : [p, t, k] (fermeture totale puis explosion). Fricatif : [f, s, ʃ] (bruit de frottement). Nasal : [m, n, ɲ] (air passe par le nez). Latéral : [l]."],
+                    "note": "Le mode d'articulation détermine le type de bruit produit et le degré d'obstruction du conduit vocal.",
+                    "children": []
+                  },
+                  {
+                    "id": "d1-phon-artic-vois",
+                    "label": "Voisement",
+                    "def": "Vibration des cordes vocales lors de la production d'un son. Un son voisé (ou sonore) implique cette vibration ; un son sourd (non-voisé) en est dépourvu.",
+                    "ex": ["[v] est voisé, [f] est sourd. [z] est voisé, [s] est sourd. [b] est voisé, [p] est sourd."],
+                    "note": "Le voisement est un trait distinctif majeur en français : il distingue de nombreuses paires de phonèmes ([p]/[b], [t]/[d], [f]/[v], [s]/[z], [ʃ]/[ʒ]).",
+                    "children": []
+                  },
+                  {
+                    "id": "d1-phon-artic-cons",
                     "label": "Consonnes",
-                    "def": "Sons produits avec une obstruction (partielle ou totale) du flux d'air dans le conduit vocal. Décrites selon trois paramètres : lieu, mode, voisement.",
-                    "ex": [],
+                    "def": "Sons produits avec une constriction ou une occlusion notable dans le conduit vocal. Classifiées selon le lieu, le mode et le voisement.",
+                    "ex": ["Le français standard compte environ 20 phonèmes consonantiques."],
+                    "note": "Dans le tableau de l'API, chaque consonne est définie par sa position : les colonnes = lieu d'articulation, les lignes = mode.",
                     "children": [
                       {
-                        "id": "d1-lieu",
-                        "label": "Lieu d'articulation",
-                        "def": "Endroit du conduit vocal où se produit l'obstruction principale.",
-                        "ex": ["Bilabiale : /p/, /b/, /m/", "Alvéolaire : /t/, /d/, /n/, /s/, /z/", "Vélaire : /k/, /g/", "Uvulaire : /ʀ/", "Palatale : /ʒ/, /ʃ/"],
-                        "children": []
+                        "id": "d1-cons-lieu",
+                        "label": "Classification par lieu",
+                        "def": "Les consonnes sont classées du plus antérieur (bilabial, à l'avant de la bouche) au plus postérieur (uvulaire, à l'arrière de la gorge).",
+                        "ex": [],
+                        "note": null,
+                        "children": [
+                          {
+                            "id": "d1-cons-bilab",
+                            "label": "Bilabiales",
+                            "def": "Consonnes produites par l'occlusion ou la constriction des deux lèvres, l'articulation la plus antérieure.",
+                            "ex": ["[p] 'pain', [b] 'bain', [m] 'main'"],
+                            "note": null,
+                            "children": []
+                          },
+                          {
+                            "id": "d1-cons-labiodent",
+                            "label": "Labiodentales",
+                            "def": "Consonnes produites par le contact de la lèvre inférieure et du bord des incisives supérieures.",
+                            "ex": ["[f] 'feu', [v] 'veau'"],
+                            "note": null,
+                            "children": []
+                          },
+                          {
+                            "id": "d1-cons-alv",
+                            "label": "Alvéolaires",
+                            "def": "Consonnes produites par le contact de la pointe ou du dos de la langue avec les alvéoles dentaires, juste derrière les incisives supérieures.",
+                            "ex": ["[t] 'toit', [d] 'doigt', [n] 'nuit', [s] 'sel', [z] 'zèle', [l] 'lune'"],
+                            "note": null,
+                            "children": []
+                          },
+                          {
+                            "id": "d1-cons-palat",
+                            "label": "Palatales",
+                            "def": "Consonnes produites par le rapprochement du dos de la langue avec le palais dur (voûte palatine).",
+                            "ex": ["[ʃ] 'chat', [ʒ] 'jour', [ɲ] 'agneau', [j] 'yeux'"],
+                            "note": null,
+                            "children": []
+                          },
+                          {
+                            "id": "d1-cons-vel",
+                            "label": "Vélaires",
+                            "def": "Consonnes produites par le contact du dos de la langue avec le voile du palais (palais mou, vélum).",
+                            "ex": ["[k] 'car', [g] 'gare', [ŋ] 'camping'"],
+                            "note": null,
+                            "children": []
+                          },
+                          {
+                            "id": "d1-cons-uvul",
+                            "label": "Uvulaires",
+                            "def": "Consonnes produites au niveau de la luette (uvule), par friction ou vibration dans cette zone la plus postérieure du conduit vocal.",
+                            "ex": ["[ʁ] 'rue' — fricative uvulaire voisée, réalisation standard du /r/ en français contemporain."],
+                            "note": "Historiquement, le /r/ français pouvait être apical [r] (roulé). La réalisation uvulaire [ʁ] domine aujourd'hui dans la plupart des variétés.",
+                            "children": []
+                          }
+                        ]
                       },
                       {
-                        "id": "d1-mode",
-                        "label": "Mode d'articulation",
-                        "def": "Façon dont l'air passe (ou est bloqué) lors de la production du son.",
-                        "ex": ["Occlusives : /p/, /t/, /k/ (fermeture totale puis explosion)", "Fricatives : /f/, /s/, /ʒ/ (passage réduit créant un frottement)", "Nasales : /m/, /n/, /ɲ/ (air passe par le nez)", "Latérales : /l/ (air passe sur les côtés)"],
-                        "children": []
+                        "id": "d1-cons-mode",
+                        "label": "Classification par mode",
+                        "def": "Les consonnes sont classées selon la manière dont le flux d'air est contrôlé ou obstrué dans le conduit vocal lors de leur production.",
+                        "ex": [],
+                        "note": null,
+                        "children": [
+                          {
+                            "id": "d1-cons-occ",
+                            "label": "Occlusives",
+                            "def": "Consonnes produites par une fermeture complète et momentanée du conduit vocal, suivie d'un relâchement brusque (burst). Aussi appelées plosives.",
+                            "ex": ["[p, b] bilabiales, [t, d] alvéolaires, [k, g] vélaires : 'pain', 'bain', 'ton', 'don', 'car', 'gare'"],
+                            "note": null,
+                            "children": []
+                          },
+                          {
+                            "id": "d1-cons-fric",
+                            "label": "Fricatives",
+                            "def": "Consonnes produites par un rétrécissement (constriction) du conduit vocal créant un bruit de friction turbulente lors du passage de l'air.",
+                            "ex": ["[f, v] labiodentales, [s, z] alvéolaires, [ʃ, ʒ] palatales, [ʁ] uvulaire : 'feu', 'veau', 'sel', 'zèle', 'chat', 'jeu', 'rue'"],
+                            "note": null,
+                            "children": []
+                          },
+                          {
+                            "id": "d1-cons-nas",
+                            "label": "Nasales",
+                            "def": "Consonnes produites avec un abaissement du voile du palais permettant le passage simultané de l'air par la cavité buccale et les fosses nasales.",
+                            "ex": ["[m] 'maison', [n] 'nuit', [ɲ] 'vigne', [ŋ] 'camping'"],
+                            "note": null,
+                            "children": []
+                          },
+                          {
+                            "id": "d1-cons-lat",
+                            "label": "Latérales",
+                            "def": "Consonnes produites par un passage de l'air sur les côtés de la langue, le centre étant obstrué par le contact de la langue avec le palais.",
+                            "ex": ["[l] 'lune' — seule consonne latérale phonologique du français standard."],
+                            "note": null,
+                            "children": []
+                          },
+                          {
+                            "id": "d1-cons-approx",
+                            "label": "Approximantes",
+                            "def": "Consonnes produites avec un rapprochement des articulateurs insuffisant pour créer une friction ou une occlusion. Aussi appelées semi-voyelles ou semi-consonnes.",
+                            "ex": ["[j] 'yeux' [jø], [w] 'oui' [wi], [ɥ] 'nuit' [nɥi]"],
+                            "note": "Les approximantes occupent une position intermédiaire entre consonnes et voyelles : elles sont consonantiques par leur position en attaque de syllabe, vocaliques par leur résonance.",
+                            "children": []
+                          }
+                        ]
                       },
                       {
-                        "id": "d1-voisement",
-                        "label": "Voisement",
-                        "def": "Vibration ou non des cordes vocales lors de la production du son.",
-                        "ex": ["Sourde /p/ vs sonore /b/", "Sourde /s/ vs sonore /z/", "Sourde /f/ vs sonore /v/"],
+                        "id": "d1-cons-voisement",
+                        "label": "Classification par voisement",
+                        "def": "Les consonnes se divisent en sourdes ([-voisé], sans vibration des cordes vocales) et sonores/voisées ([+voisé], avec vibration). En français, cela forme des paires minimales.",
+                        "ex": ["Paires sourde/sonore : [p]/[b], [t]/[d], [k]/[g], [f]/[v], [s]/[z], [ʃ]/[ʒ]"],
+                        "note": "Le voisement est un trait distinctif majeur en français. On peut le vérifier en posant la main sur la gorge : on sent les vibrations pour les sonores, pas pour les sourdes.",
                         "children": []
                       }
                     ]
                   },
                   {
-                    "id": "d1-voyelles",
+                    "id": "d1-phon-artic-voy",
                     "label": "Voyelles",
-                    "def": "Sons produits sans obstruction du flux d'air. En français, toutes les voyelles sont sonores. Décrites selon hauteur, avancement et arrondissement.",
-                    "ex": [],
+                    "def": "Sons produits sans constriction significative dans le conduit vocal, avec une résonance libre de l'air expiré. Toutes les voyelles du français sont voisées.",
+                    "ex": ["[i] 'si', [y] 'su', [u] 'sous', [e] 'fée', [ø] 'feu', [o] 'faux', [ɛ] 'fête', [a] 'patte'"],
+                    "note": "Le français compte 15 à 16 voyelles phonologiques (selon les variétés et locuteurs). Il se distingue par ses voyelles antérieures arrondies [y, ø, œ], rares dans les langues du monde.",
                     "children": [
                       {
-                        "id": "d1-hauteur",
+                        "id": "d1-voy-haut",
                         "label": "Hauteur (aperture)",
-                        "def": "Degré d'ouverture de la bouche lors de la production de la voyelle.",
-                        "ex": ["Fermée /i/, /u/, /y/ (bouche peu ouverte)", "Mi-fermée /e/, /ø/, /o/", "Mi-ouverte /ɛ/, /œ/, /ɔ/", "Ouverte /a/, /ɑ/ (bouche très ouverte)"],
+                        "def": "Degré d'ouverture de la mâchoire et d'élévation de la masse de la langue, déterminant si la voyelle est fermée (langue haute) ou ouverte (mâchoire basse).",
+                        "ex": ["Fermées : [i, y, u]. Moyennes fermées : [e, ø, o]. Moyennes ouvertes : [ɛ, œ, ɔ]. Ouvertes : [a, ɑ]."],
+                        "note": "L'API distingue quatre degrés d'aperture. La hauteur de langue correspond inversement à l'aperture : langue haute = voyelle fermée.",
                         "children": []
                       },
                       {
-                        "id": "d1-avancement",
-                        "label": "Avancement",
-                        "def": "Position de la langue (vers l'avant ou l'arrière de la bouche).",
-                        "ex": ["Antérieure : /i/, /e/, /ɛ/, /y/, /ø/, /œ/", "Postérieure : /u/, /o/, /ɔ/, /ɑ/"],
+                        "id": "d1-voy-avanc",
+                        "label": "Avancement (antériorité)",
+                        "def": "Position de la masse de la langue dans la cavité buccale : vers l'avant (voyelles antérieures ou palatales) ou vers l'arrière (voyelles postérieures ou vélaires).",
+                        "ex": ["Antérieures : [i, e, ɛ, a, y, ø, œ]. Postérieures : [u, o, ɔ, ɑ]."],
+                        "note": "Les voyelles antérieures arrondies ([y, ø, œ]) sont rares dans les langues du monde mais très fréquentes en français.",
                         "children": []
                       },
                       {
-                        "id": "d1-arrondissement",
-                        "label": "Arrondissement",
-                        "def": "Les lèvres sont arrondies (arrière-voyelles et voyelles antérieures arrondies) ou écartées.",
-                        "ex": ["Labialisée : /y/, /u/, /ø/, /o/", "Non-labialisée : /i/, /e/, /a/"],
+                        "id": "d1-voy-arond",
+                        "label": "Arrondissement (labialisation)",
+                        "def": "Forme des lèvres lors de la production de la voyelle : arrondies/labialisées (lèvres projetées et arrondies vers l'avant) ou non-labialisées (lèvres neutres ou étirées).",
+                        "ex": ["Labialisées : [y, ø, œ, u, o, ɔ]. Non-labialisées : [i, e, ɛ, a]."],
+                        "note": "Le français possède des voyelles antérieures arrondies ([y, ø, œ]) : antérieures par la position de la langue, arrondies par la forme des lèvres. Combinaison rare.",
                         "children": []
                       }
                     ]
                   },
                   {
                     "id": "d1-api",
-                    "label": "Alphabet phonétique (API)",
-                    "def": "Système de notation international qui associe un symbole unique à chaque son, indépendamment de l'orthographe.",
-                    "ex": ["[ʃ] pour le son 'ch' de 'chat'", "[ɛ̃] pour le 'in' de 'pain'"],
+                    "label": "API / IPA",
+                    "def": "Alphabet Phonétique International (API en français, IPA en anglais) : système de notation standardisé permettant de transcrire les sons de toutes les langues du monde, avec un symbole unique par son.",
+                    "ex": ["Transcription phonétique de 'bonjour' : [bɔ̃ʒuʁ]. Transcription phonologique de /ʃ/ dans 'chat' : /ʃa/."],
+                    "note": "Créé en 1888 par l'Association Phonétique Internationale. Convention : crochets [ ] pour la transcription phonétique ; barres obliques / / pour la transcription phonologique.",
                     "children": []
                   }
                 ]
               },
               {
-                "id": "d1-acoustique",
+                "id": "d1-acous",
                 "label": "Acoustique",
-                "def": "Étudie les propriétés physiques des ondes sonores produites lors de la parole (fréquence, amplitude, formants).",
-                "ex": ["Un spectrogramme montre les formants F1 et F2 qui caractérisent chaque voyelle"],
-                "children": []
+                "def": "Branche de la phonétique qui étudie les propriétés physiques des ondes sonores produites lors de la parole, à l'aide d'instruments d'analyse du signal.",
+                "ex": ["Le spectrogramme permet de visualiser la distribution d'énergie dans les fréquences et d'identifier les formants des voyelles."],
+                "note": "La phonétique acoustique utilise le spectrogramme, l'oscillogramme et l'analyse de la fréquence fondamentale (F0).",
+                "children": [
+                  {
+                    "id": "d1-acous-freq",
+                    "label": "Fréquence",
+                    "def": "Nombre de vibrations par seconde d'une onde sonore, mesuré en Hertz (Hz). Correspond perceptivement à la hauteur du son (grave ou aigu).",
+                    "ex": ["Fréquence fondamentale (F0) d'un homme adulte : ~100 Hz. Femme adulte : ~200 Hz. Enfant : encore plus élevée."],
+                    "note": "La fréquence fondamentale est le corrélat acoustique de la hauteur mélodique (pitch). Elle varie lors de l'intonation.",
+                    "children": []
+                  },
+                  {
+                    "id": "d1-acous-ampl",
+                    "label": "Amplitude",
+                    "def": "Magnitude des variations de pression de l'onde sonore, mesurée en décibels (dB). Correspond perceptivement à l'intensité ou au volume du son.",
+                    "ex": ["Une voyelle accentuée aura généralement une amplitude plus élevée que la même voyelle non accentuée dans le même énoncé."],
+                    "note": "L'amplitude est un des corrélats acoustiques de l'accent, avec la durée et la fréquence fondamentale.",
+                    "children": []
+                  },
+                  {
+                    "id": "d1-acous-form",
+                    "label": "Formants",
+                    "def": "Concentrations d'énergie acoustique à des fréquences spécifiques, résultant des résonances du conduit vocal. Les deux premiers formants (F1 et F2) permettent d'identifier les voyelles.",
+                    "ex": ["[i] : F1 bas (~300 Hz), F2 très élevé (~2300 Hz). [a] : F1 élevé (~800 Hz), F2 moyen (~1200 Hz). [u] : F1 bas, F2 très bas."],
+                    "note": "Le triangle vocalique de l'API correspond grossièrement à la distribution des voyelles dans l'espace F1/F2 (F1 inversé en ordonnée, F2 en abscisse).",
+                    "children": []
+                  }
+                ]
               },
               {
-                "id": "d1-perceptive",
+                "id": "d1-percep",
                 "label": "Perceptive",
-                "def": "Étudie comment l'oreille humaine et le cerveau perçoivent et catégorisent les sons du langage.",
-                "ex": ["On perçoit /p/ et /b/ comme distincts même si les différences acoustiques sont continues"],
+                "def": "Branche de la phonétique qui étudie comment le système auditif humain et le traitement cognitif perçoivent, catégorisent et discriminent les sons du langage.",
+                "ex": ["Pourquoi percevons-nous [b] et [p] comme deux sons distincts (catégories discrètes) malgré une variation acoustique continue entre eux ?"],
+                "note": "La perception catégorielle est un phénomène clé : les locuteurs natifs catégorisent les sons en phonèmes discrets même lorsque le signal acoustique varie de façon continue.",
                 "children": []
               }
             ]
           },
           {
-            "id": "d1-phonologie",
+            "id": "d1-phonol",
             "label": "Phonologie",
-            "def": "Branche qui étudie l'organisation fonctionnelle des sons : quels sons sont distinctifs dans une langue donnée (phonèmes) et comment ils s'organisent.",
-            "ex": ["En français, /t/ et /d/ sont des phonèmes distincts : 'tout' ≠ 'doux'"],
+            "def": "Discipline qui étudie les sons du langage en tant qu'unités fonctionnelles et abstraites (phonèmes) au sein d'un système linguistique, et les règles qui régissent leurs combinaisons.",
+            "ex": ["En français, /p/ et /b/ sont deux phonèmes distincts car ils permettent de distinguer des mots : 'pain' ≠ 'bain'."],
+            "note": "La phonologie s'intéresse à la valeur fonctionnelle des sons dans le système de la langue, pas à leur réalisation physique concrète.",
             "children": [
               {
-                "id": "d1-phoneme",
+                "id": "d1-phonol-phon",
                 "label": "Phonème",
-                "def": "Unité phonologique minimale et distinctive d'une langue. Abstraction mentale qui subsume plusieurs réalisations phonétiques (allophones).",
-                "ex": ["/p/ est un phonème du français", "Le /r/ français peut être réalisé [r] ou [ʀ] : ce sont des allophones"],
+                "def": "Unité phonologique minimale et abstraite d'une langue, définie par sa capacité à distinguer des mots. Abstraction qui subsume plusieurs réalisations concrètes (allophones).",
+                "ex": ["/p/ et /b/ sont des phonèmes distincts en français : 'pont'/'bond', 'peau'/'beau', 'pain'/'bain'."],
+                "note": "Un phonème est une unité abstraite (noté entre / / ) qui peut avoir plusieurs réalisations phonétiques concrètes contextuelles : les allophones (notés entre [ ]). Ex. : /p/ se réalise [p] ou [pʰ] selon le contexte.",
                 "children": []
               },
               {
-                "id": "d1-trait-distinctif",
+                "id": "d1-phonol-trait",
                 "label": "Trait distinctif",
-                "def": "Propriété binaire (+/-) qui permet de différencier deux phonèmes l'un de l'autre. Un phonème est un faisceau de traits distinctifs.",
-                "ex": ["/p/ [−voisé, +bilabial, +occlusif]", "/b/ [+voisé, +bilabial, +occlusif]", "Seul [±voisé] diffère"],
-                "children": []
+                "def": "Propriété phonologique minimale encodée de façon binaire (+/−), permettant de distinguer les phonèmes entre eux. Chaque phonème est défini par un faisceau de traits distinctifs.",
+                "ex": ["[±voisé] distingue /p/ (sourd) de /b/ (voisé). [±nasal] distingue /b/ de /m/. [±continu] distingue /p/ de /f/."],
+                "note": "La phonologie des traits (Jakobson 1952, Chomsky & Halle 1968) décompose les phonèmes en traits binaires prétendument universels. Un inventaire de traits réduit rend compte de tous les phonèmes.",
+                "children": [
+                  {
+                    "id": "d1-trait-voise",
+                    "label": "[±voisé]",
+                    "def": "Trait phonologique distinguant les sons produits avec vibration des cordes vocales ([+voisé] ou [+sonore]) de ceux produits sans vibration ([-voisé] ou [+sourd]).",
+                    "ex": ["/b/ est [+voisé], /p/ est [-voisé]. /v/ est [+voisé], /f/ est [-voisé]. /z/ est [+voisé], /s/ est [-voisé]."],
+                    "note": null,
+                    "children": []
+                  },
+                  {
+                    "id": "d1-trait-nasal",
+                    "label": "[±nasal]",
+                    "def": "Trait phonologique distinguant les sons produits avec passage de l'air par les fosses nasales (voile du palais abaissé, [+nasal]) de ceux produits sans ce passage ([-nasal]).",
+                    "ex": ["/m/ est [+nasal], /b/ est [-nasal]. /n/ est [+nasal], /d/ est [-nasal]. /ɲ/ est [+nasal], /j/ est [-nasal]."],
+                    "note": null,
+                    "children": []
+                  },
+                  {
+                    "id": "d1-trait-continu",
+                    "label": "[±continu]",
+                    "def": "Trait phonologique distinguant les sons produits avec un flux d'air continu ([+continu] : fricatives, voyelles, approximantes) de ceux produits avec une interruption complète ([-continu] : occlusives, nasales).",
+                    "ex": ["/f/ est [+continu], /p/ est [-continu]. /s/ est [+continu], /t/ est [-continu]. /ʒ/ est [+continu], /d/ est [-continu]."],
+                    "note": null,
+                    "children": []
+                  }
+                ]
               },
               {
-                "id": "d1-paires-minimales",
+                "id": "d1-phonol-paire",
                 "label": "Paires minimales",
-                "def": "Deux mots qui ne diffèrent que par un seul phonème en une même position. Preuve que ce phonème est distinctif.",
-                "ex": ["'pain' /pɛ̃/ vs 'bain' /bɛ̃/ → /p/ et /b/ sont des phonèmes distincts", "'sel' vs 'gel', 'feu' vs 'jeu'"],
+                "def": "Deux mots qui ne diffèrent que par un seul phonème occupant la même position dans la séquence, et dont les sens sont différents. Elles servent à prouver qu'un phonème est distinctif.",
+                "ex": ["'pain' [pɛ̃] / 'bain' [bɛ̃] : /p/ vs /b/. 'sel' [sɛl] / 'zèle' [zɛl] : /s/ vs /z/. 'feu' [fø] / 'jeu' [ʒø] : /f/ vs /ʒ/."],
+                "note": "La méthode des paires minimales est le principal outil pour identifier le statut phonémique d'un son. Si la substitution crée un mot différent, les deux sons sont des phonèmes distincts.",
                 "children": []
               },
               {
-                "id": "d1-archiphoneme",
+                "id": "d1-phonol-archi",
                 "label": "Archiphonème",
-                "def": "Entité phonologique qui représente deux phonèmes dont l'opposition est neutralisée dans un contexte donné.",
-                "ex": ["La distinction /t/ ~ /d/ est neutralisée en finale absolue dans certaines langues"],
+                "def": "Unité phonologique abstraite qui représente la suspension de l'opposition entre deux phonèmes dans un contexte précis (neutralisation). Noté par une majuscule entre barres obliques.",
+                "ex": ["L'opposition /e/ ~ /ɛ/ est neutralisée en syllabe ouverte finale dans de nombreuses variétés : /E/ représente cet archiphonème. En allemand, l'archiphonème /T/ représente la neutralisation /t/~/d/ en finale."],
+                "note": "Concept développé par l'École de Prague (Troubetzkoy, Jakobson). L'archiphonème rassemble les traits communs des deux phonèmes dont l'opposition est neutralisée.",
                 "children": []
               },
               {
-                "id": "d1-neutralisation",
+                "id": "d1-phonol-neutral",
                 "label": "Neutralisation",
-                "def": "Disparition d'une opposition phonologique dans un contexte précis. L'opposition qui permet normalement de distinguer deux phonèmes disparaît.",
-                "ex": ["En allemand, les occlusives finales sont dévoisées : 'Rad' [ra:t] bien que /d/ soit sonore"],
+                "def": "Phénomène par lequel une opposition phonologique pertinente dans certains contextes cesse de fonctionner (est neutralisée) dans d'autres contextes spécifiques.",
+                "ex": ["En français, l'opposition /a/ ~ /ɑ/ tend à se neutraliser dans de nombreuses variétés contemporaines : 'patte' et 'pâte' sont prononcés identiquement."],
+                "note": "Là où une opposition est neutralisée, on ne peut plus distinguer les deux phonèmes. La neutralisation produit un archiphonème dans ces positions.",
                 "children": []
               }
             ]
           },
           {
-            "id": "d1-syllabe",
+            "id": "d1-syll",
             "label": "Syllabe",
-            "def": "Unité phonologique constituée d'un noyau vocalique obligatoire, éventuellement entouré de consonnes. Unité rythmique fondamentale.",
-            "ex": ["'chat' = 1 syllabe : CVC", "'ma-man' = 2 syllabes", "'é-tu-diant' = 4 syllabes"],
+            "def": "Unité phonologique supérieure au phonème, organisée autour d'un sommet de sonorité (le noyau, généralement une voyelle). La syllabe est l'unité rythmique de base de la parole.",
+            "ex": ["'pa-ra-sol' : trois syllabes [pa.ʁa.sɔl], chacune structurée autour de sa voyelle noyau."],
+            "note": "La structure syllabique du français favorise les syllabes ouvertes de type CV. Le français est une langue à isochronie syllabique.",
             "children": [
               {
-                "id": "d1-attaque",
+                "id": "d1-syll-att",
                 "label": "Attaque",
-                "def": "Consonne(s) qui précèdent le noyau vocalique dans une syllabe. Optionnelle.",
-                "ex": ["Dans 'bras', l'attaque est /br/", "Dans 'an', il n'y a pas d'attaque"],
+                "def": "Consonne(s) initiale(s) d'une syllabe, précédant le noyau vocalique. L'attaque est facultative en français : une syllabe peut commencer directement par une voyelle.",
+                "ex": ["Dans 'bras' [bʁa] : attaque complexe [bʁ]. Dans 'ami' [a.mi] : première syllabe sans attaque."],
+                "note": "En français, l'attaque peut contenir jusqu'à trois consonnes ([stʁ] dans 'strict'). Le principe d'attaque maximale attribue les consonnes intermédiaires à la syllabe suivante.",
                 "children": []
               },
               {
-                "id": "d1-noyau",
+                "id": "d1-syll-noy",
                 "label": "Noyau",
-                "def": "Cœur obligatoire de toute syllabe, généralement une voyelle. C'est l'élément le plus saillant de la syllabe.",
-                "ex": ["Dans 'pain', le noyau est /ɛ̃/", "Dans 'tu', le noyau est /y/"],
+                "def": "Élément central et obligatoire de toute syllabe, typiquement une voyelle. C'est le sommet de sonorité de la syllabe, sans lequel il n'y a pas de syllabe.",
+                "ex": ["Dans 'mer' [mɛʁ] : le noyau est [ɛ]. Dans 'cri' [kʁi] : le noyau est [i]. Dans 'eau' [o] : le noyau est [o] (syllabe sans attaque ni coda)."],
+                "note": "Le noyau forme avec la coda la rime syllabique, élément pertinent en métrique et en phonologie.",
                 "children": []
               },
               {
-                "id": "d1-coda",
+                "id": "d1-syll-coda",
                 "label": "Coda",
-                "def": "Consonne(s) qui suivent le noyau vocalique. Optionnelle. Une syllabe sans coda est dite 'ouverte'.",
-                "ex": ["Dans 'port', la coda est /ʀ/", "'ba' est une syllabe ouverte (pas de coda)"],
+                "def": "Consonne(s) terminale(s) d'une syllabe, suivant le noyau. La coda est facultative. Une syllabe avec coda est dite 'fermée' ; sans coda, elle est 'ouverte'.",
+                "ex": ["Dans 'sel' [sɛl] : coda = [l] (syllabe fermée). Dans 'si' [si] : pas de coda (syllabe ouverte)."],
+                "note": "Le français préfère les syllabes ouvertes (CV). La coda est soumise à des contraintes phonotactiques : toutes les consonnes ne peuvent pas terminer une syllabe.",
                 "children": []
               },
               {
-                "id": "d1-structure-cv",
-                "label": "Structure syllabique",
-                "def": "Le français préfère les syllabes ouvertes (CV). La structure canonique est : (C)(C)V(C)(C).",
-                "ex": ["CV : 'pa', 'tu'", "CVC : 'par', 'sel'", "CCVC : 'bras', 'froid'"],
+                "id": "d1-syll-cv",
+                "label": "Structure CV",
+                "def": "Patron syllabique de base du français et de nombreuses langues : une consonne (C) suivie d'une voyelle (V). Ce patron constitue la structure syllabique préférée du français.",
+                "ex": ["'ma-re-chal' [ma.ʁe.ʃal] : CV.CV.CVC. 'pa-ra-sol' [pa.ʁa.sɔl] : CV.CV.CVC."],
+                "note": "Le principe d'attaque maximale régit la syllabation : 'a-ble' plutôt que 'ab-le', car on maximise l'attaque de la syllabe suivante si les contraintes phonotactiques le permettent.",
+                "children": []
+              },
+              {
+                "id": "d1-syll-regles",
+                "label": "Règles syllabiques",
+                "def": "Contraintes phonotactiques régissant la formation des syllabes dans une langue donnée : quelles suites de consonnes sont licites en attaque ou en coda.",
+                "ex": ["En français, une attaque complexe peut contenir [pʁ] 'prendre', [tʁ] 'très', [bʁ] 'bras', mais *[pt] ou *[ks] initiaux sont exclus."],
+                "note": "La loi de sonorité (Sievers) stipule que la sonorité des segments doit croître vers le noyau et décroître après lui : les suites qui violent ce principe sont généralement exclues.",
                 "children": []
               }
             ]
           },
           {
-            "id": "d1-prosodie",
+            "id": "d1-prosod",
             "label": "Prosodie",
-            "def": "Étude des propriétés suprasegmentales : aspects du discours qui s'étendent au-delà du phonème individuel (accent, intonation, rythme, durée).",
-            "ex": ["L'intonation montante marque une question en français"],
+            "def": "Étude des propriétés suprasegmentales de la parole qui s'étendent au-delà du phonème individuel et portent des informations grammaticales, pragmatiques et émotionnelles.",
+            "ex": ["La différence entre 'Il vient.' (affirmation) et 'Il vient ?' (question) est souvent marquée exclusivement par l'intonation en français."],
+            "note": "La prosodie englobe l'accent, l'intonation, le rythme et les phénomènes de jonction. On parle de traits suprasegmentaux car ils s'étendent sur plusieurs segments.",
             "children": [
               {
-                "id": "d1-accent",
-                "label": "Accent",
-                "def": "En français, l'accent est fixe : il tombe sur la dernière syllabe prononcée du groupe rythmique (accent de groupe, non lexical).",
-                "ex": ["'une belle maison' → accent sur /mɛ̃/", "Pas d'accent distinctif en français (≠ anglais)"],
+                "id": "d1-prosod-acc",
+                "label": "Accent en français",
+                "def": "Mise en relief d'une syllabe dans un groupe phonique, réalisée en français principalement par un allongement de la dernière syllabe. L'accent de groupe frappe la dernière syllabe du groupe rythmique.",
+                "ex": ["'maiSON' (accent de groupe, dernière syllabe). 'il faiSAIT CHAUD' : deux groupes rythmiques, accent final de chaque groupe."],
+                "note": "Contrairement à l'anglais ou au russe, le français n'a pas d'accent lexical libre : l'accent n'est pas une propriété du mot isolé mais du groupe phonique, toujours sur la dernière syllabe.",
                 "children": []
               },
               {
-                "id": "d1-intonation",
+                "id": "d1-prosod-into",
                 "label": "Intonation",
-                "def": "Variation mélodique de la hauteur (F0) sur un énoncé. Permet d'exprimer modalités (affirmation, question, ordre) et structure discursive.",
-                "ex": ["Intonation montante → question (Tu viens ?↗)", "Intonation descendante → affirmation (Je viens.↘)"],
+                "def": "Variations mélodiques de la hauteur fondamentale (F0) s'étendant sur un énoncé entier, portant des valeurs pragmatiques (modalité, structure informationnelle) et grammaticales.",
+                "ex": ["Montée intonative finale → question ('Tu viens ?↗'). Descente intonative finale → assertion ('Il pleut.↘')."],
+                "note": "En français, une montée continue de F0 en fin de groupe indique la continuation ; une descente marque la finitude de l'énoncé. L'intonation est un marqueur modal important.",
                 "children": []
               },
               {
-                "id": "d1-rythme",
+                "id": "d1-prosod-ryth",
                 "label": "Rythme",
-                "def": "Organisation temporelle de la parole. Le français est une langue à syllabe temporelle : chaque syllabe a une durée à peu près égale.",
-                "ex": ["Français = isochronie syllabique (≠ anglais = isochronie accentuelle)"],
+                "def": "Organisation temporelle de la parole. Le français est une langue à rythme syllabique (ou isochronie syllabique) : chaque syllabe tend à avoir une durée comparable.",
+                "ex": ["Le français découpe le discours en groupes rythmiques de longueur variable. Ex. : 'le petit chat / mange la souris' (deux groupes)."],
+                "note": "Les langues à rythme syllabique (français, espagnol, italien) s'opposent aux langues à rythme accentuel (anglais, allemand, russe) où les intervalles entre accents sont isochroniques.",
                 "children": []
               },
               {
-                "id": "d1-jonction",
-                "label": "Jonction (liaison)",
-                "def": "En français, la liaison est la prononciation d'une consonne finale normalement muette devant un mot commençant par une voyelle.",
-                "ex": ["'les amis' → /le.za.mi/ (liaison obligatoire)", "'nous avons' → /nu.za.vɔ̃/"],
+                "id": "d1-prosod-jonc",
+                "label": "Jonction",
+                "def": "Phénomènes phonétiques survenant aux frontières entre mots dans la chaîne parlée : liaison (réalisation d'une consonne latente), enchaînement consonantique, élision.",
+                "ex": ["Liaison : 'les amis' [le.za.mi]. Élision : 'le ami' → 'l'ami' [la.mi]. Enchaînement : 'une amie' [y.na.mi]."],
+                "note": "La liaison en français est une consonne finale latente (souvent muette à l'écrit) qui se réalise devant voyelle initiale. Elle peut être obligatoire ('les enfants'), facultative ('ils ont') ou interdite ('et / il').",
                 "children": []
               }
             ]
@@ -429,12 +654,14 @@
       "color": "#f0d8a8",
       "colorLight": "#faf0d8",
       "available": false,
+      "flashcardsLink": "flashcards.html",
+      "polycopLink": "polycop_cours.html",
       "tree": null
     },
     {
       "id": "D3",
       "title": "Morphologie",
-      "subtitle": "Structure interne des mots",
+      "subtitle": "Structure et formation des mots",
       "color": "#a8d8c4",
       "colorLight": "#d5f0e8",
       "available": true,
@@ -443,143 +670,176 @@
       "tree": {
         "id": "d3-root",
         "label": "D3 — Morphologie",
-        "def": "Étude de la structure interne des mots : leurs constituants (morphèmes), leur formation et leur variation.",
+        "def": "Branche de la linguistique qui étudie la structure interne des mots, leurs constituants minimaux de sens (morphèmes), et les règles régissant leur formation et leur flexion.",
         "ex": [],
+        "note": "La morphologie est à l'interface du lexique (inventaire des mots) et de la syntaxe (combinaison des mots). Elle couvre la morphologie dérivationnelle et la morphologie flexionnelle.",
         "children": [
           {
             "id": "d3-morpheme",
             "label": "Morphème",
-            "def": "Unité minimale de sens — plus petite unité qui associe une forme à un contenu (sens ou fonction grammaticale). Unité de la 1re articulation.",
-            "ex": ["'chantions' → chant- + -i- + -ons (3 morphèmes)", "'anti-nucléaire' → anti- + nucléaire (2 morphèmes)"],
+            "def": "Unité minimale de sens : la plus petite séquence phonique porteuse d'un signifié (sens lexical ou grammatical). Un mot est décomposable en un ou plusieurs morphèmes.",
+            "ex": ["'chanteurs' = chant- + -eur + -s (trois morphèmes, chacun porteur d'un sens ou d'une fonction)."],
+            "note": "Le morphème est l'unité de la première articulation du langage (Martinet). Il est défini par deux critères cumulatifs : porteur de sens ET non décomposable en unités plus petites dotées de sens.",
             "children": [
               {
-                "id": "d3-morpheme-lexical",
-                "label": "Morphème lexical (base)",
-                "def": "Morphème qui porte le sens lexical du mot (son contenu sémantique principal). On l'appelle aussi radical ou racine.",
-                "ex": ["chant- dans 'chanter', 'chanteur', 'chanson'", "march- dans 'marcher', 'marcheur'"],
+                "id": "d3-morph-lex",
+                "label": "Lexical / Base",
+                "def": "Morphème portant le contenu sémantique principal du mot. Aussi appelé radical, racine ou base, c'est l'élément central auquel s'attachent les affixes.",
+                "ex": ["'chant-' dans 'chanter', 'chanteur', 'chantable'. 'march-' dans 'marcher', 'marcheur', 'démarche'."],
+                "note": "Les morphèmes lexicaux forment des classes ouvertes : on peut créer de nouveaux mots avec de nouvelles bases (néologismes, emprunts).",
                 "children": []
               },
               {
-                "id": "d3-morpheme-grammatical",
-                "label": "Morphème grammatical",
-                "def": "Morphème qui exprime une valeur grammaticale (temps, personne, genre, nombre, mode) plutôt qu'un sens lexical.",
-                "ex": ["-ons = 1re personne pluriel", "-ait = imparfait", "-s = pluriel nominal"],
+                "id": "d3-morph-gram",
+                "label": "Grammatical / Affixe",
+                "def": "Morphème portant une information grammaticale (flexion) ou permettant la dérivation de nouveaux mots (dérivationnel). Il s'attache obligatoirement à une base.",
+                "ex": ["'-ons' (1re pers. pl. présent) dans 'chantons'. '-eur' (suffixe d'agent, dérivationnel) dans 'chanteur'. 're-' (préfixe d'itération) dans 'rechanter'."],
+                "note": "Les morphèmes grammaticaux forment des classes fermées : leur inventaire est limité et stable. On en distingue les flexionnels (accord, conjugaison) et les dérivationnels (formation de mots).",
                 "children": []
               },
               {
-                "id": "d3-morpheme-libre",
+                "id": "d3-morph-libre",
                 "label": "Morphème libre",
-                "def": "Morphème qui peut exister seul comme mot autonome, sans support.",
-                "ex": ["'chat', 'rouge', 'dans' sont des morphèmes libres"],
+                "def": "Morphème pouvant fonctionner seul comme un mot autonome, sans nécessiter d'être attaché à un autre élément.",
+                "ex": ["'chat', 'vite', 'et', 'non', 'grand', 'sur' sont des morphèmes libres pouvant constituer des mots à eux seuls."],
+                "note": null,
                 "children": []
               },
               {
-                "id": "d3-morpheme-lie",
+                "id": "d3-morph-lie",
                 "label": "Morphème lié",
-                "def": "Morphème qui ne peut pas exister seul : il doit s'attacher à un autre morphème. Ce sont les affixes (préfixes, suffixes) et les désinences.",
-                "ex": ["re- dans 'refaire' (ne peut exister seul)", "-eur dans 'chanteur' (nécessite une base)"],
+                "def": "Morphème qui ne peut pas exister de manière autonome et doit obligatoirement s'attacher à un autre morphème (généralement une base) pour être employé.",
+                "ex": ["'-eur' dans 'chanteur', '-ons' dans 'chantons', 're-' dans 'refaire', 'in-' dans 'inutile' — aucun ne peut s'employer seul."],
+                "note": "Tous les affixes (préfixes, suffixes, infixes) sont des morphèmes liés. Les désinences verbales et les marques de flexion nominale sont également des morphèmes liés.",
                 "children": []
               }
             ]
           },
           {
-            "id": "d3-allomorphie",
+            "id": "d3-allomorf",
             "label": "Allomorphie",
-            "def": "Phénomène par lequel un même morphème peut avoir plusieurs réalisations phonétiques différentes (alloformes) selon le contexte.",
-            "ex": ["Le préfixe de négation {in-} : in-utile, im-possible, il-légal, ir-réel → contexte phonologique détermine la forme"],
-            "note": "L'allomorphie est l'équivalent morphologique de l'allophonie : même unité abstraite, formes de surface différentes.",
-            "children": []
+            "def": "Phénomène par lequel un même morphème abstrait (unité de la langue) peut avoir plusieurs réalisations phoniques différentes (alloformes ou allophones morphologiques) selon le contexte phonologique ou morphologique.",
+            "ex": ["Le morphème de négation {IN-} se réalise [ɛ̃] devant voyelle (inacceptable), [ɛ̃m] devant bilabiale (impossible), [il] devant /l/ (illégal), [iʁ] devant /ʁ/ (irrégulier)."],
+            "note": "Les alloformes d'un morphème sont en distribution complémentaire : chacune apparaît dans un contexte spécifique et non interchangeable. L'allomorphie est à la morphologie ce que l'allophonie est à la phonologie.",
+            "children": [
+              {
+                "id": "d3-allom-ex",
+                "label": "Exemples d'alloformes",
+                "def": "Illustration de la variation allomorphique du préfixe négatif {IN-} conditionné par la nature phonologique du segment initial de la base.",
+                "ex": [
+                  "in- + acceptable → inacceptable (devant voyelle : [in-])",
+                  "in- + possible → impossible (assimilation du lieu d'articulation : [im-])",
+                  "in- + légal → illégal (assimilation complète devant /l/ : [il-])",
+                  "in- + régulier → irrégulier (assimilation complète devant /ʁ/ : [iʁ-])"
+                ],
+                "note": "Cette variation est le résultat de règles d'assimilation phonologique historiques (le préfixe s'adapte au point d'articulation de la consonne suivante).",
+                "children": []
+              }
+            ]
           },
           {
-            "id": "d3-derivation",
+            "id": "d3-deriv",
             "label": "Dérivation",
-            "def": "Procédé morphologique de création de nouveaux mots par ajout d'un affixe (préfixe ou suffixe) à une base lexicale. Peut changer la catégorie grammaticale.",
-            "ex": ["chanter (V) → chant-eur (N)", "fleur (N) → fleuri (Adj) → fleurissement (N)"],
+            "def": "Processus morphologique de formation de mots nouveaux à partir d'une base par ajout d'affixes dérivationnels (préfixes ou suffixes), entraînant souvent un changement de catégorie grammaticale et/ou de sens.",
+            "ex": ["chant- (V) → chanteur (N), chantable (Adj), rechanter (V), enchanter (V)"],
+            "note": "La dérivation est un processus hautement productif qui enrichit continuellement le lexique français. Elle est distincte de la flexion (pas de changement de catégorie).",
             "children": [
               {
-                "id": "d3-prefixation",
+                "id": "d3-deriv-pref",
                 "label": "Préfixation",
-                "def": "Ajout d'un préfixe AVANT la base. En français, les préfixes ne changent généralement pas la catégorie grammaticale.",
-                "ex": ["re+venir → revenir", "dé+faire → défaire", "in+utile → inutile", "anti+nucléaire → antinucléaire"],
+                "def": "Dérivation par ajout d'un préfixe (morphème lié) placé avant la base. En français, la préfixation ne change généralement pas la catégorie grammaticale de la base.",
+                "ex": ["re- + venir → revenir (V→V, itération). dé- + faire → défaire (V→V, inversion). in- + utile → inutile (Adj→Adj, négation)."],
+                "note": "Les préfixes français modifient le sens de la base (répétition : re-, négation : in-/dé-, direction : sur-/sous-, intensité : hyper-/ultra-) sans en changer la catégorie syntaxique.",
                 "children": []
               },
               {
-                "id": "d3-suffixation",
+                "id": "d3-deriv-suf",
                 "label": "Suffixation",
-                "def": "Ajout d'un suffixe APRÈS la base. En français, les suffixes changent souvent la catégorie grammaticale.",
-                "ex": ["chant-eur (V→N : agentif)", "march-er→march+able (V→Adj)", "beau+té (Adj→N)", "rapid+ement (Adj→Adv)"],
+                "def": "Dérivation par ajout d'un suffixe (morphème lié) placé après la base. La suffixation entraîne très fréquemment un changement de catégorie grammaticale.",
+                "ex": ["chant- (V) + -eur → chanteur (N, agent). beau (Adj) + -té → beauté (N, qualité). rapid- (Adj) + -ement → rapidement (Adv)."],
+                "note": "La suffixation est le procédé dérivationnel le plus productif en français. Les suffixes imposent souvent la catégorie grammaticale du mot dérivé.",
                 "children": []
               },
               {
-                "id": "d3-parasynthese",
+                "id": "d3-deriv-para",
                 "label": "Parasynthèse",
-                "def": "Formation par ajout SIMULTANÉ d'un préfixe et d'un suffixe à une base. L'un sans l'autre ne donnerait pas le même sens.",
-                "ex": ["em+prison+ner (*emprison, *prisonner n'existent pas)", "en+rich+ir", "a+terr+ir"],
+                "def": "Formation d'un dérivé par adjonction simultanée d'un préfixe et d'un suffixe à une base, sans que les étapes intermédiaires correspondent à des mots existants avec ce sens.",
+                "ex": ["em- + prison + -ner → emprisonner (*emprision n'existe pas, *prisonner non plus avec ce sens). en- + rich- + -ir → enrichir."],
+                "note": "La parasynthèse se distingue de la dérivation séquentielle : préfixe et suffixe s'ajoutent en une seule opération morphologique, non par étapes successives.",
                 "children": []
               },
               {
-                "id": "d3-conversion",
-                "label": "Conversion (dérivation zéro)",
-                "def": "Changement de catégorie grammaticale SANS modification de forme. Aussi appelée dérivation impropre.",
-                "ex": ["'le chant' (N) ← 'chanter' (V) : même forme, catégorie différente", "'un malade' (N) / 'malade' (Adj)", "'le manger' / 'manger'"],
+                "id": "d3-deriv-zero",
+                "label": "Dérivation zéro / Conversion",
+                "def": "Formation d'un mot nouveau à partir d'une base sans aucune modification morphologique visible (affixe nul ou zéro) : seule la catégorie grammaticale change.",
+                "ex": ["'le chant' (N) dérivé de 'chanter' (V) sans ajout d'affixe. 'un vide' (N) ← 'vide' (Adj). 'un must' (N) ← 'must' (V anglais)."],
+                "note": "La conversion (ou dérivation impropre) est fréquente en français pour les nominalisations (V→N) et les adjectivations. Le changement de catégorie est marqué uniquement par le contexte syntaxique.",
                 "children": []
               }
             ]
           },
           {
-            "id": "d3-composition",
+            "id": "d3-compo",
             "label": "Composition",
-            "def": "Formation de mots nouveaux par combinaison de plusieurs bases (morphèmes lexicaux libres ou formes liées). Le composé a un sens non prévisible à partir des parties.",
-            "ex": ["chou-fleur, timbre-poste, rouge-gorge, garde-manger"],
+            "def": "Processus de formation de mots par combinaison de deux ou plusieurs bases lexicales (libres ou liées), formant une unité sémantique nouvelle dont le sens global peut différer de la somme des parties.",
+            "ex": ["'chou-fleur', 'rouge-gorge', 'porte-monnaie', 'vinaigre' (vin + aigre), 'hôtel-Dieu'"],
+            "note": "Le composé doit être distingué du syntagme libre : il forme une unité lexicale dont le sens est souvent non-compositionnel et dont les éléments ne sont pas librement modifiables.",
             "children": [
               {
-                "id": "d3-endocentrique",
+                "id": "d3-compo-endo",
                 "label": "Composé endocentrique",
-                "def": "Composé dont la tête sémantique est l'un de ses constituants. Le composé est une sorte de (= hyponyme de) l'une de ses parties.",
-                "ex": ["'chou-fleur' est un type de chou (tête = chou)", "'porte-manteau' est un type de porte? Non → exocentrique !"],
+                "def": "Composé dont la tête sémantique est interne : l'un de ses constituants détermine la catégorie du composé et le composé désigne un sous-type (hyponyme) de ce que désigne la tête.",
+                "ex": ["'chou-fleur' est un type de chou (tête = 'chou'). 'timbre-poste' est un type de timbre. 'poisson-chat' est un type de poisson."],
+                "note": "La tête détermine la catégorie grammaticale et le genre du composé. En français, la tête est souvent le premier constituant dans les composés N+N ou N+Adj.",
                 "children": []
               },
               {
-                "id": "d3-exocentrique",
+                "id": "d3-compo-exo",
                 "label": "Composé exocentrique",
-                "def": "Composé dont la tête sémantique est EXTERNE aux constituants. Le composé ne désigne pas une sorte de l'un de ses membres.",
-                "ex": ["'rouge-gorge' n'est ni un rouge ni une gorge (c'est un oiseau)", "'abat-jour' (objet qui abat le jour)"],
+                "def": "Composé dont la tête sémantique est externe aux constituants : le composé ne désigne ni l'un ni l'autre de ses membres, mais une entité distincte (souvent par métaphore ou métonymie).",
+                "ex": ["'rouge-gorge' n'est ni un rouge ni une gorge : c'est un oiseau à gorge rouge. 'pique-assiette' (personne qui se nourrit aux dépens d'autrui)."],
+                "note": "Les composés exocentriques ont généralement un sens global métaphorique ou métonymique non prévisible à partir des constituants.",
                 "children": []
               },
               {
-                "id": "d3-syntagme-fige",
+                "id": "d3-compo-syn",
                 "label": "Syntagme figé",
-                "def": "Expression composée de plusieurs mots dont le sens global n'est pas la somme des sens des parties (idiome).",
-                "ex": ["'casser les pieds' = ennuyer", "'avoir le cafard' = être déprimé"],
+                "def": "Groupe de mots dont le sens global est non compositionnel (non déductible de la somme des sens des parties) et qui fonctionne comme une unité lexicale à sens figé.",
+                "ex": ["'casser les pieds' (ennuyer), 'avoir le cafard' (être déprimé), 'eau-de-vie', 'pomme de terre', 'coup de foudre' (amour soudain)."],
+                "note": "Le figement est graduel et multidimensionnel : un syntagme peut être plus ou moins figé selon la non-compositionnalité du sens, la non-substituabilité des éléments et la non-transformation.",
                 "children": []
               }
             ]
           },
           {
-            "id": "d3-flexion",
+            "id": "d3-flex",
             "label": "Flexion",
-            "def": "Modification de la forme d'un mot pour exprimer des catégories grammaticales (genre, nombre, temps, personne…) sans changer sa catégorie ni son sens de base.",
-            "ex": ["chanter → chante, chantes, chantons, chantez (flexion verbale)", "chat → chats (flexion nominale en nombre)"],
+            "def": "Morphologie grammaticale qui adapte les formes des mots aux exigences syntaxiques (accord, fonction) sans créer de nouveaux mots. La flexion encode des catégories grammaticales obligatoires.",
+            "ex": ["'chanter' → je chante, tu chantes, nous chantons (flexion verbale de personne et nombre). 'chat' → 'chats' (flexion nominale de nombre)."],
+            "note": "La flexion est distincte de la dérivation : elle ne change pas la catégorie grammaticale du mot ni son entrée lexicale. Elle est commandée par le contexte syntaxique (accord, gouvernement).",
             "children": [
               {
-                "id": "d3-genre",
+                "id": "d3-flex-genre",
                 "label": "Genre",
-                "def": "Catégorie grammaticale qui classe les noms en masculin/féminin. En français, le genre est inhérent au nom et s'accorde sur les adjectifs et déterminants.",
-                "ex": ["le chat / la chatte", "un étudiant / une étudiante", "le livre (masc.), la table (fém.)"],
+                "def": "Catégorie grammaticale binaire en français (masculin / féminin) qui affecte les noms, adjectifs, déterminants et pronoms, et régit les règles d'accord au sein du groupe nominal et de la phrase.",
+                "ex": ["'le chat' (M) / 'la chatte' (F). 'un grand garçon' (M) / 'une grande fille' (F). 'il est parti' (M) / 'elle est partie' (F)."],
+                "note": "Le genre grammatical est inhérent au nom et ne correspond pas systématiquement au sexe biologique ('une sentinelle', 'un mannequin'). Il se manifeste principalement par l'accord.",
                 "children": []
               },
               {
-                "id": "d3-nombre",
+                "id": "d3-flex-nombre",
                 "label": "Nombre",
-                "def": "Opposition singulier/pluriel. S'exprime par des morphèmes de pluriel sur le nom (-s), l'adjectif (-s), le verbe (-nt).",
-                "ex": ["chat/chats", "beau/beaux", "il chante/ils chantent"],
+                "def": "Catégorie grammaticale exprimant l'opposition singulier/pluriel, régissant les règles d'accord entre les éléments de la phrase (déterminant, nom, adjectif, verbe).",
+                "ex": ["'chat' (sg.) / 'chats' (pl.). 'il chante' (sg.) / 'ils chantent' (pl.). 'un beau chat' / 'de beaux chats'."],
+                "note": "En français, le pluriel nominal (-s, -x) est souvent muet à l'oral (sauf en liaison) mais toujours visible à l'écrit. Le pluriel verbal (3e pers. pl. en -nt) est systématiquement muet à l'oral.",
                 "children": []
               },
               {
-                "id": "d3-conjugaison",
-                "label": "Conjugaison verbale",
-                "def": "Ensemble des formes fléchies du verbe, exprimant la personne, le nombre, le temps, le mode et l'aspect.",
-                "ex": ["Personne : je chante / tu chantes / il chante", "Temps : je chantais (imparfait) / je chanterai (futur)", "Mode : chante (indicatif) / chante ! (impératif) / chanter (infinitif)"],
+                "id": "d3-flex-conj",
+                "label": "Conjugaison",
+                "def": "Flexion verbale qui encode simultanément la personne (1re, 2e, 3e), le nombre (singulier, pluriel), le temps (présent, passé, futur), le mode (indicatif, subjonctif, conditionnel, impératif) et l'aspect.",
+                "ex": ["'chanter' à l'indicatif présent : je chante, tu chantes, il chante, nous chantons, vous chantez, ils chantent."],
+                "note": "Le français présente un riche système de formes verbales simples et composées (auxiliaire avoir/être + participe passé), avec de nombreuses irrégularités dans les verbes fréquents.",
                 "children": []
               }
             ]
@@ -587,10 +847,27 @@
           {
             "id": "d3-analyse",
             "label": "Analyse morphologique",
-            "def": "Décomposition d'un mot en ses morphèmes constitutifs et identification de leur type et fonction.",
-            "ex": ["'chanterons' → chant- (base lexicale) + -er- (infinitif/thème) + -ons (1re pers. pl. futur)"],
-            "note": "Méthode : segmentation par commutation. Remplacer un segment pour tester s'il change le sens.",
-            "children": []
+            "def": "Procédure d'identification et de description des morphèmes constituant un mot, comportant deux étapes complémentaires : la segmentation (découpage) et l'étiquetage (identification des fonctions).",
+            "ex": ["'inacceptables' : in- (préfixe négatif) + accept- (base verbale) + -able (suffixe adjectival) + -s (marque du pluriel)"],
+            "note": "L'analyse morphologique s'appuie sur les méthodes de commutation et de segmentation. Elle distingue morphologie dérivationnelle et morphologie flexionnelle.",
+            "children": [
+              {
+                "id": "d3-analyse-seg",
+                "label": "Segmentation en morphèmes",
+                "def": "Découpage d'un mot en ses constituants morphémiques minimaux, en identifiant chaque unité de sens distincte par comparaison de séries paradigmatiques.",
+                "ex": ["'rechanter' → re- + chant- + -er. 'chanterons' → chant- + -er- + -ons. 'inacceptable' → in- + accept- + -able."],
+                "note": "La segmentation s'appuie sur la commutation et la comparaison de séries : chant-er / march-er / parl-er → -er est un morphème. re-chanter / re-faire / re-voir → re- est un morphème.",
+                "children": []
+              },
+              {
+                "id": "d3-analyse-etiq",
+                "label": "Étiquetage des fonctions",
+                "def": "Attribution d'une étiquette fonctionnelle à chaque morphème identifié lors de la segmentation : base lexicale, préfixe dérivationnel, suffixe dérivationnel, marque flexionnelle de genre, nombre, personne, temps, etc.",
+                "ex": ["'chanteurs' : chant- [base lexicale verbale] + -eur [suffixe dérivationnel d'agent, V→N] + -s [marque de pluriel, flexionnel]"],
+                "note": "L'étiquetage permet de distinguer clairement morphologie dérivationnelle (crée de nouveaux mots) et morphologie flexionnelle (adapte les formes au contexte syntaxique).",
+                "children": []
+              }
+            ]
           }
         ]
       }
@@ -598,10 +875,12 @@
     {
       "id": "D4",
       "title": "Clause canonique",
-      "subtitle": "Structure de base de la phrase",
+      "subtitle": "Structure de base",
       "color": "#f0c8a0",
       "colorLight": "#faeadc",
       "available": false,
+      "flashcardsLink": "flashcards.html",
+      "polycopLink": "polycop_cours.html",
       "tree": null
     },
     {
@@ -611,6 +890,8 @@
       "color": "#f0c8a0",
       "colorLight": "#faeadc",
       "available": false,
+      "flashcardsLink": "flashcards.html",
+      "polycopLink": "polycop_cours.html",
       "tree": null
     },
     {
@@ -620,6 +901,8 @@
       "color": "#f0c8a0",
       "colorLight": "#faeadc",
       "available": false,
+      "flashcardsLink": "flashcards.html",
+      "polycopLink": "polycop_cours.html",
       "tree": null
     },
     {
@@ -629,6 +912,8 @@
       "color": "#f8c8d8",
       "colorLight": "#fde8f0",
       "available": false,
+      "flashcardsLink": "flashcards.html",
+      "polycopLink": "polycop_cours.html",
       "tree": null
     },
     {
@@ -638,6 +923,8 @@
       "color": "#f8c8d8",
       "colorLight": "#fde8f0",
       "available": false,
+      "flashcardsLink": "flashcards.html",
+      "polycopLink": "polycop_cours.html",
       "tree": null
     },
     {
@@ -647,6 +934,8 @@
       "color": "#f8c8d8",
       "colorLight": "#fde8f0",
       "available": false,
+      "flashcardsLink": "flashcards.html",
+      "polycopLink": "polycop_cours.html",
       "tree": null
     },
     {
@@ -656,6 +945,8 @@
       "color": "#b8d4b0",
       "colorLight": "#d8ecd4",
       "available": false,
+      "flashcardsLink": "flashcards.html",
+      "polycopLink": "polycop_cours.html",
       "tree": null
     }
   ]
