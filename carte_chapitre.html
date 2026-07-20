@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260720');}());</script>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260720b');}());</script>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Carte mentale — Bapotique</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -149,7 +149,7 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 3l-7 7m0 0l7-7m-7 7l3.5 10.5M3 21l7-7m0 0L3 21m7-7l-3.5-10.5"/></svg>Recentrer
   </button>
   <button class="cc-tool-btn" id="cc-btn-expand">
-    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>Tout réduire
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="4 14 10 14 10 20"/><polyline points="20 10 14 10 14 4"/><line x1="10" y1="14" x2="3" y2="21"/><line x1="21" y1="3" x2="14" y2="10"/></svg>Tout développer
   </button>
   <span class="cc-sep"></span>
   <span class="cc-chapter-label" id="cc-chapter-label"></span>
@@ -208,7 +208,7 @@ var chId = (location.search.match(/[?&]ch=([^&]+)/) || [])[1] || 'D0';
 var DATA = null;
 var CHAPTER = null;
 var collapsed = {};   // nodeId → boolean (true = collapsed)
-var allExpanded = true;
+var allExpanded = false;  // starts collapsed (depth≥2)
 
 /* ── Pan/zoom state ── */
 var pan = {x:0, y:0};
@@ -258,6 +258,7 @@ fetch('assets/data/cartes_mentales.json')
     CHAPTER = ch;
     applyChapterAccent(ch);
     updateNav(data.chapters, ch);
+    collapseDeep(ch.tree, 0);   // start with depth≥2 collapsed
     renderMobile(ch.tree, mobileList);
     renderSVG(ch.tree);
     hideOverlay();
@@ -359,21 +360,34 @@ function wrapLabel(label, maxW, fontSize) {
   return lines;
 }
 
-function renderSVG(tree) {
-  rootG.innerHTML = '';
-
-  var totalH = layoutTree(tree, 0, 0);
-
-  /* SVG viewport */
+function autoFit(tree) {
   var W = canvasWrap.offsetWidth || 800;
   var H = canvasWrap.offsetHeight || 600;
+  layoutTree(tree, 0, 0);
 
-  /* Center vertically on initial render */
-  pan.x = 40;
-  pan.y = H / 2 - totalH / 2;
-  zoom = 1;
+  /* Bounding box of visible nodes */
+  var minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+  function bbox(node) {
+    var r = getNodeR(node._depth);
+    minX = Math.min(minX, node._x - r);
+    maxX = Math.max(maxX, node._x + r + LX_STEP * 0.6);
+    minY = Math.min(minY, node._y - r);
+    maxY = Math.max(maxY, node._y + r);
+    if (!collapsed[node.id] && node.children) node.children.forEach(bbox);
+  }
+  bbox(tree);
+
+  var pad = 48;
+  var tW = maxX - minX, tH = maxY - minY;
+  zoom = Math.min((W - pad*2) / Math.max(tW, 1), (H - pad*2) / Math.max(tH, 1), 1.4);
+  pan.x = pad - minX * zoom;
+  pan.y = H/2 - (minY + tH/2) * zoom;
   applyTransform();
+}
 
+function renderSVG(tree) {
+  rootG.innerHTML = '';
+  autoFit(tree);
   drawTree(tree, null);
 }
 
@@ -427,14 +441,25 @@ function drawTree(node, parent) {
   c.setAttribute('stroke-width', depth === 0 ? '2' : '1.5');
   g.appendChild(c);
 
-  /* Collapse indicator (if has children) */
-  if (node.children && node.children.length > 0) {
-    var dot = document.createElementNS('http://www.w3.org/2000/svg','circle');
-    dot.setAttribute('cx', node._x + r - 4); dot.setAttribute('cy', node._y - r + 4);
-    dot.setAttribute('r', '3.5');
-    dot.setAttribute('fill', acc);
-    dot.setAttribute('opacity', collapsed[node.id] ? '0.9' : '0.4');
-    g.appendChild(dot);
+  /* +/− badge on nodes with children */
+  if (node.children && node.children.length > 0 && depth > 0) {
+    var badgeR = 6;
+    var bx = node._x + r - 2, by = node._y - r + 2;
+    var badge = document.createElementNS('http://www.w3.org/2000/svg','circle');
+    badge.setAttribute('cx', bx); badge.setAttribute('cy', by);
+    badge.setAttribute('r', badgeR);
+    badge.setAttribute('fill', acc);
+    badge.setAttribute('opacity', '0.85');
+    g.appendChild(badge);
+    var sign = document.createElementNS('http://www.w3.org/2000/svg','text');
+    sign.setAttribute('x', bx); sign.setAttribute('y', by + 4.5);
+    sign.setAttribute('text-anchor','middle');
+    sign.setAttribute('font-size','10');
+    sign.setAttribute('font-weight','700');
+    sign.setAttribute('fill','#13111a');
+    sign.setAttribute('pointer-events','none');
+    sign.textContent = collapsed[node.id] ? '+' : '−';
+    g.appendChild(sign);
   }
 
   /* Label */
@@ -481,11 +506,16 @@ function redraw() {
 }
 
 function handleNodeClick(node) {
-  if (node.children && node.children.length > 0 && node._depth > 0) {
-    collapsed[node.id] = !collapsed[node.id];
+  var hasChildren = node.children && node.children.length > 0;
+  if (hasChildren && node._depth > 0 && collapsed[node.id]) {
+    /* Was collapsed → expand it (don't open panel yet) */
+    collapsed[node.id] = false;
     redraw();
+    autoFit(CHAPTER.tree);
+  } else {
+    /* Already expanded (or leaf, or root) → open info panel */
+    openPanel(node);
   }
-  openPanel(node);
 }
 
 /* ── Pan / Zoom ── */
@@ -514,8 +544,14 @@ canvasWrap.addEventListener('wheel', function(e){
   var rect = canvasWrap.getBoundingClientRect();
   var cx = e.clientX - rect.left;
   var cy = e.clientY - rect.top;
-  var delta = e.deltaY > 0 ? 0.9 : 1.1;
-  var newZoom = Math.min(3, Math.max(0.2, zoom * delta));
+  /* Normalize: trackpad sends many small deltaY (1-5), mouse wheel sends ~100.
+     Cap the effective step at 12% per event regardless of device. */
+  var dy = e.deltaY;
+  if (e.deltaMode === 0) dy = dy / 120;   // pixels → normalized
+  else if (e.deltaMode === 1) dy = dy;    // lines (already ~1 per notch)
+  dy = Math.max(-1, Math.min(1, dy));     // clamp to [-1,1]
+  var factor = dy > 0 ? (1 - dy * 0.12) : (1 - dy * 0.12);
+  var newZoom = Math.min(3, Math.max(0.2, zoom * factor));
   pan.x = cx - (cx - pan.x) * (newZoom / zoom);
   pan.y = cy - (cy - pan.y) * (newZoom / zoom);
   zoom = newZoom;
@@ -566,26 +602,30 @@ canvasWrap.addEventListener('touchend', function(e){
 /* ── Reset / expand buttons ── */
 btnReset.addEventListener('click', function(){
   if (!CHAPTER || !CHAPTER.tree) return;
-  var W = canvasWrap.offsetWidth || 800;
-  var H = canvasWrap.offsetHeight || 600;
-  layoutTree(CHAPTER.tree, 0, 0);
-  var totalH = CHAPTER.tree._h;
-  pan.x = 40; pan.y = H/2 - totalH/2; zoom = 1;
-  applyTransform();
+  autoFit(CHAPTER.tree);
+  redraw();
 });
 
 btnExpand.addEventListener('click', function(){
   allExpanded = !allExpanded;
   collapsed = {};
   if (!allExpanded) {
-    collapseAll(CHAPTER.tree);
+    collapseDeep(CHAPTER.tree, 0);
   }
   btnExpand.innerHTML = (allExpanded
     ? '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>Tout réduire'
     : '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="4 14 10 14 10 20"/><polyline points="20 10 14 10 14 4"/><line x1="10" y1="14" x2="3" y2="21"/><line x1="21" y1="3" x2="14" y2="10"/></svg>Tout développer');
   redraw();
-  btnReset.click();
+  autoFit(CHAPTER.tree);
 });
+
+/* Collapse all nodes at depth ≥ minDepth */
+function collapseDeep(node, depth) {
+  if (depth >= 2 && node.children && node.children.length > 0) {
+    collapsed[node.id] = true;
+  }
+  if (node.children) node.children.forEach(function(c){ collapseDeep(c, depth+1); });
+}
 
 function collapseAll(node) {
   if (node.children && node.children.length > 0 && node._depth > 0) {
