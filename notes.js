@@ -243,3 +243,151 @@
 
   render();
 })();
+
+// ─── TTS Global Panel ──────────────────────────────────────────────────────────
+(function(){
+  if(typeof speechSynthesis==='undefined')return;
+
+  var _voice=null,_rate=1.0,_speaking=false;
+
+  // patch speak to inject panel voice/rate transparently
+  var _origSpeak=speechSynthesis.speak.bind(speechSynthesis);
+  speechSynthesis.speak=function(u){
+    if(_voice)u.voice=_voice;
+    u.rate=_rate;
+    _speaking=true;
+    var oe=u.onend,or_=u.onerror;
+    u.onend=function(e){_speaking=false;_updFab();if(oe)oe.call(this,e);};
+    u.onerror=function(e){_speaking=false;_updFab();if(or_)or_.call(this,e);};
+    _origSpeak(u);
+    _updFab();
+  };
+
+  var _frVoices=[];
+  var _PREF=['Google','Amélie','Thomas','Audrey','Marie','Rémi','Enhanced'];
+  function _loadV(){
+    _frVoices=speechSynthesis.getVoices().filter(function(v){return v.lang&&v.lang.startsWith('fr');});
+    if(!_voice&&_frVoices.length){
+      var hit=null;
+      for(var i=0;i<_PREF.length;i++){var f=_frVoices.find(function(v){return v.name.indexOf(_PREF[i])>=0;});if(f){hit=f;break;}}
+      _voice=hit||_frVoices[0];
+    }
+    _renderVoices();
+  }
+  _loadV();
+  speechSynthesis.addEventListener('voiceschanged',_loadV);
+
+  var style=document.createElement('style');
+  style.textContent=`
+  .bap-tts-fab{position:fixed;bottom:1.4rem;right:4.8rem;z-index:8999;width:2.4rem;height:2.4rem;border-radius:50%;background:rgba(160,210,250,0.14);border:1.5px solid rgba(160,210,250,0.32);cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 14px rgba(0,0,0,.22);backdrop-filter:blur(10px);color:#a0d2fa;transition:background .15s,border-color .15s;line-height:1}
+  .bap-tts-fab:hover{background:rgba(160,210,250,0.26)}
+  .bap-tts-fab.speaking{background:rgba(160,210,250,0.28);border-color:rgba(160,210,250,0.7);box-shadow:0 0 10px rgba(160,210,250,0.3);animation:bap-tts-pulse 1.4s ease-in-out infinite}
+  @keyframes bap-tts-pulse{0%,100%{box-shadow:0 0 6px rgba(160,210,250,.25)}50%{box-shadow:0 0 18px rgba(160,210,250,.55)}}
+  .bap-tts-panel{position:fixed;bottom:5rem;right:1.2rem;z-index:9002;width:230px;max-width:calc(100vw - 2rem);background:rgba(20,17,32,0.97);border:1px solid rgba(160,210,250,0.22);border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.45);backdrop-filter:blur(24px);display:none;flex-direction:column;overflow:hidden;font-family:'DM Sans',sans-serif}
+  .bap-tts-panel.open{display:flex}
+  [data-theme="light"] .bap-tts-panel{background:rgba(235,245,255,0.97);border-color:rgba(60,140,220,0.22)}
+  .bap-tts-head{display:flex;align-items:center;padding:.6rem .85rem;border-bottom:1px solid rgba(255,255,255,.07);gap:.4rem;flex-shrink:0}
+  [data-theme="light"] .bap-tts-head{border-bottom-color:rgba(0,0,0,.07)}
+  .bap-tts-head span{flex:1;font-size:.78rem;font-weight:700;color:#a0d2fa;letter-spacing:.02em}
+  [data-theme="light"] .bap-tts-head span{color:rgba(30,90,160,1)}
+  .bap-tts-head button{background:none;border:none;cursor:pointer;font-size:.88rem;color:rgba(232,228,240,.4);padding:.18rem;border-radius:5px;line-height:1;transition:color .15s}
+  .bap-tts-head button:hover{color:#e8e4f0}
+  .bap-tts-body{padding:.65rem .85rem;display:flex;flex-direction:column;gap:.55rem}
+  .bap-tts-lbl{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:rgba(160,210,250,.6);margin-bottom:.15rem}
+  [data-theme="light"] .bap-tts-lbl{color:rgba(30,90,160,.6)}
+  .bap-tts-sel{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:8px;color:#e8e4f0;padding:.38rem .55rem;font-size:.78rem;font-family:'DM Sans',sans-serif;cursor:pointer;outline:none;-webkit-appearance:none;appearance:none;transition:border-color .15s;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='rgba(160,210,250,.6)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .55rem center}
+  .bap-tts-sel:focus{border-color:rgba(160,210,250,.5)}
+  [data-theme="light"] .bap-tts-sel{background-color:rgba(255,255,255,.7);border-color:rgba(0,0,0,.12);color:#1a1730;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='rgba(30,90,160,.6)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E")}
+  .bap-tts-rates{display:flex;gap:.3rem}
+  .bap-tts-rb{flex:1;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:7px;padding:.3rem .1rem;font-size:.7rem;font-weight:700;cursor:pointer;color:rgba(232,228,240,.45);transition:all .15s;text-align:center;font-family:'DM Sans',sans-serif}
+  .bap-tts-rb.active{background:rgba(160,210,250,.18);border-color:rgba(160,210,250,.45);color:#a0d2fa}
+  [data-theme="light"] .bap-tts-rb{background:rgba(0,0,0,.04);border-color:rgba(0,0,0,.1);color:rgba(26,21,37,.45)}
+  [data-theme="light"] .bap-tts-rb.active{background:rgba(30,100,200,.12);border-color:rgba(30,100,200,.3);color:rgba(20,80,180,1)}
+  .bap-tts-stop{background:rgba(240,184,196,.08);border:1px solid rgba(240,184,196,.2);border-radius:9px;padding:.38rem .6rem;font-size:.76rem;font-weight:600;cursor:pointer;color:rgba(240,184,196,.45);transition:all .15s;text-align:center;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;gap:.35rem}
+  .bap-tts-stop:hover{background:rgba(240,184,196,.18);border-color:rgba(240,184,196,.45);color:#f0b8c4}
+  `;
+  document.head.appendChild(style);
+
+  var fab=document.createElement('button');
+  fab.className='bap-tts-fab';
+  fab.title='Voix & lecture (TTS)';
+  fab.innerHTML='<svg class="ic" style="width:1em;height:1em"><use href="#i-volume-2"/></svg>';
+  document.body.appendChild(fab);
+
+  function _updFab(){fab.classList.toggle('speaking',_speaking);}
+
+  var panel=document.createElement('div');
+  panel.className='bap-tts-panel';
+  panel.innerHTML=
+    '<div class="bap-tts-head">'+
+      '<span>🔊 Voix &amp; lecture</span>'+
+      '<button id="bap-tts-close" title="Fermer">✕</button>'+
+    '</div>'+
+    '<div class="bap-tts-body">'+
+      '<div>'+
+        '<div class="bap-tts-lbl">Voix française</div>'+
+        '<select class="bap-tts-sel" id="bap-tts-vsel"></select>'+
+      '</div>'+
+      '<div>'+
+        '<div class="bap-tts-lbl">Vitesse</div>'+
+        '<div class="bap-tts-rates" id="bap-tts-rates">'+
+          '<button class="bap-tts-rb" data-r="0.75">0.75\xD7</button>'+
+          '<button class="bap-tts-rb active" data-r="1">1\xD7</button>'+
+          '<button class="bap-tts-rb" data-r="1.25">1.25\xD7</button>'+
+          '<button class="bap-tts-rb" data-r="1.5">1.5\xD7</button>'+
+        '</div>'+
+      '</div>'+
+      '<button class="bap-tts-stop" id="bap-tts-stp">'+
+        '<svg class="ic" style="width:.85em;height:.85em"><use href="#i-volume-x"/></svg> Arrêter'+
+      '</button>'+
+    '</div>';
+  document.body.appendChild(panel);
+
+  function _renderVoices(){
+    var sel=document.getElementById('bap-tts-vsel');
+    if(!sel||!_frVoices.length){
+      if(sel)sel.innerHTML='<option value="">Aucune voix FR détectée</option>';
+      return;
+    }
+    var cur=sel.value;
+    sel.innerHTML='';
+    _frVoices.forEach(function(v,i){
+      var o=document.createElement('option');
+      o.value=i;
+      o.textContent=v.name.replace(/\s*\(.*\)/,'');
+      if(_voice&&v.name===_voice.name)o.selected=true;
+      sel.appendChild(o);
+    });
+    if(cur&&!_voice)sel.value=cur;
+  }
+  _renderVoices();
+
+  document.getElementById('bap-tts-vsel').addEventListener('change',function(){
+    var idx=parseInt(this.value);
+    if(!isNaN(idx)&&_frVoices[idx])_voice=_frVoices[idx];
+  });
+
+  document.getElementById('bap-tts-rates').addEventListener('click',function(e){
+    var btn=e.target.closest('.bap-tts-rb');
+    if(!btn)return;
+    _rate=parseFloat(btn.dataset.r)||1;
+    document.querySelectorAll('.bap-tts-rb').forEach(function(b){
+      b.classList.toggle('active',b.dataset.r===btn.dataset.r);
+    });
+  });
+
+  document.getElementById('bap-tts-stp').addEventListener('click',function(){
+    speechSynthesis.cancel();
+    _speaking=false;_updFab();
+  });
+
+  document.getElementById('bap-tts-close').addEventListener('click',function(){
+    panel.classList.remove('open');
+  });
+
+  fab.addEventListener('click',function(){panel.classList.toggle('open');});
+  document.addEventListener('click',function(e){
+    if(!panel.contains(e.target)&&!fab.contains(e.target))panel.classList.remove('open');
+  });
+  window.addEventListener('beforeunload',function(){speechSynthesis.cancel();});
+})();
