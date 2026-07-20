@@ -455,6 +455,46 @@
     window.bapSetProgressContext = function (text) { _ctx = text || ''; updateLabel(); };
   }
 
+  /* ── Bandeau compte à rebours examen ── */
+
+  function bapInitExamCountdown() {
+    var EXAM_PAGES = ['polycop_cours.html', 'revision_complet.html', 'polycop_tp.html',
+                      'flashcards.html', 'entrainement.html', 'examen.html'];
+    var current = location.pathname.split('/').pop() || 'index.html';
+    if (EXAM_PAGES.indexOf(current) === -1) return;
+    try { if (localStorage.getItem('hideExamCountdown') === '1') return; } catch (e) {}
+
+    var exam = new Date('2026-08-31T23:59:59');
+    var now  = new Date();
+    var days = Math.ceil((exam - now) / 86400000);
+    if (days <= 0) return;
+
+    var color = days > 20 ? '#22c55e' : days > 7 ? '#f59e0b' : '#ef4444';
+
+    var banner = document.createElement('div');
+    banner.className = 'bap-exam-countdown';
+    banner.setAttribute('role', 'status');
+    banner.innerHTML =
+      '<span class="bap-ec-dot" style="background:' + color + ';color:' + color + ';"></span>' +
+      '<span class="bap-ec-text">Examen dans <strong>J − ' + days + '</strong>' +
+        ' ·  31 août 2026</span>' +
+      '<button class="bap-ec-close" aria-label="Fermer">×</button>';
+
+    var nav = document.getElementById('bap-nav');
+    if (nav && nav.parentNode) {
+      nav.parentNode.insertBefore(banner, nav.nextSibling);
+    } else {
+      document.body.insertBefore(banner, document.body.firstChild);
+    }
+
+    banner.querySelector('.bap-ec-close').addEventListener('click', function () {
+      try { localStorage.setItem('hideExamCountdown', '1'); } catch (e) {}
+      banner.style.display = 'none';
+    });
+  }
+
+  window.bapInitExamCountdown = bapInitExamCountdown;
+
   /* Forcer la vérification de mise à jour du SW à chaque chargement */
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.getRegistration().then(function (reg) {
@@ -467,6 +507,7 @@
     bapSaveLastPage();
     bapInitProgress();
     bapInitBackToTop();
+    bapInitExamCountdown();
 
     /* Raccourci clavier F — mode focus */
     document.addEventListener('keydown', function (e) {

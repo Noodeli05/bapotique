@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><script>(function(){var v='20260719';if(!location.search.includes('v='+v))location.replace(location.pathname+'?v='+v);}());</script><title>Révision Linguistique Française — UNIL 2025</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet"><style>
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><script>(function(){var v='20260720';if(!location.search.includes('v='+v))location.replace(location.pathname+'?v='+v);}());</script><title>Révision Linguistique Française — UNIL 2025</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet"><style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap');
 
 /* ── VARIABLES ─────────────────────────────────────────────────────────── */
@@ -455,12 +455,17 @@ tr:nth-child(even) td{background:rgba(255,255,255,0.03)}
 @media(max-width:768px){
   .menu-tog{display:block;top:52px;left:.5rem}
   #sidebar{position:fixed;top:52px;height:calc(100vh - 52px);transform:translateX(-100%)}
+  #sidebar:not(.open){pointer-events:none}
   #sidebar.open{transform:translateX(0)}
   #main{margin-left:0}
   .dossier{padding:1rem;padding-top:4rem}
   .fc-grid{grid-template-columns:1fr}
   .tabs{gap:.2rem}
   .tab-btn{font-size:.72rem;padding:.35rem .55rem}
+}
+/* Force transform reset on desktop so mobile state never bleeds through */
+@media(min-width:769px){
+  #sidebar{transform:none!important}
 }
 
 /* iOS auto-zoom prevention: keep all inputs >= 16px */
@@ -1478,6 +1483,7 @@ function flipAll(dos,f){dos.querySelectorAll('.fc').forEach(c=>{if(f)c.classList
 function revAns(btn){var b=btn.nextElementSibling;if(b){b.classList.toggle('show');btn.textContent=b.classList.contains('show')?'Masquer':'Voir la réponse';}}
 function revAllQ(sec){sec.querySelectorAll('.ablk,.exo-ans').forEach(b=>b.classList.add('show'));sec.querySelectorAll('.btn-rev').forEach(b=>b.textContent='Masquer');}
 document.getElementById('menu-tog').addEventListener('click',function(){document.getElementById('sidebar').classList.toggle('open');});
+window.addEventListener('resize',function(){if(window.innerWidth>768){var sb=document.getElementById('sidebar');if(sb)sb.classList.remove('open');}},{passive:true});
 showDos(0);
 // Re-push breadcrumb after common.js nav init (showDos(0) runs before DOMContentLoaded)
 document.addEventListener('DOMContentLoaded',function(){

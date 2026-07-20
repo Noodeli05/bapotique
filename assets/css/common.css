@@ -673,3 +673,130 @@ html.bap-focus .bap-back-top { display: none; }
 [data-theme="light"] .bap-bc-item a { color: rgba(26, 21, 37, 0.55); }
 [data-theme="light"] .bap-bc-item a:hover { color: #7c6cc0; background: rgba(120, 100, 180, 0.08); }
 [data-theme="light"] .bap-bc-current { color: #1a1525; }
+
+/* ── Bandeau compte à rebours examen ── */
+.bap-exam-countdown {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .4rem 1rem;
+  font-size: .84rem;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  color: rgba(232, 228, 240, 0.88);
+  position: relative;
+  z-index: 49;
+}
+.bap-ec-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 5px currentColor;
+}
+.bap-ec-text { flex: 1; }
+.bap-ec-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgba(232, 228, 240, 0.45);
+  font-size: 1.15rem;
+  line-height: 1;
+  padding: 0 .25rem;
+  transition: color .15s, opacity .15s;
+}
+.bap-ec-close:hover { color: rgba(232, 228, 240, 0.9); }
+[data-theme="light"] .bap-exam-countdown {
+  background: rgba(0, 0, 0, 0.04);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+  color: #1a1525;
+}
+[data-theme="light"] .bap-ec-close { color: rgba(26, 21, 37, 0.45); }
+[data-theme="light"] .bap-ec-close:hover { color: #1a1525; }
+
+/* ============================================================
+   Impression globale — s'applique à toutes les pages
+   ============================================================ */
+@media print {
+  /* Reset : fond blanc, texte foncé, sans ombres */
+  *, *::before, *::after {
+    background: white !important;
+    background-image: none !important;
+    color: #111 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    border-color: #bbb !important;
+  }
+
+  /* ── Masquer tous les éléments d'interface ── */
+  #bap-nav, nav, .bap-navbar, .navbar,
+  .bap-pom-fab,  .bap-pom-panel,
+  .bap-tts-fab,  .bap-tts-panel,
+  .bap-notes-fab,.bap-notes-panel,
+  .bap-focus-btn,.bap-focus-exit,.bap-back-top,
+  #bap-breadcrumb,.bap-bc,
+  #bap-progress-bar,#bap-progress-label,
+  button:not(.print-keep),
+  .menu-tog, #sidebar,
+  .no-print, .print-hide,
+  #cc-nav, .cc-toolbar, #cc-panel, #cc-tooltip,
+  .bap-exam-countdown { display: none !important; }
+
+  /* ── Page A4 ── */
+  @page { size: A4 portrait; margin: 10mm 10mm; }
+
+  html, body {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 11pt !important;
+    line-height: 1.5 !important;
+    background: white !important;
+    color: #111 !important;
+    overflow: visible !important;
+  }
+
+  /* ── Contenu principal pleine largeur ── */
+  #main, main, .bap-page-wrap,
+  .main-content, article, .content {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+    overflow: visible !important;
+  }
+
+  /* ── Tableaux avec bordures nettes ── */
+  table { width: 100% !important; border-collapse: collapse !important; font-size: 10pt !important; page-break-inside: avoid; }
+  th, td { border: 1px solid #888 !important; padding: 3pt 5pt !important; }
+  th { background: #eee !important; font-weight: bold; }
+
+  /* ── Titres bien contrastés ── */
+  h1, h2, h3, h4 { color: #111 !important; page-break-after: avoid; page-break-inside: avoid; }
+  h2 { font-size: 14pt !important; border-bottom: 1.5px solid #444 !important; padding-bottom: 2pt; margin-top: 14pt; }
+  h3 { font-size: 12pt !important; margin-top: 10pt; }
+
+  /* ── Pas de coupures moches ── */
+  p, li, figure, .ex-box, .qa-block, .exo-block, .box { page-break-inside: avoid; }
+
+  /* ── Accordéons dépliés automatiquement ── */
+  details { display: block !important; }
+  details > summary { display: block !important; font-weight: bold; margin-top: 10pt; color: #111 !important; }
+  .acc-wrap, .accordion-content, [class*="collapse"], [class*="hidden"] {
+    display: block !important;
+    max-height: none !important;
+    overflow: visible !important;
+    height: auto !important;
+    opacity: 1 !important;
+  }
+
+  /* ── Liens : noir, sans URL en suffixe ── */
+  a { color: #111 !important; text-decoration: none !important; }
+  a[href]::after { content: none !important; }
+
+  /* ── Icônes SVG masquées ── */
+  svg.ic, .ic, [data-lucide] { display: none !important; }
+}
