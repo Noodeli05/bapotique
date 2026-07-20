@@ -1241,6 +1241,8 @@ document.addEventListener('DOMContentLoaded', function(){
           var lbl = (badge ? badge.textContent.trim() + ' — ' : '') + (h2 ? h2.textContent.trim() : e.target.id);
           if(typeof bapBreadcrumbPush==='function') bapBreadcrumbPush(lbl,'#'+e.target.id);
           if(typeof bapSetProgressContext==='function') bapSetProgressContext((badge||{textContent:e.target.id}).textContent.trim());
+          var bNum = (badge||{textContent:''}).textContent.match(/(\d+)/);
+          if(bNum) window._bapTpDos = parseInt(bNum[1]);
         }
       });
     },{rootMargin:'-5% 0px -80% 0px'});
@@ -1259,6 +1261,21 @@ document.addEventListener('DOMContentLoaded', function(){
     nav.innerHTML = prevBtn + nextBtn;
     dos.appendChild(nav);
   }
+
+  // Print FAB — maps TP dossier to closest Révision complète chapter
+  var TP_TO_REV = [0, 1, 3, 4, 4, 5, 6, 6, 7, 9];
+  var REV_NAMES = ['Introduction & méthode','Phonétique & phonologie','Graphémique','Morphologie','Clause canonique','Ordre & DI','Types de clauses','Extensions du GN','Extensions du GV','Clause complexe','Phrase graphique'];
+  var fabTP = document.createElement('button');
+  fabTP.title = 'Imprimer ce dossier (flashcards)';
+  fabTP.innerHTML = '<svg class="ic" style="width:1.1em;height:1.1em"><use href="#i-printer"/></svg>';
+  fabTP.style.cssText = 'position:fixed;bottom:5.6rem;right:1.2rem;z-index:8500;width:2.4rem;height:2.4rem;border-radius:50%;background:rgba(168,216,196,0.14);border:1.5px solid rgba(168,216,196,0.32);cursor:pointer;display:flex;align-items:center;justify-content:center;color:#a8d8c4;box-shadow:0 3px 14px rgba(0,0,0,.22);transition:background .15s,transform .15s;backdrop-filter:blur(10px)';
+  fabTP.addEventListener('click', function() {
+    var n = window._bapTpDos || 1;
+    var revN = TP_TO_REV[n] !== undefined ? TP_TO_REV[n] : n;
+    var revCh = 'D' + revN + ' — ' + (REV_NAMES[revN] || '');
+    window.open('print_view.html?src=' + encodeURIComponent('Révision complète') + '&ch=' + encodeURIComponent(revCh), '_blank');
+  });
+  document.body.appendChild(fabTP);
 });
 </script></body>
 </html>

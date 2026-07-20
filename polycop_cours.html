@@ -2925,10 +2925,30 @@ document.addEventListener('DOMContentLoaded', initSidebarObserver);
 (function(){
   var chapters = document.querySelectorAll('.chapter');
   if(!chapters.length) return;
+  /* Map polycop chapter index → Guide UNIL chapter name in bap_cards_cache
+     idx 1 = ch0 = Introduction → INTRODUCTION
+     idx 2 = ch1 = CHAPITRE 1, idx 3 = CHAPITRE 2, etc. */
+  window._bapCoursIdx = 1;
+  function _bapCoursChName(idx) {
+    try {
+      var cards = JSON.parse(localStorage.getItem('bap_cards_cache') || '[]');
+      var src = 'Guide UNIL';
+      var pattern = idx <= 1 ? /INTRODUCTION/i : new RegExp('CHAPITRE ' + (idx - 1) + '\\b', 'i');
+      var found = cards.find(function(c){ return c.source === src && pattern.test(c.chapter); });
+      /* Return only the top-level chapter part */
+      if (!found) return '';
+      var ch = found.chapter;
+      /* Strip sub-section if present: "Guide UNIL — CHAPITRE 1 — ..." vs "Guide UNIL — 1. xxx" */
+      var m = ch.match(/^(Guide UNIL — (?:INTRODUCTION|CHAPITRE \d+)[^—]*)/);
+      return m ? m[1].trim() : ch;
+    } catch(e) { return ''; }
+  }
+
   var io2 = new IntersectionObserver(function(entries){
     entries.forEach(function(e){
       if(e.isIntersecting){
         var idx = Array.from(chapters).indexOf(e.target) + 1;
+        window._bapCoursIdx = idx;
         var el = document.getElementById('chNum');
         if(el) el.textContent = idx;
         var h2 = e.target.querySelector('.ch-title');
@@ -2946,6 +2966,19 @@ document.addEventListener('DOMContentLoaded', initSidebarObserver);
       if(h2) bapBreadcrumbPush(h2.textContent.trim(),'#ch0');
       if(typeof bapSetProgressContext==='function') bapSetProgressContext('Ch.1');
     }
+    /* Print FAB */
+    var fab=document.createElement('button');
+    fab.title='Imprimer ce chapitre';
+    fab.innerHTML='<svg class="ic" style="width:1.1em;height:1.1em"><use href="#i-printer"/></svg>';
+    fab.style.cssText='position:fixed;bottom:5.6rem;right:1.2rem;z-index:8500;width:2.4rem;height:2.4rem;border-radius:50%;background:rgba(168,216,196,0.14);border:1.5px solid rgba(168,216,196,0.32);cursor:pointer;display:flex;align-items:center;justify-content:center;color:#a8d8c4;box-shadow:0 3px 14px rgba(0,0,0,.22);transition:background .15s,transform .15s;backdrop-filter:blur(10px)';
+    fab.addEventListener('mouseenter',function(){fab.style.transform='scale(1.1)';});
+    fab.addEventListener('mouseleave',function(){fab.style.transform='';});
+    fab.addEventListener('click',function(){
+      var ch=_bapCoursChName(window._bapCoursIdx||1);
+      var url='print_view.html?src='+encodeURIComponent('Guide UNIL')+(ch?'&ch='+encodeURIComponent(ch):'');
+      window.open(url,'_blank');
+    });
+    document.body.appendChild(fab);
   });
 })();
 </script>

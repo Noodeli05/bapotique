@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260720');}());</script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fiche imprimable — Bapotique</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/common.css">
+<style>
+/* ── Screen layout ── */
+html,body{height:100%;overflow:hidden}
+body{display:flex;flex-direction:column}
+.pv-layout{display:flex;flex-direction:column;flex:1;min-height:0}
+
+/* ── Controls ── */
+.pv-controls{display:flex;align-items:center;gap:.55rem;padding:.5rem 1rem;background:rgba(19,17,26,0.55);border-bottom:1px solid rgba(255,255,255,0.07);flex-shrink:0;flex-wrap:wrap}
+[data-theme="light"] .pv-controls{background:rgba(245,243,248,0.7);border-bottom-color:rgba(120,100,180,0.12)}
+.pv-select{font-family:'DM Sans',sans-serif;font-size:.75rem;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);color:var(--tx,#e8e4f0);border-radius:8px;padding:.28rem .55rem;cursor:pointer;min-width:120px}
+[data-theme="light"] .pv-select{background:rgba(255,255,255,0.8);border-color:rgba(120,100,180,0.18);color:#1a1525}
+.pv-select:focus{outline:1px solid rgba(200,184,240,0.45)}
+.pv-sep{width:1px;height:1.2rem;background:rgba(255,255,255,0.10);flex-shrink:0}
+[data-theme="light"] .pv-sep{background:rgba(0,0,0,0.10)}
+.pv-btn{font-family:'DM Sans',sans-serif;font-size:.74rem;font-weight:600;padding:.3rem .75rem;border-radius:8px;cursor:pointer;border:1px solid;transition:all .15s;display:flex;align-items:center;gap:.35rem}
+.pv-btn-print{background:rgba(168,216,196,0.18);border-color:rgba(168,216,196,0.4);color:#a8d8c4}
+.pv-btn-print:hover{background:rgba(168,216,196,0.28)}
+.pv-btn-back{background:none;border-color:rgba(255,255,255,0.12);color:rgba(232,228,240,.55)}
+.pv-btn-back:hover{border-color:rgba(200,184,240,.3);color:#e8e4f0}
+[data-theme="light"] .pv-btn-back{color:rgba(26,21,37,0.5)}
+.pv-margin-toggle{display:flex;align-items:center;gap:.35rem;font-size:.72rem;color:var(--mu,rgba(232,228,240,.55));cursor:pointer;user-select:none;margin-left:auto}
+.pv-margin-toggle input[type=checkbox]{accent-color:var(--lav,#c8b8f0);width:13px;height:13px;cursor:pointer}
+.pv-card-count{font-size:.68rem;color:var(--mu,rgba(232,228,240,.55));margin-left:.2rem}
+[data-theme="light"] .pv-card-count{color:rgba(26,21,37,0.45)}
+
+/* ── Canvas (scrollable area) ── */
+.pv-canvas{flex:1;min-height:0;overflow-y:auto;background:#1a1825;padding:1.5rem;display:flex;flex-direction:column;align-items:center;gap:1rem}
+[data-theme="light"] .pv-canvas{background:#2c2840}
+
+/* ── A4 Sheet ── */
+.pv-sheet{
+  width:210mm;
+  min-height:297mm;
+  background:#fff;
+  box-shadow:0 6px 32px rgba(0,0,0,0.45);
+  padding:14mm 12mm 14mm 18mm;
+  box-sizing:border-box;
+  position:relative;
+  font-family:'DM Sans',sans-serif;
+  color:#1a1520;
+  font-size:9.5pt;
+  line-height:1.55;
+  page-break-after:always;
+  break-after:page;
+}
+.pv-sheet:last-child{page-break-after:auto;break-after:auto}
+
+/* Annotation margin (Cornell) */
+.pv-sheet.with-margin{padding-right:62mm}
+.pv-sheet.with-margin::after{
+  content:'Annotations';
+  position:absolute;top:14mm;right:12mm;bottom:14mm;width:46mm;
+  border-left:0.75pt solid rgba(120,100,180,0.22);
+  background:repeating-linear-gradient(180deg,transparent 0,transparent 7.4mm,rgba(120,100,180,0.07) 7.4mm,rgba(120,100,180,0.07) 7.65mm);
+  box-sizing:border-box;
+  padding-left:3mm;padding-top:6mm;
+  font-size:6.5pt;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(120,100,180,0.25);
+  font-family:'DM Sans',sans-serif;
+}
+
+/* ── Sheet header ── */
+.pv-page-head{
+  display:flex;align-items:baseline;justify-content:space-between;
+  margin-bottom:4.5mm;padding-bottom:2mm;
+  border-bottom:1pt solid rgba(120,100,180,0.25);
+}
+.pv-page-title{font-family:'DM Serif Display',serif;font-size:13pt;font-weight:400;color:#2d1a40;line-height:1.2}
+.pv-page-title span{font-family:'DM Sans',sans-serif;font-size:7.5pt;color:#9080b0;font-weight:600;letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:1.5mm}
+.pv-page-meta{font-size:7pt;color:#b0a8c0;text-align:right;line-height:1.6}
+.pv-page-sub{font-size:7.5pt;color:#9080b0;margin-top:1mm;padding-top:1mm;border-top:.5pt dotted rgba(120,100,180,0.18)}
+
+/* ── Q&A items ── */
+.pv-item{
+  display:flex;gap:4mm;
+  margin-bottom:3.2mm;
+  page-break-inside:avoid;break-inside:avoid;
+}
+.pv-item-num{flex-shrink:0;width:5mm;font-size:6.5pt;font-weight:700;color:rgba(120,100,180,0.45);padding-top:1pt;text-align:right;line-height:1.55}
+.pv-item-body{flex:1;min-width:0}
+.pv-q{font-weight:700;color:#2d1a40;margin-bottom:.8mm;font-size:9pt;line-height:1.4}
+.pv-a{color:#2a2030;font-size:8.5pt;line-height:1.5}
+.pv-item-sep{border:none;border-top:.3pt dotted rgba(0,0,0,0.10);margin:2.8mm 0 0}
+
+/* Mastery dot */
+.pv-dot{display:inline-block;width:5px;height:5px;border-radius:50%;vertical-align:middle;margin-right:2px;flex-shrink:0}
+
+/* ── No data ── */
+.pv-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.75rem;padding:3rem 2rem;text-align:center;color:rgba(232,228,240,0.45);font-size:.85rem}
+.pv-empty a{color:var(--lav,#c8b8f0)}
+
+/* ── Print ── */
+@media print{
+  html,body{height:auto;overflow:visible}
+  .pv-controls,.no-print{display:none!important}
+  .pv-canvas{padding:0;background:none;gap:0;overflow:visible}
+  .pv-sheet{box-shadow:none;margin:0;width:210mm;min-height:297mm}
+  .pv-sheet.with-margin::after{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+@page{size:A4 portrait;margin:0}
+
+/* ── Mobile ── */
+@media(max-width:700px){
+  .pv-sheet{width:100%;min-height:auto;padding:1rem}
+  .pv-sheet.with-margin::after{display:none}
+  .pv-sheet.with-margin{padding-right:1rem}
+  .pv-canvas{padding:.75rem}
+}
+</style>
+</head>
+<body>
+<script src="assets/js/icons.js"></script>
+
+<div class="pv-layout">
+  <div class="pv-controls no-print">
+    <a href="javascript:history.back()" class="pv-btn pv-btn-back">
+      <svg class="ic" style="width:.8em;height:.8em"><use href="#i-arrow-left"/></svg> Retour
+    </a>
+    <div class="pv-sep"></div>
+    <select id="pv-src" class="pv-select" title="Source"></select>
+    <select id="pv-ch" class="pv-select" title="Chapitre" style="min-width:200px"></select>
+    <span class="pv-card-count" id="pv-count"></span>
+    <div class="pv-sep"></div>
+    <label class="pv-margin-toggle">
+      <input type="checkbox" id="pv-margin-cb" checked>
+      Marge annotations
+    </label>
+    <div class="pv-sep"></div>
+    <button class="pv-btn pv-btn-print" onclick="window.print()">
+      <svg class="ic" style="width:.85em;height:.85em"><use href="#i-printer"/></svg> Imprimer
+    </button>
+  </div>
+
+  <div class="pv-canvas" id="pv-canvas">
+    <div class="pv-empty" id="pv-empty" style="display:none">
+      <svg class="ic" style="width:2rem;height:2rem;opacity:.3"><use href="#i-book-open"/></svg>
+      <p>Aucune donnée. Ouvre d'abord <a href="flashcards.html">les flashcards</a>.</p>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/common.js"></script>
+<script src="notes.js"></script>
+<script>
+/* ─── Data ─────────────────────────────────────────────────────────────────── */
+var CARDS = [];
+var SM2   = {};
+try { CARDS = JSON.parse(localStorage.getItem('bap_cards_cache') || '[]'); } catch(e){}
+try { SM2   = JSON.parse(localStorage.getItem('bap_sm2')         || '{}'); } catch(e){}
+
+/* ─── Build source/chapter index ─────────────────────────────────────────── */
+var sourceIndex = {};  /* src -> { chapter -> [card] } */
+CARDS.forEach(function(c){
+  if (!sourceIndex[c.source]) sourceIndex[c.source] = {};
+  if (!sourceIndex[c.source][c.chapter]) sourceIndex[c.source][c.chapter] = [];
+  sourceIndex[c.source][c.chapter].push(c);
+});
+
+var SOURCES = Object.keys(sourceIndex).sort();
+
+/* Sort chapters within a source */
+function sortedChapters(src) {
+  return Object.keys(sourceIndex[src] || {}).sort(function(a,b){
+    var da = parseInt((a.match(/^D(\d+)/) || [])[1]);
+    var db = parseInt((b.match(/^D(\d+)/) || [])[1]);
+    if (!isNaN(da) && !isNaN(db)) return da - db;
+    var na = parseInt((a.match(/(\d+)/) || [])[1] || '99');
+    var nb = parseInt((b.match(/(\d+)/) || [])[1] || '99');
+    return na !== nb ? na - nb : a.localeCompare(b, 'fr');
+  });
+}
+
+/* ─── URL params ──────────────────────────────────────────────────────────── */
+var params  = new URLSearchParams(location.search.slice(location.search.indexOf('?',1)+1||1));
+/* strip the cache-buster part manually */
+var rawSearch = location.search.replace(/[?&]v=[^&]+/, '').replace(/^&/, '?');
+var params2 = new URLSearchParams(rawSearch.slice(1));
+var initSrc = params2.get('src') || (SOURCES[2] || SOURCES[0] || ''); /* default to Révision complète */
+var initCh  = params2.get('ch')  || '';
+var autoP   = params2.get('auto') === '1';
+
+/* ─── Selectors ───────────────────────────────────────────────────────────── */
+var srcSel = document.getElementById('pv-src');
+var chSel  = document.getElementById('pv-ch');
+
+SOURCES.forEach(function(s){
+  var opt = document.createElement('option');
+  opt.value = s; opt.textContent = s;
+  if (s === initSrc) opt.selected = true;
+  srcSel.appendChild(opt);
+});
+
+function populateChapters(src) {
+  chSel.innerHTML = '';
+  sortedChapters(src).forEach(function(ch){
+    var cnt = (sourceIndex[src][ch]||[]).length;
+    var opt = document.createElement('option');
+    opt.value = ch; opt.textContent = ch.replace(/^[^—]*— ?/, '') + ' (' + cnt + ')';
+    if (ch === initCh) opt.selected = true;
+    chSel.appendChild(opt);
+  });
+}
+populateChapters(srcSel.value);
+
+srcSel.addEventListener('change', function(){
+  initCh = ''; populateChapters(srcSel.value); render();
+});
+chSel.addEventListener('change', render);
+document.getElementById('pv-margin-cb').addEventListener('change', render);
+
+/* ─── Domain colors ─────────────────────────────────────────────────────────── */
+var DOS_COLOR = ['#c8b8f0','#a8c8f0','#a8c8f0','#a8d8c4','#f0c8a0','#f0c8a0','#f0c8a0','#f0c8a0','#f0c8a0','#f0c8a0','#b8d4b0'];
+function chapterColor(ch) {
+  var dm = (ch.match(/^D(\d+)/) || [])[1];
+  if (dm !== undefined) return DOS_COLOR[parseInt(dm)] || '#c8b8f0';
+  var cn = parseInt((ch.match(/(\d+)/) || [])[1] || '0');
+  return cn <= 1 ? '#a8c8f0' : cn === 2 ? '#a8d8c4' : '#f0c8a0';
+}
+
+/* ─── Render ────────────────────────────────────────────────────────────────── */
+var ITEMS_PER_PAGE = 18; /* approximate; browser handles overflow */
+
+function renderCards(cards, chName, withMargin) {
+  var color   = chapterColor(chName);
+  var srcName = srcSel.value;
+  var today   = new Date().toLocaleDateString('fr-FR', {day:'2-digit',month:'long',year:'numeric'});
+
+  /* Strip "Source — " prefix from chapter name */
+  var dispCh = chName.replace(/^[^—]+— ?/, '').trim();
+
+  var sheets = [];
+  /* Split into page-sized chunks (approximate) */
+  var pages = [[]];
+  cards.forEach(function(c){
+    if (pages[pages.length-1].length >= ITEMS_PER_PAGE) pages.push([]);
+    pages[pages.length-1].push(c);
+  });
+
+  return pages.map(function(pageCards, pi){
+    var div = document.createElement('div');
+    div.className = 'pv-sheet' + (withMargin ? ' with-margin' : '');
+
+    /* Page header */
+    var head = document.createElement('div');
+    head.className = 'pv-page-head';
+
+    var titleDiv = document.createElement('div');
+    titleDiv.className = 'pv-page-title';
+    var srcSpan = document.createElement('span');
+    srcSpan.textContent = srcName.toUpperCase() + ' · BAPOTIQUE';
+    srcSpan.style.color = color;
+    titleDiv.appendChild(srcSpan);
+    titleDiv.appendChild(document.createTextNode(dispCh));
+
+    var metaDiv = document.createElement('div');
+    metaDiv.className = 'pv-page-meta';
+    metaDiv.innerHTML = today + '<br>Page ' + (pi+1) + '/' + pages.length + '<br>' + cards.length + ' cartes';
+    if (pi === 0) {
+      var sub = document.createElement('div');
+      sub.className = 'pv-page-sub';
+      var mastered = cards.filter(function(c){ var d=SM2[c.id]; return d&&d.reps>=3&&d.easeFactor>=2.5; }).length;
+      var seenCount = cards.filter(function(c){ var d=SM2[c.id]; return d&&d.reps>0; }).length;
+      var pct = Math.round(mastered/cards.length*100);
+      sub.textContent = 'Maîtrisé : ' + mastered + '/' + cards.length + ' (' + pct + '%)';
+      metaDiv.appendChild(sub);
+    }
+
+    head.appendChild(titleDiv);
+    head.appendChild(metaDiv);
+    div.appendChild(head);
+
+    /* Cards */
+    pageCards.forEach(function(c, i){
+      var d   = SM2[c.id];
+      var mastPct = d && d.reps ? (d.easeFactor >= 2.5 && d.reps >= 3 ? 2 : d.easeFactor < 2.0 ? 0 : 1) : -1;
+      var dotColor = mastPct === 2 ? '#a8d8c4' : mastPct === 1 ? '#a8c8f0' : mastPct === 0 ? '#f0c8a0' : '#ddd';
+
+      var item = document.createElement('div');
+      item.className = 'pv-item';
+
+      var num = document.createElement('div');
+      num.className = 'pv-item-num';
+      num.textContent = (pi * ITEMS_PER_PAGE + i + 1);
+
+      var body = document.createElement('div');
+      body.className = 'pv-item-body';
+
+      var qDiv = document.createElement('div');
+      qDiv.className = 'pv-q';
+      var dot = document.createElement('span');
+      dot.className = 'pv-dot';
+      dot.style.background = dotColor;
+      dot.title = mastPct === 2 ? 'Maîtrisée' : mastPct === 1 ? 'En cours' : mastPct === 0 ? 'Fragile' : 'Non vue';
+      qDiv.appendChild(dot);
+      qDiv.appendChild(document.createTextNode(unescHtml(c.front)));
+
+      var aDiv = document.createElement('div');
+      aDiv.className = 'pv-a';
+      aDiv.textContent = unescHtml(c.back);
+
+      body.appendChild(qDiv);
+      body.appendChild(aDiv);
+
+      if (i < pageCards.length - 1) {
+        var sep = document.createElement('hr');
+        sep.className = 'pv-item-sep';
+        body.appendChild(sep);
+      }
+
+      item.appendChild(num);
+      item.appendChild(body);
+      div.appendChild(item);
+    });
+
+    return div;
+  });
+}
+
+function unescHtml(s) {
+  var t = document.createElement('textarea');
+  t.innerHTML = s || '';
+  return t.value;
+}
+
+function render() {
+  var src  = srcSel.value;
+  var ch   = chSel.value;
+  var withM = document.getElementById('pv-margin-cb').checked;
+  var canvas = document.getElementById('pv-canvas');
+  var empty  = document.getElementById('pv-empty');
+
+  canvas.innerHTML = '';
+  canvas.appendChild(empty);
+
+  if (!CARDS.length) { empty.style.display = 'flex'; return; }
+  empty.style.display = 'none';
+
+  var cards = (sourceIndex[src] && sourceIndex[src][ch]) || [];
+  document.getElementById('pv-count').textContent = cards.length + ' carte' + (cards.length > 1 ? 's' : '');
+
+  if (!cards.length) {
+    empty.style.display = 'flex';
+    return;
+  }
+
+  var sheets = renderCards(cards, ch, withM);
+  sheets.forEach(function(s){ canvas.appendChild(s); });
+}
+
+/* ─── Auto-print ──────────────────────────────────────────────────────────── */
+if (autoP) {
+  window.addEventListener('load', function(){
+    setTimeout(window.print, 800);
+  });
+}
+
+/* ─── Init ────────────────────────────────────────────────────────────────── */
+if (!CARDS.length) {
+  document.getElementById('pv-empty').style.display = 'flex';
+} else {
+  render();
+}
+</script>
+</body>
+</html>

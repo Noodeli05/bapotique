@@ -1484,6 +1484,19 @@ document.addEventListener('DOMContentLoaded',function(){
   var _id=window._bapRevDos||0;
   var _d=document.getElementById('d'+_id);
   if(_d&&typeof bapBreadcrumbPush==='function'){var _h=_d.querySelector('.dos-hd h2');if(_h)bapBreadcrumbPush(_h.textContent.trim(),'#');}
+
+  // Print FAB
+  var _RN=['Introduction & méthode','Phonétique & phonologie','Graphémique','Morphologie','Clause canonique','Ordre & DI','Types de clauses','Extensions du GN','Extensions du GV','Clause complexe','Phrase graphique'];
+  var fabRev=document.createElement('button');
+  fabRev.title='Imprimer ce dossier (flashcards)';
+  fabRev.innerHTML='<svg class="ic" style="width:1.1em;height:1.1em"><use href="#i-printer"/></svg>';
+  fabRev.style.cssText='position:fixed;bottom:5.6rem;right:1.2rem;z-index:8500;width:2.4rem;height:2.4rem;border-radius:50%;background:rgba(168,216,196,0.14);border:1.5px solid rgba(168,216,196,0.32);cursor:pointer;display:flex;align-items:center;justify-content:center;color:#a8d8c4;box-shadow:0 3px 14px rgba(0,0,0,.22);transition:background .15s,transform .15s;backdrop-filter:blur(10px)';
+  fabRev.addEventListener('click',function(){
+    var id=window._bapRevDos||0;
+    var ch='D'+id+' — '+(_RN[id]||'');
+    window.open('print_view.html?src='+encodeURIComponent('Révision complète')+'&ch='+encodeURIComponent(ch),'_blank');
+  });
+  document.body.appendChild(fabRev);
 });
 // Prev/next chapter navigation at bottom of each dossier
 (function(){

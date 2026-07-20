@@ -1,5 +1,5 @@
 // Service Worker — Bapotique PWA
-const CACHE = 'bap-v35';
+const CACHE = 'bap-v36';
 const ASSETS = [
   './',
   './flashcards.html',
@@ -17,6 +17,7 @@ const ASSETS = [
   './cahier_vacances.html',
   './flashcards_print.html',
   './carte_mentale.html',
+  './print_view.html',
   './notes.js',
   './manifest.json',
   './icon-192.png',
