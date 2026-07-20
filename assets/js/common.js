@@ -464,20 +464,24 @@
     if (EXAM_PAGES.indexOf(current) === -1) return;
     try { if (localStorage.getItem('hideExamCountdown') === '1') return; } catch (e) {}
 
-    var exam = new Date('2026-08-31T23:59:59');
-    var now  = new Date();
-    var days = Math.ceil((exam - now) / 86400000);
-    if (days <= 0) return;
+    var examDate = new Date('2026-08-31T00:00:00');
+    var today    = new Date();
+    today.setHours(0, 0, 0, 0);
+    var days = Math.floor((examDate - today) / 86400000);
+    if (days < 0) return;
 
-    var color = days > 20 ? '#22c55e' : days > 7 ? '#f59e0b' : '#ef4444';
+    var statusClass = days > 20 ? 'ec-sereine' : days > 7 ? 'ec-active' : 'ec-critique';
+    var color       = days > 20 ? '#7FB77E'    : days > 7 ? '#E8A87C'   : '#D97A7A';
+    var jText       = days === 0
+      ? 'Examen aujourd\'hui !'
+      : 'Examen dans <strong>J − ' + days + '</strong> ·  31 août 2026';
 
     var banner = document.createElement('div');
-    banner.className = 'bap-exam-countdown';
+    banner.className = 'bap-exam-countdown ' + statusClass;
     banner.setAttribute('role', 'status');
     banner.innerHTML =
       '<span class="bap-ec-dot" style="background:' + color + ';color:' + color + ';"></span>' +
-      '<span class="bap-ec-text">Examen dans <strong>J − ' + days + '</strong>' +
-        ' ·  31 août 2026</span>' +
+      '<span class="bap-ec-text">' + jText + '</span>' +
       '<button class="bap-ec-close" aria-label="Fermer">×</button>';
 
     var nav = document.getElementById('bap-nav');

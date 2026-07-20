@@ -708,6 +708,11 @@ html.bap-focus .bap-back-top { display: none; }
   transition: color .15s, opacity .15s;
 }
 .bap-ec-close:hover { color: rgba(232, 228, 240, 0.9); }
+/* Colored states (dark mode) */
+.bap-exam-countdown.ec-sereine  { background: rgba(127, 183, 126, 0.15); color: #7FB77E; border-bottom: 1px solid rgba(127, 183, 126, 0.30); }
+.bap-exam-countdown.ec-active   { background: rgba(232, 168, 124, 0.15); color: #E8A87C; border-bottom: 1px solid rgba(232, 168, 124, 0.30); }
+.bap-exam-countdown.ec-critique { background: rgba(217, 122, 122, 0.15); color: #D97A7A; border-bottom: 1px solid rgba(217, 122, 122, 0.30); }
+
 [data-theme="light"] .bap-exam-countdown {
   background: rgba(0, 0, 0, 0.04);
   border-bottom: 1px solid rgba(0, 0, 0, 0.09);
@@ -715,6 +720,11 @@ html.bap-focus .bap-back-top { display: none; }
 }
 [data-theme="light"] .bap-ec-close { color: rgba(26, 21, 37, 0.45); }
 [data-theme="light"] .bap-ec-close:hover { color: #1a1525; }
+
+/* Colored states (light mode override — higher specificity) */
+[data-theme="light"] .bap-exam-countdown.ec-sereine  { background: rgba(127, 183, 126, 0.18); color: #3d7d3c; border-bottom: 1px solid rgba(127, 183, 126, 0.40); }
+[data-theme="light"] .bap-exam-countdown.ec-active   { background: rgba(232, 168, 124, 0.18); color: #8a4c1a; border-bottom: 1px solid rgba(232, 168, 124, 0.40); }
+[data-theme="light"] .bap-exam-countdown.ec-critique { background: rgba(217, 122, 122, 0.18); color: #8a2020; border-bottom: 1px solid rgba(217, 122, 122, 0.40); }
 
 /* ============================================================
    Impression globale — s'applique à toutes les pages
