@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260720');}());</script>
+<script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260720b');}());</script>
 <title>Cahier de vacances — Linguistique française UNIL 2025</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
@@ -15,8 +15,7 @@ html{font-size:16px}
 body{font-family:'DM Sans',Arial,sans-serif;background:#f7f5f0;color:#1a1520;line-height:1.6}
 
 /* ── SCREEN WRAPPER ── */
-.book{margin:0 auto;padding:2rem 1rem}
-@media screen{.book{max-width:800px}}
+.book{max-width:800px;margin:0 auto;padding:2rem 1rem}
 
 /* ── PAGE BREAKS ── */
 .page{background:#fff;box-shadow:0 2px 20px rgba(0,0,0,.10);border-radius:4px;margin-bottom:2.5rem;padding:3rem 3.5rem;position:relative;min-height:297mm}
@@ -156,35 +155,59 @@ tr:last-child td{border-bottom:none}
 .vs-icon{font-size:.9rem;flex-shrink:0;margin-top:.05rem}
 /* ── PRINT STYLES ── */
 @media print{
-  /* full-page layout */
-  html,body{width:100%!important;max-width:none!important;margin:0!important;padding:0!important;background:#fff!important;font-size:10.5pt}
-  .book{max-width:none!important;width:100%!important;padding:0!important;margin:0!important}
-  .page{box-shadow:none!important;border-radius:0!important;margin:0!important;padding:18mm 20mm!important;min-height:auto!important;width:100%!important;page-break-after:always;break-after:page}
+  /* Dimensions physiques A4 — aucune ambiguïté de calcul */
+  html,body{
+    width:210mm!important;max-width:none!important;
+    margin:0!important;padding:0!important;
+    background:#fff!important;font-size:10.5pt
+  }
+  /* .book disparaît du layout — ses enfants se posent directement sur le papier */
+  .book{display:contents!important}
+  /* chaque .page = une feuille A4 exacte, marges incluses */
+  .page{
+    display:block!important;
+    box-sizing:border-box!important;
+    width:210mm!important;max-width:none!important;
+    margin:0!important;padding:15mm 18mm!important;
+    min-height:auto!important;
+    box-shadow:none!important;border-radius:0!important;
+    page-break-after:always;break-after:page
+  }
   .page:last-child{page-break-after:auto;break-after:auto}
   h2,h3,.ch-header{page-break-after:avoid;break-after:avoid}
   .exo-block,.box{page-break-inside:avoid;break-inside:avoid}
-  .print-btn,.no-print,.ch-progress,.bap-tts-fab,.bap-tts-panel,.bap-notes-fab,.bap-notes-panel,.bap-pom-fab,.bap-pom-panel,.divider-page{display:none!important}
+  /* éléments masqués à l'impression */
+  .print-btn,.no-print,.ch-progress,
+  .bap-tts-fab,.bap-tts-panel,
+  .bap-notes-fab,.bap-notes-panel,
+  .bap-pom-fab,.bap-pom-panel,
+  .divider-page{display:none!important}
 
-  /* covers: texte foncé sur fond blanc (économie d'encre) */
-  /* horizontal padding = 0 car .page fournit déjà les marges latérales */
-  .cover{min-height:auto!important;padding:15mm 0!important;background:none!important;color:#1a1520!important}
-  .cover-title{background:none!important;-webkit-background-clip:unset!important;background-clip:unset!important;-webkit-text-fill-color:#2d2540!important;color:#2d2540!important}
+  /* couvertures : fond blanc, texte foncé — économie d'encre */
+  .cover{
+    min-height:auto!important;
+    padding:12mm 0!important;
+    background:none!important;color:#1a1520!important
+  }
+  .cover-title{
+    background:none!important;
+    -webkit-background-clip:unset!important;background-clip:unset!important;
+    -webkit-text-fill-color:#2d2540!important;color:#2d2540!important
+  }
   .cover-subtitle{color:#2d2540!important}
   .cover-band{background:transparent!important;border-color:#2d2540!important}
   .cover-desc,.cover-footer{color:#555!important}
   .cover-badge{background:transparent!important;border-color:#2d2540!important;color:#2d2540!important}
-  .divider-page{background:none!important;color:#1a1520!important;border:1px solid #ccc}
   .divider-num{color:rgba(0,0,0,.12)!important}
   .divider-title{color:#2d2540!important}
   .divider-sub{color:#555!important}
 
-  /* supprimer tous les fonds colorés — garde les contours */
+  /* supprimer les fonds colorés — remplacer par contours */
   .exo-header,.exo-tag,.ch-num-badge,.toc-label,
   .visual-summary,.box,.box-def,.box-ex,.box-ret,.box-att,
   .corr-item-print,.mcq-opt,.sec-label,th{
     background:transparent!important;background-color:transparent!important;background-image:none!important
   }
-  /* remplacer les fonds colorés par des contours discrets */
   .exo-header{border-bottom:1.5px solid var(--acc,#7c6cc0)!important;font-weight:700}
   .exo-tag{border:1px solid var(--acc,#7c6cc0)!important;color:var(--acc,#7c6cc0)!important}
   .ch-num-badge{border:1px solid var(--acc,#7c6cc0)!important}
