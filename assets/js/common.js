@@ -39,6 +39,7 @@
     { label: 'Tests',           href: 'tests.html' },
     { label: 'Recherche',       href: 'search.html' },
     { label: 'Progression',     href: 'stats.html' },
+    { label: 'Cartes mentales', href: 'carte_mentale.html' },
   ];
 
   /* ── Thème ── */

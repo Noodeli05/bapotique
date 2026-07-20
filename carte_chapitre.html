@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260720');}());</script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Carte mentale — Bapotique</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/common.css">
+<style>
+:root{--bg:#13111a;--acc:#c8b8f0;--acc-rgb:200,184,240}
+body{background:var(--bg,#13111a);color:#e8e4f0;font-family:'DM Sans',sans-serif;margin:0;height:100vh;overflow:hidden;display:flex;flex-direction:column}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(ellipse 65% 50% at 15% 20%,rgba(var(--acc-rgb,.18),.18) 0%,transparent 65%),
+             radial-gradient(ellipse 50% 40% at 85% 80%,rgba(100,160,220,.1) 0%,transparent 60%)}
+
+/* ── Nav strip (breadcrumb + chapter nav) ── */
+.cc-nav{display:flex;align-items:center;gap:.6rem;padding:.45rem 1rem;background:rgba(19,17,26,.55);border-bottom:1px solid rgba(255,255,255,.07);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);flex-shrink:0;flex-wrap:wrap;position:relative;z-index:5}
+.cc-bc{font-size:.72rem;color:rgba(232,228,240,.45);flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cc-bc a{color:rgba(200,184,240,.6);text-decoration:none}
+.cc-bc a:hover{color:#c8b8f0}
+.cc-bc-sep{margin:0 .3rem;opacity:.4}
+.cc-bc-cur{color:rgba(232,228,240,.75)}
+.cc-chapter-nav{display:flex;gap:.4rem;flex-shrink:0}
+.cc-btn-nav{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.3rem .7rem;font-size:.72rem;font-weight:600;color:rgba(232,228,240,.6);cursor:pointer;font-family:inherit;transition:all .15s;text-decoration:none;display:inline-flex;align-items:center;gap:.3rem}
+.cc-btn-nav:hover{background:rgba(255,255,255,.12);border-color:rgba(200,184,240,.3);color:#c8b8f0}
+.cc-btn-nav:disabled,.cc-btn-nav[disabled]{opacity:.3;cursor:not-allowed;pointer-events:none}
+
+/* ── Toolbar ── */
+.cc-toolbar{display:flex;align-items:center;gap:.5rem;padding:.4rem .8rem;background:rgba(19,17,26,.4);border-bottom:1px solid rgba(255,255,255,.05);flex-shrink:0;position:relative;z-index:5}
+.cc-tool-btn{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:.28rem .65rem;font-size:.72rem;font-weight:600;color:rgba(232,228,240,.6);cursor:pointer;font-family:inherit;transition:all .15s;display:inline-flex;align-items:center;gap:.3rem}
+.cc-tool-btn:hover{background:rgba(255,255,255,.12);border-color:rgba(200,184,240,.3);color:#c8b8f0}
+.cc-tool-btn.active{background:rgba(var(--acc-rgb),.16);border-color:rgba(var(--acc-rgb),.35);color:var(--acc)}
+.cc-sep{width:1px;height:1.1rem;background:rgba(255,255,255,.09);flex-shrink:0}
+.cc-chapter-label{font-family:'DM Serif Display',serif;font-size:.88rem;color:rgba(var(--acc-rgb),1);margin-left:auto}
+
+/* ── SVG canvas ── */
+.cc-canvas-wrap{flex:1;min-height:0;position:relative;overflow:hidden;cursor:grab}
+.cc-canvas-wrap:active{cursor:grabbing}
+#cc-svg{width:100%;height:100%;display:block;position:relative;z-index:1}
+
+/* ── Loading / error overlay ── */
+.cc-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:.88rem;color:rgba(232,228,240,.45);z-index:10;pointer-events:none}
+.cc-overlay.hidden{display:none}
+
+/* ── Tooltip ── */
+#cc-tooltip{position:fixed;z-index:500;background:rgba(22,18,32,.97);border:1px solid rgba(200,184,240,.2);border-radius:10px;padding:.6rem .85rem;font-size:.78rem;max-width:260px;line-height:1.55;pointer-events:none;opacity:0;transition:opacity .15s;box-shadow:0 8px 24px rgba(0,0,0,.45)}
+#cc-tooltip.vis{opacity:1}
+#cc-tooltip-label{font-weight:700;color:#e8e4f0;margin-bottom:.25rem;font-size:.82rem}
+#cc-tooltip-def{color:rgba(232,228,240,.65)}
+
+/* ── Side panel ── */
+#cc-panel{position:fixed;top:0;right:0;bottom:0;width:300px;max-width:100vw;background:rgba(22,18,32,.97);border-left:1px solid rgba(200,184,240,.15);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);display:flex;flex-direction:column;transform:translateX(100%);transition:transform .25s cubic-bezier(.4,0,.2,1);z-index:300;overflow:hidden}
+#cc-panel.open{transform:translateX(0)}
+.cc-panel-head{display:flex;align-items:flex-start;gap:.5rem;padding:.9rem 1rem;border-bottom:1px solid rgba(255,255,255,.07);flex-shrink:0}
+.cc-panel-head-badge{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.18rem .55rem;border-radius:20px;background:rgba(var(--acc-rgb),.16);color:var(--acc);border:1px solid rgba(var(--acc-rgb),.25);flex-shrink:0}
+.cc-panel-title{flex:1;font-family:'DM Serif Display',serif;font-size:1.02rem;color:#e8e4f0;margin:0;line-height:1.3}
+#cc-panel-close{background:none;border:none;cursor:pointer;color:rgba(232,228,240,.35);padding:.2rem;border-radius:5px;transition:color .15s;line-height:1;flex-shrink:0}
+#cc-panel-close:hover{color:#e8e4f0}
+#cc-panel-close svg{width:1rem;height:1rem;display:block}
+.cc-panel-body{flex:1;overflow-y:auto;padding:1rem}
+.cc-panel-section{margin-bottom:1.1rem}
+.cc-panel-section-label{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(var(--acc-rgb),.7);margin-bottom:.45rem}
+.cc-panel-def{font-size:.85rem;line-height:1.7;color:rgba(232,228,240,.85)}
+.cc-panel-examples{list-style:none;padding:0;margin:0}
+.cc-panel-examples li{font-size:.82rem;line-height:1.6;color:rgba(232,228,240,.65);padding:.2rem 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.cc-panel-examples li::before{content:'→ ';color:rgba(var(--acc-rgb),.6)}
+.cc-panel-examples li:last-child{border:none}
+.cc-panel-note{font-size:.78rem;line-height:1.65;color:rgba(232,228,240,.5);background:rgba(255,255,255,.04);border-left:2px solid rgba(var(--acc-rgb),.35);border-radius:0 6px 6px 0;padding:.5rem .75rem}
+.cc-panel-links{display:flex;flex-direction:column;gap:.4rem}
+.cc-panel-link{display:flex;align-items:center;gap:.45rem;padding:.5rem .8rem;background:rgba(var(--acc-rgb),.1);border:1px solid rgba(var(--acc-rgb),.18);border-radius:9px;color:var(--acc);font-size:.78rem;font-weight:600;text-decoration:none;transition:background .15s}
+.cc-panel-link:hover{background:rgba(var(--acc-rgb),.2)}
+.cc-panel-link svg{width:.85rem;height:.85rem;flex-shrink:0}
+
+/* ── Mobile tree list (≤599px) ── */
+@media(max-width:599px){
+  .cc-canvas-wrap{display:none}
+  .cc-mobile-list{display:block}
+  #cc-panel{width:100%;border-left:none;border-top:1px solid rgba(200,184,240,.15);top:auto;height:62vh;transform:translateY(100%)}
+  #cc-panel.open{transform:translateY(0)}
+}
+@media(min-width:600px){
+  .cc-mobile-list{display:none}
+}
+
+/* ── Mobile list styles ── */
+.cc-mobile-list{flex:1;overflow-y:auto;padding:1rem;position:relative;z-index:1}
+.cc-ml-node{padding:.5rem .75rem .5rem calc(.75rem + var(--depth,0)*1.2rem);border-left:2px solid transparent;cursor:pointer;transition:background .12s;border-radius:6px;margin-bottom:.1rem}
+.cc-ml-node:hover{background:rgba(255,255,255,.06)}
+.cc-ml-node.depth-0{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--acc);border-left-color:var(--acc);font-weight:400;margin-bottom:.4rem}
+.cc-ml-node.depth-1{font-size:.88rem;font-weight:700;color:#e8e4f0;border-left-color:rgba(var(--acc-rgb),.4)}
+.cc-ml-node.depth-2{font-size:.83rem;color:rgba(232,228,240,.8)}
+.cc-ml-node.depth-3{font-size:.8rem;color:rgba(232,228,240,.6)}
+
+/* ── Print ── */
+@media print{
+  body{overflow:visible;height:auto}
+  .cc-toolbar,.cc-chapter-nav,.cc-nav,.bap-navbar,#bap-nav,#cc-panel,#cc-tooltip,
+  .cc-tool-btn,.cc-canvas-wrap{display:none!important}
+  .cc-mobile-list{display:block!important;padding:0}
+}
+
+/* ── Light theme ── */
+[data-theme="light"] body{background:#f0ecfa;color:#2d2540}
+[data-theme="light"] .cc-nav,[data-theme="light"] .cc-toolbar{background:rgba(240,236,250,.7);border-color:rgba(120,100,180,.1)}
+[data-theme="light"] .cc-bc{color:rgba(45,37,64,.45)}
+[data-theme="light"] .cc-bc a{color:#7c6cc0}
+[data-theme="light"] .cc-bc-cur{color:rgba(45,37,64,.75)}
+[data-theme="light"] .cc-tool-btn{background:rgba(0,0,0,.04);border-color:rgba(0,0,0,.09);color:rgba(45,37,64,.6)}
+[data-theme="light"] .cc-tool-btn:hover{background:rgba(0,0,0,.08);color:#7c6cc0}
+[data-theme="light"] .cc-tool-btn.active{background:rgba(124,108,192,.12);border-color:rgba(124,108,192,.3);color:#7c6cc0}
+[data-theme="light"] #cc-tooltip{background:rgba(245,242,255,.97);border-color:rgba(124,108,192,.2);color:#2d2540}
+[data-theme="light"] #cc-tooltip-label{color:#2d2540}
+[data-theme="light"] #cc-tooltip-def{color:rgba(45,37,64,.65)}
+[data-theme="light"] #cc-panel{background:rgba(244,241,252,.98);border-left-color:rgba(124,108,192,.15)}
+[data-theme="light"] .cc-panel-title{color:#2d2540}
+[data-theme="light"] .cc-panel-def{color:rgba(45,37,64,.85)}
+[data-theme="light"] .cc-panel-examples li{color:rgba(45,37,64,.65);border-bottom-color:rgba(0,0,0,.05)}
+[data-theme="light"] .cc-panel-note{color:rgba(45,37,64,.55);background:rgba(0,0,0,.03)}
+[data-theme="light"] .cc-mobile-list{background:#f0ecfa}
+[data-theme="light"] .cc-ml-node:hover{background:rgba(0,0,0,.05)}
+[data-theme="light"] .cc-ml-node.depth-1{color:#2d2540}
+[data-theme="light"] .cc-ml-node.depth-2{color:rgba(45,37,64,.75)}
+[data-theme="light"] .cc-ml-node.depth-3{color:rgba(45,37,64,.55)}
+</style>
+</head>
+<body>
+<script src="assets/js/icons.js"></script>
+<div id="bap-nav"></div>
+
+<!-- Nav strip -->
+<div class="cc-nav" id="cc-nav">
+  <span class="cc-bc" id="cc-bc">
+    <a href="index.html">Accueil</a><span class="cc-bc-sep">›</span>
+    <a href="carte_mentale.html">Cartes mentales</a><span class="cc-bc-sep">›</span>
+    <span class="cc-bc-cur" id="cc-bc-cur">…</span>
+  </span>
+  <div class="cc-chapter-nav">
+    <button class="cc-btn-nav" id="cc-btn-prev" disabled>← Préc.</button>
+    <button class="cc-btn-nav" id="cc-btn-next" disabled>Suiv. →</button>
+  </div>
+</div>
+
+<!-- Toolbar -->
+<div class="cc-toolbar">
+  <button class="cc-tool-btn" id="cc-btn-reset" title="Recentrer la vue">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 3l-7 7m0 0l7-7m-7 7l3.5 10.5M3 21l7-7m0 0L3 21m7-7l-3.5-10.5"/></svg>Recentrer
+  </button>
+  <button class="cc-tool-btn" id="cc-btn-expand">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>Tout réduire
+  </button>
+  <span class="cc-sep"></span>
+  <span class="cc-chapter-label" id="cc-chapter-label"></span>
+</div>
+
+<!-- SVG canvas -->
+<div class="cc-canvas-wrap" id="cc-canvas-wrap">
+  <div class="cc-overlay" id="cc-overlay">Chargement…</div>
+  <svg id="cc-svg" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="cc-glow" x="-60%" y="-60%" width="220%" height="220%">
+        <feGaussianBlur stdDeviation="4" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+    <g id="cc-root-g"></g>
+  </svg>
+</div>
+
+<!-- Mobile tree list -->
+<div class="cc-mobile-list" id="cc-mobile-list">
+  <div style="color:rgba(232,228,240,.4);padding:1rem;font-size:.82rem">Chargement…</div>
+</div>
+
+<!-- Tooltip -->
+<div id="cc-tooltip">
+  <div id="cc-tooltip-label"></div>
+  <div id="cc-tooltip-def"></div>
+</div>
+
+<!-- Side panel -->
+<div id="cc-panel">
+  <div class="cc-panel-head">
+    <span class="cc-panel-head-badge" id="cc-panel-badge">D?</span>
+    <h2 class="cc-panel-title" id="cc-panel-title"></h2>
+    <button id="cc-panel-close" title="Fermer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="cc-panel-body" id="cc-panel-body"></div>
+</div>
+
+<script src="assets/js/common.js"></script>
+<script src="notes.js"></script>
+<script>
+(function(){
+'use strict';
+
+/* ── Chapter order ── */
+var CHAPTERS_ORDER = ['D0','D1','D2','D3','D4','D5','D6','D7','D8','D9','D10'];
+
+/* ── Parse URL param ── */
+var chId = (location.search.match(/[?&]ch=([^&]+)/) || [])[1] || 'D0';
+
+/* ── State ── */
+var DATA = null;
+var CHAPTER = null;
+var collapsed = {};   // nodeId → boolean (true = collapsed)
+var allExpanded = true;
+
+/* ── Pan/zoom state ── */
+var pan = {x:0, y:0};
+var zoom = 1;
+var dragging = false;
+var dragStart = {x:0, y:0};
+var panStart  = {x:0, y:0};
+
+/* ── Layout constants ── */
+var LX_STEP  = 210;  // horizontal distance between levels
+var LY_GAP   = 46;   // vertical minimum gap between leaf nodes
+var NODE_R0  = 30;   // root node radius
+var NODE_R1  = 22;   // level-1 radius
+var NODE_R2  = 16;   // level-2+ radius
+var ROOT_X   = 100;  // root x position in SVG space
+
+/* ── DOM refs ── */
+var svg       = document.getElementById('cc-svg');
+var rootG     = document.getElementById('cc-root-g');
+var overlay   = document.getElementById('cc-overlay');
+var tooltip   = document.getElementById('cc-tooltip');
+var ttLabel   = document.getElementById('cc-tooltip-label');
+var ttDef     = document.getElementById('cc-tooltip-def');
+var panel     = document.getElementById('cc-panel');
+var panelTitle= document.getElementById('cc-panel-title');
+var panelBadge= document.getElementById('cc-panel-badge');
+var panelBody = document.getElementById('cc-panel-body');
+var canvasWrap= document.getElementById('cc-canvas-wrap');
+var mobileList= document.getElementById('cc-mobile-list');
+var btnReset  = document.getElementById('cc-btn-reset');
+var btnExpand = document.getElementById('cc-btn-expand');
+var btnPrev   = document.getElementById('cc-btn-prev');
+var btnNext   = document.getElementById('cc-btn-next');
+var bcCur     = document.getElementById('cc-bc-cur');
+var chLabel   = document.getElementById('cc-chapter-label');
+
+/* ── Fetch data ── */
+fetch('assets/data/cartes_mentales.json')
+  .then(function(r){ return r.json(); })
+  .then(function(data){
+    DATA = data;
+    var ch = data.chapters.find(function(c){ return c.id === chId; });
+    if (!ch || !ch.available || !ch.tree) {
+      showOverlay('Chapitre non disponible. <a href="carte_mentale.html" style="color:#c8b8f0">Retour au hub →</a>');
+      return;
+    }
+    CHAPTER = ch;
+    applyChapterAccent(ch);
+    updateNav(data.chapters, ch);
+    renderMobile(ch.tree, mobileList);
+    renderSVG(ch.tree);
+    hideOverlay();
+  })
+  .catch(function(e){
+    showOverlay('Impossible de charger les données.');
+  });
+
+/* ── Accent color ── */
+function applyChapterAccent(ch) {
+  document.documentElement.style.setProperty('--acc', ch.color);
+  var rgb = hexToRgb(ch.color);
+  if (rgb) document.documentElement.style.setProperty('--acc-rgb', rgb);
+  bcCur.textContent = ch.id + ' — ' + ch.title;
+  chLabel.textContent = ch.id + ' — ' + ch.title;
+  document.title = ch.id + ' — ' + ch.title + ' · Bapotique';
+  panelBadge.textContent = ch.id;
+  panelBadge.style.background = 'rgba(' + (hexToRgb(ch.color)||'200,184,240') + ',.16)';
+  panelBadge.style.color = ch.color;
+  panelBadge.style.borderColor = ch.color + '40';
+}
+
+function hexToRgb(hex) {
+  var r = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return r ? [parseInt(r[1],16),parseInt(r[2],16),parseInt(r[3],16)].join(',') : null;
+}
+
+/* ── Nav prev/next ── */
+function updateNav(chapters, current) {
+  var avail = chapters.filter(function(c){ return c.available; });
+  var idx = avail.findIndex(function(c){ return c.id === current.id; });
+  if (idx > 0) {
+    btnPrev.removeAttribute('disabled');
+    btnPrev.onclick = function(){ location.href = 'carte_chapitre.html?ch=' + avail[idx-1].id; };
+    btnPrev.textContent = '← ' + avail[idx-1].id;
+  }
+  if (idx < avail.length - 1) {
+    btnNext.removeAttribute('disabled');
+    btnNext.onclick = function(){ location.href = 'carte_chapitre.html?ch=' + avail[idx+1].id; };
+    btnNext.textContent = avail[idx+1].id + ' →';
+  }
+}
+
+/* ── Overlay helpers ── */
+function showOverlay(msg) { overlay.innerHTML = msg; overlay.classList.remove('hidden'); }
+function hideOverlay() { overlay.classList.add('hidden'); }
+
+/* ─────────────────────────────────────────────────────── SVG Tree ── */
+
+/* Recursive layout: assigns .x .y .subtreeH to each node */
+function layoutTree(node, depth, yOffset) {
+  node._depth = depth;
+  var isLeaf = !node.children || node.children.length === 0 || collapsed[node.id];
+  if (isLeaf) {
+    node._x = ROOT_X + depth * LX_STEP;
+    node._y = yOffset + LY_GAP / 2;
+    node._h = LY_GAP;
+    return LY_GAP;
+  }
+  var y = yOffset;
+  var totalH = 0;
+  node.children.forEach(function(child){
+    var h = layoutTree(child, depth + 1, y);
+    y += h;
+    totalH += h;
+  });
+  node._x = ROOT_X + depth * LX_STEP;
+  node._y = (node.children[0]._y + node.children[node.children.length-1]._y) / 2;
+  node._h = totalH;
+  return totalH;
+}
+
+function getNodeR(depth) {
+  if (depth === 0) return NODE_R0;
+  if (depth === 1) return NODE_R1;
+  return NODE_R2;
+}
+
+function getNodeFontSize(depth) {
+  if (depth === 0) return 13;
+  if (depth === 1) return 11;
+  return 10;
+}
+
+function wrapLabel(label, maxW, fontSize) {
+  var words = label.split(' ');
+  var lines = [];
+  var cur = '';
+  words.forEach(function(w){
+    var test = cur ? cur + ' ' + w : w;
+    if (test.length * fontSize * 0.55 > maxW && cur) {
+      lines.push(cur);
+      cur = w;
+    } else {
+      cur = test;
+    }
+  });
+  if (cur) lines.push(cur);
+  return lines;
+}
+
+function renderSVG(tree) {
+  rootG.innerHTML = '';
+
+  var totalH = layoutTree(tree, 0, 0);
+
+  /* SVG viewport */
+  var W = canvasWrap.offsetWidth || 800;
+  var H = canvasWrap.offsetHeight || 600;
+
+  /* Center vertically on initial render */
+  pan.x = 40;
+  pan.y = H / 2 - totalH / 2;
+  zoom = 1;
+  applyTransform();
+
+  drawTree(tree, null);
+}
+
+function drawTree(node, parent) {
+  var depth = node._depth;
+  var r = getNodeR(depth);
+  var fontSize = getNodeFontSize(depth);
+  var acc = getComputedStyle(document.documentElement).getPropertyValue('--acc').trim() || '#c8b8f0';
+
+  /* Colors by depth */
+  var fillOpacity = depth === 0 ? 0.22 : depth === 1 ? 0.14 : 0.09;
+  var strokeOpacity = depth === 0 ? 0.9 : depth === 1 ? 0.65 : 0.45;
+
+  /* Edge from parent */
+  if (parent !== null) {
+    var e = document.createElementNS('http://www.w3.org/2000/svg','path');
+    var px = parent._x, py = parent._y;
+    var nx = node._x,   ny = node._y;
+    var mx = (px + r) + (nx - px) * 0.45;
+    e.setAttribute('d', 'M' + (px+r) + ',' + py + ' C' + mx + ',' + py + ' ' + mx + ',' + ny + ' ' + (nx-r) + ',' + ny);
+    e.setAttribute('fill','none');
+    e.setAttribute('stroke', acc);
+    e.setAttribute('stroke-opacity', depth === 1 ? '0.45' : '0.28');
+    e.setAttribute('stroke-width', depth === 1 ? '1.5' : '1');
+    rootG.appendChild(e);
+  }
+
+  /* Node group */
+  var g = document.createElementNS('http://www.w3.org/2000/svg','g');
+  g.setAttribute('class','cc-node');
+  g.style.cursor = 'pointer';
+
+  /* Glow circle (depth 0 and 1 only) */
+  if (depth <= 1) {
+    var glowC = document.createElementNS('http://www.w3.org/2000/svg','circle');
+    glowC.setAttribute('cx', node._x); glowC.setAttribute('cy', node._y);
+    glowC.setAttribute('r', r * 1.5);
+    glowC.setAttribute('fill', acc);
+    glowC.setAttribute('opacity', '0.06');
+    g.appendChild(glowC);
+  }
+
+  /* Main circle */
+  var c = document.createElementNS('http://www.w3.org/2000/svg','circle');
+  c.setAttribute('cx', node._x); c.setAttribute('cy', node._y);
+  c.setAttribute('r', r);
+  c.setAttribute('fill', acc);
+  c.setAttribute('fill-opacity', fillOpacity);
+  c.setAttribute('stroke', acc);
+  c.setAttribute('stroke-opacity', strokeOpacity);
+  c.setAttribute('stroke-width', depth === 0 ? '2' : '1.5');
+  g.appendChild(c);
+
+  /* Collapse indicator (if has children) */
+  if (node.children && node.children.length > 0) {
+    var dot = document.createElementNS('http://www.w3.org/2000/svg','circle');
+    dot.setAttribute('cx', node._x + r - 4); dot.setAttribute('cy', node._y - r + 4);
+    dot.setAttribute('r', '3.5');
+    dot.setAttribute('fill', acc);
+    dot.setAttribute('opacity', collapsed[node.id] ? '0.9' : '0.4');
+    g.appendChild(dot);
+  }
+
+  /* Label */
+  var maxW = (LX_STEP - r * 2 - 10) * (depth === 0 ? 1.6 : 1);
+  var lines = wrapLabel(node.label, maxW, fontSize);
+  var lineH = fontSize * 1.3;
+  var totalTH = lineH * lines.length;
+  lines.forEach(function(line, i){
+    var t = document.createElementNS('http://www.w3.org/2000/svg','text');
+    t.setAttribute('x', node._x);
+    t.setAttribute('y', node._y - totalTH/2 + lineH * i + lineH * 0.8);
+    t.setAttribute('text-anchor', 'middle');
+    t.setAttribute('font-family', depth === 0 ? "'DM Serif Display',serif" : "'DM Sans',sans-serif");
+    t.setAttribute('font-size', fontSize);
+    t.setAttribute('font-weight', depth <= 1 ? '700' : '500');
+    t.setAttribute('fill', '#e8e4f0');
+    t.setAttribute('fill-opacity', depth === 0 ? '0.95' : depth === 1 ? '0.88' : '0.72');
+    t.setAttribute('pointer-events','none');
+    t.textContent = line;
+    g.appendChild(t);
+  });
+
+  /* Events */
+  (function(n){
+    g.addEventListener('mouseenter', function(e){ showTooltip(e, n); });
+    g.addEventListener('mousemove',  function(e){ moveTooltip(e); });
+    g.addEventListener('mouseleave', function(){  hideTooltip(); });
+    g.addEventListener('click',      function(e){ e.stopPropagation(); handleNodeClick(n); });
+  })(node);
+
+  rootG.appendChild(g);
+
+  /* Recurse children if not collapsed */
+  if (!collapsed[node.id] && node.children) {
+    node.children.forEach(function(child){ drawTree(child, node); });
+  }
+}
+
+function redraw() {
+  if (!CHAPTER || !CHAPTER.tree) return;
+  rootG.innerHTML = '';
+  layoutTree(CHAPTER.tree, 0, 0);
+  drawTree(CHAPTER.tree, null);
+}
+
+function handleNodeClick(node) {
+  if (node.children && node.children.length > 0 && node._depth > 0) {
+    collapsed[node.id] = !collapsed[node.id];
+    redraw();
+  }
+  openPanel(node);
+}
+
+/* ── Pan / Zoom ── */
+function applyTransform() {
+  rootG.setAttribute('transform', 'translate(' + pan.x + ',' + pan.y + ') scale(' + zoom + ')');
+}
+
+canvasWrap.addEventListener('mousedown', function(e){
+  if (e.target === canvasWrap || e.target === svg) {
+    dragging = true;
+    dragStart = {x: e.clientX, y: e.clientY};
+    panStart  = {x: pan.x, y: pan.y};
+    e.preventDefault();
+  }
+});
+window.addEventListener('mousemove', function(e){
+  if (!dragging) return;
+  pan.x = panStart.x + (e.clientX - dragStart.x);
+  pan.y = panStart.y + (e.clientY - dragStart.y);
+  applyTransform();
+});
+window.addEventListener('mouseup', function(){ dragging = false; });
+
+canvasWrap.addEventListener('wheel', function(e){
+  e.preventDefault();
+  var rect = canvasWrap.getBoundingClientRect();
+  var cx = e.clientX - rect.left;
+  var cy = e.clientY - rect.top;
+  var delta = e.deltaY > 0 ? 0.9 : 1.1;
+  var newZoom = Math.min(3, Math.max(0.2, zoom * delta));
+  pan.x = cx - (cx - pan.x) * (newZoom / zoom);
+  pan.y = cy - (cy - pan.y) * (newZoom / zoom);
+  zoom = newZoom;
+  applyTransform();
+}, {passive: false});
+
+/* Touch pan/zoom */
+var touches = {};
+canvasWrap.addEventListener('touchstart', function(e){
+  e.preventDefault();
+  Array.from(e.changedTouches).forEach(function(t){ touches[t.identifier] = {x:t.clientX,y:t.clientY}; });
+  if (Object.keys(touches).length === 1) {
+    var k = Object.keys(touches)[0];
+    dragStart = {x: touches[k].x, y: touches[k].y};
+    panStart = {x: pan.x, y: pan.y};
+    dragging = true;
+  }
+},{passive:false});
+canvasWrap.addEventListener('touchmove', function(e){
+  e.preventDefault();
+  var ids = Object.keys(touches);
+  if (ids.length === 1 && dragging) {
+    var t = e.changedTouches[0];
+    pan.x = panStart.x + (t.clientX - dragStart.x);
+    pan.y = panStart.y + (t.clientY - dragStart.y);
+    applyTransform();
+  } else if (ids.length === 2) {
+    /* Pinch zoom */
+    var keys = Object.keys(touches);
+    var a = touches[keys[0]], b = touches[keys[1]];
+    var prevDist = Math.hypot(a.x - b.x, a.y - b.y);
+    var newTouches = Array.from(e.changedTouches);
+    newTouches.forEach(function(t){ touches[t.identifier] = {x:t.clientX,y:t.clientY}; });
+    a = touches[keys[0]]; b = touches[keys[1]];
+    var newDist = Math.hypot(a.x - b.x, a.y - b.y);
+    if (prevDist > 0) {
+      var delta = newDist / prevDist;
+      zoom = Math.min(3, Math.max(0.2, zoom * delta));
+      applyTransform();
+    }
+  }
+},{passive:false});
+canvasWrap.addEventListener('touchend', function(e){
+  Array.from(e.changedTouches).forEach(function(t){ delete touches[t.identifier]; });
+  if (Object.keys(touches).length === 0) dragging = false;
+},{passive:false});
+
+/* ── Reset / expand buttons ── */
+btnReset.addEventListener('click', function(){
+  if (!CHAPTER || !CHAPTER.tree) return;
+  var W = canvasWrap.offsetWidth || 800;
+  var H = canvasWrap.offsetHeight || 600;
+  layoutTree(CHAPTER.tree, 0, 0);
+  var totalH = CHAPTER.tree._h;
+  pan.x = 40; pan.y = H/2 - totalH/2; zoom = 1;
+  applyTransform();
+});
+
+btnExpand.addEventListener('click', function(){
+  allExpanded = !allExpanded;
+  collapsed = {};
+  if (!allExpanded) {
+    collapseAll(CHAPTER.tree);
+  }
+  btnExpand.innerHTML = (allExpanded
+    ? '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>Tout réduire'
+    : '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="4 14 10 14 10 20"/><polyline points="20 10 14 10 14 4"/><line x1="10" y1="14" x2="3" y2="21"/><line x1="21" y1="3" x2="14" y2="10"/></svg>Tout développer');
+  redraw();
+  btnReset.click();
+});
+
+function collapseAll(node) {
+  if (node.children && node.children.length > 0 && node._depth > 0) {
+    collapsed[node.id] = true;
+  }
+  if (node.children) node.children.forEach(collapseAll);
+}
+
+/* ── Tooltip ── */
+function showTooltip(e, node) {
+  ttLabel.textContent = node.label;
+  ttDef.textContent   = node.def || '';
+  tooltip.classList.add('vis');
+  moveTooltip(e);
+}
+function moveTooltip(e) {
+  var x = e.clientX + 14, y = e.clientY + 14;
+  if (x + 270 > window.innerWidth)  x = e.clientX - 280;
+  if (y + 100 > window.innerHeight) y = e.clientY - 90;
+  tooltip.style.left = x + 'px';
+  tooltip.style.top  = y + 'px';
+}
+function hideTooltip() { tooltip.classList.remove('vis'); }
+
+/* ── Panel ── */
+function openPanel(node) {
+  panelTitle.textContent = node.label;
+  var html = '';
+  if (node.def) {
+    html += '<div class="cc-panel-section"><div class="cc-panel-section-label">Définition</div>' +
+            '<div class="cc-panel-def">' + esc(node.def) + '</div></div>';
+  }
+  if (node.ex && node.ex.length) {
+    html += '<div class="cc-panel-section"><div class="cc-panel-section-label">Exemples</div>' +
+            '<ul class="cc-panel-examples">' + node.ex.map(function(e){ return '<li>' + esc(e) + '</li>'; }).join('') + '</ul></div>';
+  }
+  if (node.note) {
+    html += '<div class="cc-panel-section"><div class="cc-panel-note">' + esc(node.note) + '</div></div>';
+  }
+  if (CHAPTER) {
+    html += '<div class="cc-panel-section"><div class="cc-panel-section-label">Liens</div>' +
+            '<div class="cc-panel-links">' +
+              '<a class="cc-panel-link" href="flashcards.html">' +
+                '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 15l3-3 3 3 4-4"/></svg>Flashcards</a>' +
+              '<a class="cc-panel-link" href="polycop_cours.html">' +
+                '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>Polycopié cours</a>' +
+            '</div></div>';
+  }
+  panelBody.innerHTML = html;
+  panel.classList.add('open');
+}
+
+document.getElementById('cc-panel-close').addEventListener('click', function(){
+  panel.classList.remove('open');
+});
+canvasWrap.addEventListener('click', function(){
+  panel.classList.remove('open');
+  hideTooltip();
+});
+
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+/* ── Mobile list ── */
+function renderMobile(tree, container) {
+  var html = '';
+  function walk(node, depth) {
+    html += '<div class="cc-ml-node depth-' + Math.min(depth,3) + '" style="--depth:' + depth + '" ' +
+            'data-node-id="' + esc(node.id) + '">' + esc(node.label) + '</div>';
+    if (node.children) node.children.forEach(function(c){ walk(c, depth+1); });
+  }
+  walk(tree, 0);
+  container.innerHTML = html;
+  container.querySelectorAll('.cc-ml-node').forEach(function(el){
+    el.addEventListener('click', function(){
+      var id = el.getAttribute('data-node-id');
+      var node = findNode(CHAPTER.tree, id);
+      if (node) openPanel(node);
+    });
+  });
+}
+
+function findNode(tree, id) {
+  if (tree.id === id) return tree;
+  if (tree.children) {
+    for (var i=0;i<tree.children.length;i++){
+      var r = findNode(tree.children[i], id);
+      if (r) return r;
+    }
+  }
+  return null;
+}
+
+/* ── Print ── */
+window.addEventListener('beforeprint', function(){
+  if (CHAPTER) renderMobile(CHAPTER.tree, mobileList);
+  mobileList.style.display = 'block';
+});
+
+})();
+</script>
+</body>
+</html>
