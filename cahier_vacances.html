@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260720b');}());</script>
+<script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260720c');}());</script>
 <title>Cahier de vacances — Linguistique française UNIL 2025</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
@@ -162,13 +162,20 @@ tr:last-child td{border-bottom:none}
     background:#fff!important;font-size:10.5pt
   }
   /* .book disparaît du layout — ses enfants se posent directement sur le papier */
-  .book{display:contents!important}
-  /* chaque .page = une feuille A4 exacte, marges incluses */
+  .book{
+    display:contents!important;
+    /* fallback si display:contents non supporté en impression */
+    max-width:none!important;
+    width:100%!important;
+    padding:0!important;
+    margin:0!important
+  }
+  /* chaque .page = une feuille A4 exacte, marges incluses dans @page */
   .page{
     display:block!important;
     box-sizing:border-box!important;
-    width:210mm!important;max-width:none!important;
-    margin:0!important;padding:15mm 18mm!important;
+    width:100%!important;max-width:none!important;
+    margin:0!important;padding:0!important;
     min-height:auto!important;
     box-shadow:none!important;border-radius:0!important;
     page-break-after:always;break-after:page
@@ -181,7 +188,10 @@ tr:last-child td{border-bottom:none}
   .bap-tts-fab,.bap-tts-panel,
   .bap-notes-fab,.bap-notes-panel,
   .bap-pom-fab,.bap-pom-panel,
-  .divider-page{display:none!important}
+  .divider-page,.action-btn,
+  .subq-letter,.subq-text,.subq-pts,
+  .poster-lexeme{display:none!important}
+  .source-box-print ul{display:none!important}
 
   /* couvertures : fond blanc, texte foncé — économie d'encre */
   .cover{
@@ -216,7 +226,7 @@ tr:last-child td{border-bottom:none}
   .corr-item-print{border-left:3px solid var(--acc,#7c6cc0)!important}
   .mcq-opt{border:1px solid #ddd!important}
 }
-@page{size:A4;margin:0}
+@page{size:A4 portrait;margin:12mm 14mm}
 
 /* ── PRINT BUTTON ── */
 .print-btn{position:fixed;bottom:1.5rem;right:1.5rem;z-index:999;background:#7c6cc0;color:#fff;border:none;padding:.7rem 1.4rem;border-radius:50px;font-size:.85rem;font-weight:700;cursor:pointer;box-shadow:0 4px 18px rgba(124,108,192,.4);font-family:inherit;display:flex;align-items:center;gap:.4rem}
@@ -2916,13 +2926,6 @@ tr:last-child td{border-bottom:none}
   </div>
 </div>
 
-<!-- ══════════════ PAGE DE FIN ══════════════ -->
-<div class="page" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:297mm">
-  <div style="font-family:'DM Serif Display',serif;font-size:2.4rem;color:#7c6cc0;margin-bottom:1.2rem">Bon courage !</div>
-  <p style="font-size:.92rem;color:#5a5070;max-width:340px;line-height:1.85">Ce cahier couvre l'intégralité du programme de linguistique française UNIL 2025. Révise régulièrement, utilise les fiches de cours comme point d'appui, et consulte les corrigés seulement après avoir répondu.</p>
-  <div style="margin-top:2rem;width:60px;height:2px;background:#c8b8f0;border-radius:2px"></div>
-  <div style="margin-top:1.5rem;font-size:.72rem;color:#b0a8c8;letter-spacing:.06em">Linguistique française · UNIL 2025 · R. Mahrer</div>
-</div>
 
 </div><!-- /book -->
 
