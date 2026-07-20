@@ -848,12 +848,15 @@ function renderChapters(cards, sm2){
   let rows = '<div class="chapter-list">';
   for (const [name, {total, studied}] of sorted){
     const pct = total ? Math.round(studied/total*100) : 0;
+    const col = (typeof bapColorFromTheme === 'function') ? bapColorFromTheme(name) : null;
+    const dotStyle = col ? `display:inline-block;width:6px;height:6px;border-radius:50%;background:${col.c};opacity:.85;flex-shrink:0;margin-right:.3rem;margin-top:.18rem` : 'display:none';
+    const barStyle = col ? `width:${pct}%;background:linear-gradient(90deg,${col.c},${col.bd})` : `width:${pct}%`;
     rows += `<div class="ch-row">
       <div class="ch-top">
-        <div class="ch-name" title="${name}">${name}</div>
+        <div class="ch-name" title="${name}"><span style="${dotStyle}"></span>${name}</div>
         <div class="ch-count">${studied}&thinsp;/&thinsp;${total} <span style="opacity:.5">(${pct}%)</span></div>
       </div>
-      <div class="ch-bar-bg"><div class="ch-bar" style="width:${pct}%"></div></div>
+      <div class="ch-bar-bg"><div class="ch-bar" style="${barStyle}"></div></div>
     </div>`;
   }
   rows += '</div>';

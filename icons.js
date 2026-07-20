@@ -151,6 +151,8 @@
     if (tm) { var n=parseInt(tm[1]); return n===0?BAP_C[0]:n<=2?BAP_C[1]:n===3?BAP_C[2]:n<=6?BAP_C[3]:BAP_C[4]; }
     var dos = s.match(/dossier\s*(\d+)/); // Dossier 1…9
     if (dos) { var n=parseInt(dos[1]); return n===1?BAP_C[1]:n===2?BAP_C[2]:n<=5?BAP_C[3]:BAP_C[4]; }
+    var chm = s.match(/chapitre\s*(\d+)/); // Guide UNIL CHAPITRE N / Résumé Chapitre N
+    if (chm) { var n=parseInt(chm[1]); return n<=2?BAP_C[1]:n===3?BAP_C[2]:n<=7?BAP_C[3]:BAP_C[4]; }
     if (/intro|sémio|signe/.test(s)) return BAP_C[0];
     if (/phon|graphém/.test(s)) return BAP_C[1];
     if (/morph/.test(s)) return BAP_C[2];

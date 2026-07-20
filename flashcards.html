@@ -568,7 +568,9 @@ function renderCard() {
   if (chCol) { chBadge.style.color=chCol.c; chBadge.style.background=chCol.bg; chBadge.style.borderColor=chCol.bd; }
   else { chBadge.style.color=''; chBadge.style.background=''; chBadge.style.borderColor=''; }
   document.getElementById('fc-counter').textContent = `${state.index + 1} / ${total}`;
-  document.getElementById('fc-progress-bar').style.width = `${((state.index + 1) / total * 100).toFixed(1)}%`;
+  var pb = document.getElementById('fc-progress-bar');
+  pb.style.width = `${((state.index + 1) / total * 100).toFixed(1)}%`;
+  pb.style.background = chCol ? `linear-gradient(90deg,${chCol.c},${chCol.bd})` : '';
   if (state.flipped) wrap.classList.add('flipped'); else wrap.classList.remove('flipped');
   // fav star
   const favEl = document.getElementById('card-fav');
@@ -743,7 +745,9 @@ function renderAccordion() {
       const cnt = srcCards.filter(c => c.chapter === ch).length;
       const chActive = state.chapter === ch && state.source === src;
       const sCh = ch.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
-      return `<button class="filter-btn acc-chapter${chActive?' active':''}" onclick="accSelectChapter('${sSrc}','${sCh}',this)"><span class="acc-dot"></span>${ch.substring(0,35)}<span class="count">${cnt}</span></button>`;
+      const col = (typeof bapColorFromTheme === 'function') ? bapColorFromTheme(ch) : null;
+      const dotStyle = col ? ` style="background:${col.c};opacity:.85"` : '';
+      return `<button class="filter-btn acc-chapter${chActive?' active':''}" onclick="accSelectChapter('${sSrc}','${sCh}',this)"><span class="acc-dot"${dotStyle}></span>${ch.substring(0,35)}<span class="count">${cnt}</span></button>`;
     }).join('');
 
     return `<div class="acc-item" data-src="${src}">
