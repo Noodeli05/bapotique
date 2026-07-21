@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<script>(function(){var v='20260721a';if(!location.search.includes('v='+v))location.replace(location.pathname+'?v='+v);}());</script>
+<script>(function(){var v='20260721c';if(!location.search.includes('v='+v))location.replace(location.pathname+'?v='+v);}());</script>
 <title>Banque d'exercices — Linguistique UNIL 2025</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -228,6 +228,32 @@ body::before {
   border-radius: 4px; border: 1px solid rgba(255,255,255,.1);
 }
 
+/* ── Zone réponse ── */
+.bex-answer-wrap {
+  padding: 0 1.1rem .8rem;
+}
+.bex-answer-label {
+  font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em;
+  color: rgba(200,184,240,.6); margin-bottom: .4rem; display: block;
+}
+.bex-answer-textarea {
+  width: 100%; min-height: 80px; resize: vertical;
+  background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.12);
+  border-radius: 8px; padding: .6rem .8rem;
+  color: var(--tx); font-family: 'DM Sans', system-ui, sans-serif; font-size: .88rem; line-height: 1.6;
+  transition: border-color .15s, background .15s;
+  box-sizing: border-box;
+}
+.bex-answer-textarea:focus {
+  outline: none; border-color: rgba(200,184,240,.4); background: rgba(200,184,240,.05);
+}
+.bex-answer-textarea::placeholder { color: rgba(200,195,220,.3); }
+[data-theme="light"] .bex-answer-textarea {
+  background: rgba(120,100,180,.05); border-color: rgba(120,100,180,.2); color: #1a1525;
+}
+[data-theme="light"] .bex-answer-textarea:focus { border-color: rgba(120,100,180,.5); background: rgba(120,100,180,.08); }
+[data-theme="light"] .bex-answer-textarea::placeholder { color: rgba(60,45,110,.3); }
+
 /* ── Empty state ── */
 .bex-empty {
   text-align: center; padding: 3rem 1rem;
@@ -339,6 +365,13 @@ body::before {
   var filters = { dos: '', niv: '', typ: '' };
   var showNonAcquis = false, showAcquis = false;
   var openCorrige = {};
+  var answers = {};
+
+  function saveAnswers() {
+    document.querySelectorAll('.bex-answer-textarea').forEach(function(ta) {
+      if (ta.dataset.id) answers[ta.dataset.id] = ta.value;
+    });
+  }
 
   /* ── Chargement mastery ── */
   function loadMastery() {
@@ -397,6 +430,7 @@ body::before {
   }
 
   function renderList() {
+    saveAnswers();
     var filtered = applyFilters();
     var list = document.getElementById('bex-list');
     var count = document.getElementById('bex-count');
@@ -424,6 +458,10 @@ body::before {
           '</div>' +
         '</div>' +
         '<div class="bex-enonce">' + formatText(ex.enonce) + '</div>' +
+        '<div class="bex-answer-wrap">' +
+          '<label class="bex-answer-label" for="ans-' + ex.id + '">Ma réponse</label>' +
+          '<textarea class="bex-answer-textarea" id="ans-' + ex.id + '" data-id="' + ex.id + '" rows="3" placeholder="Écris ta réponse ici avant de regarder le corrigé…">' + esc(answers[ex.id] || '') + '</textarea>' +
+        '</div>' +
         '<div class="bex-actions">' +
           '<button class="bex-btn bex-btn-corrige" onclick="toggleCorrige(\'' + ex.id + '\')">' +
             (showC ? '↑ Masquer le corrigé' : '↓ Voir le corrigé') +
