@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<script>(function(){var v='20260721a';if(!location.search.includes('v='+v))location.replace(location.pathname+'?v='+v);}());</script>
+<title>Banque d'exercices — Linguistique UNIL 2025</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/common.css">
+<style>
+:root {
+  --bg: #13111a;
+  --card: rgba(255,255,255,0.06);
+  --bdr: rgba(255,255,255,0.10);
+  --tx: #e8e4f0;
+  --mu: rgba(200,195,220,0.65);
+  --lav: #c8b8f0;
+  --mint: #a8d8c4;
+  --sky: #a8c8f0;
+  --peach: #f0c8a8;
+  --rose: #f0a8c8;
+  --butter: #f0e0a8;
+  --sage: #b8d0a8;
+}
+[data-theme="light"] {
+  --bg: #f5f3f8;
+  --card: rgba(255,255,255,0.85);
+  --bdr: rgba(120,100,180,0.15);
+  --tx: #1a1525;
+  --mu: rgba(40,30,80,0.55);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--tx);
+  min-height: 100vh;
+  position: relative;
+}
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 20%, rgba(120,80,200,.12) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 80% 70%, rgba(80,140,200,.10) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 30% at 55% 45%, rgba(160,90,200,.07) 0%, transparent 70%);
+}
+
+.page-wrap { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; padding: 1.5rem 1.2rem 4rem; }
+
+/* ── Hero ── */
+.bex-hero { margin-bottom: 1.5rem; }
+.bex-hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  background: linear-gradient(90deg, var(--lav), var(--sky));
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: .35rem;
+}
+.bex-hero p { color: var(--mu); font-size: .9rem; }
+
+/* ── Stats bar ── */
+.bex-stats {
+  display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;
+  margin-bottom: 1.2rem;
+  padding: .75rem 1rem;
+  background: var(--card); border: 1px solid var(--bdr);
+  border-radius: 14px; backdrop-filter: blur(12px);
+}
+.bex-stat { font-size: .82rem; color: var(--mu); }
+.bex-stat strong { color: var(--tx); font-weight: 600; }
+.bex-stat-bar {
+  flex: 1; min-width: 120px; height: 6px;
+  background: rgba(255,255,255,.08); border-radius: 3px; overflow: hidden;
+}
+.bex-stat-fill {
+  height: 100%; border-radius: 3px;
+  background: linear-gradient(90deg, var(--lav), var(--mint));
+  transition: width .4s ease;
+}
+[data-theme="light"] .bex-stat-bar { background: rgba(120,100,180,.1); }
+
+/* ── Filtres ── */
+.bex-filters {
+  display: flex; flex-wrap: wrap; gap: .6rem; align-items: flex-start;
+  margin-bottom: 1.4rem;
+  padding: 1rem 1.1rem;
+  background: var(--card); border: 1px solid var(--bdr);
+  border-radius: 16px; backdrop-filter: blur(14px);
+}
+.bex-filter-group { display: flex; flex-wrap: wrap; gap: .3rem; align-items: center; }
+.bex-filter-label {
+  font-size: .68rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--mu); margin-right: .15rem;
+}
+.bex-chip {
+  font-size: .75rem; padding: .22rem .6rem; border-radius: 20px;
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
+  color: var(--mu); cursor: pointer; transition: background .15s, color .15s, border-color .15s;
+}
+.bex-chip:hover { background: rgba(200,184,240,.12); color: var(--tx); }
+.bex-chip.active {
+  background: rgba(200,184,240,.22); border-color: rgba(200,184,240,.5); color: var(--tx);
+}
+.bex-chip.active[data-dos="D0"] { background: rgba(200,184,240,.22); border-color: rgba(200,184,240,.5); }
+.bex-chip.active[data-dos="D1"] { background: rgba(168,200,240,.22); border-color: rgba(168,200,240,.5); }
+.bex-chip.active[data-dos="D2"] { background: rgba(168,216,196,.22); border-color: rgba(168,216,196,.5); }
+.bex-chip.active[data-dos="D3"] { background: rgba(240,200,168,.22); border-color: rgba(240,200,168,.5); }
+.bex-chip.active[data-dos="D4"] { background: rgba(240,168,200,.22); border-color: rgba(240,168,200,.5); }
+.bex-chip.active[data-dos="D5"] { background: rgba(200,220,168,.22); border-color: rgba(200,220,168,.5); }
+.bex-chip.active[data-niv="fondamental"] { background: rgba(168,216,196,.22); border-color: rgba(168,216,196,.5); }
+.bex-chip.active[data-niv="intermédiaire"] { background: rgba(240,224,168,.22); border-color: rgba(240,224,168,.5); }
+.bex-chip.active[data-niv="avancé"] { background: rgba(240,168,168,.22); border-color: rgba(240,168,168,.5); }
+.bex-divider { width: 1px; height: 1.5rem; background: rgba(255,255,255,.12); margin: 0 .2rem; }
+.bex-chip-toggle {
+  display: flex; align-items: center; gap: .3rem;
+}
+.bex-chip-toggle input[type=checkbox] { accent-color: var(--mint); }
+[data-theme="light"] .bex-chip { background: rgba(120,100,180,.07); border-color: rgba(120,100,180,.18); }
+[data-theme="light"] .bex-chip:hover { background: rgba(120,100,180,.15); color: #2a1f55; }
+[data-theme="light"] .bex-chip.active { background: rgba(120,100,180,.22); border-color: rgba(120,100,180,.5); color: #2a1f55; }
+
+/* ── Compteur ── */
+.bex-count { font-size: .8rem; color: var(--mu); margin-bottom: .9rem; }
+
+/* ── Exercice card ── */
+.bex-card {
+  background: var(--card); border: 1px solid var(--bdr);
+  border-radius: 18px; margin-bottom: 1rem; overflow: hidden;
+  transition: border-color .2s, box-shadow .2s;
+  position: relative;
+}
+.bex-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200,184,240,.18), transparent);
+  pointer-events: none;
+}
+.bex-card.acquis { border-color: rgba(168,216,196,.4); }
+.bex-card.acquis::before { background: linear-gradient(90deg, transparent, rgba(168,216,196,.25), transparent); }
+.bex-card:hover { border-color: rgba(200,184,240,.28); box-shadow: 0 4px 24px rgba(0,0,0,.2); }
+
+.bex-card-head {
+  display: flex; align-items: flex-start; gap: .7rem;
+  padding: .9rem 1.1rem .7rem; flex-wrap: wrap;
+}
+.bex-badges { display: flex; gap: .35rem; flex-wrap: wrap; align-items: center; margin-bottom: .2rem; }
+.bex-badge {
+  font-size: .65rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  padding: .12rem .45rem; border-radius: 10px;
+}
+.bex-badge-id {
+  background: rgba(200,184,240,.15); color: rgba(200,184,240,.9);
+  border: 1px solid rgba(200,184,240,.25); font-family: monospace; font-size: .72rem; font-weight: 600; text-transform: none;
+}
+.bex-badge-dos {
+  border: 1px solid rgba(255,255,255,.15); background: rgba(255,255,255,.08); color: var(--tx);
+}
+.badge-dos-d0 { background: rgba(200,184,240,.18); border-color: rgba(200,184,240,.35); color: rgba(220,210,255,.9); }
+.badge-dos-d1 { background: rgba(168,200,240,.18); border-color: rgba(168,200,240,.35); color: rgba(180,210,255,.9); }
+.badge-dos-d2 { background: rgba(168,216,196,.18); border-color: rgba(168,216,196,.35); color: rgba(180,230,210,.9); }
+.badge-dos-d3 { background: rgba(240,200,168,.18); border-color: rgba(240,200,168,.35); color: rgba(255,215,185,.9); }
+.badge-dos-d4 { background: rgba(240,168,200,.18); border-color: rgba(240,168,200,.35); color: rgba(255,185,215,.9); }
+.badge-dos-d5 { background: rgba(200,220,168,.18); border-color: rgba(200,220,168,.35); color: rgba(215,235,185,.9); }
+.badge-dos-d6 { background: rgba(240,224,168,.18); border-color: rgba(240,224,168,.35); color: rgba(255,235,185,.9); }
+.badge-dos-d7 { background: rgba(168,200,240,.18); border-color: rgba(168,200,240,.35); color: rgba(185,215,255,.9); }
+.badge-dos-d8 { background: rgba(200,168,240,.18); border-color: rgba(200,168,240,.35); color: rgba(215,185,255,.9); }
+.badge-dos-d9 { background: rgba(168,230,200,.18); border-color: rgba(168,230,200,.35); color: rgba(185,245,215,.9); }
+.badge-dos-d10 { background: rgba(240,200,168,.18); border-color: rgba(240,200,168,.35); color: rgba(255,215,185,.9); }
+.bex-badge-type { background: rgba(168,200,240,.12); color: rgba(168,200,240,.85); border: 1px solid rgba(168,200,240,.25); }
+.bex-badge-niv-f { background: rgba(168,216,196,.12); color: rgba(168,216,196,.85); border: 1px solid rgba(168,216,196,.25); }
+.bex-badge-niv-i { background: rgba(240,224,168,.12); color: rgba(240,224,168,.85); border: 1px solid rgba(240,224,168,.25); }
+.bex-badge-niv-a { background: rgba(240,168,168,.12); color: rgba(240,168,168,.85); border: 1px solid rgba(240,168,168,.25); }
+.bex-acquis-badge { background: rgba(168,216,196,.2); color: rgba(168,216,196,.9); border: 1px solid rgba(168,216,196,.35); }
+
+.bex-enonce {
+  padding: 0 1.1rem .8rem;
+  color: var(--tx); font-size: .92rem; line-height: 1.65;
+}
+.bex-enonce em { font-style: italic; color: var(--mu); }
+.bex-enonce strong { font-weight: 600; }
+.bex-enonce code {
+  font-family: 'Courier New', monospace; font-size: .88em;
+  background: rgba(255,255,255,.07); padding: .05em .3em;
+  border-radius: 4px; border: 1px solid rgba(255,255,255,.1);
+}
+
+.bex-actions {
+  display: flex; gap: .5rem; padding: 0 1.1rem 1rem; flex-wrap: wrap; align-items: center;
+}
+.bex-btn {
+  font-size: .8rem; font-weight: 500; padding: .38rem .85rem;
+  border-radius: 10px; border: 1px solid rgba(255,255,255,.15);
+  background: rgba(255,255,255,.07); color: var(--mu);
+  cursor: pointer; transition: background .15s, color .15s, border-color .15s;
+}
+.bex-btn:hover { background: rgba(200,184,240,.15); color: var(--tx); border-color: rgba(200,184,240,.3); }
+.bex-btn-corrige { border-color: rgba(168,200,240,.3); color: rgba(168,200,240,.8); }
+.bex-btn-corrige:hover { background: rgba(168,200,240,.15); color: rgba(168,200,240,.9); }
+.bex-btn-acquis { border-color: rgba(168,216,196,.3); color: rgba(168,216,196,.8); }
+.bex-btn-acquis:hover { background: rgba(168,216,196,.15); color: rgba(168,216,196,.9); }
+.bex-btn-acquis.is-acquis { background: rgba(168,216,196,.18); border-color: rgba(168,216,196,.5); color: rgba(168,216,196,.9); }
+.bex-btn-revoir { border-color: rgba(240,168,168,.3); color: rgba(240,168,168,.8); }
+.bex-btn-revoir:hover { background: rgba(240,168,168,.15); }
+
+.bex-corrige {
+  padding: .6rem 1.1rem 1rem; border-top: 1px solid rgba(255,255,255,.07);
+  background: rgba(168,200,240,.04);
+}
+.bex-corrige-title {
+  font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em;
+  color: rgba(168,200,240,.7); margin-bottom: .5rem;
+}
+.bex-corrige-body {
+  font-size: .88rem; line-height: 1.65; color: rgba(200,195,220,.85);
+  white-space: pre-wrap;
+}
+.bex-corrige-body strong { color: var(--tx); font-weight: 600; }
+.bex-corrige-body em { color: rgba(168,216,196,.85); font-style: normal; font-weight: 500; }
+.bex-corrige-body code {
+  font-family: 'Courier New', monospace; font-size: .88em;
+  background: rgba(255,255,255,.07); padding: .05em .3em;
+  border-radius: 4px; border: 1px solid rgba(255,255,255,.1);
+}
+
+/* ── Empty state ── */
+.bex-empty {
+  text-align: center; padding: 3rem 1rem;
+  color: var(--mu); font-size: .95rem;
+}
+.bex-empty-icon { font-size: 2.5rem; display: block; margin-bottom: .5rem; opacity: .5; }
+
+/* ── Loading ── */
+.bex-loading { text-align: center; padding: 3rem; color: var(--mu); }
+
+/* Light theme overrides */
+[data-theme="light"] .bex-card { background: rgba(255,255,255,.85); border-color: rgba(120,100,180,.15); }
+[data-theme="light"] .bex-card.acquis { border-color: rgba(80,160,120,.4); }
+[data-theme="light"] .bex-enonce { color: #1a1525; }
+[data-theme="light"] .bex-corrige { background: rgba(168,200,240,.05); border-color: rgba(120,100,180,.12); }
+[data-theme="light"] .bex-corrige-body { color: rgba(40,30,80,.8); }
+[data-theme="light"] .bex-btn { background: rgba(120,100,180,.07); border-color: rgba(120,100,180,.2); color: rgba(60,45,110,.7); }
+[data-theme="light"] .bex-btn:hover { background: rgba(120,100,180,.15); color: #2a1f55; }
+[data-theme="light"] .bex-badge-id { background: rgba(120,100,180,.1); color: #4a3a8a; border-color: rgba(120,100,180,.2); }
+[data-theme="light"] .bex-filters { background: rgba(255,255,255,.85); }
+[data-theme="light"] .bex-stats { background: rgba(255,255,255,.85); }
+
+@media (max-width: 640px) {
+  .bex-card-head { flex-direction: column; gap: .4rem; }
+  .bex-filters { gap: .4rem; }
+}
+</style>
+</head>
+<body>
+<script src="assets/js/common.js"></script>
+<script src="icons.js"></script>
+<div id="bap-nav"></div>
+
+<div class="page-wrap">
+  <div class="bex-hero">
+    <h1>🏋️ Banque d'exercices</h1>
+    <p>330 exercices · D0–D10 · Corrigés complets · Suivi de maîtrise</p>
+  </div>
+
+  <div class="bex-stats" id="bex-stats">
+    <div class="bex-stat"><strong id="stat-acquis">0</strong> / <strong id="stat-total">330</strong> acquis</div>
+    <div class="bex-stat-bar"><div class="bex-stat-fill" id="stat-bar" style="width:0%"></div></div>
+    <div class="bex-stat"><strong id="stat-pct">0 %</strong></div>
+    <div class="bex-stat">
+      <a href="#" id="btn-reset-all" style="font-size:.75rem;color:rgba(240,168,168,.7);text-decoration:none;" onclick="resetAll(event)">Tout réinitialiser</a>
+    </div>
+  </div>
+
+  <div class="bex-filters">
+    <div class="bex-filter-group">
+      <span class="bex-filter-label">Dossier</span>
+      <button class="bex-chip active" data-dos="">Tout</button>
+      <button class="bex-chip" data-dos="D0">D0</button>
+      <button class="bex-chip" data-dos="D1">D1</button>
+      <button class="bex-chip" data-dos="D2">D2</button>
+      <button class="bex-chip" data-dos="D3">D3</button>
+      <button class="bex-chip" data-dos="D4">D4</button>
+      <button class="bex-chip" data-dos="D5">D5</button>
+      <button class="bex-chip" data-dos="D6">D6</button>
+      <button class="bex-chip" data-dos="D7">D7</button>
+      <button class="bex-chip" data-dos="D8">D8</button>
+      <button class="bex-chip" data-dos="D9">D9</button>
+      <button class="bex-chip" data-dos="D10">D10</button>
+    </div>
+    <div class="bex-divider"></div>
+    <div class="bex-filter-group">
+      <span class="bex-filter-label">Niveau</span>
+      <button class="bex-chip active" data-niv="">Tout</button>
+      <button class="bex-chip" data-niv="fondamental">Fondamental</button>
+      <button class="bex-chip" data-niv="intermédiaire">Intermédiaire</button>
+      <button class="bex-chip" data-niv="avancé">Avancé</button>
+    </div>
+    <div class="bex-divider"></div>
+    <div class="bex-filter-group">
+      <span class="bex-filter-label">Type</span>
+      <button class="bex-chip active" data-typ="">Tout</button>
+      <button class="bex-chip" data-typ="identification">Identification</button>
+      <button class="bex-chip" data-typ="analyse">Analyse</button>
+      <button class="bex-chip" data-typ="transformation">Transformation</button>
+      <button class="bex-chip" data-typ="commutation">Commutation</button>
+      <button class="bex-chip" data-typ="segmentation">Segmentation</button>
+      <button class="bex-chip" data-typ="QCM">QCM</button>
+      <button class="bex-chip" data-typ="vrai/faux">Vrai/Faux</button>
+      <button class="bex-chip" data-typ="question ouverte">Question ouverte</button>
+      <button class="bex-chip" data-typ="correction d'erreur">Correction</button>
+      <button class="bex-chip" data-typ="cas limite">Cas limite</button>
+    </div>
+    <div class="bex-divider"></div>
+    <div class="bex-filter-group">
+      <label class="bex-chip bex-chip-toggle">
+        <input type="checkbox" id="toggle-non-acquis"> À revoir seulement
+      </label>
+      <label class="bex-chip bex-chip-toggle">
+        <input type="checkbox" id="toggle-acquis"> Acquis seulement
+      </label>
+    </div>
+  </div>
+
+  <div class="bex-count" id="bex-count"></div>
+  <div id="bex-list"><div class="bex-loading">Chargement des exercices…</div></div>
+</div>
+
+<script>
+(function() {
+  var DATA_URL = './assets/data/banque_exos.json';
+  var STORAGE_KEY = 'bap_exos_mastery';
+  var allExos = [];
+  var mastery = {};
+  var filters = { dos: '', niv: '', typ: '' };
+  var showNonAcquis = false, showAcquis = false;
+  var openCorrige = {};
+
+  /* ── Chargement mastery ── */
+  function loadMastery() {
+    try { mastery = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch(e) { mastery = {}; }
+  }
+  function saveMastery() {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(mastery)); } catch(e) {}
+  }
+
+  /* ── Stats ── */
+  function updateStats() {
+    var total = allExos.length || 330;
+    var acquis = Object.values(mastery).filter(function(v){ return v === 'acquis'; }).length;
+    var pct = total ? Math.round(acquis / total * 100) : 0;
+    document.getElementById('stat-acquis').textContent = acquis;
+    document.getElementById('stat-total').textContent = total;
+    document.getElementById('stat-pct').textContent = pct + ' %';
+    document.getElementById('stat-bar').style.width = pct + '%';
+  }
+
+  /* ── Filtres ── */
+  function applyFilters() {
+    return allExos.filter(function(ex) {
+      if (filters.dos && ex.dossier !== filters.dos) return false;
+      if (filters.niv && ex.niveau !== filters.niv) return false;
+      if (filters.typ && ex.type !== filters.typ) return false;
+      var st = mastery[ex.id] || 'neutre';
+      if (showNonAcquis && st === 'acquis') return false;
+      if (showAcquis && st !== 'acquis') return false;
+      return true;
+    });
+  }
+
+  /* ── Rendu ── */
+  function niv_class(n) {
+    if (n === 'fondamental') return 'bex-badge-niv-f';
+    if (n === 'intermédiaire') return 'bex-badge-niv-i';
+    return 'bex-badge-niv-a';
+  }
+  function niv_label(n) {
+    if (n === 'fondamental') return 'F';
+    if (n === 'intermédiaire') return 'I';
+    return 'A+';
+  }
+  function dos_badge_class(d) {
+    return 'badge-dos-' + d.toLowerCase();
+  }
+  function esc(s) {
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+  function formatText(s) {
+    return esc(s)
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*(.*?)\*/g, '<em>$1</em>')
+      .replace(/`(.*?)`/g, '<code>$1</code>');
+  }
+
+  function renderList() {
+    var filtered = applyFilters();
+    var list = document.getElementById('bex-list');
+    var count = document.getElementById('bex-count');
+    count.textContent = filtered.length + ' exercice' + (filtered.length > 1 ? 's' : '');
+
+    if (!filtered.length) {
+      list.innerHTML = '<div class="bex-empty"><span class="bex-empty-icon">🔍</span>Aucun exercice ne correspond aux filtres sélectionnés.</div>';
+      return;
+    }
+
+    list.innerHTML = filtered.map(function(ex) {
+      var st = mastery[ex.id] || 'neutre';
+      var isAcquis = st === 'acquis';
+      var showC = openCorrige[ex.id];
+      return '<div class="bex-card' + (isAcquis ? ' acquis' : '') + '" id="card-' + ex.id + '">' +
+        '<div class="bex-card-head">' +
+          '<div>' +
+            '<div class="bex-badges">' +
+              '<span class="bex-badge bex-badge-id">' + esc(ex.id) + '</span>' +
+              '<span class="bex-badge bex-badge-dos ' + dos_badge_class(ex.dossier) + '">' + esc(ex.dossier) + '</span>' +
+              '<span class="bex-badge bex-badge-type">' + esc(ex.type) + '</span>' +
+              '<span class="bex-badge ' + niv_class(ex.niveau) + '">' + niv_label(ex.niveau) + '</span>' +
+              (isAcquis ? '<span class="bex-badge bex-acquis-badge">✓ acquis</span>' : '') +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+        '<div class="bex-enonce">' + formatText(ex.enonce) + '</div>' +
+        '<div class="bex-actions">' +
+          '<button class="bex-btn bex-btn-corrige" onclick="toggleCorrige(\'' + ex.id + '\')">' +
+            (showC ? '↑ Masquer le corrigé' : '↓ Voir le corrigé') +
+          '</button>' +
+          '<button class="bex-btn bex-btn-acquis' + (isAcquis ? ' is-acquis' : '') + '" onclick="markAcquis(\'' + ex.id + '\')">' +
+            (isAcquis ? '✓ Acquis' : 'Marquer acquis') +
+          '</button>' +
+          (!isAcquis ? '' : '<button class="bex-btn bex-btn-revoir" onclick="markRevoir(\'' + ex.id + '\')">Remettre à revoir</button>') +
+        '</div>' +
+        (showC ? '<div class="bex-corrige"><div class="bex-corrige-title">Corrigé modèle</div><div class="bex-corrige-body">' + formatText(ex.corrige) + '</div></div>' : '') +
+      '</div>';
+    }).join('');
+  }
+
+  /* ── Actions ── */
+  window.toggleCorrige = function(id) {
+    openCorrige[id] = !openCorrige[id];
+    renderList();
+    var card = document.getElementById('card-' + id);
+    if (card) card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  };
+  window.markAcquis = function(id) {
+    mastery[id] = 'acquis';
+    saveMastery(); updateStats(); renderList();
+  };
+  window.markRevoir = function(id) {
+    delete mastery[id];
+    saveMastery(); updateStats(); renderList();
+  };
+  window.resetAll = function(e) {
+    e.preventDefault();
+    if (!confirm('Remettre tous les exercices à "à revoir" ?')) return;
+    mastery = {}; saveMastery(); updateStats(); renderList();
+  };
+
+  /* ── Init filtres ── */
+  function initFilters() {
+    document.querySelectorAll('.bex-chip[data-dos]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.bex-chip[data-dos]').forEach(function(b){ b.classList.remove('active'); });
+        btn.classList.add('active');
+        filters.dos = btn.dataset.dos;
+        renderList();
+      });
+    });
+    document.querySelectorAll('.bex-chip[data-niv]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.bex-chip[data-niv]').forEach(function(b){ b.classList.remove('active'); });
+        btn.classList.add('active');
+        filters.niv = btn.dataset.niv;
+        renderList();
+      });
+    });
+    document.querySelectorAll('.bex-chip[data-typ]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.bex-chip[data-typ]').forEach(function(b){ b.classList.remove('active'); });
+        btn.classList.add('active');
+        filters.typ = btn.dataset.typ;
+        renderList();
+      });
+    });
+    document.getElementById('toggle-non-acquis').addEventListener('change', function(e) {
+      showNonAcquis = e.target.checked;
+      if (showNonAcquis) { showAcquis = false; document.getElementById('toggle-acquis').checked = false; }
+      renderList();
+    });
+    document.getElementById('toggle-acquis').addEventListener('change', function(e) {
+      showAcquis = e.target.checked;
+      if (showAcquis) { showNonAcquis = false; document.getElementById('toggle-non-acquis').checked = false; }
+      renderList();
+    });
+  }
+
+  /* ── Bootstrap ── */
+  loadMastery();
+  initFilters();
+
+  fetch(DATA_URL)
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      allExos = data;
+      updateStats();
+      renderList();
+    })
+    .catch(function() {
+      document.getElementById('bex-list').innerHTML =
+        '<div class="bex-empty"><span class="bex-empty-icon">⚠️</span>Impossible de charger les exercices. Vérifiez votre connexion.</div>';
+    });
+})();
+</script>
+</body>
+</html>

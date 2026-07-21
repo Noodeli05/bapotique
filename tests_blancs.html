@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){var v='20260721b';if(!location.search.includes('v='+v))location.replace(location.pathname+'?v='+v);}());</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Tests Blancs — Linguistique UNIL 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#13111a; --bg2:#1c1827;
+  --glass:rgba(255,255,255,0.06); --glass-hover:rgba(255,255,255,0.10);
+  --border:rgba(255,255,255,0.10); --border-strong:rgba(255,255,255,0.18);
+  --lav:#c8b8f0; --lav-bg:rgba(200,184,240,0.12);
+  --mint:#a8d8c4; --mint-bg:rgba(168,216,196,0.10);
+  --peach:#f0c8a0; --peach-bg:rgba(240,200,160,0.12);
+  --sky:#a8c8f0; --sky-bg:rgba(168,200,240,0.10);
+  --rose:#f0b8c4; --rose-bg:rgba(240,184,196,0.10);
+  --butter:#f0e0a0; --butter-bg:rgba(240,224,160,0.10);
+  --sage:#b8d8b8; --sage-bg:rgba(184,216,184,0.10);
+  --tx:#e8e4f0; --tx-muted:rgba(232,228,240,0.55); --tx-faint:rgba(232,228,240,0.28);
+  --r-card:16px; --r-sm:10px;
+  --shadow:0 4px 24px rgba(0,0,0,.5);
+}
+[data-theme="light"] {
+  --bg:#f5f3f8; --bg2:#ece8f4;
+  --glass:rgba(255,255,255,0.70); --glass-hover:rgba(255,255,255,0.88);
+  --border:rgba(120,100,180,0.15); --border-strong:rgba(120,100,180,0.28);
+  --tx:#1a1525; --tx-muted:rgba(26,21,37,0.55); --tx-faint:rgba(26,21,37,0.30);
+  --lav:#7c6cc0; --lav-bg:rgba(120,100,180,0.10);
+  --mint:#3a9a76; --mint-bg:rgba(58,154,118,0.08);
+  --peach:#c07832; --peach-bg:rgba(192,120,50,0.08);
+  --sky:#3878c0; --sky-bg:rgba(56,120,192,0.08);
+  --rose:#c05878; --rose-bg:rgba(192,88,120,0.08);
+  --butter:#a08020; --butter-bg:rgba(160,128,32,0.08);
+  --sage:#5a9a5a; --sage-bg:rgba(90,154,90,0.08);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--tx);min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(ellipse 55% 45% at 10% 15%,rgba(200,184,240,0.18) 0%,transparent 65%),
+    radial-gradient(ellipse 50% 45% at 88% 80%,rgba(168,216,196,0.12) 0%,transparent 65%),
+    radial-gradient(ellipse 40% 35% at 55% 55%,rgba(168,200,240,0.10) 0%,transparent 65%);}
+
+/* ── Header ── */
+.site-header{position:relative;z-index:20;background:rgba(19,17,26,.88);padding:.75rem 1.25rem;display:flex;align-items:center;gap:.6rem;box-shadow:0 2px 16px rgba(0,0,0,.5);flex-wrap:nowrap;overflow-x:auto;backdrop-filter:blur(20px)}
+.site-header h1{font-family:'DM Serif Display',serif;font-size:1rem;color:#fff;flex-shrink:0;white-space:nowrap}
+.nav-links{display:flex;gap:.4rem;flex-wrap:nowrap}
+.nav-links a{color:rgba(232,228,240,.75);text-decoration:none;font-size:.78rem;padding:.28rem .56rem;border-radius:6px;transition:background .15s;white-space:nowrap}
+.nav-links a:hover{background:rgba(168,200,240,.22);color:#fff}
+.btn-icon{background:none;border:none;cursor:pointer;font-size:1.05rem;color:var(--tx-muted);padding:.3rem;border-radius:6px;transition:background .15s;flex-shrink:0}
+.btn-icon:hover{background:rgba(255,255,255,.1)}
+.ml-auto{margin-left:auto}
+
+/* ── Layout ── */
+.main-wrap{position:relative;z-index:1;flex:1;padding:2rem 1rem;display:flex;flex-direction:column;align-items:center}
+.screen{width:100%;max-width:900px}
+.hidden{display:none!important}
+
+/* ── Selection screen ── */
+.sel-hero{text-align:center;margin-bottom:2.5rem}
+.sel-hero h2{font-family:'DM Serif Display',serif;font-size:2rem;background:linear-gradient(135deg,var(--lav),var(--mint));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.5rem}
+.sel-hero p{color:var(--tx-muted);font-size:.95rem;max-width:520px;margin:0 auto}
+.sel-hero .badge-row{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-top:1rem}
+.badge{display:inline-flex;align-items:center;gap:.3rem;font-size:.75rem;font-weight:600;padding:.25rem .65rem;border-radius:20px;border:1px solid var(--border)}
+.badge-lav{background:var(--lav-bg);color:var(--lav);border-color:rgba(200,184,240,.2)}
+.badge-mint{background:var(--mint-bg);color:var(--mint);border-color:rgba(168,216,196,.2)}
+.badge-peach{background:var(--peach-bg);color:var(--peach);border-color:rgba(240,200,160,.2)}
+
+.test-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+.test-card{background:var(--glass);border:1px solid var(--border);border-radius:var(--r-card);padding:1.4rem;cursor:pointer;transition:background .2s,border-color .2s,transform .15s;position:relative;overflow:hidden}
+.test-card::before{content:'';position:absolute;inset:0 0 auto 0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent)}
+.test-card:hover{background:var(--glass-hover);border-color:var(--border-strong);transform:translateY(-2px)}
+.test-card-num{font-family:'DM Serif Display',serif;font-size:2.5rem;font-weight:400;line-height:1;margin-bottom:.4rem}
+.test-card-title{font-weight:600;font-size:.95rem;margin-bottom:.25rem}
+.test-card-sub{font-size:.78rem;color:var(--tx-muted);margin-bottom:1rem}
+.test-card-meta{display:flex;gap:.5rem;flex-wrap:wrap}
+.meta-pill{font-size:.72rem;font-weight:500;padding:.2rem .5rem;border-radius:20px;background:rgba(255,255,255,.07);border:1px solid var(--border)}
+.btn-start-test{display:inline-flex;align-items:center;gap:.4rem;margin-top:1rem;background:linear-gradient(135deg,var(--c1),var(--c2));color:#fff;border:none;border-radius:10px;padding:.6rem 1.25rem;font-size:.85rem;font-weight:600;cursor:pointer;transition:opacity .2s}
+.btn-start-test:hover{opacity:.88}
+
+/* Color themes per test */
+.t1 {--c1:#7c6cc0;--c2:#5a4b9a;--num-color:var(--lav)}
+.t2 {--c1:#3a9a76;--c2:#2a7a56;--num-color:var(--mint)}
+.t3 {--c1:#c07832;--c2:#a05820;--num-color:var(--peach)}
+.t4 {--c1:#3878c0;--c2:#2858a0;--num-color:var(--sky)}
+.t5 {--c1:#c05878;--c2:#a03858;--num-color:var(--rose)}
+.test-card-num{color:var(--num-color)}
+
+/* ── Exam screen ── */
+.exam-sticky{position:sticky;top:0;z-index:15;background:rgba(19,17,26,.92);border-bottom:1px solid var(--border);backdrop-filter:blur(16px);padding:.8rem 1.25rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.exam-title{font-weight:600;font-size:.9rem;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.timer-wrap{display:flex;align-items:center;gap:.5rem}
+.timer-icon{font-size:1rem}
+.timer-display{font-family:'DM Mono','Courier New',monospace;font-size:1.1rem;font-weight:700;color:var(--lav);background:rgba(200,184,240,.08);border:1px solid rgba(200,184,240,.2);border-radius:8px;padding:.25rem .7rem;letter-spacing:.05em;min-width:6ch;text-align:center;transition:color .3s,background .3s,border-color .3s}
+.timer-display.warn{color:var(--peach);background:rgba(240,200,160,.10);border-color:rgba(240,200,160,.25)}
+.timer-display.crit{color:var(--rose);background:rgba(240,184,196,.12);border-color:rgba(240,184,196,.3);animation:pulse-t 1s infinite}
+@keyframes pulse-t{0%,100%{opacity:1}50%{opacity:.6}}
+.timer-bar{height:3px;background:var(--border);position:relative;overflow:hidden}
+.timer-bar-fill{height:100%;background:linear-gradient(90deg,var(--lav),var(--mint));transition:width .5s linear}
+.timer-bar-fill.warn{background:linear-gradient(90deg,var(--peach),var(--butter))}
+.timer-bar-fill.crit{background:linear-gradient(90deg,var(--rose),var(--peach))}
+
+.exam-actions{display:flex;gap:.5rem;flex-wrap:wrap}
+.btn-sm{display:inline-flex;align-items:center;gap:.3rem;padding:.4rem .85rem;border-radius:8px;font-size:.8rem;font-weight:600;cursor:pointer;border:none;transition:background .15s,opacity .15s}
+.btn-ghost-sm{background:var(--glass);border:1px solid var(--border);color:var(--tx)}
+.btn-ghost-sm:hover{background:var(--glass-hover)}
+.btn-danger{background:rgba(240,184,196,.15);border:1px solid rgba(240,184,196,.25);color:var(--rose)}
+.btn-danger:hover{background:rgba(240,184,196,.25)}
+.btn-primary-sm{background:linear-gradient(135deg,var(--lav),rgba(168,200,240,.8));color:#fff;border:none}
+.btn-primary-sm:hover{opacity:.88}
+
+.questions-list{display:flex;flex-direction:column;gap:1.5rem;padding:1.5rem 1.25rem}
+.q-card{background:var(--glass);border:1px solid var(--border);border-radius:var(--r-card);overflow:hidden}
+.q-card-head{display:flex;align-items:flex-start;gap:.75rem;padding:1rem 1.25rem;border-bottom:1px solid var(--border)}
+.q-num{font-family:'DM Serif Display',serif;font-size:1.4rem;color:var(--lav);line-height:1;flex-shrink:0;min-width:2rem;text-align:center}
+.q-meta{display:flex;flex-direction:column;gap:.2rem;flex:1}
+.q-type-pts{display:flex;gap:.4rem;align-items:center;flex-wrap:wrap}
+.q-type-badge{font-size:.68rem;font-weight:600;padding:.15rem .45rem;border-radius:20px;text-transform:capitalize;background:rgba(200,184,240,.12);color:var(--lav);border:1px solid rgba(200,184,240,.2)}
+.q-pts{font-size:.72rem;font-weight:600;color:var(--tx-muted)}
+.q-enonce{font-family:'DM Serif Display',serif;font-size:1rem;line-height:1.6;padding:1rem 1.25rem;color:var(--tx)}
+.q-notes-wrap{padding:.5rem 1.25rem 1rem}
+.q-notes-label{font-size:.72rem;font-weight:600;color:var(--tx-muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.4rem}
+.q-notes{width:100%;min-height:80px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:8px;color:var(--tx);font-family:'DM Sans',sans-serif;font-size:.85rem;padding:.6rem .8rem;resize:vertical;outline:none;transition:border-color .2s}
+.q-notes:focus{border-color:rgba(200,184,240,.4);background:rgba(255,255,255,.06)}
+.q-notes::placeholder{color:var(--tx-faint)}
+
+/* Corrigé */
+.q-corrige{display:none;border-top:1px solid var(--border);padding:1rem 1.25rem;background:rgba(168,216,196,.04)}
+.q-corrige.show{display:block}
+.corrige-label{display:flex;align-items:center;gap:.4rem;font-size:.72rem;font-weight:700;color:var(--mint);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.6rem}
+.corrige-text{font-size:.88rem;line-height:1.65;color:var(--tx);white-space:pre-wrap}
+.self-eval{display:flex;gap:.5rem;margin-top:.8rem;align-items:center}
+.self-eval-label{font-size:.75rem;color:var(--tx-muted);flex-shrink:0}
+.btn-eval{padding:.3rem .75rem;border-radius:20px;border:1px solid;font-size:.75rem;font-weight:600;cursor:pointer;transition:background .15s,color .15s;background:transparent}
+.btn-eval-ok{border-color:rgba(168,216,196,.35);color:var(--mint)}
+.btn-eval-ok.active,.btn-eval-ok:hover{background:rgba(168,216,196,.15)}
+.btn-eval-ok.active{border-color:var(--mint)}
+.btn-eval-ko{border-color:rgba(240,184,196,.3);color:var(--rose)}
+.btn-eval-ko.active,.btn-eval-ko:hover{background:rgba(240,184,196,.12)}
+.btn-eval-ko.active{border-color:var(--rose)}
+.btn-eval-mid{border-color:rgba(240,224,160,.3);color:var(--butter)}
+.btn-eval-mid.active,.btn-eval-mid:hover{background:rgba(240,224,160,.12)}
+.btn-eval-mid.active{border-color:var(--butter)}
+
+/* ── Results screen ── */
+.results-wrap{max-width:700px;margin:0 auto;padding:2rem 1rem}
+.results-hero{background:var(--glass);border:1px solid var(--border);border-radius:20px;padding:2rem;text-align:center;margin-bottom:1.5rem}
+.results-title{font-family:'DM Serif Display',serif;font-size:1.8rem;margin-bottom:.5rem}
+.results-subtitle{color:var(--tx-muted);font-size:.9rem;margin-bottom:1.5rem}
+.results-score-big{font-family:'DM Serif Display',serif;font-size:3.5rem;background:linear-gradient(135deg,var(--lav),var(--mint));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.25rem}
+.results-pts{font-size:1rem;color:var(--tx-muted);margin-bottom:1.5rem}
+.results-stat-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem}
+.stat-pill{display:flex;align-items:center;gap:.4rem;font-size:.8rem;padding:.3rem .75rem;border-radius:20px;background:rgba(255,255,255,.06);border:1px solid var(--border)}
+.dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.dot-ok{background:var(--mint)}
+.dot-mid{background:var(--butter)}
+.dot-ko{background:var(--rose)}
+.btn-action{display:inline-flex;align-items:center;gap:.4rem;padding:.65rem 1.3rem;border-radius:10px;font-size:.85rem;font-weight:600;cursor:pointer;border:none;text-decoration:none;transition:opacity .2s}
+.btn-action:hover{opacity:.85}
+.btn-restart{background:linear-gradient(135deg,var(--lav),rgba(168,200,240,.8));color:#fff}
+.btn-back-sel{background:var(--glass);border:1px solid var(--border);color:var(--tx)}
+.btn-row{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem}
+.results-breakdown{background:var(--glass);border:1px solid var(--border);border-radius:var(--r-card);padding:1.25rem;margin-top:1.5rem}
+.breakdown-title{font-weight:600;font-size:.9rem;margin-bottom:1rem}
+.breakdown-row{display:flex;align-items:center;gap:.75rem;padding:.5rem 0;border-bottom:1px solid var(--border)}
+.breakdown-row:last-child{border-bottom:none}
+.bk-num{font-weight:700;font-size:.8rem;color:var(--tx-muted);min-width:1.5rem}
+.bk-enonce{flex:1;font-size:.82rem;color:var(--tx-muted);overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.bk-status{font-size:.8rem;font-weight:600;min-width:80px;text-align:right}
+.status-ok{color:var(--mint)}
+.status-mid{color:var(--butter)}
+.status-ko{color:var(--rose)}
+.status-none{color:var(--tx-faint)}
+
+/* ── Alert ── */
+.alert-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:100;display:flex;align-items:center;justify-content:center;padding:1rem;backdrop-filter:blur(4px)}
+.alert-box{background:var(--bg2);border:1px solid var(--border-strong);border-radius:var(--r-card);padding:1.75rem;max-width:400px;width:100%;box-shadow:var(--shadow)}
+.alert-title{font-family:'DM Serif Display',serif;font-size:1.3rem;margin-bottom:.6rem}
+.alert-text{font-size:.88rem;color:var(--tx-muted);line-height:1.55;margin-bottom:1.25rem}
+.alert-actions{display:flex;gap:.6rem;justify-content:flex-end}
+.btn-alert-cancel{background:var(--glass);border:1px solid var(--border);color:var(--tx);padding:.5rem 1rem;border-radius:8px;font-size:.85rem;font-weight:600;cursor:pointer}
+.btn-alert-confirm{background:rgba(240,184,196,.15);border:1px solid rgba(240,184,196,.3);color:var(--rose);padding:.5rem 1rem;border-radius:8px;font-size:.85rem;font-weight:600;cursor:pointer}
+.btn-alert-confirm:hover{background:rgba(240,184,196,.25)}
+
+/* Toast */
+.toast{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);background:rgba(30,25,45,.96);border:1px solid var(--border-strong);border-radius:10px;padding:.65rem 1.2rem;font-size:.85rem;color:var(--tx);z-index:200;box-shadow:var(--shadow);white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .25s}
+.toast.show{opacity:1}
+
+/* SVG icons */
+.ic{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.1em;flex-shrink:0}
+
+@media(max-width:640px){
+  .questions-list{padding:1rem .75rem;gap:1rem}
+  .q-enonce{font-size:.95rem}
+  .test-grid{grid-template-columns:1fr}
+  .exam-sticky{padding:.6rem .75rem}
+  .exam-title{display:none}
+}
+</style>
+
+<!-- Icons -->
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></symbol>
+</svg>
+</head>
+<body>
+<header class="site-header">
+  <a href="index.html" style="text-decoration:none;color:inherit;flex-shrink:0">
+    <svg class="ic" style="width:1.1rem;height:1.1rem"><use href="#i-home"/></svg>
+  </a>
+  <h1>Tests Blancs</h1>
+  <nav class="nav-links">
+    <a href="banque_exos.html">Banque d'exos</a>
+    <a href="examen.html">Mode Examen</a>
+    <a href="polycop_cours.html">Cours</a>
+  </nav>
+  <div class="ml-auto" style="display:flex;gap:.3rem">
+    <button class="btn-icon" id="btn-theme" title="Thème" aria-label="Changer le thème">
+      <svg class="ic"><use href="#i-sun"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ══════════════ SCREEN: SELECTION ══════════════ -->
+<main class="main-wrap">
+<div class="screen" id="screen-sel">
+  <div class="sel-hero">
+    <h2>5 Tests Blancs Difficiles</h2>
+    <p>Simulations d'examen de 2 heures couvrant tout le cours de linguistique. Corrigés complets fournis après chaque test.</p>
+    <div class="badge-row">
+      <span class="badge badge-lav">⏱ 2h par test</span>
+      <span class="badge badge-mint">✏ Corrigés complets</span>
+      <span class="badge badge-peach">🎓 Niveau difficile</span>
+    </div>
+  </div>
+
+  <div class="test-grid" id="test-grid">
+    <!-- cartes générées par JS -->
+  </div>
+</div>
+
+<!-- ══════════════ SCREEN: EXAM ══════════════ -->
+<div class="screen hidden" id="screen-exam" style="max-width:100%;padding:0">
+  <div class="exam-sticky">
+    <div class="exam-title" id="exam-title">Test</div>
+    <div class="timer-wrap">
+      <svg class="ic timer-icon"><use href="#i-clock"/></svg>
+      <div class="timer-display" id="timer-display">2:00:00</div>
+    </div>
+    <div class="exam-actions">
+      <button class="btn-sm btn-ghost-sm" id="btn-show-all-corr">
+        <svg class="ic"><use href="#i-eye"/></svg> Voir les corrigés
+      </button>
+      <button class="btn-sm btn-primary-sm" id="btn-finish-exam">
+        <svg class="ic"><use href="#i-check"/></svg> Terminer
+      </button>
+    </div>
+  </div>
+  <div class="timer-bar"><div class="timer-bar-fill" id="timer-bar-fill" style="width:100%"></div></div>
+
+  <div class="questions-list" id="questions-list">
+    <!-- Questions générées par JS -->
+  </div>
+</div>
+
+<!-- ══════════════ SCREEN: RESULTS ══════════════ -->
+<div class="screen hidden" id="screen-results">
+  <div class="results-wrap">
+    <div class="results-hero">
+      <div class="results-title" id="res-title">Résultats</div>
+      <div class="results-subtitle" id="res-subtitle"></div>
+      <div class="results-score-big" id="res-score-big">— / —</div>
+      <div class="results-pts" id="res-pts-text"></div>
+      <div class="results-stat-row" id="res-stat-row"></div>
+      <div class="btn-row">
+        <button class="btn-action btn-restart" id="btn-restart">
+          <svg class="ic"><use href="#i-list"/></svg> Recommencer ce test
+        </button>
+        <button class="btn-action btn-back-sel" id="btn-back-sel">← Choisir un autre test</button>
+      </div>
+    </div>
+    <div class="results-breakdown" id="res-breakdown">
+      <div class="breakdown-title">Détail par question</div>
+      <div id="breakdown-list"></div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<!-- Alert overlay -->
+<div class="alert-overlay hidden" id="alert-overlay">
+  <div class="alert-box">
+    <div class="alert-title" id="alert-title">Attention</div>
+    <div class="alert-text" id="alert-text"></div>
+    <div class="alert-actions">
+      <button class="btn-alert-cancel" id="alert-cancel">Annuler</button>
+      <button class="btn-alert-confirm" id="alert-confirm">Confirmer</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script>
+/* ═══════ CONFIG ═══════ */
+const DATA_URL = './assets/data/tests_blancs.json';
+const SAVE_KEY = 'bap_tests_state';
+
+/* ═══════ STATE ═══════ */
+let testsData = [];
+let currentTest = null;
+let timerSec = 0;
+let timerTotal = 7200;
+let timerInterval = null;
+let evalMap = {}; // questionId → 'ok'|'mid'|'ko'
+let notesMap = {}; // questionId → string
+let corrigesRevealed = false;
+let testStartTime = null;
+
+/* ═══════ THEME ═══════ */
+(function(){
+  const saved = localStorage.getItem('bap_theme') || 'dark';
+  if(saved === 'light') document.documentElement.setAttribute('data-theme','light');
+  const btn = document.getElementById('btn-theme');
+  if(btn) btn.addEventListener('click', ()=>{
+    const cur = document.documentElement.getAttribute('data-theme');
+    const next = cur === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', next === 'dark' ? '' : next);
+    localStorage.setItem('bap_theme', next);
+  });
+})();
+
+/* ═══════ LOAD DATA ═══════ */
+async function loadData(){
+  try {
+    const r = await fetch(DATA_URL + '?v=' + Date.now());
+    if(!r.ok) throw new Error('HTTP ' + r.status);
+    testsData = await r.json();
+    renderSelection();
+  } catch(e) {
+    document.getElementById('test-grid').innerHTML = '<p style="color:var(--rose);padding:2rem">Erreur de chargement des tests : ' + e.message + '</p>';
+  }
+}
+
+/* ═══════ SELECTION SCREEN ═══════ */
+const TEST_COLORS = ['t1','t2','t3','t4','t5'];
+const TEST_EMOJIS = ['🔤','📐','🗣','🔗','🌐'];
+
+function renderSelection(){
+  const grid = document.getElementById('test-grid');
+  grid.innerHTML = testsData.map((t, i) => {
+    const totalPts = t.questions.reduce((s,q)=>s+q.points, 0);
+    const clr = TEST_COLORS[i] || 't1';
+    return `
+    <div class="test-card ${clr}" data-id="${t.id}" onclick="startTest('${t.id}')">
+      <div class="test-card-num">${TEST_EMOJIS[i]}</div>
+      <div class="test-card-title">${escHtml(t.titre)}</div>
+      <div class="test-card-sub">${escHtml(t.soustitre)}</div>
+      <div class="test-card-meta">
+        <span class="meta-pill">⏱ 2h00</span>
+        <span class="meta-pill">${t.questions.length} questions</span>
+        <span class="meta-pill">${totalPts} pts</span>
+      </div>
+      <button class="btn-start-test" onclick="event.stopPropagation();startTest('${t.id}')">
+        Commencer →
+      </button>
+    </div>`;
+  }).join('');
+}
+
+/* ═══════ START TEST ═══════ */
+function startTest(testId){
+  currentTest = testsData.find(t => t.id === testId);
+  if(!currentTest) return;
+  evalMap = {};
+  notesMap = {};
+  corrigesRevealed = false;
+  timerTotal = currentTest.duree || 7200;
+  timerSec = timerTotal;
+  testStartTime = Date.now();
+
+  showScreen('screen-exam');
+  document.getElementById('exam-title').textContent = currentTest.titre;
+  renderQuestions();
+  startTimer();
+}
+
+/* ═══════ RENDER QUESTIONS ═══════ */
+function renderQuestions(){
+  const list = document.getElementById('questions-list');
+  list.innerHTML = currentTest.questions.map((q, i) => `
+    <div class="q-card" id="qcard-${q.id}">
+      <div class="q-card-head">
+        <div class="q-num">${i+1}</div>
+        <div class="q-meta">
+          <div class="q-type-pts">
+            <span class="q-type-badge">${formatType(q.type)}</span>
+            <span class="q-pts">${q.points} pt${q.points > 1 ? 's' : ''}</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-enonce">${escHtml(q.enonce)}</div>
+      <div class="q-notes-wrap">
+        <div class="q-notes-label">Votre réponse / notes</div>
+        <textarea class="q-notes" placeholder="Rédigez votre réponse ici…" rows="4"
+          oninput="saveNote('${q.id}', this.value)" id="note-${q.id}"></textarea>
+      </div>
+      <div class="q-corrige" id="corrige-${q.id}">
+        <div class="corrige-label">
+          <svg class="ic" style="width:.9em;height:.9em"><use href="#i-check"/></svg>
+          Corrigé officiel
+        </div>
+        <div class="corrige-text">${escHtml(q.corrige)}</div>
+        <div class="self-eval">
+          <span class="self-eval-label">Auto-évaluation :</span>
+          <button class="btn-eval btn-eval-ok" id="ev-ok-${q.id}" onclick="setEval('${q.id}','ok')">✓ Acquis</button>
+          <button class="btn-eval btn-eval-mid" id="ev-mid-${q.id}" onclick="setEval('${q.id}','mid')">≈ Partiel</button>
+          <button class="btn-eval btn-eval-ko" id="ev-ko-${q.id}" onclick="setEval('${q.id}','ko')">✗ À revoir</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function formatType(t){
+  const m = {identification:'Identification',analyse:'Analyse',transformation:'Transformation',
+    commutation:'Commutation',segmentation:'Segmentation',QCM:'QCM',vrai_faux:'Vrai / Faux',
+    question_ouverte:'Question ouverte',correction_erreur:'Correction d\'erreur',cas_limite:'Cas limite'};
+  return m[t] || t;
+}
+
+function saveNote(qId, val){ notesMap[qId] = val; }
+
+/* ═══════ SELF-EVAL ═══════ */
+function setEval(qId, val){
+  evalMap[qId] = val;
+  ['ok','mid','ko'].forEach(v => {
+    const b = document.getElementById('ev-'+v+'-'+qId);
+    if(b) b.classList.toggle('active', v === val);
+  });
+}
+
+/* ═══════ REVEAL CORRIGÉS ═══════ */
+function revealAllCorr(){
+  corrigesRevealed = true;
+  currentTest.questions.forEach(q => {
+    const el = document.getElementById('corrige-' + q.id);
+    if(el) el.classList.add('show');
+  });
+  showToast('Corrigés affichés — évaluez chaque réponse !');
+}
+
+document.getElementById('btn-show-all-corr').addEventListener('click', ()=>{
+  if(corrigesRevealed){ revealAllCorr(); return; }
+  showAlert(
+    '⚠️ Afficher les corrigés maintenant ?',
+    'Vous êtes encore en cours d\'examen. Afficher les corrigés maintenant est déconseillé si vous souhaitez vous entraîner en conditions réelles. Voulez-vous quand même les afficher ?',
+    ()=>{ revealAllCorr(); }
+  );
+});
+
+document.getElementById('btn-finish-exam').addEventListener('click', ()=>{
+  showAlert(
+    'Terminer le test',
+    'Voulez-vous terminer le test et voir vos résultats ? Les corrigés seront affichés.',
+    ()=>{ stopTimer(); revealAllCorr(); showResults(); }
+  );
+});
+
+/* ═══════ TIMER ═══════ */
+function startTimer(){
+  clearInterval(timerInterval);
+  updateTimerDisplay();
+  timerInterval = setInterval(tickTimer, 1000);
+}
+
+function tickTimer(){
+  if(timerSec <= 0){
+    clearInterval(timerInterval);
+    showToast('⏰ Temps écoulé !');
+    revealAllCorr();
+    showResults();
+    return;
+  }
+  timerSec--;
+  updateTimerDisplay();
+}
+
+function stopTimer(){ clearInterval(timerInterval); }
+
+function updateTimerDisplay(){
+  const el = document.getElementById('timer-display');
+  const bar = document.getElementById('timer-bar-fill');
+  if(!el) return;
+  const h = Math.floor(timerSec / 3600);
+  const m = Math.floor((timerSec % 3600) / 60);
+  const s = timerSec % 60;
+  el.textContent = (h>0?h+':':'') + String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+  const pct = timerTotal > 0 ? (timerSec / timerTotal) * 100 : 0;
+  if(bar) bar.style.width = pct + '%';
+  const isCrit = timerSec < 600;  // < 10min
+  const isWarn = timerSec < 1800; // < 30min
+  el.className = 'timer-display' + (isCrit ? ' crit' : isWarn ? ' warn' : '');
+  if(bar) bar.className = 'timer-bar-fill' + (isCrit ? ' crit' : isWarn ? ' warn' : '');
+}
+
+/* ═══════ RESULTS ═══════ */
+function showResults(){
+  stopTimer();
+  showScreen('screen-results');
+
+  const elapsed = testStartTime ? Math.round((Date.now() - testStartTime) / 1000) : timerTotal - timerSec;
+  const h = Math.floor(elapsed / 3600), m = Math.floor((elapsed % 3600)/60), sec = elapsed % 60;
+  const timeStr = (h>0?h+'h ':'')+m+'min '+sec+'s';
+
+  const totalPts = currentTest.questions.reduce((s,q)=>s+q.points, 0);
+  let okPts = 0, midPts = 0, koPts = 0, nonePts = 0;
+  let okCount = 0, midCount = 0, koCount = 0, noneCount = 0;
+
+  currentTest.questions.forEach(q => {
+    const ev = evalMap[q.id];
+    if(ev === 'ok')       { okPts += q.points; okCount++; }
+    else if(ev === 'mid') { midPts += q.points * 0.5; midCount++; }
+    else if(ev === 'ko')  { koPts += 0; koCount++; }
+    else                  { nonePts += 0; noneCount++; }
+  });
+  const earnedPts = Math.round(okPts + midPts);
+  const pct = totalPts > 0 ? Math.round(earnedPts / totalPts * 100) : 0;
+
+  document.getElementById('res-title').textContent = currentTest.titre;
+  document.getElementById('res-subtitle').textContent = 'Durée : ' + timeStr;
+  document.getElementById('res-score-big').textContent = earnedPts + ' / ' + totalPts;
+  document.getElementById('res-pts-text').textContent = pct + '% de réussite (auto-évaluation)';
+  document.getElementById('res-stat-row').innerHTML = `
+    <span class="stat-pill"><span class="dot dot-ok"></span>${okCount} acquis</span>
+    <span class="stat-pill"><span class="dot dot-mid"></span>${midCount} partiels</span>
+    <span class="stat-pill"><span class="dot dot-ko"></span>${koCount} à revoir</span>
+    ${noneCount > 0 ? '<span class="stat-pill"><span class="dot" style="background:var(--tx-faint)"></span>'+noneCount+' non évalués</span>' : ''}
+  `;
+
+  // Breakdown
+  const breakdown = document.getElementById('breakdown-list');
+  breakdown.innerHTML = currentTest.questions.map((q, i) => {
+    const ev = evalMap[q.id];
+    const statusMap = {ok:'Acquis',mid:'Partiel',ko:'À revoir',undefined:'Non évalué'};
+    const classMap = {ok:'status-ok',mid:'status-mid',ko:'status-ko',undefined:'status-none'};
+    const enonce = q.enonce.length > 70 ? q.enonce.slice(0, 70) + '…' : q.enonce;
+    return `<div class="breakdown-row">
+      <span class="bk-num">${i+1}</span>
+      <span class="bk-enonce">${escHtml(enonce)}</span>
+      <span class="bk-status ${classMap[ev]}">${statusMap[ev]}</span>
+    </div>`;
+  }).join('');
+}
+
+document.getElementById('btn-restart').addEventListener('click', ()=>{
+  if(currentTest) startTest(currentTest.id);
+});
+document.getElementById('btn-back-sel').addEventListener('click', ()=>{
+  stopTimer();
+  showScreen('screen-sel');
+});
+
+/* ═══════ ALERT ═══════ */
+let alertCallback = null;
+function showAlert(title, text, onConfirm){
+  document.getElementById('alert-title').textContent = title;
+  document.getElementById('alert-text').textContent = text;
+  alertCallback = onConfirm;
+  document.getElementById('alert-overlay').classList.remove('hidden');
+}
+document.getElementById('alert-cancel').addEventListener('click', ()=>{
+  document.getElementById('alert-overlay').classList.add('hidden');
+  alertCallback = null;
+});
+document.getElementById('alert-confirm').addEventListener('click', ()=>{
+  document.getElementById('alert-overlay').classList.add('hidden');
+  if(alertCallback) { alertCallback(); alertCallback = null; }
+});
+
+/* ═══════ TOAST ═══════ */
+let toastTimeout;
+function showToast(msg, dur=2800){
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(toastTimeout);
+  toastTimeout = setTimeout(()=>el.classList.remove('show'), dur);
+}
+
+/* ═══════ SCREEN SWITCH ═══════ */
+function showScreen(id){
+  ['screen-sel','screen-exam','screen-results'].forEach(s=>{
+    document.getElementById(s).classList.toggle('hidden', s !== id);
+  });
+  window.scrollTo(0,0);
+}
+
+/* ═══════ UTILS ═══════ */
+function escHtml(s){
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+/* ═══════ SERVICE WORKER ═══════ */
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('./sw.js').catch(()=>{});
+}
+
+/* ═══════ INIT ═══════ */
+loadData();
+</script>
+</body>
+</html>
