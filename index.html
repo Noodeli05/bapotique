@@ -2,7 +2,40 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){var v='20260721c';if(!location.search.includes('v='+v))location.replace(location.pathname+'?v='+v);}());</script>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><script>(function(){var v='20260721d';if(!location.search.includes('v='+v))location.replace(location.pathname+'?v='+v);}());</script>
+<script>(function(){
+  var KEY='bap_fl_auth';
+  function getCookie(n){var m=document.cookie.match('(?:^|; )'+n+'=([^;]*)');return m?m[1]:null;}
+  if(getCookie(KEY)==='ok')return;
+  document.addEventListener('DOMContentLoaded',function(){
+    var overlay=document.createElement('div');
+    overlay.id='pw-overlay';
+    overlay.style.cssText='position:fixed;inset:0;z-index:99999;background:rgba(20,16,30,0.97);display:flex;align-items:center;justify-content:center;font-family:DM Sans,sans-serif';
+    overlay.innerHTML='<div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);border-radius:16px;padding:2.5rem 2rem;max-width:340px;width:90%;text-align:center">'
+      +'<div style="font-size:2rem;margin-bottom:1rem">🔒</div>'
+      +'<div style="color:#e8e4f0;font-size:1.05rem;font-weight:700;margin-bottom:.4rem">Page protégée</div>'
+      +'<div style="color:rgba(232,228,240,.5);font-size:.82rem;margin-bottom:1.4rem">Entrez le mot de passe pour accéder à cette page.</div>'
+      +'<input id="pw-input" type="password" placeholder="Mot de passe…" style="width:100%;padding:.65rem 1rem;border-radius:8px;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.06);color:#e8e4f0;font-size:.95rem;font-family:inherit;outline:none;margin-bottom:.9rem;text-align:center">'
+      +'<div id="pw-err" style="color:#f0b8c4;font-size:.78rem;min-height:1.2em;margin-bottom:.6rem"></div>'
+      +'<button id="pw-btn" style="width:100%;padding:.7rem;border-radius:8px;background:#c8b8f0;color:#1a1525;font-weight:700;font-size:.95rem;border:none;cursor:pointer;font-family:inherit">Accéder</button>'
+    +'</div>';
+    document.body.appendChild(overlay);
+    function check(){
+      if(document.getElementById('pw-input').value==='Nouille'){
+        var exp=new Date(Date.now()+24*60*60*1000).toUTCString();
+        document.cookie=KEY+'=ok;expires='+exp+';path=/';
+        overlay.remove();
+      } else {
+        document.getElementById('pw-err').textContent='Mot de passe incorrect.';
+        document.getElementById('pw-input').value='';
+        document.getElementById('pw-input').focus();
+      }
+    }
+    document.getElementById('pw-btn').addEventListener('click',check);
+    document.getElementById('pw-input').addEventListener('keydown',function(e){if(e.key==='Enter')check();});
+    setTimeout(function(){document.getElementById('pw-input').focus();},100);
+  });
+})();</script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Linguistique Française — UNIL 2025</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
