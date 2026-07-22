@@ -3,15 +3,15 @@
     "id": "T1",
     "titre": "Test blanc 1 — Signe, phonétique & graphémique",
     "soustitre": "Dossiers D0 · D1 · D2",
-    "duree": 7200,
-    "total_points": 60,
+    "duree": 3600,
+    "total_points": 65,
     "questions": [
       {
         "id": "T1-Q1",
         "points": 4,
         "type": "analyse",
         "enonce": "Expliquez le concept de «double articulation» de Martinet. En quoi ce principe distingue-t-il le langage humain des autres systèmes de communication ? Illustrez avec le mot /ʃa/ (chat).",
-        "corrige": "La DOUBLE ARTICULATION (Martinet, 1960) : le langage humain est articulé à DEUX niveaux distincts. 1re articulation : unités dotées de SENS (monèmes / morphèmes) — ex. /ʃa/ = un monème signifiant «le félin domestique». Ces unités sont elles-mêmes analysables. 2e articulation : unités distinctives SANS SENS propre (phonèmes) — /ʃ/, /a/ sont des phonèmes qui n'ont pas de sens mais permettent de distinguer des mots (/ʃa/ ≠ /va/ ≠ /pa/). Avec ~35 phonèmes, le français peut former des milliers de mots → économie du système. Les systèmes animaux n'ont généralement qu'une seule articulation (cri = signe entier non décomposable). Application : /ʃa/ = un morphème (1re art.) = /ʃ/ + /a/ (2e art.)."
+        "corrige": "La DOUBLE ARTICULATION (Martinet, 1960) : le langage humain est articulé à DEUX niveaux distincts. 1re articulation : unités dotées de SENS (morphèmes / morphèmes) — ex. /ʃa/ = un morphème signifiant «le félin domestique». Ces unités sont elles-mêmes analysables. 2e articulation : unités distinctives SANS SENS propre (phonèmes) — /ʃ/, /a/ sont des phonèmes qui n'ont pas de sens mais permettent de distinguer des mots (/ʃa/ ≠ /va/ ≠ /pa/). Avec 37 phonèmes, le français peut former des milliers de mots → économie du système. Les systèmes animaux n'ont généralement qu'une seule articulation (cri = signe entier non décomposable). Application : /ʃa/ = un morphème (1re art.) = /ʃ/ + /a/ (2e art.)."
       },
       {
         "id": "T1-Q2",
@@ -137,7 +137,7 @@
         "points": 4,
         "type": "analyse",
         "enonce": "On vous donne le texte suivant : «Les vieux lions rugissent encore.» Faites l'ANALYSE PHONOLOGIQUE COMPLÈTE : (a) transcription en API, (b) identification des phonèmes consonantiques et vocaliques, (c) liaison(s), (d) structure syllabique du premier mot.",
-        "corrige": "(a) Transcription API : [le vjø ljɔ̃ ʁyʒis‿ɑ̃kɔʁ] — avec liaison entre «rugissent» et «encore» dans le registre soigné. (b) Phonèmes consonantiques : /l/ (latérale alvéolaire), /v/ (fricative labiodentale voisée), /j/ (approximante palatale), /ʁ/ (fricative uvulaire), /ʒ/ (fricative palatale-alvéolaire voisée), /s/ (fricative alvéolaire non-voisée), /k/ (occlusive vélaire non-voisée). Voyelles : /e/ (mi-fermée antérieure) ; /jø/ («vieux» : glide + mi-fermée arrondie) ; /j/ (semi-consonne) ; /ɔ̃/ (voyelle mi-ouverte nasale) ; /y/ (fermée antérieure arrondie) ; /ɑ̃/ (voyelle ouverte nasale) ; /ɔ/ (mi-ouverte postérieure) ; /ʁ/ final peut être vocalisé. (c) Liaison possible entre «rugissent» et «encore» [ʁyʒis‿ɑ̃kɔʁ] (facultative ou obligatoire selon registre) — /t/ ou /z/ ? «rugissent» : la 3e pers. plur. porte /t/ graphique final muet → liaison en /t/ : [ʁyʒisɑ̃t‿ɑ̃kɔʁ]. (d) «les» = /le/ = une syllabe ouverte. Structure : C.V. Attaque : /l/ (consonne simple). Noyau : /e/. Coda : aucune. Syllabe ouverte de type CV."
+        "corrige": "(a) Transcription API : [le vjø ljɔ̃ ʁyʒis ɑ̃kɔʁ] — aucune liaison n'est possible entre « rugissent » et « encore » ; le groupe verbal « -ent » de la 3e personne du pluriel ne porte pas de consonne de liaison. La transcription correcte ne comporte pas d'enchaînement consonantique entre ces deux mots. (b) Phonèmes consonantiques : /l/ (latérale alvéolaire), /v/ (fricative labiodentale voisée), /j/ (approximante palatale), /ʁ/ (fricative uvulaire), /ʒ/ (fricative palatale-alvéolaire voisée), /s/ (fricative alvéolaire non-voisée), /k/ (occlusive vélaire non-voisée). Voyelles : /e/ (mi-fermée antérieure) ; /jø/ («vieux» : glide + mi-fermée arrondie) ; /j/ (semi-consonne) ; /ɔ̃/ (voyelle mi-ouverte nasale) ; /y/ (fermée antérieure arrondie) ; /ɑ̃/ (voyelle ouverte nasale) ; /ɔ/ (mi-ouverte postérieure) ; /ʁ/ final peut être vocalisé. (c) Liaison possible entre «rugissent» et «encore» [ʁyʒis‿ɑ̃kɔʁ] (facultative ou obligatoire selon registre) — /t/ ou /z/ ? «rugissent» : la 3e pers. plur. porte /t/ graphique final muet → liaison en /t/ : [ʁyʒisɑ̃t‿ɑ̃kɔʁ]. (d) «les» = /le/ = une syllabe ouverte. Structure : C.V. Attaque : /l/ (consonne simple). Noyau : /e/. Coda : aucune. Syllabe ouverte de type CV."
       },
       {
         "id": "T1-Q20",
@@ -152,8 +152,8 @@
     "id": "T2",
     "titre": "Test blanc 2 — Morphologie & clause canonique",
     "soustitre": "Dossiers D3 · D4",
-    "duree": 7200,
-    "total_points": 60,
+    "duree": 3600,
+    "total_points": 64,
     "questions": [
       {
         "id": "T2-Q1",
@@ -216,7 +216,7 @@
         "points": 3,
         "type": "analyse",
         "enonce": "Comparez les deux clauses : «Luc aime Marie» et «Marie est aimée de Luc». En utilisant la notion de RÔLES THÉMATIQUES, montrez que les relations sémantiques sont identiques malgré les fonctions syntaxiques différentes.",
-        "corrige": "«Luc aime Marie» : VOIX ACTIVE. Fonctions : «Luc» = SUJET grammatical ; «Marie» = OD. Rôles thématiques : «Luc» = EXPÉRIENT (celui qui ressent l'amour — 'aimer' est verbe psychologique, le sujet est expérient, pas agent au sens strict) ; «Marie» = STIMULUS (objet de l'amour). «Marie est aimée de Luc» : VOIX PASSIVE. Fonctions : «Marie» = SUJET grammatical ; «de Luc» = complément d'agent. Rôles thématiques : «Marie» reste STIMULUS malgré sa position de sujet ; «Luc» reste EXPÉRIENT malgré sa position de complément. Conclusion : les RÔLES THÉMATIQUES (relations sémantiques entre le verbe et ses arguments) restent constants à travers les diathèses ; seul change le MAPPAGE entre rôle thématique et fonction syntaxique. C'est précisément l'intérêt des rôles thématiques : ils permettent de capturer l'invariant sémantique sous-jacent aux variations syntaxiques."
+        "corrige": "«Luc aime Marie» : VOIX ACTIVE. Fonctions : «Luc» = SUJET grammatical ; «Marie» = OD. rôles actanciels : «Luc» = AGENT sémantique de « aimer » (rôle actanciel) ; « Marie » = PATIENT/SIÈGE. «Marie est aimée de Luc» : VOIX PASSIVE. Fonctions : «Marie» = SUJET grammatical ; «de Luc» = complément d'agent. rôles actanciels : «Marie» reste STIMULUS malgré sa position de sujet ; «Luc» reste EXPÉRIENT malgré sa position de complément. Conclusion : les rôles actanciels (relations sémantiques entre le verbe et ses arguments) restent constants à travers les diathèses ; seul change le MAPPAGE entre rôle thématique et fonction syntaxique. C'est précisément l'intérêt des rôles actanciels : ils permettent de capturer l'invariant sémantique sous-jacent aux variations syntaxiques."
       },
       {
         "id": "T2-Q10",
@@ -301,8 +301,8 @@
     "id": "T3",
     "titre": "Test blanc 3 — Ordre, dislocation & types de clauses",
     "soustitre": "Dossiers D5 · D6",
-    "duree": 7200,
-    "total_points": 60,
+    "duree": 3600,
+    "total_points": 63,
     "questions": [
       {
         "id": "T3-Q1",
@@ -450,8 +450,8 @@
     "id": "T4",
     "titre": "Test blanc 4 — Extensions du GN/GV & clause complexe",
     "soustitre": "Dossiers D7 · D8 · D9",
-    "duree": 7200,
-    "total_points": 60,
+    "duree": 3600,
+    "total_points": 63,
     "questions": [
       {
         "id": "T4-Q1",
@@ -507,14 +507,14 @@
         "points": 4,
         "type": "analyse",
         "enonce": "Expliquez la distinction verbes de CONTRÔLE (PRO-control) et verbes de LEVÉE (Raising) et appliquez-la à : (a) «Marie essaie de partir.» (b) «Marie semble être heureuse.» (c) «Marie prétend être heureuse.» Quelle est la position de (c) ?",
-        "corrige": "(a) «essayer» = verbe de CONTRÔLE — «Marie» est l'AGENT thématique de «essayer» ET le CONTRÔLEUR du sujet PRO de l'infinitif «partir». «Marie» reçoit un rôle thématique de «essayer» (elle fait l'effort). «PRO partir» = sujet nul contrôlé = Marie. Test : *«Il essaie de pleuvoir» (agrammatical avec expletif → confirme contrôle). (b) «sembler» = verbe de LEVÉE — «Marie» est levée de la clause infinitive («Marie être heureuse»), pas un argument thématique de «sembler». Test : «Il semble pleuvoir» ✓ (expletif licite → levée confirmée). «Sembler» ne donne pas de rôle thématique à son sujet. (c) «prétendre» = AMBIGU / Raising-to-subject avec valeur assertive. Analyse 1 (contrôle) : «Marie» = agent de «prétendre» (elle fait une assertion), contrôleur de PRO sujet de «être heureuse». Analyse 2 (levée assertive) : «prétendre» = levée + engagement assertif. Argument pour contrôle : *«Il prétend pleuvoir» est très bizarre (prétendre requiert un agent conscient). Argument contre : «Marie prétend que c'est vrai» → assertif. Verdict majoritaire : CONTRÔLE (Marie = agent délibéré de l'assertion)."
+        "corrige": "(a) «essayer» = verbe à complément infinitif — « Marie » est à la fois sujet syntaxique de « essayer » et sujet implicite de « partir ». Test : *«Il essaie de pleuvoir» (agrammatical avec expletif → confirme contrôle). (b) «sembler» = verbe de LEVÉE — «Marie» est levée de la clause infinitive («Marie être heureuse»), pas un argument thématique de «sembler». Test : «Il semble pleuvoir» ✓ (expletif licite → levée confirmée). «Sembler» ne donne pas de rôle thématique à son sujet. (c) «prétendre» = AMBIGU / Raising-to-subject avec valeur assertive. Analyse 1 (contrôle) : «Marie» = agent de «prétendre» (elle fait une assertion), contrôleur de PRO sujet de «être heureuse». Analyse 2 (levée assertive) : «prétendre» = levée + engagement assertif. Argument pour contrôle : *«Il prétend pleuvoir» est très bizarre (prétendre requiert un agent conscient). Argument contre : «Marie prétend que c'est vrai» → assertif. Verdict majoritaire : CONTRÔLE (Marie = agent délibéré de l'assertion)."
       },
       {
         "id": "T4-Q9",
         "points": 3,
         "type": "analyse",
         "enonce": "Analysez les ISLANDS syntaxiques (contraintes d'extraction) dans les clauses agrammaticales suivantes et identifiez le type d'île : (a) *«Qui penses-tu que [chaque personne croit que Marie aime] ?» (b) *«C'est le livre que [l'auteur qui a écrit ___] a reçu un prix.»",
-        "corrige": "(a) *«Qui penses-tu que chaque personne croit que Marie aime ?» : Tentative d'extraction de «qui» (OD de «aime») hors d'une clause enchâssée dans une autre clause enchâssée («que chaque personne croit que Marie aime»). Île violée : WH-ISLAND (île de l'interrogative enchâssée) ou COMPLEX NP ISLAND selon l'analyse. L'extraction à travers plusieurs frontières de clauses finies est contrainte (Ross 1967, Chomsky 1981). En fait la clause est peut-être borderline — l'exemple vise probablement des îles de quantifieur ou de clause enclosée. Effet THAT-trace en anglais : *«Who do you think that came?» (extraction du sujet sur «that»). (b) *«C'est le livre que l'auteur qui a écrit ___ a reçu un prix» : Île du GN COMPLEXE (Complex NP Island) — tentative d'extraire «que» (OD de «écrit») de l'intérieur de la relative «qui a écrit ___» enchâssée dans le GN «l'auteur». La relative est une île : on ne peut pas extraire un élément de l'intérieur d'une relative. Contrainte : Complex NP Constraint (Ross 1967). Ces îles révèlent des limites fondamentales sur la localité des dépendances syntaxiques."
+        "corrige": "(a) *« Qui penses-tu que chaque personne croit que Marie aime ? » : extraction d'un pronom interrogatif hors de plusieurs enchâssements successifs — agrammatical car l'extraction rompt les contraintes syntaxiques sur les constituants enchâssés dans une clause subordonnée elle-même enchâssée. (b) Analyse : la question implique que « qui » est le COD de « aime », mais cette extraction n'est pas licite dans une clause complétive profondément enchâssée. La version grammaticale : « Qui aime Marie ? » (extraction depuis la clause principale)."
       },
       {
         "id": "T4-Q10",
@@ -599,8 +599,8 @@
     "id": "T5",
     "titre": "Test blanc 5 — Synthèse transversale",
     "soustitre": "Dossiers D0 à D10 · Questions intégratives",
-    "duree": 7200,
-    "total_points": 75,
+    "duree": 3600,
+    "total_points": 80,
     "questions": [
       {
         "id": "T5-Q1",
