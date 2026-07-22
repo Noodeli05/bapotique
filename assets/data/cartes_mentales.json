@@ -52,7 +52,7 @@
                 "id": "d0-semio-signe",
                 "label": "Signe linguistique",
                 "def": "Entité psychique à deux faces indissociables : le signifiant (image acoustique) et le signifié (concept), unis par un rapport arbitraire et conventionnel.",
-                "ex": ["Le mot 'arbre' : signifiant [aʁbʁ] associé au signifié (concept mental d'arbre)."],
+                "ex": ["Le mot 'arbre' : signifiant [aRbR] associé au signifié (concept mental d'arbre)."],
                 "note": "Le signe ne renvoie pas directement à la chose réelle (référent), mais à un concept mental. Saussure compare le signe à une feuille de papier : on ne peut couper un côté sans couper l'autre.",
                 "children": [
                   {
@@ -93,7 +93,7 @@
                 "id": "d0-semio-lin",
                 "label": "Linéarité du signe",
                 "def": "Propriété du signifiant de se dérouler dans le temps de façon séquentielle et linéaire, un son (ou une lettre) après l'autre. Deux sons ne peuvent pas être produits strictement en même temps.",
-                "ex": ["[p-a-ʁ-i] : les phonèmes de 'Paris' se succèdent linéairement dans la chaîne parlée. On ne peut pas les produire simultanément."],
+                "ex": ["[p-a-R-i] : les phonèmes de 'Paris' se succèdent linéairement dans la chaîne parlée. On ne peut pas les produire simultanément."],
                 "note": "Cette propriété a des conséquences fondamentales sur l'organisation de la syntaxe et de la morphologie : les unités doivent s'enchaîner, pas se superposer.",
                 "children": []
               },
@@ -126,7 +126,7 @@
                 "id": "d0-da-2eme",
                 "label": "2ème articulation",
                 "def": "Niveau des phonèmes : unités sonores distinctives dépourvues de signification propre, qui servent uniquement à distinguer les morphèmes entre eux.",
-                "ex": ["Dans 'chat' vs 'rat' : [ʃ] et [ʁ] sont deux phonèmes qui distinguent les mots mais n'ont pas de sens en eux-mêmes."],
+                "ex": ["Dans 'chat' vs 'rat' : [ʃ] et [R] sont deux phonèmes qui distinguent les mots mais n'ont pas de sens en eux-mêmes."],
                 "note": "Les phonèmes constituent la deuxième articulation : ils distinguent sans signifier. Un inventaire restreint de phonèmes (~30 en français) suffit à former des milliers de morphèmes.",
                 "children": []
               }
@@ -143,7 +143,7 @@
                 "id": "d0-niv-phon",
                 "label": "Phonétique / Phonologie",
                 "def": "La phonétique étudie les sons du langage dans leur réalisation physique et physiologique ; la phonologie étudie l'organisation abstraite des phonèmes en système distinctif.",
-                "ex": ["Phonétique : [ʁ] est une fricative uvulaire voisée. Phonologie : /ʁ/ s'oppose à /l/ pour distinguer 'riz' de 'lit'."],
+                "ex": ["Phonétique : [R] est une fricative uvulaire voisée. Phonologie : /R/ s'oppose à /l/ pour distinguer 'riz' de 'lit'."],
                 "note": "C'est le niveau le plus bas de l'analyse linguistique, portant sur les unités de la deuxième articulation.",
                 "children": []
               },
@@ -237,7 +237,7 @@
             "id": "d1-phon",
             "label": "Phonétique",
             "def": "Discipline qui étudie les sons du langage dans leur réalisation concrète, en tant que phénomènes physiques et physiologiques, sans égard à leur valeur fonctionnelle au sein du système.",
-            "ex": ["La durée exacte du [a] dans 'patte', la fréquence du [ʁ] : phénomènes de phonétique."],
+            "ex": ["La durée exacte du [a] dans 'patte', la fréquence du [R] : phénomènes de phonétique."],
             "note": "La phonétique s'intéresse aux sons concrets (phones, notés entre [ ]), tandis que la phonologie s'intéresse aux unités abstraites et fonctionnelles (phonèmes, notés entre / /).",
             "children": [
               {
@@ -251,7 +251,7 @@
                     "id": "d1-phon-artic-lieu",
                     "label": "Lieu d'articulation",
                     "def": "Endroit dans le conduit vocal où se produit la constriction ou l'occlusion principale lors de la production du son.",
-                    "ex": ["Bilabial : [p, b, m]. Alvéolaire : [t, d, n, s, z, l]. Palatal : [ʃ, ʒ, ɲ, j]. Vélaire : [k, g, ŋ]. Uvulaire : [ʁ]."],
+                    "ex": ["Bilabial : [p, b, m]. Alvéolaire : [t, d, n, s, z, l]. Palatal : [ʃ, ʒ, ɲ, j]. Vélaire : [k, g, ŋ]. Uvulaire : [R]."],
                     "note": "En français, les lieux d'articulation principaux vont des lèvres jusqu'à la luette (uvule), de l'avant vers l'arrière du conduit vocal.",
                     "children": []
                   },
@@ -329,8 +329,8 @@
                             "id": "d1-cons-uvul",
                             "label": "Uvulaires",
                             "def": "Consonnes produites au niveau de la luette (uvule), par friction ou vibration dans cette zone la plus postérieure du conduit vocal.",
-                            "ex": ["[ʁ] 'rue' — fricative uvulaire voisée, réalisation standard du /r/ en français contemporain."],
-                            "note": "Historiquement, le /r/ français pouvait être apical [r] (roulé). La réalisation uvulaire [ʁ] domine aujourd'hui dans la plupart des variétés.",
+                            "ex": ["[R] 'rue' — fricative uvulaire voisée, réalisation standard du /r/ en français contemporain."],
+                            "note": "Historiquement, le /r/ français pouvait être apical [r] (roulé). La réalisation uvulaire [R] domine aujourd'hui dans la plupart des variétés.",
                             "children": []
                           }
                         ]
@@ -354,7 +354,7 @@
                             "id": "d1-cons-fric",
                             "label": "Fricatives",
                             "def": "Consonnes produites par un rétrécissement (constriction) du conduit vocal créant un bruit de friction turbulente lors du passage de l'air.",
-                            "ex": ["[f, v] labiodentales, [s, z] alvéolaires, [ʃ, ʒ] palatales, [ʁ] uvulaire : 'feu', 'veau', 'sel', 'zèle', 'chat', 'jeu', 'rue'"],
+                            "ex": ["[f, v] labiodentales, [s, z] alvéolaires, [ʃ, ʒ] palatales, [R] uvulaire : 'feu', 'veau', 'sel', 'zèle', 'chat', 'jeu', 'rue'"],
                             "note": null,
                             "children": []
                           },
@@ -431,7 +431,7 @@
                     "id": "d1-api",
                     "label": "API / IPA",
                     "def": "Alphabet Phonétique International (API en français, IPA en anglais) : système de notation standardisé permettant de transcrire les sons de toutes les langues du monde, avec un symbole unique par son.",
-                    "ex": ["Transcription phonétique de 'bonjour' : [bɔ̃ʒuʁ]. Transcription phonologique de /ʃ/ dans 'chat' : /ʃa/."],
+                    "ex": ["Transcription phonétique de 'bonjour' : [bɔ̃ʒuR]. Transcription phonologique de /ʃ/ dans 'chat' : /ʃa/."],
                     "note": "Créé en 1888 par l'Association Phonétique Internationale. Convention : crochets [ ] pour la transcription phonétique ; barres obliques / / pour la transcription phonologique.",
                     "children": []
                   }
@@ -558,22 +558,22 @@
             "id": "d1-syll",
             "label": "Syllabe",
             "def": "Unité phonologique supérieure au phonème, organisée autour d'un sommet de sonorité (le noyau, généralement une voyelle). La syllabe est l'unité rythmique de base de la parole.",
-            "ex": ["'pa-ra-sol' : trois syllabes [pa.ʁa.sɔl], chacune structurée autour de sa voyelle noyau."],
+            "ex": ["'pa-ra-sol' : trois syllabes [pa.Ra.sɔl], chacune structurée autour de sa voyelle noyau."],
             "note": "La structure syllabique du français favorise les syllabes ouvertes de type CV. Le français est une langue à isochronie syllabique.",
             "children": [
               {
                 "id": "d1-syll-att",
                 "label": "Attaque",
                 "def": "Consonne(s) initiale(s) d'une syllabe, précédant le noyau vocalique. L'attaque est facultative en français : une syllabe peut commencer directement par une voyelle.",
-                "ex": ["Dans 'bras' [bʁa] : attaque complexe [bʁ]. Dans 'ami' [a.mi] : première syllabe sans attaque."],
-                "note": "En français, l'attaque peut contenir jusqu'à trois consonnes ([stʁ] dans 'strict'). Le principe d'attaque maximale attribue les consonnes intermédiaires à la syllabe suivante.",
+                "ex": ["Dans 'bras' [bRa] : attaque complexe [bR]. Dans 'ami' [a.mi] : première syllabe sans attaque."],
+                "note": "En français, l'attaque peut contenir jusqu'à trois consonnes ([stR] dans 'strict'). Le principe d'attaque maximale attribue les consonnes intermédiaires à la syllabe suivante.",
                 "children": []
               },
               {
                 "id": "d1-syll-noy",
                 "label": "Noyau",
                 "def": "Élément central et obligatoire de toute syllabe, typiquement une voyelle. C'est le sommet de sonorité de la syllabe, sans lequel il n'y a pas de syllabe.",
-                "ex": ["Dans 'mer' [mɛʁ] : le noyau est [ɛ]. Dans 'cri' [kʁi] : le noyau est [i]. Dans 'eau' [o] : le noyau est [o] (syllabe sans attaque ni coda)."],
+                "ex": ["Dans 'mer' [mɛR] : le noyau est [ɛ]. Dans 'cri' [kRi] : le noyau est [i]. Dans 'eau' [o] : le noyau est [o] (syllabe sans attaque ni coda)."],
                 "note": "Le noyau forme avec la coda la rime syllabique, élément pertinent en métrique et en phonologie.",
                 "children": []
               },
@@ -589,7 +589,7 @@
                 "id": "d1-syll-cv",
                 "label": "Structure CV",
                 "def": "Patron syllabique de base du français et de nombreuses langues : une consonne (C) suivie d'une voyelle (V). Ce patron constitue la structure syllabique préférée du français.",
-                "ex": ["'ma-re-chal' [ma.ʁe.ʃal] : CV.CV.CVC. 'pa-ra-sol' [pa.ʁa.sɔl] : CV.CV.CVC."],
+                "ex": ["'ma-re-chal' [ma.Re.ʃal] : CV.CV.CVC. 'pa-ra-sol' [pa.Ra.sɔl] : CV.CV.CVC."],
                 "note": "Le principe d'attaque maximale régit la syllabation : 'a-ble' plutôt que 'ab-le', car on maximise l'attaque de la syllabe suivante si les contraintes phonotactiques le permettent.",
                 "children": []
               },
@@ -597,7 +597,7 @@
                 "id": "d1-syll-regles",
                 "label": "Règles syllabiques",
                 "def": "Contraintes phonotactiques régissant la formation des syllabes dans une langue donnée : quelles suites de consonnes sont licites en attaque ou en coda.",
-                "ex": ["En français, une attaque complexe peut contenir [pʁ] 'prendre', [tʁ] 'très', [bʁ] 'bras', mais *[pt] ou *[ks] initiaux sont exclus."],
+                "ex": ["En français, une attaque complexe peut contenir [pR] 'prendre', [tR] 'très', [bR] 'bras', mais *[pt] ou *[ks] initiaux sont exclus."],
                 "note": "La loi de sonorité (Sievers) stipule que la sonorité des segments doit croître vers le noyau et décroître après lui : les suites qui violent ce principe sont généralement exclues.",
                 "children": []
               }
@@ -719,7 +719,7 @@
             "id": "d3-allomorf",
             "label": "Allomorphie",
             "def": "Phénomène par lequel un même morphème abstrait (unité de la langue) peut avoir plusieurs réalisations phoniques différentes (alloformes ou allophones morphologiques) selon le contexte phonologique ou morphologique.",
-            "ex": ["Le morphème de négation {IN-} se réalise [ɛ̃] devant voyelle (inacceptable), [ɛ̃m] devant bilabiale (impossible), [il] devant /l/ (illégal), [iʁ] devant /ʁ/ (irrégulier)."],
+            "ex": ["Le morphème de négation {IN-} se réalise [ɛ̃] devant voyelle (inacceptable), [ɛ̃m] devant bilabiale (impossible), [il] devant /l/ (illégal), [iR] devant /R/ (irrégulier)."],
             "note": "Les alloformes d'un morphème sont en distribution complémentaire : chacune apparaît dans un contexte spécifique et non interchangeable. L'allomorphie est à la morphologie ce que l'allophonie est à la phonologie.",
             "children": [
               {
@@ -730,7 +730,7 @@
                   "in- + acceptable → inacceptable (devant voyelle : [in-])",
                   "in- + possible → impossible (assimilation du lieu d'articulation : [im-])",
                   "in- + légal → illégal (assimilation complète devant /l/ : [il-])",
-                  "in- + régulier → irrégulier (assimilation complète devant /ʁ/ : [iʁ-])"
+                  "in- + régulier → irrégulier (assimilation complète devant /R/ : [iR-])"
                 ],
                 "note": "Cette variation est le résultat de règles d'assimilation phonologique historiques (le préfixe s'adapte au point d'articulation de la consonne suivante).",
                 "children": []
