@@ -5,23 +5,23 @@
     "type": "identification",
     "niveau": "fondamental",
     "enonce": "Identifiez les deux niveaux de la double articulation (Martinet) dans la forme 'soleil'. Nommez les unités de chaque niveau et expliquez ce qui les distingue.",
-    "corrige": "Première articulation : 'soleil' est un monème (unité minimale de sens), combinable avec d'autres pour former des énoncés ('le soleil brille', 'sans soleil'). Il commute avec 'lune', 'nuage', 'vent' pour changer le sens. Deuxième articulation : 'soleil' se décompose en phonèmes /s/, /ɔ/, /l/, /ɛ/, /j/ — unités distinctives sans sens propre qui permettent d'opposer 'soleil' à 'conseil', 'pareil'. Ce qui les distingue : les unités de 1ère articulation ont un sens (signifiant+signifié), celles de 2ème articulation n'en ont pas ; elles ne font que permettre des distinctions entre monèmes."
+    "corrige": "Première articulation : 'soleil' est un morphème (unité minimale de sens), combinable avec d'autres pour former des énoncés ('le soleil brille', 'sans soleil'). Il commute avec 'lune', 'nuage', 'vent' pour changer le sens. Deuxième articulation : 'soleil' se décompose en phonèmes /s/, /ɔ/, /l/, /ɛ/, /j/ — unités distinctives sans sens propre qui permettent d'opposer 'soleil' à 'conseil', 'pareil'. Ce qui les distingue : les unités de 1ère articulation ont un sens (expression+contenu), celles de 2ème articulation n'en ont pas ; elles ne font que permettre des distinctions entre morphèmes.\n\n[NOTE : La numérotation de la banque d'exercices (D0-D10) diffère de celle des TP officiels (D1-D8). D0 = introduction/sémiologie (pas de TP correspondant) ; D1 = phonèmes (≈ TP D1) ; D2 = graphèmes (TP D2 = morphèmes) ; D3 = morphèmes (TP D2 officiel) ; D4 = clause canonique ; D5 = thème/rhème ; D6 = coordination/subordination ; D7 = GN/déterminants ; D8 = voix/passif ; D9 = clause enchâssée ; D10 = phrase graphique/dislocation.]"
   },
   {
     "id": "D0-Fond-2",
     "dossier": "D0",
     "type": "identification",
     "niveau": "fondamental",
-    "enonce": "Distinguez le signifiant, le signifié et le référent du signe linguistique 'chien'. Quel est le statut du référent dans la théorie saussurienne ?",
-    "corrige": "Signifiant : l'image acoustique /ʃjɛ̃/, la suite de sons perçue ou mémorisée. Signifié : le concept mental de 'chien', l'idée générale de l'animal canin. Référent : le chien réel dans le monde. Selon Saussure, le référent est extérieur au signe : le signe linguistique est une entité psychique à deux faces (signifiant + signifié) et n'entretient pas de rapport direct avec la réalité. Preuve : on peut parler d'une licorne (signe complet) sans référent existant."
+    "enonce": "Distinguez l'expression, le contenu et le référent du signe linguistique 'chien'. Quel est le statut du référent dans la théorie saussurienne ? [Note : la notion de référent (objet réel) est hors polycop pour ce chapitre — à ne pas mobiliser pour l'examen ; les termes centraux sont expression et contenu.]",
+    "corrige": "Expression : l'image acoustique /ʃjɛ̃/, la suite de sons perçue ou mémorisée. Contenu : le concept mental de 'chien', l'idée générale de l'animal canin. Référent : le chien réel dans le monde. Selon Saussure, le référent est extérieur au signe : le signe linguistique est une entité psychique à deux faces (expression + contenu) et n'entretient pas de rapport direct avec la réalité. Preuve : on peut parler d'une licorne (signe complet) sans référent existant."
   },
   {
     "id": "D0-Fond-3",
     "dossier": "D0",
     "type": "vrai/faux",
     "niveau": "fondamental",
-    "enonce": "Vrai ou faux ? Justifiez chaque énoncé.\na) Le lien entre signifiant et signifié est naturel et motivé.\nb) La linguistique synchronique étudie l'évolution historique des langues.\nc) Un phonème est une unité de la deuxième articulation.\nd) Langue et parole désignent la même réalité pour Saussure.",
-    "corrige": "a) FAUX. Le lien est arbitraire : rien dans /ʃjɛ̃/ ne ressemble au chien. Preuve : chaque langue a une forme différente (dog, Hund, perro) pour le même référent.\nb) FAUX. La linguistique synchronique étudie une langue à un moment donné (coupe statique). C'est la linguistique diachronique qui étudie les changements dans le temps.\nc) VRAI. Le phonème est l'unité minimale distinctive de la 2ème articulation : sans sens propre, il distingue des monèmes (/p/ oppose 'pain' à 'bain', 'vain', 'main').\nd) FAUX. La langue est le système abstrait, social et collectif ; la parole est la réalisation individuelle et concrète. Ce sont deux faces complémentaires mais distinctes du langage."
+    "enonce": "Vrai ou faux ? Justifiez chaque énoncé.\na) Le lien entre expression et contenu est naturel et motivé.\nb) La linguistique synchronique étudie l'évolution historique des langues.\nc) Un phonème est une unité de la deuxième articulation.\nd) Langue et parole désignent la même réalité pour Saussure.",
+    "corrige": "a) FAUX. Le lien est immotivé : rien dans /ʃjɛ̃/ ne ressemble au chien. Preuve : chaque langue a une forme différente (dog, Hund, perro) pour le même référent.\nb) FAUX. La linguistique synchronique étudie une langue à un moment donné (coupe statique). C'est la linguistique diachronique qui étudie les changements dans le temps.\nc) VRAI. Le phonème est l'unité minimale distinctive de la 2ème articulation : sans sens propre, il distingue des morphèmes (/p/ oppose 'pain' à 'bain', 'vain', 'main').\nd) FAUX. La langue est le système abstrait, social et collectif ; la parole est la réalisation individuelle et concrète. Ce sont deux faces complémentaires mais distinctes du langage."
   },
   {
     "id": "D0-Fond-4",
@@ -44,16 +44,16 @@
     "dossier": "D0",
     "type": "QCM",
     "niveau": "fondamental",
-    "enonce": "Lequel de ces exemples illustre le mieux l'arbitraire du signe linguistique ?\na) 'Boum' désigne un bruit fort (onomatopée)\nb) 'Arbre' = /arbr/ en français, 'tree' /triː/ en anglais, 'Baum' /baʊm/ en allemand\nc) Le symbole ♀ représente la femme\nd) La fumée indique un feu",
-    "corrige": "Réponse : b). Le même référent (végétal à tronc et feuilles) est désigné par des formes totalement différentes selon les langues : si le lien était naturel ou motivé, toutes les langues utiliseraient la même forme. Cette diversité interlinguistique prouve l'arbitraire du signe. — a) L'onomatopée est partiellement motivée (ressemblance iconique avec le son) ; c) le symbole ♀ est conventionnel mais iconiquement motivé (dérivé du miroir de Vénus) ; d) la fumée est un indice naturel (lien causal), non un signe linguistique arbitraire."
+    "enonce": "Lequel de ces exemples illustre le mieux l'caractère immotivé du signe linguistique ?\na) 'Boum' désigne un bruit fort (onomatopée)\nb) 'Arbre' = /arbr/ en français, 'tree' /triː/ en anglais, 'Baum' /baʊm/ en allemand\nc) Le symbole ♀ représente la femme\nd) La fumée indique un feu",
+    "corrige": "Réponse : b). Le même référent (végétal à tronc et feuilles) est désigné par des formes totalement différentes selon les langues : si le lien était naturel ou motivé, toutes les langues utiliseraient la même forme. Cette diversité interlinguistique prouve l'caractère immotivé du signe. — a) L'onomatopée est partiellement motivée (ressemblance iconique avec le son) ; c) le symbole ♀ est conventionnel mais iconiquement motivé (dérivé du miroir de Vénus) ; d) la fumée est un indice naturel (lien causal), non un signe linguistique immotivé."
   },
   {
     "id": "D0-Fond-7",
     "dossier": "D0",
     "type": "segmentation",
     "niveau": "fondamental",
-    "enonce": "Segmentez la forme verbale 'chantaient' en monèmes. Précisez le type (lexème ou morphème grammatical) et la valeur de chacun.",
-    "corrige": "3 monèmes : {chant-} lexème — sens lexical 'produire des sons mélodiques avec la voix' ; {-ait-} morphème grammatical — imparfait de l'indicatif (temps passé, non-accompli, aspect duratif) ; {-ent} morphème grammatical — 3ème personne du pluriel (accord sujet). Vérification par commutation : 'chantait' (3S imparfait) vs 'chantaient' (3P imparfait) → {-ent} porte le pluriel. 'Chantait' vs 'chanterait' → le morphème de temps commute. 'Chantait' vs 'dormait' → le lexème commute."
+    "enonce": "Segmentez la forme verbale 'chantaient' en morphèmes. Précisez le type (lexème ou morphème grammatical) et la valeur de chacun.",
+    "corrige": "3 morphèmes : {chant-} lexème — sens lexical 'produire des sons mélodiques avec la voix' ; {-ait-} morphème grammatical — imparfait de l'indicatif (temps passé, non-accompli, aspect duratif) ; {-ent} morphème grammatical — 3ème personne du pluriel (accord sujet). Vérification par commutation : 'chantait' (3S imparfait) vs 'chantaient' (3P imparfait) → {-ent} porte le pluriel. 'Chantait' vs 'chanterait' → le morphème de temps commute. 'Chantait' vs 'dormait' → le lexème commute."
   },
   {
     "id": "D0-Fond-8",
@@ -69,7 +69,7 @@
     "type": "segmentation",
     "niveau": "fondamental",
     "enonce": "Segmentez 'inacceptable' en unités de première articulation. Précisez le type et le sens de chaque unité.",
-    "corrige": "{in-} + {accept-} + {-able}. (1) {in-} : préfixe dérivatif de sens négatif/contraire ('qui n'est pas', 'qui ne peut pas être'). (2) {accept-} : lexème verbal (base du verbe 'accepter') portant le sens de 'recevoir favorablement, admettre'. (3) {-able} : suffixe dérivatif adjectival signifiant 'qui peut être (V-é)', convertissant une base verbale en adjectif. Résultat : 'qui ne peut pas être accepté'. Commutations : in- ~ dés- ('désagréable'), -able ~ -ible ('lisible'), ~ -eur ('accepteur') — ces substitutions produisent des formes attestées ou possibles."
+    "corrige": "{in-} + {accept-} + {-able}. (1) {in-} : préfixe dérivatif de sens négatif/contraire ('qui n'est pas', 'qui ne peut pas être'). (2) {accept-} : lexème verbal (base du verbe 'accepter') portant le sens de 'recevoir favorablement, admettre'. (3) {-able} : suffixe dérivatif adjectival expression 'qui peut être (V-é)', convertissant une base verbale en adjectif. Résultat : 'qui ne peut pas être accepté'. Commutations : in- ~ dés- ('désagréable'), -able ~ -ible ('lisible'), ~ -eur ('accepteur') — ces substitutions produisent des formes attestées ou possibles."
   },
   {
     "id": "D0-Fond-10",
@@ -77,7 +77,7 @@
     "type": "identification",
     "niveau": "fondamental",
     "enonce": "Distinguez signe linguistique, symbole et indice au sens sémiotique (Peirce/Saussure). Donnez un exemple concret de chaque type et précisez la nature du lien avec ce qu'il désigne.",
-    "corrige": "Signe linguistique (Saussure) : lien arbitraire et conventionnel entre signifiant et signifié. Ex : 'feu' /fø/ — aucune ressemblance entre les sons et le phénomène de combustion ; convention sociale pure. Symbole (Peirce) : lien conventionnel mais partiellement motivé culturellement. Ex : la colombe pour la paix — lien culturel, non universel. Indice (Peirce) : lien existentiel, causal ou physique. Ex : la fumée indique le feu — relation causale réelle entre les deux phénomènes. Dans les langues naturelles, on trouve majoritairement des signes arbitraires, mais aussi des symboles (onomatopées, iconicité diagrammatique) et des quasi-indices (déictiques comme 'ici', 'maintenant')."
+    "corrige": "Signe linguistique (Saussure) : lien immotivé et conventionnel entre expression et contenu. Ex : 'feu' /fø/ — aucune ressemblance entre les sons et le phénomène de combustion ; convention sociale pure. Symbole (Peirce) : lien conventionnel mais partiellement motivé culturellement. Ex : la colombe pour la paix — lien culturel, non universel. Indice (Peirce) : lien existentiel, causal ou physique. Ex : la fumée indique le feu — relation causale réelle entre les deux phénomènes. Dans les langues naturelles, on trouve majoritairement des signes immotivés, mais aussi des symboles (onomatopées, iconicité diagrammatique) et des quasi-indices (déictiques comme 'ici', 'maintenant')."
   },
   {
     "id": "D0-Int-1",
@@ -92,23 +92,23 @@
     "dossier": "D0",
     "type": "analyse",
     "niveau": "intermédiaire",
-    "enonce": "Analysez complètement le signe linguistique 'bibliothèque' : signifiant (phonologique et graphique), signifié, arbitraire, motivation éventuelle. Comparez avec l'équivalent anglais 'library'.",
-    "corrige": "Signifiant phonologique : /biblijɔtɛk/ (8 phonèmes). Signifiant graphique : <bibliothèque> (12 graphèmes). Signifié : lieu de conservation et de prêt de livres, espace de lecture publique ou privée. Arbitraire : le lien signifiant/signifié est conventionnel — rien dans /biblijɔtɛk/ n'évoque naturellement le concept. Motivation : le terme est morphologiquement motivé par ses étymons grecs βιβλίον (livre) + θήκη (coffre, dépôt), mais cette motivation étymologique n'est plus transparente pour un locuteur non helléniste. Comparaison : 'library' (< latin librarium 'armoire à livres') couvre le même signifié avec un signifiant totalement différent — nouvelle preuve de l'arbitraire interlinguistique."
+    "enonce": "Analysez complètement le signe linguistique 'bibliothèque' : expression (phonologique et graphique), contenu, immotivé, motivation éventuelle. Comparez avec l'équivalent anglais 'library'.",
+    "corrige": "Expression phonologique : /biblijɔtɛk/ (8 phonèmes). Expression graphique : <bibliothèque> (12 graphèmes). Contenu : lieu de conservation et de prêt de livres, espace de lecture publique ou privée. Immotivé : le lien expression/contenu est conventionnel — rien dans /biblijɔtɛk/ n'évoque naturellement le concept. Motivation : le terme est morphologiquement motivé par ses étymons grecs βιβλίον (livre) + θήκη (coffre, dépôt), mais cette motivation étymologique n'est plus transparente pour un locuteur non helléniste. Comparaison : 'library' (< latin librarium 'armoire à livres') couvre le même contenu avec une expression totalement différent — nouvelle preuve de l'immotivé interlinguistique."
   },
   {
     "id": "D0-Int-3",
     "dossier": "D0",
     "type": "identification",
     "niveau": "intermédiaire",
-    "enonce": "Distinguez 'langue' et 'parole' chez Saussure en analysant les exemples suivants. Pour chacun, précisez si c'est un fait de langue ou de parole.\na) Le fait que 'pas' se prononce /pɑ/ ou /pa/ selon les locuteurs\nb) La règle d'accord du participe passé avec l'auxiliaire 'avoir'\nc) Une personne qui dit 'j'ai mangeais' (erreur grammaticale)\nd) Le système de conjugaison du verbe français",
-    "corrige": "a) Variation de prononciation /pɑ/ vs /pa/ : fait de PAROLE — réalisation individuelle variable, non prescrite par le système collectif. b) Règle d'accord du participe : fait de LANGUE — règle systématique du code partagé par tous les francophones. c) 'j'ai mangeais' (erreur) : fait de PAROLE — réalisation individuelle déviante par rapport à la langue, possible justement parce que langue et parole sont distinctes. d) Système de conjugaison : fait de LANGUE — ensemble organisé et systématique des paradigmes verbaux, code collectif."
+    "enonce": "Distinguez 'langue' et 'parole' selon le cours (Mahrer) en analysant les exemples suivants. Pour chacun, précisez si c'est un fait de langue ou de parole.\na) Le fait que 'pas' se prononce /pɑ/ ou /pa/ selon les locuteurs\nb) La règle d'accord du participe passé avec l'auxiliaire 'avoir'\nc) Une personne qui dit 'j'ai mangeais' (erreur grammaticale)\nd) Le système de conjugaison du verbe français",
+    "corrige": "a) Variation de prononciation /pɑ/ vs /pa/ : fait de PAROLE — événement singulier : chaque énoncé est unique, non répétable à l'identique. b) Règle d'accord du participe : fait de LANGUE — propriété répétable d'un énoncé à l'autre (permet le jugement de grammaticalité) ; systématique du code partagé par tous les francophones. c) 'j'ai mangeais' (erreur) : fait de PAROLE — réalisation individuelle déviante par rapport à la langue, possible justement parce que langue et parole sont distinctes. d) Système de conjugaison : fait de LANGUE — ensemble organisé et systématique des paradigmes verbaux, code collectif."
   },
   {
     "id": "D0-Int-4",
     "dossier": "D0",
     "type": "commutation",
     "niveau": "intermédiaire",
-    "enonce": "Appliquez la commutation pour segmenter les monèmes dans les formes suivantes. Pour chaque forme, montrez la procédure.\na) 'prendrions'\nb) 'déchargement'\nc) 'anti-inflammatoire'",
+    "enonce": "Appliquez la commutation pour segmenter les morphèmes dans les formes suivantes. Pour chaque forme, montrez la procédure.\na) 'prendrions'\nb) 'déchargement'\nc) 'anti-inflammatoire'",
     "corrige": "a) 'prendrions' : commutation avec 'prendrait' → {-ions} porte le 1P ; avec 'irions' → {prendr-} est le lexème ; avec 'prendrais' → {-ions} vs {-ais} oppose personne. Monèmes : {prendr-} (lexème) + {-r-} (marqueur de futur/conditionnel, fusionné ici) + {-ions} (1P conditionnel). Analyse plus fine : {prend-} + {r} (conditionnel) + {-ions} (1P pluriel). b) 'déchargement' : {dé-} (préfixe inversatif) + {charg-} (lexème) + {-ement} (suffixe nominalisant). c) 'anti-inflammatoire' : {anti-} (préfixe d'opposition) + {inflamm-} (lexème) + {-atoire} (suffixe adjectival médical, de 'inflammare')."
   },
   {
@@ -125,15 +125,15 @@
     "type": "question ouverte",
     "niveau": "intermédiaire",
     "enonce": "En quoi la notion de 'valeur' est-elle centrale dans le structuralisme saussurien ? Illustrez avec un exemple de valeur différentielle.",
-    "corrige": "Pour Saussure, le sens d'un signe ne vient pas d'une substance positive (le concept lui-même) mais de sa différence avec les autres signes du système : 'les signes ne parlent que par leurs différences'. La valeur d'un signe est donc relationnelle et différentielle. Exemple : 'mouton' en français a une valeur différente de 'sheep' en anglais bien que leurs signifiés se recoupent, car le français distingue 'mouton' (animal et viande) là où l'anglais distingue 'sheep' (animal) de 'mutton' (viande). La valeur de 'mouton' est donc définie par ses rapports avec les autres termes du système lexical français (bœuf, agneau, veau...), pas par une essence positive. C'est la base du structuralisme : la langue est un système de différences."
+    "corrige": "Pour Saussure, le sens d'un signe ne vient pas d'une substance positive (le concept lui-même) mais de sa différence avec les autres signes du système : 'les signes ne parlent que par leurs différences'. La valeur d'un signe est donc relationnelle et différentielle. Exemple : 'mouton' en français a une valeur différente de 'sheep' en anglais bien que leurs contenus se recoupent, car le français distingue 'mouton' (animal et viande) là où l'anglais distingue 'sheep' (animal) de 'mutton' (viande). La valeur de 'mouton' est donc définie par ses rapports avec les autres termes du système lexical français (bœuf, agneau, veau...), pas par une essence positive. C'est la base du structuralisme : la langue est un système de différences."
   },
   {
     "id": "D0-Int-7",
     "dossier": "D0",
     "type": "identification",
     "niveau": "intermédiaire",
-    "enonce": "Dans quelle mesure les onomatopées (ex : 'plouf', 'cocorico', 'boum') remettent-elles en cause l'arbitraire du signe ? Comment la linguistique traite-t-elle ce phénomène ?",
-    "corrige": "Les onomatopées semblent remettre en cause l'arbitraire par leur ressemblance iconique avec le son qu'elles imitent ('plouf' mime l'impact sur l'eau). Cependant, plusieurs arguments maintiennent l'arbitraire comme principe général : (1) Les onomatopées varient entre langues : le coq fait 'cocorico' en français, 'cock-a-doodle-doo' en anglais, 'kikeriki' en allemand — si l'imitation était parfaite, les formes seraient identiques. (2) Les onomatopées suivent les contraintes phonologiques de la langue d'accueil (elles sont intégrées au système). (3) Elles sont marginales dans le lexique. Conclusion : les onomatopées illustrent une motivation partielle (iconicité phonique), mais l'arbitraire reste le principe dominant des langues naturelles."
+    "enonce": "Dans quelle mesure les onomatopées (ex : 'plouf', 'cocorico', 'boum') remettent-elles en cause l'caractère immotivé du signe ? Comment la linguistique traite-t-elle ce phénomène ?",
+    "corrige": "Les onomatopées semblent remettre en cause l'immotivé par leur ressemblance iconique avec le son qu'elles imitent ('plouf' mime l'impact sur l'eau). Cependant, plusieurs arguments maintiennent l'immotivé comme principe général : (1) Les onomatopées varient entre langues : le coq fait 'cocorico' en français, 'cock-a-doodle-doo' en anglais, 'kikeriki' en allemand — si l'imitation était parfaite, les formes seraient identiques. (2) Les onomatopées suivent les contraintes phonologiques de la langue d'accueil (elles sont intégrées au système). (3) Elles sont marginales dans le lexique. Conclusion : les onomatopées illustrent une motivation partielle (iconicité phonique), mais l'immotivé reste le principe dominant des langues naturelles."
   },
   {
     "id": "D0-Int-8",
@@ -148,8 +148,8 @@
     "dossier": "D0",
     "type": "commutation",
     "niveau": "intermédiaire",
-    "enonce": "Appliquez la double commutation (Hjelmslev) pour analyser le syntagme 'la petite fille rit'. Montrez comment les deux plans (signifiants et signifiés) réagissent simultanément aux substitutions.",
-    "corrige": "Double commutation : si on substitue 'petite' par 'grande', le signifiant change (/pəti/ → /ɡrɑ̃d/) et le signifié change (dimension réduite → dimension importante). Les deux plans varient ensemble : c'est une commutation au sens plein. Si on substitue 'la' par 'une' : le signifiant change (/la/ → /yn/) et le signifié change (défini → indéfini) — double commutation. Si on substitue 'rit' par 'rit' (même forme, homonyme d'un rire différent) : signifiant identique, signifié identique dans ce contexte — pas de commutation. La double commutation permet d'identifier les unités significatives minimales : deux formes qui commutent simultanément sur les deux plans sont deux monèmes distincts."
+    "enonce": "Appliquez la double commutation (Hjelmslev) pour analyser le syntagme 'la petite fille rit'. Montrez comment les deux plans (expressions et contenus) réagissent simultanément aux substitutions.",
+    "corrige": "Double commutation : si on substitue 'petite' par 'grande', l'expression change (/pəti/ → /ɡrɑ̃d/) et le contenu change (dimension réduite → dimension importante). Les deux plans varient ensemble : c'est une commutation au sens plein. Si on substitue 'la' par 'une' : l'expression change (/la/ → /yn/) et le contenu change (défini → indéfini) — double commutation. Si on substitue 'rit' par 'rit' (même forme, homonyme d'un rire différent) : expression identique, contenu identique dans ce contexte — pas de commutation. La double commutation permet d'identifier les unités significatives minimales : deux formes qui commutent simultanément sur les deux plans sont deux morphèmes distincts."
   },
   {
     "id": "D0-Int-10",
@@ -157,30 +157,30 @@
     "type": "question ouverte",
     "niveau": "intermédiaire",
     "enonce": "Qu'est-ce que la 'pertinence' en linguistique structurale ? Expliquez comment ce concept s'applique à la phonologie et à la morphologie.",
-    "corrige": "La pertinence (ou valeur fonctionnelle) désigne la capacité d'une différence à produire une distinction dans le système linguistique. En phonologie : une différence phonique est pertinente si elle distingue des monèmes — /p/ vs /b/ est pertinent car 'pain' ≠ 'bain'. Une différence non pertinente (allophone) n'affecte pas les distinctions lexicales : le /r/ roulé et le /r/ grasseyé ne distinguent pas de mots en français moderne. En morphologie : une différence morphologique est pertinente si elle distingue des valeurs grammaticales — {-s} du pluriel est pertinent (il distingue 'chat' de 'chats'). La pertinence est donc un critère fonctionnel, non purement phonétique ou formel : seules les différences qui 'comptent' dans le système sont retenues."
+    "corrige": "La pertinence (ou valeur fonctionnelle) désigne la capacité d'une différence à produire une distinction dans le système linguistique. En phonologie : une différence phonique est pertinente si elle distingue des morphèmes — /p/ vs /b/ est pertinent car 'pain' ≠ 'bain'. Une différence non pertinente (allophone) n'affecte pas les distinctions lexicales : le /r/ roulé et le /r/ grasseyé ne distinguent pas de mots en français moderne. En morphologie : une différence morphologique est pertinente si elle distingue des valeurs grammaticales — {-s} du pluriel est pertinent (il distingue 'chat' de 'chats'). La pertinence est donc un critère fonctionnel, non purement phonétique ou formel : seules les différences qui 'comptent' dans le système sont retenues."
   },
   {
     "id": "D0-Av-1",
     "dossier": "D0",
     "type": "cas limite",
     "niveau": "avancé",
-    "enonce": "Les déictiques comme 'ici', 'maintenant', 'je' sont-ils des signes arbitraires au sens saussurien ? En quoi problématisent-ils la notion d'arbitraire ?",
-    "corrige": "Les déictiques posent un problème à la théorie de l'arbitraire pur. 'Ici' désigne le lieu de l'énonciation, 'maintenant' le moment présent, 'je' l'énonciateur — leur signifié est ancré dans la situation d'énonciation et change avec elle. Ils fonctionnent comme des indices au sens de Peirce : ils pointent vers un élément de la situation réelle (quasi-indicialité). Cependant, la forme phonique reste arbitraire (rien dans /isi/ n'évoque spatialité) et la convention reste nécessaire pour leur interprétation. Solution : on peut dire que leur signifié est vide de contenu référentiel stable (il ne désigne rien hors contexte) mais leur mode de fonctionnement est indiciel. Benveniste distingue la 'personne' déictique ('je', 'tu') de la 'non-personne' ('il') comme relevant de logiques différentes."
+    "enonce": "Les déictiques comme 'ici', 'maintenant', 'je' sont-ils des signes immotivés au sens saussurien ? En quoi problématisent-ils la notion d'immotivé ?",
+    "corrige": "Les déictiques posent un problème à la théorie de l'immotivé pur. 'Ici' désigne le lieu de l'énonciation, 'maintenant' le moment présent, 'je' l'énonciateur — leur contenu est ancré dans la situation d'énonciation et change avec elle. Ils fonctionnent comme des indices au sens de Peirce : ils pointent vers un élément de la situation réelle (quasi-indicialité). Cependant, la forme phonique reste immotivé (rien dans /isi/ n'évoque spatialité) et la convention reste nécessaire pour leur interprétation. Solution : on peut dire que leur contenu est vide de contenu référentiel stable (il ne désigne rien hors contexte) mais leur mode de fonctionnement est indiciel. Benveniste distingue la 'personne' déictique ('je', 'tu') de la 'non-personne' ('il') comme relevant de logiques différentes."
   },
   {
     "id": "D0-Av-2",
     "dossier": "D0",
     "type": "analyse",
     "niveau": "avancé",
-    "enonce": "Analysez le concept de 'motivation relative' (Saussure) à travers des exemples de mots composés et dérivés. En quoi s'oppose-t-il à la motivation absolue et à l'arbitraire pur ?",
-    "corrige": "L'arbitraire pur : aucune relation entre signifiant et signifié — ex : 'bœuf' /bœf/. La motivation relative : le signe est partiellement motivé par ses composants, eux-mêmes arbitraires. Ex : 'dix-neuf' est motivé relativement car composé de 'dix' et 'neuf' (dont le sens se combine), mais 'dix' et 'neuf' restent arbitraires. 'Inacceptable' est motivé relativement par {in-} + {accept-} + {-able}, chaque morphème étant lui-même arbitraire. La motivation relative est intralinguistique (elle opère à l'intérieur du système) et non extralinguistique (pas de ressemblance avec le monde). Elle s'oppose à la motivation absolue des onomatopées (ressemblance iconique avec le son réel). Pour Saussure, les langues oscillent entre arbitraire pur et motivation relative, certaines (comme le chinois) penchant vers l'arbitraire, d'autres (comme l'allemand avec ses composés) vers la motivation."
+    "enonce": "Analysez le concept de 'motivation relative' (Saussure) à travers des exemples de mots composés et dérivés. En quoi s'oppose-t-il à la motivation absolue et à l'immotivé pur ?",
+    "corrige": "L'immotivé pur : aucune relation entre expression et contenu — ex : 'bœuf' /bœf/. La motivation relative : le signe est partiellement motivé par ses composants, eux-mêmes immotivés. Ex : 'dix-neuf' est motivé relativement car composé de 'dix' et 'neuf' (dont le sens se combine), mais 'dix' et 'neuf' restent immotivés. 'Inacceptable' est motivé relativement par {in-} + {accept-} + {-able}, chaque morphème étant lui-même immotivé. La motivation relative est intralinguistique (elle opère à l'intérieur du système) et non extralinguistique (pas de ressemblance avec le monde). Elle s'oppose à la motivation absolue des onomatopées (ressemblance iconique avec le son réel). Pour Saussure, les langues oscillent entre immotivé pur et motivation relative, certaines (comme le chinois) penchant vers l'immotivé, d'autres (comme l'allemand avec ses composés) vers la motivation."
   },
   {
     "id": "D0-Av-3",
     "dossier": "D0",
     "type": "correction d'erreur",
     "niveau": "avancé",
-    "enonce": "Évaluez l'analyse suivante d'un étudiant et corrigez les erreurs : 'Dans le mot phonème, on peut identifier les monèmes suivants : {phon-} = son + {-ème} = unité + {-e} = marque du féminin. Ce mot contient donc 3 monèmes dont un de genre.'",
+    "enonce": "Évaluez l'analyse suivante d'un étudiant et corrigez les erreurs : 'Dans le mot phonème, on peut identifier les morphèmes suivants : {phon-} = son + {-ème} = unité + {-e} = marque du féminin. Ce mot contient donc 3 morphèmes dont un de genre.'",
     "corrige": "Erreurs à corriger : (1) Le découpage {phon-} + {-ème} est partiellement correct : 'phonème' est composé du grec φωνή (son, voix) et du suffixe savant -ème (unité minimale, d'après le modèle de morphème, lexème, etc.). Mais {-e} final n'est PAS un morphème de genre féminin : 'phonème' est masculin (le phonème) et le -e fait partie du suffixe -ème, non un ajout de genre. (2) Dire que -ème signifie 'unité' est une glose métalinguistique approximative : c'est un suffixe terminologique savant, pas un morphème grammatical de genre. (3) L'analyse correcte : {phon-} (racine grecque 'son') + {-ème} (suffixe terminologique), 2 unités morphologiques, pas 3. Le mot est masculin non par morphème, mais par convention lexicale."
   },
   {
@@ -189,7 +189,7 @@
     "type": "analyse",
     "niveau": "avancé",
     "enonce": "Comparez la double articulation en français et dans une langue à tons comme le mandarin. La notion de phonème est-elle applicable dans les deux cas ? Quelles adaptations sont nécessaires ?",
-    "corrige": "En français, la 2ème articulation est basée sur des phonèmes segmentaux (consonnes, voyelles) linéairement ordonnés : /s/, /ɔ/, /l/, /ɛ/, /j/ dans 'soleil'. En mandarin, les tons sont des unités suprasegmentales (hauteur mélodique) qui fonctionnent comme des traits distinctifs : mā (ton1, mère), má (ton2, chanvre), mǎ (ton3, cheval), mà (ton4, gronder) — le même signifiant segmental /ma/ porte 4 tons distincts = 4 signifiants différents. Le phonème existe en mandarin, mais doit être élargi pour inclure le ton comme trait pertinent. La double articulation s'applique : les tons sont des unités de 2ème articulation (sans sens propre, distincts, combinables). L'adaptation nécessaire est l'intégration de la prosodie (ton) dans la définition du phonème, qui ne peut plus être purement segmental."
+    "corrige": "En français, la 2ème articulation est basée sur des phonèmes segmentaux (consonnes, voyelles) linéairement ordonnés : /s/, /ɔ/, /l/, /ɛ/, /j/ dans 'soleil'. En mandarin, les tons sont des unités suprasegmentales (hauteur mélodique) qui fonctionnent comme des traits distinctifs : mā (ton1, mère), má (ton2, chanvre), mǎ (ton3, cheval), mà (ton4, gronder) — le même expression segmental /ma/ porte 4 tons distincts = 4 expressions différents. Le phonème existe en mandarin, mais doit être élargi pour inclure le ton comme trait pertinent. La double articulation s'applique : les tons sont des unités de 2ème articulation (sans sens propre, distincts, combinables). L'adaptation nécessaire est l'intégration de la prosodie (ton) dans la définition du phonème, qui ne peut plus être purement segmental."
   },
   {
     "id": "D0-Av-5",
@@ -197,7 +197,7 @@
     "type": "question ouverte",
     "niveau": "avancé",
     "enonce": "En quoi le structuralisme saussurien est-il à la fois une rupture avec la linguistique historique du XIXe siècle et un fondement pour la linguistique moderne ? Identifiez 3 apports majeurs et une limite.",
-    "corrige": "Ruptures/apports : (1) Priorité à la synchronie : contre la linguistique comparatiste et historique du XIXe siècle (Bopp, Schleicher), Saussure affirme que l'étude de la langue à un moment donné précède l'histoire. (2) Conception systémique : la langue est un système de relations, pas une collection de mots — chaque élément a de la valeur par rapport aux autres. (3) Arbitraire du signe : rupture avec les théories naturalistes (Schleicher : les langues sont des organismes) et avec l'étymologisme. Fondements modernes : le structuralisme européen (Troubetzkoy, Jakobson) et américain (Bloomfield) en découlent, ainsi que la phonologie, la morphologie structurale, et indirectement la grammaire générative. Limite : la dichotomie langue/parole écarte l'usage individuel et la variation ; Chomsky (compétence/performance) et les sociolinguistes (Labov) l'ont nuancée ou critiquée."
+    "corrige": "Ruptures/apports : (1) Priorité à la synchronie : contre la linguistique comparatiste et historique du XIXe siècle (Bopp, Schleicher), Saussure affirme que l'étude de la langue à un moment donné précède l'histoire. (2) Conception systémique : la langue est un système de relations, pas une collection de mots — chaque élément a de la valeur par rapport aux autres. (3) Immotivé du signe : rupture avec les théories naturalistes (Schleicher : les langues sont des organismes) et avec l'étymologisme. Fondements modernes : le structuralisme européen (Troubetzkoy, Jakobson) et américain (Bloomfield) en découlent, ainsi que la phonologie, la morphologie structurale, et indirectement la grammaire générative. Limite : la dichotomie langue/parole écarte l'usage individuel et la variation ; Chomsky (compétence/performance) et les sociolinguistes (Labov) l'ont nuancée ou critiquée."
   },
   {
     "id": "D0-Av-6",
@@ -205,7 +205,7 @@
     "type": "analyse",
     "niveau": "avancé",
     "enonce": "Analysez la notion de 'commutation' de Martinet en la distinguant du test de substitution chomskyen. En quoi ces deux méthodes répondent-elles à des théories différentes du langage ?",
-    "corrige": "Commutation (Martinet/structuralisme) : substitution d'un élément par un autre pour tester si le changement produit une différence de sens. L'objectif est d'identifier les unités pertinentes du système (monèmes, phonèmes) de manière inductive à partir d'un corpus. La procédure est distributionnelle et fonctionnelle : ce qui compte, c'est l'effet sur le sens. Test de substitution chomskyen : dans la grammaire générative, on teste si deux éléments sont de même catégorie syntaxique (GN, GV...) en les substituant dans la même position structurale — mais l'objectif est de valider des règles de réécriture d'une grammaire formelle, pas d'identifier des unités minimales de sens. Différences théoriques : la commutation s'inscrit dans une théorie fonctionnaliste (langue comme outil de communication), le test chomskyen dans un formalisme syntaxique interne (langue comme grammaire mentale). La commutation est bidirectionnelle (elle affecte les deux plans) ; le test chomskyen ne porte que sur la structure."
+    "corrige": "Commutation (Martinet/structuralisme) : substitution d'un élément par un autre pour tester si le changement produit une différence de sens. L'objectif est d'identifier les unités pertinentes du système (morphèmes, phonèmes) de manière inductive à partir d'un corpus. La procédure est distributionnelle et fonctionnelle : ce qui compte, c'est l'effet sur le sens. Test de substitution chomskyen : dans la grammaire générative, on teste si deux éléments sont de même catégorie syntaxique (GN, GV...) en les substituant dans la même position structurale — mais l'objectif est de valider des règles de réécriture d'une grammaire formelle, pas d'identifier des unités minimales de sens. Différences théoriques : la commutation s'inscrit dans une théorie fonctionnaliste (langue comme outil de communication), le test chomskyen dans un formalisme syntaxique interne (langue comme grammaire mentale). La commutation est bidirectionnelle (elle affecte les deux plans) ; le test chomskyen ne porte que sur la structure."
   },
   {
     "id": "D0-Av-7",
@@ -221,7 +221,7 @@
     "type": "analyse",
     "niveau": "avancé",
     "enonce": "Comparez la conception du signe linguistique chez Saussure et chez Peirce. Quelles implications ces deux théories ont-elles pour l'analyse des langues naturelles ?",
-    "corrige": "Saussure : signe dyAdique (signifiant + signifié), arbitraire, ancré dans la langue comme système social. L'accent est sur les relations différentielles internes au système. Peirce : signe triadique (representamen + objet + interprétant), avec trois types de relations : icône (ressemblance), indice (contiguïté causale), symbole (convention arbitraire). Le signe linguistique pierceén est un symbole mais peut inclure des dimensions iconiques et indicelles. Implications : La sémiotique peircéenne permet d'analyser des phénomènes que Saussure traite mal : les déictiques (indices), les onomatopées (icônes), l'iconicité diagrammatique (ressemblance de structure). Saussure est plus adapté à l'analyse interne du système linguistique (phonologie, morphologie). Peirce ouvre vers une sémiotique générale qui englobe les gestes, les images, les codes non-linguistiques. Pour les langues naturelles, les deux approches sont complémentaires : la linguistique moderne utilise Saussure pour le système, Peirce pour la pragmatique et la sémiotique."
+    "corrige": "Saussure : signe dyAdique (expression + contenu), immotivé, ancré dans la langue comme système social. L'accent est sur les relations différentielles internes au système. Peirce : signe triadique (representamen + objet + interprétant), avec trois types de relations : icône (ressemblance), indice (contiguïté causale), symbole (convention immotivé). Le signe linguistique pierceén est un symbole mais peut inclure des dimensions iconiques et indicelles. Implications : La sémiotique peircéenne permet d'analyser des phénomènes que Saussure traite mal : les déictiques (indices), les onomatopées (icônes), l'iconicité diagrammatique (ressemblance de structure). Saussure est plus adapté à l'analyse interne du système linguistique (phonologie, morphologie). Peirce ouvre vers une sémiotique générale qui englobe les gestes, les images, les codes non-linguistiques. Pour les langues naturelles, les deux approches sont complémentaires : la linguistique moderne utilise Saussure pour le système, Peirce pour la pragmatique et la sémiotique."
   },
   {
     "id": "D0-Av-9",
@@ -229,7 +229,7 @@
     "type": "correction d'erreur",
     "niveau": "avancé",
     "enonce": "Évaluez ce raisonnement : 'La double articulation prouve que toutes les langues ont le même nombre de phonèmes, car elles utilisent toutes le même mécanisme économique.' Identifiez l'erreur et reformulez correctement.",
-    "corrige": "L'erreur est de confondre le principe (universel) avec son application (variable). La double articulation est un principe universel des langues humaines : toutes articulent des unités significatives (1ère articulation) en unités distinctives sans sens (2ème articulation). Mais le nombre de phonèmes varie considérablement : le français a ~35-40 phonèmes, l'hawaïen ~13, le !Kung (!Xóõ) des clics et consonnes jusqu'à ~100 phonèmes distincts. Le principe d'économie est universel (quelques dizaines d'unités distinctives produisent des milliers de monèmes) mais son implémentation est spécifique à chaque langue. Reformulation correcte : 'La double articulation est un principe universel qui permet à toutes les langues de construire un lexique vaste à partir d'un inventaire phonologique limité, mais la taille de cet inventaire varie selon les langues.'"
+    "corrige": "L'erreur est de confondre le principe (universel) avec son application (variable). La double articulation est un principe universel des langues humaines : toutes articulent des unités significatives (1ère articulation) en unités distinctives sans sens (2ème articulation). Mais le nombre de phonèmes varie considérablement : le français a ~35-40 phonèmes, l'hawaïen ~13, le !Kung (!Xóõ) des clics et consonnes jusqu'à ~100 phonèmes distincts. Le principe d'économie est universel (quelques dizaines d'unités distinctives produisent des milliers de morphèmes) mais son implémentation est spécifique à chaque langue. Reformulation correcte : 'La double articulation est un principe universel qui permet à toutes les langues de construire un lexique vaste à partir d'un inventaire phonologique limité, mais la taille de cet inventaire varie selon les langues.'"
   },
   {
     "id": "D0-Av-10",
@@ -269,7 +269,7 @@
     "type": "vrai/faux",
     "niveau": "fondamental",
     "enonce": "Vrai ou faux ? Justifiez.\na) En français, les phonèmes /p/ et /b/ se distinguent uniquement par le lieu d'articulation.\nb) Une voyelle nasale est produite avec le voile du palais relevé.\nc) Le phonème /r/ français est une fricative uvulaire voisée dans le français standard.\nd) L'API (Alphabet Phonétique International) est un système de notation des phonèmes de chaque langue.",
-    "corrige": "a) FAUX. /p/ et /b/ ont le même lieu (bilabial) et le même mode (occlusive). Ils ne se distinguent que par le voisement : /p/ est non voisé, /b/ est voisé.\nb) FAUX. Une voyelle nasale est produite avec le voile du palais ABAISSÉ, ce qui permet à l'air de passer par les fosses nasales. Relevé = orale ; abaissé = nasale.\nc) VRAI. Le /r/ du français standard (dit 'r grasseyé') est articulé à la luette/uvule : fricative uvulaire voisée [ʁ] dans la notation API précise. Certains locuteurs réalisent un r apical [r] (roulé).\nd) FAUX (nuance). L'API est un système de notation des SONS (phones, réalisations phonétiques), pas uniquement des phonèmes abstraits. Il note les réalisations concrètes avec des crochets [ ] ; les phonèmes abstraits s'écrivent entre barres obliques / /. L'API est universel, utilisable pour toutes les langues."
+    "corrige": "a) FAUX. /p/ et /b/ ont le même lieu (bilabial) et le même mode (occlusive). Ils ne se distinguent que par le voisement : /p/ est non voisé, /b/ est voisé.\nb) FAUX. Une voyelle nasale est produite avec le voile du palais ABAISSÉ, ce qui permet à l'air de passer par les fosses nasales. Relevé = orale ; abaissé = nasale.\nc) VRAI. Le /r/ du français standard (dit « r grasseyé ») — ATTENTION : l'uvulaire dorsale est la norme standard, pas le grasseyé. Le /ʁ/ français standard est dorso-vélaire (friction entre le dos de la langue et le voile du palais) — c'est la norme parisienne. La variante dite « roulée » (apicale, vibration de la pointe de la langue contre les alvéoles) est une variante régionale. La variante dite « grasseyée » (vibration de la luette) est une variante historique/dialectale. À ne pas confondre : standard ≠ grasseyé. est articulé à la luette/uvule : fricative uvulaire voisée [ʁ] dans la notation API précise. Certains locuteurs réalisent un r apical [r] (roulé).\nd) FAUX (nuance). L'API est un système de notation des SONS (phones, réalisations phonétiques), pas uniquement des phonèmes abstraits. Il note les réalisations concrètes avec des crochets [ ] ; les phonèmes abstraits s'écrivent entre barres obliques / /. L'API est universel, utilisable pour toutes les langues."
   },
   {
     "id": "D1-Fond-5",
@@ -333,7 +333,7 @@
     "type": "analyse",
     "niveau": "intermédiaire",
     "enonce": "Définissez la notion d'allophone et distinguez allophones en distribution complémentaire et allophones en variation libre. Illustrez avec des exemples du français.",
-    "corrige": "Allophone : variante de réalisation d'un phonème — les allophones d'un même phonème sont en distribution complémentaire ou en variation libre, mais ne distinguent jamais de paires minimales. Distribution complémentaire : deux réalisations phonétiques qui n'apparaissent jamais dans les mêmes contextes (leurs distributions sont mutuellement exclusives). Ex : en français, /l/ clair (latérale alvéolaire non vélaire) en position prévocalique ('lire' [liʁ]) vs /l/ sombre (légèrement vélaire) en position finale ('bal' [bal]). Ce ne sont pas deux phonèmes car ils ne contrastent jamais dans le même environnement. Variation libre : deux réalisations phonétiques peuvent apparaître dans les mêmes contextes sans distinction de sens. Ex : /r/ français réalisé [ʁ] (grasseyé) ou [r] (roulé apical) par des locuteurs différents — même phonème /r/ réalisé différemment selon les locuteurs ou les registres, sans distinction sémantique."
+    "corrige": "Allophone : variante de réalisation d'un phonème — les allophones d'un même phonème sont en distribution complémentaire ou en variation libre, mais ne distinguent jamais de paires minimales. Distribution complémentaire : deux réalisations phonétiques qui n'apparaissent jamais dans les mêmes contextes (leurs distributions sont mutuellement exclusives). Ex : en français, /l/ clair (latérale alvéolaire non vélaire) en position prévocalique ('lire' [liʁ]) vs /l/ sombre (légèrement vélaire) en position finale ('bal' [bal]). Ce ne sont pas deux phonèmes car ils ne contrastent jamais dans le même environnement. Variation libre : deux réalisations phonétiques peuvent apparaître dans les mêmes contextes sans distinction de sens. Ex : /r/ français réalisé [ʁ] (grasseyé (variante historique/dialectale — non standard)) ou [r] (roulé/apical (variante régionale) apical) par des locuteurs différents — même phonème /r/ réalisé différemment selon les locuteurs ou les registres, sans distinction sémantique."
   },
   {
     "id": "D1-Int-3",
@@ -484,8 +484,8 @@
     "dossier": "D2",
     "type": "identification",
     "niveau": "fondamental",
-    "enonce": "Qu'est-ce que le signifiant graphique ? Distinguez-le du signifiant phonologique. Donnez deux exemples où signifiant graphique et phonologique divergent significativement.",
-    "corrige": "Le signifiant phonologique est l'image acoustique du signe : la suite de phonèmes perçue ou imaginée. Le signifiant graphique est la suite de graphèmes (lettres) utilisée pour noter le mot à l'écrit. Ces deux signifiants sont souvent distincts, surtout en français. Exemples de divergence : 'oiseau' : signifiant phonologique /wazo/ (5 phonèmes), signifiant graphique <oiseau> (6 lettres) — la correspondance n'est pas biunivoque. 'Chevaux' : signifiant phonologique /ʃəvo/ ou /ʃvo/ (4-5 phonèmes), signifiant graphique <chevaux> (7 lettres dont plusieurs muettes : -x final, le -e- instable.  Le -aux ne correspond qu'à /o/."
+    "enonce": "Qu'est-ce que l'expression graphique ? Distinguez-le de l'expression phonologique. Donnez deux exemples où expression graphique et phonologique divergent significativement.",
+    "corrige": "Le expression phonologique est l'image acoustique du signe : la suite de phonèmes perçue ou imaginée. Le expression graphique est la suite de graphèmes (lettres) utilisée pour noter le mot à l'écrit. Ces deux expressions sont souvent distincts, surtout en français. Exemples de divergence : 'oiseau' : expression phonologique /wazo/ (5 phonèmes), expression graphique <oiseau> (6 lettres) — la correspondance n'est pas biunivoque. 'Chevaux' : expression phonologique /ʃəvo/ ou /ʃvo/ (4-5 phonèmes), expression graphique <chevaux> (7 lettres dont plusieurs muettes : -x final, le -e- instable.  Le -aux ne correspond qu'à /o/."
   },
   {
     "id": "D2-Fond-2",
@@ -509,7 +509,7 @@
     "type": "analyse",
     "niveau": "fondamental",
     "enonce": "Analysez les correspondances graphème-phonème du mot 'oiseau'. Dressez un tableau des correspondances en indiquant pour chaque graphème le phonème correspondant.",
-    "corrige": "'oiseau' : signifiant graphique <oiseau> (6 lettres/graphèmes), signifiant phonologique /wazo/ (4 phonèmes). Tableau : <oi> (digramme) → /w/ + /a/ ou /wa/ (semi-voyelle + voyelle). On peut analyser <oi> comme un seul graphème vocalique complexe → /wa/. <s> → /z/ (intervocalique, entre <oi> et <eau> : sonorisation de /s/ → /z/). <eau> (trigramme) → /o/. Total : 6 lettres groupées en 3-4 graphèmes → 4 phonèmes. Bilan : le rapport entre nombre de graphèmes et nombre de phonèmes est ici défavorable — le français notera souvent plus de lettres qu'il n'y a de phonèmes. C'est une des difficultés orthographiques du français."
+    "corrige": "'oiseau' : expression graphique <oiseau> (6 lettres/graphèmes), expression phonologique /wazo/ (4 phonèmes). Tableau : <oi> (digramme) → /w/ + /a/ ou /wa/ (semi-voyelle + voyelle). On peut analyser <oi> comme un seul graphème vocalique complexe → /wa/. <s> → /z/ (intervocalique, entre <oi> et <eau> : sonorisation de /s/ → /z/). <eau> (trigramme) → /o/. Total : 6 lettres groupées en 3-4 graphèmes → 4 phonèmes. Bilan : le rapport entre nombre de graphèmes et nombre de phonèmes est ici défavorable — le français notera souvent plus de lettres qu'il n'y a de phonèmes. C'est une des difficultés orthographiques du français."
   },
   {
     "id": "D2-Fond-5",
@@ -613,7 +613,7 @@
     "type": "analyse",
     "niveau": "intermédiaire",
     "enonce": "Expliquez la notion de 'plurisystème graphique' de Nina Catach. Quels sont les différents sous-systèmes qui composent l'orthographe française ?",
-    "corrige": "Nina Catach (L'orthographe française, 1978) propose que l'orthographe française est un 'plurisystème' composé de plusieurs couches superposées : (1) Phonogrammes : graphèmes qui notent des phonèmes, constituant la base phonémique (~80% des graphèmes selon Catach). Ex : <b>→/b/, <ch>→/ʃ/, <ou>→/u/. (2) Morphogrammes : graphèmes qui notent des morphèmes grammaticaux ou lexicaux sans correspondance phonique. Ex : -s du pluriel (muet), -ent de la 3ème personne du pluriel, -t de 'grand' (renvoie à 'grande'). (3) Logogrammes (ou homéogrammes) : graphèmes qui distinguent des homophones lexicaux. Ex : 'ver' / 'vers' / 'verre' / 'vert' / 'vair' — même phonème /vɛʁ/ mais orthographes distinctes pour distinguer les signifiés. Ce modèle montre que l'orthographe française sert simultanément la phonologie, la morphologie et la lexicologie — d'où sa complexité et sa richesse fonctionnelle."
+    "corrige": "Nina Catach (L'orthographe française, 1978) propose que l'orthographe française est un 'plurisystème' composé de plusieurs couches superposées : (1) Phonogrammes : graphèmes qui notent des phonèmes, constituant la base phonémique (~80% des graphèmes selon Catach). Ex : <b>→/b/, <ch>→/ʃ/, <ou>→/u/. (2) Morphogrammes : graphèmes qui notent des morphèmes grammaticaux ou lexicaux sans correspondance phonique. Ex : -s du pluriel (muet), -ent de la 3ème personne du pluriel, -t de 'grand' (renvoie à 'grande'). (3) Logogrammes (ou homéogrammes) : graphèmes qui distinguent des homophones lexicaux. Ex : 'ver' / 'vers' / 'verre' / 'vert' / 'vair' — même phonème /vɛʁ/ mais orthographes distinctes pour distinguer les contenus. Ce modèle montre que l'orthographe française sert simultanément la phonologie, la morphologie et la lexicologie — d'où sa complexité et sa richesse fonctionnelle."
   },
   {
     "id": "D2-Int-8",
@@ -644,8 +644,8 @@
     "dossier": "D2",
     "type": "analyse",
     "niveau": "avancé",
-    "enonce": "En quoi la dichotomie saussurienne signifiant/signifié est-elle à la fois fondatrice et limitative pour l'analyse sémantique ? Discutez en référence à la sémantique cognitive (Lakoff, Langacker).",
-    "corrige": "Apport saussurien : le signe est une unité psychique à deux faces (signifiant + signifié) liées arbitrairement. Cela libère l'analyse du référent et permet une sémantique structurale (opposition de valeurs). Limites : (1) Le signifié saussurien est un concept mental vague — il n'est pas défini par ses traits ou sa structure interne. La sémantique componentialiste (Katz, Fodor) a cherché à le décomposer en sèmes. (2) Pour la sémantique cognitive (Lakoff, Langacker), le signifié n'est pas un concept abstrait mais une structure d'expérience corporelle et culturelle (embodiment). Le sens de 'monter' (up = plus = bien ; down = moins = mal) est ancré dans l'expérience physique du corps. (3) La frontière signifiant/signifié est poreuse en sémantique cognitive : la forme linguistique est partiellement iconique (iconicité diagrammatique : les structures longues tendent à exprimer des contenus plus complexes). (4) Le signifié saussurien est statique ; la sémantique dynamique (Fauconnier, Turner) montre que le sens est construit interactionnellement (espaces mentaux, blend). Bilan : la dichotomie saussurienne est un point de départ nécessaire mais insuffisant pour une sémantique complète."
+    "enonce": "En quoi la dichotomie saussurienne expression/contenu est-elle à la fois fondatrice et limitative pour l'analyse sémantique ? Discutez en référence à la sémantique cognitive (Lakoff, Langacker).",
+    "corrige": "Apport saussurien : le signe est une unité psychique à deux faces (expression + contenu) liées immotivément. Cela libère l'analyse du référent et permet une sémantique structurale (opposition de valeurs). Limites : (1) Le contenu saussurien est un concept mental vague — il n'est pas défini par ses traits ou sa structure interne. La sémantique componentialiste (Katz, Fodor) a cherché à le décomposer en sèmes. (2) Pour la sémantique cognitive (Lakoff, Langacker), le contenu n'est pas un concept abstrait mais une structure d'expérience corporelle et culturelle (embodiment). Le sens de 'monter' (up = plus = bien ; down = moins = mal) est ancré dans l'expérience physique du corps. (3) La frontière expression/contenu est poreuse en sémantique cognitive : la forme linguistique est partiellement iconique (iconicité diagrammatique : les structures longues tendent à exprimer des contenus plus complexes). (4) Le contenu saussurien est statique ; la sémantique dynamique (Fauconnier, Turner) montre que le sens est construit interactionnellement (espaces mentaux, blend). Bilan : la dichotomie saussurienne est un point de départ nécessaire mais insuffisant pour une sémantique complète."
   },
   {
     "id": "D2-Av-2",
@@ -660,16 +660,16 @@
     "dossier": "D2",
     "type": "cas limite",
     "niveau": "avancé",
-    "enonce": "Les emoji constituent-ils un système d'écriture ? Analysez leur statut sémiotique (iconicité, conventionnalité, arbitraire) et leur rapport à la langue naturelle.",
-    "corrige": "Les emoji sont des signes visuels dont le statut sémiotique est complexe : Iconicité : beaucoup d'emoji sont iconiques — 😊 ressemble à un visage souriant, 🌹 ressemble à une rose. Ce n'est pas de l'arbitraire pur. Conventionnalité : l'interprétation varie culturellement — 👍 est positif en Occident mais peut être offensant dans d'autres cultures. Des conventions pragmatiques se développent (🔥 = impressionnant, 💀 = mort de rire). Rapport à la langue : les emoji ne constituent pas un système d'écriture au sens strict car (1) ils ne notent pas les phonèmes ou morphèmes d'une langue naturelle ; (2) ils n'ont pas de grammaire compositionnelle systématique ; (3) ils sont utilisés en complément du texte écrit, non en substitut. Néanmoins, des proto-structures émergent (emoji-sequences racontent des histoires, des 'phrases emoji' apparaissent sur les réseaux sociaux). Certains travaux (Danesi) les analysent comme 'multimodalité sémiotique' — système séparé mais interactif avec la langue. Conclusion : les emoji sont un système de signes icono-conventionnels, non un système d'écriture au sens technique, mais ils enrichissent la communication écrite numérique."
+    "enonce": "Les emoji constituent-ils un système d'écriture ? Analysez leur statut sémiotique (iconicité, conventionnalité, immotivé) et leur rapport à la langue naturelle.",
+    "corrige": "Les emoji sont des signes visuels dont le statut sémiotique est complexe : Iconicité : beaucoup d'emoji sont iconiques — 😊 ressemble à un visage souriant, 🌹 ressemble à une rose. Ce n'est pas de l'immotivé pur. Conventionnalité : l'interprétation varie culturellement — 👍 est positif en Occident mais peut être offensant dans d'autres cultures. Des conventions pragmatiques se développent (🔥 = impressionnant, 💀 = mort de rire). Rapport à la langue : les emoji ne constituent pas un système d'écriture au sens strict car (1) ils ne notent pas les phonèmes ou morphèmes d'une langue naturelle ; (2) ils n'ont pas de grammaire compositionnelle systématique ; (3) ils sont utilisés en complément du texte écrit, non en substitut. Néanmoins, des proto-structures émergent (emoji-sequences racontent des histoires, des 'phrases emoji' apparaissent sur les réseaux sociaux). Certains travaux (Danesi) les analysent comme 'multimodalité sémiotique' — système séparé mais interactif avec la langue. Conclusion : les emoji sont un système de signes icono-conventionnels, non un système d'écriture au sens technique, mais ils enrichissent la communication écrite numérique."
   },
   {
     "id": "D2-Av-4",
     "dossier": "D2",
     "type": "analyse",
     "niveau": "avancé",
-    "enonce": "Analysez le concept d''iconicité diagrammatique' (Peirce/Haiman) et son application aux langues naturelles. En quoi remet-il en cause l'arbitraire saussurien ?",
-    "corrige": "L'iconicité diagrammatique est la ressemblance entre la structure de la forme linguistique et la structure du contenu représenté. Ce n'est pas une ressemblance phonique (iconicité imagique) mais une ressemblance structurelle (diagrammatique). Exemples en langues naturelles : (1) Iconicité de longueur : 'grand-grand-père' est plus long que 'grand-père' qui est plus long que 'père' — plus le sens est éloigné, plus la forme est longue. (2) Iconicité séquentielle : 'Je suis venu, j'ai vu, j'ai vaincu' — l'ordre des propositions reflète l'ordre des événements. 'Veni, vidi, vici' idem. (3) Iconicité de complexité : les formes négatives ('il ne vient pas') sont plus longues que les affirmatives ('il vient') — la complexité formelle reflète la complexité sémantique. Mise en cause de l'arbitraire : Haiman (1985) argumente que la motivation est un principe général des langues, l'arbitraire étant une exception ou une simplification (économie). Saussure lui-même admettait la 'motivation relative' pour les composés. La position moderne est que les langues naturelles sont partiellement motivées : ni purement arbitraires ni purement iconiques."
+    "enonce": "Analysez le concept d''iconicité diagrammatique' (Peirce/Haiman) et son application aux langues naturelles. En quoi remet-il en cause l'immotivé saussurien ?",
+    "corrige": "L'iconicité diagrammatique est la ressemblance entre la structure de la forme linguistique et la structure du contenu représenté. Ce n'est pas une ressemblance phonique (iconicité imagique) mais une ressemblance structurelle (diagrammatique). Exemples en langues naturelles : (1) Iconicité de longueur : 'grand-grand-père' est plus long que 'grand-père' qui est plus long que 'père' — plus le sens est éloigné, plus la forme est longue. (2) Iconicité séquentielle : 'Je suis venu, j'ai vu, j'ai vaincu' — l'ordre des propositions reflète l'ordre des événements. 'Veni, vidi, vici' idem. (3) Iconicité de complexité : les formes négatives ('il ne vient pas') sont plus longues que les affirmatives ('il vient') — la complexité formelle reflète la complexité sémantique. Mise en cause de l'immotivé : Haiman (1985) argumente que la motivation est un principe général des langues, l'immotivé étant une exception ou une simplification (économie). Saussure lui-même admettait la 'motivation relative' pour les composés. La position moderne est que les langues naturelles sont partiellement motivées : ni purement immotivés ni purement iconiques."
   },
   {
     "id": "D2-Av-5",
@@ -693,31 +693,31 @@
     "type": "cas limite",
     "niveau": "avancé",
     "enonce": "L'écriture braille constitue-t-elle un système graphémique indépendant ou une simple transposition de l'écriture visuelle ? Analysez son statut sémiotique.",
-    "corrige": "Le braille (Louis Braille, 1824) est un système d'écriture tactile fondé sur des combinaisons de 6 points en relief. Analyse sémiotique : (1) Système séparé : le braille a son propre ensemble de signes (cellules braille) qui ne ressemblent pas aux lettres visuelles — relation arbitraire entre le signe tactile et la valeur linguistique. (2) Correspondance avec l'alphabet latin : en français, le braille note les mêmes graphèmes que l'alphabet latin (une cellule braille = une lettre ou un groupe contracté). Il n'est donc pas phonémique directement mais graphémique. (3) Spécificités : le braille a des contractions (signes abrégeant des séquences fréquentes pour accélérer la lecture), sans équivalent dans l'écriture visuelle. (4) Le braille pour le français conserve les mêmes complexités orthographiques (lettres muettes, digrammes) que l'écriture visuelle — ce n'est pas une réforme phonémique. Conclusion : le braille est un système d'écriture tactile qui encode les mêmes valeurs graphémiques que l'écriture visuelle latine, mais avec un substrat physique et des signes totalement différents. C'est un système de transcription (transposition modale) d'un système graphémique."
+    "corrige": "Le braille (Louis Braille, 1824) est un système d'écriture tactile fondé sur des combinaisons de 6 points en relief. Analyse sémiotique : (1) Système séparé : le braille a son propre ensemble de signes (cellules braille) qui ne ressemblent pas aux lettres visuelles — relation immotivé entre le signe tactile et la valeur linguistique. (2) Correspondance avec l'alphabet latin : en français, le braille note les mêmes graphèmes que l'alphabet latin (une cellule braille = une lettre ou un groupe contracté). Il n'est donc pas phonémique directement mais graphémique. (3) Spécificités : le braille a des contractions (signes abrégeant des séquences fréquentes pour accélérer la lecture), sans équivalent dans l'écriture visuelle. (4) Le braille pour le français conserve les mêmes complexités orthographiques (lettres muettes, digrammes) que l'écriture visuelle — ce n'est pas une réforme phonémique. Conclusion : le braille est un système d'écriture tactile qui encode les mêmes valeurs graphémiques que l'écriture visuelle latine, mais avec un substrat physique et des signes totalement différents. C'est un système de transcription (transposition modale) d'un système graphémique."
   },
   {
     "id": "D2-Av-8",
     "dossier": "D2",
     "type": "analyse",
     "niveau": "avancé",
-    "enonce": "Discutez le rôle de la ponctuation dans la relation entre signifiant graphique et structure syntaxique. La virgule est-elle un graphème ? Analysez 'Les enfants, qui ont mangé, dorment' vs 'Les enfants qui ont mangé dorment'.",
-    "corrige": "Statut sémiotique de la ponctuation : la virgule n'est pas un graphème au sens strict (elle ne représente pas un phonème ou un morphème), mais un signe graphique de structure syntaxique et prosodique. Elle appartient au système graphique de la langue écrite sans équivalent systématique à l'oral (la pause n'est pas obligatoire à toutes les virgules). Analyse des deux phrases : 'Les enfants, qui ont mangé, dorment' : la virgule signale une proposition relative APPOSITIVE (non restrictive). La relative 'qui ont mangé' est parenthétique — elle ne restreint pas le référent de 'les enfants' (tous les enfants dorment ; on signale incidemment qu'ils ont mangé). 'Les enfants qui ont mangé dorment' : sans virgule, la relative est RESTRICTIVE — elle restreint le référent à un sous-ensemble ('les enfants qui ont mangé' par opposition à ceux qui n'ont pas mangé). Implication : les deux phrases ont des signifiants graphiques différents (présence/absence de virgules) qui correspondent à des structures syntaxiques et des signifiés distincts. La ponctuation est donc un élément du système graphique fonctionnel, même si son statut n'est pas celui d'un graphème segmental."
+    "enonce": "Discutez le rôle de la ponctuation dans la relation entre expression graphique et structure syntaxique. La virgule est-elle un graphème ? Analysez 'Les enfants, qui ont mangé, dorment' vs 'Les enfants qui ont mangé dorment'.",
+    "corrige": "Statut sémiotique de la ponctuation : la virgule n'est pas un graphème au sens strict (elle ne représente pas un phonème ou un morphème), mais un signe graphique de structure syntaxique et prosodique. Elle appartient au système graphique de la langue écrite sans équivalent systématique à l'oral (la pause n'est pas obligatoire à toutes les virgules). Analyse des deux phrases : 'Les enfants, qui ont mangé, dorment' : la virgule signale une proposition relative APPOSITIVE (non restrictive). La relative 'qui ont mangé' est parenthétique — elle ne restreint pas le référent de 'les enfants' (tous les enfants dorment ; on signale incidemment qu'ils ont mangé). 'Les enfants qui ont mangé dorment' : sans virgule, la relative est RESTRICTIVE — elle restreint le référent à un sous-ensemble ('les enfants qui ont mangé' par opposition à ceux qui n'ont pas mangé). Implication : les deux phrases ont des expressions graphiques différents (présence/absence de virgules) qui correspondent à des structures syntaxiques et des contenus distincts. La ponctuation est donc un élément du système graphique fonctionnel, même si son statut n'est pas celui d'un graphème segmental."
   },
   {
     "id": "D2-Av-9",
     "dossier": "D2",
     "type": "correction d'erreur",
     "niveau": "avancé",
-    "enonce": "Évaluez cette analyse : 'L'arbitraire du signe prouve que n'importe quelle forme peut désigner n'importe quel contenu. La langue est donc purement conventionnelle et les règles grammaticales sont arbitraires. On pourrait donc, en principe, décider collectivement de changer la grammaire du français demain.'",
-    "corrige": "Trois confusions à démêler : (1) L'arbitraire du signe signifie que le lien entre signifiant et signifié d'un signe donné est non-motivé — il n'existe pas de raison naturelle pour que /ʃjɛ̃/ désigne le chien. Cela ne signifie pas qu'on peut choisir arbitrairement n'importe quelle forme : le signe, une fois établi dans la communauté, est IMMUABLE à court terme (Saussure lui-même distingue arbitraire et mutabilité). (2) L'arbitraire est une propriété du SIGNE, non du SYSTÈME. Les règles grammaticales ont leurs propres déterminants (universaux du langage, tendances typologiques, processus d'acquisition) — elles ne sont pas purement arbitraires. (3) Changer la grammaire collectivement est quasi-impossible dans une grande communauté linguistique : Saussure note que la masse parlante est 'enchaînée à sa langue' — le système est hérité socialement et résiste aux changements délibérés (cf. les réformes orthographiques difficiles à imposer). Correction : l'arbitraire du signe est une propriété synchronique du rapport forme-sens, non une licence pour le changement délibéré."
+    "enonce": "Évaluez cette analyse : 'L'caractère immotivé du signe prouve que n'importe quelle forme peut désigner n'importe quel contenu. La langue est donc purement conventionnelle et les règles grammaticales sont immotivés. On pourrait donc, en principe, décider collectivement de changer la grammaire du français demain.'",
+    "corrige": "Trois confusions à démêler : (1) L'caractère immotivé du signe signifie que le lien entre expression et contenu d'un signe donné est non-motivé — il n'existe pas de raison naturelle pour que /ʃjɛ̃/ désigne le chien. Cela ne signifie pas qu'on peut choisir immotivément n'importe quelle forme : le signe, une fois établi dans la communauté, est IMMUABLE à court terme (Saussure lui-même distingue immotivé et mutabilité). (2) L'immotivé est une propriété du SIGNE, non du SYSTÈME. Les règles grammaticales ont leurs propres déterminants (universaux du langage, tendances typologiques, processus d'acquisition) — elles ne sont pas purement immotivés. (3) Changer la grammaire collectivement est quasi-impossible dans une grande communauté linguistique : Saussure note que la masse parlante est 'enchaînée à sa langue' — le système est hérité socialement et résiste aux changements délibérés (cf. les réformes orthographiques difficiles à imposer). Correction : l'caractère immotivé du signe est une propriété synchronique du rapport forme-sens, non une licence pour le changement délibéré."
   },
   {
     "id": "D2-Av-10",
     "dossier": "D2",
     "type": "question ouverte",
     "niveau": "avancé",
-    "enonce": "Discutez la notion de 'linéarité du signifiant' de Saussure. En quoi est-elle remise en cause par les phénomènes suprasegmentaux, les langues des signes visuelles et les structures parallèles (redoublement, chiasme) ?",
-    "corrige": "Linéarité saussurienne : le signifiant phonique est une chaîne temporelle — les éléments s'enchaînent les uns après les autres, sans simultanéité possible à l'oral. Saussure y voit une propriété fondamentale du signifiant. Remises en cause : (1) Suprasegmentaux : le ton, l'accent et l'intonation se superposent aux segments — ils sont non-linéaires (simultanés aux phonèmes). En mandarin, le ton /ma¹/ (mère) vs /ma³/ (cheval) : le trait tonal est simultané à la séquence segmentale, non linéaire. (2) Langues des signes visuelles (LSF, ASL) : l'espace de signation permet la simultanéité de plusieurs informations (orientation, mouvement, configuration de la main, expression faciale) — pluridimensionnel et non-linéaire. Saussure n'anticipait pas la simultanéité des langues visuo-gestuelles. (3) Structures parallèles : le chiasme ('il faut manger pour vivre, non vivre pour manger') joue sur une symétrie qui crée un sens par rapport structurel — la linéarité est mise au service d'une architecture non-linéaire. (4) Prosodie : la courbe mélodique d'un énoncé est perçue globalement, non segmentalement. Bilan : la linéarité est une propriété de la modalité phonique, non une propriété universelle du langage."
+    "enonce": "Discutez la notion de 'linéarité de l'expression' de Saussure. En quoi est-elle remise en cause par les phénomènes suprasegmentaux, les langues des signes visuelles et les structures parallèles (redoublement, chiasme) ?",
+    "corrige": "Linéarité saussurienne : l'expression phonique est une chaîne temporelle — les éléments s'enchaînent les uns après les autres, sans simultanéité possible à l'oral. Saussure y voit une propriété fondamentale de l'expression. Remises en cause : (1) Suprasegmentaux : le ton, l'accent et l'intonation se superposent aux segments — ils sont non-linéaires (simultanés aux phonèmes). En mandarin, le ton /ma¹/ (mère) vs /ma³/ (cheval) : le trait tonal est simultané à la séquence segmentale, non linéaire. (2) Langues des signes visuelles (LSF, ASL) : l'espace de signation permet la simultanéité de plusieurs informations (orientation, mouvement, configuration de la main, expression faciale) — pluridimensionnel et non-linéaire. Saussure n'anticipait pas la simultanéité des langues visuo-gestuelles. (3) Structures parallèles : le chiasme ('il faut manger pour vivre, non vivre pour manger') joue sur une symétrie qui crée un sens par rapport structurel — la linéarité est mise au service d'une architecture non-linéaire. (4) Prosodie : la courbe mélodique d'un énoncé est perçue globalement, non segmentalement. Bilan : la linéarité est une propriété de la modalité phonique, non une propriété universelle du langage."
   },
   {
     "id": "D3-Fond-1",
@@ -797,7 +797,7 @@
     "type": "identification",
     "niveau": "fondamental",
     "enonce": "Identifiez le type de morphologie (conversion, rétroformation, troncation, acronymie) dans les exemples suivants : 'un portable' (de 'téléphone portable'), 'PDG' (Président-Directeur Général), 'moto' (de 'motocyclette'), 'filmer' (de 'film').",
-    "corrige": "'un portable' (de 'téléphone portable') : TRONCATION (ou ellipse lexicale) — l'adjectif 'portable' perd sa tête nominale et acquiert le statut de nom. Certains y voient aussi une conversion (Adj→N). 'PDG' : ACRONYMIE — initialisme formé des premières lettres de Président-Directeur Général. Type particulier de composition : le signifiant est construit à partir des initiales des mots composants. 'moto' (de 'motocyclette') : TRONCATION (ou apocope) — chute de la partie finale du mot. 'motocyclette' → 'moto' (les premières syllabes). 'filmer' (de 'film') : DÉRIVATION DÉNOMINALE ou CONVERSION — 'film' (N) → 'filmer' (V) avec ajout du suffixe verbal {-er}. Ou parfois classé comme dérivation de N→V par conversion (changement de catégorie sans affixe visible). Ces processus montrent la créativité morphologique des langues pour adapter le lexique aux besoins communicatifs."
+    "corrige": "'un portable' (de 'téléphone portable') : TRONCATION (ou ellipse lexicale) — l'adjectif 'portable' perd sa tête nominale et acquiert le statut de nom. Certains y voient aussi une conversion (Adj→N). 'PDG' : ACRONYMIE — initialisme formé des premières lettres de Président-Directeur Général. Type particulier de composition : l'expression est construit à partir des initiales des mots composants. 'moto' (de 'motocyclette') : TRONCATION (ou apocope) — chute de la partie finale du mot. 'motocyclette' → 'moto' (les premières syllabes). 'filmer' (de 'film') : DÉRIVATION DÉNOMINALE ou CONVERSION — 'film' (N) → 'filmer' (V) avec ajout du suffixe verbal {-er}. Ou parfois classé comme dérivation de N→V par conversion (changement de catégorie sans affixe visible). Ces processus montrent la créativité morphologique des langues pour adapter le lexique aux besoins communicatifs."
   },
   {
     "id": "D3-Int-1",
@@ -861,7 +861,7 @@
     "type": "correction d'erreur",
     "niveau": "intermédiaire",
     "enonce": "Corrigez l'analyse suivante : 'Dans le mot mangeable, on a deux morphèmes : mange- (qui signifie nourriture) et -able (qui signifie possible). Ce mot est donc un composé de deux morphèmes libres.'",
-    "corrige": "Deux erreurs principales : (1) Sens de {mange-} : le lexème est {mang-} (base verbale de 'manger', sens = ingérer de la nourriture), non 'nourriture'. 'Mangeable' signifie 'que l'on peut manger', non 'nourriture possible'. (2) Nombre de morphèmes : 'mangeable' a 2 morphèmes, c'est correct : {mang-} + {-eable}. Mais l'analyse de {-able} comme 'signifiant possible' est trop vague : {-able} signifie 'qui peut être (V)-é', c'est un suffixe dérivatif qui adjectivise les verbes. (3) Classification : ce n'est PAS un composé de deux morphèmes libres. Un composé réunit deux BASES LIBRES (pouvant fonctionner seuls comme mots : 'porte-monnaie'). Ici, {-able} est un AFFIXE LIE (il ne peut pas fonctionner seul comme mot : *'able' n'est pas un mot français). C'est donc un MOT DERIVÉ (dérivation suffixale), non un composé."
+    "corrige": "Deux erreurs principales : (1) Sens de {mange-} : le lexème est {mang-} (base verbale de 'manger', sens = ingérer de la nourriture), non 'nourriture'. 'Mangeable' signifie 'que l'on peut manger', non 'nourriture possible'. (2) Nombre de morphèmes : 'mangeable' a 2 morphèmes, c'est correct : {mang-} + {-eable}. Mais l'analyse de {-able} comme 'expression possible' est trop vague : {-able} signifie 'qui peut être (V)-é', c'est un suffixe dérivatif qui adjectivise les verbes. (3) Classification : ce n'est PAS un composé de deux morphèmes libres. Un composé réunit deux BASES LIBRES (pouvant fonctionner seuls comme mots : 'porte-monnaie'). Ici, {-able} est un AFFIXE LIE (il ne peut pas fonctionner seul comme mot : *'able' n'est pas un mot français). C'est donc un MOT DERIVÉ (dérivation suffixale), non un composé."
   },
   {
     "id": "D3-Int-9",
@@ -933,15 +933,15 @@
     "type": "cas limite",
     "niveau": "avancé",
     "enonce": "Les préfixes sont-ils toujours 'liés' (non autonomes) ? Discutez le statut de 'super', 'anti', 'pro', 'ex' qui peuvent apparaître de façon autonome dans certains contextes ('les pros et les antis', 'mon ex').",
-    "corrige": "La distinction morphème lié / morphème libre est généralement binaire : les affixes sont liés (ne peuvent fonctionner seuls), les bases lexicales sont libres (peuvent fonctionner seuls). Cependant, des éléments comme 'super', 'anti', 'pro', 'ex' illustrent le continuum entre les deux catégories. 'Mon ex' : {ex-} (préfixe signifiant 'ancien, précédent' dans 'ex-femme') est utilisé seul comme nom — 'mon ex' désigne l'ex-compagnon(ne). Conversion d'un préfixe en base libre. 'Les pros et les antis' : {pro-} et {anti-} (préfixes de prise de position) sont substantivés et utilisés seuls. 'Super !' (exclamation) : {super-} comme adverbe d'intensité autonome. Ces cas illustrent la catégorie des 'préfixes lexicaux' ou 'préfixoïdes' — des morphèmes qui ont une forme libre et une forme liée. Ils se situent entre préfixe et mot composant. La frontière entre composition et dérivation est ainsi poreuse : {super-} dans 'superman' (composition) vs dans 'supermarché' (dérivation préfixale) vs dans 'c'est super !' (mot autonome)."
+    "corrige": "La distinction morphème lié / morphème libre est généralement binaire : les affixes sont liés (ne peuvent fonctionner seuls), les bases lexicales sont libres (peuvent fonctionner seuls). Cependant, des éléments comme 'super', 'anti', 'pro', 'ex' illustrent le continuum entre les deux catégories. 'Mon ex' : {ex-} (préfixe expression 'ancien, précédent' dans 'ex-femme') est utilisé seul comme nom — 'mon ex' désigne l'ex-compagnon(ne). Conversion d'un préfixe en base libre. 'Les pros et les antis' : {pro-} et {anti-} (préfixes de prise de position) sont substantivés et utilisés seuls. 'Super !' (exclamation) : {super-} comme adverbe d'intensité autonome. Ces cas illustrent la catégorie des 'préfixes lexicaux' ou 'préfixoïdes' — des morphèmes qui ont une forme libre et une forme liée. Ils se situent entre préfixe et mot composant. La frontière entre composition et dérivation est ainsi poreuse : {super-} dans 'superman' (composition) vs dans 'supermarché' (dérivation préfixale) vs dans 'c'est super !' (mot autonome)."
   },
   {
     "id": "D3-Av-8",
     "dossier": "D3",
     "type": "analyse",
     "niveau": "avancé",
-    "enonce": "Analysez la morphologie du genre grammatical en français. Est-il arbitraire ou motivé ? Quels facteurs permettent (partiellement) de prédire le genre d'un nom ?",
-    "corrige": "Le genre grammatical en français (masculin/féminin) est partiellement arbitraire et partiellement prévisible. Facteurs d'arbitraire : le genre des noms inanimés est largement non-motivé — 'la table' (féminin), 'le bureau' (masculin) — aucune raison sémantique. La preuve : des équivalents interlinguistiques diffèrent en genre ('le soleil' masc. en français / 'die Sonne' fém. en allemand). Facteurs de prévisibilité : (1) Sémantique : les noms d'animés sexués suivent le sexe naturel : 'le père' (masc.), 'la mère' (fém.). (2) Morphologique : les suffixes sont de bons prédicteurs : -{tion} → féminin ('réalisation', 'nation') ; -{eur} → masculin ('chanteur') ; -{esse} → féminin ('chanteuse', 'comtesse') ; -{ment} → masculin ('gouvernement') ; -{ette} → féminin ('tablette'). (3) Phonologique partiel : les finales en -eau, -age tendent vers le masculin ; en -ée, -ie tendent vers le féminin. Mais les exceptions sont nombreuses. Bilan : le genre est suffisamment prévisible pour que les locuteurs puissent le déduire dans la plupart des cas, mais pas assez systématique pour être entièrement réductible à des règles."
+    "enonce": "Analysez la morphologie du genre grammatical en français. Est-il immotivé ou motivé ? Quels facteurs permettent (partiellement) de prédire le genre d'un nom ?",
+    "corrige": "Le genre grammatical en français (masculin/féminin) est partiellement immotivé et partiellement prévisible. Facteurs d'immotivé : le genre des noms inanimés est largement non-motivé — 'la table' (féminin), 'le bureau' (masculin) — aucune raison sémantique. La preuve : des équivalents interlinguistiques diffèrent en genre ('le soleil' masc. en français / 'die Sonne' fém. en allemand). Facteurs de prévisibilité : (1) Sémantique : les noms d'animés sexués suivent le sexe naturel : 'le père' (masc.), 'la mère' (fém.). (2) Morphologique : les suffixes sont de bons prédicteurs : -{tion} → féminin ('réalisation', 'nation') ; -{eur} → masculin ('chanteur') ; -{esse} → féminin ('chanteuse', 'comtesse') ; -{ment} → masculin ('gouvernement') ; -{ette} → féminin ('tablette'). (3) Phonologique partiel : les finales en -eau, -age tendent vers le masculin ; en -ée, -ie tendent vers le féminin. Mais les exceptions sont nombreuses. Bilan : le genre est suffisamment prévisible pour que les locuteurs puissent le déduire dans la plupart des cas, mais pas assez systématique pour être entièrement réductible à des règles."
   },
   {
     "id": "D3-Av-9",
@@ -988,8 +988,8 @@
     "dossier": "D4",
     "type": "identification",
     "niveau": "fondamental",
-    "enonce": "Qu'est-ce qu'une clause canonique ? Définissez et donnez trois exemples de clauses canoniques en français en précisant leur structure SVO.",
-    "corrige": "Une clause canonique (ou construction de base) est une clause déclarative active, à l'ordre des mots non-marqué (par opposition aux constructions marquées comme la dislocation, le passif, la topicalisation). En français, la clause canonique a la structure SVO (Sujet-Verbe-Objet) ou SVAdv selon le type de verbe. Exemples : 'Le chien [S] mange [V] le biscuit [O].' — SVO, transitif direct. 'Marie [S] téléphone [V] à sa mère [OI].' — SV(OI), transitif indirect. 'Le soleil [S] brille [V] fort [Adv].' — SVAdv, intransitif avec adverbe. La clause canonique est la structure de référence à partir de laquelle on analyse les constructions dérivées (passif, dislocation, interrogative, etc.). Elle correspond à la structure la moins marquée pragmatiquement."
+    "enonce": "Qu'est-ce qu'une clause canonique ? Définissez et donnez trois exemples de clauses canoniques en français en précisant leur structure Sujet-Prédicat.",
+    "corrige": "Une clause canonique (ou construction de base) est une clause déclarative active, à l'ordre des mots non-marqué (par opposition aux constructions marquées comme la dislocation, le passif, la topicalisation). En français, la clause canonique a la structure Sujet-Prédicat (le Prédicat = GV en bloc, V + compléments) ou SVAdv selon le type de verbe. Exemples : 'Le chien [S] mange [V] le biscuit [O].' — Sujet + Prédicat (GV en bloc). 'Marie [S] téléphone [V] à sa mère [OI].' — SV(OI), transitif indirect. 'Le soleil [S] brille [V] fort [Adv].' — SVAdv, intransitif avec adverbe. La clause canonique est la structure de référence à partir de laquelle on analyse les constructions dérivées (passif, dislocation, interrogative, etc.). Elle correspond à la structure la moins marquée pragmatiquement."
   },
   {
     "id": "D4-Fond-5",
@@ -1221,7 +1221,7 @@
     "type": "vrai/faux",
     "niveau": "fondamental",
     "enonce": "Vrai ou faux ? Justifiez.\na) L'ordre canonique du français est SOV (Sujet-Objet-Verbe).\nb) La dislocation à gauche topicalise un constituant pour en faire le thème.\nc) Une clause clivée ('C'est X qui/que...') met toujours l'objet en focus.\nd) En français oral, la dislocation est un phénomène rare et non-standard.",
-    "corrige": "a) FAUX. L'ordre canonique du français est SVO (Sujet-Verbe-Objet) : 'Jean [S] mange [V] une pomme [O]'. SOV est l'ordre du japonais, du latin classique, du turc, etc. b) VRAI. La dislocation à gauche extrait un constituant de la clause et le place en position thématique (topique) détachée : 'Le chat [thème], il dort.' Le constituant dislocat à gauche devient le topique dont on va parler. c) FAUX. La clivée peut mettre en focus n'importe quel constituant, pas seulement l'objet : 'C'est Marie [Sujet] qui a chanté', 'C'est hier [Adv] qu'elle est arrivée', 'C'est dans le jardin [Lieu] qu'il joue'. d) FAUX. En français oral, la dislocation est extrêmement fréquente et naturelle — c'est une des caractéristiques majeures du français parlé. Dire que c'est 'non-standard' est inexact : c'est un phénomène oral courant et systématique, même si l'écriture académique le limite."
+    "corrige": "a) FAUX. La clause s'organise en Sujet + Prédicat (le Prédicat = GV en bloc, incluant V et compléments) : ex. Jean (Sujet) | mange une pomme (Prédicat = GV). SOV est l'ordre du japonais, du latin classique, du turc, etc. b) VRAI. La dislocation à gauche extrait un constituant de la clause et le place en position thématique (topique) détachée : 'Le chat [thème], il dort.' Le constituant dislocat à gauche devient le topique dont on va parler. c) FAUX. La clivée peut mettre en focus n'importe quel constituant, pas seulement l'objet : 'C'est Marie [Sujet] qui a chanté', 'C'est hier [Adv] qu'elle est arrivée', 'C'est dans le jardin [Lieu] qu'il joue'. d) FAUX. En français oral, la dislocation est extrêmement fréquente et naturelle — c'est une des caractéristiques majeures du français parlé. Dire que c'est 'non-standard' est inexact : c'est un phénomène oral courant et systématique, même si l'écriture académique le limite."
   },
   {
     "id": "D5-Fond-4",
@@ -1244,7 +1244,7 @@
     "dossier": "D5",
     "type": "QCM",
     "niveau": "fondamental",
-    "enonce": "Quelle est la différence principale entre une dislocation à gauche et une topicalisation sans reprise pronominale ('sans dislocation') ?\na) La dislocation à gauche n'est possible qu'à l'oral.\nb) La dislocation à gauche inclut obligatoirement un pronom de reprise dans la clause.\nc) La topicalisation sans reprise est impossible en français.\nd) La dislocation à gauche change l'ordre SVO en SOV.",
+    "enonce": "Quelle est la différence principale entre une dislocation à gauche et une topicalisation sans reprise pronominale ('sans dislocation') ?\na) La dislocation à gauche n'est possible qu'à l'oral.\nb) La dislocation à gauche inclut obligatoirement un pronom de reprise dans la clause.\nc) La topicalisation sans reprise est impossible en français.\nd) La dislocation à gauche change la structure Sujet-Prédicat.",
     "corrige": "Réponse : b). La dislocation à gauche inclut un pronom clitique de reprise dans la clause : 'Ce livre, je l'ai lu' — 'l'' reprend 'ce livre'. La topicalisation sans reprise (ou antéposition topicale) existe aussi : 'Ce livre, j'ai lu.' (registre plus formel/littéraire) — sans pronom de reprise. Ce sont deux phénomènes distincts. a) FAUX : la dislocation à gauche est surtout orale mais existe à l'écrit dans certains registres. c) FAUX : la topicalisation sans reprise existe (surtout écrit/formel). d) FAUX : la dislocation à gauche ne change pas l'ordre du verbe et de l'objet dans la clause principale — la clause reste SVO intérieurement, le dislocat est une position supplémentaire externe."
   },
   {
@@ -1317,7 +1317,7 @@
     "type": "analyse",
     "niveau": "intermédiaire",
     "enonce": "Qu'est-ce que l'inversion du sujet en français (inversion simple et inversion complexe) ? Dans quels contextes ces phénomènes apparaissent-ils ? Sont-ils à analyser comme des changements d'ordre de mots ?",
-    "corrige": "Inversion simple : le sujet (nom ou pronom) est placé après le verbe. En français moderne, cette inversion est restreinte à certains contextes : (1) Interrogation directe formelle : 'Vient-il ?' (inversion du clitique sujet) — style soutenu, interrogation formelle. En français oral, on préfère 'Est-ce qu'il vient ?' ou 'Il vient ?'. (2) Incises de style direct : 'dit-il', 'répondit-elle' — le sujet est inversé après le verbe de parole en incise. (3) Antéposition d'adverbes négatifs ou restrictifs : 'Rarement ai-je vu...' (style littéraire). Inversion complexe : le sujet lexical reste en position initiale mais un clitique coréférent s'inverse après le verbe : 'Marie vient-elle ?' — 'Marie' reste à gauche, '-elle' est un clitique de concordance inversé. Analyse : l'inversion n'est pas simplement un changement d'ordre SVO→VSO — le sujet reste en position haute (position topique) et le clitique inversé est une marque d'interrogation. En français oral, l'inversion est quasi-disparue au profit de 'est-ce que' et de la montée intonative."
+    "corrige": "Inversion simple : le sujet (nom ou pronom) est placé après le verbe. En français moderne, cette inversion est restreinte à certains contextes : (1) Interrogation directe formelle : 'Vient-il ?' (inversion du clitique sujet) — style soutenu, interrogation formelle. En français oral, on préfère 'Est-ce qu'il vient ?' ou 'Il vient ?'. (2) Incises de style direct : 'dit-il', 'répondit-elle' — le sujet est inversé après le verbe de parole en incise. (3) Antéposition d'adverbes négatifs ou restrictifs : 'Rarement ai-je vu...' (style littéraire). Inversion complexe : le sujet lexical reste en position initiale mais un clitique coréférent s'inverse après le verbe : 'Marie vient-elle ?' — 'Marie' reste à gauche, '-elle' est un clitique de concordance inversé. Analyse : l'inversion n'est pas simplement un changement d'ordre Sujet-Prédicat→VSO — le sujet reste en position haute (position topique) et le clitique inversé est une marque d'interrogation. En français oral, l'inversion est quasi-disparue au profit de 'est-ce que' et de la montée intonative."
   },
   {
     "id": "D5-Int-6",
@@ -1429,7 +1429,7 @@
     "type": "correction d'erreur",
     "niveau": "avancé",
     "enonce": "Évaluez cette analyse : 'La phrase Ce livre, je l'ai lu est une phrase passive car l'objet est mis au début. De plus, le verbe li au passif s'écrit lire avec un e. Cette construction française ressemble au SOV latin.'",
-    "corrige": "Erreurs multiples : (1) Ce n'est PAS une clause passive. La voix passive implique : auxiliaire 'être' + participe passé accordé + éventuel complément d'agent 'par'. 'Je l'ai lu' est à la voix ACTIVE (auxiliaire 'avoir', sujet-agent = 'je', OD = 'l''). C'est une construction de DISLOCATION À GAUCHE (topicalisation) avec pronom de reprise. (2) La mise du nom en tête n'est pas une propriété du passif — le passif en français promeut le patient en position sujet, sans nécessairement le mettre en tête : 'Le livre a été lu par moi' (actif→passif standard). (3) 'Li' n'existe pas — le participe passé de 'lire' est 'lu', invariable en genre et nombre quand l'auxiliaire est 'avoir' et que l'OD n'est pas antéposé. Ici, 'l'' (OD antéposé au verbe) déclenche l'accord : 'je l'ai lu' (OD masc.) vs 'je l'ai lue' (OD fém.). (4) La ressemblance avec le SOV latin est superficielle : dans la dislocation française, l'OD reste lié à sa position d'objet dans la clause par le pronom de reprise — la structure profonde reste SVO."
+    "corrige": "Erreurs multiples : (1) Ce n'est PAS une clause passive. La voix passive implique : auxiliaire 'être' + participe passé accordé + éventuel complément d'agent 'par'. 'Je l'ai lu' est à la voix ACTIVE (auxiliaire 'avoir', sujet-agent = 'je', OD = 'l''). C'est une construction de DISLOCATION À GAUCHE (topicalisation) avec pronom de reprise. (2) La mise du nom en tête n'est pas une propriété du passif — le passif en français promeut le patient en position sujet, sans nécessairement le mettre en tête : 'Le livre a été lu par moi' (actif→passif standard). (3) 'Li' n'existe pas — le participe passé de 'lire' est 'lu', invariable en genre et nombre quand l'auxiliaire est 'avoir' et que l'OD n'est pas antéposé. Ici, 'l'' (OD antéposé au verbe) déclenche l'accord : 'je l'ai lu' (OD masc.) vs 'je l'ai lue' (OD fém.). (4) La ressemblance avec le SOV latin est superficielle : dans la dislocation française, l'OD reste lié à sa position d'objet dans la clause par le pronom de reprise — la structure profonde reste Sujet-Prédicat."
   },
   {
     "id": "D5-Av-10",
@@ -1714,7 +1714,7 @@
   {
     "id": "D7-Fond-5",
     "dossier": "D7",
-    "type": "vrai_faux",
+    "type": "vrai/faux",
     "niveau": "fondamental",
     "enonce": "Vrai ou faux ? (a) En français, tout nom commun doit être précédé d'un déterminant. (b) Un GN peut n'avoir aucun expanseur. (c) L'apposition est toujours entre virgules. (d) Le pronom relatif 'dont' correspond à la préposition 'de'.",
     "corrige": "(a) FAUX — exception : noms en énumération ('eau, feu, air, terre'), attributs ('il est médecin'), titres, proverbes. (b) VRAI — GN minimal = déterminant + nom (ex. 'le chat'). (c) FAUX — l'apposition peut être juxtaposée sans virgule ('la ville Paris') ou avec virgules ('Paris, la ville lumière, …'). (d) VRAI — 'dont' = forme du relatif correspondant à 'de + GN' ('le livre dont je parle' = 'je parle DE ce livre')."
@@ -1754,7 +1754,7 @@
   {
     "id": "D7-Fond-10",
     "dossier": "D7",
-    "type": "correction_erreur",
+    "type": "correction d'erreur",
     "niveau": "fondamental",
     "enonce": "Corrigez les erreurs d'accord dans les GN suivants : (a) 'des vieux traditions', (b) 'une beau paysage', (c) 'mes amis fidèles et sincères'.",
     "corrige": "(a) ERREUR : 'traditions' est féminin → 'de vieilles traditions' (adj. 'vieux' → 'vieilles' au fém. plur. ; article 'des' → 'de' devant adj. antéposé selon règle du français soutenu). (b) ERREUR : 'paysage' est masculin → 'un beau paysage' ('beau' est la forme masculine ; 'belle' = féminin). (c) CORRECT : 'amis' masc. plur. → 'fidèles' et 'sincères' accordés correctement au masc. plur."
@@ -1763,7 +1763,7 @@
     "id": "D7-Int-1",
     "dossier": "D7",
     "type": "analyse",
-    "niveau": "intermediaire",
+    "niveau": "intermédiaire",
     "enonce": "Analysez en détail le GN 'les trois premières victimes du tremblement de terre de 2023' : nom-tête, déterminants, numéraux, épithètes, CdN emboîtés.",
     "corrige": "Nom-tête : 'victimes' (fém. plur.) ; Dét. : 'les' (article défini) ; Numéral ordinal : 'premières' (certains grammairiens le classent comme adjectif épithète) ; Numéral cardinal : 'trois' (quantifieur) ; CdN 1 : 'du tremblement de terre de 2023' → complément de 'victimes' ; dans ce CdN : 'tremblement de terre' = locution nominale (nom-tête 'tremblement' + CdN 'de terre') ; 'de 2023' = CdN spécifiant l'année. Structure : [[les [trois [premières]]] [victimes] [[du [tremblement [de terre]] [de 2023]]]]."
   },
@@ -1771,7 +1771,7 @@
     "id": "D7-Int-2",
     "dossier": "D7",
     "type": "analyse",
-    "niveau": "intermediaire",
+    "niveau": "intermédiaire",
     "enonce": "Distinguez relatives restrictives et appositives dans : (a) 'Les étudiants qui travaillent réussissent.' (b) 'Les étudiants, qui travaillent, réussissent.' Expliquez la différence sémantique.",
     "corrige": "(a) Relative RESTRICTIVE (sans virgule) : 'qui travaillent' restreint la référence de 'les étudiants' à un sous-ensemble — seulement ceux qui travaillent réussissent (implique que d'autres n'y arrivent pas). (b) Relative APPOSITIVE (entre virgules) : 'qui travaillent' ne restreint pas la référence ; la clause présuppose que TOUS les étudiants travaillent et ajoute une information. La virgule est le signal prosodique et graphique de la distinction. Conséquences : l'appositive peut être supprimée sans changer le référent ; la restrictive ne peut pas."
   },
@@ -1779,7 +1779,7 @@
     "id": "D7-Int-3",
     "dossier": "D7",
     "type": "transformation",
-    "niveau": "intermediaire",
+    "niveau": "intermédiaire",
     "enonce": "Transformez les relatives en utilisant différents pronoms relatifs : (a) 'la ville [j'habitais dans cette ville]' → avec 'où' ; (b) 'le collègue [je parle de ce collègue]' → avec 'dont' ; (c) 'la raison [il est parti pour cette raison]' → avec 'pour laquelle'.",
     "corrige": "(a) 'la ville où j'habitais' — 'où' = relatif de lieu (ou de temps), remplace 'dans cette ville' (prép. 'dans' + nom) ; (b) 'le collègue dont je parle' — 'dont' = relatif correspondant à 'de + GN', fonction oblique du verbe 'parler de' ; (c) 'la raison pour laquelle il est parti' — 'pour laquelle' = prép. 'pour' + pronom relatif complexe 'laquelle' (genre/nombre accordé avec 'raison', fém. sing.). Ces transformations montrent que le choix du pronom relatif dépend de la préposition régissant l'argument lacunaire dans la relative."
   },
@@ -1787,7 +1787,7 @@
     "id": "D7-Int-4",
     "dossier": "D7",
     "type": "analyse",
-    "niveau": "intermediaire",
+    "niveau": "intermédiaire",
     "enonce": "Dans 'le rapport de la commission d'enquête sur les abus financiers', dessinez la structure en arbre (ou décrivez-la par niveaux d'emboîtement) des CdN.",
     "corrige": "Niveau 0 — GN : [le rapport de la commission d'enquête sur les abus financiers] / Nom-tête : 'rapport' / CdN 1 : 'de la commission d'enquête sur les abus financiers' / Niveau 1 — GN enchâssé : [la commission d'enquête sur les abus financiers] / Nom-tête : 'commission' / CdN 2 : 'd'enquête' (type d'activité) / CdN 3 : 'sur les abus financiers' (objet de l'enquête) / Niveau 2 — GN enchâssé : [les abus financiers] / Nom-tête : 'abus' / Épithète : 'financiers'. Structure récursive : chaque CdN contient un GN qui peut lui-même avoir un CdN."
   },
@@ -1795,7 +1795,7 @@
     "id": "D7-Int-5",
     "dossier": "D7",
     "type": "commutation",
-    "niveau": "intermediaire",
+    "niveau": "intermédiaire",
     "enonce": "Testez par commutation si les éléments soulignés sont épithètes ou prédicats dans : (a) 'une solution [possible]', (b) 'la seule solution [possible]', (c) 'cette solution [est possible]'.",
     "corrige": "(a) 'possible' est épithète postposée : modifie 'solution' à l'intérieur du GN. Test : supprimable sans affecter la structure de la clause (*'une solution' reste GN valide) ; peut être déplacé ('une possible solution'). (b) 'possible' idem, renforcé par 'seule'. (c) 'est possible' : 'possible' est attribut du sujet, PRÉDICAT — pas épithète. La copule 'est' est le verbe de la clause. Distinction : épithète = interne au GN, prédicat = interne à la clause. Test de commutation : remplacez par un autre adjectif → conserve la grammaticalité dans les deux positions pour un épithète, mais change la structure prédicative."
   },
@@ -1803,7 +1803,7 @@
     "id": "D7-Int-6",
     "dossier": "D7",
     "type": "identification",
-    "niveau": "intermediaire",
+    "niveau": "intermédiaire",
     "enonce": "Identifiez et classez toutes les extensions du GN dans : 'Un brillant chercheur en intelligence artificielle, spécialiste des réseaux de neurones, vient d'être recruté.'",
     "corrige": "GN sujet : 'Un brillant chercheur en intelligence artificielle, spécialiste des réseaux de neurones'. Analyse : 'Un' = dét. indéfini ; 'brillant' = épithète antéposée de 'chercheur' ; 'chercheur' = nom-tête ; 'en intelligence artificielle' = CdN (GP expanseur de 'chercheur') ; 'spécialiste des réseaux de neurones' = apposition détachée (entre virgules, coréférent avec 'chercheur' ; à l'intérieur : 'spécialiste' = nom-tête de l'apposition, 'des réseaux de neurones' = CdN de 'spécialiste'). Total : 1 épithète + 1 CdN + 1 apposition avec CdN enchâssé."
   },
@@ -1811,15 +1811,15 @@
     "id": "D7-Int-7",
     "dossier": "D7",
     "type": "analyse",
-    "niveau": "intermediaire",
+    "niveau": "intermédiaire",
     "enonce": "Analysez les pronoms relatifs dans les relatives enchâssées : 'Le prix que tu as payé pour l'appartement que tu as acheté dans le quartier dont tout le monde parle est excessif.'",
     "corrige": "Trois relatives : (1) 'que tu as payé' — antécédent 'prix', 'que' = OD de 'payé' ; (2) 'que tu as acheté dans le quartier dont tout le monde parle' — antécédent 'appartement', 'que' = OD de 'acheté' ; dans cette relative est enchâssée (3) 'dont tout le monde parle' — antécédent 'quartier', 'dont' = complément oblique de 'parle de'. Enchâssement : relative 3 est à l'intérieur de relative 2, qui est CdN de 'appartement', qui est CdN de 'prix'. Structure récursive de l'enchâssement nominal."
   },
   {
     "id": "D7-Int-8",
     "dossier": "D7",
-    "type": "cas_limite",
-    "niveau": "intermediaire",
+    "type": "cas limite",
+    "niveau": "intermédiaire",
     "enonce": "Est-ce que 'médical' dans 'un dossier médical' est une épithète ou un CdN nominalisé ? Comparez avec 'un dossier de médecine'.",
     "corrige": "Dans 'un dossier médical' : 'médical' est un adjectif relationnel — il dérive d'un nom ('médecine') et indique un domaine ou une relation. Il fonctionne syntaxiquement comme épithète (même catégorie grammaticale : Adj), mais sémantiquement il est proche d'un CdN ('dossier de médecine / de santé'). Les adjectifs relationnels : (1) sont généralement postposés, (2) ne peuvent pas être gradés (*'très médical'), (3) ne peuvent pas être mis en position attribut facilement (*'ce dossier est médical' est bizarre). Comparaison : 'dossier de médecine' = CdN (GP), sémantique légèrement différente (domaine d'étude vs usage médical)."
   },
@@ -1827,15 +1827,15 @@
     "id": "D7-Int-9",
     "dossier": "D7",
     "type": "transformation",
-    "niveau": "intermediaire",
+    "niveau": "intermédiaire",
     "enonce": "Réduisez les relatives suivantes en participiales ou épithètes quand c'est possible : (a) 'un livre qui a été écrit en 1900', (b) 'un enfant qui pleure', (c) 'la femme qui est belle'.",
     "corrige": "(a) 'un livre qui a été écrit en 1900' → 'un livre écrit en 1900' (participiale passée, réduction possible). (b) 'un enfant qui pleure' → 'un enfant pleurant' (participiale présente) ; moins idiomatique mais grammatical. (c) 'la femme qui est belle' → 'la belle femme' ou 'la femme belle' (épithète antéposée ou postposée) ; réduction aisée pour les adjectifs attributifs. Règle : les relatives adjectivales dont le verbe est 'être + Adj/Participe' sont facilement réductibles. Les relatives avec verbes d'action sont réductibles en participiales présentes ou passées."
   },
   {
     "id": "D7-Int-10",
     "dossier": "D7",
-    "type": "question_ouverte",
-    "niveau": "intermediaire",
+    "type": "question ouverte",
+    "niveau": "intermédiaire",
     "enonce": "Expliquez pourquoi 'ancien' change de sens selon sa position : 'un ancien professeur' vs 'un professeur ancien'. Donnez deux autres exemples d'adjectifs à double position avec changement de sens.",
     "corrige": "'Un ancien professeur' (antéposé) = quelqu'un qui était professeur et ne l'est plus (sens temporel/résultatif). 'Un professeur ancien' (postposé) = un professeur qui a de l'ancienneté / qui est vieux. Ce phénomène s'appelle la 'mobilité adjectivale à effet de sens'. Autres exemples : (1) 'un certain homme' (indéfini, imprécis) vs 'un homme certain' (sûr, convaincu) ; (2) 'un grand homme' (illustre, remarquable) vs 'un homme grand' (de grande taille) ; (3) 'un pauvre enfant' (malheureux, à plaindre) vs 'un enfant pauvre' (sans argent). Règle générale : antéposé → sens souvent figuré, subjectif ; postposé → sens propre, objectif."
   },
@@ -1843,7 +1843,7 @@
     "id": "D7-Adv-1",
     "dossier": "D7",
     "type": "analyse",
-    "niveau": "avance",
+    "niveau": "avancé",
     "enonce": "Dans la théorie X-barre, le GN est analysé comme N'' (N-double barre). Expliquez les niveaux N, N' et N'' à partir de l'exemple 'ces deux intéressants romans policiers de Simenon'.",
     "corrige": "N (niveau zéro) = le lexème nominal : 'roman'. N' (N-barre) = N + ses compléments et modificateurs : ['romans policiers' = N + Adj ; puis N' + CdN : 'romans policiers de Simenon']. N'' = projection maximale = GN complet, avec le spécifieur (déterminant + quantifieur) : 'ces deux intéressants romans policiers de Simenon'. Structure X-barre : N'' → Spec + N' ; N' → (Adj) + N' ou N + Compl. Spec : 'ces deux' (dét. + numéral) ; Modificateur adjectival : 'intéressants' (en position de spécifieur de N' pour certaines analyses) ; N0 : 'romans' ; Adj épithète : 'policiers' ; CdN : 'de Simenon'. L'intérêt : la récursivité de N' permet de rendre compte des enchâssements illimités."
   },
@@ -1851,15 +1851,15 @@
     "id": "D7-Adv-2",
     "dossier": "D7",
     "type": "analyse",
-    "niveau": "avance",
+    "niveau": "avancé",
     "enonce": "Analysez les relatives sans antécédent (dites 'libres') dans : (a) 'Qui dort dîne.', (b) 'Je mange ce qui reste.', (c) 'Prends ce dont tu as besoin.' Quelle est leur fonction dans la clause principale ?",
     "corrige": "(a) 'Qui dort dîne' : 'qui dort' = relative libre sujet de la clause principale. 'Qui' = pronom relatif sans antécédent nominal, avec valeur générique ('celui qui dort'). (b) 'ce qui reste' : 'ce' = pronom démonstratif, antécédent du relatif 'qui reste' ; 'ce qui reste' = GN objet direct de 'mange'. Ici l'antécédent est le pronom neutre 'ce', donc c'est une relative semi-libre. (c) 'ce dont tu as besoin' : idem, 'ce' = antécédent, 'dont' = relatif, 'ce dont tu as besoin' = OD de 'prends'. Les relatives libres constituent elles-mêmes un GN ; elles occupent des fonctions nominales (sujet, OD, OI…) dans la clause matrice."
   },
   {
     "id": "D7-Adv-3",
     "dossier": "D7",
-    "type": "cas_limite",
-    "niveau": "avance",
+    "type": "cas limite",
+    "niveau": "avancé",
     "enonce": "Est-ce que 'le fait que tu viennes' est une relative ou une complétive ? Justifiez en analysant la structure interne et la relation entre 'fait' et la clause enchâssée.",
     "corrige": "Il s'agit d'une COMPLÉTIVE (introduite par 'que' compléteur, non par pronom relatif). 'Que tu viennes' n'est pas une relative car : (1) il n'y a pas d'argument lacunaire dans la clause enchâssée ('tu viennes' est complet — rien ne manque) ; dans une relative, le pronom relatif est le trace d'un argument manquant ; (2) 'que' est ici un complémenteur (C0), non un pronom. 'Le fait que tu viennes' = GN dont le nom 'fait' est spécifié par une complétive apposée. Structure : N'' ['le fait'] + complétive apposée ['que tu viennes']. Ce type de construction est parfois appelé 'relative de contenu' ou 'complétive apposée au nom'."
   },
@@ -1867,7 +1867,7 @@
     "id": "D7-Adv-4",
     "dossier": "D7",
     "type": "analyse",
-    "niveau": "avance",
+    "niveau": "avancé",
     "enonce": "Analysez le phénomène d'accord de l'adjectif épithète dans les GN coordonnés : (a) 'une politique et un discours novateurs', (b) 'un roman et une nouvelle policiers'. Quelles règles s'appliquent ?",
     "corrige": "(a) 'politique' (fém.) + 'discours' (masc.) coordonnés → accord au masc. plur. 'novateurs' : en français, le masculin est le genre non marqué, le pluriel s'impose dès qu'il y a au moins deux noms coordonnés. (b) 'roman' (masc.) + 'nouvelle' (fém.) → 'policiers' au masc. plur. : même règle. Règles générales : (1) pluriel obligatoire si plusieurs noms ; (2) genre masculin l'emporte sur le féminin si les deux genres sont présents (règle prescriptive classique) ; (3) si tous les noms sont féminins → accord au féminin pluriel ('une politique et une stratégie novatrices'). Caveat : certains grammairiens modernes proposent l'accord de proximité (accord avec le nom le plus proche)."
   },
@@ -1875,7 +1875,7 @@
     "id": "D7-Adv-5",
     "dossier": "D7",
     "type": "analyse",
-    "niveau": "avance",
+    "niveau": "avancé",
     "enonce": "Comparez les structures de déterminants en français et expliquez la différence entre 'Je mange DU pain' (article partitif) et 'Je mange LE pain' (article défini) en termes de référence et de quantification.",
     "corrige": "Article défini 'le/la/les' : référence DÉFINIE — le référent est identifiable, unique dans le contexte ('Je mange le pain [que tu as acheté]' ou sens générique : 'Le pain est bon pour la santé'). Article partitif 'du/de la/des' : référence PARTITIVE — portion non délimitée d'une masse ou substance indénombrable ('du pain' = une certaine quantité non spécifiée de pain). En termes de théorie des déterminants : le défini active un référent déjà ancré dans le discours ou encyclopédiquement unique ; le partitif introduit un référent massif non individualisé. Test : 'Je mange du pain tous les jours' (partitif, habitude) ≠ 'Je mange le pain de ma mère' (défini, référent spécifique)."
   },
@@ -1883,15 +1883,15 @@
     "id": "D7-Adv-6",
     "dossier": "D7",
     "type": "analyse",
-    "niveau": "avance",
+    "niveau": "avancé",
     "enonce": "Expliquez la notion de 'tête nominale nulle' (ou 'ellipse du nom') dans des constructions comme : (a) 'J'aime le rouge mais pas le bleu.', (b) 'Prends le plus grand.', (c) 'Les riches paient plus.'",
     "corrige": "(a) 'le rouge' et 'le bleu' : les adjectifs de couleur sont nominalisés — ils fonctionnent comme noms-têtes. Le GN a une tête adjectivale ou on postule une tête nominale nulle (N0 = ∅) avec le sens du contexte. (b) 'le plus grand' : supérieur relatif, N0 sous-jacent récupérable du contexte ('le plus grand [objet]'). (c) 'les riches' : adjectif substantivé, catégorie N0 vide, fonctionnant comme nom proprement dit. En linguistique formelle : ces constructions impliquent soit (1) conversion N0 → Adj utilisé comme N0 (nominalisation d'adjectif), soit (2) ellipse nominale sous identité avec un antécédent textuel. La tête nulle reste une position syntaxique projetant un GN."
   },
   {
     "id": "D7-Adv-7",
     "dossier": "D7",
-    "type": "question_ouverte",
-    "niveau": "avance",
+    "type": "question ouverte",
+    "niveau": "avancé",
     "enonce": "Qu'est-ce que le 'groupe nominal étendu' (ou DP, Determiner Phrase) dans la théorie generativiste moderne ? En quoi diffère-t-il de la conception traditionnelle du GN ?",
     "corrige": "Dans la théorie traditionnelle (grammaire structurale) : le GN a N comme tête et le déterminant est un modificateur/spécifieur. Dans la théorie generativiste moderne (DP hypothesis, Abney 1987) : la tête du groupe n'est pas N mais D (déterminant). Le groupe s'appelle DP (Determiner Phrase). Structure : DP → D + NP ; NP → (AdjP) + N + (PP/RelP…). Motivation : (1) les déterminants ont des propriétés de têtes (ils sélectionnent le NP, imposent le nombre) ; (2) dans les langues sans article, les pronoms occupent la position D ; (3) le déterminant est l'élément obligatoire (au moins en français) et celui qui encode les informations référentielles (définitude, deixis…). Conséquence : le GN traditionnel = NP dans la théorie generativiste ; le DP est le groupe plus large."
   },
@@ -1899,23 +1899,23 @@
     "id": "D7-Adv-8",
     "dossier": "D7",
     "type": "analyse",
-    "niveau": "avance",
+    "niveau": "avancé",
     "enonce": "Analysez la relative pseudo-clivée : 'Ce que j'aime, c'est le chocolat.' Identifiez les constituants et expliquez pourquoi c'est une construction de focalisation.",
     "corrige": "La pseudo-clivée (ou 'wh-clivée') est une construction bi-prédicative : (1) clause de gauche : 'ce que j'aime' = relative libre (sujet de la clause matrice) ; 'ce' = pronom démonstratif neutre, antécédent de 'que j'aime' ; 'que' = OD de 'aime' (argument lacunaire). (2) copule 'c'est'. (3) focus : 'le chocolat' = rhème, constitué focal (l'information nouvelle, l'élément mis en valeur). Fonction pragmatique : la pseudo-clivée topicalise le prédicat ('aimer') et focalise le thème ('le chocolat'). Comparer : 'J'aime le chocolat' (neutre) vs 'Ce que j'aime, c'est le chocolat' (le chocolat est présenté comme la réponse à la question implicite 'qu'est-ce que tu aimes ?')."
   },
   {
     "id": "D7-Adv-9",
     "dossier": "D7",
-    "type": "cas_limite",
-    "niveau": "avance",
+    "type": "cas limite",
+    "niveau": "avancé",
     "enonce": "Analysez 'Homme libre, toujours tu chériras la mer' (Baudelaire). Quelle est la fonction syntaxique de 'Homme libre' ? En quoi ce cas est-il ambigu ?",
     "corrige": "'Homme libre' est en position initiale, avant le sujet 'tu'. Analyse possible 1 : APPOSITION DÉTACHÉE au sujet 'tu' (coréférentielle avec 'tu', elle prédiquer une propriété du destinataire). Analyse possible 2 : VOCATIF (le locuteur s'adresse à 'l'homme libre', interpellation directe). Arguments pour vocatif : l'absence de verbe 'être' attribué, la ponctuation (virgule), le registre poétique et le contexte (adresse à un interlocuteur idéal). Arguments pour apposition : position syntaxique canonique d'une apposition prépositionnelle. Cas limite : dans la poésie, vocatif et apposition peuvent se superposer. En prose standard, on attendrait 'Toi qui es homme libre, …' (apposition) ou 'Ô homme libre, …' (vocatif avec particule)."
   },
   {
     "id": "D7-Adv-10",
     "dossier": "D7",
-    "type": "question_ouverte",
-    "niveau": "avance",
+    "type": "question ouverte",
+    "niveau": "avancé",
     "enonce": "Expliquez la différence entre modificateurs INTERSECTIFS, NON-INTERSECTIFS et SUBSECTIFS en donnant un exemple de chaque type parmi les adjectifs épithètes.",
     "corrige": "Adjectif INTERSECTIF : 'X Adj N' = être X et être N. Ex. 'chat noir' = animal qui est [chat] ET [noir]. La vérité de l'attribut Adj s'applique indépendamment du nom. Adjectif SUBSECTIF : 'X Adj N' = être la chose Adj parmi les N — mais pas nécessairement Adj dans l'absolu. Ex. 'un petit éléphant' = petit pour un éléphant, mais grand par rapport à d'autres animaux. La propriété est relative au nom. Adjectif NON-INTERSECTIF : 'X Adj N' ne signifie pas 'être X et être N'. Ex. 'prétendu coupable' → n'est pas nécessairement [coupable] ni [prétendu] indépendamment. Ou 'ancien ministre' → n'est plus [ministre] au moment de la référence. Ces distinctions relèvent de la sémantique compositionnelle et montrent que la modification adjectivale n'est pas uniforme."
   },
@@ -1954,7 +1954,7 @@
   {
     "id": "D8-Fond-5",
     "dossier": "D8",
-    "type": "vrai_faux",
+    "type": "vrai/faux",
     "niveau": "fondamental",
     "enonce": "Vrai ou faux ? (a) Le passif français requiert toujours un complément d'agent. (b) L'imparfait exprime toujours une action passée habituelle. (c) 'Être sur le point de + infinitif' exprime l'aspect prospectif. (d) Les verbes d'état ne se mettent généralement pas au passif.",
     "corrige": "(a) FAUX — le complément d'agent ('par + GN') est facultatif ; on peut avoir un passif sans agent exprimé ('La maison a été vendue'). (b) FAUX — l'imparfait a plusieurs valeurs : habituel, description, arrière-plan narratif, cotextuel (imparfait de politesse : 'Je voulais vous demander'), hypothétique. (c) VRAI — 'être sur le point de' indique que le procès va se produire imminement (aspect prospectif ou 'pré-résultatif'). (d) VRAI — les verbes d'état ('sembler', 'paraître', 'ressembler'…) résistent au passif car ils n'ont pas d'agent."
@@ -1994,7 +1994,7 @@
   {
     "id": "D8-Fond-10",
     "dossier": "D8",
-    "type": "correction_erreur",
+    "type": "correction d'erreur",
     "niveau": "fondamental",
     "enonce": "Corrigez les erreurs dans : (a) 'La lettre a été écrit par Marie.', (b) 'Le gâteau est mangé par les enfants hier.', (c) 'Elle s'est lavée les mains.'",
     "corrige": "(a) ERREUR d'accord : 'lettre' est féminin → 'La lettre a été écrite par Marie' ('écrite' accorde avec le sujet). (b) ERREUR de temps : 'est mangé' (présent passif) incompatible avec 'hier' (marqueur du passé) → 'Le gâteau a été mangé par les enfants hier' (passé composé passif). (c) ERREUR d'accord : quand le pronom réfléchi est OI (se laver les mains = laver SES mains à soi-même), le participe NE s'accorde PAS avec le sujet → 'Elle s'est lavé les mains' ('les mains' est OD postposé, donc pas d'accord avec le sujet)."
@@ -2003,7 +2003,7 @@
     "id": "D8-Int-1",
     "dossier": "D8",
     "type": "analyse",
-    "niveau": "intermediaire",
+    "niveau": "intermédiaire",
     "enonce": "Analysez la différence entre les verbes pronominaux réfléchis, réciproques et lexicaux (ou proprement pronominaux) dans : (a) 'Elle se lave.', (b) 'Ils se disputent.', (c) 'Elle se souvient.', (d) 'Il s'évanouit.'",
     "corrige": "(a) RÉFLÉCHI : 'se lave' = elle lave elle-même ; 'se' = OD coréférent au sujet. Paraphrasable : 'elle lave elle-même'. (b) RÉCIPROQUE : 'se disputent' = chacun dispute l'autre ; 'se' = OD/OI réciproque (l'un l'autre). Exige un sujet pluriel ou coordonné. (c) LEXICAL (ou proprement pronominal) : 'se souvenir' — 'se' n'est pas analysable comme argument séparé ; verbe TOUJOURS pronominal ('*elle souvient' est agrammatical). (d) LEXICAL : 's'évanouir' — 'se' est partie du lexème verbal ; '*il évanouit' impossible. Distinction cruciale pour l'accord du participe passé avec 'être'."
   },
@@ -2011,7 +2011,7 @@
     "id": "D8-Int-2",
     "dossier": "D8",
     "type": "analyse",
-    "niveau": "intermediaire",
+    "niveau": "intermédiaire",
     "enonce": "Expliquez l'accord du participe passé dans : (a) 'Elle s'est souvenue de lui.', (b) 'Elles se sont téléphoné.', (c) 'Elle s'est coupé le doigt.', (d) 'Ils se sont regardés.'",
     "corrige": "(a) 's'est souvenue' : verbe lexicalement pronominal ('se souvenir') → accord avec le sujet 'elle' → 'souvenue'. (b) 'se sont téléphoné' : 'se téléphoner' = réciproque ; 'se' est OI (on téléphone À qqn) → AUCUN accord ('téléphoné' invariable). (c) 's'est coupé le doigt' : 'se' est OI, OD = 'le doigt' (postposé) → AUCUN accord avec le sujet. (d) 'se sont regardés' : 'se' est OD (ils se regardent l'un l'autre) → accord avec le sujet 'ils' (masc. plur.) → 'regardés'. Règle générale : accord avec 'se' seulement si 'se' est OD (et il doit être OD au moment du participe)."
   },
@@ -2019,7 +2019,7 @@
     "id": "D8-Int-3",
     "dossier": "D8",
     "type": "analyse",
-    "niveau": "intermediaire",
+    "niveau": "intermédiaire",
     "enonce": "Distinguez les valeurs de l'imparfait dans : (a) 'Chaque matin, il buvait un café.' (b) 'Il lisait quand le téléphone a sonné.' (c) 'Si tu venais, nous serions heureux.' (d) 'Je voulais vous demander un service.'",
     "corrige": "(a) HABITUEL : 'chaque matin' confirme la répétition régulière dans le passé. (b) ARRIÈRE-PLAN NARRATIF : l'imparfait 'lisait' décrit l'action en cours ; le passé composé 'a sonné' introduit l'événement ponctuel qui interrompt l'arrière-plan. (c) HYPOTHÉTIQUE : dans la protase d'un conditionnel (si + imparfait → conditionnel présent dans l'apodose), l'imparfait marque l'irréel du présent / hypothèse non réalisée. (d) ATTÉNUATIF ou DE POLITESSE : 'voulais' adoucit la demande, la rend plus polie qu'au présent 'veux'. Valeur pragmatique/modale."
   },
@@ -2027,7 +2027,7 @@
     "id": "D8-Int-4",
     "dossier": "D8",
     "type": "analyse",
-    "niveau": "intermediaire",
+    "niveau": "intermédiaire",
     "enonce": "Analysez la voix MÉDIO-PASSIVE dans : (a) 'Ce vin se boit frais.', (b) 'Ce livre se vend bien.', (c) 'La porte s'est ouverte.' Comparez avec le passif ordinaire.",
     "corrige": "Les constructions pronominales à valeur passive (médio-passives) : (a) 'se boit frais' ≈ 'est bu frais' — sujet 'ce vin' est patient, pas d'agent exprimé, 'frais' = prédicat de manière. (b) 'se vend bien' ≈ 'est vendu bien' — valeur générique, propriété du sujet. (c) 'la porte s'est ouverte' — soit mouvement spontané (médio-passif : la porte s'est ouverte d'elle-même), soit causal implicite (quelqu'un l'a ouverte). Différences avec le passif ordinaire : (1) pas de possibilité d'exprimer l'agent ('*ce vin se boit frais par moi') ; (2) sens souvent générique ou de propriété ; (3) le sujet présente une compatibilité avec le procès (se dit d'objets, pas de personnes : *'il se lave frais')."
   },
@@ -2035,7 +2035,7 @@
     "id": "D8-Int-5",
     "dossier": "D8",
     "type": "analyse",
-    "niveau": "intermediaire",
+    "niveau": "intermédiaire",
     "enonce": "Expliquez la notion d'AKTIONSART (mode d'action ou aspect lexical) et classifiez les verbes selon les 4 types de Vendler : (a) 'courir', (b) 'trouver', (c) 'aimer', (d) 'construire une maison'.",
     "corrige": "L'Aktionsart est une propriété lexicale du verbe (contrairement à l'aspect grammatical, marqué par la morphologie). Vendler (1957) distingue 4 classes : (1) ÉTATS : duratifs, non dynamiques, atéliques — ex. 'aimer' → (d) ; (2) ACTIVITÉS : duratifs, dynamiques, atéliques — ex. 'courir' → (a) ; (3) ACCOMPLISSEMENTS : duratifs, dynamiques, TÉLIQUES — ex. 'construire une maison' → (d) ; (4) ACHÈVEMENTS : INSTANTANÉS, téliques — ex. 'trouver' → (b). Clés : télicité (possède-t-il un point terminal naturel ?) et durativité (peut-il durer ?). Tests : 'en X temps' (accomplissements) vs 'pendant X temps' (activités)."
   },
@@ -2043,7 +2043,7 @@
     "id": "D8-Int-6",
     "dossier": "D8",
     "type": "transformation",
-    "niveau": "intermediaire",
+    "niveau": "intermédiaire",
     "enonce": "Transformez les constructions actives en causatives avec 'faire + infinitif' : (a) 'Le professeur apprend aux étudiants la grammaire.' → causatif. (b) 'L'enfant mange sa soupe.' → causatif avec sujet causal 'la mère'.",
     "corrige": "(a) 'Le professeur fait apprendre la grammaire aux étudiants.' — construction causative : 'faire' + infinitif ; le sujet de l'infinitif ('étudiants') devient OI introduit par 'à'. (b) 'La mère fait manger sa soupe à l'enfant.' — 'la mère' = sujet causateur ; 'l'enfant' = sujet de l'infinitif → OI ('à l'enfant') ; 'sa soupe' = OD de 'manger'. Règle : dans 'faire + inf.', si l'infinitif a un OD, le sujet de l'infinitif devient OI ('à'). Si l'infinitif est intransitif, le sujet de l'infinitif devient OD ('elle fait courir les enfants')."
   },
@@ -2051,15 +2051,15 @@
     "id": "D8-Int-7",
     "dossier": "D8",
     "type": "analyse",
-    "niveau": "intermediaire",
+    "niveau": "intermédiaire",
     "enonce": "Analysez la temporalité dans 'Quand il arrivera, elle sera déjà partie.' Quelle relation temporelle entre les deux clauses le futur antérieur établit-il ?",
     "corrige": "'Quand il arrivera' : futur simple → T2 (point de référence futur). 'Elle sera déjà partie' : futur antérieur → T1 (point d'événement ANTÉRIEUR à T2 mais POSTÉRIEUR à T0, le moment d'énonciation). Relation : le futur antérieur exprime l'ANTÉRIORITÉ d'un procès par rapport à un repère futur. Ligne temporelle : T0 (maintenant) < T1 (elle part) < T2 (il arrive). 'Déjà' renforce l'aspect accompli au moment T2. Cette construction montre que le futur antérieur encode à la fois la temporalité (futur) et l'aspect (accompli)."
   },
   {
     "id": "D8-Int-8",
     "dossier": "D8",
-    "type": "cas_limite",
-    "niveau": "intermediaire",
+    "type": "cas limite",
+    "niveau": "intermédiaire",
     "enonce": "Analysez 'Il fait construire sa maison' vs 'Il se fait construire une maison'. Quelle différence syntaxique et sémantique observe-t-on ?",
     "corrige": "'Il fait construire sa maison' : causatif avec 'faire' ; 'il' = causateur, 'sa maison' = OD de 'construire' ; l'agent constructeur n'est pas mentionné. 'Il se fait construire une maison' : causatif avec 'se faire' ; 'se' = OI (bénéficiaire de l'action, 'il se la fait construire POUR LUI'), 'une maison' = OD de 'construire'. Différence sémantique : 'se faire + inf.' ajoute une valeur BÉNÉFACTIVE (le sujet bénéficie de l'action) ou AFFECTIVE. 'Se faire + inf.' peut aussi exprimer la voix passive informelle : 'il s'est fait renvoyer' = 'il a été renvoyé' (connotation souvent négative, événement subi)."
   },
@@ -2067,15 +2067,15 @@
     "id": "D8-Int-9",
     "dossier": "D8",
     "type": "analyse",
-    "niveau": "intermediaire",
+    "niveau": "intermédiaire",
     "enonce": "Distinguez les valeurs modales de 'devoir' dans : (a) 'Elle doit être à la maison à 18h.', (b) 'Elle doit être fatiguée.', (c) 'Il devait le savoir.', (d) 'Tu dois m'obéir.'",
     "corrige": "(a) DÉONTIQUE / OBLIGATION : contrainte imposée par une règle ou une norme ('doit' = obligation externe). (b) ÉPISTÉMIQUE / INFÉRENCE : le locuteur infère une probabilité ('doit être fatiguée' = j'estime qu'elle est probablement fatiguée). (c) ÉPISTÉMIQUE au passé : 'devait le savoir' = il savait probablement (inférence rétrospective). Ou déontique passé : il était obligé de le savoir. (d) DÉONTIQUE fort : obligation imposée à l'allocutaire. La distinction déontique/épistémique est cruciale : même forme morphologique, sens différents selon le contexte. Test : épistémique → paraphrasable par 'il est probable que' ; déontique → paraphrasable par 'il est obligatoire que'."
   },
   {
     "id": "D8-Int-10",
     "dossier": "D8",
-    "type": "question_ouverte",
-    "niveau": "intermediaire",
+    "type": "question ouverte",
+    "niveau": "intermédiaire",
     "enonce": "Expliquez le concept de 'diathèse' et en quoi il est plus large que la notion de 'voix'. Donnez des exemples de constructions diathétiques autres que actif/passif.",
     "corrige": "La DIATHÈSE désigne la relation entre les participants d'un événement et leurs rôles syntaxiques et sémantiques. La VOIX est une réalisation morphologique de la diathèse. La diathèse est plus large car elle inclut : (1) Actif : agent = sujet, patient = OD ('Jean mange la pomme') ; (2) Passif : patient = sujet, agent = compl. d'agent optionnel ('La pomme est mangée (par Jean)') ; (3) Médio-passif/Moyen : le sujet est à la fois agent et patient, ou l'agent est effacé ('La porte s'est ouverte') ; (4) Causatif : un causateur provoque l'action d'un autre agent ('Jean fait manger l'enfant') ; (5) Antipassif : le patient est dépromoté ou effacé (commun en langues ergatives) ; (6) Réfléchi : agent = patient ('Jean se lave'). En français, la diathèse se manifeste principalement par les constructions pronominales et les périphrases."
   },
@@ -2083,7 +2083,7 @@
     "id": "D8-Adv-1",
     "dossier": "D8",
     "type": "analyse",
-    "niveau": "avance",
+    "niveau": "avancé",
     "enonce": "Expliquez la théorie des RÔLES THÉMATIQUES (agent, patient, thème, expérient, source, but, bénéficiaire, instrument) et assignez-les dans : 'Paul a donné le livre à Marie pour Sophie avec ce crayon.'",
     "corrige": "Rôles thématiques de 'donner' : Agent = 'Paul' (initie et contrôle l'action) ; Thème = 'le livre' (entité transférée) ; But/Récepteur = 'à Marie' (destinataire du transfert) ; Bénéficiaire = 'pour Sophie' (bénéficiaire final, en faveur de qui) ; Instrument = 'avec ce crayon' (moyen utilisé — ici peu plausible sémantiquement mais syntaxiquement analysable). La grille thématique du verbe 'donner' spécifie ses arguments : [Agent, Thème, But]. Les autres rôles ('pour', 'avec') sont des adjoints (optionnels). Distinction argument/adjoint : un argument est prévu par la valence du verbe ; un adjoint est optionnel et n'est pas sélectionné."
   },
@@ -2091,7 +2091,7 @@
     "id": "D8-Adv-2",
     "dossier": "D8",
     "type": "analyse",
-    "niveau": "avance",
+    "niveau": "avancé",
     "enonce": "Analysez les constructions RÉSULTATIVES en français : 'Elle a peint la clôture en rouge' vs 'Elle a peint la clôture rouge'. En quoi les deux constructions diffèrent-elles syntaxiquement et sémantiquement ?",
     "corrige": "'Elle a peint la clôture en rouge' : 'en rouge' = GP, complément de manière ou résultat de l'état. 'Elle a peint la clôture rouge' : 'rouge' = adjectif prédicatif, prédicat secondaire RÉSULTATIF — il décrit l'état de 'la clôture' résultant de l'action de peindre. Différences : (1) dans la construction résultative avec Adj, l'adjectif prédicat secondaire est un prédicat de la clôture (pas du sujet) ; (2) sémantiquement, la résultative implique que la clôture EST rouge comme résultat du procès ; (3) les résultatives avec Adj sont plus restrictives en français qu'en anglais — en français, elles sont souvent remplacées par des périphrases ('Elle a peint la clôture et l'a rendue rouge'). Les prédicats secondaires sont des extensions du GV qui prédiquent sur un argument du verbe."
   },
@@ -2099,7 +2099,7 @@
     "id": "D8-Adv-3",
     "dossier": "D8",
     "type": "analyse",
-    "niveau": "avance",
+    "niveau": "avancé",
     "enonce": "Expliquez l'opposition aspectuelle entre PERFECTIF et IMPERFECTIF dans le contexte des langues slaves vs du français. En quoi le système français diffère-t-il fondamentalement ?",
     "corrige": "En langues slaves (russe, polonais…) : l'aspect perfectif/imperfectif est encodé dans le LEXÈME verbal (par préfixation ou suffixation) — chaque verbe existe en deux formes et le choix est binaire, obligatoire. Ex. russe : 'pisat' (imparfait, écrire) vs 'napisat' (parfait, écrire [à terme]). En FRANÇAIS : l'aspect n'est pas une propriété lexicale systématique des verbes mais est encodé GRAMMATICALEMENT par les temps verbaux (imparfait ↔ passé composé/passé simple) et les périphrases aspectuelles. L'opposition n'est pas binaire au niveau du lexème mais contextuelle et combinatoire. De plus, le français peut cumuler des informations temporelles et aspectuelles dans un même morphème (l'imparfait = passé + imperfectif ; le passé composé = passé + perfectif)."
   },
@@ -2107,7 +2107,7 @@
     "id": "D8-Adv-4",
     "dossier": "D8",
     "type": "analyse",
-    "niveau": "avance",
+    "niveau": "avancé",
     "enonce": "Analysez les constructions INGRESSIVES, PROGRESSIVES, ÉGRESSIVE et ITÉRATIVES en français avec des exemples de périphrases verbales pour chacune.",
     "corrige": "INGRESSIVE (début du procès) : 'se mettre à + inf.' ('Elle s'est mise à pleurer'), 'commencer à + inf.', 'entrer en + N' ('entrer en ébullition'). PROGRESSIVE (procès en cours) : 'être en train de + inf.' ('Il est en train de travailler') — le marqueur progressif le plus fort du français. ÉGRESSIVE / TERMINATIVE (fin du procès) : 'finir de + inf.' ('Il a fini de manger'), 'cesser de + inf.', 'arrêter de + inf.'. ITÉRATIVE (répétition) : 'recommencer à + inf.' ('Elle recommença à chanter'), 'répéter de'. CONTINUATIVE (continuation) : 'continuer à/de + inf.' ('Il continue à lire'). Ces valeurs aspectuelles sont encodées par des périphrases (auxiliaire aspectuel + infinitif) et non par la morphologie verbale, contrairement à d'autres langues."
   },
@@ -2115,23 +2115,23 @@
     "id": "D8-Adv-5",
     "dossier": "D8",
     "type": "analyse",
-    "niveau": "avance",
+    "niveau": "avancé",
     "enonce": "Dans la grammaire générativiste, expliquez comment le MOUVEMENT DU VERBE (V-to-I, V-to-T) rend compte de la position du verbe fléchi en français par rapport aux adverbes.",
     "corrige": "En grammaire générativiste (Pollock 1989) : le verbe se génère dans V0 et monte vers T0 (Tense) par mouvement de tête. Preuve : en français, le verbe fléchi précède les adverbes négatifs courts ('souvent', 'toujours', 'bien'…) : 'Il mange souvent des pâtes' (*'Il souvent mange des pâtes'). L'adverbe reste en position basse (specifieur de VP ou adjoint de V') tandis que V monte. En anglais, le verbe auxiliaire monte mais le verbe lexical ne monte pas : 'He often eats pasta' (adverbe avant le verbe lexical). Cette asymétrie français/anglais témoigne que le français a V-to-T (mouvement du verbe lexical jusqu'en T), ce qui n'est pas le cas de l'anglais. Évidence supplémentaire : la négation 'ne…pas' encadre le verbe fléchi ('il ne mange pas') = le verbe est sorti de VP."
   },
   {
     "id": "D8-Adv-6",
     "dossier": "D8",
-    "type": "cas_limite",
-    "niveau": "avance",
+    "type": "cas limite",
+    "niveau": "avancé",
     "enonce": "Analysez l'ambiguïté dans 'La police surveille les militants qui se réunissent en secret'. La relative peut-elle être interprétée comme restrictive ou appositive ? Quelles conséquences pour le sens ?",
     "corrige": "Interprétation RESTRICTIVE : 'qui se réunissent en secret' restreint la référence de 'militants' à ceux qui se réunissent en secret ; la police surveille CE SOUS-ENSEMBLE uniquement (d'autres militants non secrets ne sont pas surveillés). Interprétation APPOSITIVE : tous les militants sont surveillés, et la relative ajoute une information (tous se réunissent en secret). En français écrit, la distinction est normalement signalée par la virgule (virgule → appositive). Ici, sans virgule, la lecture restrictive est préférée. Mais le contexte peut forcer l'une ou l'autre. Conséquences pragmatiques : la restrictive implique que certains militants ne sont pas surveillés ; l'appositive affirme que tous les militants se réunissent en secret (présupposition). La distinction a des enjeux légaux et éthiques en contexte judiciaire."
   },
   {
     "id": "D8-Adv-7",
     "dossier": "D8",
-    "type": "question_ouverte",
-    "niveau": "avance",
+    "type": "question ouverte",
+    "niveau": "avancé",
     "enonce": "Expliquez le concept d'ALTERNANCE CAUSATIVE en linguistique (ex. 'La chaleur a fondu la glace' / 'La glace a fondu'). En quoi ce phénomène révèle-t-il quelque chose sur la structure argumentale ?",
     "corrige": "L'ALTERNANCE CAUSATIVE (ou alternance 'cause-inchoative') concerne des verbes pouvant être utilisés transitivement (avec un causateur-sujet et un patient-OD) ou intransitivement (avec le patient-sujet, sans causateur). Ex. : transitif : 'Jean a fondu la glace' (Jean = agent causal, glace = patient) ; intransitif : 'La glace a fondu' (glace = sujet, mais sémantiquement patient). En français, cette alternance est souvent marquée par la construction pronominale : 'La glace s'est fondue' (vs anglais, sans marque). Ce phénomène révèle que : (1) la valence verbale est flexible ; (2) la transitivité n'est pas fixe — certains verbes 'causatifs-incohatifs' encodent deux grilles thématiques ; (3) dans la théorie lexicaliste (Levin & Rappaport Hovav), l'alternance est régulière pour les verbes de 'changement d'état'. La construction réfléchie en français lexicalise l'intransitif."
   },
@@ -2139,7 +2139,7 @@
     "id": "D8-Adv-8",
     "dossier": "D8",
     "type": "analyse",
-    "niveau": "avance",
+    "niveau": "avancé",
     "enonce": "Analysez 'On leur a fait lire le rapport' en termes de structure causative, rôles thématiques, et réalisation syntaxique des arguments.",
     "corrige": "Verbe causatif : 'faire' + infinitif 'lire'. Arguments et rôles : 'On' = sujet de 'faire' = CAUSATEUR ; 'leur' = pronom OI = sujet de l'infinitif, AGENTIF CAUSÉ (ceux qui lisent) — réalisé comme OI parce que 'lire' a un OD ('le rapport') ; 'le rapport' = OD de 'lire' = THÈME. Structure causative : [On [faire [ils lire le rapport]]]. Règle de réalisation : dans 'faire + Vinf. + OD', le sujet de l'infinitif ne peut pas être OD de 'faire' (occupation de la position OD par 'le rapport') → monte en OI ('leur'). Contraste : 'On les a fait courir' (intransitif 'courir' → sujet de l'inf. = OD 'les'). La construction causative avec 'faire' est une des plus étudiées en syntaxe française."
   },
@@ -2147,15 +2147,15 @@
     "id": "D8-Adv-9",
     "dossier": "D8",
     "type": "analyse",
-    "niveau": "avance",
+    "niveau": "avancé",
     "enonce": "Discutez la notion de PASSIF ADJECTIVAL vs PASSIF VERBAL en français : 'La porte est fermée (par le gardien)' vs 'La porte est fermée depuis hier'. Comment les distinguer ?",
     "corrige": "PASSIF VERBAL : construction VERBALE — 'être' est auxiliaire + participe = prédicat de procès. Il y a un agent possible ('par le gardien'), le participe a une valeur événementielle. Ex. 'La porte a été fermée par le gardien à 18h' — événement situé dans le temps, agent exprimable. PASSIF ADJECTIVAL : 'être' est copule + adjectif — le participe est devenu adjectif, décrit un ÉTAT résultant. 'La porte est fermée depuis hier' — 'fermée' = état ; 'depuis hier' confirme la durativité d'un état, incompatible avec un passif verbal (*'La porte a été fermée par quelqu'un depuis hier'). Tests de distinction : (1) peut-on ajouter 'par + agent' ? (verbal : oui) ; (2) 'être en train de être + Participe' ? (verbal : oui pour certains) ; (3) l'adverbial 'actuellement' ou 'depuis X' → état (adjectival). La frontière est parfois floue et dépend du contexte."
   },
   {
     "id": "D8-Adv-10",
     "dossier": "D8",
-    "type": "question_ouverte",
-    "niveau": "avance",
+    "type": "question ouverte",
+    "niveau": "avancé",
     "enonce": "Comparez les approches LEXICALISTE et TRANSFORMATIONNELLE du passif. Pour chacune, expliquez comment elle rend compte de la relation entre 'Le chat mange la souris' et 'La souris est mangée par le chat'.",
     "corrige": "Approche TRANSFORMATIONNELLE (Chomsky) : le passif dérive de l'actif par une règle de transformation : déplacement de l'OD en position sujet (par mouvement NP), ajout de 'être + participe', déplacement du sujet actif en position de complément d'agent ('par'). Structure profonde unique, deux réalisations de surface. Avantage : économie — une seule grille thématique pour 'manger'. Approche LEXICALISTE : le verbe 'manger' a DEUX entrées lexicales — active et passive — avec des grilles thématiques différentes ; pas de transformation syntaxique, la dérivation est dans le lexique. Avantage : pas besoin de mouvements abstraits. Problème lexicaliste : doit dupliquer l'information pour chaque verbe. Problème transformationnel : doit contraindre les mouvements pour éviter les dérivations non grammaticales. Débat non clos en syntaxe formelle."
   },
@@ -2194,7 +2194,7 @@
   {
     "id": "D9-Fond-5",
     "dossier": "D9",
-    "type": "vrai_faux",
+    "type": "vrai/faux",
     "niveau": "fondamental",
     "enonce": "Vrai ou faux ? (a) Une clause complétive peut être sujet d'une clause principale. (b) L'interrogative indirecte utilise toujours 'que'. (c) Les circonstancielles temporelles demandent toujours le subjonctif. (d) La clause infinitive est une clause sans sujet exprimé.",
     "corrige": "(a) VRAI — ex. 'Que tu sois là me touche' ; plus naturel extraposé : 'Ça me touche que tu sois là'. (b) FAUX — l'interrogative indirecte totale utilise 'si' ('il demande SI tu viens') ; l'interrogative indirecte partielle utilise 'ce que / ce qui / qui / quand / comment…' ; 'que' seul n'est pas utilisé pour les interrogatives indirectes. (c) FAUX — la temporelle avec 'quand' + indicatif ('quand il arrive') ; 'avant que' + subjonctif ; 'après que' + indicatif (normalement, bien que le subjonctif soit fréquent à l'oral). (d) VRAI — dans 'Je veux partir', 'partir' = infinitif clause sans sujet exprimé (le sujet est contrôlé par le sujet matrice 'je')."
@@ -2229,12 +2229,12 @@
     "type": "transformation",
     "niveau": "fondamental",
     "enonce": "Convertissez les questions directes en questions indirectes enchâssées dans 'Elle demande ...' : (a) 'Viens-tu ?' (b) 'Qui a appelé ?' (c) 'Où habites-tu ?'",
-    "corrige": "(a) 'Viens-tu ?' → 'Elle demande si tu viens.' — question totale (oui/non) → 'si' + inversion supprimée, indicatif. (b) 'Qui a appelé ?' → 'Elle demande qui a appelé.' — 'qui' reste interrogatif, pas d'inversion dans l'indirecte. (c) 'Où habites-tu ?' → 'Elle demande où tu habites.' — 'où' reste, inversion supprimée. Règles de transformation directe → indirecte : (1) supprimer l'inversion (ordre SVO normal) ; (2) supprimer le '?' ; (3) question totale → 'si' ; (4) question partielle → garder le mot interrogatif (qui, où, comment, quand, pourquoi, combien)."
+    "corrige": "(a) 'Viens-tu ?' → 'Elle demande si tu viens.' — question totale (oui/non) → 'si' + inversion supprimée, indicatif. (b) 'Qui a appelé ?' → 'Elle demande qui a appelé.' — 'qui' reste interrogatif, pas d'inversion dans l'indirecte. (c) 'Où habites-tu ?' → 'Elle demande où tu habites.' — 'où' reste, inversion supprimée. Règles de transformation directe → indirecte : (1) supprimer l'inversion (ordre canonique (Sujet-Prédicat)) ; (2) supprimer le '?' ; (3) question totale → 'si' ; (4) question partielle → garder le mot interrogatif (qui, où, comment, quand, pourquoi, combien)."
   },
   {
     "id": "D9-Fond-10",
     "dossier": "D9",
-    "type": "correction_erreur",
+    "type": "correction d'erreur",
     "niveau": "fondamental",
     "enonce": "Corrigez les erreurs dans : (a) 'Je doute qu'il a raison.', (b) 'Elle espère que tu viennes.', (c) 'Il demande que si tu viens.', (d) 'Bien qu'il est fatigué, il continue.'",
     "corrige": "(a) ERREUR : 'douter que' → subjonctif obligatoire : 'Je doute qu'il ait raison.' (b) ERREUR potentielle : 'espérer que' → indicatif en français standard ('Elle espère que tu viendras') ; le subjonctif 'viennes' est possible dans certaines normes régionales ou sous influence de la négation, mais la norme standard = indicatif. (c) ERREUR : 'demander que' n'introduit pas 'si' — 'si' est pour l'interrogative indirecte, 'que' pour la complétive directive : 'Il demande si tu viens' OU 'Il demande que tu viennes' (deux constructions différentes avec sens différent). (d) ERREUR : 'bien que' → subjonctif : 'Bien qu'il soit fatigué, il continue.'"
@@ -2243,7 +2243,7 @@
     "id": "D9-Int-1",
     "dossier": "D9",
     "type": "analyse",
-    "niveau": "intermediaire",
+    "niveau": "intermédiaire",
     "enonce": "Analysez la concordance des temps dans les complétives : 'Il dit qu'il vient / viendra / est venu / venait / viendrait.' Comment la concordance fonctionne-t-elle en français ?",
     "corrige": "Le verbe de la complétive reflète la temporalité par rapport au moment de l'énonciation (T0) et par rapport au verbe principal. Si V principal au PRÉSENT : 'Il dit que...' → 'il vient' (simultanéité) / 'il viendra' (postériorité) / 'il est venu' (antériorité). Si V principal au PASSÉ : 'Il disait que...' → 'il venait' (simultanéité dans le passé) / 'il viendrait' (postériorité dans le passé = conditionnel) / 'il était venu' (antériorité dans le passé). Le français n'a pas de concordance des temps aussi systématique que le latin ou l'anglais, mais les verbes de la complétive suivent une logique de temporalité relative. Attention : l'indicatif vs subjonctif dépend du verbe principal, pas de la temporalité."
   },
@@ -2251,7 +2251,7 @@
     "id": "D9-Int-2",
     "dossier": "D9",
     "type": "analyse",
-    "niveau": "intermediaire",
+    "niveau": "intermédiaire",
     "enonce": "Analysez le phénomène de LEVÉE DU SUJET (Subject Raising) dans : 'Il semble comprendre le problème.' vs 'Il semble qu'il comprend le problème.' Quelle est la structure de chacune ?",
     "corrige": "'Il semble qu'il comprend le problème' : clause matrice = 'il semble [...]' (sujet impersonnel 'il' = expletif) + complétive sujet. Structure : [Cl_mat : [il semble] [que [il comprend le problème]]]. 'Il semble comprendre le problème' : LEVÉE DU SUJET — 'il' est MONTÉ de la clause infinitive enchâssée vers la position sujet de la matrice. Ici 'il' = sujet réel de 'comprendre', mais réalisé comme sujet de 'sembler'. 'Sembler' est un verbe de LEVÉE (Raising verb) : il n'assigne pas de rôle thématique à son sujet. Preuve : 'Il semble pleuvoir' — 'il' est expletif (météorologique), levé du verbe enchâssé 'pleuvoir'. Contraste avec verbes de CONTRÔLE ('vouloir', 'essayer') où le sujet de la matrice est thématique."
   },
@@ -2259,7 +2259,7 @@
     "id": "D9-Int-3",
     "dossier": "D9",
     "type": "analyse",
-    "niveau": "intermediaire",
+    "niveau": "intermédiaire",
     "enonce": "Expliquez la différence entre clauses ADVERBIALES INTÉGRÉES et DÉTACHÉES (ou 'périphériques') avec exemples, et en quoi cette distinction est importante pour l'analyse de la portée.",
     "corrige": "Clauses adverbiales INTÉGRÉES : se trouvent à l'intérieur de la clause principale, liées syntaxiquement. Ex. 'Elle est partie parce qu'elle était fatiguée' — la causale est intimement liée à la matrice, la cause porte sur l'événement. Clauses DÉTACHÉES (ou périphériques) : sont en position périphérique, souvent en tête de clause ou après une virgule, avec une portée plus large. Ex. 'Puisque tu insistes, je resterai' — la causale (ici 'puisque') a une valeur plus pragmatique/intersubjective. 'Puisque' introduit une cause connue / acceptée par les deux interlocuteurs (≠ 'parce que' qui donne une nouvelle information). La portée change : les adverbiales détachées peuvent porter sur l'acte d'énonciation ('Comme je peux l'observer, tu es triste' = l'observation, pas la tristesse)."
   },
@@ -2267,7 +2267,7 @@
     "id": "D9-Int-4",
     "dossier": "D9",
     "type": "analyse",
-    "niveau": "intermediaire",
+    "niveau": "intermédiaire",
     "enonce": "Dans 'Si tu travaillais, tu réussirais' : analysez le système hypothétique (type, temps des verbes, interprétation).",
     "corrige": "Système hypothétique de TYPE 2 (irréel du présent ou hypothétique peu probable) : si + imparfait (protase) → conditionnel présent (apodose). 'Si tu travaillais' : imparfait dans la protase — ne marque pas le passé mais l'irréalité / improbabilité dans le présent ('tu ne travailles pas' ou 'c'est peu probable'). 'Tu réussirais' : conditionnel présent dans l'apodose — l'état de choses est présenté comme hypothétique/conditionnel. Contraste : TYPE 1 (réel) : 'Si tu travailles, tu réussiras' — indicatif présent + futur simple (hypothèse réalisable) ; TYPE 3 (irréel du passé) : 'Si tu avais travaillé, tu aurais réussi' — plus-que-parfait + conditionnel passé."
   },
@@ -2275,7 +2275,7 @@
     "id": "D9-Int-5",
     "dossier": "D9",
     "type": "analyse",
-    "niveau": "intermediaire",
+    "niveau": "intermédiaire",
     "enonce": "Analysez les RELATIVES INDÉFINIES et GÉNÉRIQUES dans : (a) 'Quiconque travaille réussit.', (b) 'Où que tu ailles, je te suivrai.', (c) 'Qui vivra verra.'",
     "corrige": "(a) 'Quiconque travaille' = relative libre à valeur universelle/générique ; 'quiconque' = pronom relatif indéfini (= 'toute personne qui'). Sujet de 'réussit'. (b) 'Où que tu ailles' = relative adverbiale concessive indéfinie ('peu importe où tu ailles') ; 'où que' + subjonctif. (c) 'Qui vivra verra' = relative libre avec futur ; 'qui' = pronom relatif indéfini générique (= 'celui qui'). Les relatives indéfinies / libres sans antécédent explicite : elles constituent elles-mêmes un GN ou un GP. Leurs propriétés : (1) valeur générique/universelle ; (2) souvent avec futur ou subjonctif ; (3) fonctionnent comme argument ou adjoint dans la matrice."
   },
@@ -2283,7 +2283,7 @@
     "id": "D9-Int-6",
     "dossier": "D9",
     "type": "transformation",
-    "niveau": "intermediaire",
+    "niveau": "intermédiaire",
     "enonce": "Transformez les complétives en constructions infinitives avec changement de verbe si nécessaire : (a) 'Il dit qu'il part.' → infinitif avec verbe de déclaration alternatif. (b) 'Il veut que tu partes.' → infinitif si possible.",
     "corrige": "(a) 'Il dit qu'il part' : mêmes sujets → possible avec 'déclarer' / 'affirmer' : 'Il affirme partir.' Mais avec 'dire' + sujets identiques : 'Il dit partir' (style soutenu) ou 'Il dit qu'il part' (courant). Pour les verbes de discours ('dire', 'déclarer', 'affirmer'), l'infinitif avec sujet identique est possible mais parfois marqué. (b) 'Il veut que tu partes' : sujets DIFFÉRENTS → infinitif impossible directement avec 'vouloir' ('*il veut toi partir'). Alternative : 'Il te demande de partir' (avec verbe 'demander' + OI + infinitif). Ou conserver la clause finie. Le changement de verbe permet parfois de récupérer l'infinitif même avec sujets différents ('demander à qqn de + inf.', 'obliger qqn à + inf.')."
   },
@@ -2291,15 +2291,15 @@
     "id": "D9-Int-7",
     "dossier": "D9",
     "type": "analyse",
-    "niveau": "intermediaire",
+    "niveau": "intermédiaire",
     "enonce": "Analysez les clauses participiales absolues dans : 'La nuit tombant, ils rentrèrent.' et 'Le repas terminé, nous sortîmes.' Quelle est leur valeur sémantique et leur statut syntaxique ?",
     "corrige": "'La nuit tombant' : clause participiale absolue avec GÉRONDIF ou PARTICIPE PRÉSENT ; 'la nuit' est le sujet propre de la participiale (différent du sujet de la matrice 'ils'). Valeur : TEMPORELLE (quand la nuit tombait) ou CAUSALE. 'Le repas terminé' : participiale absolue avec PARTICIPE PASSÉ ; 'le repas' est le sujet propre. Valeur : TEMPORELLE (une fois le repas terminé). Statut syntaxique : les participiales absolues sont des clauses RÉDUITES (avec sujet propre mais sans verbe fléchi). Elles sont adjoints circonstanciels (temporels, causaux, conditionnels). La condition 'absolue' = leur sujet est différent du sujet principal (contrairement aux participiales qui partagent le sujet de la matrice)."
   },
   {
     "id": "D9-Int-8",
     "dossier": "D9",
-    "type": "cas_limite",
-    "niveau": "intermediaire",
+    "type": "cas limite",
+    "niveau": "intermédiaire",
     "enonce": "Analysez l'ambiguïté de rattachement dans : 'Il a vu la femme avec le télescope.' Quelle analyse syntaxique produit quel sens ?",
     "corrige": "Ambiguïté de rattachement (attachement) du GP 'avec le télescope' : Lecture 1 — 'avec le télescope' rattaché au VERBE 'a vu' → adjoint circonstanciel d'instrument : 'Il a vu [avec le télescope] la femme' = il a utilisé un télescope pour voir. Lecture 2 — 'avec le télescope' rattaché au GN 'la femme' → modificateur du nom : 'la femme [avec le télescope]' = la femme qui portait un télescope. La syntaxe autorise les deux structures, mais le contexte pragmatique favorise l'une ou l'autre. Ce type d'ambiguïté (PP attachment ambiguity) est l'un des plus étudiés en traitement automatique des langues. Représentation arborescente : les deux arbres syntaxiques différents produisent deux interprétations sémantiques distinctes."
   },
@@ -2307,15 +2307,15 @@
     "id": "D9-Int-9",
     "dossier": "D9",
     "type": "analyse",
-    "niveau": "intermediaire",
+    "niveau": "intermédiaire",
     "enonce": "Distinguez 'avant que + subjonctif' et 'après que + indicatif/subjonctif' : pourquoi 'avant que' demande-t-il le subjonctif et pourquoi 'après que' pose-t-il un problème normatif ?",
     "corrige": "'Avant que' + SUBJONCTIF : l'événement de la subordonnée est présenté comme non encore réalisé au moment de référence → le subjonctif marque la prospection et la non-actualité du procès ('Je partirai avant qu'il arrive' — il n'est pas encore arrivé). 'Après que' : en français STANDARD / PRESCRIPTIF → INDICATIF (l'événement est réalisé, effectif : 'Je suis parti après qu'il est arrivé'). MAIS dans l'usage courant / oral, le subjonctif s'est imposé après 'après que' par analogie avec 'avant que'. Problème normatif : la règle prescriptive dit indicatif, mais l'usage dominant (y compris chez des locuteurs cultivés) utilise le subjonctif. Raison probable : symétrie avec 'avant que' et diffusion progressive. La norme scolaire maintient l'indicatif."
   },
   {
     "id": "D9-Int-10",
     "dossier": "D9",
-    "type": "question_ouverte",
-    "niveau": "intermediaire",
+    "type": "question ouverte",
+    "niveau": "intermédiaire",
     "enonce": "Expliquez la notion de CLAUSE RÉDUITE (small clause) à l'aide de l'exemple 'Je la trouve belle'. Quelle est la structure prédicative enchâssée ?",
     "corrige": "La CLAUSE RÉDUITE (small clause) est une proposition enchâssée sans verbe fléchi et sans complémenteur, constituée d'un sujet et d'un prédicat (souvent Adj ou PP). Dans 'Je la trouve belle' : 'la' = sujet de la clause réduite ; 'belle' = prédicat de 'la'. La clause réduite est [la belle] = une prédication interne enchâssée sous le verbe 'trouver'. Trouver régit une clause réduite : [Je [trouver [la belle]]]. Preuve que c'est une prédication : 'belle' s'accorde avec 'la' (le référent de 'la'), pas avec le sujet de 'trouver'. Autres verbes régissant des clauses réduites : 'faire' ('je le fais roi'), 'rendre' ('tu me rends heureux'), 'considérer' ('il le considère responsable'). La clause réduite est une proposition sans C0 ni I0 — uniquement le noyau prédicatif minimal."
   },
@@ -2323,7 +2323,7 @@
     "id": "D9-Adv-1",
     "dossier": "D9",
     "type": "analyse",
-    "niveau": "avance",
+    "niveau": "avancé",
     "enonce": "Expliquez la distinction entre verbes de CONTRÔLE (PRO-control) et verbes de LEVÉE (Raising) à partir des exemples 'Jean essaie de partir' et 'Jean semble partir'. Comment tester la différence ?",
     "corrige": "Verbes de CONTRÔLE ('essayer', 'vouloir', 'tenter') : le sujet de la matrice est UN ARGUMENT THÉMATIQUE du verbe matrice ET contrôle le sujet vide PRO de l'infinitive. 'Jean essaie de partir' : 'Jean' = agent de 'essayer' + contrôleur de PRO sujet de 'partir'. 'Essayer' assigne un rôle thématique à 'Jean'. Verbes de LEVÉE ('sembler', 'paraître', 'devoir' épistémique) : le sujet de la matrice N'EST PAS un argument du verbe matrice — il est LEVÉ de l'infinitive. 'Jean semble partir' : 'Jean' est le sujet de 'partir' (argument thématique de 'partir'), levé en position sujet de 'sembler'. 'Sembler' n'assigne pas de rôle thématique à son sujet. TESTS : (1) Substituer un expletif sujet : 'Il semble pleuvoir' (ok, levée) / *'Il essaie de pleuvoir' (agrammatical, contrôle). (2) Paraphrase : 'Il semble que Jean part' (levée) / *'Il essaie que Jean part' (contrôle → différent sémantiquement)."
   },
@@ -2331,7 +2331,7 @@
     "id": "D9-Adv-2",
     "dossier": "D9",
     "type": "analyse",
-    "niveau": "avance",
+    "niveau": "avancé",
     "enonce": "Analysez les constructions à LONGUE DISTANCE dans : 'C'est le livre que je pense que Marie a acheté.' Identifiez la 'trace' ou la position vide et expliquez comment la dépendance est établie.",
     "corrige": "Construction à dépendance à longue distance (long-distance dependency, LDD) : 'le livre' est l'antécédent du pronom relatif 'que', mais la position vide (trace ou copie) se trouve à l'intérieur de la clause enchâssée à deux niveaux de profondeur : 'que Marie a acheté [___]' (position de OD de 'acheté'). Structure : [C'est [le livre] [que [je pense [que [Marie a acheté [___]]]]]]]. En théorie générativiste (minimalisme) : 'que' (= 'lequel') s'est déplacé de la position OD de 'acheté' jusqu'au bord gauche de la relative, laissant une copie (trace) dans la position d'origine. La dépendance traverse la frontière de la clause enchâssée de 'penser'. Ces constructions sont illicites avec certains verbes ('*C'est le livre que je me demande qui a acheté' = island violation)."
   },
@@ -2339,7 +2339,7 @@
     "id": "D9-Adv-3",
     "dossier": "D9",
     "type": "analyse",
-    "niveau": "avance",
+    "niveau": "avancé",
     "enonce": "Expliquez les CONTRAINTES SUR LES EXTRACTIONS (îles syntaxiques) à l'aide des exemples : (a) *'Qui as-tu demandé si elle a vu ?', (b) *'Lequel a-t-il rencontré [la femme qui a peint] ?', (c) *'C'est le livre que [tu as cassé [le stylo sur]] ___.'",
     "corrige": "Les ÎLES SYNTAXIQUES (Ross 1967) sont des domaines syntaxiques à partir desquels l'extraction est illicite. (a) ÎLE DE L'INTERROGATIVE ENCHÂSSÉE (Complex NP Constraint ou Wh-Island) : 'si elle a vu qui' — l'extraction de 'qui' hors de la proposition 'si elle a vu ___' est bloquée. La clause enchâssée en 'si' forme une île. (b) ÎLE DU GN COMPLEXE (Complex NP Island) : la relative 'qui a peint' est une île — on ne peut pas extraire 'lequel' de l'intérieur du GN complexe 'la femme qui a peint [lequel]'. (c) ÎLE DU COMPLÉMENT ADJOINT : extraction hors d'un adjoint. Ces contraintes sont universelles (dans différentes langues) et ont été analysées comme des propriétés de la grammaire universelle (phases, localité) dans le cadre générativiste."
   },
@@ -2347,7 +2347,7 @@
     "id": "D9-Adv-4",
     "dossier": "D9",
     "type": "analyse",
-    "niveau": "avance",
+    "niveau": "avancé",
     "enonce": "Analysez la construction CLIVÉE 'C'est Marie qui a gagné' et la PSEUDO-CLIVÉE 'Celle qui a gagné, c'est Marie'. Comparez leurs structures syntaxiques et leurs fonctions pragmatiques.",
     "corrige": "CLIVÉE ('c'est X qui/que P') : 'C'est Marie qui a gagné.' Structure : [C'est [Marie] [qui a gagné]]. 'Marie' est le focus (constituant mis en valeur) ; 'qui a gagné' est une relative libre coréférentielle avec 'Marie'. Pragmatiquement : identifie 'Marie' comme la réponse à 'qui a gagné ?' — focalisation d'identification. PSEUDO-CLIVÉE : 'Celle qui a gagné, c'est Marie.' Structure : [Celle qui a gagné] (clause relative libre = SUJET) + c'est + [Marie] (FOCUS). La relative libre topicalise le prédicat ('gagner'), le focus identifie le gagnant. Différence : dans la clivée, le focus vient EN PREMIER (avant la relative) ; dans la pseudo-clivée, la relative vient en premier (topique) et le focus est en position rhématique finale. La pseudo-clivée est donc un topique-focus ; la clivée est une structure d'identification."
   },
@@ -2355,31 +2355,31 @@
     "id": "D9-Adv-5",
     "dossier": "D9",
     "type": "analyse",
-    "niveau": "avance",
+    "niveau": "avancé",
     "enonce": "Analysez les participes DÉTACHÉS à sujet propre (absolute participials) vs les participes CORÉFÉRENTIELS : 'Ayant fini ses devoirs, Marie sortit' vs 'La leçon terminée, Marie sortit.'",
     "corrige": "'Ayant fini ses devoirs, Marie sortit' : participe présent CORÉFÉRENTIEL — le sujet implicite du participe ('ayant fini') est CORÉFÉRENTIEL avec le sujet de la matrice 'Marie'. Marie a fini ses devoirs ET Marie est sortie. Structure : [Marie_i [ayant fini ses devoirs]_i sortit]. 'La leçon terminée, Marie sortit' : participiale ABSOLUE — le sujet propre de la participiale est 'la leçon' (≠ sujet de la matrice 'Marie'). La leçon est terminée, et Marie sort. Structure : [[La leçon terminée] Marie sortit]. Distinction : coréférentielle → sujet partagé ; absolue → sujets distincts. Les participes coréférentiels sans sujet propre obéissent à la contrainte de coréférence de sujet (dangling participial violation si le sujet ne correspond pas)."
   },
   {
     "id": "D9-Adv-6",
     "dossier": "D9",
-    "type": "question_ouverte",
-    "niveau": "avance",
+    "type": "question ouverte",
+    "niveau": "avancé",
     "enonce": "Qu'est-ce que la RÉCURSIVITÉ en syntaxe ? Montrez avec des exemples de clauses enchâssées pourquoi la récursivité est considérée comme une propriété fondamentale du langage humain.",
     "corrige": "La RÉCURSIVITÉ est la propriété qui permet à un élément syntaxique d'un certain type de contenir un élément du même type. Elle génère une infinité de structures à partir d'un ensemble fini de règles. En syntaxe des clauses : une clause peut contenir une autre clause, qui peut en contenir une autre, etc. Exemples : 'Je sais que tu crois que Marie pense qu'il dit que...' (enchâssement de complétives à l'infini). 'L'homme qui connaît la femme qui a vu le chat qui a mangé la souris...' (enchâssement de relatives). La récursivité s'applique aussi aux GN ('le livre du professeur du lycée de la ville de...') et aux coordinations. Importance théorique : Chomsky a fait de la récursivité (via le Merge, opération qui combine deux éléments en un) la propriété centrale qui distingue le langage humain des systèmes de communication animaux. Elle explique la 'infini discret' — infinité de phrases à partir d'un vocabulaire fini."
   },
   {
-    "id": "D9-Adv-7",
+    "id": "D9-Av-7",
     "dossier": "D9",
     "type": "analyse",
-    "niveau": "avance",
+    "niveau": "avancé",
     "enonce": "Analysez les COMPLÉTIVES SUJETS avec extraposition dans 'Il est évident que la terre est ronde' vs 'Que la terre est ronde est évident'. Pourquoi la première est-elle préférée ?",
-    "corrige": "'Que la terre est ronde est évident' : ordre canonique SVO avec clause sujet lourde en tête — grammatical mais lourd ; la clause sujet 'que la terre est ronde' précède le verbe 'est'. 'Il est évident que la terre est ronde' : EXTRAPOSITION — la clause sujet est déplacée en fin de clause, 'il' expletif (pronom impersonnel, sans référent) occupe la position sujet. Raisons pour la préférence de l'extraposition : (1) Principle of End-Weight : les constituants lourds tendent à se placer en fin de clause (poids informationnel équilibré) ; (2) Préférence pour les sujets légers en français ; (3) Traitement cognitif : le sujet léger 'il' est traité rapidement, la clause lourde vient en position de rhème où sa complexité est mieux tolérée. L'extraposition est quasi-obligatoire pour les clauses sujets très longues en français courant."
+    "corrige": "'Que la terre est ronde est évident' : ordre Sujet-Prédicat avec clause sujet lourde en tête — grammatical mais lourd ; la clause sujet 'que la terre est ronde' précède le verbe 'est'. 'Il est évident que la terre est ronde' : EXTRAPOSITION — la clause sujet est déplacée en fin de clause, 'il' expletif (pronom impersonnel, sans référent) occupe la position sujet. Raisons pour la préférence de l'extraposition : (1) Principle of End-Weight : les constituants lourds tendent à se placer en fin de clause (poids informationnel équilibré) ; (2) Préférence pour les sujets légers en français ; (3) Traitement cognitif : le sujet léger 'il' est traité rapidement, la clause lourde vient en position de rhème où sa complexité est mieux tolérée. L'extraposition est quasi-obligatoire pour les clauses sujets très longues en français courant."
   },
   {
     "id": "D9-Adv-8",
     "dossier": "D9",
-    "type": "cas_limite",
-    "niveau": "avance",
+    "type": "cas limite",
+    "niveau": "avancé",
     "enonce": "Analysez 'Je ne sais pas si tu dois partir ou si tu dois rester' en termes de coordination de clauses interrogatives indirectes. Quels sont les enjeux de l'ellipse dans la deuxième clause ?",
     "corrige": "Structure : 'Je ne sais pas [[si tu dois partir] ou [si tu dois rester]]' — deux clauses interrogatives indirectes coordonnées par 'ou'. Parallélisme : les deux clauses partagent la structure '[si [tu dois [V]]]'. Dans la deuxième clause, on pourrait avoir ellipse : 'si tu dois partir ou rester' — ellipse du sujet et de l'auxiliaire ('tu dois') par identité avec la première clause (ZEUGME ou GAPPING). Enjeux : (1) l'ellipse exige l'identité des éléments supprimés ; (2) 'ou' peut aussi connecter les infinitifs seuls 'partir ou rester' sans répétition du complémenteur 'si' et du GV modal ; (3) le sens est identique dans tous les cas. L'ellipse dans la coordination obéit à des contraintes de parallélisme structurel et d'identité syntaxique."
   },
@@ -2387,15 +2387,15 @@
     "id": "D9-Adv-9",
     "dossier": "D9",
     "type": "analyse",
-    "niveau": "avance",
+    "niveau": "avancé",
     "enonce": "Expliquez la notion de COMPLÉMENTEUR nul (zéro) en français dans 'Je crois [Ø il a raison]' vs anglais 'I believe [Ø he is right]'. En quoi le français diffère-t-il de l'anglais ?",
     "corrige": "En ANGLAIS : l'omission du complémenteur 'that' est très courante avec les verbes d'opinion/discours : 'I believe [Ø/that] he is right' — le complémenteur peut être nul (C0 = Ø). En FRANÇAIS STANDARD : l'omission de 'que' est généralement illicite pour les complétives finies : *'Je crois il a raison' est agrammatical. 'Que' est obligatoire : 'Je crois qu'il a raison.' Exceptions/contextes où le complémenteur peut être absent en français : (1) infinitives : 'Je crois [Ø avoir raison]' (complémenteur non nécessaire devant infinitif) ; (2) registres très familiers : certaines omissions à l'oral. Raison structurelle : en anglais, C0 = Ø est une option grammaticale ; en français, C0 = 'que' est en général obligatoire pour les clauses finies enchâssées déclaratives. Différence typologique : l'anglais est plus tolérant à l'ellipse du complémenteur."
   },
   {
     "id": "D9-Adv-10",
     "dossier": "D9",
-    "type": "question_ouverte",
-    "niveau": "avance",
+    "type": "question ouverte",
+    "niveau": "avancé",
     "enonce": "Quels arguments syntaxiques permettent de distinguer une COMPLÉTIVE introduite par 'que' d'une RELATIVE introduite par 'que' ? Donnez deux tests formels.",
     "corrige": "Test 1 — ARGUMENT LACUNAIRE dans la relative : dans une relative, 'que' est le pronom relatif qui remplace un argument manquant dans la clause enchâssée. Ex. 'le film que j'ai vu [___]' — position de OD de 'vu' vide (trace). Dans une complétive, 'que' est un complémenteur pur (C0) et la clause est COMPLÈTE : 'Je sais que Marie a vu le film' — aucune position vide dans 'Marie a vu le film'. Test 2 — ANTÉCÉDENT : la relative est toujours attachée à un antécédent nominal ('le film QUE...') ; la complétive n'a pas d'antécédent, elle est argument d'un verbe ('je sais QUE...'). Test 3 — SUBSTITUTION pronominale : la complétive peut être remplacée par 'cela' ou 'ça' ('Je sais cela') ; la relative non (*'le film cela'). Test 4 — COMMUTATION avec 'lequel' : dans une relative, 'que' peut commuter avec 'lequel' ('le film lequel j'ai vu' — style soutenu) ; dans une complétive, *'je sais lequel Marie est venue' change radicalement le sens (devient interrogative indirecte)."
   },
@@ -2426,7 +2426,7 @@
   {
     "id": "D10-Fond-4",
     "dossier": "D10",
-    "type": "vrai_faux",
+    "type": "vrai/faux",
     "niveau": "fondamental",
     "enonce": "Vrai ou faux ? (a) Une phrase peut ne contenir qu'un seul mot. (b) Le point-virgule peut remplacer le point. (c) La virgule sépare toujours deux clauses. (d) Une clause peut ne pas avoir de verbe.",
     "corrige": "(a) VRAI — phrases graphiques nominales ou exclamatives : 'Silence !' / 'Merci.' / 'Au feu !' — un seul mot (+ ponctuation forte). (b) VRAI partiellement — le point-virgule peut séparer deux groupes qui pourraient être des phrases indépendantes, mais il marque un lien plus étroit entre elles. Remplacer par point est possible mais change l'effet stylistique. (c) FAUX — la virgule a de nombreuses fonctions : séparation d'appositions, d'épithètes détachées, de compléments circonstanciels en tête, d'éléments en liste — pas uniquement entre clauses. (d) VRAI (clause 'réduite') — dans les clauses sans verbe fléchi ('verbless clauses' ou 'phrase nominale') : 'Impossible !' / 'Pas de problème.' Ces structures sont des clauses averbales."
@@ -2474,7 +2474,7 @@
   {
     "id": "D10-Fond-10",
     "dossier": "D10",
-    "type": "correction_erreur",
+    "type": "correction d'erreur",
     "niveau": "fondamental",
     "enonce": "Corrigez les problèmes de ponctuation : (a) 'Je veux, que tu viennes.', (b) 'Il a dit. Qu'il partirait demain.', (c) 'Elle mange des fruits des légumes et des céréales.'",
     "corrige": "(a) ERREUR : virgule entre verbe et clause complétive → supprimer la virgule : 'Je veux que tu viennes.' La virgule ne sépare pas un verbe de son complément. (b) ERREUR : point à l'intérieur d'une clause complexe — 'qu'il partirait demain' est OD de 'dit', ne peut pas être une phrase indépendante → 'Il a dit qu'il partirait demain.' (c) ERREUR : absence de virgule dans une énumération de trois éléments ou plus → 'Elle mange des fruits, des légumes et des céréales.' (virgule entre les éléments de la liste, sauf avant le dernier 'et' selon la tradition française — pas de virgule Oxford avant 'et' en français standard)."
@@ -2483,7 +2483,7 @@
     "id": "D10-Int-1",
     "dossier": "D10",
     "type": "analyse",
-    "niveau": "intermediaire",
+    "niveau": "intermédiaire",
     "enonce": "Analysez la PROGRESSION THÉMATIQUE dans ce texte : 'Le tigre est un félin. Il habite en Asie. Cet animal est en danger d'extinction.' Quel type de progression observe-t-on ?",
     "corrige": "Progression THÈME-RHÈME : (1) 'Le tigre' (T1) / 'est un félin' (R1). (2) 'Il' [=le tigre] (T2=T1) / 'habite en Asie' (R2). (3) 'Cet animal' [=le tigre] (T3=T1) / 'est en danger d'extinction' (R3). Type : PROGRESSION À THÈME CONSTANT — le même référent ('le tigre') est thème de chaque clause, avec des rhèmes différents (nouveaux prédicats). Trois modes principaux de progression : (1) À thème constant (comme ici) ; (2) Linéaire (le rhème d'une clause devient le thème de la suivante) ; (3) Thème éclaté (un thème global est divisé en sous-thèmes). La progression thématique révèle l'organisation informationnelle du texte."
   },
@@ -2491,7 +2491,7 @@
     "id": "D10-Int-2",
     "dossier": "D10",
     "type": "analyse",
-    "niveau": "intermediaire",
+    "niveau": "intermédiaire",
     "enonce": "Analysez les types d'anaphores dans : 'Marie a acheté une robe. Le vêtement lui allait parfaitement. Elle le portait souvent. Sa couleur était magnifique.'",
     "corrige": "'Le vêtement' : anaphore nominale INFIDÈLE (synonyme partiel — 'vêtement' est hypéronyme de 'robe') ; le défini 'le' marque la coréférence avec 'une robe'. 'Elle' : anaphore pronominale coréférent avec 'Marie'. 'Le' (dans 'Elle le portait') : anaphore pronominale OD, coréférent avec 'le vêtement/la robe'. 'Sa couleur' : anaphore associative — 'sa' réfère à la robe (un objet relié à la robe : sa propriété) ; ce n'est pas une coréférence stricte mais une relation partie-tout ou propriété-objet. Types d'anaphores : (1) pronominale ; (2) nominale fidèle (même lexème) ou infidèle (synonyme, hypéronyme) ; (3) associative (lien de proximité sémantique non coréférentielle)."
   },
@@ -2499,7 +2499,7 @@
     "id": "D10-Int-3",
     "dossier": "D10",
     "type": "analyse",
-    "niveau": "intermediaire",
+    "niveau": "intermédiaire",
     "enonce": "Distinguez PARATAXE et HYPOTAXE dans ces deux passages : (a) 'Il arriva. Il vit. Il vainquit.' (b) 'Dès qu'il arriva, ayant observé la situation, il vainquit parce qu'il était le plus fort.'",
     "corrige": "(a) PARATAXE : juxtaposition de clauses sans connecteur explicite (ou avec connecteur minimal) ; les relations logiques (temporelle, consécutive) sont IMPLICITES. Chaque clause est indépendante graphiquement. Effet stylistique : rapidité, force, concision (style asyndétique — veni, vidi, vici). (b) HYPOTAXE : subordination de clauses les unes aux autres via des connecteurs ('dès que', 'parce que') et des participiales ('ayant observé'). Les relations logiques sont EXPLICITÉES syntaxiquement. Effet : complexité, explicitation des liens. L'opposition parataxe/hypotaxe est une dimension stylistique fondamentale : les textes littéraires, scientifiques et argumentatifs varient entre ces deux pôles selon les effets recherchés."
   },
@@ -2507,7 +2507,7 @@
     "id": "D10-Int-4",
     "dossier": "D10",
     "type": "analyse",
-    "niveau": "intermediaire",
+    "niveau": "intermédiaire",
     "enonce": "Analysez la structure informationnelle THÈME/RHÈME et TOPIQUE/FOCUS dans : 'C'est Marie qui a trouvé la solution, pas Pierre.'",
     "corrige": "Structure CLIVÉE 'C'est X qui P' : FOCUS = 'Marie' (l'information nouvelle, identifiante, mise en valeur par la clivée ; répond à la question implicite 'qui a trouvé la solution ?') ; TOPIQUE = 'trouver la solution' (information connue, présupposée par la clivée — il est présupposé que quelqu'un a trouvé la solution). 'Pas Pierre' : CONTRE-FOCUS ou CORRECTION — nie une alternative ('Pierre' aurait pu être attendu). Structure informationnelle globale : THÈME (topique présupposé) = 'trouver la solution' ; RHÈME (comment le topique est instancié) = 'c'est Marie'. La clivée est un marqueur de focalisation contrastive — elle présuppose l'existence d'un événement et identifie le participant."
   },
@@ -2515,7 +2515,7 @@
     "id": "D10-Int-5",
     "dossier": "D10",
     "type": "analyse",
-    "niveau": "intermediaire",
+    "niveau": "intermédiaire",
     "enonce": "Analysez l'organisation macrostructurelle d'un texte argumentatif : identifiez les parties attendues et les marqueurs linguistiques de chacune.",
     "corrige": "Structure canonique d'un texte argumentatif (plan classique) : (1) INTRODUCTION : thèse / question posée / contexte — marqueurs : 'La question de...', 'Il est généralement admis que...', 'Dans ce texte, nous nous proposons de...' ; (2) DÉVELOPPEMENT (corps argumentatif) : arguments + exemples — marqueurs de structuration : 'D'abord, Ensuite, En outre, De plus, Par ailleurs, Cependant, Néanmoins, En revanche' ; marqueurs d'exemplification : 'Par exemple, C'est le cas de, Ainsi, Tel que' ; (3) CONTRE-ARGUMENT / OBJECTION : 'Certes, Il est vrai que, On pourrait objecter que...' ; (4) RÉFUTATION : 'Mais, Cependant, Néanmoins, Or...' ; (5) CONCLUSION : synthèse + prise de position — marqueurs : 'Ainsi, En conclusion, Pour conclure, En définitive, Il ressort de cette analyse que...'. La macrostructure organise le contenu à l'échelle du texte entier."
   },
@@ -2523,7 +2523,7 @@
     "id": "D10-Int-6",
     "dossier": "D10",
     "type": "identification",
-    "niveau": "intermediaire",
+    "niveau": "intermédiaire",
     "enonce": "Dans le texte suivant, identifiez les structures de TOPICALISATION et de DISLOCATION : 'Ce livre, je l'ai lu trois fois. Lui, il est brillant. La solution, nous l'avons enfin trouvée.'",
     "corrige": "'Ce livre, je l'ai lu trois fois' : DISLOCATION GAUCHE — 'ce livre' est disloqué en position initiale (topique), repris par le clitique 'l' en position canonique d'OD. Pas de trace syntaxique vide — le pronom clitique assure la liaison. 'Lui, il est brillant' : DISLOCATION GAUCHE du pronom fort 'lui', repris par le clitique sujet 'il'. Très fréquent à l'oral et dans les registres informels. 'La solution, nous l'avons enfin trouvée' : idem, dislocation gauche de l'OD. Fonction pragmatique : TOPICALISATION — le constituent disloqué est présenté comme le topique discursif (dont on va parler), ce qui le détache de la prédication principale et le met en position de 'cadre thématique'."
   },
@@ -2531,15 +2531,15 @@
     "id": "D10-Int-7",
     "dossier": "D10",
     "type": "analyse",
-    "niveau": "intermediaire",
+    "niveau": "intermédiaire",
     "enonce": "Analysez les CONNECTEURS TEMPORELS dans le texte suivant et reconstruisez la chronologie des événements : 'D'abord, Marie est arrivée. Ensuite, Pierre a téléphoné. Pendant ce temps, les autres préparaient le repas. Finalement, tout le monde était réuni.'",
     "corrige": "Connecteurs temporels et leur valeur : 'D'abord' = antériorité/ordre initial dans la séquence narrative. 'Ensuite' = postériorité immédiate (après le premier événement). 'Pendant ce temps' = SIMULTANÉITÉ — les autres préparaient le repas EN MÊME TEMPS que Pierre téléphonait (ou que les premiers événements avaient lieu). 'Finalement' = conclusion temporelle / dernier état de la séquence. Chronologie : T1 : Marie arrive. T2 : Pierre téléphone (ET pendant ce temps, simultanément, les autres préparent le repas). T3 : tout le monde est réuni (état final). La coexistence de la simultanéité ('pendant ce temps') avec la séquence ('d'abord, ensuite') crée une structure temporelle complexe."
   },
   {
     "id": "D10-Int-8",
     "dossier": "D10",
-    "type": "cas_limite",
-    "niveau": "intermediaire",
+    "type": "cas limite",
+    "niveau": "intermédiaire",
     "enonce": "Est-ce que les phrases sans verbe fléchi (ex. 'Interdit de stationner.', 'Silence SVP.', 'Attention travaux.') sont des clauses ? Justifiez.",
     "corrige": "Ces constructions sont des PHRASES AVERBALES (ou nominales) — des phrases graphiques sans verbe fléchi. Sont-elles des clauses ? Dépend de la définition adoptée. Définition stricte : une clause = sujet + verbe fléchi → ces phrases ne sont PAS des clauses (pas de verbe). Définition large : une clause = unité prédicative minimale pouvant inclure des structures averbales → peuvent être analysées comme clauses réduites (small clauses). En pratique : 'Interdit de stationner' = clause nominale avec valeur prédicative implicite ('il est interdit de stationner') ; 'Silence SVP' = injonction averbale ; 'Attention travaux' = deux nominaux juxtaposés. Ces formes sont très productives dans les registres fonctionnels (panneaux, titres, SMS, tweets) et constituent des structures indépendantes à part entière dans l'analyse textuelle moderne."
   },
@@ -2547,15 +2547,15 @@
     "id": "D10-Int-9",
     "dossier": "D10",
     "type": "analyse",
-    "niveau": "intermediaire",
+    "niveau": "intermédiaire",
     "enonce": "Analysez l'emploi du deux-points ':' dans ces contextes : (a) 'Je n'ai qu'une chose à dire : partez.', (b) 'Il y a trois raisons : la fatigue, le stress et le manque de temps.', (c) 'Elle sourit : elle avait compris.'",
     "corrige": "(a) DEUX-POINTS ANNONCIATEUR : annonce une reformulation, une conclusion, un discours direct ou un complément — ici annonce une injonction ('partez') après la formule introductive. (b) DEUX-POINTS D'ÉNUMÉRATION : introduit une liste d'éléments correspondant à ce qui a été annoncé ('trois raisons'). (c) DEUX-POINTS EXPLICATIF / CONSÉCUTIF : la seconde clause explique ou justifie la première ; relation implicite de causalité ('elle sourit car/parce qu'elle avait compris'). Le deux-points est un marqueur de subordination sémantique SANS CONNECTEUR EXPLICITE — il encode une relation logique (cause, conséquence, explication, illustration) que le lecteur doit inférer du contexte. Sa force réside dans sa concision et l'absence de redondance."
   },
   {
     "id": "D10-Int-10",
     "dossier": "D10",
-    "type": "question_ouverte",
-    "niveau": "intermediaire",
+    "type": "question ouverte",
+    "niveau": "intermédiaire",
     "enonce": "Expliquez la notion de PRÉSUPPOSITION textuelle et donnez deux exemples où une présupposition crée un lien de cohésion entre deux phrases.",
     "corrige": "La PRÉSUPPOSITION est une information implicitement PRÉSUPPOSÉE (considérée comme vraie par le locuteur) dans un énoncé, distincte de l'information POSÉE (assertée). Elle crée de la cohésion car elle importe dans le texte un contenu supposé connu. Exemples textuels : (1) 'Il a arrêté de fumer.' (phrase 2) présuppose 'il fumait avant' (information ancrée dans le contexte ou présupposée par le lecteur) — crée un lien de cohésion avec un contexte où il était question de tabac. (2) 'Ton chat aussi est parti.' présuppose 'quelque chose / quelqu'un d'autre est parti' (également = présupposition d'une liste) et 'tu as un chat'. Les présuppositions fonctionnent comme du 'common ground' — le locuteur les traite comme partagées, ce qui tisse un lien entre les énoncés et le contexte. En termes de cohésion : les présuppositions constituent des anaphores implicites (anaphore conceptuelle)."
   },
@@ -2563,7 +2563,7 @@
     "id": "D10-Adv-1",
     "dossier": "D10",
     "type": "analyse",
-    "niveau": "avance",
+    "niveau": "avancé",
     "enonce": "Expliquez la THÉORIE DE LA PERTINENCE (Sperber & Wilson) appliquée à la compréhension d'un texte. Quel lien avec la segmentation des unités textuelles ?",
     "corrige": "La THÉORIE DE LA PERTINENCE (Sperber & Wilson, 1986) postule que la communication humaine obéit au principe de pertinence : tout énoncé crée une attente de pertinence optimale (effets cognitifs maximaux pour un coût de traitement minimal). Pour comprendre un texte, le lecteur cherche l'interprétation la plus pertinente en mobilisant ses REPRÉSENTATIONS CONTEXTUELLES (connaissances encyclopédiques, contexte situationnel) pour enrichir le contenu conceptuel des énoncés. Application à la segmentation : les unités textuelles (phrases, paragraphes) sont traitées comme des inputs ostensifs — le lecteur segmente le texte là où la pertinence se renouvelle. La ponctuation (point, paragraphe) signale des seuils de pertinence : au-delà d'un point, le lecteur reformule son contexte. Les connecteurs ('donc', 'cependant') réduisent le coût de traitement en signalant explicitement la relation pertinente entre les unités."
   },
@@ -2571,7 +2571,7 @@
     "id": "D10-Adv-2",
     "dossier": "D10",
     "type": "analyse",
-    "niveau": "avance",
+    "niveau": "avancé",
     "enonce": "Analysez la notion de COHÉSION LEXICALE (Halliday & Hasan 1976) : quels mécanismes assurent-ils la cohésion lexicale dans un texte ? Illustrez avec un exemple de 3-4 phrases.",
     "corrige": "Halliday & Hasan (1976) distinguent deux grandes formes de cohésion textuelle : COHÉSION GRAMMATICALE (pronoms, connecteurs) et COHÉSION LEXICALE. La cohésion lexicale inclut : (1) RÉPÉTITION : même lexème ('chien... chien') ; (2) SYNONYMIE : mots de sens équivalent ('maison... demeure... logis') ; (3) HYPONYMIE/HYPERONYMIE : relation hiérarchique ('animal... chien' ; 'fruit... pomme') ; (4) MÉRONYMIE : relation partie-tout ('voiture... portière') ; (5) COLLOCATION : mots cooccurrents conventionnellement ('pain... beurre', 'aiguille... fil'). Exemple : 'Un chien errait dans la rue. L'animal avait l'air perdu. Sa fourrure était trempée. Les passants évitaient la bête.' Réseau lexical : 'chien → l'animal → sa (fourrure) → la bête' = chaîne lexicale cohésive par synonymie, hyperonymie et anaphore possessive."
   },
@@ -2579,7 +2579,7 @@
     "id": "D10-Adv-3",
     "dossier": "D10",
     "type": "analyse",
-    "niveau": "avance",
+    "niveau": "avancé",
     "enonce": "Analysez le DISCOURS RAPPORTÉ dans ces exemples et leurs différences syntaxiques et énonciatives : (a) 'Il dit : 'Je pars demain.'' (b) 'Il dit qu'il partirait le lendemain.' (c) 'Il allait partir le lendemain, il le sentait.'",
     "corrige": "(a) DISCOURS DIRECT : les paroles sont citées entre guillemets, sans transformation. Le 'je' réfère au locuteur cité, 'demain' est ancré dans son moment d'énonciation. Ponctuation : guillemets + deux-points. (b) DISCOURS INDIRECT : transposition dans la dépendance syntaxique et la déixis ('il' au lieu de 'je' ; 'partirait' conditionnel au lieu de futur ; 'le lendemain' au lieu de 'demain'). (c) DISCOURS INDIRECT LIBRE : absence de verbe introducteur et de complémenteur, mais la perspective est celle du personnage ('il allait partir' = il pensait qu'il allait partir). Marqueurs du DIL : ancrage dans le passé narratif, subjectivité du personnage, sans 'il dit que'. Le DIL est un procédé littéraire qui fond la voix du narrateur et celle du personnage — ambiguïté énonciative constitutive."
   },
@@ -2587,7 +2587,7 @@
     "id": "D10-Adv-4",
     "dossier": "D10",
     "type": "analyse",
-    "niveau": "avance",
+    "niveau": "avancé",
     "enonce": "Expliquez la notion de DEIXIS et ses types (personne, lieu, temps, discursive). Comment la deixis contribue-t-elle à l'organisation textuelle ?",
     "corrige": "La DEIXIS désigne les expressions dont l'interprétation dépend du CONTEXTE D'ÉNONCIATION (locuteur, lieu, moment). Types : (1) DEIXIS DE PERSONNE : 'je', 'tu', 'nous' — encodent les participants à l'acte d'énonciation. (2) DEIXIS DE LIEU : 'ici', 'là', 'ce', 'cet' — encodent l'espace par rapport au locuteur. (3) DEIXIS TEMPORELLE : 'maintenant', 'hier', 'demain', 'ce matin' — encodent le temps par rapport au moment d'énonciation. (4) DEIXIS DISCURSIVE (ou textuelle) : 'ci-dessus', 'le passage suivant', 'comme on l'a vu' — renvois à des points du texte lui-même. Contribution à l'organisation textuelle : la deixis discursive structure l'ordre de lecture et crée des liens de renvoi intra-textuels. La transition de la deixis exophorique (renvoi au monde) à l'endophorique (renvoi au texte) marque l'autonomie du texte écrit par rapport à la situation d'énonciation."
   },
@@ -2595,15 +2595,15 @@
     "id": "D10-Adv-5",
     "dossier": "D10",
     "type": "analyse",
-    "niveau": "avance",
+    "niveau": "avancé",
     "enonce": "Analysez la notion de GENRE TEXTUEL : en quoi le genre (article scientifique, SMS, roman, recette) contraint-il les choix syntaxiques et la segmentation textuelle ?",
     "corrige": "Le GENRE TEXTUEL est un type de texte socialement reconnu, caractérisé par des contraintes de forme, de contenu, de registre et de canal (Bakhtin, Swales, Adam). Chaque genre impose des contraintes syntaxiques spécifiques : ARTICLE SCIENTIFIQUE : hypotaxe dominante, nominalisations, passif agentiel effacé ('des résultats ont été obtenus'), structure IMRaD (Introduction/Méthodes/Résultats/Discussion), phrases longues. SMS : parataxe, ellipses fréquentes, ponctuation minimale ou émojis, registre informel, pronoms abrégés ('t'as vu'). ROMAN : alternance parataxe/hypotaxe selon le rythme narratif, discours indirect libre, variation des temps verbaux. RECETTE : phrases injonctives (impératif), nominalisations, éléments en liste, infinitifs directifs. La segmentation textuelle (paragraphes, listes, titres) est elle aussi contrainte par le genre : l'article a des sections titrées ; la recette a des étapes numérotées ; le roman a des chapitres."
   },
   {
     "id": "D10-Adv-6",
     "dossier": "D10",
-    "type": "cas_limite",
-    "niveau": "avance",
+    "type": "cas limite",
+    "niveau": "avancé",
     "enonce": "Analysez le phénomène du ZEUGME syntaxique et sémantique dans : 'Elle a pris son chapeau et la porte.' et 'Il a perdu sa montre et la tête.' En quoi posent-ils un défi à l'analyse syntaxique de la coordination ?",
     "corrige": "ZEUGME (ou syllepse) : figure de construction où un verbe est mis en relation avec deux compléments dont la relation sémantique avec le verbe est de nature différente. 'Elle a pris son chapeau et la porte' : 'prendre + chapeau' (sens littéral : saisir un objet) et 'prendre + la porte' (sens idiomatique : partir). La coordination syntaxique '[son chapeau] et [la porte]' force une lecture syntaxiquement parallèle mais sémantiquement hétérogène. Défi : en syntaxe, la coordination exige normalement une parallélisme catégoriel ET fonctionnel. Ici, la fonction est identique (OD) mais le sens du verbe change. 'Il a perdu sa montre et la tête' : idem ('perdre une montre' vs 'perdre la tête' = devenir fou). Le zeugme exploite la tension entre parallélisme syntaxique et hétérogénéité sémantique — c'est un procédé stylistique (humour, ironie) et un défi computationnel pour les analyseurs syntaxiques automatiques."
   },
@@ -2611,15 +2611,15 @@
     "id": "D10-Adv-7",
     "dossier": "D10",
     "type": "analyse",
-    "niveau": "avance",
+    "niveau": "avancé",
     "enonce": "Analysez la distinction MACROSTRUCTURE / MICROSTRUCTURE / SUPERSTRUCTURE (van Dijk 1980) appliquée à un texte argumentatif.",
     "corrige": "Van Dijk (1980) distingue trois niveaux de structure textuelle : MICROSTRUCTURE : le niveau des propositions et clauses individuelles, leurs relations locales de cohésion (connecteurs, anaphores). 'La pollution augmente car les émissions de CO2 ne cessent de croître.' — relation causale locale. MACROSTRUCTURE : le niveau sémantique global — le THÈME ou sujet du texte, ce dont il est question dans l'ensemble. Représentée par les macropropositions (résumés, titres). Pour un texte sur le réchauffement climatique : macrostructure = 'Le réchauffement climatique est une menace urgente qui requiert une action internationale'. SUPERSTRUCTURE : le schéma FORMEL du type de texte — pour l'argumentation : [Thèse] + [Arguments] + [Contre-arguments] + [Réfutation] + [Conclusion]. La superstructure est le plan de genre (récit = [Orientation + Complication + Résolution] ; article = [IMRaD]). Ces trois niveaux interagissent : la superstructure contraint la macrostructure ; la macrostructure sélectionne les microstructures pertinentes."
   },
   {
     "id": "D10-Adv-8",
     "dossier": "D10",
-    "type": "question_ouverte",
-    "niveau": "avance",
+    "type": "question ouverte",
+    "niveau": "avancé",
     "enonce": "Expliquez la notion d'INFÉRENCE en pragmatique textuelle et distinguez inférences DÉDUCTIVES, INDUCTIVES et ABDUCTIVES avec des exemples textuels.",
     "corrige": "L'INFÉRENCE est un processus cognitif par lequel le lecteur/locuteur derive une conclusion à partir d'informations disponibles. En pragmatique textuelle, les inférences comblent les lacunes informationnelles entre les phrases. DÉDUCTION : de règle générale + cas → conclusion. 'Tous les chats miaulant. Ce chat miaule.' → DÉDUCTION : 'C'est un chat.' / En texte : 'Marie est infirmière. Les infirmières travaillent la nuit.' → inférence déductive : 'Marie travaille la nuit.' INDUCTION : de cas particuliers → généralisation. 'Ce chat était doux, ce chien était doux, ce lapin était doux.' → INDUCTION : 'Les animaux de cette maison sont doux.' ABDUCTION : de résultat observé + règle → hypothèse causale. 'La route est mouillée.' → 'Il a plu.' (hypothèse la plus plausible, non certaine). En texte : 'Elle entra en pleurant.' → abduction : 'quelque chose de triste s'est passé'. L'abduction est l'inférence pragmatique la plus courante — elle construit une HYPOTHÈSE INTERPRÉTATIVE sur les causes non mentionnées."
   },
@@ -2627,15 +2627,15 @@
     "id": "D10-Adv-9",
     "dossier": "D10",
     "type": "analyse",
-    "niveau": "avance",
+    "niveau": "avancé",
     "enonce": "Analysez les MARQUEURS DE MODALISATION dans : 'Il semblerait que les résultats soient probants, bien qu'il faille sans doute nuancer certaines conclusions.' Quel effet rhétorique produisent-ils ?",
     "corrige": "Marqueurs de modalisation : 'Il semblerait que' : verbe 'sembler' au conditionnel (= modalité épistémique atténuée, distance énonciative — le locuteur ne prend pas en charge la vérité de façon pleine) + subjonctif dans la complétive (incertitude). 'Probants' : adjectif modalisateur d'évaluation positive (les résultats sont convaincants — jugement du locuteur). 'Bien qu'il faille' : locution concessive + 'falloir' de nécessité = nuance adversative modale. 'Sans doute' : adverbe d'atténuation (probabilité non-absolue). 'Nuancer' : verbe d'atténuation cognitive. Effet rhétorique : la MODALISATION ÉPISTÉMIQUE atténuée créée ici un ETHOS de prudence et de rigueur scientifique — le locuteur évalue positivement les résultats tout en se préservant (hedging). Dans le discours académique, ce type de modalisation est une convention générique : affirmer avec trop de certitude est rhétoriquement risqué."
   },
   {
     "id": "D10-Adv-10",
     "dossier": "D10",
-    "type": "question_ouverte",
-    "niveau": "avance",
+    "type": "question ouverte",
+    "niveau": "avancé",
     "enonce": "Comment la PONCTUATION a-t-elle évolué historiquement et quel est son statut linguistique aujourd'hui ? Est-elle un système à part entière ou un simple artifice graphique ?",
     "corrige": "HISTOIRE : La ponctuation est un système d'abord rhétorique (pauses respiratoires pour la lecture à voix haute dans l'Antiquité et le Moyen Âge), devenu progressivement syntaxique avec l'essor de l'imprimerie (XVe-XVIe s.). L'imprimerie standardise les signes (point, virgule, point-virgule, deux-points). Au XIXe s., la ponctuation acquiert une valeur grammaticale normative. STATUT ACTUEL : La ponctuation est un SYSTÈME SÉMIOTIQUE DISTINCT — ni phonologique (elle ne transcrit pas directement la prosodie), ni morphosyntaxique (elle ne fléchit pas), ni purement graphique. Elle encode : (1) des frontières syntaxiques (entre clauses, constituants) ; (2) des relations logiques (deux-points : explication/cause) ; (3) des valeurs illocutoires (? = interrogation ; ! = exclamation) ; (4) des indications prosodiques stylisées. Débat : certains linguistes (B. Catach) la traitent comme un sous-système de la graphématique ; d'autres comme un outil pragmatico-syntaxique autonome. Dans les textes numériques (SMS, réseaux sociaux), la ponctuation s'hybride avec les émojis — nouvelle évolution en cours."
   }
