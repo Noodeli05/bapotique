@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260719');})();</script>
+<script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260722');})();</script>
 <title>Polycopié de TP — Linguistique UNIL 2025</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -144,6 +144,19 @@ input,select,textarea{font-size:max(16px,1em)!important}
 /* ICONS */
 .ic{width:1em;height:1em;vertical-align:-.15em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;display:inline-block;overflow:visible}
 .ic-fill{fill:currentColor;stroke:none}
+/* QA BLOCKS */
+.qa-block{background:var(--glass);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--bdr);border-radius:var(--r-lg);padding:1.2rem 1.4rem;margin-bottom:1.2rem;position:relative}
+.qa-block::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.12),transparent);border-radius:var(--r-lg) var(--r-lg) 0 0}
+.qa-q{font-family:'DM Serif Display',serif;font-size:1rem;font-weight:400;margin-bottom:.7rem;color:var(--tx);line-height:1.5}
+.qa-zone{margin-top:.5rem}
+.btn-rev{display:inline-flex;align-items:center;gap:.4rem;padding:.38rem .8rem;border:1px solid rgba(168,216,196,0.25);background:var(--mint-bg);color:var(--mint);border-radius:var(--r-sm);font-size:.8rem;cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:600;transition:.15s;margin-bottom:.5rem}
+.btn-rev:hover{background:rgba(168,216,196,0.18);border-color:rgba(168,216,196,0.4)}
+.qa-ans{display:none;margin:.4rem 0;padding:.8rem 1rem;background:var(--mint-bg);border:1px solid rgba(168,216,196,0.18);border-radius:var(--r-sm);font-size:.87rem;line-height:1.68;color:var(--tx)}
+.qa-ans.show{display:block;animation:fadeIn .2s ease}
+/* BOX */
+.box{border-radius:var(--r-sm);padding:.7rem .9rem;margin:.7rem 0;font-size:.84rem;line-height:1.65}
+.box-ret{background:var(--lav-bg);border:1px solid rgba(200,184,240,0.18);border-left:4px solid var(--lav)}
+.box-lbl{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--lav);margin-bottom:.45rem}
 </style>
 <link rel="manifest" href="manifest.json"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><script>if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js",{updateViaCache:"none"});</script><link rel="stylesheet" href="assets/css/common.css">
 </head>
@@ -169,7 +182,7 @@ input,select,textarea{font-size:max(16px,1em)!important}
       <div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--mu);margin-bottom:.4rem">Linguistique française UNIL 2025</div>
       <h1 style="font-family:'DM Serif Display',serif;font-size:2rem;font-weight:400;line-height:1.15;margin-bottom:.5rem;background:linear-gradient(120deg,var(--butter),var(--peach));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Polycopié de travaux pratiques</h1>
       <p style="font-size:.9rem;color:var(--mu);line-height:1.65;max-width:600px">9 dossiers · Exercices des TPs avec espace de réponse · Corrections détaillées · «&nbsp;En savoir plus&nbsp;» pour approfondir. T. Bornoz, M. Burger, F. Demont, M. Hoffmann, R. Mahrer, L. Möschler.</p>
-      <div class="tip-box" style="margin-top:1rem"><svg class="ic"><use href="#i-lightbulb"/></svg> <strong>Comment utiliser ce polycopié&nbsp;:</strong> lis l'exercice, écris ta réponse dans l'espace prévu, puis clique «&nbsp;Voir la correction&nbsp;» pour te comparer. Le bouton «&nbsp;En savoir plus&nbsp;» donne le contexte théorique.</div>
+      <div class="tip-box" style="margin-top:1rem"><svg class="ic"><use href="#i-lightbulb"/></svg> <strong>Comment utiliser ce polycopié&nbsp;:</strong> lis l'exercice, écris ta réponse dans l'espace prévu, puis clique «&nbsp;Exemple de réponse&nbsp;» pour te comparer. Le bouton «&nbsp;En savoir plus&nbsp;» donne le contexte théorique.</div>
     </div>
 
 <div class="mobile-toc">
@@ -212,14 +225,14 @@ input,select,textarea{font-size:max(16px,1em)!important}
   <div class="ans-label">Ma réponse</div>
   <textarea class="ans-input" id="q0_1" placeholder="Écris ta réponse ici…" rows="4"></textarea>
 </div>
-  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Voir la correction</button>
+  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Exemple de réponse</button>
   <div class="corr-box">Quelques substitutions possibles (liste non exhaustive) :<br>
         • /lɑ̃ɡ/ → /lɑ̃ʃ/ → <em>lanche</em> (non-mot mais bien formé) ; /lɑ̃ s/ → <em>lance</em> ; /lɑ̃p/ → <em>lampe</em><br>
         • /lɑ̃ɡ/ → /bɑ̃ɡ/ → <em>bague</em> ≈ ; /tɑ̃ɡ/ → <em>tangue</em> ; /ʁɑ̃ɡ/ → <em>rang</em><br>
         • /lɑ̃ɡ/ → /laɡ/ → <em>lague</em> (non-mot) ; /lœɡ/ → non-mot ; /lɔɡ/ → <em>log</em><br>
         Chaque substitution réussie confirme que l'élément remplacé est un <strong>phonème</strong>.</div>
   <button class="savoir-btn" onclick="toggleSavoir(this)"><svg class="ic"><use href="#i-lightbulb"/></svg> En savoir plus</button>
-<div class="savoir-box">La commutation est la méthode fondamentale de la phonologie structurale. Elle consiste à remplacer un élément dans un contexte identique pour voir si le changement produit une différence de sens. Si oui, les deux éléments sont des phonèmes distincts. Cette méthode, codifiée par Martinet, permet de dresser l'inventaire phonémique d'une langue.</div>
+<div class="savoir-box">La commutation est la méthode fondamentale de la phonologie structurale. Elle consiste à remplacer un élément dans un contexte identique pour voir si le changement produit une différence de sens. Si oui, les deux éléments sont des phonèmes distincts. Cette méthode a été théorisée notamment par Troubetzkoy (Principes de phonologie, 1939), et reprise par les linguistes structuralistes comme Martinet pour dresser l'inventaire phonémique des langues.</div>
 </div>
 <div class="exo" id="exo-1">
   <div class="exo-num">Exercice 2 — Transcription API — phrases</div>
@@ -235,9 +248,9 @@ input,select,textarea{font-size:max(16px,1em)!important}
   <div class="ans-label">Ma réponse</div>
   <textarea class="ans-input" id="q1_0" placeholder="Écris ta réponse ici…" rows="4"></textarea>
 </div>
-  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Voir la correction</button>
+  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Exemple de réponse</button>
   <div class="corr-box">a) /lə ʒaʁdinje a foʃe le tylip/<br>
-        b) /ʒə dɔ̃nʁe œ̃ gzilɔfɔ̃ o ʒœn myzisj ɛ̃/<br>
+        b) /ʒə dɔnʁe œ̃ gzilɔfɔn o ʒœn myzisjɛ̃/<br>
         c) /tu lœʁ ø sɔ̃ vɑ̃dy dɛ lə matɛ̃/<br><br>
         Points d'attention : liaisons (leurs œufs → /lœʁø/), e caduc (le, je), graphème &lt;x&gt; = /gz/ dans "xylophone".</div>
   <button class="savoir-btn" onclick="toggleSavoir(this)"><svg class="ic"><use href="#i-lightbulb"/></svg> En savoir plus</button>
@@ -260,7 +273,7 @@ input,select,textarea{font-size:max(16px,1em)!important}
   <div class="ans-label">Ma réponse</div>
   <textarea class="ans-input" id="q2_1" placeholder="Écris ta réponse ici…" rows="4"></textarea>
 </div>
-  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Voir la correction</button>
+  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Exemple de réponse</button>
   <div class="corr-box">Substitutions repérées :<br>
         • /ʒ/ → /tʃ/ (ch) : «&nbsp;chai&nbsp;» = «&nbsp;j'ai&nbsp;», «&nbsp;che&nbsp;» = «&nbsp;je&nbsp;», «&nbsp;chamais&nbsp;» = «&nbsp;jamais&nbsp;», «&nbsp;chénie&nbsp;» = «&nbsp;génie&nbsp;»<br>
         • /v/ → /f/ : «&nbsp;foir&nbsp;» = «&nbsp;voir&nbsp;», «&nbsp;baufre&nbsp;» = «&nbsp;pauvre&nbsp;»<br>
@@ -287,7 +300,7 @@ input,select,textarea{font-size:max(16px,1em)!important}
   <div class="ans-label">Ma réponse</div>
   <textarea class="ans-input" id="q3_1" placeholder="Écris ta réponse ici…" rows="4"></textarea>
 </div>
-  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Voir la correction</button>
+  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Exemple de réponse</button>
   <div class="corr-box">Les phonèmes récurrents sont : /ʃ/ (ch) et /s/ (s, c). Ils s'alternent rapidement et leurs réalisations articulatoires sont très proches :<br>
         • /s/ : fricative alvéolaire non voisée<br>
         • /ʃ/ : fricative palato-alvéolaire non voisée<br>
@@ -320,12 +333,12 @@ input,select,textarea{font-size:max(16px,1em)!important}
   <div class="ans-label">Ma réponse</div>
   <textarea class="ans-input" id="q4_2" placeholder="Écris ta réponse ici…" rows="4"></textarea>
 </div>
-  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Voir la correction</button>
+  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Exemple de réponse</button>
   <div class="corr-box">Transcription (approximative, métrique prise en compte) :<br>
         /le sɑ̃ɡlo lɔ̃ / de vjɔlɔ̃ /<br>
         /də lɔtɔn / blɛs mɔ̃ kœʁ /<br>
         /dyn lɑ̃ɡœʁ / mɔnɔtɔn/<br><br>
-        <strong>Voyelles récurrentes</strong> : /ɔ̃/ (nasale, postérieure, mi-fermée), /ɔ/ (orale, postérieure, mi-ouverte), /œ/ (orale, antérieure, mi-ouverte), /ɑ̃/ (nasale, centrale).<br><br>
+        <strong>Voyelles récurrentes</strong> : /ɔ̃/ (nasale, postérieure, mi-ouverte), /ɔ/ (orale, postérieure, mi-ouverte), /œ/ (orale, antérieure, mi-ouverte), /ɑ̃/ (nasale, postérieure, ouverte).<br><br>
         <strong>Classification</strong> : sons nasaux (/ɔ̃/, /ɑ̃/) — suggèrent une résonance sombre. Voyelles postérieures arrondies — sons graves. <strong>Effet phonosymbolique</strong> : les sons créent une atmosphère de plainte et de mélancolie, congruente avec le sens (automne, langueur, cœur blessé).</div>
   <button class="savoir-btn" onclick="toggleSavoir(this)"><svg class="ic"><use href="#i-lightbulb"/></svg> En savoir plus</button>
 <div class="savoir-box">La phonosymbolique étudie le lien (souvent iconique, non arbitraire) entre sons et sens. Les sons nasaux /ɔ̃/, /ɑ̃/ ont souvent été associés à une tonalité grave et plaintive. Les voyelles postérieures arrondies (/o/, /ɔ/) donnent une impression de profondeur. Verlaine était maître de la suggestivité musicale — «&nbsp;De la musique avant toute chose&nbsp;» (<em>Art poétique</em>, 1874).</div>
@@ -358,9 +371,9 @@ input,select,textarea{font-size:max(16px,1em)!important}
   <div class="ans-label">Ma réponse</div>
   <textarea class="ans-input" id="q10_0" placeholder="Écris ta réponse ici…" rows="4"></textarea>
 </div>
-  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Voir la correction</button>
-  <div class="corr-box">• <strong>-i-</strong> : morphème du passé (prétérit / passé simple pour certains verbes) — ex. <em>fin-i-t</em> (3e pers. sg. passé simple du verbe finir)<br>
-        • <strong>-er-</strong> : morphème de futur / infinitif du 1er groupe — ex. <em>aim-er-a</em> (futur) ou simplement l'infinitif «&nbsp;aimer&nbsp;»<br>
+  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Exemple de réponse</button>
+  <div class="corr-box">• <strong>-i-</strong> : marque de l'imparfait (et, en composition avec -er-, du conditionnel), déduit du paradigme parlions/parlons et parlerions/parlerons fourni par le TP<br>
+        • <strong>-er-</strong> : marque du futur (temps), déduite du paradigme du TP (présent dans parlerions/parlerons, absent de parlions/parlons). Ce même segment marque ailleurs l'infinitif (mode), mais cette seconde valeur n'est pas testée par le paradigme de cet exercice<br>
         • <strong>-ons</strong> : morphème de 1ère personne du pluriel — ex. <em>aim-ons</em>, <em>finiss-ons</em><br>
         • <strong>-ez</strong> : morphème de 2ème personne du pluriel — ex. <em>aim-ez</em>, <em>finiss-ez</em></div>
   <button class="savoir-btn" onclick="toggleSavoir(this)"><svg class="ic"><use href="#i-lightbulb"/></svg> En savoir plus</button>
@@ -382,7 +395,7 @@ input,select,textarea{font-size:max(16px,1em)!important}
   <div class="ans-label">Ma réponse</div>
   <textarea class="ans-input" id="q11_1" placeholder="Écris ta réponse ici…" rows="4"></textarea>
 </div>
-  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Voir la correction</button>
+  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Exemple de réponse</button>
   <div class="corr-box">Transcription : /le zɑ̃fɑ̃ mɑ̃ʒɛ de pɛ̃ o ʃɔkɔla/<br><br>
         <strong>À l'écrit</strong> : pluriel marqué sur «&nbsp;les&nbsp;», «&nbsp;enfants&nbsp;» (-s), «&nbsp;mangeaient&nbsp;» (-aient), «&nbsp;des&nbsp;», «&nbsp;pains&nbsp;» (-s).<br>
         <strong>À l'oral</strong> : seul le déterminant «&nbsp;les&nbsp;» (/le/) vs «&nbsp;le&nbsp;» (/lə/) marque le pluriel. La liaison <em>les-z-enfants</em> (/le zɑ̃fɑ̃/) aussi. Les -s finaux de «&nbsp;enfants&nbsp;» et «&nbsp;pains&nbsp;» ne se prononcent pas. La désinence «&nbsp;-aient&nbsp;» est homophones de «&nbsp;-ait&nbsp;» → le pluriel verbal est neutralisé à l'oral.<br><br>
@@ -410,7 +423,7 @@ input,select,textarea{font-size:max(16px,1em)!important}
   <div class="ans-label">Ma réponse</div>
   <textarea class="ans-input" id="q12_1" placeholder="Écris ta réponse ici…" rows="4"></textarea>
 </div>
-  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Voir la correction</button>
+  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Exemple de réponse</button>
   <div class="corr-box"><strong>bronchiolite</strong> : <em>bronchi(ole)</em> (anatomie des voies respiratoires) + <em>-ite</em> (suffixe médical = inflammation) → inflammation des bronchioles<br>
         <strong>hyperréactivité</strong> : <em>hyper-</em> (préfixe = excès) + <em>réactivit(é)</em> (base : réagir + -ité) → état d'excès de réaction<br>
         <strong>technologie</strong> : <em>techno-</em> (grec : art, technique) + <em>-logie</em> (science de) → science de la technique<br>
@@ -418,6 +431,8 @@ input,select,textarea{font-size:max(16px,1em)!important}
         <strong>Champs sémantiques</strong> : ① santé / médecine (bronchiolite, hyperréactivité) ② environnement (dépollution, NOx, émissions) ③ technologie / innovation (technologie, système, AdBlue) ④ performance (réduction de 90%, normes européennes)</div>
   <button class="savoir-btn" onclick="toggleSavoir(this)"><svg class="ic"><use href="#i-lightbulb"/></svg> En savoir plus</button>
 <div class="savoir-box">La morphologie lexicale étudie la construction des mots par préfixation, suffixation, composition et dérivation. Les morphèmes lexicaux (bases) portent le contenu sémantique ; les morphèmes grammaticaux/dérivationnels (préfixes, suffixes) modifient la catégorie ou le sens. Un morphème peut être <em>lié</em> (il ne peut pas exister seul : <em>-ite</em>, <em>hyper-</em>) ou <em>libre</em> (il peut exister seul : <em>poll(uer)</em>).</div>
+<p style="font-size:.85rem;line-height:1.65;margin:.6rem 0;padding:.5rem .8rem;background:rgba(240,224,160,0.06);border-left:3px solid var(--butter);border-radius:4px">Remarque : la commutation plant / plant-age / plant-ation illustre le <strong>morphe zéro</strong> (noté ø) : le radical « plant » employé seul, sans suffixe, face à « plant-age » et « plant-ation ».</p>
+<p style="font-size:.85rem;line-height:1.65;margin:.6rem 0;padding:.5rem .8rem;background:rgba(240,224,160,0.06);border-left:3px solid var(--butter);border-radius:4px">On observe aussi de l'<strong>allomorphie</strong> dans ce corpus : ex. réagir → réact-ivité, alternance /ʒ/~/kt/ selon le suffixe suivant.</p>
 </div>
 <div class="exo" id="exo-13">
   <div class="exo-num">Exercice 4 — Le langage schtroumpf — morphèmes lexicaux vs grammaticaux</div>
@@ -435,7 +450,7 @@ input,select,textarea{font-size:max(16px,1em)!important}
   <div class="ans-label">Ma réponse</div>
   <textarea class="ans-input" id="q13_1" placeholder="Écris ta réponse ici…" rows="4"></textarea>
 </div>
-  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Voir la correction</button>
+  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Exemple de réponse</button>
   <div class="corr-box">Dans le langage schtroumpf, la racine lexicale (le morphème porteur de sens, base du mot) est remplacée par «&nbsp;schtroumpf&nbsp;» ou ses variantes conjuguées (schtroumpfer, schtroumpfons, schtroumpfé…).<br><br>
         Ce qui <strong>reste intact</strong> :<br>
         ① les morphèmes grammaticaux (désinences de conjugaison, marques de pluriel, accords) — «&nbsp;schtroumpf-er&nbsp;» reste un infinitif, «&nbsp;je schtroumpf-e&nbsp;» est 1ère pers. sg.<br>
@@ -475,13 +490,13 @@ input,select,textarea{font-size:max(16px,1em)!important}
   <div class="ans-label">Ma réponse</div>
   <textarea class="ans-input" id="q20_0" placeholder="Écris ta réponse ici…" rows="4"></textarea>
 </div>
-  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Voir la correction</button>
+  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Exemple de réponse</button>
   <div class="corr-box">1. <em>Les derniers habitants</em> → <strong>GN</strong> (groupe nominal : dét. + adj. + nom)<br>
         2. <em>avec admiration</em> → <strong>GPrép</strong> (prép. + GN)<br>
         3. <em>fort intéressant</em> → <strong>GAdj</strong> (adv. intensifieur + adj.)<br>
         4. <em>Le vent</em> → <strong>GN</strong><br>
         5. <em>de tous côtés</em> → <strong>GPrép</strong><br>
-        6. <em>de grands progrès</em> → <strong>GN</strong> (le GPrép de + GN est ici objet direct)<br>
+        6. <em>de grands progrès</em> → <strong>GN</strong> (« de » devant un adjectif antéposé pluriel est une variante de l'article indéfini pluriel « des », non une préposition ; ce n'est donc pas un GPrép)<br>
         7. <em>très bien</em> → <strong>GAdv</strong> (adv. + adv.)<br>
         8. <em>admirablement</em> → <strong>GAdv</strong> (adverbe seul)</div>
   <button class="savoir-btn" onclick="toggleSavoir(this)"><svg class="ic"><use href="#i-lightbulb"/></svg> En savoir plus</button>
@@ -508,7 +523,7 @@ input,select,textarea{font-size:max(16px,1em)!important}
   <div class="ans-label">Ma réponse</div>
   <textarea class="ans-input" id="q21_1" placeholder="Écris ta réponse ici…" rows="4"></textarea>
 </div>
-  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Voir la correction</button>
+  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Exemple de réponse</button>
   <div class="corr-box">1. <em>le boire et le manger</em> : infinitifs (verbes) → <strong>nominalisés</strong> (GN, sujets de «&nbsp;perd&nbsp;»)<br>
         2. <em>voir grand / viser haut</em> : adjectifs/adverbes utilisés comme <strong>compléments de manière</strong> dans construction verbale<br>
         3. <em>Le vierge, le vivace, le bel aujourd'hui</em> : adjectifs et adverbe <strong>nominalisés</strong> (déterminant «&nbsp;le&nbsp;» + adj. → nom)<br>
@@ -541,11 +556,11 @@ input,select,textarea{font-size:max(16px,1em)!important}
   <div class="ans-label">Ma réponse</div>
   <textarea class="ans-input" id="q22_2" placeholder="Écris ta réponse ici…" rows="4"></textarea>
 </div>
-  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Voir la correction</button>
+  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Exemple de réponse</button>
   <div class="corr-box"><strong>Racine</strong> (alexandrin = 12 syllabes) :<br>
         • Concordance (vers 5) : «&nbsp;Vous seul vous lui pouvez arracher cette envie.&nbsp;» → clause = vers entier<br>
         • Discordance (enjambement) : «&nbsp;l'aimable Bérénice / Va peut-être expirer dans les bras de Phénice.&nbsp;» → le GN sujet est en fin de vers 1, le GV en vers 2<br>
-        • Rejet : «&nbsp;Elle n'entend ni pleurs, ni conseil, ni raison ; / Elle implore à grands cris le fer et le poison.&nbsp;» → la liste est découpée par la frontière du vers<br><br>
+        • Note : l'exemple «&nbsp;Elle n'entend ni pleurs, ni conseil, ni raison ; / Elle implore à grands cris le fer et le poison.&nbsp;» n'est PAS un rejet : il s'agit de deux clauses syntaxiquement autonomes sans enjambement. Le terme « rejet » désigne un court élément syntaxique placé en début de vers tout en dépendant grammaticalement du vers précédent.<br><br>
         <strong>Cendrars</strong> (vers libres) :<br>
         • Pas de mètre régulier, pas de rime obligatoire<br>
         • Les vers sont souvent des clauses entières, avec parfois des expansions très longues<br>
@@ -554,6 +569,8 @@ input,select,textarea{font-size:max(16px,1em)!important}
   <button class="savoir-btn" onclick="toggleSavoir(this)"><svg class="ic"><use href="#i-lightbulb"/></svg> En savoir plus</button>
 <div class="savoir-box">L'analyse de la métrique et de la syntaxe est un outil stylistique essentiel. La <em>concordance</em> (unité syntaxique = vers) produit un rythme clair. La <em>discordance</em> (enjambement, rejet, contre-rejet) crée une tension, une progression dramatique. En vers libres (modernisme), la frontière du vers devient une unité de souffle et de sens, non une contrainte formelle.</div>
 </div>
+<div class="qa-block"><div class="qa-q">Exercice supplémentaire — Segmentations métriques (Mallarmé)</div><div class="qa-zone"><button class="btn-rev" onclick="revAns(this)">Exemple de réponse ↓</button><div class="qa-ans"><p>Le polycop de TP comporte un exercice sur les segmentations métriques de Mallarmé (extraits : « Ta paille azur de lavandes… », « Rien au réveil que vous n'ayez… », « O si chère de loin et proche et blanche… », « A toutes jambes, Facteur… »).</p><p>Principe : le syntagme est une unité insécable — la coupe métrique ne peut pas intervenir à l'intérieur d'un syntagme. Ex. : « Donne une robe dont la mousseline est un Hasard… » → la coupe dét./N se fait dans le syntagme (entre « une » et « robe »), mais pas dans la syllabe ni dans le lexème.</p><p>Types de coupes : dans le syntagme / dans le lexème / dans la syllabe.</p></div></div></div>
+<div class="box box-ret"><div class="box-lbl">À retenir</div><p>Un syntagme se définit par deux <strong>tests de constituance</strong> : substitution par un seul mot, et effacement (ex. : « Le chat de Gustave mange une souris » → « Le chat mange une souris » : « de Gustave » est effaçable, donc constituant du GN).</p></div>
   <div style="text-align:center;margin-top:1rem">
     <button class="corr-btn" style="font-size:.85rem;display:block;margin:0 auto;width:fit-content" onclick="revealAll(this.closest('.dossier'))">Voir toutes les corrections</button>
   </div>
@@ -572,7 +589,7 @@ input,select,textarea{font-size:max(16px,1em)!important}
   <div class="exo-text">Analysez la valence des constructions verbales soulignées. Identifiez les cas irréguliers.<br><br>
         1. (Ophélie) «&nbsp;le cheval <em>hennit</em>&nbsp;» vs (Apollinaire) «&nbsp;ces nuages cabrés se prennent à <em>hennir</em> tout un univers de villes auriculaires&nbsp;»<br>
         2. (Gide) «&nbsp;une odeur âcre en <em>émanait</em>&nbsp;» vs (Céline) «&nbsp;si j'<em>émanais</em> des odeurs&nbsp;»<br>
-        3. (Aragon) «&nbsp;les romanciers ont voulu <em>parodier</em> le monde&nbsp;» vs «&nbsp;l'auteur des Lettres provinciales a <em>inventé</em>…&nbsp;»</div>
+        3. (Aragon) «&nbsp;Jusqu'ici, les romanciers se sont contentés de parodier le monde. Il s'agit maintenant de l'inventer. (Aragon, <em>Blanche ou l'Oubli</em>, 1967)&nbsp;» vs «&nbsp;l'auteur des Lettres provinciales a <em>inventé</em>…&nbsp;»</div>
   
 <div class="exo-q">Pour chaque verbe, donnez la valence standard (consultez un dictionnaire si possible) et identifiez les écarts.</div>
 <div class="ans-area">
@@ -584,10 +601,10 @@ input,select,textarea{font-size:max(16px,1em)!important}
   <div class="ans-label">Ma réponse</div>
   <textarea class="ans-input" id="q30_1" placeholder="Écris ta réponse ici…" rows="4"></textarea>
 </div>
-  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Voir la correction</button>
+  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Exemple de réponse</button>
   <div class="corr-box">1. <em>hennir</em> : verbe intransitif (0 actant ou 1 actant : le cheval) → chez Apollinaire, il prend un COD («&nbsp;tout un univers&nbsp;»). <strong>Effet</strong> : transitivation poétique — les nuages deviennent des entités qui «&nbsp;émettent&nbsp;» un espace urbain, créant une métaphore synesthésique.<br><br>
         2. <em>émaner</em> : standard = intransitif + de (source) → chez Céline, il devient transitif direct («&nbsp;émanais des odeurs&nbsp;»). <strong>Effet</strong> : registre familier / langue parlée, transgression syntaxique volontaire.<br><br>
-        3. <em>parodier</em> : transitif standard → emploi standard chez Aragon. <em>inventer</em> : transactif (créer quelque chose) → chez Balzac, emploi absolu ou au sens «&nbsp;découvrir&nbsp;». <strong>Effet</strong> : glissement sémantique (inventer qch ≠ découvrir qch).</div>
+        3. <em>parodier</em> : transitif standard → emploi standard chez Aragon. <em>inventer</em> : transitif direct (créer quelque chose) → chez Balzac, emploi absolu ou au sens «&nbsp;découvrir&nbsp;». <strong>Effet</strong> : glissement sémantique (inventer qch ≠ découvrir qch).</div>
   <button class="savoir-btn" onclick="toggleSavoir(this)"><svg class="ic"><use href="#i-lightbulb"/></svg> En savoir plus</button>
 <div class="savoir-box">La <strong>valence verbale</strong> décrit le nombre et la nature des actants qu'un verbe requiert ou peut recevoir. Un verbe avalent (0 actant : «&nbsp;il neige&nbsp;»), monovalent (1 : «&nbsp;le chat dort&nbsp;»), bivalent (2 : «&nbsp;Pierre voit Marie&nbsp;»), trivalent (3 : «&nbsp;Pierre donne le livre à Marie&nbsp;»). La transgression de la valence standard crée des effets stylistiques : expansion du sens, personnification, registre, etc.</div>
 </div>
@@ -613,12 +630,12 @@ input,select,textarea{font-size:max(16px,1em)!important}
   <div class="ans-label">Ma réponse</div>
   <textarea class="ans-input" id="q31_2" placeholder="Écris ta réponse ici…" rows="4"></textarea>
 </div>
-  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Voir la correction</button>
+  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Exemple de réponse</button>
   <div class="corr-box">La valence standard de <em>trembler</em> est monovalente (1 actant : le sujet qui tremble).<br><br>
         Ici, la construction est : [sujet : l'allumette] + [vous] + tremble + [entre les doigts]<br>
         «&nbsp;vous&nbsp;» est un <strong>datif éthique</strong> (ou datif d'intérêt) : pronom personnel qui n'est pas un actant valenciel mais marque l'implication affective du locuteur/narrateur dans l'action.<br><br>
         <strong>Fonction syntaxique</strong> : complément indirect (lui, vous = «&nbsp;dans votre espace, à votre détriment&nbsp;»)<br>
-        <strong>Rôle actantiel</strong> : affecté / bénéficiaire indirect<br><br>
+        <strong>Statut actanciel</strong> : hors valence — simple marqueur énonciatif d'implication (pas de « rôle actantiel » à proprement parler, puisque le datif éthique n'est pas un actant valenciel).<br><br>
         <strong>Effet dans le récit</strong> : le pronom «&nbsp;vous&nbsp;» interpelle directement le lecteur, le plonge dans l'action, crée une narration à la 2e personne implicite. L'expérience devient universelle et immédiate. Procédé d'implication du lecteur (technique de la focalisation 0 → 2).</div>
   <button class="savoir-btn" onclick="toggleSavoir(this)"><svg class="ic"><use href="#i-lightbulb"/></svg> En savoir plus</button>
 <div class="savoir-box">Le <strong>datif éthique</strong> (ou datif d'intérêt / datif commode) est un phénomène courant en français familier et littéraire : «&nbsp;il vous lui a attrapé son chapeau&nbsp;», «&nbsp;ça m'a l'air bizarre&nbsp;». Il marque l'implication du locuteur dans l'événement sans être un actant requis par la valence. La Fontaine l'utilise aussi («&nbsp;le renard sort du puits, laisse son compagnon / Et vous lui fait un beau sermon&nbsp;»).</div>
@@ -650,7 +667,7 @@ input,select,textarea{font-size:max(16px,1em)!important}
   <div class="ans-label">Ma réponse</div>
   <textarea class="ans-input" id="q32_2" placeholder="Écris ta réponse ici…" rows="4"></textarea>
 </div>
-  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Voir la correction</button>
+  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Exemple de réponse</button>
   <div class="corr-box"><strong>Particularité</strong> : tous les verbes sont des mots inventés (néologismes : emparouiller, endosquer, rague, roupète, pratèle, libucquer, baruffle, tocarde, marmine…).<br><br>
         <strong>Compréhension malgré tout</strong> : grâce aux <em>rôles actantiels</em> :<br>
         • Agent constant : «&nbsp;il&nbsp;» (sujet) — l'agresseur<br>
@@ -662,6 +679,7 @@ input,select,textarea{font-size:max(16px,1em)!important}
   <button class="savoir-btn" onclick="toggleSavoir(this)"><svg class="ic"><use href="#i-lightbulb"/></svg> En savoir plus</button>
 <div class="savoir-box">Ce poème de Michaux illustre que la <strong>syntaxe précède le lexique</strong> dans la construction du sens. Même avec des verbes inconnus, on comprend «&nbsp;qui fait quoi à qui&nbsp;» grâce à la structure actantielle. C'est le même principe que le langage schtroumpf mais inversé : ici c'est le verbe (prédicat) qui est remplacé. Cela valide la théorie de Tesnière sur la valence : c'est le verbe qui organise les actants dans la clause.</div>
 </div>
+<div class="qa-block"><div class="qa-q">Exercice — Renversement actantiel (Flaubert, <em>L'Éducation sentimentale</em>, 1869)</div><div class="qa-zone"><button class="btn-rev" onclick="revAns(this)">Exemple de réponse ↓</button><div class="qa-ans"><p>Texte : « Enfin le navire partit ; et les deux berges peuplées de magasins, de chantiers et d'usines filèrent comme deux larges rubans qu'on déroule, et une grande ligne d'eau se redressa derrière lui, lisse et noire, et plus loin, bien loin, disparut dans la nuit. »</p><p>Analyse : les éléments du paysage (berges, ligne d'eau) deviennent sujets de verbes de mouvement habituellement réservés à des agents animés (« filèrent », « se redressa »), créant un effet d'animation du décor. Cette focalisation subjective est liée au point de vue du personnage en mouvement : c'est le paysage qui semble se déplacer, non le navire.</p></div></div></div>
   <div style="text-align:center;margin-top:1rem">
     <button class="corr-btn" style="font-size:.85rem;display:block;margin:0 auto;width:fit-content" onclick="revealAll(this.closest('.dossier'))">Voir toutes les corrections</button>
   </div>
@@ -693,7 +711,7 @@ input,select,textarea{font-size:max(16px,1em)!important}
   <div class="ans-label">Ma réponse</div>
   <textarea class="ans-input" id="q40_1" placeholder="Écris ta réponse ici…" rows="4"></textarea>
 </div>
-  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Voir la correction</button>
+  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Exemple de réponse</button>
   <div class="corr-box">1a. Thème : <em>Gustave Flaubert</em> / Rhème : <em>est l'auteur de Salammbô</em> → on parle de Flaubert, on dit ce qu'il a fait<br>
         1b. Thème : <em>L'auteur de Salammbô</em> / Rhème : <em>est Gustave Flaubert</em> → on parle d'un auteur inconnu, on révèle son identité<br><br>
         2a. Thème : <em>La tempête</em> / Rhème : <em>a déraciné le sapin</em> → clause active, focus sur l'action de la tempête<br>
@@ -725,11 +743,12 @@ input,select,textarea{font-size:max(16px,1em)!important}
   <div class="ans-label">Ma réponse</div>
   <textarea class="ans-input" id="q41_1" placeholder="Écris ta réponse ici…" rows="4"></textarea>
 </div>
-  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Voir la correction</button>
+  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Exemple de réponse</button>
   <div class="corr-box">A. <em>C'est… qui…</em> → <strong>clivée</strong>. Focus sur «&nbsp;l'amour divin&nbsp;» qui est extrait et mis en avant. Rhème = «&nbsp;l'amour divin&nbsp;».<br>
         B. <em>Ce qui existe, c'est l'individu</em> → <strong>pseudo-clivée</strong> (relative libre + clivage). Focus sur «&nbsp;l'individu&nbsp;» comme rhème.<br>
-        C. <em>Voilà comment qu'ils m'ont traité</em> → <strong>présentatif + dislocation</strong> (les copains = reprise). Emphase affective.<br>
-        D. <em>Aussi déploya-t-elle</em> → <strong>inversion du sujet</strong> après connecteur consécutif. Marque le lien logique fort avec ce qui précède. Le sujet est en position rhématique.</div>
+        C. « Voilà comment qu'ils m'ont traité, les copains » → combine deux phénomènes : (i) une clivée orale en « voilà + interrogatif + qu- » portant sur « comment », rhématisant la manière ; (ii) une dislocation à droite de « les copains », qui reprend le sujet logique en fin de clause.<br>
+        D. <em>Aussi déploya-t-elle</em> → <strong>inversion du sujet</strong> après connecteur consécutif. Marque le lien logique fort avec ce qui précède. Le sujet est en position rhématique.<br>
+        <p>Le texte contient aussi deux clivées temporelles : « C'est à cette époque qu'elle fit la connaissance d'une dame Mercier » et « C'est à ce moment-là qu'elle fit la connaissance de Sauvaire », qui rhématisent chacune un repère temporel.</p></div>
   <button class="savoir-btn" onclick="toggleSavoir(this)"><svg class="ic"><use href="#i-lightbulb"/></svg> En savoir plus</button>
 <div class="savoir-box">Les <strong>constructions extractives</strong> (clivées, pseudo-clivées, présentatives) servent à focaliser un élément en position rhématique. Elles répondent à des questions implicites :<br>
         • Clivée : «&nbsp;Qui/qu'est-ce qui résout les contradictions ?&nbsp;» → «&nbsp;c'est l'amour.&nbsp;»<br>
@@ -770,7 +789,7 @@ input,select,textarea{font-size:max(16px,1em)!important}
   <div class="ans-label">Ma réponse</div>
   <textarea class="ans-input" id="q50_2" placeholder="Écris ta réponse ici…" rows="4"></textarea>
 </div>
-  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Voir la correction</button>
+  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Exemple de réponse</button>
   <div class="corr-box">Formes passives :<br>
         1. <em>furent portés</em> (coups) — passif avec auxiliaire être + participe<br>
         2. <em>fut paré</em> (le coup) — passif sans agent<br><br>
@@ -804,7 +823,7 @@ input,select,textarea{font-size:max(16px,1em)!important}
   <div class="ans-label">Ma réponse</div>
   <textarea class="ans-input" id="q51_1" placeholder="Écris ta réponse ici…" rows="4"></textarea>
 </div>
-  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Voir la correction</button>
+  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Exemple de réponse</button>
   <div class="corr-box">Constructions avec agent effacé :<br>
         • «&nbsp;dans ces lieux répandue&nbsp;» (passive relative sans agent) — qui a répandu l'horreur ?<br>
         • «&nbsp;je suis outragé&nbsp;» (passif sans agent) — qui a commis l'outrage ?<br>
@@ -819,6 +838,7 @@ input,select,textarea{font-size:max(16px,1em)!important}
         ② Exprimer une vérité générale sans responsable identifiable<br>
         ③ Manifester l'ignorance ou l'impuissance d'un personnage<br>
         Dans le théâtre classique, l'effacement de l'agent est souvent corrélé à l'aveuglement ou à la fatalité.</div>
+<p style="font-size:.85rem;line-height:1.65;margin:.6rem 0;padding:.5rem .8rem;background:rgba(240,224,160,0.06);border-left:3px solid var(--butter);border-radius:4px"><em>Note : la citation complète comprend aussi les vers « Je n'ai pour tout accueil que des frémissements : Tout fuit, tout se refuse à mes embrassements. Et moi-même, éprouvant la terreur que j'inspire, Je voudrais être encor dans les prisons d'Epire. » La consigne originale du polycopié cible précisément « les deux vers finaux ».</em></p>
 </div>
 <div class="exo" id="exo-52">
   <div class="exo-num">Exercice 3 — Constructions impersonnelles et pronominales</div>
@@ -840,7 +860,7 @@ input,select,textarea{font-size:max(16px,1em)!important}
   <div class="ans-label">Ma réponse</div>
   <textarea class="ans-input" id="q52_1" placeholder="Écris ta réponse ici…" rows="4"></textarea>
 </div>
-  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Voir la correction</button>
+  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Exemple de réponse</button>
   <div class="corr-box">• <em>se ramassent</em> : construction pronominale <strong>passive</strong> (les feuilles sont ramassées — agent indéfini/collectif)<br>
         • <em>s'aiment</em> : construction pronominale <strong>réciproque</strong> (ils s'aiment mutuellement)<br><br>
         <strong>Effets</strong> :<br>
@@ -855,6 +875,9 @@ input,select,textarea{font-size:max(16px,1em)!important}
         ④ <em>Lexicale / intrinsèque</em> : «&nbsp;se souvenir&nbsp;», «&nbsp;se méfier&nbsp;» (le se fait partie intégrante du verbe)<br>
         Distinguer ces valeurs est essentiel car elles ont des implications différentes sur la syntaxe et le sens.</div>
 </div>
+<div class="qa-block"><div class="qa-q">Exercice — Constructions impersonnelles (Martinet &amp; Verlaine)</div><div class="qa-zone"><button class="btn-rev" onclick="revAns(this)">Exemple de réponse ↓</button><div class="qa-ans"><p>Textes : (1) « Il est indispensable de distinguer soigneusement entre [...] » (Martinet) ; (2) « Il pleure dans mon cœur / Comme il pleut sur la ville » (Verlaine).</p><p>Dans ces constructions impersonnelles, « il » est un sujet grammatical vide (explétif), sans référent dans le monde. Il occupe la position de sujet pour satisfaire la contrainte syntaxique du français (présence d'un sujet), mais est dépourvu de valeur référentielle.</p><p>Dans l'exemple de Verlaine, le parallèle « il pleure » (tournure impersonnelle psychologique) / « il pleut » (impersonnel météorologique) est délibéré : la tournure impersonnelle représente un procès psychologique comme autogénéré, à la manière d'un phénomène naturel.</p></div></div></div>
+<div class="qa-block"><div class="qa-q">Exercice — Passif sans complément d'agent (Racine, <em>Phèdre</em>, acte V, sc. 1)</div><div class="qa-zone"><button class="btn-rev" onclick="revAns(this)">Exemple de réponse ↓</button><div class="qa-ans"><p>Citation : « Et la fuite est permise à qui fuit ses tyrans » (Racine, <em>Phèdre</em>).</p><p>Analyse : le passif « est permise » n'a pas de complément d'agent — l'agent est totalement effacé. Cet effacement donne à la permission le caractère d'une règle générale, impersonnelle, quasi-naturelle (contrairement à l'exemple de Thésée où l'agent serait identifiable). Le passif sert ici à formuler une vérité universelle, sans responsable humain identifiable.</p></div></div></div>
+<div class="qa-block"><div class="qa-q">Exercice — Construction pronominale neutre (article de presse, <em>24 Heures</em>, 2002)</div><div class="qa-zone"><button class="btn-rev" onclick="revAns(this)">Exemple de réponse ↓</button><div class="qa-ans"><p>Titre : « Un sénateur démocrate se tue. Paul Wellstone, sénateur démocrate du Minnesota, est mort hier dans un accident d'avion. »</p><p>Analyse : « se tue » est ambigu entre lecture réfléchie (« se tuer soi-même » = suicide) et lecture neutre/événementielle (« mourir accidentellement »). La suite du texte (« est mort dans un accident ») clarifie qu'il s'agit d'un sens neutre/intransitif, pas réfléchi. Cet exemple illustre la distinction entre pronominal réfléchi (agent = patient) et pronominal neutre (sujet = siège d'un procès sans agent).</p></div></div></div>
   <div style="text-align:center;margin-top:1rem">
     <button class="corr-btn" style="font-size:.85rem;display:block;margin:0 auto;width:fit-content" onclick="revealAll(this.closest('.dossier'))">Voir toutes les corrections</button>
   </div>
@@ -884,7 +907,7 @@ input,select,textarea{font-size:max(16px,1em)!important}
   <div class="ans-label">Ma réponse</div>
   <textarea class="ans-input" id="q60_1" placeholder="Écris ta réponse ici…" rows="4"></textarea>
 </div>
-  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Voir la correction</button>
+  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Exemple de réponse</button>
   <div class="corr-box">Clauses averbales dans l'extrait B :<br>
         • «&nbsp;elle et Hippolyte sur le canapé&nbsp;» → GN + GPrép (pas de verbe)<br>
         • «&nbsp;l'invité sur le fauteuil du milieu&nbsp;» → GN + GPrép<br>
@@ -902,9 +925,10 @@ input,select,textarea{font-size:max(16px,1em)!important}
         ③ Les descriptions ou inventaires rapides<br>
         ④ Les exclamations («&nbsp;Quelle chance !&nbsp;»)<br>
         Elles produisent un effet de condensation, d'instantanéité ou de staticité selon le contexte.</div>
+<p style="font-size:.85rem;line-height:1.65;margin:.6rem 0;padding:.5rem .8rem;background:rgba(240,224,160,0.06);border-left:3px solid var(--butter);border-radius:4px">Partie A (BD Tintin) : les bulles et légendes elliptiques des cases de Tintin constituent des clauses averbales nominales (ex. : noms propres seuls, interjections, fragments nominaux). Elles réalisent une prédication sans verbe, souvent de type thétique (poser l'existence d'un référent) ou attributif (décrire une propriété). Pour une analyse complète, se référer à l'image du polycopié.</p>
 </div>
 <div class="exo" id="exo-61">
-  <div class="exo-num">Exercice 2 — Clauses infinitives — Michaux «&nbsp;Avare&nbsp;»</div>
+  <div class="exo-num">Exercice 2 — Clauses infinitives — Leiris «&nbsp;Avare&nbsp;»</div>
   
   <div class="exo-text">Comment les clauses infinitives participent-elles essentiellement au sens de ce poème ?<br><br>
         <blockquote>AVARE<br>
@@ -927,7 +951,7 @@ input,select,textarea{font-size:max(16px,1em)!important}
   <div class="ans-label">Ma réponse</div>
   <textarea class="ans-input" id="q61_1" placeholder="Écris ta réponse ici…" rows="4"></textarea>
 </div>
-  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Voir la correction</button>
+  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Exemple de réponse</button>
   <div class="corr-box">Type prédominant : <strong>clauses infinitives</strong> sans sujet exprimé (sujet implicite = «&nbsp;je&nbsp;» du poète).<br>
         Structure : infinitif + (compléments)
 <br>
@@ -963,7 +987,7 @@ input,select,textarea{font-size:max(16px,1em)!important}
   <div class="ans-label">Ma réponse</div>
   <textarea class="ans-input" id="q62_1" placeholder="Écris ta réponse ici…" rows="4"></textarea>
 </div>
-  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Voir la correction</button>
+  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Exemple de réponse</button>
   <div class="corr-box"><strong>Changement</strong> : remplacement de «&nbsp;il vit Caille&nbsp;» (clause avec verbe de perception + sujet agent) par «&nbsp;c'était Caille&nbsp;» (clause à présentatif).<br><br>
         <strong>Analyse syntaxique</strong> :<br>
         V1931 : [il] [vit] [Caille qui venait] → construction transitive, sujet actif (il perçoit)<br>
@@ -975,6 +999,8 @@ input,select,textarea{font-size:max(16px,1em)!important}
   <button class="savoir-btn" onclick="toggleSavoir(this)"><svg class="ic"><use href="#i-lightbulb"/></svg> En savoir plus</button>
 <div class="savoir-box">Les <strong>présentatifs</strong> (c'est, il y a, voilà, voici) introduisent une entité dans le discours sans verbe prédicatif fort. Ils ont une valeur rhématique forte : ce qui suit est toujours <em>nouveau</em> (rhème). Comparé à une clause canonique avec verbe de perception, le présentatif change radicalement la focalisation narrative : il supprime l'intermédiaire perceptif et présente l'entité comme directement visible.</div>
 </div>
+<div class="qa-block"><div class="qa-q">Exercice — Clauses atypiques mixtes (François Bon, <em>Sortie d'usine</em>, 1982)</div><div class="qa-zone"><button class="btn-rev" onclick="revAns(this)">Exemple de réponse ↓</button><div class="qa-ans"><p>Texte : « positionner sur la machine la pièce, serrer les écrous […] Reculer la table, régler sur le vernier la profondeur de passe […] »</p><p>Analyse : ces clauses sont atypiques de deux manières : (1) clause infinitive — sans sujet exprimé, valeur injonctive (mode d'emploi, liste d'opérations) ; (2) certaines peuvent être analysées comme averbales si le contexte les interprète comme nominales. La combinaison des deux types dans un même passage est caractéristique du style de François Bon dans ce roman.</p></div></div></div>
+<div class="qa-block"><div class="qa-q">Exercice — Présentatif vs clivée (Boris Vian, <em>L'Écume des jours</em>, 1947)</div><div class="qa-zone"><button class="btn-rev" onclick="revAns(this)">Exemple de réponse ↓</button><div class="qa-ans"><p>Texte : « — C'est le lit qui t'a fatiguée... dit Colin. — Non, dit Chloé. C'est les pilules de ton vieux marchand. »</p><p>Distinction : (1) « C'est le lit <em>qui t'a fatiguée</em> » → clause clivée à sujet lexical (structure C'est X qui P, avec relative en qui) ; le verbe de la relative identifie l'élément extrait comme responsable du procès. (2) « C'est les pilules de ton vieux marchand » → clause à présentatif (lecture existentielle : il s'agit de, c'est que) sans relative en qui ; construction à valeur identificatoire ou thétique.</p></div></div></div>
   <div style="text-align:center;margin-top:1rem">
     <button class="corr-btn" style="font-size:.85rem;display:block;margin:0 auto;width:fit-content" onclick="revealAll(this.closest('.dossier'))">Voir toutes les corrections</button>
   </div>
@@ -1004,7 +1030,7 @@ input,select,textarea{font-size:max(16px,1em)!important}
   <div class="ans-label">Ma réponse</div>
   <textarea class="ans-input" id="q70_1" placeholder="Écris ta réponse ici…" rows="4"></textarea>
 </div>
-  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Voir la correction</button>
+  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Exemple de réponse</button>
   <div class="corr-box"><strong>Texte scientifique</strong> (Biologie végétale) :<br>
         • Position dominante : <em>postposée</em> (épithète après le nom) : «&nbsp;séquences différentes&nbsp;», «&nbsp;molécules protéiques&nbsp;», «&nbsp;types différents&nbsp;»<br>
         • Quelques antéposés : «&nbsp;une très faible partie&nbsp;», «&nbsp;un seul&nbsp;»<br>
@@ -1040,7 +1066,7 @@ input,select,textarea{font-size:max(16px,1em)!important}
   <div class="ans-label">Ma réponse</div>
   <textarea class="ans-input" id="q71_1" placeholder="Écris ta réponse ici…" rows="4"></textarea>
 </div>
-  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Voir la correction</button>
+  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Exemple de réponse</button>
   <div class="corr-box">A. Deux appositions nominales :<br>
         • «&nbsp;l'une des plus grandes voix de la littérature mondiale&nbsp;» → apposition à «&nbsp;Milan Kundera&nbsp;» : ajoute une évaluation superlative avant d'annoncer la mort → ampleur de la perte<br>
         • «&nbsp;auteur de romans incontournables&nbsp;» → apposition à «&nbsp;L'écrivain franco-tchèque&nbsp;» : rappelle l'œuvre → justifie le «&nbsp;grand vide&nbsp;»<br><br>
@@ -1085,11 +1111,11 @@ input,select,textarea{font-size:max(16px,1em)!important}
   <div class="ans-label">Ma réponse</div>
   <textarea class="ans-input" id="q80_2" placeholder="Écris ta réponse ici…" rows="4"></textarea>
 </div>
-  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Voir la correction</button>
+  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Exemple de réponse</button>
   <div class="corr-box"><strong>Céline</strong> :<br>
         • Phrases courtes, monoclauses ou biclauses<br>
         • Juxtaposition (pas de connecteurs logiques entre les clauses)<br>
-        • «&nbsp;Il me connaît bien Gustin&nbsp;» → dislocation à droite (Gustin = apposition ou reprise thématique)<br>
+        • «&nbsp;Il me connaît bien Gustin&nbsp;» → dislocation à droite : « Gustin » est le constituant disloqué, dans sa propre clause averbale, reprenant par coréférence le pronom sujet « il » de la clause prédicative qui précède. (retirer la mention « apposition » — ce n'est pas une apposition)<br>
         • «&nbsp;Gustin c'est un cœur d'élite&nbsp;» → dislocation à gauche + présentatif<br>
         • Style oral, populaire → syntaxe fragmentée, parataxique<br>
         • Bilan : nombreuses phrases graphiques = une clause chacune, enchaînement par juxtaposition<br><br>
@@ -1125,14 +1151,14 @@ input,select,textarea{font-size:max(16px,1em)!important}
   <div class="ans-label">Ma réponse</div>
   <textarea class="ans-input" id="q81_1" placeholder="Écris ta réponse ici…" rows="4"></textarea>
 </div>
-  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Voir la correction</button>
+  <button class="corr-btn" onclick="toggleCorr(this)"><svg class="ic"><use href="#i-check-circle"/></svg> Exemple de réponse</button>
   <div class="corr-box">1. «&nbsp;Les animaux&nbsp;» → <strong>dislocation à gauche</strong> — thème préposé, repris implicitement dans «&nbsp;les manger&nbsp;». Effet : interpellation frappante, thème établi avant la clause injonctive.<br><br>
-        2. «&nbsp;la vieille mère Henrouille, Robinson&nbsp;» → <strong>dislocation à droite</strong> (apposition en fin de phrase). Précise l'identité après coup. Style oral, ajout informatif par accumulation.<br><br>
+        2. «&nbsp;la vieille mère Henrouille, Robinson&nbsp;» → « Robinson » reprend le sujet « il » ; « la vieille mère Henrouille » reprend le COD « la » (« de la rencontrer ») : deux dislocations à droite distinctes (sujet + objet), juxtaposées en fin de phrase.<br><br>
         3. «&nbsp;La mer&nbsp;» → <strong>dislocation à gauche</strong> + clivée («&nbsp;c'est le ciel même qui…&nbsp;»). Thème = la mer, rhème = c'est le ciel qui la colore → focalisation sur le rhème inattendu.<br><br>
-        4. «&nbsp;Cette maladie du soupçon, Maurice&nbsp;» → double dislocation à gauche (sujet + apposition). Thème complexe établi en tête, suspense avant le rhème (verbe en fin).<br><br>
+        4. «&nbsp;Cette maladie du soupçon, Maurice&nbsp;» → une seule dislocation à gauche : « Cette maladie du soupçon » est le constituant disloqué, repris par le clitique COD « la ». « Maurice » est le sujet syntaxique de la clause (non disloqué) ; « autrefois d'esprit dégagé » est une construction détachée portant sur « Maurice ».<br><br>
         5. Long GN détaché → <strong>dislocation à gauche</strong> + reprise par «&nbsp;l'océan l'engloutit&nbsp;». Effet dramatique : l'objet précieux est longuement décrit avant d'annoncer sa perte.</div>
   <button class="savoir-btn" onclick="toggleSavoir(this)"><svg class="ic"><use href="#i-lightbulb"/></svg> En savoir plus</button>
-<div class="savoir-box">La <strong>dislocation</strong> est un procédé pragmasyntaxique qui extrait un constituant hors de sa position canonique :<br>
+<div class="savoir-box">La <strong>dislocation</strong> consiste à répartir l'information en deux clauses syntaxiquement autonomes : une clause averbale posant le thème, une clause prédicative apportant le rhème et reprenant le thème par un pronom clitique — le constituant disloqué n'est jamais régi par le verbe. Elle se distingue du constituant extraposé avec redoublement pronominal (ex. : « Que l'on pleure moins…, j'en suis sûr d'avance »), où le constituant antéposé reste syntaxiquement rattaché au verbe.<br>
         • <em>À gauche</em> (thématisation) : «&nbsp;Le chat, je le vois.&nbsp;» → le chat est en position thématique<br>
         • <em>À droite</em> (rhématisation / ajout) : «&nbsp;Je le vois, le chat.&nbsp;» → ajout après coup<br>
         La dislocation est fréquente à l'oral et dans les styles qui l'imitent. Elle marque la progressivité thématique du discours. Le constituant disloqué est souvent repris par un pronom clitique dans la clause principale.</div>
@@ -1146,6 +1172,11 @@ input,select,textarea{font-size:max(16px,1em)!important}
 </div>
 <script>
 
+function revAns(btn){
+  var ans=btn.nextElementSibling;
+  if(ans.classList.contains('show')){ans.classList.remove('show');btn.textContent='Exemple de réponse ↓';}
+  else{ans.classList.add('show');btn.textContent='▲ Masquer';}
+}
 function toggleTheme(){
   var t=document.documentElement.getAttribute('data-theme');
   var n=t==='light'?'dark':'light';
@@ -1163,7 +1194,7 @@ function toggleTheme(){
 })();
 function toggleCorr(btn){
   var box=btn.nextElementSibling;
-  if(box.classList.contains('show')){box.classList.remove('show');btn.innerHTML='<svg class="ic"><use href="#i-check-circle"/></svg> Voir la correction';}
+  if(box.classList.contains('show')){box.classList.remove('show');btn.innerHTML='<svg class="ic"><use href="#i-check-circle"/></svg> Exemple de réponse';}
   else{box.classList.add('show');btn.textContent='▲ Masquer la correction';}
 }
 function toggleSavoir(btn){
