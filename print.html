@@ -1,0 +1,1586 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache,no-store,must-revalidate">
+<script>(function(){if(!location.search.includes('v='))location.replace(location.pathname+'?v=20260722');}());</script>
+<title>Linguistique I — Cahier de révision</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --f0:'DM Serif Display',Georgia,serif;
+  --f1:'DM Sans',system-ui,sans-serif;
+  --ink:#1a1a2e;--dim:#667;
+  --c0:#9b59b6;--c0l:#eedcf7;
+  --c1:#1a78c2;--c1l:#d4e9f7;
+  --c2:#1e8449;--c2l:#d2f2e0;
+  --c3:#c0701a;--c3l:#f7e6d0;
+  --c4:#b5297a;--c4l:#f7d4ea;
+  --c5:#2e8b57;--c5l:#d9f2e3;
+  --c6:#b8860b;--c6l:#f7f3d0;
+  --c7:#5c4ed4;--c7l:#dddaf7;
+  --c8:#b03025;--c8l:#f7d5d2;
+  --c9:#0e7f6a;--c9l:#cdf2eb
+}
+body{font-family:var(--f1);font-size:10pt;line-height:1.5;color:var(--ink);background:#d8d8d8}
+@page{size:A4 portrait;margin:20mm}
+@media print{
+  html,body{background:#fff;margin:0;padding:0}
+  .np{display:none!important}
+  body{padding-top:0!important;font-size:9.5pt}
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+}
+.tnav{position:fixed;top:0;left:0;right:0;background:#1a1a2e;display:flex;align-items:center;padding:5px 10px;gap:3px;flex-wrap:wrap;z-index:200;font-size:10.5px;font-family:var(--f1)}
+.tnav a{color:rgba(255,255,255,.7);text-decoration:none;padding:2px 5px;border-radius:3px}
+.tnav a:hover{background:rgba(255,255,255,.18);color:#fff}
+.tnav .pb{margin-left:auto;background:#6c5ce7;color:#fff;border:none;padding:4px 11px;border-radius:4px;cursor:pointer;font-family:var(--f1);font-size:10.5px}
+body{padding-top:38px}
+.wrap{max-width:820px;margin:0 auto;padding:10px}
+@media print{.wrap{max-width:none;margin:0;padding:0}}
+/* Cover */
+.cover{background:#fff;break-after:page;page-break-after:always;display:flex;flex-direction:column}
+.cbar{height:10px;background:linear-gradient(90deg,#9b59b6,#1a78c2,#1e8449,#c0701a,#b5297a,#b8860b,#5c4ed4,#b03025,#0e7f6a)}
+.cbody{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:14mm 18mm}
+.csup{font-size:8pt;color:var(--dim);letter-spacing:.1em;text-transform:uppercase;margin-bottom:5mm}
+.ch1t{font-family:var(--f0);font-size:36pt;color:var(--ink);margin-bottom:2mm}
+.ch2t{font-family:var(--f0);font-style:italic;font-size:17pt;color:#6c5ce7;margin-bottom:7mm}
+.cpill0{display:inline-block;background:#f0edff;border:1.5px solid #6c5ce7;color:#6c5ce7;padding:3px 14px;border-radius:20px;font-size:8.5pt;margin-bottom:9mm}
+.cgrd{display:grid;grid-template-columns:repeat(5,1fr);gap:2.5mm;width:100%;margin-bottom:8mm}
+.gp{padding:5px 3px;border-radius:6px;font-size:7pt;font-weight:700;text-align:center;line-height:1.4}
+.cinf{font-size:8pt;color:var(--dim);line-height:2}
+/* TOC */
+.toc{background:#fff;padding:20mm;break-before:page;page-break-before:always;break-after:page;page-break-after:always}
+.toch{font-family:var(--f0);font-size:22pt;margin-bottom:8mm;padding-bottom:3mm;border-bottom:2px solid #6c5ce7}
+.te{display:flex;align-items:baseline;margin-bottom:3.5mm;font-size:10pt}
+.te .tl{font-weight:600}
+.te .tl em{font-weight:400;color:var(--dim);font-style:normal}
+.te .td{flex:1;border-bottom:1px dotted #bbb;margin:0 5px;height:1em}
+.te .tn{color:var(--dim);font-size:8.5pt;white-space:nowrap}
+/* Chapter sections */
+.ch{background:#fff}
+@media screen{.ch{padding:12px;background:#fff;border-radius:4px;margin-bottom:6px}}
+.chd{break-before:page;page-break-before:always}
+@media print{.ch{padding:0}}
+.cnum{font-size:7.5pt;text-transform:uppercase;letter-spacing:.16em;font-weight:700;margin-bottom:1mm}
+.ctit{font-family:var(--f0);font-size:22pt;line-height:1.2;margin-bottom:5mm}
+.cband{border-radius:8px;padding:5mm 6mm;margin-bottom:5mm;display:grid;grid-template-columns:1fr 1fr;gap:5mm}
+.cband h4{font-size:8pt;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:2.5mm;color:var(--ink)}
+.cband ul{list-style:none;padding:0}
+.cband li{font-size:8.5pt;padding:.8mm 0;line-height:1.4}
+.cband li::before{content:'→ ';font-weight:700}
+.tree{width:100%;margin:3mm 0 5mm}
+.tree svg{width:100%;height:auto}
+.slbl{font-size:7pt;text-transform:uppercase;letter-spacing:.15em;font-weight:700;margin:5mm 0 3mm;padding-bottom:1.5mm;border-bottom:1px solid #e0e0e0}
+/* Cards */
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:3.5mm}
+.card{border:1px solid #e0e0e0;border-radius:6px;padding:3.5mm;break-inside:avoid;page-break-inside:avoid}
+.ct{font-weight:700;font-size:9.5pt;margin-bottom:1.5mm}
+.cd{font-size:8.5pt;margin-bottom:1.5mm;line-height:1.45}
+.ce{font-size:8pt;font-style:italic;color:#555;margin-bottom:1.5mm;padding-left:3mm;border-left:2px solid #e0e0e0}
+.cm{display:flex;align-items:center;justify-content:space-between;gap:4px;flex-wrap:wrap;margin-top:1.5mm}
+.cm label{display:flex;align-items:center;gap:3px;font-size:7.5pt;color:var(--dim);cursor:pointer}
+.cl{font-size:7.5pt;color:var(--dim);margin-top:1.5mm;padding-top:1.5mm;border-top:1px dashed #eee}
+.dg{font-size:7.5pt;color:#1e8449;font-weight:600}
+.dy{font-size:7.5pt;color:#c0701a;font-weight:600}
+.dr{font-size:7.5pt;color:#b03025;font-weight:600}
+/* Notes */
+.notes{break-before:page;page-break-before:always}
+.notes h3{font-family:var(--f0);font-size:15pt;color:var(--dim);margin-bottom:8mm}
+.nlines{display:flex;flex-direction:column;gap:9mm}
+.nl{border-bottom:.5pt solid #ccc;height:0}
+/* Recap */
+.recap{break-before:page;page-break-before:always}
+.rech{font-family:var(--f0);font-size:20pt;margin-bottom:6mm;padding-bottom:2mm;border-bottom:2px solid #6c5ce7}
+.rcch{margin-bottom:4mm;break-inside:avoid}
+.rcch .rct{font-weight:700;font-size:8pt;text-transform:uppercase;letter-spacing:.08em;padding:2mm 4mm;border-radius:4px;margin-bottom:2mm;display:block}
+.rterms{display:grid;grid-template-columns:repeat(3,1fr);gap:1mm 3mm}
+.rterm{display:flex;align-items:center;gap:3px;font-size:8pt}
+/* Authors */
+.auth{break-before:page;page-break-before:always}
+.auth h2{font-family:var(--f0);font-size:20pt;margin-bottom:6mm;padding-bottom:2mm;border-bottom:2px solid #6c5ce7}
+.auth table{width:100%;border-collapse:collapse;font-size:8.5pt}
+.auth th{background:#f0edff;padding:2.5mm 3mm;text-align:left;font-weight:700;border:.5pt solid #ccc}
+.auth td{padding:2.5mm 3mm;border:.5pt solid #ccc;vertical-align:top;line-height:1.45}
+.auth tr:nth-child(even) td{background:#fafafa}
+/* Extra notes */
+.notex{break-before:page;page-break-before:always}
+.notex h3{font-family:var(--f0);font-size:16pt;color:var(--dim);margin-bottom:8mm}
+/* Chapter color theming */
+.s0 .cnum,.s0 .slbl{color:var(--c0)} .s0 .cband{background:var(--c0l)} .s0 .card{border-left:3px solid var(--c0)}
+.s1 .cnum,.s1 .slbl{color:var(--c1)} .s1 .cband{background:var(--c1l)} .s1 .card{border-left:3px solid var(--c1)}
+.s2 .cnum,.s2 .slbl{color:var(--c2)} .s2 .cband{background:var(--c2l)} .s2 .card{border-left:3px solid var(--c2)}
+.s3 .cnum,.s3 .slbl{color:var(--c3)} .s3 .cband{background:var(--c3l)} .s3 .card{border-left:3px solid var(--c3)}
+.s4 .cnum,.s4 .slbl{color:var(--c4)} .s4 .cband{background:var(--c4l)} .s4 .card{border-left:3px solid var(--c4)}
+.s5 .cnum,.s5 .slbl{color:var(--c5)} .s5 .cband{background:var(--c5l)} .s5 .card{border-left:3px solid var(--c5)}
+.s6 .cnum,.s6 .slbl{color:var(--c6)} .s6 .cband{background:var(--c6l)} .s6 .card{border-left:3px solid var(--c6)}
+.s7 .cnum,.s7 .slbl{color:var(--c7)} .s7 .cband{background:var(--c7l)} .s7 .card{border-left:3px solid var(--c7)}
+.s8 .cnum,.s8 .slbl{color:var(--c8)} .s8 .cband{background:var(--c8l)} .s8 .card{border-left:3px solid var(--c8)}
+.s9 .cnum,.s9 .slbl{color:var(--c9)} .s9 .cband{background:var(--c9l)} .s9 .card{border-left:3px solid var(--c9)}
+</style>
+</head>
+<body>
+<nav class="tnav np">
+  <a href="#cover">⌂</a>
+  <a href="#intro">Intro</a>
+  <a href="#ch1">Ch.1</a><a href="#ch2">Ch.2</a><a href="#ch3">Ch.3</a>
+  <a href="#ch4">Ch.4</a><a href="#ch5">Ch.5</a><a href="#ch6">Ch.6</a>
+  <a href="#ch7">Ch.7</a><a href="#ch8">Ch.8</a><a href="#ch9">Ch.9</a>
+  <a href="#recap">Récap</a><a href="#authors">Auteurs</a>
+  <button class="pb" onclick="window.print()">🖨️ Imprimer</button>
+</nav>
+<div class="wrap">
+
+<!-- ===== COVER ===== -->
+<section id="cover" class="cover">
+<div class="cbar"></div>
+<div class="cbody">
+  <div class="csup">Université de Lausanne · Faculté des Lettres · Automne 2025<br>Prof. Rudolf Mahrer — Introduction à la linguistique française</div>
+  <h1 class="ch1t">Linguistique I</h1>
+  <h2 class="ch2t">Cahier de révision</h2>
+  <div class="cpill0">135 fiches concepts · Arbres de connaissances · Récapitulatif global</div>
+  <div class="cgrd">
+    <div class="gp" style="background:#eedcf7;color:#5b1f82">Introduction<br>9 fiches</div>
+    <div class="gp" style="background:#d4e9f7;color:#0d4778">Ch.1 · Phonétique<br>22 fiches</div>
+    <div class="gp" style="background:#d2f2e0;color:#0e4d26">Ch.2 · Morphologie<br>18 fiches</div>
+    <div class="gp" style="background:#f7e6d0;color:#6b3a08">Ch.3 · Syntaxe<br>20 fiches</div>
+    <div class="gp" style="background:#f7d4ea;color:#6b1244">Ch.4 · Ordre<br>12 fiches</div>
+    <div class="gp" style="background:#d9f2e3;color:#0d4d2a">Ch.5 · Types<br>8 fiches</div>
+    <div class="gp" style="background:#f7f3d0;color:#614600">Ch.6 · Ext. GN<br>14 fiches</div>
+    <div class="gp" style="background:#dddaf7;color:#2a1e82">Ch.7 · Ext. GV<br>8 fiches</div>
+    <div class="gp" style="background:#f7d5d2;color:#620f08">Ch.8 · Complexe<br>14 fiches</div>
+    <div class="gp" style="background:#cdf2eb;color:#044034">Ch.9 · Phrase<br>10 fiches</div>
+  </div>
+  <div class="cinf">Indicateurs de difficulté · <span style="color:#1e8449;font-weight:600">🟢 Fondamental</span> · <span style="color:#c0701a;font-weight:600">🟡 Intermédiaire</span> · <span style="color:#b03025;font-weight:600">🔴 Avancé</span><br>Pour chaque fiche: définition · exemple · liens thématiques · case «Maîtrisé»</div>
+</div>
+<div class="cbar"></div>
+</section>
+
+<!-- ===== TOC ===== -->
+<section class="toc">
+<h2 class="toch">Table des matières</h2>
+<div class="te"><span class="tl">Introduction <em>— La linguistique : fondements et niveaux d'analyse</em></span><span class="td"></span><span class="tn">9 fiches</span></div>
+<div class="te"><span class="tl">Chapitre 1 <em>— Phonétique, Phonologie &amp; Graphémique</em></span><span class="td"></span><span class="tn">22 fiches</span></div>
+<div class="te"><span class="tl">Chapitre 2 <em>— Morphologie</em></span><span class="td"></span><span class="tn">18 fiches</span></div>
+<div class="te"><span class="tl">Chapitre 3 <em>— Syntaxe canonique</em></span><span class="td"></span><span class="tn">20 fiches</span></div>
+<div class="te"><span class="tl">Chapitre 4 <em>— L'ordre des mots dans la clause</em></span><span class="td"></span><span class="tn">12 fiches</span></div>
+<div class="te"><span class="tl">Chapitre 5 <em>— Types de clauses</em></span><span class="td"></span><span class="tn">8 fiches</span></div>
+<div class="te"><span class="tl">Chapitre 6 <em>— Les extensions du GN</em></span><span class="td"></span><span class="tn">14 fiches</span></div>
+<div class="te"><span class="tl">Chapitre 7 <em>— Les extensions du GV</em></span><span class="td"></span><span class="tn">8 fiches</span></div>
+<div class="te"><span class="tl">Chapitre 8 <em>— La clause complexe</em></span><span class="td"></span><span class="tn">14 fiches</span></div>
+<div class="te"><span class="tl">Chapitre 9 <em>— La phrase graphique</em></span><span class="td"></span><span class="tn">10 fiches</span></div>
+<div style="margin-top:5mm;border-top:1px solid #ddd;padding-top:5mm">
+<div class="te"><span class="tl">Récapitulatif global <em>— tous les termes par chapitre</em></span><span class="td"></span><span class="tn">—</span></div>
+<div class="te"><span class="tl">Auteurs &amp; Références</span><span class="td"></span><span class="tn">—</span></div>
+<div class="te"><span class="tl">Pages de notes personnelles</span><span class="td"></span><span class="tn">—</span></div>
+</div>
+<div style="margin-top:9mm;padding:4mm 6mm;background:#f7f3ff;border-radius:6px;font-size:8.5pt;color:var(--dim)">
+<strong style="color:var(--ink)">Comment utiliser ce cahier</strong> — Lisez la définition, fermez le cahier, reformulez de mémoire. Utilisez ☐ <em>Maîtrisé</em> pour suivre votre progression. Les liens «↔» vous aident à réviser les notions connexes et à construire votre propre réseau de connaissances.
+</div>
+</section>
+
+<!-- ===== INTRODUCTION ===== -->
+<section id="intro" class="ch s0">
+<div class="chd">
+  <div class="cnum">Introduction</div>
+  <h2 class="ctit">La linguistique : fondements et niveaux d'analyse</h2>
+  <div class="cband">
+    <div><h4>Concepts clés</h4><ul>
+      <li>Signe linguistique (Saussure)</li>
+      <li>Arbitraire du signe</li>
+      <li>Double articulation (Martinet)</li>
+      <li>Niveaux d'analyse linguistique</li>
+      <li>Oral vs Écrit</li>
+      <li>Distance communicationnelle</li>
+      <li>Métalangage &amp; autonyme</li>
+      <li>Signifiance (Benveniste)</li>
+    </ul></div>
+    <div><h4>Objectifs</h4><ul>
+      <li>Définir la linguistique et son objet</li>
+      <li>Expliquer la double articulation</li>
+      <li>Distinguer oral et écrit (Koch &amp; Oesterreicher)</li>
+      <li>Maîtriser la notion de signe</li>
+      <li>Utiliser le vocabulaire métalinguistique</li>
+      <li>Situer les auteurs fondamentaux</li>
+    </ul></div>
+  </div>
+  <div class="tree"><svg viewBox="0 0 500 108" xmlns="http://www.w3.org/2000/svg" font-family="DM Sans,sans-serif">
+    <rect x="150" y="5" width="200" height="26" rx="7" fill="#9b59b6"/>
+    <text x="250" y="22" text-anchor="middle" fill="white" font-size="11" font-weight="700">LINGUISTIQUE</text>
+    <line x1="250" y1="31" x2="60" y2="66" stroke="#9b59b6" stroke-width="1.5" opacity=".5"/>
+    <line x1="250" y1="31" x2="175" y2="66" stroke="#9b59b6" stroke-width="1.5" opacity=".5"/>
+    <line x1="250" y1="31" x2="325" y2="66" stroke="#9b59b6" stroke-width="1.5" opacity=".5"/>
+    <line x1="250" y1="31" x2="440" y2="66" stroke="#9b59b6" stroke-width="1.5" opacity=".5"/>
+    <rect x="8" y="66" width="104" height="24" rx="5" fill="#eedcf7"/>
+    <text x="60" y="81" text-anchor="middle" fill="#5b1f82" font-size="9.5" font-weight="600">Signe (Saussure)</text>
+    <text x="60" y="96" text-anchor="middle" fill="#888" font-size="7.5">signifiant · signifié · arbitraire</text>
+    <rect x="120" y="66" width="110" height="24" rx="5" fill="#eedcf7"/>
+    <text x="175" y="81" text-anchor="middle" fill="#5b1f82" font-size="9.5" font-weight="600">Double articulation</text>
+    <text x="175" y="96" text-anchor="middle" fill="#888" font-size="7.5">morphèmes · phonèmes</text>
+    <rect x="270" y="66" width="110" height="24" rx="5" fill="#eedcf7"/>
+    <text x="325" y="81" text-anchor="middle" fill="#5b1f82" font-size="9.5" font-weight="600">Niveaux d'analyse</text>
+    <text x="325" y="96" text-anchor="middle" fill="#888" font-size="7.5">phonol · morphol · synt</text>
+    <rect x="388" y="66" width="104" height="24" rx="5" fill="#eedcf7"/>
+    <text x="440" y="81" text-anchor="middle" fill="#5b1f82" font-size="9.5" font-weight="600">Oral / Écrit</text>
+    <text x="440" y="96" text-anchor="middle" fill="#888" font-size="7.5">distance communicat.</text>
+  </svg></div>
+</div>
+<div class="slbl">Fiches concepts — Introduction · 9 fiches</div>
+<div class="cgrid">
+
+<div class="card"><p class="ct">Signe linguistique</p>
+<p class="cd">Unité biface: un <strong>signifiant</strong> (image acoustique/graphique) + un <strong>signifié</strong> (concept mental), liés arbitrairement. Unité de la 1ère articulation (Saussure).</p>
+<p class="ce">«chat» = /ʃa/ (signifiant) ↔ &lt;félin domestique&gt; (signifié)</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ signifiant, signifié, arbitraire, morphème</p></div>
+
+<div class="card"><p class="ct">Arbitraire du signe</p>
+<p class="cd">Principe saussurien: aucun lien naturel entre signifiant et signifié. La relation est purement <strong>conventionnelle</strong>. L'arbitraire peut être <em>relatif</em> dans la dérivation.</p>
+<p class="ce">Même animal: «chat» (fr), «cat» (en), «Katze» (de), «gato» (es)</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ signe, icône, convention, motivation</p></div>
+
+<div class="card"><p class="ct">Double articulation</p>
+<p class="cd"><strong>1ère articulation</strong>: découpage en <em>morphèmes</em> (unités de sens). <strong>2ème articulation</strong>: en <em>phonèmes</em> (unités distinctives sans sens propre). Principe d'économie linguistique (Martinet).</p>
+<p class="ce">«chanterons» = 3 morphèmes; /ʃ-ɑ̃-t-ə-ʁ-ɔ̃/ = 6 phonèmes</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ morphème, phonème, Martinet</p></div>
+
+<div class="card"><p class="ct">Niveaux d'analyse</p>
+<p class="cd">La linguistique analyse la langue à des niveaux complémentaires et emboîtés: <em>phonétique → phonologie → morphologie → syntaxe → sémantique → pragmatique</em>.</p>
+<p class="ce">«Les chats dorment» → analysable indépendamment à chaque niveau</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ phonologie, morphologie, syntaxe, sémantique</p></div>
+
+<div class="card"><p class="ct">Oral vs Écrit</p>
+<p class="cd">Deux <strong>médiums</strong> distincts et non-hiérarchiques (l'écrit n'est pas supérieur). Chacun a ses propres structures. Ils ne se correspondent pas terme à terme.</p>
+<p class="ce">Liaisons à l'oral absentes à l'écrit; ponctuation absente à l'oral spontané</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ graphémique, distance communicationnelle, Koch &amp; Oesterreicher</p></div>
+
+<div class="card"><p class="ct">Distance communicationnelle</p>
+<p class="cd">Axe conceptuel (Koch &amp; Oesterreicher): pôle <strong>immédiat</strong> (dialogue spontané, informel) ↔ pôle <strong>distant</strong> (écrit formel préparé). Indépendant du médium physique.</p>
+<p class="ce">SMS (immédiat) ↔ thèse universitaire (distant) — l'un peut être écrit, l'autre oral</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ oral/écrit, registre, Koch &amp; Oesterreicher</p></div>
+
+<div class="card"><p class="ct">Métalangage</p>
+<p class="cd">Utiliser la langue pour parler <em>de</em> la langue elle-même. S'oppose à l'usage ordinaire (référence au monde extralinguistique). Toute grammaire est un métalangage.</p>
+<p class="ce">«"Rouge" est un adjectif.» — on parle du mot, non de la couleur</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ autonyme, usage/mention, métalinguistique</p></div>
+
+<div class="card"><p class="ct">Morphosyntaxe &amp; Topographie</p>
+<p class="cd"><strong>Morphosyntaxe</strong>: étude combinée de la morphologie et de la syntaxe. <strong>Topographie</strong>: organisation linéaire/spatiale des constituants dans l'énoncé.</p>
+<p class="ce">Accord du participe passé (morphosyntaxe); «La pomme, Marie la mange» (topographie)</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ morphologie, syntaxe, ordre des mots, Ch.4</p></div>
+
+<div class="card"><p class="ct">Signifiance</p>
+<p class="cd">Production de sens au-delà du sens référentiel direct: connotations, implicites, valeur discursive. Terme de Benveniste pour la dimension sémiotique de la langue.</p>
+<p class="ce">«Blanc comme neige» → signifiance = innocence/pureté, au-delà de la simple couleur</p>
+<div class="cm"><span class="dr">🔴 Avancé</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ sémantique, pragmatique, connotation, Benveniste</p></div>
+
+</div>
+<div class="notes"><h3>Mes notes — Introduction</h3><div class="nlines">
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+</div></div>
+</section>
+
+<!-- ===== CHAPITRE 1 ===== -->
+<section id="ch1" class="ch s1">
+<div class="chd">
+  <div class="cnum">Chapitre 1</div>
+  <h2 class="ctit">Phonétique, Phonologie &amp; Graphémique</h2>
+  <div class="cband">
+    <div><h4>Concepts clés</h4><ul>
+      <li>Phonétique articulatoire / acoustique / perceptive</li>
+      <li>Voyelles, consonnes, semi-voyelles</li>
+      <li>Trapèze vocalique</li>
+      <li>Syllabe ouverte / fermée</li>
+      <li>Accent démarcatif, prosodie, intonation</li>
+      <li>Phonème, test de commutation, paires minimales</li>
+      <li>Traits pertinents (Troubetzkoï)</li>
+      <li>Graphème, phonographie, sémiographie</li>
+    </ul></div>
+    <div><h4>Objectifs</h4><ul>
+      <li>Distinguer phonétique et phonologie</li>
+      <li>Classer voyelles et consonnes</li>
+      <li>Identifier un phonème par test de commutation</li>
+      <li>Construire des paires minimales</li>
+      <li>Décrire la prosodie du français</li>
+      <li>Distinguer graphème phonographique et sémiographique</li>
+    </ul></div>
+  </div>
+  <div class="tree"><svg viewBox="0 0 500 108" xmlns="http://www.w3.org/2000/svg" font-family="DM Sans,sans-serif">
+    <rect x="130" y="5" width="240" height="26" rx="7" fill="#1a78c2"/>
+    <text x="250" y="22" text-anchor="middle" fill="white" font-size="11" font-weight="700">PHONIE &amp; GRAPHÉMIQUE</text>
+    <line x1="250" y1="31" x2="60" y2="66" stroke="#1a78c2" stroke-width="1.5" opacity=".5"/>
+    <line x1="250" y1="31" x2="180" y2="66" stroke="#1a78c2" stroke-width="1.5" opacity=".5"/>
+    <line x1="250" y1="31" x2="325" y2="66" stroke="#1a78c2" stroke-width="1.5" opacity=".5"/>
+    <line x1="250" y1="31" x2="440" y2="66" stroke="#1a78c2" stroke-width="1.5" opacity=".5"/>
+    <rect x="8" y="66" width="104" height="24" rx="5" fill="#d4e9f7"/>
+    <text x="60" y="81" text-anchor="middle" fill="#0d4778" font-size="9.5" font-weight="600">Phonétique</text>
+    <text x="60" y="96" text-anchor="middle" fill="#888" font-size="7.5">articulatoire · acoustique</text>
+    <rect x="128" y="66" width="104" height="24" rx="5" fill="#d4e9f7"/>
+    <text x="180" y="81" text-anchor="middle" fill="#0d4778" font-size="9.5" font-weight="600">Sons du français</text>
+    <text x="180" y="96" text-anchor="middle" fill="#888" font-size="7.5">voyelles · consonnes · glides</text>
+    <rect x="273" y="66" width="104" height="24" rx="5" fill="#d4e9f7"/>
+    <text x="325" y="81" text-anchor="middle" fill="#0d4778" font-size="9.5" font-weight="600">Phonologie</text>
+    <text x="325" y="96" text-anchor="middle" fill="#888" font-size="7.5">phonème · traits pertinents</text>
+    <rect x="388" y="66" width="104" height="24" rx="5" fill="#d4e9f7"/>
+    <text x="440" y="81" text-anchor="middle" fill="#0d4778" font-size="9.5" font-weight="600">Graphémique</text>
+    <text x="440" y="96" text-anchor="middle" fill="#888" font-size="7.5">graphème · phonogr.</text>
+  </svg></div>
+</div>
+<div class="slbl">Fiches concepts — Chapitre 1 · 22 fiches</div>
+<div class="cgrid">
+
+<div class="card"><p class="ct">Phonétique articulatoire</p>
+<p class="cd">Étude de la <strong>production</strong> des sons du langage par les organes articulatoires: lèvres, langue, dents, voile du palais, glotte, cordes vocales.</p>
+<p class="ce">/p/ = occlusive bilabiale sourde; /n/ = nasale alvéolaire voisée</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ phonétique acoustique, consonnes, lieu d'articulation</p></div>
+
+<div class="card"><p class="ct">Phonétique acoustique</p>
+<p class="cd">Étude des propriétés physiques du <strong>signal sonore</strong>: fréquence (Hz), amplitude (intensité), durée, formants (résonances caractéristiques des voyelles).</p>
+<p class="ce">Spectrogramme montrant les formants F1/F2 de /a/ vs /i/</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ phonétique articulatoire, intonation, prosodie</p></div>
+
+<div class="card"><p class="ct">Phonétique perceptive</p>
+<p class="cd">Étude de la façon dont les auditeurs <strong>perçoivent et catégorisent</strong> les sons. Les locuteurs regroupent des sons physiquement différents en une seule catégorie.</p>
+<p class="ce">Un francophone perçoit /r/ uvulaire et /r/ roulé comme le «même» phonème /ʁ/</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ phonétique articulatoire, phonème, catégorisation</p></div>
+
+<div class="card"><p class="ct">Voyelles</p>
+<p class="cd">Sons produits <strong>sans obstruction</strong> du flux d'air dans le conduit vocal. Noyau obligatoire de la syllabe. Classées par hauteur (fermée/ouverte) et position de la langue (antérieure/postérieure).</p>
+<p class="ce">/i/ fermée-ant.; /a/ ouverte-centr.; /u/ fermée-post.; /ɛ̃/ nasale</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ trapèze vocalique, syllabe, nasales/orales</p></div>
+
+<div class="card"><p class="ct">Trapèze vocalique</p>
+<p class="cd">Représentation schématique de l'espace vocalique selon deux axes: <strong>hauteur</strong> (fermée ↔ ouverte) et <strong>position horizontale</strong> de la langue (antérieure ↔ postérieure).</p>
+<p class="ce">/i/ haut-ant., /u/ haut-post., /a/ bas-centr., /y/ haut-ant. arrondie</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ voyelles, traits pertinents, articulatoire</p></div>
+
+<div class="card"><p class="ct">Consonnes</p>
+<p class="cd">Sons produits avec une <strong>obstruction totale ou partielle</strong> du flux d'air. Classées par: lieu d'articulation (bilabiale, alvéolaire...), mode (occlusive, fricative...) et voisement (sourde/sonore).</p>
+<p class="ce">/p/ bilabiale occl. sourde; /v/ labiodentale fricative sonore; /ʁ/ uvulaire</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ phonétique articulatoire, voisement, mode</p></div>
+
+<div class="card"><p class="ct">Semi-voyelles / Glides</p>
+<p class="cd">Sons intermédiaires (/j/, /w/, /ɥ/): bref contact articulatoire proche des voyelles correspondantes, toujours adjacents à une voyelle pleine.</p>
+<p class="ce">«pied» /pje/, «nuit» /nɥi/, «oui» /wi/ — /j/ correspond à /i/, /ɥ/ à /y/</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ voyelles, consonnes, syllabe</p></div>
+
+<div class="card"><p class="ct">Syllabe</p>
+<p class="cd">Unité phonologique organisée autour d'un <strong>noyau vocalique</strong> obligatoire, pouvant être précédé (attaque) et/ou suivi (coda) de consonnes.</p>
+<p class="ce">«cha-pe-au» = 3 syllabes; «chat» /ʃa/ = 1 attaque + 1 noyau</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ noyau syllabique, attaque, coda, découpe</p></div>
+
+<div class="card"><p class="ct">Syllabe ouverte / fermée</p>
+<p class="cd"><strong>Ouverte</strong>: se termine par la voyelle noyau (schéma CV). <strong>Fermée</strong>: se termine par une ou plusieurs consonnes (CVC). Le français favorise les syllabes ouvertes.</p>
+<p class="ce">«ma» = ouverte (CV); «chat» = fermée (CVC); «parts» = fermée</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ syllabe, découpe syllabique, phonotactique</p></div>
+
+<div class="card"><p class="ct">Découpe syllabique</p>
+<p class="cd">Règles de segmentation des mots en syllabes. En français: principe de sonorité, préférence pour les syllabes ouvertes (CV). Une consonne intervocalique va avec la syllabe suivante.</p>
+<p class="ce">«a-mi» (V.CV), «ins-tinct» (VCC.CCV), «abs-trait» (VCC.CCVC)</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ syllabe, phonotactique, sonorité</p></div>
+
+<div class="card"><p class="ct">Élision</p>
+<p class="cd">Effacement d'une voyelle finale devant une voyelle initiale du mot suivant. En français, obligatoire pour certains mots grammaticaux («le», «la», «de», «je»...).</p>
+<p class="ce">«le ami» → «l'ami»; «de eau» → «d'eau»; «je ai» → «j'ai»</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ apocope, e caduc, liaison</p></div>
+
+<div class="card"><p class="ct">E caduc / E muet</p>
+<p class="cd">Voyelle /ə/ instable: peut être prononcée ou non selon le contexte phonique (consonnes environnantes) et le registre. Sa chute peut entraîner des ajustements syllabiques.</p>
+<p class="ce">«sam(e)di», «il n(e) viendra pas», «vit(e)ment» — mais «je te le dis» (maintenu)</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ élision, syllabe, registre</p></div>
+
+<div class="card"><p class="ct">Apocope</p>
+<p class="cd">Chute d'un ou plusieurs sons ou syllabes en <strong>fin de mot</strong>. Phénomène fréquent en registre familier/argotique (troncation par la droite).</p>
+<p class="ce">«cinéma» → «ciné»; «professeur» → «prof»; «autobus» → «bus»</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ élision, troncation, réduction, registre</p></div>
+
+<div class="card"><p class="ct">Accent démarcatif</p>
+<p class="cd">En français, accent d'intensité tombant sur la <strong>dernière syllabe prononcée du groupe rythmique</strong> (non sur un mot isolé). Rôle démarcatif: marque la frontière du groupe.</p>
+<p class="ce">«il MANGE» / «il mange une pomME» / «il mange une pomme VERTE»</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ groupe rythmique, prosodie, rythme</p></div>
+
+<div class="card"><p class="ct">Prosodie</p>
+<p class="cd">Étude des phénomènes <strong>suprasegmentaux</strong> portant sur des unités supérieures au phonème: durée, intensité, hauteur tonale (F0), rythme, intonation.</p>
+<p class="ce">«Tu viens?» ↗ (montant = question) vs «Tu viens.» ↘ (descendant = assertion)</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ intonation, rythme, accent, suprasegmental</p></div>
+
+<div class="card"><p class="ct">Rythme</p>
+<p class="cd">Organisation temporelle de la parole en <strong>groupes rythmiques</strong> (groupes accentuels). En français: rythme syllabique, chaque syllabe dure à peu près le même temps.</p>
+<p class="ce">«[Marie] [mange une pomme] [dans le jardin]» = 3 groupes rythmiques</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ prosodie, accent démarcatif, groupe rythmique</p></div>
+
+<div class="card"><p class="ct">Intonation</p>
+<p class="cd">Variation de la <strong>hauteur mélodique</strong> (fréquence fondamentale F0) qui porte des valeurs sémantiques et pragmatiques: question, assertion, continuation, exclamation.</p>
+<p class="ce">Contour montant → question; descendant → énoncé final; suspension → continuation</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ prosodie, modalité, pragmatique</p></div>
+
+<div class="card"><p class="ct">Phonème</p>
+<p class="cd">Plus petite unité <strong>distinctive</strong> de la langue (plan du son). N'a pas de sens propre mais permet de distinguer des mots différents. Répertoire fermé et spécifique à chaque langue.</p>
+<p class="ce">/p/ vs /b/ distinguent «pain» et «bain» — ce sont deux phonèmes différents</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ test de commutation, paires minimales, traits pertinents</p></div>
+
+<div class="card"><p class="ct">Test de commutation phonologique</p>
+<p class="cd">Procédure: substituer un son à un autre en même position. Si le sens du mot change → les deux sons réalisent deux <strong>phonèmes distincts</strong>.</p>
+<p class="ce">«/b/al» → «/m/al» (sens différent) → /b/ et /m/ sont deux phonèmes du français</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ phonème, paires minimales, paradigme</p></div>
+
+<div class="card"><p class="ct">Paires minimales</p>
+<p class="cd">Deux mots qui ne diffèrent que par <strong>un seul phonème en position identique</strong>, prouvant le statut phonémique distinct de ces deux sons.</p>
+<p class="ce">«beau»/«peau», «sac»/«lac», «pain»/«bain», «mer»/«mère», «vu»/«bu»</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ phonème, test de commutation</p></div>
+
+<div class="card"><p class="ct">Traits pertinents</p>
+<p class="cd">Propriétés phonétiques binaires [±] distinguant les phonèmes entre eux dans un système. Permettent de définir chaque phonème par un faisceau de traits (Troubetzkoï).</p>
+<p class="ce">/p/ [−voisé, +bilabial, +occlusif] vs /b/ [+voisé, +bilabial, +occlusif]</p>
+<div class="cm"><span class="dr">🔴 Avancé</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ phonème, phonologie, Troubetzkoï, Jakobson</p></div>
+
+<div class="card"><p class="ct">Graphème, Phonographie &amp; Sémiographie</p>
+<p class="cd"><strong>Graphème</strong>: plus petite unité de l'écriture. <strong>Phonographie</strong>: graphèmes notant des sons. <strong>Sémiographie</strong>: graphèmes notant directement du sens (non des sons).</p>
+<p class="ce">«ch»= phonogr. (/ʃ/); «eau»= phonogr. (/o/); «&amp;»= sémiogr. (= «et»); «2»= sémiogr.</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ oral/écrit, phonologie, graphie</p></div>
+
+</div>
+<div class="notes"><h3>Mes notes — Chapitre 1</h3><div class="nlines">
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+</div></div>
+</section>
+
+<section id="ch2" class="ch s2">
+<div class="chd">
+  <div class="cnum">Chapitre 2</div>
+  <h2 class="ctit">Morphologie</h2>
+  <div class="band">
+    <div class="bitem"><span class="blbl">Concepts clés</span>signe, morphème, allomorphie, radical, affixe, paradigme, dérivation, composition</div>
+    <div class="bitem"><span class="blbl">Objectif</span>Identifier et analyser les unités minimales de sens</div>
+  </div>
+  <div class="tree"><svg viewBox="0 0 500 108" xmlns="http://www.w3.org/2000/svg" font-family="DM Sans,sans-serif">
+    <rect x="130" y="5" width="240" height="26" rx="7" fill="#1e8449"/>
+    <text x="250" y="22" text-anchor="middle" fill="white" font-size="11" font-weight="700">MORPHOLOGIE</text>
+    <line x1="250" y1="31" x2="60" y2="66" stroke="#1e8449" stroke-width="1.5" opacity=".5"/>
+    <line x1="250" y1="31" x2="180" y2="66" stroke="#1e8449" stroke-width="1.5" opacity=".5"/>
+    <line x1="250" y1="31" x2="320" y2="66" stroke="#1e8449" stroke-width="1.5" opacity=".5"/>
+    <line x1="250" y1="31" x2="440" y2="66" stroke="#1e8449" stroke-width="1.5" opacity=".5"/>
+    <rect x="8" y="66" width="104" height="24" rx="5" fill="#d2f2e0"/>
+    <text x="60" y="81" text-anchor="middle" fill="#0d4720" font-size="9.5" font-weight="600">Signe linguistique</text>
+    <text x="60" y="96" text-anchor="middle" fill="#888" font-size="7.5">signifiant · signifié</text>
+    <rect x="128" y="66" width="104" height="24" rx="5" fill="#d2f2e0"/>
+    <text x="180" y="81" text-anchor="middle" fill="#0d4720" font-size="9.5" font-weight="600">Types de morphème</text>
+    <text x="180" y="96" text-anchor="middle" fill="#888" font-size="7.5">libre · lié · zéro</text>
+    <rect x="268" y="66" width="104" height="24" rx="5" fill="#d2f2e0"/>
+    <text x="320" y="81" text-anchor="middle" fill="#0d4720" font-size="9.5" font-weight="600">Procédés morphol.</text>
+    <text x="320" y="96" text-anchor="middle" fill="#888" font-size="7.5">dérivation · composition</text>
+    <rect x="388" y="66" width="104" height="24" rx="5" fill="#d2f2e0"/>
+    <text x="440" y="81" text-anchor="middle" fill="#0d4720" font-size="9.5" font-weight="600">Paradigme</text>
+    <text x="440" y="96" text-anchor="middle" fill="#888" font-size="7.5">lexème · flexion</text>
+  </svg></div>
+</div>
+<div class="slbl">Fiches concepts — Chapitre 2 · 18 fiches</div>
+<div class="cgrid">
+
+<div class="card"><p class="ct">Morphème</p>
+<p class="cd">Plus petite unité <strong>grammaticale significative</strong> de la langue. Un mot peut contenir plusieurs morphèmes: radical + affixe(s). Unité de deuxième articulation (Martinet).</p>
+<p class="ce">«chantais»: {chant-} + {-ais} = 2 morphèmes; «dé-fait-es»: 3 morphèmes</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ test de commutation, phonème, lexème, signifiant</p></div>
+
+<div class="card"><p class="ct">Test de commutation morphologique</p>
+<p class="cd">Substituer un segment à un autre en même position. Si le <strong>sens change</strong> → deux morphèmes distincts. Identique au test phonologique mais appliqué au niveau morphémique.</p>
+<p class="ce">«chant-ons»/«chant-ez» → {-ons}/{-ez} = morphèmes P4/P5 différents</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ morphème, paradigme, commutation phonologique</p></div>
+
+<div class="card"><p class="ct">Signifiant</p>
+<p class="cd">Aspect <strong>formel</strong> (image acoustique, suite de sons) du signe linguistique selon Saussure. La face phonique du signe — ce qu'on entend et prononce.</p>
+<p class="ce">Pour «arbre», le signifiant est /aʁbʁ/ (suite de phonèmes)</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ signifié, signe, arbitraire, Saussure</p></div>
+
+<div class="card"><p class="ct">Signifié</p>
+<p class="cd">Aspect <strong>conceptuel</strong> (image mentale, contenu sémantique) du signe selon Saussure. La face notionnelle — le concept associé au signifiant. ≠ référent (objet réel).</p>
+<p class="ce">/aʁbʁ/ renvoie au concept VÉGÉTAL LIGNEUX AVEC TRONC, pas à un arbre précis</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ signifiant, référent, Saussure, sémantique</p></div>
+
+<div class="card"><p class="ct">Arbitraire du signe</p>
+<p class="cd">Le lien entre signifiant et signifié est <strong>conventionnel</strong>, non motivé naturellement. Preuve: une même réalité reçoit des signifiants totalement différents selon les langues.</p>
+<p class="ce">«chien» (fr) / «dog» (en) / «perro» (es) / «Hund» (de) = même concept, formes différentes</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ icône, symbole, motivation, Saussure</p></div>
+
+<div class="card"><p class="ct">Icône / Indice / Symbole</p>
+<p class="cd"><strong>Icône</strong>: ressemblance avec le référent (onomatopée). <strong>Indice</strong>: connexion causale réelle (fumée→feu). <strong>Symbole</strong>: convention arbitraire = signe saussurien ordinaire (Peirce).</p>
+<p class="ce">«coucou» (icône); toux = indice maladie; «arbre» = symbole/arbitraire</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ arbitraire, Peirce, motivation, iconicité</p></div>
+
+<div class="card"><p class="ct">Allomorphie</p>
+<p class="cd">Un même morphème peut avoir plusieurs <strong>formes phoniques différentes</strong> (allomorphes) conditionnées par le contexte phonologique ou grammatical environnant.</p>
+<p class="ce">Morphème NEG-: «in-»/«im-»/«il-»/«ir-» → «inhumain», «impossible», «illégal», «irréel»</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ morphème, phonologie, distribution complémentaire</p></div>
+
+<div class="card"><p class="ct">Radical</p>
+<p class="cd">Morphème de base portant le sens <strong>lexical</strong> d'un mot. Peut être libre (forme un mot seul) ou lié (nécessite un affixe). Aussi appelé «base» ou «racine».</p>
+<p class="ce">«chant-er»: radical {chant-}; «port-able»: {port-}; «tél-éphone»: radical grec lié</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ affixe, morphème libre/lié, dérivation</p></div>
+
+<div class="card"><p class="ct">Affixe dérivationnnel</p>
+<p class="cd">Morphème ajouté au radical pour <strong>créer un nouveau lexème</strong>. Peut être préfixe (avant) ou suffixe (après). Change souvent la catégorie grammaticale du mot.</p>
+<p class="ce">«dé-faire» (préfixe); «chant-eur» (suffixe V→N); «port-able» (suffixe V→Adj)</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ affixe flexionnel, dérivation, radical, catégorie</p></div>
+
+<div class="card"><p class="ct">Affixe flexionnel</p>
+<p class="cd">Morphème ajouté pour marquer des catégories <strong>grammaticales</strong> (genre, nombre, personne, temps, mode). Ne crée pas de nouveau lexème — reste dans le même paradigme.</p>
+<p class="ce">«chant-ons» (-ons = P4 présent); «petit-e» (-e = féminin); «ami-s» (-s = pluriel)</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ affixe dérivationnnel, flexion, paradigme</p></div>
+
+<div class="card"><p class="ct">Morphème zéro (∅)</p>
+<p class="cd">Morphème sans réalisation phonique mais ayant une <strong>valeur grammaticale</strong> identifiable par opposition paradigmatique à d'autres formes du même lexème.</p>
+<p class="ce">«chat∅» vs «chat-s»: le singulier est marqué par ∅; «aim-e∅» (P3 prés.) vs «aim-ons»</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ paradigme, commutation, affixe flexionnel</p></div>
+
+<div class="card"><p class="ct">Morphèmes libres / liés</p>
+<p class="cd"><strong>Libre</strong>: peut constituer un mot autonome («chat», «de», «bien»). <strong>Lié</strong>: ne peut exister qu'attaché à un autre morphème (préfixes, suffixes, radicaux savants).</p>
+<p class="ce">Libres: «ami», «très», «le»; Liés: «-eur», «dé-», «bio-», «-logie», «-phon-»</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ radical, affixe, composition savante</p></div>
+
+<div class="card"><p class="ct">Lexème / Vocable</p>
+<p class="cd"><strong>Lexème</strong>: unité abstraite du lexique regroupant toutes les formes fléchies d'un même mot. <strong>Vocable</strong>: entrée de dictionnaire (forme canonique).</p>
+<p class="ce">Lexème CHANTER = {chante, chantes, chantons, chantait, chanté, chantant…}</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ paradigme, flexion, morphème, dérivation</p></div>
+
+<div class="card"><p class="ct">Dérivation</p>
+<p class="cd">Procédé morphologique créant un <strong>nouveau lexème</strong> en ajoutant un ou plusieurs affixes dérivationnels à un radical. Très productif en français (préfixation, suffixation).</p>
+<p class="ce">«chanter»→«chanteur»; «possible»→«impossible»; «livre»→«livret»→«livresque»</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ composition, conversion, affixe dérivationnel</p></div>
+
+<div class="card"><p class="ct">Composition</p>
+<p class="cd">Création d'un nouveau lexème par combinaison de deux morphèmes libres ou bases. <strong>Populaire</strong>: mots français ordinaires. <strong>Savante</strong>: bases gréco-latines.</p>
+<p class="ce">Populaire: «porte-monnaie», «chou-fleur»; Savante: «téléphone» (tele+phone), «biologie»</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ dérivation, mot-valise, radical, amalgame</p></div>
+
+<div class="card"><p class="ct">Mot-valise (Amalgame)</p>
+<p class="cd">Création lexicale par <strong>fusion partielle</strong> de deux mots: début de l'un + fin de l'autre. Forme une seule unité graphique et phonique nouvelle.</p>
+<p class="ce">«franglais» (français+anglais); «courriel» (courrier+électronique); «brunch» (breakfast+lunch)</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ composition, dérivation, néologisme, troncation</p></div>
+
+<div class="card"><p class="ct">Conversion</p>
+<p class="cd">Changement de catégorie grammaticale <strong>sans modification formelle</strong> du mot (= dérivation zéro / impropre). Procédé productif en français.</p>
+<p class="ce">«le manger» (V→N); «un rouge» (Adj→N); «parler vrai» (Adj→Adv)</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ dérivation, catégorie grammaticale, lexicalisation</p></div>
+
+<div class="card"><p class="ct">Paradigme flexionnel</p>
+<p class="cd">Ensemble ordonné de <strong>toutes les formes fléchies</strong> d'un lexème selon les catégories grammaticales pertinentes (personne, nombre, temps, mode, genre…).</p>
+<p class="ce">Paradigme de CHANTER: je chante, tu chantes, il chante, nous chantons… (toutes formes)</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ lexème, affixe flexionnel, conjugaison</p></div>
+
+</div>
+<div class="notes"><h3>Mes notes — Chapitre 2</h3><div class="nlines">
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+</div></div></section>
+
+<section id="ch3" class="ch s3">
+<div class="chd">
+  <div class="cnum">Chapitre 3</div>
+  <h2 class="ctit">Syntaxe canonique</h2>
+  <div class="band">
+    <div class="bitem"><span class="blbl">Concepts clés</span>clause, syntagme, rection, valence, actant, GN, GV, copule, thème/rhème</div>
+    <div class="bitem"><span class="blbl">Objectif</span>Décrire la structure de base de la clause française</div>
+  </div>
+  <div class="tree"><svg viewBox="0 0 500 108" xmlns="http://www.w3.org/2000/svg" font-family="DM Sans,sans-serif">
+    <rect x="110" y="5" width="280" height="26" rx="7" fill="#c0701a"/>
+    <text x="250" y="22" text-anchor="middle" fill="white" font-size="11" font-weight="700">SYNTAXE CANONIQUE</text>
+    <line x1="250" y1="31" x2="60" y2="66" stroke="#c0701a" stroke-width="1.5" opacity=".5"/>
+    <line x1="250" y1="31" x2="183" y2="66" stroke="#c0701a" stroke-width="1.5" opacity=".5"/>
+    <line x1="250" y1="31" x2="320" y2="66" stroke="#c0701a" stroke-width="1.5" opacity=".5"/>
+    <line x1="250" y1="31" x2="440" y2="66" stroke="#c0701a" stroke-width="1.5" opacity=".5"/>
+    <rect x="8" y="66" width="104" height="24" rx="5" fill="#f7e6d0"/>
+    <text x="60" y="81" text-anchor="middle" fill="#7a4510" font-size="9.5" font-weight="600">Clause &amp; Syntagme</text>
+    <text x="60" y="96" text-anchor="middle" fill="#888" font-size="7.5">GN · GV · Gprép</text>
+    <rect x="131" y="66" width="104" height="24" rx="5" fill="#f7e6d0"/>
+    <text x="183" y="81" text-anchor="middle" fill="#7a4510" font-size="9.5" font-weight="600">Rection &amp; valence</text>
+    <text x="183" y="96" text-anchor="middle" fill="#888" font-size="7.5">mono · di · trivalent</text>
+    <rect x="268" y="66" width="104" height="24" rx="5" fill="#f7e6d0"/>
+    <text x="320" y="81" text-anchor="middle" fill="#7a4510" font-size="9.5" font-weight="600">Actants</text>
+    <text x="320" y="96" text-anchor="middle" fill="#888" font-size="7.5">agent · patient · bénéf.</text>
+    <rect x="388" y="66" width="104" height="24" rx="5" fill="#f7e6d0"/>
+    <text x="440" y="81" text-anchor="middle" fill="#7a4510" font-size="9.5" font-weight="600">Thème / Rhème</text>
+    <text x="440" y="96" text-anchor="middle" fill="#888" font-size="7.5">information · focus</text>
+  </svg></div>
+</div>
+<div class="slbl">Fiches concepts — Chapitre 3 · 20 fiches</div>
+<div class="cgrid">
+
+<div class="card"><p class="ct">Phrase vs Clause</p>
+<p class="cd">La <strong>clause</strong> est l'unité syntaxique de base comportant un prédicat verbal fléchi. La <strong>phrase</strong> est une notion plus large, souvent graphique. En syntaxe formelle, on analyse des clauses.</p>
+<p class="ce">«Marie chante» = clause; «Marie chante et Paul joue» = deux clauses liées</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ clause canonique, phrase graphique, prédicat</p></div>
+
+<div class="card"><p class="ct">Clause canonique</p>
+<p class="cd">Forme de base, <strong>non marquée</strong> de la clause: ordre SVO, verbe fléchi, tous les actants réalisés. C'est le point de référence pour décrire les constructions dérivées.</p>
+<p class="ce">«Marie [S] mange [V] une pomme [O]» — ordre et réalisation non marqués</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ ordre SVO, actant, constructions dérivées, marqué</p></div>
+
+<div class="card"><p class="ct">Rection</p>
+<p class="cd">Relation syntaxique par laquelle un élément <strong>gouverneur</strong> (recteur) impose des contraintes morpho-syntaxiques à l'élément gouverné (régi): cas, mode, préposition, accord.</p>
+<p class="ce">«il faut que tu vienNES» (subjonctif régi par falloir); «parler DE quelqu'un» (prép. régée)</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ valence, tête du syntagme, accord, gouvernement</p></div>
+
+<div class="card"><p class="ct">Syntagme</p>
+<p class="cd">Groupe de mots formant une <strong>unité syntaxique</strong> construite autour d'une tête (nom, verbe, adjectif, préposition, adverbe). Peut être substitué par un pronom ou un seul mot.</p>
+<p class="ce">«[la belle maison rouge]» = GN; «[court très vite]» = GV</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ tête, constituants, GN, GV, rection</p></div>
+
+<div class="card"><p class="ct">GN — Groupe nominal</p>
+<p class="cd">Syntagme dont la tête est un <strong>nom</strong> (ou pronom). Peut contenir: déterminant, adjectif(s), complément(s) du nom. Remplaçable par un pronom personnel.</p>
+<p class="ce">«[le petit chat noir de ma voisine]» → remplaçable par «il»</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ déterminant, épithète, syntagme, pronom</p></div>
+
+<div class="card"><p class="ct">GV — Groupe verbal</p>
+<p class="cd">Syntagme dont la tête est un <strong>verbe</strong> fléchi. Inclut le verbe + tous ses compléments régis (actants). Constitue le prédicat de la clause avec le sujet (GN).</p>
+<p class="ce">«[mange une pomme avec appétit]» — tête: «mange», actualisée à P3 prés.</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ prédicat, actant, valence, sujet</p></div>
+
+<div class="card"><p class="ct">GAdj / GAdv / GPrép</p>
+<p class="cd"><strong>GAdj</strong>: tête adjectivale («très beau»). <strong>GAdv</strong>: tête adverbiale («assez vite»). <strong>GPrép</strong>: préposition + GN («dans la maison»). Chaque groupe est une unité syntaxique autonome.</p>
+<p class="ce">«[très content de vous voir]» (GAdj); «[dans le jardin]» (GPrép)</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ syntagme, tête, GN, GV, constituant</p></div>
+
+<div class="card"><p class="ct">Constituants immédiats</p>
+<p class="cd">Analyse d'une clause en ses <strong>composants directs</strong> (niveau le plus élevé), puis chaque composant en ses propres constituants. Représentation arborescente ou par crochets.</p>
+<p class="ce">«[Marie] [mange [une pomme]]» → CI: GN + GV; GV → V + GN</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ syntagme, analyse en arbre, tête, dépendance</p></div>
+
+<div class="card"><p class="ct">Déterminant défini</p>
+<p class="cd">Déterminant signalant que le référent est <strong>identifiable</strong> par l'interlocuteur (déjà mentionné, unique, connu). «le/la/les» + formes contractées «du/des/au/aux».</p>
+<p class="ce">«Le chat est parti» (chat connu/identifié); «J'ai vu le film» (film déjà mentionné)</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ déterminant indéfini, GN, référence, anaphore</p></div>
+
+<div class="card"><p class="ct">Déterminant indéfini</p>
+<p class="cd">Déterminant introduisant un référent <strong>non encore identifié</strong> ou non spécifique pour l'interlocuteur. «un/une/des», «du/de la» (partitif). Introduit souvent en rhème.</p>
+<p class="ce">«Un chat est entré» (introduction, 1re mention); «Il mange du pain» (partitif)</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ déterminant défini, article, rhème, introduction</p></div>
+
+<div class="card"><p class="ct">Autonyme / Mention</p>
+<p class="cd">Un mot en <strong>mention</strong> (usage autonyme) est cité comme objet linguistique, pas utilisé pour son sens. Souvent entre guillemets ou en italique. ≠ usage ordinaire.</p>
+<p class="ce">«Chat a quatre lettres» (mention du mot) vs «Le chat dort» (usage du mot)</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ usage, signe linguistique, metalangage</p></div>
+
+<div class="card"><p class="ct">Valence</p>
+<p class="cd">Nombre et nature des <strong>actants obligatoires</strong> (arguments) qu'un verbe appelle pour former une clause grammaticale. Propriété lexicale intrinsèque de chaque verbe.</p>
+<p class="ce">«dormir»: valence 1 (sujet seulement); «donner»: valence 3 (sujet+objet+destinataire)</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ actant, rection, mono/di/trivalent, Tesnière</p></div>
+
+<div class="card"><p class="ct">Verbe monovalent / avalent</p>
+<p class="cd"><strong>Monovalent</strong>: un seul actant (sujet). <strong>Avalent</strong>: aucun actant lexical — sujet impersonnel grammatical obligatoire «il». Propriété de la valence verbale.</p>
+<p class="ce">Monov.: «Il dort», «Marie part»; Avalent: «Il pleut», «Il faut», «Il neige»</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ valence, divalent, trivalent, impersonnel</p></div>
+
+<div class="card"><p class="ct">Verbe divalent</p>
+<p class="cd">Verbe appelant <strong>deux actants</strong>: sujet + un complément d'objet (direct ou indirect). La grande majorité des verbes transitifs français sont divalents.</p>
+<p class="ce">«Marie mange une pomme» (sujet + OD); «Paul pense à Marie» (sujet + OI)</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ valence, objet direct, objet indirect, transitif</p></div>
+
+<div class="card"><p class="ct">Verbe trivalent</p>
+<p class="cd">Verbe appelant <strong>trois actants</strong>: sujet + deux compléments. Typiquement les verbes de transfert et de communication.</p>
+<p class="ce">«Marie donne [un livre] [à Paul]»; «Il dit [à Marie] [qu'il viendra]»</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ valence, bénéficiaire, destinataire, divalent</p></div>
+
+<div class="card"><p class="ct">Copule &amp; attribut du sujet</p>
+<p class="cd">La <strong>copule</strong> («être» et verbes attributifs) relie le sujet à son <strong>attribut</strong> (adj, GN, GPrép). L'attribut est un complément essentiel, non suppressible, accordé avec le sujet.</p>
+<p class="ce">«Marie est [médecin]»; «Il semble [fatigué]»; «Elle paraît [en forme]»</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ attribut objet, valence, prédicat nominal</p></div>
+
+<div class="card"><p class="ct">Relations actantielles</p>
+<p class="cd">Rôles <strong>sémantiques</strong> que les actants jouent vis-à-vis du procès exprimé par le verbe: agent, patient, thème, instrument, bénéficiaire, siège, résultatif.</p>
+<p class="ce">«Marie coupe le pain avec un couteau» → Marie=agent, pain=patient, couteau=instrument</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ actant, valence, rôle thématique, agent, patient</p></div>
+
+<div class="card"><p class="ct">Agent / Patient / Instrument</p>
+<p class="cd"><strong>Agent</strong>: entité qui initie/contrôle le procès. <strong>Patient</strong>: entité affectée par le procès. <strong>Instrument</strong>: moyen utilisé par l'agent pour accomplir le procès.</p>
+<p class="ce">«[Marie]₍ₐ₎ coupe [le pain]₍ₚ₎ avec [un couteau]₍ᵢ₎»</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ relations actantielles, bénéficiaire, siège, voix</p></div>
+
+<div class="card"><p class="ct">Thème / Rhème</p>
+<p class="cd"><strong>Thème</strong>: information <em>donnée</em>, point de départ de l'énoncé (souvent en position initiale). <strong>Rhème</strong>: information <em>nouvelle</em>, apport de l'énoncé (souvent en fin). Organisation informationnelle.</p>
+<p class="ce">«[Marie]₍ₜₕ₎ a acheté [un vélo]₍ᵣₕ₎» — rhème = nouvelle information</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ topic, focus, ordre des mots, pragmatique</p></div>
+
+<div class="card"><p class="ct">Tête du syntagme</p>
+<p class="cd">Élément <strong>gouverneur</strong> du syntagme qui détermine la catégorie du groupe et régit les autres éléments. Un syntagme peut être réduit à sa seule tête sans perdre sa catégorie.</p>
+<p class="ce">Dans «la belle maison rouge»: «maison» est la tête → tout le groupe est un GN</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ syntagme, rection, dépendance, constituants</p></div>
+
+</div>
+<div class="notes"><h3>Mes notes — Chapitre 3</h3><div class="nlines">
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+</div></div></section>
+
+<section id="ch4" class="ch s4">
+<div class="chd">
+  <div class="cnum">Chapitre 4</div>
+  <h2 class="ctit">Ordre dans la clause</h2>
+  <div class="band">
+    <div class="bitem"><span class="blbl">Concepts clés</span>linéarité, SVO, inversion, clivée, pseudo-clivée, passif, voix, agent</div>
+    <div class="bitem"><span class="blbl">Objectif</span>Analyser les effets des variations de l'ordre des constituants</div>
+  </div>
+  <div class="tree"><svg viewBox="0 0 500 108" xmlns="http://www.w3.org/2000/svg" font-family="DM Sans,sans-serif">
+    <rect x="110" y="5" width="280" height="26" rx="7" fill="#b5297a"/>
+    <text x="250" y="22" text-anchor="middle" fill="white" font-size="11" font-weight="700">ORDRE DANS LA CLAUSE</text>
+    <line x1="250" y1="31" x2="60" y2="66" stroke="#b5297a" stroke-width="1.5" opacity=".5"/>
+    <line x1="250" y1="31" x2="183" y2="66" stroke="#b5297a" stroke-width="1.5" opacity=".5"/>
+    <line x1="250" y1="31" x2="320" y2="66" stroke="#b5297a" stroke-width="1.5" opacity=".5"/>
+    <line x1="250" y1="31" x2="440" y2="66" stroke="#b5297a" stroke-width="1.5" opacity=".5"/>
+    <rect x="8" y="66" width="104" height="24" rx="5" fill="#f7d4ea"/>
+    <text x="60" y="81" text-anchor="middle" fill="#7a195a" font-size="9.5" font-weight="600">Ordre canonique</text>
+    <text x="60" y="96" text-anchor="middle" fill="#888" font-size="7.5">SVO · non marqué</text>
+    <rect x="131" y="66" width="104" height="24" rx="5" fill="#f7d4ea"/>
+    <text x="183" y="81" text-anchor="middle" fill="#7a195a" font-size="9.5" font-weight="600">Mises en relief</text>
+    <text x="183" y="96" text-anchor="middle" fill="#888" font-size="7.5">clivée · pseudo-clivée</text>
+    <rect x="268" y="66" width="104" height="24" rx="5" fill="#f7d4ea"/>
+    <text x="320" y="81" text-anchor="middle" fill="#7a195a" font-size="9.5" font-weight="600">Voix</text>
+    <text x="320" y="96" text-anchor="middle" fill="#888" font-size="7.5">passif · pronominal</text>
+    <rect x="388" y="66" width="104" height="24" rx="5" fill="#f7d4ea"/>
+    <text x="440" y="81" text-anchor="middle" fill="#7a195a" font-size="9.5" font-weight="600">Constructions</text>
+    <text x="440" y="96" text-anchor="middle" fill="#888" font-size="7.5">impersonnel · inversé</text>
+  </svg></div>
+</div>
+<div class="slbl">Fiches concepts — Chapitre 4 · 12 fiches</div>
+<div class="cgrid">
+
+<div class="card"><p class="ct">Linéarité</p>
+<p class="cd">Propriété fondamentale du langage: les signes se succèdent <strong>dans le temps</strong> (oral) ou dans l'espace (écrit). La position dans la séquence est porteuse de sens grammatical et pragmatique.</p>
+<p class="ce">«Le chat mange la souris» ≠ «La souris mange le chat» — même mots, sens opposés</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ ordre SVO, Saussure, arbitraire, syntagmatique</p></div>
+
+<div class="card"><p class="ct">Ordre SVO canonique</p>
+<p class="cd">En français, l'ordre <strong>Sujet–Verbe–Objet</strong> est l'ordre de base non marqué. Il correspond au schéma canonique agent-procès-patient pour les clauses transitives actives.</p>
+<p class="ce">«[Marie]ₛ [mange]ᵥ [une pomme]ₒ» — ordre par défaut, sans effet stylistique</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ linéarité, clause canonique, marqué/non marqué</p></div>
+
+<div class="card"><p class="ct">Fonctions de l'ordre des mots</p>
+<p class="cd">L'ordre des mots en français sert à: (1) marquer les <strong>fonctions syntaxiques</strong> (sujet vs objet), (2) organiser l'information (thème/rhème), (3) marquer l'emphase ou le focus.</p>
+<p class="ce">Fin de clause = position rhématique naturelle; début = position thématique</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ thème/rhème, focus, dislocation, topicalisation</p></div>
+
+<div class="card"><p class="ct">Clause inversée (inversion S-V)</p>
+<p class="cd"><strong>Inversion stylistique</strong>: le sujet postposé au verbe. Obligatoire dans certains contextes (interrogative, incise) ou stylistique (littéraire). S'oppose à l'ordre canonique.</p>
+<p class="ce">«Vient-il?»; «dit-elle»; «Ainsi parla Zarathoustra»; «Que mange-t-il?»</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ interrogative, incise, ordre SVO, marqué</p></div>
+
+<div class="card"><p class="ct">Ordre des compléments du GV</p>
+<p class="cd">En français, l'ordre préférentiel des compléments clitiques: <strong>me/te/se/nous/vous → le/la/les → lui/leur → y → en</strong>. Les GN compléments suivent généralement: V + OD + OI.</p>
+<p class="ce">«Je le lui donne»; «Il m'en a parlé»; mais «Elle donne un livre à Paul» (GN: V+OD+OI)</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ clitiques, GV, pronom, divalent/trivalent</p></div>
+
+<div class="card"><p class="ct">Construction clivée</p>
+<p class="cd">Construction «<strong>C'est X qui/que</strong>…» qui extrait et focalise un constituant. La clivée segmente la clause en deux parties et met en relief l'élément extrait (focus étroit).</p>
+<p class="ce">«C'est Marie qui a mangé la pomme» (focus: Marie); «C'est la pomme que Marie a mangée»</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ pseudo-clivée, focus, topicalisation, mise en relief</p></div>
+
+<div class="card"><p class="ct">Construction pseudo-clivée</p>
+<p class="cd">Construction «<strong>Ce que X, c'est Y</strong>» (ou «Ce qui…, c'est…»). Sépare thème et rhème en deux segments explicites. Le focus porte sur le segment après «c'est».</p>
+<p class="ce">«Ce que Marie mange, c'est une pomme»; «Ce qui m'inquiète, c'est le silence»</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ clivée, thème/rhème, relative, focus</p></div>
+
+<div class="card"><p class="ct">Construction passive</p>
+<p class="cd">Le patient de la clause active devient sujet; l'agent peut être exprimé par «<strong>par</strong>» ou omis. Le verbe prend l'auxiliaire «être» + participe passé accordé avec le nouveau sujet.</p>
+<p class="ce">«Marie mange la pomme» → «La pomme est mangée (par Marie)»</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ voix, agent passif, actif, participe, sujet</p></div>
+
+<div class="card"><p class="ct">Construction impersonnelle</p>
+<p class="cd">Sujet grammatical figé «<strong>il</strong>» (non référentiel) avec un verbe impersonnel ou une construction impersonnelle. Le «vrai» sujet logique est postposé au verbe.</p>
+<p class="ce">«Il pleut»; «Il faut partir»; «Il arrive des gens»; «Il est possible qu'il vienne»</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ avalent, voix, sujet logique, extraposition</p></div>
+
+<div class="card"><p class="ct">Construction pronominale</p>
+<p class="cd">Verbe accompagné d'un pronom réfléchi coréférent au sujet («se»). Trois types: <strong>réfléchie</strong> (sujet=objet), <strong>réciproque</strong> (entre sujets), <strong>lexicale</strong> (sens propre du verbe).</p>
+<p class="ce">Réfl.: «Elle se lave»; Récipr.: «Ils se battent»; Lex.: «s'évanouir», «se souvenir»</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ voix, réfléchi, réciproque, clitique</p></div>
+
+<div class="card"><p class="ct">Voix</p>
+<p class="cd">Catégorie grammaticale exprimant la <strong>relation entre le verbe et ses actants</strong>, notamment la promotion/rétrogradation d'actants. Principales voix: active, passive, pronominale, causative.</p>
+<p class="ce">Active: «Le chef cuisine»; Passive: «Le plat est cuisiné»; Caus.: «Il fait cuisiner»</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ passif, pronominal, actant, agent, patient</p></div>
+
+<div class="card"><p class="ct">Agent passif (complément d'agent)</p>
+<p class="cd">Dans une clause passive, l'agent de la clause active peut être exprimé en périphérie par la préposition <strong>«par»</strong> (procès dynamiques) ou «de» (états, attitudes, verbes mentaux).</p>
+<p class="ce">«La porte est ouverte PAR Marie» (par); «Il est aimé DE tous» (de)</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ passif, agent, patient, par/de, voix</p></div>
+
+</div>
+<div class="notes"><h3>Mes notes — Chapitre 4</h3><div class="nlines">
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+</div></div></section>
+
+<section id="ch5" class="ch s5">
+<div class="chd">
+  <div class="cnum">Chapitre 5</div>
+  <h2 class="ctit">Types de clauses</h2>
+  <div class="band">
+    <div class="bitem"><span class="blbl">Concepts clés</span>clause averbale, qualitative, identificatoire, infinitive, présentatifs, il y a, voilà</div>
+    <div class="bitem"><span class="blbl">Objectif</span>Distinguer les clauses selon la nature de leur prédicat</div>
+  </div>
+  <div class="tree"><svg viewBox="0 0 500 108" xmlns="http://www.w3.org/2000/svg" font-family="DM Sans,sans-serif">
+    <rect x="130" y="5" width="240" height="26" rx="7" fill="#2e8b57"/>
+    <text x="250" y="22" text-anchor="middle" fill="white" font-size="11" font-weight="700">TYPES DE CLAUSES</text>
+    <line x1="250" y1="31" x2="60" y2="66" stroke="#2e8b57" stroke-width="1.5" opacity=".5"/>
+    <line x1="250" y1="31" x2="183" y2="66" stroke="#2e8b57" stroke-width="1.5" opacity=".5"/>
+    <line x1="250" y1="31" x2="320" y2="66" stroke="#2e8b57" stroke-width="1.5" opacity=".5"/>
+    <line x1="250" y1="31" x2="440" y2="66" stroke="#2e8b57" stroke-width="1.5" opacity=".5"/>
+    <rect x="8" y="66" width="104" height="24" rx="5" fill="#d9f2e3"/>
+    <text x="60" y="81" text-anchor="middle" fill="#1a5c3a" font-size="9.5" font-weight="600">Clauses averbales</text>
+    <text x="60" y="96" text-anchor="middle" fill="#888" font-size="7.5">qualitative · identificat.</text>
+    <rect x="131" y="66" width="104" height="24" rx="5" fill="#d9f2e3"/>
+    <text x="183" y="81" text-anchor="middle" fill="#1a5c3a" font-size="9.5" font-weight="600">Présentatifs</text>
+    <text x="183" y="96" text-anchor="middle" fill="#888" font-size="7.5">il y a · voilà · c'est</text>
+    <rect x="268" y="66" width="104" height="24" rx="5" fill="#d9f2e3"/>
+    <text x="320" y="81" text-anchor="middle" fill="#1a5c3a" font-size="9.5" font-weight="600">Clause infinitive</text>
+    <text x="320" y="96" text-anchor="middle" fill="#888" font-size="7.5">V inf. + sujet propre</text>
+    <rect x="388" y="66" width="104" height="24" rx="5" fill="#d9f2e3"/>
+    <text x="440" y="81" text-anchor="middle" fill="#1a5c3a" font-size="9.5" font-weight="600">Relation prédicat.</text>
+    <text x="440" y="96" text-anchor="middle" fill="#888" font-size="7.5">sans copule · implicite</text>
+  </svg></div>
+</div>
+<div class="slbl">Fiches concepts — Chapitre 5 · 8 fiches</div>
+<div class="cgrid">
+
+<div class="card"><p class="ct">Clause averbale</p>
+<p class="cd">Clause sans verbe fléchi: la <strong>relation prédicative</strong> s'établit directement entre un sujet et un prédicat nominal ou adjectival, sans copule exprimée. Très fréquente à l'oral et dans certains registres.</p>
+<p class="ce">«Taxi!»; «Interdit de fumer»; «Belle journée!»; «Impossible à croire»</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ clause verbale, copule, relation prédicative, ellipse</p></div>
+
+<div class="card"><p class="ct">Relation prédicative averbale</p>
+<p class="cd">La relation entre sujet et prédicat dans une clause sans verbe. Le <strong>lien prédicatif</strong> est implicite — équivalent sémantique à «être» — et inféré du contexte.</p>
+<p class="ce">«Paul, fatigué» ≃ «Paul est fatigué»; «Résultat: nul» ≃ «Le résultat est nul»</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ clause averbale, copule, prédicat, ellipse</p></div>
+
+<div class="card"><p class="ct">Clause qualitative</p>
+<p class="cd">Clause où le prédicat <strong>attribue une propriété</strong> (qualité) au sujet. Prototype: sujet + copule «être» + adjectif attribut. Décrit une caractéristique du référent du sujet.</p>
+<p class="ce">«Marie est [intelligente]»; «Le ciel est [bleu]»; «Ces fleurs paraissent [fanées]»</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ clause identificatoire, copule, attribut, prédicat</p></div>
+
+<div class="card"><p class="ct">Clause identificatoire</p>
+<p class="cd">Clause où le prédicat <strong>identifie ou classe</strong> le sujet (appartenance à une catégorie ou équation référentielle). Prototype: sujet + «être» + GN.</p>
+<p class="ce">«Marie est [médecin]» (classement); «Napoléon est [l'Empereur]» (identité)</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ clause qualitative, copule, attribut, GN, équatif</p></div>
+
+<div class="card"><p class="ct">Clause infinitive</p>
+<p class="cd">Clause dont le verbe est à l'<strong>infinitif</strong> et qui possède son propre sujet (souvent distinct du sujet de la clause principale). Subordonnée non finie à verbe à l'infinitif.</p>
+<p class="ce">«J'entends [Marie chanter]»; «Je vois [les enfants jouer]» — sujet propre à l'infinitive</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ infinitif, subordonnée, clause complexe, perception</p></div>
+
+<div class="card"><p class="ct">Construction il y a</p>
+<p class="cd">Présentatif existentiel introduisant un référent <strong>nouveau</strong> dans le discours. «Il» est un explétif; «y» est locatif affaibli. Introduit le rhème.</p>
+<p class="ce">«Il y a un chat sur le toit» (introduction du chat); «Il y avait beaucoup de monde»</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ présentatif, rhème, voilà, c'est, existentiel</p></div>
+
+<div class="card"><p class="ct">Construction voilà</p>
+<p class="cd">Présentatif déictique signalant un référent <strong>dans l'espace perceptif</strong> du locuteur ou introduisant une information saillante. Plus démonstratif que «il y a».</p>
+<p class="ce">«Voilà ma maison!» (déictique); «Voilà le problème» (présentation discursive)</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ il y a, c'est, présentatif, déictique, rhème</p></div>
+
+<div class="card"><p class="ct">Présentatif c'est</p>
+<p class="cd">Présentatif identificateur ou focalisateur. Sert à (1) <strong>identifier</strong> un référent («C'est Pierre»), (2) <strong>focaliser</strong> un constituant («C'est lui qui est venu»), (3) évaluer.</p>
+<p class="ce">«C'est Pierre» (identification); «C'est beau» (évaluation); «C'est lui qui a gagné» (focus)</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ il y a, voilà, clivée, identificatoire, focus</p></div>
+
+</div>
+<div class="notes"><h3>Mes notes — Chapitre 5</h3><div class="nlines">
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+</div></div></section>
+
+<section id="ch6" class="ch s6">
+<div class="chd">
+  <div class="cnum">Chapitre 6</div>
+  <h2 class="ctit">Extensions du GN</h2>
+  <div class="band">
+    <div class="bitem"><span class="blbl">Concepts clés</span>épithète, apposition, relative, complément du nom, statut discursif, absolue</div>
+    <div class="bitem"><span class="blbl">Objectif</span>Identifier et classer les expansions internes et externes du GN</div>
+  </div>
+  <div class="tree"><svg viewBox="0 0 500 108" xmlns="http://www.w3.org/2000/svg" font-family="DM Sans,sans-serif">
+    <rect x="120" y="5" width="260" height="26" rx="7" fill="#b8860b"/>
+    <text x="250" y="22" text-anchor="middle" fill="white" font-size="11" font-weight="700">EXTENSIONS DU GN</text>
+    <line x1="250" y1="31" x2="60" y2="66" stroke="#b8860b" stroke-width="1.5" opacity=".5"/>
+    <line x1="250" y1="31" x2="183" y2="66" stroke="#b8860b" stroke-width="1.5" opacity=".5"/>
+    <line x1="250" y1="31" x2="320" y2="66" stroke="#b8860b" stroke-width="1.5" opacity=".5"/>
+    <line x1="250" y1="31" x2="440" y2="66" stroke="#b8860b" stroke-width="1.5" opacity=".5"/>
+    <rect x="8" y="66" width="104" height="24" rx="5" fill="#f7f3d0"/>
+    <text x="60" y="81" text-anchor="middle" fill="#7a5a08" font-size="9.5" font-weight="600">Épithète</text>
+    <text x="60" y="96" text-anchor="middle" fill="#888" font-size="7.5">antéposée · postposée</text>
+    <rect x="131" y="66" width="104" height="24" rx="5" fill="#f7f3d0"/>
+    <text x="183" y="81" text-anchor="middle" fill="#7a5a08" font-size="9.5" font-weight="600">Complément du nom</text>
+    <text x="183" y="96" text-anchor="middle" fill="#888" font-size="7.5">GPrép · relative</text>
+    <rect x="268" y="66" width="104" height="24" rx="5" fill="#f7f3d0"/>
+    <text x="320" y="81" text-anchor="middle" fill="#7a5a08" font-size="9.5" font-weight="600">Apposition</text>
+    <text x="320" y="96" text-anchor="middle" fill="#888" font-size="7.5">détachée · absolue</text>
+    <rect x="388" y="66" width="104" height="24" rx="5" fill="#f7f3d0"/>
+    <text x="440" y="81" text-anchor="middle" fill="#7a5a08" font-size="9.5" font-weight="600">Statut discursif</text>
+    <text x="440" y="96" text-anchor="middle" fill="#888" font-size="7.5">défini · indéf. · générique</text>
+  </svg></div>
+</div>
+<div class="slbl">Fiches concepts — Chapitre 6 · 14 fiches</div>
+<div class="cgrid">
+
+<div class="card"><p class="ct">Extension du GN</p>
+<p class="cd">Tout élément qui s'ajoute à la tête nominale pour <strong>restreindre ou enrichir</strong> sa référence. Peut être intégré (épithète, CN) ou détaché (apposition, épithète détachée).</p>
+<p class="ce">«[la maison [rouge] [de Paul] [qui est en vente]]» — 3 extensions de «maison»</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ épithète, relative, apposition, CN, GN</p></div>
+
+<div class="card"><p class="ct">Épithète adjective</p>
+<p class="cd">Adjectif <strong>intégré au GN</strong>, directement lié à la tête nominale. Participe à la restriction de la référence. Non séparé par une virgule (≠ épithète détachée).</p>
+<p class="ce">«un [grand] chapeau», «la [belle] maison [rouge]», «un [vieil] ami»</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ épithète détachée, apposition, attribut, GN</p></div>
+
+<div class="card"><p class="ct">Épithète antéposée / postposée</p>
+<p class="cd">Position de l'adjectif épithète par rapport au nom. La <strong>postposition</strong> est la position par défaut en français. L'<strong>antéposition</strong> est marquée: valeur subjective, affective ou figée.</p>
+<p class="ce">Post.: «une robe rouge», «une décision importante»; Anté.: «un beau livre», «une grande maison»</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ épithète, adjectif relationnel, marqué, position</p></div>
+
+<div class="card"><p class="ct">Adjectif relationnel</p>
+<p class="cd">Adjectif dérivé d'un nom exprimant une <strong>relation classificatoire</strong>. Toujours postposé, non gradable, non attribut. Équivaut à un GPrép complément du nom.</p>
+<p class="ce">«décision présidentielle» ≃ «décision du président»; «politique européenne»</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ épithète qualitative, CN, postposé, dérivation</p></div>
+
+<div class="card"><p class="ct">Adjectif de 3e type</p>
+<p class="cd">Adjectif qui fonctionne comme un <strong>apposé prédicatif</strong> (épithète détachée): non intégré au GN, il prédicativement qualifie le sujet ou l'objet. Souvent entre virgules.</p>
+<p class="ce">«[Fatigué], Paul rentra» (apposé au sujet); «Il la vit, [heureuse]» (apposé à l'objet)</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ épithète détachée, attribut, apposition</p></div>
+
+<div class="card"><p class="ct">Analytique vs synthétique</p>
+<p class="cd"><strong>Synthétique</strong>: propriété exprimée par un seul mot (adjectif). <strong>Analytique</strong>: propriété exprimée par plusieurs mots (GPrép, relative). Les langues varient sur cet axe.</p>
+<p class="ce">Synth.: «présidentiel»; Analyt.: «du président» / «qui concerne le président»</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ adjectif relationnel, CN, morphologie, dérivation</p></div>
+
+<div class="card"><p class="ct">GPrép complément du nom</p>
+<p class="cd">Groupe prépositionnel postposé à un nom, formant une <strong>expansion interne</strong> du GN. Généralement introduit par «de», restreint la référence de la tête nominale.</p>
+<p class="ce">«la maison [de Paul]», «un verre [d'eau]», «le livre [sur la table]»</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ complément du nom, relative, épithète, GN</p></div>
+
+<div class="card"><p class="ct">Complément du nom (CN)</p>
+<p class="cd">Terme générique désignant tout <strong>constituant postposé à la tête nominale</strong> qui la complète: GPrép, adjectif relationnel, relative. Expansion interne obligatoire ou optionnelle du GN.</p>
+<p class="ce">«une boîte [en bois]» (GPrép), «une politique [européenne]» (adj.), «l'homme [que j'aime]» (rel.)</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ épithète, relative, GPrép, GN, expansion</p></div>
+
+<div class="card"><p class="ct">Épithète détachée</p>
+<p class="cd">Adjectif (ou groupe adjectival) <strong>détaché du GN</strong> par une virgule, conservant un lien sémantique fort avec le nom. Prédicative: ajoute une information sur l'état du référent au moment du procès.</p>
+<p class="ce">«[Fatiguée], Marie s'endormit»; «Paul, [ravi], accepta l'invitation»</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ apposition, attribut, épithète, adjectif 3e type</p></div>
+
+<div class="card"><p class="ct">Apposition</p>
+<p class="cd">GN (ou autre syntagme) <strong>détaché</strong> qui donne une information supplémentaire sur le référent du GN auquel il se rapporte. Non prédicatif, coréférentiel, souvent entre virgules.</p>
+<p class="ce">«Paul, [mon ami], est arrivé»; «Paris, [capitale de France], est magnifique»</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ épithète détachée, relative appositive, coréférence</p></div>
+
+<div class="card"><p class="ct">Statut discursif du GN</p>
+<p class="cd">Position du référent d'un GN dans la <strong>mémoire discursive</strong>: défini (identifiable), indéfini (nouveau), générique (classe entière), spécifique/non-spécifique.</p>
+<p class="ce">«un chat» (indéf., intro.) → «le chat» (déf., reprise); «le chat est carnivore» (générique)</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ déterminant, anaphore, référence, thème/rhème</p></div>
+
+<div class="card"><p class="ct">Absolue</p>
+<p class="cd">Construction <strong>participiale ou adjectivale détachée</strong> sans lien de subordination morphologique explicite. Sujet propre différent de celui de la principale. En périphérie de la clause.</p>
+<p class="ce">«[Le soleil se couchant], ils rentrèrent»; «[Les bras croisés], il attendait»</p>
+<div class="cm"><span class="dr">🔴 Avancé</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ participiale, épithète détachée, circonstancielle, périphérie</p></div>
+
+<div class="card"><p class="ct">Relative déterminative (dans le GN)</p>
+<p class="cd">Proposition relative <strong>intégrée</strong> au GN, restreignant la référence de la tête nominale. Supprimable = le GN change de référence. Introduite par «qui/que/dont/où».</p>
+<p class="ce">«L'homme [qui est venu] hier» — sans la relative, on ne sait pas de quel homme</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ relative appositive, CN, restrictive, pronom relatif</p></div>
+
+<div class="card"><p class="ct">Amplification</p>
+<p class="cd">Procédé rhétorico-syntaxique d'<strong>enrichissement du GN</strong> par accumulation d'extensions (épithètes, relatives, CN) pour produire un effet d'insistance ou de précision maximale.</p>
+<p class="ce">«Ce vieux monsieur, fatigué, en manteau noir, qui habitait le quartier depuis 40 ans»</p>
+<div class="cm"><span class="dr">🔴 Avancé</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ extension GN, style, rhétorique, épithète, relative</p></div>
+
+</div>
+<div class="notes"><h3>Mes notes — Chapitre 6</h3><div class="nlines">
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+</div></div></section>
+
+<section id="ch7" class="ch s7">
+<div class="chd">
+  <div class="cnum">Chapitre 7</div>
+  <h2 class="ctit">Extensions du GV</h2>
+  <div class="band">
+    <div class="bitem"><span class="blbl">Concepts clés</span>valenciel, circonstant, intraprédicatif, extraprédicatif, modalisateur, périphérie</div>
+    <div class="bitem"><span class="blbl">Objectif</span>Distinguer les compléments obligatoires des expansions libres du GV</div>
+  </div>
+  <div class="tree"><svg viewBox="0 0 500 108" xmlns="http://www.w3.org/2000/svg" font-family="DM Sans,sans-serif">
+    <rect x="120" y="5" width="260" height="26" rx="7" fill="#5c4ed4"/>
+    <text x="250" y="22" text-anchor="middle" fill="white" font-size="11" font-weight="700">EXTENSIONS DU GV</text>
+    <line x1="250" y1="31" x2="60" y2="66" stroke="#5c4ed4" stroke-width="1.5" opacity=".5"/>
+    <line x1="250" y1="31" x2="183" y2="66" stroke="#5c4ed4" stroke-width="1.5" opacity=".5"/>
+    <line x1="250" y1="31" x2="320" y2="66" stroke="#5c4ed4" stroke-width="1.5" opacity=".5"/>
+    <line x1="250" y1="31" x2="440" y2="66" stroke="#5c4ed4" stroke-width="1.5" opacity=".5"/>
+    <rect x="8" y="66" width="104" height="24" rx="5" fill="#dddaf7"/>
+    <text x="60" y="81" text-anchor="middle" fill="#3a2ea0" font-size="9.5" font-weight="600">Compléments</text>
+    <text x="60" y="96" text-anchor="middle" fill="#888" font-size="7.5">valenciel · circonstant</text>
+    <rect x="131" y="66" width="104" height="24" rx="5" fill="#dddaf7"/>
+    <text x="183" y="81" text-anchor="middle" fill="#3a2ea0" font-size="9.5" font-weight="600">Portée prédicative</text>
+    <text x="183" y="96" text-anchor="middle" fill="#888" font-size="7.5">intrapréd. · extrapréd.</text>
+    <rect x="268" y="66" width="104" height="24" rx="5" fill="#dddaf7"/>
+    <text x="320" y="81" text-anchor="middle" fill="#3a2ea0" font-size="9.5" font-weight="600">Modalisateurs</text>
+    <text x="320" y="96" text-anchor="middle" fill="#888" font-size="7.5">épistémique · évidentiel</text>
+    <rect x="388" y="66" width="104" height="24" rx="5" fill="#dddaf7"/>
+    <text x="440" y="81" text-anchor="middle" fill="#3a2ea0" font-size="9.5" font-weight="600">Périphérie</text>
+    <text x="440" y="96" text-anchor="middle" fill="#888" font-size="7.5">gauche · droite</text>
+  </svg></div>
+</div>
+<div class="slbl">Fiches concepts — Chapitre 7 · 8 fiches</div>
+<div class="cgrid">
+
+<div class="card"><p class="ct">Complément valenciel vs circonstanciel</p>
+<p class="cd"><strong>Valenciel</strong>: imposé par la valence du verbe, obligatoire, spécifique à ce verbe. <strong>Circonstanciel</strong>: ajout libre, non prévu par la valence, supprimable sans affecter la grammaticalité.</p>
+<p class="ce">«habiter [à Paris]» (valenciel, obligatoire); «[à Paris], il travaille» (circonstanciel, facultatif)</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ valence, actant, rection, circonstant</p></div>
+
+<div class="card"><p class="ct">Intraprédicatif</p>
+<p class="cd">Circonstant dont la portée est <strong>interne au prédicat</strong>: il modifie le procès lui-même (manière, moyen, degré, lieu interne). Intégré phonologiquement à la clause, sans pause.</p>
+<p class="ce">«Il court [vite]» (manière intraprédic.); «Elle travaille [avec soin]» (moyen)</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ extraprédicatif, circonstant, portée, manière</p></div>
+
+<div class="card"><p class="ct">Extraprédicatif</p>
+<p class="cd">Circonstant dont la portée dépasse le prédicat: porte sur la <strong>clause entière</strong> ou le cadre énonciatif. Souvent en périphérie (début ou fin), séparé par une pause ou virgule.</p>
+<p class="ce">«[Franchement], il a tort» (modal énonc.); «[Le soir], il lit» (cadre temporel)</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ intraprédicatif, modalisateur, périphérie, cadratif</p></div>
+
+<div class="card"><p class="ct">Valeurs sémantiques des circonstants</p>
+<p class="cd">Les circonstants expriment des valeurs variées: <strong>temps</strong> (quand), <strong>lieu</strong> (où), <strong>manière</strong> (comment), <strong>cause</strong>, <strong>but</strong>, <strong>condition</strong>, <strong>concession</strong>, <strong>quantité</strong>, moyen, compagnie.</p>
+<p class="ce">«[hier]» (temps); «[ici]» (lieu); «[pour gagner]» (but); «[malgré tout]» (concession)</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ circonstancielle, GPrép, adverbe, sémantique</p></div>
+
+<div class="card"><p class="ct">Effet de la position du circonstant</p>
+<p class="cd">La position du circonstant modifie son <strong>interprétation pragmatique</strong>: en tête = cadre/thème, en fin = information nouvelle/rhème, médian = moins saillant. Influe aussi sur la portée.</p>
+<p class="ce">«[Demain], je pars» (cadre) vs «Je pars [demain]» (rhème/info nouvelle)</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ thème/rhème, périphérie, intrapréd./extrapréd.</p></div>
+
+<div class="card"><p class="ct">Modalisateur</p>
+<p class="cd">Élément exprimant l'attitude du locuteur envers le contenu propositionnel: certitude, probabilité, source de l'information (<strong>épistémique</strong>), appréciation (<strong>évaluatif</strong>), façon d'énoncer (<strong>énonciatif</strong>).</p>
+<p class="ce">«[Peut-être] il viendra» (épist.); «[Heureusement], il est parti» (éval.); «[Franchement]» (énon.)</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ extraprédicatif, modalité, périphérie, adverbe</p></div>
+
+<div class="card"><p class="ct">Périphérie gauche / droite</p>
+<p class="cd">Zones <strong>syntaxiquement détachées</strong> en dehors du noyau prédicatif. <strong>Périphérie gauche</strong>: avant le sujet (cadres, topiques, modalisateurs). <strong>Périphérie droite</strong>: après le noyau (dislocations, épexégèses).</p>
+<p class="ce">«[Quant à Paul,] il est parti» (gauche); «Il est parti, [Paul]» (droite, dislocation)</p>
+<div class="cm"><span class="dr">🔴 Avancé</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ dislocation, topique, extraprédicatif, phrase graphique</p></div>
+
+<div class="card"><p class="ct">CC vs Circonstant</p>
+<p class="cd">Terminologie scolaire «complément circonstanciel» (CC) = terme traditionnel regroupant les compléments de lieu, temps, manière. «Circonstant» est le terme linguistique moderne, plus précis: exclu la valence.</p>
+<p class="ce">CC: «il mange rapidement» — Circonstant: distingue portée (intra/extraprédicatif) et valeur sémantique</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ valenciel, circonstanciel, terminologie, grammaire scolaire</p></div>
+
+</div>
+<div class="notes"><h3>Mes notes — Chapitre 7</h3><div class="nlines">
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+</div></div></section>
+
+<section id="ch8" class="ch s8">
+<div class="chd">
+  <div class="cnum">Chapitre 8</div>
+  <h2 class="ctit">Clause complexe</h2>
+  <div class="band">
+    <div class="bitem"><span class="blbl">Concepts clés</span>subordination, relative, complétive, circonstancielle, hypotaxe, parataxe, corrélation</div>
+    <div class="bitem"><span class="blbl">Objectif</span>Analyser les mécanismes d'enchâssement et d'articulation des clauses</div>
+  </div>
+  <div class="tree"><svg viewBox="0 0 500 108" xmlns="http://www.w3.org/2000/svg" font-family="DM Sans,sans-serif">
+    <rect x="130" y="5" width="240" height="26" rx="7" fill="#b03025"/>
+    <text x="250" y="22" text-anchor="middle" fill="white" font-size="11" font-weight="700">CLAUSE COMPLEXE</text>
+    <line x1="250" y1="31" x2="60" y2="66" stroke="#b03025" stroke-width="1.5" opacity=".5"/>
+    <line x1="250" y1="31" x2="183" y2="66" stroke="#b03025" stroke-width="1.5" opacity=".5"/>
+    <line x1="250" y1="31" x2="320" y2="66" stroke="#b03025" stroke-width="1.5" opacity=".5"/>
+    <line x1="250" y1="31" x2="440" y2="66" stroke="#b03025" stroke-width="1.5" opacity=".5"/>
+    <rect x="8" y="66" width="104" height="24" rx="5" fill="#f7d5d2"/>
+    <text x="60" y="81" text-anchor="middle" fill="#7a1a10" font-size="9.5" font-weight="600">Relatives</text>
+    <text x="60" y="96" text-anchor="middle" fill="#888" font-size="7.5">déterm. · appositive</text>
+    <rect x="131" y="66" width="104" height="24" rx="5" fill="#f7d5d2"/>
+    <text x="183" y="81" text-anchor="middle" fill="#7a1a10" font-size="9.5" font-weight="600">Complétives</text>
+    <text x="183" y="96" text-anchor="middle" fill="#888" font-size="7.5">que · inf · interr. ind.</text>
+    <rect x="268" y="66" width="104" height="24" rx="5" fill="#f7d5d2"/>
+    <text x="320" y="81" text-anchor="middle" fill="#7a1a10" font-size="9.5" font-weight="600">Circonstancielles</text>
+    <text x="320" y="96" text-anchor="middle" fill="#888" font-size="7.5">partic. · conjonctive</text>
+    <rect x="388" y="66" width="104" height="24" rx="5" fill="#f7d5d2"/>
+    <text x="440" y="81" text-anchor="middle" fill="#7a1a10" font-size="9.5" font-weight="600">Hypotaxe / Parataxe</text>
+    <text x="440" y="96" text-anchor="middle" fill="#888" font-size="7.5">corrélation · juxtap.</text>
+  </svg></div>
+</div>
+<div class="slbl">Fiches concepts — Chapitre 8 · 14 fiches</div>
+<div class="cgrid">
+
+<div class="card"><p class="ct">Clause complexe</p>
+<p class="cd">Clause comprenant au moins deux <strong>noyaux prédicatifs</strong>: une clause principale (matrice) et une ou plusieurs clauses subordonnées ou coordonnées. Plusieurs degrés d'enchâssement possibles.</p>
+<p class="ce">«Je pense [que Marie viendra]» = principale + subordonnée complétive</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ subordination, principale, enchâssement, clause</p></div>
+
+<div class="card"><p class="ct">Subordination</p>
+<p class="cd">Relation d'<strong>enchâssement hiérarchique</strong>: une clause dépend syntaxiquement d'une autre (la matrice). La subordonnée a un statut de constituant (sujet, objet, complément) dans la principale.</p>
+<p class="ce">«Il faut [que tu viennes]» (sujet); «Je sais [qu'il est là]» (objet); «[Quand il arrive,] je pars»</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ coordination, hypotaxe, enchâssement, principale</p></div>
+
+<div class="card"><p class="ct">Relative déterminative</p>
+<p class="cd">Relative intégrée au GN qui <strong>restreint la référence</strong> de la tête nominale. Sa suppression change ou détruit la référence. Pas de virgule. Introduite par «qui/que/dont/où/lequel».</p>
+<p class="ce">«L'homme [qui est venu] est parti» — sans relative, référence indéterminée</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ relative appositive, CN, restrictive, pronom relatif</p></div>
+
+<div class="card"><p class="ct">Relative appositive</p>
+<p class="cd">Relative <strong>détachée du GN</strong> par une virgule, ajoutant une information accessoire non restrictive. Sa suppression ne change pas la référence. Souvent entre virgules.</p>
+<p class="ce">«Marie, [qui est médecin,] est venue» — «qui est médecin» = info supplémentaire, non restrictive</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ relative déterminative, apposition, virgule</p></div>
+
+<div class="card"><p class="ct">Complétive</p>
+<p class="cd">Subordonnée jouant le rôle d'un <strong>GN</strong> (sujet, objet direct) dans la principale. Introduite par «que» + subjonctif ou indicatif selon le verbe régissant.</p>
+<p class="ce">«Je sais [qu'il viendra]» (objet ind.); «Il faut [que tu partes]» (sujet); «[Qu'il soit là] m'étonne»</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ interrogative indirecte, infinitive, rection, que</p></div>
+
+<div class="card"><p class="ct">Interrogative indirecte</p>
+<p class="cd">Subordonnée complétive de type interrogatif, enchâssée sous un verbe de <strong>demande/connaissance</strong>. Introduite par «si» (oui/non) ou un mot interrogatif («qui», «quand», «comment»…).</p>
+<p class="ce">«Je me demande [s'il viendra]»; «Il sait [qui a gagné]»; «Dis-moi [comment tu fais]»</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ complétive, interrogative directe, si, mot interr.</p></div>
+
+<div class="card"><p class="ct">Circonstancielle</p>
+<p class="cd">Subordonnée exprimant une <strong>relation circonstancielle</strong> (temps, cause, but, condition, concession…) avec la principale. Introduite par une conjonction de subordination complexe.</p>
+<p class="ce">«[Quand il arrive,] je pars» (temps); «[Parce qu'il pleut,] je reste» (cause)</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ conjonction, circonstant, cause, temps, condition</p></div>
+
+<div class="card"><p class="ct">Participiale</p>
+<p class="cd">Subordonnée non finie dont le verbe est au <strong>participe</strong> (présent ou passé). Peut avoir son propre sujet (= absolue) ou coréférer avec le sujet principal (= épithète détachée).</p>
+<p class="ce">«[Sachant la vérité,] il se tut» (coréf.); «[Le soleil se couchant,] ils partirent» (absol.)</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ absolue, gérondif, épithète détachée, participe</p></div>
+
+<div class="card"><p class="ct">Place de la subordonnée</p>
+<p class="cd">La position de la subordonnée par rapport à la principale a des effets pragmatiques: en <strong>antéposition</strong> = cadre/thème; en <strong>postposition</strong> = information nouvelle/rhème ou attendue.</p>
+<p class="ce">«[Quand il arrive,] je pars» (cadre) vs «Je pars [quand il arrive]» (info nouvelle)</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ thème/rhème, périphérie, ordre des mots</p></div>
+
+<div class="card"><p class="ct">Adjointe vs complément verbal</p>
+<p class="cd"><strong>Adjointe</strong>: subordonnée circonstancielle libre, non régie par le verbe, supprimable. <strong>Complément verbal</strong>: subordonnée régie par la valence du verbe, non supprimable sans agrammaticalité.</p>
+<p class="ce">Adjointe: «[Parce qu'il pleut,] je reste»; CV: «Il veut [qu'elle parte]» (régi par «vouloir»)</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ circonstancielle, complétive, valence, rection</p></div>
+
+<div class="card"><p class="ct">Infinitives subordonnées</p>
+<p class="cd">Subordonnée dont le verbe est à l'<strong>infinitif</strong>: complétive infinitive (après verbe de perception, causatif, modal) ou circonstancielle infinitive (après préposition).</p>
+<p class="ce">«Je veux [partir]»; «Je le vois [courir]»; «[Pour réussir,] il faut travailler»</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ clause infinitive, complétive, circonstancielle, infinitif</p></div>
+
+<div class="card"><p class="ct">Corrélation</p>
+<p class="cd">Construction <strong>bi-polaire</strong> à deux membres liés par une paire de corrélateurs (plus…plus, si…que, tant…que, autant…autant). Les deux clauses se conditionnent mutuellement.</p>
+<p class="ce">«Plus il mange, plus il grossit»; «Si tu veux, je viens»; «Tant il travaille qu'il s'épuise»</p>
+<div class="cm"><span class="dr">🔴 Avancé</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ coordination, subordination, bi-polaire, corrélateurs</p></div>
+
+<div class="card"><p class="ct">Hypotaxe vs Parataxe</p>
+<p class="cd"><strong>Hypotaxe</strong>: subordination explicite avec connecteur (conjonction, pronom relatif). <strong>Parataxe</strong>: juxtaposition sans connecteur — relation implicite, inférée du contexte. Continuité sur un axe.</p>
+<p class="ce">Hypot.: «Il est parti parce qu'il était fatigué»; Parataxe: «Il était fatigué: il est parti»</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ coordination, subordination, juxtaposition, asyndète</p></div>
+
+<div class="card"><p class="ct">Effets stylistiques de la subordination</p>
+<p class="cd">Le choix entre hypotaxe, parataxe, coordination modifie le <strong>rythme</strong> et l'effet discursif: l'hypotaxe marque la logique explicite; la parataxe crée la densité ou la rapidité; la coordination équilibre.</p>
+<p class="ce">«Il tomba. Il se releva. Il repartit.» (parataxe: dynamisme) vs «Bien qu'il fût tombé, il repartit»</p>
+<div class="cm"><span class="dr">🔴 Avancé</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ style, registre, parataxe, hypotaxe, rhétorique</p></div>
+
+</div>
+<div class="notes"><h3>Mes notes — Chapitre 8</h3><div class="nlines">
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+</div></div></section>
+
+<section id="ch9" class="ch s9">
+<div class="chd">
+  <div class="cnum">Chapitre 9</div>
+  <h2 class="ctit">Phrase graphique</h2>
+  <div class="band">
+    <div class="bitem"><span class="blbl">Concepts clés</span>phrase graphique, juxtaposition, coordination, dislocation, parenthétique, tour équatif</div>
+    <div class="bitem"><span class="blbl">Objectif</span>Analyser les constructions propres à la syntaxe de l'écrit</div>
+  </div>
+  <div class="tree"><svg viewBox="0 0 500 108" xmlns="http://www.w3.org/2000/svg" font-family="DM Sans,sans-serif">
+    <rect x="120" y="5" width="260" height="26" rx="7" fill="#0e7f6a"/>
+    <text x="250" y="22" text-anchor="middle" fill="white" font-size="11" font-weight="700">PHRASE GRAPHIQUE</text>
+    <line x1="250" y1="31" x2="60" y2="66" stroke="#0e7f6a" stroke-width="1.5" opacity=".5"/>
+    <line x1="250" y1="31" x2="183" y2="66" stroke="#0e7f6a" stroke-width="1.5" opacity=".5"/>
+    <line x1="250" y1="31" x2="320" y2="66" stroke="#0e7f6a" stroke-width="1.5" opacity=".5"/>
+    <line x1="250" y1="31" x2="440" y2="66" stroke="#0e7f6a" stroke-width="1.5" opacity=".5"/>
+    <rect x="8" y="66" width="104" height="24" rx="5" fill="#cdf2eb"/>
+    <text x="60" y="81" text-anchor="middle" fill="#085c4c" font-size="9.5" font-weight="600">Juxtap./Coord.</text>
+    <text x="60" y="96" text-anchor="middle" fill="#888" font-size="7.5">asyndète · conjonction</text>
+    <rect x="131" y="66" width="104" height="24" rx="5" fill="#cdf2eb"/>
+    <text x="183" y="81" text-anchor="middle" fill="#085c4c" font-size="9.5" font-weight="600">Dislocation</text>
+    <text x="183" y="96" text-anchor="middle" fill="#888" font-size="7.5">gauche · droite</text>
+    <rect x="268" y="66" width="104" height="24" rx="5" fill="#cdf2eb"/>
+    <text x="320" y="81" text-anchor="middle" fill="#085c4c" font-size="9.5" font-weight="600">Parenthétiques</text>
+    <text x="320" y="96" text-anchor="middle" fill="#888" font-size="7.5">incise · insertion</text>
+    <rect x="388" y="66" width="104" height="24" rx="5" fill="#cdf2eb"/>
+    <text x="440" y="81" text-anchor="middle" fill="#085c4c" font-size="9.5" font-weight="600">Syntaxe écrite</text>
+    <text x="440" y="96" text-anchor="middle" fill="#888" font-size="7.5">tour équatif · fragment</text>
+  </svg></div>
+</div>
+<div class="slbl">Fiches concepts — Chapitre 9 · 10 fiches</div>
+<div class="cgrid">
+
+<div class="card"><p class="ct">Phrase graphique</p>
+<p class="cd">Unité délimitée par une <strong>majuscule initiale</strong> et une <strong>ponctuation forte finale</strong> (point, «!», «?», «…»). Unité propre à l'écrit, sans équivalent direct à l'oral. Peut contenir plusieurs clauses.</p>
+<p class="ce">«Il part. Elle reste.» = 2 phrases graphiques; «Il part et elle reste.» = 1 phrase, 2 clauses</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ clause, ponctuation, écrit/oral, majuscule</p></div>
+
+<div class="card"><p class="ct">Juxtaposition</p>
+<p class="cd">Association de clauses ou de membres sans connecteur explicite (<strong>asyndète</strong>). La relation sémantique (cause, opposition, succession…) est implicite, inférée par le lecteur.</p>
+<p class="ce">«Il est fatigué; il dort»; «Elle entre, elle regarde, elle repart» — virgule ou point-virgule</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ coordination, parataxe, asyndète, ponctuation</p></div>
+
+<div class="card"><p class="ct">Coordination</p>
+<p class="cd">Association de clauses (ou constituants) par une <strong>conjonction de coordination</strong> explicite. Les membres coordonnés ont en principe le même statut syntaxique et le même niveau hiérarchique.</p>
+<p class="ce">«Il mange et il boit»; «Marie ou Paul viendra»; «Je veux mais je ne peux pas»</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ subordination, juxtaposition, conjonctions, parataxe</p></div>
+
+<div class="card"><p class="ct">Conjonctions de coordination</p>
+<p class="cd">Mots invariables reliant des éléments de <strong>même niveau syntaxique</strong>. Sept classiques: <strong>mais, ou, et, donc, or, ni, car</strong>. Chacune exprime une relation sémantique spécifique.</p>
+<p class="ce">Mais=opposition; ou=disjonction; et=addition; donc=conséquence; or=contextualis.; ni=négat.; car=cause</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ coordination, conjonction de subordination, connecteur</p></div>
+
+<div class="card"><p class="ct">Parenthétique / Incise</p>
+<p class="cd"><strong>Parenthétique</strong>: segment inséré dans la phrase, syntaxiquement indépendant, entre virgules/tirets/parenthèses. <strong>Incise</strong>: type de parenthétique contenant un verbe de parole avec ordre V-S.</p>
+<p class="ce">Parent.: «Il est parti — Marie le sait — sans prévenir»; Incise: «Il viendra, dit-il, demain»</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ insertion, ponctuation, périphérie, modalisation</p></div>
+
+<div class="card"><p class="ct">Dislocation (générale)</p>
+<p class="cd">Construction dans laquelle un constituant est déplacé en <strong>périphérie</strong> (gauche ou droite) et repris dans la clause par un <strong>pronom clitique</strong> coréférent. Fréquente à l'oral.</p>
+<p class="ce">«Paul, je l'aime» (gauche) / «Je l'aime, Paul» (droite) — «Paul» disloqué, repris par «l'»</p>
+<div class="cm"><span class="dg">🟢 Fondamental</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ topicalisation, focus, clitique, périphérie, thème</p></div>
+
+<div class="card"><p class="ct">Dislocation gauche</p>
+<p class="cd">Le constituant disloqué est placé <strong>avant le sujet</strong> (en périphérie gauche) et repris par un clitique. Signale le <strong>topique</strong> (thème du message), souvent information connue.</p>
+<p class="ce">«[Ce livre], je l'ai lu»; «[À Paul], je lui ai dit»; «[Marie], elle est venue»</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ dislocation droite, topique, clitique, thème</p></div>
+
+<div class="card"><p class="ct">Dislocation droite</p>
+<p class="cd">Le constituant disloqué est placé <strong>après le noyau clausulaire</strong> (périphérie droite), repris par un clitique. Souvent en position de <strong>rhème</strong> ou d'ajout précisant.</p>
+<p class="ce">«Je l'aime, [Marie]»; «Il l'a lu, [ce livre-là]»; «Elle vient, [ta sœur]?»</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ dislocation gauche, clitique, rhème, périphérie droite</p></div>
+
+<div class="card"><p class="ct">Tour équatif</p>
+<p class="cd">Construction bipartite «<strong>X, c'est Y</strong>» (ou «c'est X que Y») établissant une équation entre deux termes. Permet de focaliser ou de définir. Lié à la dislocation et aux clivées.</p>
+<p class="ce">«La grammaire, c'est passionnant»; «Ce qui compte, c'est la qualité»; «Manger, c'est vivre»</p>
+<div class="cm"><span class="dy">🟡 Intermédiaire</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ clivée, dislocation, c'est, présentatif, focus</p></div>
+
+<div class="card"><p class="ct">Fragment après point</p>
+<p class="cd">Phrase graphique <strong>non clausulaire</strong>: syntagme non verbal érigé en phrase autonome par la ponctuation forte. Fréquent dans la prose littéraire et journalistique pour l'effet rythmique.</p>
+<p class="ce">«Il ouvrit la porte. Silence total.» «Elle avait tout perdu. Tout.» «Réponse: non.»</p>
+<div class="cm"><span class="dr">🔴 Avancé</span><label><input type="checkbox"> Maîtrisé</label></div>
+<p class="cl">↔ phrase graphique, ponctuation, style, averbale, rhétorique</p></div>
+
+</div>
+<div class="notes"><h3>Mes notes — Chapitre 9</h3><div class="nlines">
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+</div></div></section>
+
+<!-- ===== RÉCAPITULATIF ===== -->
+<section id="recap" class="recap">
+<h2 class="rech">Récapitulatif global — Tous les termes</h2>
+
+<div class="rcch"><span class="rct" style="background:#eedcf7;color:#5b1f82">Introduction</span>
+<div class="rterms">
+<div class="rterm"><input type="checkbox"> signe linguistique</div><div class="rterm"><input type="checkbox"> signifiant</div><div class="rterm"><input type="checkbox"> signifié</div>
+<div class="rterm"><input type="checkbox"> arbitraire du signe</div><div class="rterm"><input type="checkbox"> double articulation</div><div class="rterm"><input type="checkbox"> morphème (1ère art.)</div>
+<div class="rterm"><input type="checkbox"> phonème (2ème art.)</div><div class="rterm"><input type="checkbox"> niveaux d'analyse</div><div class="rterm"><input type="checkbox"> oral vs écrit</div>
+<div class="rterm"><input type="checkbox"> distance communicat.</div><div class="rterm"><input type="checkbox"> métalangage</div><div class="rterm"><input type="checkbox"> signifiance</div>
+</div></div>
+
+<div class="rcch"><span class="rct" style="background:#d4e9f7;color:#0d4778">Chapitre 1 — Phonétique, Phonologie &amp; Graphémique</span>
+<div class="rterms">
+<div class="rterm"><input type="checkbox"> phonétique articulatoire</div><div class="rterm"><input type="checkbox"> phonétique acoustique</div><div class="rterm"><input type="checkbox"> phonétique perceptive</div>
+<div class="rterm"><input type="checkbox"> voyelles</div><div class="rterm"><input type="checkbox"> trapèze vocalique</div><div class="rterm"><input type="checkbox"> consonnes</div>
+<div class="rterm"><input type="checkbox"> semi-voyelles / glides</div><div class="rterm"><input type="checkbox"> syllabe</div><div class="rterm"><input type="checkbox"> syllabe ouverte/fermée</div>
+<div class="rterm"><input type="checkbox"> découpe syllabique</div><div class="rterm"><input type="checkbox"> élision</div><div class="rterm"><input type="checkbox"> e caduc / e muet</div>
+<div class="rterm"><input type="checkbox"> apocope</div><div class="rterm"><input type="checkbox"> accent démarcatif</div><div class="rterm"><input type="checkbox"> prosodie</div>
+<div class="rterm"><input type="checkbox"> rythme</div><div class="rterm"><input type="checkbox"> intonation</div><div class="rterm"><input type="checkbox"> phonème</div>
+<div class="rterm"><input type="checkbox"> test de commutation</div><div class="rterm"><input type="checkbox"> paires minimales</div><div class="rterm"><input type="checkbox"> traits pertinents</div>
+<div class="rterm"><input type="checkbox"> graphème</div>
+</div></div>
+
+<div class="rcch"><span class="rct" style="background:#d2f2e0;color:#0e4d26">Chapitre 2 — Morphologie</span>
+<div class="rterms">
+<div class="rterm"><input type="checkbox"> morphème</div><div class="rterm"><input type="checkbox"> test de commutation morphol.</div><div class="rterm"><input type="checkbox"> signifiant</div>
+<div class="rterm"><input type="checkbox"> signifié</div><div class="rterm"><input type="checkbox"> arbitraire du signe</div><div class="rterm"><input type="checkbox"> icône (Peirce/Eco)</div>
+<div class="rterm"><input type="checkbox"> allomorphie</div><div class="rterm"><input type="checkbox"> radical</div><div class="rterm"><input type="checkbox"> affixe dérivationnel</div>
+<div class="rterm"><input type="checkbox"> affixe flexionnel</div><div class="rterm"><input type="checkbox"> morphème zéro (∅)</div><div class="rterm"><input type="checkbox"> morphèmes libres</div>
+<div class="rterm"><input type="checkbox"> lexèmes construits</div><div class="rterm"><input type="checkbox"> dérivation</div><div class="rterm"><input type="checkbox"> composition</div>
+<div class="rterm"><input type="checkbox"> mots-valises</div><div class="rterm"><input type="checkbox"> conversion</div><div class="rterm"><input type="checkbox"> paradigme</div>
+</div></div>
+
+<div class="rcch"><span class="rct" style="background:#f7e6d0;color:#6b3a08">Chapitre 3 — Syntaxe canonique</span>
+<div class="rterms">
+<div class="rterm"><input type="checkbox"> phrase vs clause</div><div class="rterm"><input type="checkbox"> rection</div><div class="rterm"><input type="checkbox"> clause canonique</div>
+<div class="rterm"><input type="checkbox"> syntagme</div><div class="rterm"><input type="checkbox"> GN</div><div class="rterm"><input type="checkbox"> GV</div>
+<div class="rterm"><input type="checkbox"> GAdj / GAdv / GPrép</div><div class="rterm"><input type="checkbox"> constituants immédiats</div><div class="rterm"><input type="checkbox"> déterminant déf./indéf.</div>
+<div class="rterm"><input type="checkbox"> autonyme / mention</div><div class="rterm"><input type="checkbox"> valence</div><div class="rterm"><input type="checkbox"> monovalent / divalent</div>
+<div class="rterm"><input type="checkbox"> trivalent / avalent</div><div class="rterm"><input type="checkbox"> copule / attribut</div><div class="rterm"><input type="checkbox"> relations actantielles</div>
+<div class="rterm"><input type="checkbox"> agent / patient</div><div class="rterm"><input type="checkbox"> bénéficiaire / siège</div><div class="rterm"><input type="checkbox"> modalités</div>
+<div class="rterm"><input type="checkbox"> thème / rhème</div><div class="rterm"><input type="checkbox"> actant</div>
+</div></div>
+
+<div class="rcch"><span class="rct" style="background:#f7d4ea;color:#6b1244">Chapitre 4 — Ordre des mots</span>
+<div class="rterms">
+<div class="rterm"><input type="checkbox"> linéarité du signe</div><div class="rterm"><input type="checkbox"> ordre canonique SVO</div><div class="rterm"><input type="checkbox"> fonctions de l'ordre</div>
+<div class="rterm"><input type="checkbox"> clause inversée</div><div class="rterm"><input type="checkbox"> ordre compléments GV</div><div class="rterm"><input type="checkbox"> clivée</div>
+<div class="rterm"><input type="checkbox"> pseudo-clivée</div><div class="rterm"><input type="checkbox"> passif</div><div class="rterm"><input type="checkbox"> agent du passif</div>
+<div class="rterm"><input type="checkbox"> construction impersonnelle</div><div class="rterm"><input type="checkbox"> construction pronominale</div><div class="rterm"><input type="checkbox"> voix</div>
+</div></div>
+
+<div class="rcch"><span class="rct" style="background:#d9f2e3;color:#0d4d2a">Chapitre 5 — Types de clauses</span>
+<div class="rterms">
+<div class="rterm"><input type="checkbox"> clause averbale</div><div class="rterm"><input type="checkbox"> relation prédicative averbale</div><div class="rterm"><input type="checkbox"> qualitative</div>
+<div class="rterm"><input type="checkbox"> identificatoire</div><div class="rterm"><input type="checkbox"> clause infinitive</div><div class="rterm"><input type="checkbox"> présentatif «il y a»</div>
+<div class="rterm"><input type="checkbox"> présentatif «voilà»</div><div class="rterm"><input type="checkbox"> «c'est» présentatif/équatif</div>
+</div></div>
+
+<div class="rcch"><span class="rct" style="background:#f7f3d0;color:#614600">Chapitre 6 — Extensions du GN</span>
+<div class="rterms">
+<div class="rterm"><input type="checkbox"> extension du GN</div><div class="rterm"><input type="checkbox"> épithète</div><div class="rterm"><input type="checkbox"> qualificatif ant./postposé</div>
+<div class="rterm"><input type="checkbox"> adjectif relationnel</div><div class="rterm"><input type="checkbox"> épithète de 3e type</div><div class="rterm"><input type="checkbox"> analytique vs synthétique</div>
+<div class="rterm"><input type="checkbox"> GPrép complément du N</div><div class="rterm"><input type="checkbox"> complément du nom (CN)</div><div class="rterm"><input type="checkbox"> épithète détachée</div>
+<div class="rterm"><input type="checkbox"> apposition</div><div class="rterm"><input type="checkbox"> statut discursif apposition</div><div class="rterm"><input type="checkbox"> construction absolue</div>
+<div class="rterm"><input type="checkbox"> proposition relative</div><div class="rterm"><input type="checkbox"> amplification</div>
+</div></div>
+
+<div class="rcch"><span class="rct" style="background:#dddaf7;color:#2a1e82">Chapitre 7 — Extensions du GV</span>
+<div class="rterms">
+<div class="rterm"><input type="checkbox"> valenciel vs circonstanciel</div><div class="rterm"><input type="checkbox"> circonstant intraprédicatif</div><div class="rterm"><input type="checkbox"> circonstant extraprédicatif</div>
+<div class="rterm"><input type="checkbox"> valeurs sémantiques circ.</div><div class="rterm"><input type="checkbox"> effet de position</div><div class="rterm"><input type="checkbox"> modalisateur</div>
+<div class="rterm"><input type="checkbox"> périphérie</div><div class="rterm"><input type="checkbox"> CC vs circonstant</div>
+</div></div>
+
+<div class="rcch"><span class="rct" style="background:#f7d5d2;color:#620f08">Chapitre 8 — La clause complexe</span>
+<div class="rterms">
+<div class="rterm"><input type="checkbox"> clause complexe</div><div class="rterm"><input type="checkbox"> subordination / hypotaxe</div><div class="rterm"><input type="checkbox"> relative déterminative</div>
+<div class="rterm"><input type="checkbox"> relative appositive</div><div class="rterm"><input type="checkbox"> complétive</div><div class="rterm"><input type="checkbox"> interrogative indirecte</div>
+<div class="rterm"><input type="checkbox"> circonstancielle</div><div class="rterm"><input type="checkbox"> participiale</div><div class="rterm"><input type="checkbox"> place de la subordonnée</div>
+<div class="rterm"><input type="checkbox"> adjointe vs complément</div><div class="rterm"><input type="checkbox"> infinitives subordonnées</div><div class="rterm"><input type="checkbox"> corrélation</div>
+<div class="rterm"><input type="checkbox"> hypotaxe vs parataxe</div><div class="rterm"><input type="checkbox"> effets stylistiques</div>
+</div></div>
+
+<div class="rcch"><span class="rct" style="background:#cdf2eb;color:#044034">Chapitre 9 — La phrase graphique</span>
+<div class="rterms">
+<div class="rterm"><input type="checkbox"> phrase graphique</div><div class="rterm"><input type="checkbox"> juxtaposition</div><div class="rterm"><input type="checkbox"> coordination</div>
+<div class="rterm"><input type="checkbox"> conjonctions de coord.</div><div class="rterm"><input type="checkbox"> parenthétique / incise</div><div class="rterm"><input type="checkbox"> dislocation</div>
+<div class="rterm"><input type="checkbox"> dislocation gauche</div><div class="rterm"><input type="checkbox"> dislocation droite</div><div class="rterm"><input type="checkbox"> tour équatif</div>
+<div class="rterm"><input type="checkbox"> fragment après point</div>
+</div></div>
+
+</section>
+
+<!-- ===== AUTEURS ===== -->
+<section id="authors" class="auth">
+<h2>Auteurs &amp; Références</h2>
+<table>
+<tr><th>Auteur</th><th>Dates</th><th>Œuvre(s) clé(s)</th><th>Concepts du cours</th></tr>
+<tr><td><strong>Ferdinand de Saussure</strong></td><td>1857–1913</td><td><em>Cours de linguistique générale</em> (1916, posth.)</td><td>Signe, signifiant/signifié, arbitraire, axe syntagmatique/paradigmatique, linéarité</td></tr>
+<tr><td><strong>André Martinet</strong></td><td>1908–1999</td><td><em>Éléments de linguistique générale</em> (1960)</td><td>Double articulation, morphème, phonème, économie linguistique</td></tr>
+<tr><td><strong>Nikolaï Troubetzkoï</strong></td><td>1890–1938</td><td><em>Grundzüge der Phonologie</em> (1939)</td><td>Traits distinctifs/pertinents, phonème, paires minimales, opposition phonologique</td></tr>
+<tr><td><strong>Lucien Tesnière</strong></td><td>1893–1959</td><td><em>Éléments de syntaxe structurale</em> (1959)</td><td>Valence, rection, actants, nœud verbal, dépendance syntaxique</td></tr>
+<tr><td><strong>Umberto Eco</strong></td><td>1932–2016</td><td><em>Trattato di semiotica generale</em> (1975)</td><td>Icône, indice, symbole, théorie du signe non-linguistique</td></tr>
+<tr><td><strong>Émile Benveniste</strong></td><td>1902–1976</td><td><em>Problèmes de linguistique générale</em> (1966/1974)</td><td>Signifiance, énonciation, subjectivité dans le langage</td></tr>
+<tr><td><strong>Roman Jakobson</strong></td><td>1896–1982</td><td><em>Essais de linguistique générale</em> (1963)</td><td>Traits distinctifs, fonctions du langage, universaux phonologiques</td></tr>
+<tr><td><strong>P. Koch &amp; W. Oesterreicher</strong></td><td>XXe s.</td><td>«Sprache der Nähe – Sprache der Distanz» (1985)</td><td>Distance communicationnelle, pôle immédiat/distant, oral/écrit</td></tr>
+<tr><td><strong>Groupe de Fribourg</strong></td><td>XXIe s.</td><td><em>Grande Grammaire du français</em> (GGF, 2021)</td><td>Référence grammaticale principale du cours</td></tr>
+<tr><td><strong>Patrick Charaudeau</strong></td><td>né 1939</td><td><em>Grammaire du sens et de l'expression</em> (1992)</td><td>Approche énonciative et sémantique de la grammaire</td></tr>
+</table>
+</section>
+
+<!-- ===== NOTES PERSONNELLES ===== -->
+<section class="notex">
+<h3>Mes notes personnelles</h3>
+<div class="nlines">
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+</div>
+</section>
+
+<section class="notex">
+<h3>Mes notes personnelles (suite)</h3>
+<div class="nlines">
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div>
+</div>
+</section>
+
+</div><!-- /wrap -->
+<script>
+(function(){
+  document.querySelectorAll('input[type=checkbox]').forEach(function(cb){
+    var key='ling_'+cb.closest('.card,.rterm')?.textContent?.trim()?.slice(0,30);
+    if(localStorage.getItem(key)==='1')cb.checked=true;
+    cb.addEventListener('change',function(){localStorage.setItem(key,this.checked?'1':'0')});
+  });
+})();
+</script>
+</body>
+</html>
